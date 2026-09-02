@@ -1012,7 +1012,7 @@ export default function ExpressHighwayInnClubLoungePage() {
             <Image
               src={selectedImage}
               alt="Club & Lounge Facility Zoom"
-              fill
+              fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-contain"
             />
           </div>

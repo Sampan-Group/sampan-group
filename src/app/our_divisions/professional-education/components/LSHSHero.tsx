@@ -106,7 +106,7 @@ export default function LSHSHero({
               <Image
                 src="/images/brand/lshs.png"
                 alt="London School of Higher Studies Logo"
-                fill
+                fill sizes="100vw"
                 priority
                 className="object-contain drop-shadow-[0_10px_25px_rgba(0,0,0,0.5)]"
               />

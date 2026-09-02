@@ -92,7 +92,7 @@ export default function GolfHero({
               <Image
                 src={bannerImage}
                 alt={concernName}
-                fill
+                fill sizes="100vw"
                 priority
                 className="object-contain drop-shadow-[0_10px_25px_rgba(0,0,0,0.5)]"
               />

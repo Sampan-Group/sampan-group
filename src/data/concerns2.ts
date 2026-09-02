@@ -131,9 +131,9 @@ export const concerns2: Concern[] = [
     id: 16,
     name: "Sampan Highway Inn Restaurant & Party Center",
     category: "Hospitality & Leisure",
-    tagline: "Restaurant and event zone beside Sampan Highway Inn",
+    tagline: "Premier Highway Dining, Grand Event Halls & Party Banquet Center",
     logo: "/images/brand/sampanhighwayinnresturant.png",
-    href: "https://www.sampangroup.com.bd/sampan-highway-inn-restaurant-party-centre",
+    href: "/our_divisions/hospitality-highway-travel/sampan-highway-inn-restaurant-party-center",
   },
   {
     id: 17,

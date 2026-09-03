@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import RealEstateHero from "@/components/real-estate/RealEstateHero";
-import UnitTypesAndSizes from "@/components/real-estate/UnitTypesAndSizes";
-import LandShareStructure from "@/components/real-estate/LandShareStructure";
-import ConstructionProgressTracker from "@/components/real-estate/ConstructionProgressTracker";
-import FloorPlansViewer from "@/components/real-estate/FloorPlansViewer";
-import LegalCredentialsModule from "@/components/real-estate/LegalCredentialsModule";
-import WalkthroughRenderGallery from "@/components/real-estate/WalkthroughRenderGallery";
-import PaymentPlanCalculator from "@/components/real-estate/PaymentPlanCalculator";
-import SiteVisitBookingForm from "@/components/real-estate/SiteVisitBookingForm";
-import DownloadableBrochureCTA from "@/components/real-estate/DownloadableBrochureCTA";
-import RealEstateLocationMap from "@/components/real-estate/RealEstateLocationMap";
+import RealEstateHero from "../components/RealEstateHero";
+import UnitTypesAndSizes from "../components/UnitTypesAndSizes";
+import LandShareStructure from "../components/LandShareStructure";
+import ConstructionProgressTracker from "../components/ConstructionProgressTracker";
+import FloorPlansViewer from "../components/FloorPlansViewer";
+import LegalCredentialsModule from "../components/LegalCredentialsModule";
+import WalkthroughRenderGallery from "../components/WalkthroughRenderGallery";
+import PaymentPlanCalculator from "../components/PaymentPlanCalculator";
+import SiteVisitBookingForm from "../components/SiteVisitBookingForm";
+import DownloadableBrochureCTA from "../components/DownloadableBrochureCTA";
+import RealEstateLocationMap from "../components/RealEstateLocationMap";
 
 export const metadata: Metadata = {
   title: "Sampan Motalib Skyline | Pre-Launch High-Rise Residential Tower",
@@ -73,7 +73,7 @@ const floorPlans = [
     name: "Typical Skyline Floor Plan",
     category: "Typical Floor",
     sizeSqFt: "3 Units Per Floor",
-    image: "/images/concerns/sampan-development-ltd.png",
+    image: "/images/concerns/sampan-dev-ltd.png",
     description: "Low-density 3-unit per floor layout ensuring maximum privacy and light.",
     features: ["Low Density Design", "3 Passenger Lifts", "Rooftop Sky Garden"],
   },
@@ -108,9 +108,9 @@ const landmarks = [
 
 export default function SampanMotalibSkylinePage() {
   return (
-    <main className="bg-[#f3f6f2] text-[#183b2b] antialiased selection:bg-[#ca8a04] selection:text-neutral-950">
+    <main className="bg-[#f3f6f2] text-[#183b2b] antialiased selection:bg-[#0284c7] selection:text-white">
       
-      {/* 1. Hero Overview — Dark for Transparent Navbar */}
+      {/* 1. Hero Overview — Skyline Blue (#0284c7) Accent */}
       <RealEstateHero
         title="Sampan Motalib Skyline"
         subtitle="Pre-Launch 18-Storey High-Rise Residential Tower"
@@ -120,10 +120,11 @@ export default function SampanMotalibSkylinePage() {
         description="Experience pre-launch pricing on an 18-storey high-rise luxury residential tower featuring smart home automation and panoramic urban views."
         image="/images/projects/Sampan-White-House-&-Motel.png"
         facts={facts}
-        theme="dark-slate"
+        accentColor="#0284c7"
+        badgeColor="#0284c7"
       />
 
-      {/* 2. Unit Configurations — DivisionsSection Green bg-[#f3f6f2] */}
+      {/* 2. Unit Configurations */}
       <UnitTypesAndSizes
         title="Pre-Launch Suite Configurations"
         subtitle="Explore 3 & 4 bedroom skyline suites and top-floor penthouses."
@@ -131,7 +132,7 @@ export default function SampanMotalibSkylinePage() {
         bgTheme="divisions-green"
       />
 
-      {/* 3. Land Share Model — AboutPreview Warm Ivory bg-[#F5F5F2] */}
+      {/* 3. Land Share Model */}
       <LandShareStructure
         totalLandArea="15 Katha"
         totalSharesCount="54 Pre-Launch Shares"
@@ -140,7 +141,7 @@ export default function SampanMotalibSkylinePage() {
         bgTheme="about-ivory"
       />
 
-      {/* 4. Location + Map — DivisionsSection Green bg-[#f3f6f2] */}
+      {/* 4. Location + Map */}
       <RealEstateLocationMap
         projectName="Sampan Motalib Skyline"
         address="Central Dhaka Urban Corridor, Bangladesh."
@@ -150,7 +151,7 @@ export default function SampanMotalibSkylinePage() {
         bgTheme="divisions-green"
       />
 
-      {/* 5. Construction Progress — AboutPreview Warm Ivory bg-[#F5F5F2] */}
+      {/* 5. Construction Progress */}
       <ConstructionProgressTracker
         overallCompletionPercentage={25}
         expectedHandoverDate="Q4 2029"
@@ -159,37 +160,37 @@ export default function SampanMotalibSkylinePage() {
         bgTheme="about-ivory"
       />
 
-      {/* 6. Floor Plans — DivisionsSection Green bg-[#f3f6f2] */}
+      {/* 6. Floor Plans */}
       <FloorPlansViewer
         plans={floorPlans}
         bgTheme="divisions-green"
       />
 
-      {/* 7. Legal Credentials — AboutPreview Warm Ivory bg-[#F5F5F2] */}
+      {/* 7. Legal Credentials */}
       <LegalCredentialsModule
         credentials={legalCredentials}
         bgTheme="about-ivory"
       />
 
-      {/* 8. 3D Renders — DivisionsSection Green bg-[#f3f6f2] */}
+      {/* 8. 3D Renders */}
       <WalkthroughRenderGallery
         items={renders}
         bgTheme="divisions-green"
       />
 
-      {/* 9. Payment Calculator — AboutPreview Warm Ivory bg-[#F5F5F2] */}
+      {/* 9. Payment Calculator */}
       <PaymentPlanCalculator
         defaultPropertyPriceBDT={7800000}
         bgTheme="about-ivory"
       />
 
-      {/* 10. Brochure Download — DivisionsSection Green bg-[#f3f6f2] */}
+      {/* 10. Brochure Download */}
       <DownloadableBrochureCTA
         projectName="Sampan Motalib Skyline"
         bgTheme="divisions-green"
       />
 
-      {/* 11. Site Visit Form — AboutPreview Warm Ivory bg-[#F5F5F2] */}
+      {/* 11. Site Visit Form */}
       <SiteVisitBookingForm
         projectName="Sampan Motalib Skyline"
         bgTheme="about-ivory"

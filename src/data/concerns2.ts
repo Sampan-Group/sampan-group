@@ -17,7 +17,6 @@ export const concerns2: Concern[] = [
     tagline: "Residential condominium project in Ashulia",
     logo: "/images/brand/sampanmetrosquare.png",
     href: "/our_divisions/real-state-and-land-investment/sampan-metro-square",
-
   },
   {
     id: 3,
@@ -78,27 +77,29 @@ export const concerns2: Concern[] = [
   {
     id: 10,
     name: "Sampan Industrial Park",
-    category: "Development & Construction",
+    category: "Manufacturing & Industrial",
     tagline:
-      "Manufacturing hub (houses Hollow Bricks & Tiles, Pet & Beverage).",
-    logo: "/images/brand/sampanindustrial.png",
-    href: "/our_divisions/real-state-and-land-investment/sampan-industrial-park",
+      "Flagship manufacturing hub housing hollow bricks, tiles, pet & beverage units.",
+    logo: "/images/brand/industrialpark.png",
+    href: "/our_divisions/manufacturing-industrial/sampan-industrial-park",
   },
   {
     id: 11,
     name: "Sampan Hollow Bricks & Tiles",
-    category: "Development & Construction",
-    tagline: "Manufactures building materials",
+    category: "Manufacturing & Industrial",
+    tagline:
+      "Eco-friendly hollow bricks, paving blocks, and ceramic tiles manufacturing.",
     logo: "/images/brand/sampanhollowbricksandtiles.png",
-    href: "https://www.sampangroup.com.bd/sampan-hollow-bricks-tiles",
+    href: "/our_divisions/manufacturing-industrial/sampan-hollow-bricks-tiles",
   },
   {
     id: 12,
     name: "Sampan Pet & Beverage",
-    category: "Development & Construction",
-    tagline: "Manufactures plastic bottles, pet food, beverages",
+    category: "Manufacturing & Industrial",
+    tagline:
+      "Automated PET bottle preforms, mineral water, and beverage bottling.",
     logo: "/images/brand/petandbeverage.png",
-    href: "https://www.sampangroup.com.bd/sampan-pet-beverage",
+    href: "/our_divisions/manufacturing-industrial/sampan-pet-beverage",
   },
   {
     id: 13,
@@ -106,6 +107,7 @@ export const concerns2: Concern[] = [
     category: "Development & Construction",
     tagline: "New Auto showroom + cafe, car wash, facilities.",
     logo: "/images/brand/sampanauto.png",
+    href: "/our_divisions/real-state-and-land-investment/sampan-cafe-metro",
   },
 
   // Hospitality, Resort & Highway Travel
@@ -129,9 +131,9 @@ export const concerns2: Concern[] = [
     id: 16,
     name: "Sampan Highway Inn Restaurant & Party Center",
     category: "Hospitality & Leisure",
-    tagline: "Restaurant and event zone beside Sampan Highway Inn",
+    tagline: "Premier Highway Dining, Grand Event Halls & Party Banquet Center",
     logo: "/images/brand/sampanhighwayinnresturant.png",
-    href: "https://www.sampangroup.com.bd/sampan-highway-inn-restaurant-party-centre",
+    href: "/our_divisions/hospitality-highway-travel/sampan-highway-inn-restaurant-party-center",
   },
   {
     id: 17,
@@ -153,15 +155,17 @@ export const concerns2: Concern[] = [
     id: 19,
     name: "Sampan Agro & Golf Resort",
     category: "Hospitality & Leisure",
-    tagline: "A modern family Resort for everyone.",
+    tagline: "Integrated Luxury Resort, Championship Fairways & Sustainable Farm Escape (Ongoing)",
     logo: "/images/brand/agroandgolf.png",
+    href: "/our_divisions/hospitality-highway-travel/sampan-agro-golf-resort",
   },
   {
     id: 20,
     name: "Sampan Agro & Golf Club & Lounge",
     category: "Hospitality & Leisure",
-    tagline: "Club/membership share.",
-    logo: "/images/brand/golfacademy.png",
+    tagline: "Exclusive SAGCL VIP Membership Shares, Private Lounge & Resort Privileges (Ongoing)",
+    logo: "/images/brand/sampanagroandgolfclubandlounge.png",
+    href: "/our_divisions/hospitality-highway-travel/sampan-agro-golf-club-lounge",
   },
   {
     id: 21,
@@ -177,8 +181,9 @@ export const concerns2: Concern[] = [
     id: 22,
     name: "Sampan Golf Academy",
     category: "Golf Zone",
-    tagline: "Professional Golf Training & Development",
-    logo: "/images/brand/agroandgolf.png",
+    tagline: "PGA-Certified Golf Training, TrackMan Simulators & Junior Academy (Coming Soon)",
+    logo: "/images/brand/golfacademy.png",
+    href: "/our_divisions/golf-zone/sampan-golf-academy",
   },
   // {
   //   id: 23,
@@ -195,7 +200,7 @@ export const concerns2: Concern[] = [
     category: "Agro & Fresh Produce",
     tagline: "Bulk sale of vegetables, fruits, flowers, etc",
     logo: "/images/brand/sampanechoagro.png",
-    href: "/our_divisions/hospitality-highway-travel/sampan-eco-agro",
+    href: "/our_divisions/agro-fresh-produce/sampan-eco-agro",
   },
 
   // Retail Shop & Super Shop
@@ -203,63 +208,73 @@ export const concerns2: Concern[] = [
     id: 24,
     name: "Sampan Sweet Box",
     category: "Retail Shop & Super Shop",
-    tagline: "Premium Sweets & Confectionery, tied to Highway Inn",
+    tagline:
+      "Premium Sweets, Confectionery & Artisanal Mishti, tied to Highway Inn.",
     logo: "/images/brand/sweetbox.png",
-    href: "https://www.sampangroup.com.bd/sampan-sweet-box",
+    href: "/our_divisions/retail-super-shops/sampan-sweet-box",
   },
   {
     id: 25,
     name: "Sampan Mart",
     category: "Retail Shop & Super Shop",
-    tagline: "Online + offline super shop, tied to Highway Inn",
-    logo: "/images/brand/sampansupershop.png",
+    tagline: "Flagship online + offline super shop experience (Coming Soon).",
+    logo: "/images/brand/sampanmart.png",
+    href: "/our_divisions/retail-super-shops/sampan-mart",
   },
   {
     id: 26,
     name: "Mini Sampan Super Shop",
     category: "Retail Shop & Super Shop",
-    tagline: "Second super shop, tied to Highway Inn",
-    logo: "/images/brand/sampanretail.png",
+    tagline:
+      "Express neighborhood super shop, fresh groceries & daily essentials.",
+    logo: "/images/brand/happyshopping.png",
+    href: "/our_divisions/retail-super-shops/mini-sampan-super-shop",
   },
 
   // Automotive, Fuel & Mobility
   {
     id: 27,
     name: "Sampan Auto",
-    category: "Automotive & Energy",
-    tagline: "Car sales, imports, and Japanese parts",
+    category: "Automotive, Fuel & Mobility",
+    tagline:
+      "Japanese vehicle imports, luxury recondition cars, and genuine auto parts.",
     logo: "/images/brand/sampanauto.png",
-    href: "https://www.sampangroup.com.bd/sampan-auto",
+    href: "/our_divisions/automotive-fuel-mobility/sampan-auto",
   },
   {
     id: 28,
     name: "Sampan Filling Station",
-    category: "Automotive & Energy",
-    tagline: "Fuel station beside Highway Inn",
+    category: "Automotive, Fuel & Mobility",
+    tagline:
+      "24/7 Octane 95, Diesel & Mobil lubricants station beside Highway Inn.",
     logo: "/images/brand/sampanfillingstation.png",
-    href: "https://www.sampangroup.com.bd/sampan-filling-station",
+    href: "/our_divisions/automotive-fuel-mobility/sampan-filling-station",
   },
   {
     id: 29,
     name: "Sampan LPG Filling Station",
-    category: "Automotive & Energy",
-    tagline: "Gas station beside Highway Inn",
+    category: "Automotive, Fuel & Mobility",
+    tagline: "High-pressure Auto LPG dispensing station & cylinder refilling.",
     logo: "/images/brand/lpg.png",
-    href: "https://www.sampangroup.com.bd/sampan-lpg-station",
+    href: "/our_divisions/automotive-fuel-mobility/sampan-lpg-filling-station",
   },
   {
     id: 30,
     name: "Sampan EV Car Charging Station",
-    category: "Automotive & Energy",
-    tagline: "EV charging beside Highway Inn",
-    logo: "/images/brand/sampanfillingstation.png",
+    category: "Automotive, Fuel & Mobility",
+    tagline:
+      "Ultra-fast 120kW DC fast charging & AC Type 2 chargers beside Highway Inn.",
+    logo: "/images/brand/evc.png",
+    href: "/our_divisions/automotive-fuel-mobility/sampan-ev-car-charging-station",
   },
   {
     id: 31,
     name: "Sampan Towing Service",
-    category: "Automotive & Energy",
-    tagline: "Car towing around Highway Inn",
-    logo: "/images/brand/towing.webp",
+    category: "Automotive, Fuel & Mobility",
+    tagline:
+      "24/7 emergency flatbed towing & highway vehicle recovery service.",
+    logo: "/images/brand/sampanauto.png",
+    href: "/our_divisions/automotive-fuel-mobility/sampan-towing-service",
   },
 
   // Defense & Security
@@ -269,7 +284,7 @@ export const concerns2: Concern[] = [
     category: "Security",
     tagline: "Sampan Firearms & Defense",
     logo: "/images/brand/firearmsco.png",
-    href: "https://www.sampangroup.com.bd/sampan-fire-arms-co",
+    href: "/our_divisions/defense-security/sampan-fire-arms-co",
   },
   {
     id: 33,
@@ -277,7 +292,7 @@ export const concerns2: Concern[] = [
     category: "Security",
     tagline: "Nagar Defense Solutions",
     logo: "/images/brand/nagararmsand.png",
-    href: "https://www.sampangroup.com.bd/nagar-arms-ammunition",
+    href: "/our_divisions/defense-security/nagar-arms-ammunition",
   },
 
   // Education
@@ -285,30 +300,33 @@ export const concerns2: Concern[] = [
     id: 34,
     name: "London School of Higher Studies (LSHS)",
     category: "Professional Education",
-    tagline: "Professional education - CIPS, CMI, UK courses, international.",
+    tagline: "CIPS-Accredited UK Procurement & Supply Chain, Hospitality & Business Qualifications",
     logo: "/images/brand/lshs.png",
+    href: "/our_divisions/professional-education/london-school-of-higher-studies",
   },
 
-  // Maritime / Alternative Assets
   {
     id: 35,
     name: "Sampan Floating Pearl",
     category: "Maritime / Alternative Assets",
-    tagline: "Sampan Maritime Venture and ship-share.",
+    tagline: "Fractional Luxury Vessel & Maritime Asset Investment Shares (Coming Soon)",
     logo: "/images/brand/industrialpark.png",
+    href: "/our_divisions/maritime-alternative-assets/sampan-floating-pearl",
   },
   {
     id: 36,
     name: "Sampan Fish & Meat",
     category: "Agro & Fresh Produce",
     tagline: "Fresh, responsibly sourced food for every table",
-    logo: "/images/brand/sampanechoagro.png",
+    logo: "/images/brand/fishandmeat.png",
+    href: "/our_divisions/agro-fresh-produce/sampan-fish-and-meat",
   },
   {
     id: 38,
-    name: "Sampan Golf Short Drive Range",
+    name: "Sampan Short Drive Range",
     category: "Golf Zone",
-    tagline: "Professional Golf Training & Development",
-    logo: "/images/brand/agroandgolf.png",
+    tagline: "Short Game Practice, Toptracer Bays, Night Floodlit Driving & Events (Coming Soon)",
+    logo: "/images/brand/golfrage.png",
+    href: "/our_divisions/golf-zone/sampan-short-drive-range",
   },
 ];

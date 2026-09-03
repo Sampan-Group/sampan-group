@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import RealEstateHero from "@/components/real-estate/RealEstateHero";
-import UnitTypesAndSizes from "@/components/real-estate/UnitTypesAndSizes";
-import LandShareStructure from "@/components/real-estate/LandShareStructure";
-import ConstructionProgressTracker from "@/components/real-estate/ConstructionProgressTracker";
-import FloorPlansViewer from "@/components/real-estate/FloorPlansViewer";
-import LegalCredentialsModule from "@/components/real-estate/LegalCredentialsModule";
-import WalkthroughRenderGallery from "@/components/real-estate/WalkthroughRenderGallery";
-import PaymentPlanCalculator from "@/components/real-estate/PaymentPlanCalculator";
-import SiteVisitBookingForm from "@/components/real-estate/SiteVisitBookingForm";
-import DownloadableBrochureCTA from "@/components/real-estate/DownloadableBrochureCTA";
-import RealEstateLocationMap from "@/components/real-estate/RealEstateLocationMap";
+import RealEstateHero from "../components/RealEstateHero";
+import UnitTypesAndSizes from "../components/UnitTypesAndSizes";
+import LandShareStructure from "../components/LandShareStructure";
+import ConstructionProgressTracker from "../components/ConstructionProgressTracker";
+import FloorPlansViewer from "../components/FloorPlansViewer";
+import LegalCredentialsModule from "../components/LegalCredentialsModule";
+import WalkthroughRenderGallery from "../components/WalkthroughRenderGallery";
+import PaymentPlanCalculator from "../components/PaymentPlanCalculator";
+import SiteVisitBookingForm from "../components/SiteVisitBookingForm";
+import DownloadableBrochureCTA from "../components/DownloadableBrochureCTA";
+import RealEstateLocationMap from "../components/RealEstateLocationMap";
 
 export const metadata: Metadata = {
   title: "Sampan Niketon | Serene Family Community Housing Complex",
@@ -61,7 +61,7 @@ const floorPlans = [
     name: "Niketon Family Complex Layout",
     category: "Complex Master Plan",
     sizeSqFt: "14 Katha Footprint",
-    image: "/images/concerns/sampan-development-ltd.png",
+    image: "/images/concerns/sampan-dev-ltd.png",
     description: "Central courtyard residential layout promoting community living.",
     features: ["Central Green Courtyard", "Children's Play Area", "24/7 CCTV Monitoring"],
   },
@@ -83,7 +83,7 @@ const renders = [
     title: "Sampan Niketon Courtyard Rendering",
     category: "exterior" as const,
     categoryLabel: "Exterior Renders",
-    image: "/images/concerns/sampan-development-ltd.png",
+    image: "/images/concerns/sampan-dev-ltd.png",
     type: "image" as const,
     description: "Serene residential housing complex with landscaped courtyards.",
   },
@@ -96,9 +96,9 @@ const landmarks = [
 
 export default function SampanNiketonPage() {
   return (
-    <main className="bg-[#f3f6f2] text-[#183b2b] antialiased selection:bg-[#ca8a04] selection:text-neutral-950">
+    <main className="bg-[#f3f6f2] text-[#183b2b] antialiased selection:bg-[#25633a] selection:text-white">
       
-      {/* 1. Hero Overview — Dark for Transparent Navbar */}
+      {/* 1. Hero Overview — Sampan Niketon Green (#25633a) Accent from Logo */}
       <RealEstateHero
         title="Sampan Niketon"
         subtitle="Serene Family Community Housing Complex"
@@ -106,18 +106,19 @@ export default function SampanNiketonPage() {
         statusBadge="Upcoming Project"
         statusType="coming-soon"
         description="A serene residential housing complex designed for multi-generational families with landscaped green courtyards in the Niketon vicinity."
-        image="/images/concerns/sampan-development-ltd.png"
+        image="/images/concerns/sampan-dev-ltd.png"
         facts={facts}
-        theme="dark-slate"
+        accentColor="#25633a"
+        badgeColor="#25633a"
       />
 
-      {/* 2. Unit Configurations — DivisionsSection Green bg-[#f3f6f2] */}
+      {/* 2. Unit Configurations */}
       <UnitTypesAndSizes
         units={units}
         bgTheme="divisions-green"
       />
 
-      {/* 3. Land Share Model — AboutPreview Warm Ivory bg-[#F5F5F2] */}
+      {/* 3. Land Share Model */}
       <LandShareStructure
         totalLandArea="14 Katha"
         totalSharesCount="42 Family Shares"
@@ -126,17 +127,17 @@ export default function SampanNiketonPage() {
         bgTheme="about-ivory"
       />
 
-      {/* 4. Location + Map — DivisionsSection Green bg-[#f3f6f2] */}
+      {/* 4. Location + Map */}
       <RealEstateLocationMap
         projectName="Sampan Niketon"
         address="Niketon Vicinity, Dhaka, Bangladesh."
         gpsCoordinates="23.7712° N, 90.4104° E"
-        embedMapUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14604.6!2d90.4104!3d23.7712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDQ2JzE2LjMiTiA5MMKwMjQnMzcuNCJF!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd"
+        embedMapUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14604.6!2d90.4104!3d23.7712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDQ2JzE2LjMiTiA5MMKwMjQnMzTuNCJF!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd"
         landmarks={landmarks}
         bgTheme="divisions-green"
       />
 
-      {/* 5. Construction Progress — AboutPreview Warm Ivory bg-[#F5F5F2] */}
+      {/* 5. Construction Progress */}
       <ConstructionProgressTracker
         overallCompletionPercentage={20}
         expectedHandoverDate="Q4 2028"
@@ -145,37 +146,37 @@ export default function SampanNiketonPage() {
         bgTheme="about-ivory"
       />
 
-      {/* 6. Floor Plans — DivisionsSection Green bg-[#f3f6f2] */}
+      {/* 6. Floor Plans */}
       <FloorPlansViewer
         plans={floorPlans}
         bgTheme="divisions-green"
       />
 
-      {/* 7. Legal Credentials — AboutPreview Warm Ivory bg-[#F5F5F2] */}
+      {/* 7. Legal Credentials */}
       <LegalCredentialsModule
         credentials={legalCredentials}
         bgTheme="about-ivory"
       />
 
-      {/* 8. 3D Renders — DivisionsSection Green bg-[#f3f6f2] */}
+      {/* 8. 3D Renders */}
       <WalkthroughRenderGallery
         items={renders}
         bgTheme="divisions-green"
       />
 
-      {/* 9. Payment Calculator — AboutPreview Warm Ivory bg-[#F5F5F2] */}
+      {/* 9. Payment Calculator */}
       <PaymentPlanCalculator
         defaultPropertyPriceBDT={8500000}
         bgTheme="about-ivory"
       />
 
-      {/* 10. Brochure Download — DivisionsSection Green bg-[#f3f6f2] */}
+      {/* 10. Brochure Download */}
       <DownloadableBrochureCTA
         projectName="Sampan Niketon"
         bgTheme="divisions-green"
       />
 
-      {/* 11. Site Visit Form — AboutPreview Warm Ivory bg-[#F5F5F2] */}
+      {/* 11. Site Visit Form */}
       <SiteVisitBookingForm
         projectName="Sampan Niketon"
         bgTheme="about-ivory"

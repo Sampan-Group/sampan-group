@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import RealEstateHero from "@/components/real-estate/RealEstateHero";
-import UnitTypesAndSizes from "@/components/real-estate/UnitTypesAndSizes";
-import LandShareStructure from "@/components/real-estate/LandShareStructure";
-import ConstructionProgressTracker from "@/components/real-estate/ConstructionProgressTracker";
-import FloorPlansViewer from "@/components/real-estate/FloorPlansViewer";
-import LegalCredentialsModule from "@/components/real-estate/LegalCredentialsModule";
-import WalkthroughRenderGallery from "@/components/real-estate/WalkthroughRenderGallery";
-import PaymentPlanCalculator from "@/components/real-estate/PaymentPlanCalculator";
-import SiteVisitBookingForm from "@/components/real-estate/SiteVisitBookingForm";
-import DownloadableBrochureCTA from "@/components/real-estate/DownloadableBrochureCTA";
-import RealEstateLocationMap from "@/components/real-estate/RealEstateLocationMap";
+import RealEstateHero from "../components/RealEstateHero";
+import UnitTypesAndSizes from "../components/UnitTypesAndSizes";
+import LandShareStructure from "../components/LandShareStructure";
+import ConstructionProgressTracker from "../components/ConstructionProgressTracker";
+import FloorPlansViewer from "../components/FloorPlansViewer";
+import LegalCredentialsModule from "../components/LegalCredentialsModule";
+import WalkthroughRenderGallery from "../components/WalkthroughRenderGallery";
+import PaymentPlanCalculator from "../components/PaymentPlanCalculator";
+import SiteVisitBookingForm from "../components/SiteVisitBookingForm";
+import DownloadableBrochureCTA from "../components/DownloadableBrochureCTA";
+import RealEstateLocationMap from "../components/RealEstateLocationMap";
 
 export const metadata: Metadata = {
   title: "Sampan 21st Century | Eco-Centric Master Planned Estate",
@@ -61,7 +61,7 @@ const floorPlans = [
     name: "Sampan 21st Century Master Plan",
     category: "Master Estate Layout",
     sizeSqFt: "20 Katha Footprint",
-    image: "/images/concerns/sampan-development-ltd.png",
+    image: "/images/concerns/sampan-dev-ltd.png",
     description: "Eco-centric master housing estate featuring central parks and solar power grids.",
     features: ["Solar-Powered Street Lights", "Central Park & Jogging Track", "Gated Entry"],
   },
@@ -83,7 +83,7 @@ const renders = [
     title: "Sampan 21st Century Estate Rendering",
     category: "exterior" as const,
     categoryLabel: "Exterior Renders",
-    image: "/images/concerns/sampan-development-ltd.png",
+    image: "/images/concerns/sampan-dev-ltd.png",
     type: "image" as const,
     description: "Modern eco-centric housing architecture.",
   },
@@ -96,9 +96,9 @@ const landmarks = [
 
 export default function Sampan21stCenturyPage() {
   return (
-    <main className="bg-[#f3f6f2] text-[#183b2b] antialiased selection:bg-[#ca8a04] selection:text-neutral-950">
+    <main className="bg-[#f3f6f2] text-[#183b2b] antialiased selection:bg-[#25633a] selection:text-white">
       
-      {/* 1. Hero Overview — Dark for Transparent Navbar */}
+      {/* 1. Hero Overview — Custom Deep Emerald Green (#25633a) from Logo */}
       <RealEstateHero
         title="Sampan 21st Century"
         subtitle="Eco-Centric Master Planned Housing Estate"
@@ -106,18 +106,19 @@ export default function Sampan21stCenturyPage() {
         statusBadge="Upcoming Phase"
         statusType="coming-soon"
         description="An eco-centric master-planned housing community engineered for 21st-century modern living, solar power integration, and smart infrastructure."
-        image="/images/concerns/sampan-development-ltd.png"
+        image="/images/concerns/sampan-dev-ltd.png"
         facts={facts}
-        theme="dark-slate"
+        accentColor="#25633a"
+        badgeColor="#00a651"
       />
 
-      {/* 2. Unit Configurations — DivisionsSection Green bg-[#f3f6f2] */}
+      {/* 2. Unit Configurations */}
       <UnitTypesAndSizes
         units={units}
         bgTheme="divisions-green"
       />
 
-      {/* 3. Land Share Model — AboutPreview Warm Ivory bg-[#F5F5F2] */}
+      {/* 3. Land Share Model */}
       <LandShareStructure
         totalLandArea="20 Katha"
         totalSharesCount="60 Land Shares"
@@ -126,7 +127,7 @@ export default function Sampan21stCenturyPage() {
         bgTheme="about-ivory"
       />
 
-      {/* 4. Location + Map — DivisionsSection Green bg-[#f3f6f2] */}
+      {/* 4. Location + Map */}
       <RealEstateLocationMap
         projectName="Sampan 21st Century"
         address="Greater Dhaka Growth Belt, Bangladesh."
@@ -136,7 +137,7 @@ export default function Sampan21stCenturyPage() {
         bgTheme="divisions-green"
       />
 
-      {/* 5. Construction Progress — AboutPreview Warm Ivory bg-[#F5F5F2] */}
+      {/* 5. Construction Progress */}
       <ConstructionProgressTracker
         overallCompletionPercentage={15}
         expectedHandoverDate="Q4 2029"
@@ -145,37 +146,37 @@ export default function Sampan21stCenturyPage() {
         bgTheme="about-ivory"
       />
 
-      {/* 6. Floor Plans — DivisionsSection Green bg-[#f3f6f2] */}
+      {/* 6. Floor Plans */}
       <FloorPlansViewer
         plans={floorPlans}
         bgTheme="divisions-green"
       />
 
-      {/* 7. Legal Credentials — AboutPreview Warm Ivory bg-[#F5F5F2] */}
+      {/* 7. Legal Credentials */}
       <LegalCredentialsModule
         credentials={legalCredentials}
         bgTheme="about-ivory"
       />
 
-      {/* 8. 3D Renders — DivisionsSection Green bg-[#f3f6f2] */}
+      {/* 8. 3D Renders */}
       <WalkthroughRenderGallery
         items={renders}
         bgTheme="divisions-green"
       />
 
-      {/* 9. Payment Calculator — AboutPreview Warm Ivory bg-[#F5F5F2] */}
+      {/* 9. Payment Calculator */}
       <PaymentPlanCalculator
         defaultPropertyPriceBDT={6200000}
         bgTheme="about-ivory"
       />
 
-      {/* 10. Brochure Download — DivisionsSection Green bg-[#f3f6f2] */}
+      {/* 10. Brochure Download */}
       <DownloadableBrochureCTA
         projectName="Sampan 21st Century"
         bgTheme="divisions-green"
       />
 
-      {/* 11. Site Visit Form — AboutPreview Warm Ivory bg-[#F5F5F2] */}
+      {/* 11. Site Visit Form */}
       <SiteVisitBookingForm
         projectName="Sampan 21st Century"
         bgTheme="about-ivory"

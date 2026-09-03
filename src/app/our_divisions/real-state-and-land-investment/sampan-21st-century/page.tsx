@@ -61,7 +61,7 @@ const floorPlans = [
     name: "Sampan 21st Century Master Plan",
     category: "Master Estate Layout",
     sizeSqFt: "20 Katha Footprint",
-    image: "/images/concerns/sampan-dev-ltd.png",
+    image: "/images/projects/21.jpg",
     description: "Eco-centric master housing estate featuring central parks and solar power grids.",
     features: ["Solar-Powered Street Lights", "Central Park & Jogging Track", "Gated Entry"],
   },
@@ -83,7 +83,7 @@ const renders = [
     title: "Sampan 21st Century Estate Rendering",
     category: "exterior" as const,
     categoryLabel: "Exterior Renders",
-    image: "/images/concerns/sampan-dev-ltd.png",
+    image: "/images/projects/21.jpg",
     type: "image" as const,
     description: "Modern eco-centric housing architecture.",
   },
@@ -97,7 +97,7 @@ const landmarks = [
 export default function Sampan21stCenturyPage() {
   return (
     <main className="bg-[#f3f6f2] text-[#183b2b] antialiased selection:bg-[#25633a] selection:text-white">
-      
+
       {/* 1. Hero Overview — Custom Deep Emerald Green (#25633a) from Logo */}
       <RealEstateHero
         title="Sampan 21st Century"
@@ -106,7 +106,7 @@ export default function Sampan21stCenturyPage() {
         statusBadge="Upcoming Phase"
         statusType="coming-soon"
         description="An eco-centric master-planned housing community engineered for 21st-century modern living, solar power integration, and smart infrastructure."
-        image="/images/concerns/sampan-dev-ltd.png"
+        image="/images/projects/21.jpg"
         facts={facts}
         accentColor="#25633a"
         badgeColor="#00a651"

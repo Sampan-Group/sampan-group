@@ -61,7 +61,7 @@ const floorPlans = [
     name: "Single Floor Palatial Layout",
     category: "Full Floor Plan",
     sizeSqFt: "2,100 sq ft Single Unit",
-    image: "/images/concerns/sampan-dev-ltd.png",
+    image: "/images/projects/sampantaj.jpg",
     description: "360-degree ventilation layout covering the entire floor plate.",
     features: ["4 Open Balconies", "Private Elevator Hall", "Staff Room & Bath"],
   },
@@ -83,7 +83,7 @@ const renders = [
     title: "Sampan Taj Boutique Elevation",
     category: "exterior" as const,
     categoryLabel: "Exterior Renders",
-    image: "/images/concerns/sampan-dev-ltd.png",
+    image: "/images/projects/sampantaj.jpg",
     type: "image" as const,
     description: "Elegant boutique luxury facade.",
   },
@@ -96,7 +96,7 @@ const landmarks = [
 export default function SampanTajPage() {
   return (
     <main className="bg-[#f3f6f2] text-[#183b2b] antialiased selection:bg-[#25633a] selection:text-white">
-      
+
       {/* 1. Hero Overview — Sampan Taj Green (#25633a) Accent from Logo */}
       <RealEstateHero
         title="Sampan Taj"
@@ -105,7 +105,7 @@ export default function SampanTajPage() {
         statusBadge="Upcoming Project"
         statusType="coming-soon"
         description="Boutique luxury residential apartments offering single-unit-per-floor privacy, palatial 2,100 sq ft floor plans, and imported luxury finishes."
-        image="/images/concerns/sampan-dev-ltd.png"
+        image="/images/projects/sampantaj.jpg"
         facts={facts}
         accentColor="#25633a"
         badgeColor="#25633a"

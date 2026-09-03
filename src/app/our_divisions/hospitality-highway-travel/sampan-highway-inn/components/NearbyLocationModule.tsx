@@ -4,48 +4,78 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaMapMarkerAlt, FaCar, FaExternalLinkAlt, FaClock } from "react-icons/fa";
 
-const nearbySpots = [
+interface NearbySpot {
+  id: string;
+  name: string;
+  type: string;
+  distance: string;
+  driveTime: string;
+  image: string;
+  description: string;
+  link: string;
+  external?: boolean;
+}
+
+const nearbySpots: NearbySpot[] = [
   {
-    id: "agro-golf",
-    name: "Sampan Agro & Golf Resort",
-    type: "Resort & Eco-Living",
-    distance: "12 km",
-    driveTime: "14 min drive",
-    image: "/images/featuredConcerns/sampan-agro-golf-resort.png",
-    description: "Scenic 18-hole golf fairways, organic agro farming experiences, luxury cottage stays, and tranquil green landscapes.",
-    link: "/our_divisions/hospitality-highway-travel/sampan-agro-golf-resort",
+    id: "filling-station",
+    name: "Sampan Filling Station",
+    type: "Automotive & Fuel",
+    distance: "100 m",
+    driveTime: "1 min walk",
+    image: "/images/concerns/sampan-filling-station.png",
+    description: "24/7 high-volume highway refuel, octane & diesel station with dedicated heavy vehicle bays.",
+    link: "/our_divisions/automotive-fuel-mobility/sampan-filling-station",
   },
   {
-    id: "padma-riverfront",
-    name: "Padma Bridge Riverfront & Promenade",
-    type: "Tourism & Landmark",
-    distance: "18 km",
-    driveTime: "16 min drive",
-    image: "/images/projects/express-highway-inn.jpg",
-    description: "Iconic Padma river sunset views, riverboat excursions, fresh Hilsa fish dining, and riverside walking boulevards.",
-    link: "https://www.google.com/maps/search/?api=1&query=Padma+Bridge+Riverfront",
-    external: true,
+    id: "lpg-station",
+    name: "Sampan LPG Station",
+    type: "Clean Mobility & Fuel",
+    distance: "150 m",
+    driveTime: "2 min walk",
+    image: "/images/concerns/lpg.png",
+    description: "State-of-the-art LPG autogas conversion and rapid dispenser refueling station.",
+    link: "/our_divisions/automotive-fuel-mobility/sampan-lpg-filling-station",
   },
   {
-    id: "white-house-motel",
+    id: "sampan-mart",
+    name: "Sampan Mart",
+    type: "Retail Super Shop",
+    distance: "50 m",
+    driveTime: "In Complex",
+    image: "/images/facilities/express_highway_inn/4.Sampan-Mart.png",
+    description: "24/7 highway retail super shop stocked with travel essentials, groceries, and fresh snacks.",
+    link: "/our_divisions/retail-super-shops/sampan-mart",
+  },
+  {
+    id: "mini-sampan",
+    name: "Mini Sampan Super Shop",
+    type: "Express Convenience",
+    distance: "50 m",
+    driveTime: "In Complex",
+    image: "/images/logos/mini-sampan.png",
+    description: "Quick-stop express retail kiosk for instant refreshments and travel accessories.",
+    link: "/our_divisions/retail-super-shops/mini-sampan-super-shop",
+  },
+  {
+    id: "white-house",
     name: "Sampan White House & Motel",
-    type: "Transit Hospitality",
-    distance: "22 km",
-    driveTime: "20 min drive",
+    type: "Transit Accommodation",
+    distance: "1.2 km",
+    driveTime: "2 min drive",
     image: "/images/projects/Sampan-White-House-&-Motel.png",
-    description: "A sister hospitality property offering quiet transit accommodation, flexible day-use rooms, and vehicle servicing.",
+    description: "A sister hospitality property providing flexible hourly stays, quiet rooms, and private parking.",
     link: "/our_divisions/hospitality-highway-travel/sampan-white-house",
   },
   {
-    id: "historic-heritage",
-    name: "Historic Heritage & Cultural Sites",
-    type: "Heritage & Culture",
-    distance: "48 km",
-    driveTime: "42 min drive",
-    image: "/images/concerns/highway-motel.png",
-    description: "UNESCO World Heritage medieval architecture, ancient terracotta monuments, and peaceful historic spiritual shrines.",
-    link: "https://www.google.com/maps/search/?api=1&query=Historic+Mosque+City+Bangladesh",
-    external: true,
+    id: "short-drive-range",
+    name: "Sampan Short Drive Range (Coming Soon)",
+    type: "Golf & Recreation",
+    distance: "Adjacent",
+    driveTime: "Coming Soon",
+    image: "/images/featuredConcerns/sampan-agro-golf-resort.png",
+    description: "Upcoming precision short-game golf practice range and driving bays for golf enthusiasts and highway visitors.",
+    link: "/our_divisions/golf-zone/sampan-short-drive-range",
   },
 ];
 
@@ -53,7 +83,7 @@ export default function NearbyLocationModule() {
   return (
     <section id="nearby" className="bg-[#0b100d] py-24 sm:py-32 text-white border-t border-white/10 relative overflow-hidden">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
-        
+
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
@@ -89,7 +119,7 @@ export default function NearbyLocationModule() {
                   sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                
+
                 {/* Distance Chip */}
                 <div className="absolute top-3.5 right-3.5 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-xs font-bold text-emerald-400 flex items-center gap-1.5">
                   <FaMapMarkerAlt className="text-[10px]" />

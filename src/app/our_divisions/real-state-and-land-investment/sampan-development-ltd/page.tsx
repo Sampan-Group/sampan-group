@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import RealEstateHero from "@/components/real-estate/RealEstateHero";
-import UnitTypesAndSizes from "@/components/real-estate/UnitTypesAndSizes";
-import LandShareStructure from "@/components/real-estate/LandShareStructure";
-import ConstructionProgressTracker from "@/components/real-estate/ConstructionProgressTracker";
-import FloorPlansViewer from "@/components/real-estate/FloorPlansViewer";
-import LegalCredentialsModule from "@/components/real-estate/LegalCredentialsModule";
-import WalkthroughRenderGallery from "@/components/real-estate/WalkthroughRenderGallery";
-import PaymentPlanCalculator from "@/components/real-estate/PaymentPlanCalculator";
-import SiteVisitBookingForm from "@/components/real-estate/SiteVisitBookingForm";
-import DownloadableBrochureCTA from "@/components/real-estate/DownloadableBrochureCTA";
-import RealEstateLocationMap from "@/components/real-estate/RealEstateLocationMap";
+import RealEstateHero from "../components/RealEstateHero";
+import UnitTypesAndSizes from "../components/UnitTypesAndSizes";
+import LandShareStructure from "../components/LandShareStructure";
+import ConstructionProgressTracker from "../components/ConstructionProgressTracker";
+import FloorPlansViewer from "../components/FloorPlansViewer";
+import LegalCredentialsModule from "../components/LegalCredentialsModule";
+import WalkthroughRenderGallery from "../components/WalkthroughRenderGallery";
+import PaymentPlanCalculator from "../components/PaymentPlanCalculator";
+import SiteVisitBookingForm from "../components/SiteVisitBookingForm";
+import DownloadableBrochureCTA from "../components/DownloadableBrochureCTA";
+import RealEstateLocationMap from "../components/RealEstateLocationMap";
 
 export const metadata: Metadata = {
   title: "Sampan Development Ltd | Master Architectural & Land Development",
@@ -73,7 +73,7 @@ const floorPlans = [
     name: "Sampan Development Portfolio Master Plan",
     category: "Division Master Plan",
     sizeSqFt: "Multi-Acre Development Grid",
-    image: "/images/concerns/sampan-development-ltd.png",
+    image: "/images/concerns/sampan-dev-ltd.png",
     description: "Master architectural planning incorporating green zones, commercial facades, and residential towers.",
     features: ["Sustainable Green Corridors", "100% Sound Earthquake Resistant Grid", "Gated Security Control"],
   },
@@ -102,7 +102,7 @@ const renders = [
     title: "Sampan Development Architectural Vision",
     category: "exterior" as const,
     categoryLabel: "Exterior Architecture",
-    image: "/images/concerns/sampan-development-ltd.png",
+    image: "/images/concerns/sampan-dev-ltd.png",
     type: "image" as const,
     description: "Flagship urban architecture and land-share developments across prime transit corridors.",
   },
@@ -117,7 +117,7 @@ const landmarks = [
 export default function SampanDevelopmentLtdPage() {
   return (
     <main className="bg-[#f3f6f2] text-[#183b2b] antialiased selection:bg-[#ca8a04] selection:text-neutral-950">
-      
+
       {/* 1. Hero Overview — Dark for Transparent Navbar Contrast */}
       <RealEstateHero
         title="Sampan Development Ltd"
@@ -126,9 +126,10 @@ export default function SampanDevelopmentLtdPage() {
         statusBadge="Division Flagship"
         statusType="flagship"
         description="The flagship real estate company of Sampan Group. Engineering commercial trade emporiums, residential land-share towers, and sustainable infrastructure across Bangladesh."
-        image="/images/concerns/sampan-development-ltd.png"
+        image="/images/concerns/sampan-dev-ltd.png"
         facts={facts}
-        theme="dark-slate"
+        accentColor="#0284c7"
+        badgeColor="#0284c7"
       />
 
       {/* 2. Unit Configurations — DivisionsSection Soft Green bg-[#f3f6f2] */}

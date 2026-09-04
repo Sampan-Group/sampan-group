@@ -15,17 +15,17 @@ export const metadata: Metadata = {
 };
 
 const sampanMartProducts = [
-  {
-    id: "organic-produce",
-    name: "Sampan Agro Organic Produce Basket",
-    category: "Fresh Farm Produce",
-    priceBDT: "850 BDT",
-    packSize: "5 kg Assorted Vegetables",
-    image: "/images/brand/sampanmart.png",
-    tag: "100% Organic",
-    description: "Daily fresh harvested seasonal vegetables direct from Sampan Eco & Agro farms without synthetic pesticides.",
-    highlights: ["Direct Farm Harvest", "Zero Chemical Pesticides", "Washed & Hygienic Pack"],
-  },
+  // {
+  //   id: "organic-produce",
+  //   name: "Sampan Agro Organic Produce Basket",
+  //   category: "Fresh Farm Produce",
+  //   priceBDT: "850 BDT",
+  //   packSize: "5 kg Assorted Vegetables",
+  //   image: "/images/brand/sampanmart.png",
+  //   tag: "100% Organic",
+  //   description: "Daily fresh harvested seasonal vegetables direct from Sampan Eco & Agro farms without synthetic pesticides.",
+  //   highlights: ["Direct Farm Harvest", "Zero Chemical Pesticides", "Washed & Hygienic Pack"],
+  // },
   {
     id: "olive-oil-extra",
     name: "Imported Cold Pressed Extra Virgin Olive Oil",
@@ -58,27 +58,27 @@ const sampanMartProducts = [
     description: "Pure farm fresh pasteurized milk with full cream content, rich in calcium and vitamin D.",
     highlights: ["100% Pure Cow Milk", "Hygienically Pasteurized", "No Water Addition"],
   },
-  {
-    id: "salmon-fillet",
-    name: "Frozen Norwegian Atlantic Salmon Fillet",
-    category: "Frozen & Meats",
-    priceBDT: "3,200 BDT / kg",
-    packSize: "500g Vacuum Pack",
-    image: "/images/brand/sampanmart.png",
-    tag: "Gourmet",
-    description: "Premium sashimi-grade Norwegian salmon vacuum sealed and blast frozen to preserve omega-3 freshness.",
-    highlights: ["Air-Flown Fresh", "High Omega-3", "Skin-On Boneless"],
-  },
-  {
-    id: "cleaning-combo",
-    name: "Sampan Home Hygiene Master Bundle",
-    category: "Household & Cleaning",
-    priceBDT: "1,450 BDT",
-    packSize: "6-in-1 Box",
-    image: "/images/brand/sampanmart.png",
-    description: "Complete home sanitization kit including floor cleaner, dishwashing liquid, laundry detergent, and disinfectant spray.",
-    highlights: ["Antibacterial Formula", "Eco-Friendly Ingredients", "Value Combo Pack"],
-  },
+  // {
+  //   id: "salmon-fillet",
+  //   name: "Frozen Norwegian Atlantic Salmon Fillet",
+  //   category: "Frozen & Meats",
+  //   priceBDT: "3,200 BDT / kg",
+  //   packSize: "500g Vacuum Pack",
+  //   image: "/images/brand/sampanmart.png",
+  //   tag: "Gourmet",
+  //   description: "Premium sashimi-grade Norwegian salmon vacuum sealed and blast frozen to preserve omega-3 freshness.",
+  //   highlights: ["Air-Flown Fresh", "High Omega-3", "Skin-On Boneless"],
+  // },
+  // {
+  //   id: "cleaning-combo",
+  //   name: "Sampan Home Hygiene Master Bundle",
+  //   category: "Household & Cleaning",
+  //   priceBDT: "1,450 BDT",
+  //   packSize: "6-in-1 Box",
+  //   image: "/images/brand/sampanmart.png",
+  //   description: "Complete home sanitization kit including floor cleaner, dishwashing liquid, laundry detergent, and disinfectant spray.",
+  //   highlights: ["Antibacterial Formula", "Eco-Friendly Ingredients", "Value Combo Pack"],
+  // },
 ];
 
 const sampanMartOffers = [
@@ -169,7 +169,7 @@ const photos = [
 export default function SampanMartPage() {
   return (
     <main className="min-h-screen bg-[#F5F5F2] text-neutral-950">
-      
+
       {/* 1. Hero Banner */}
       <RetailHero
         title="Sampan Mart"
@@ -179,7 +179,7 @@ export default function SampanMartPage() {
         statusBadge="Grand Opening & App Launch Coming Soon"
         statusType="coming-soon"
         description="Combining high-tech automated fulfillment centers with luxury physical walk-in retail lounges. Offering premium imported gourmet delicacies, fresh farm-to-table organic produce, household electronics, and express 30-minute doorstep delivery."
-        bannerImage="/images/brand/sampanmart.png"
+        bannerImage="/images/our_divisions/sampan-mart/sampan-mart.png"
         facts={[
           { value: "15,000+", label: "SKUs & Products" },
           { value: "30 Mins", label: "Express Doorstep Delivery" },

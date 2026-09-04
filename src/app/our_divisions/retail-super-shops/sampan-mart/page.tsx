@@ -32,7 +32,7 @@ const sampanMartProducts = [
     category: "Gourmet Imports",
     priceBDT: "1,850 BDT",
     packSize: "1 Liter Bottle",
-    image: "/images/brand/sampanmart.png",
+    image: "/images/our_divisions/sampan-mart/olive_oil.jpg",
     tag: "Imported",
     description: "Single-estate cold pressed Spanish Extra Virgin Olive Oil rich in antioxidants and polyphenols.",
     highlights: ["First Cold Press", "Glass Bottle Packaging", "Heart Healthy"],
@@ -43,7 +43,7 @@ const sampanMartProducts = [
     category: "Daily Staples",
     priceBDT: "1,250 BDT",
     packSize: "5 kg Bag",
-    image: "/images/brand/sampanmart.png",
+    image: "/images/our_divisions/sampan-mart/basmati.png",
     tag: "Super Saver",
     description: "Extra long grain 2-year aged aromatic Basmati rice for biryani and fine dining.",
     highlights: ["2 Years Aged", "Aromatic Long Grain", "Non-Sticky Cook"],
@@ -54,7 +54,7 @@ const sampanMartProducts = [
     category: "Dairy & Eggs",
     priceBDT: "110 BDT",
     packSize: "1 Liter Pouch",
-    image: "/images/brand/sampanmart.png",
+    image: "/images/our_divisions/sampan-mart/dairy.png",
     description: "Pure farm fresh pasteurized milk with full cream content, rich in calcium and vitamin D.",
     highlights: ["100% Pure Cow Milk", "Hygienically Pasteurized", "No Water Addition"],
   },
@@ -161,9 +161,9 @@ const nearbyConcerns = [
 ];
 
 const photos = [
-  { id: "photo-1", title: "Superstore Interior", category: "Store Outlet", image: "/images/brand/sampanmart.png", caption: "Sampan Mart Flagship Superstore Interior" },
-  { id: "photo-2", title: "Organic Produce Aisle", category: "Fresh Produce", image: "/images/brand/sampanmart.png", caption: "Fresh Farm Organic Produce & Gourmet Aisle" },
-  { id: "photo-3", title: "Express Fleet Hub", category: "Logistics", image: "/images/brand/happyshopping.png", caption: "30-Minute Express Delivery Fleet Hub" },
+  { id: "photo-1", title: "Superstore Interior", category: "Store Outlet", image: "/images/our_divisions/sampan-mart/sampan-mart-inter.jpg", caption: "Sampan Mart Flagship Superstore Interior" },
+  { id: "photo-2", title: "Organic Produce Aisle", category: "Fresh Produce", image: "/images/our_divisions/sampan-mart/sampan-mart-inter2.jpg", caption: "Fresh Farm Organic Produce & Gourmet Aisle" },
+  // { id: "photo-3", title: "Express Fleet Hub", category: "Logistics", image: "/images/brand/happyshopping.png", caption: "30-Minute Express Delivery Fleet Hub" },
 ];
 
 export default function SampanMartPage() {

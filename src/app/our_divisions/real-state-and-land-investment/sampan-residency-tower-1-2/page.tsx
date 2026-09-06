@@ -120,7 +120,7 @@ export default function SampanResidencyTowerPage() {
         statusBadge="Ongoing Development"
         statusType="ongoing"
         description="Twin 16-storey luxury residential towers integrated with Express Highway Inn hospitality perks and direct corridor connectivity."
-        image="/images/projects/sampan-highway-inn.ng"
+        image="/images/our_divisions/sampan-tower/sampan-tower.png"
         facts={facts}
         theme="dark-slate"
       />

@@ -118,7 +118,7 @@ export default function SampanTradeEmporiumPage() {
         statusBadge="Ongoing Commercial Project"
         statusType="ongoing"
         description="A 12-storey commercial trade emporium engineered for retail outlets, executive corporate office suites, and high lease yields."
-        image="/images/projects/Sampan-White-House-&-Motel.ng"
+        image="/images/our_divisions/sampan-trade-emporium/trade-emporium.jpeg"
         facts={facts}
         accentColor="#026597"
         badgeColor="#026597"
@@ -152,13 +152,13 @@ export default function SampanTradeEmporiumPage() {
       />
 
       {/* 5. Construction Progress */}
-      <ConstructionProgressTracker
+      {/* <ConstructionProgressTracker
         overallCompletionPercentage={55}
         expectedHandoverDate="Q4 2028"
         currentPhase="Basement Excavation & Foundation"
         milestones={progressMilestones}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* 6. Floor Plans */}
       <FloorPlansViewer

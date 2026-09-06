@@ -12,7 +12,7 @@ import DownloadableBrochureCTA from "../components/DownloadableBrochureCTA";
 import RealEstateLocationMap from "../components/RealEstateLocationMap";
 
 export const metadata: Metadata = {
-  title: "Sampan Motalib Skyline | Pre-Launch High-Rise Residential Tower",
+  title: "Sampan  Skyline | Pre-Launch High-Rise Residential Tower",
   description:
     "Pre-launch luxury residential skyline tower featuring panoramic urban views, smart automation, and pre-construction land share pricing.",
 };
@@ -92,7 +92,7 @@ const legalCredentials = [
 const renders = [
   {
     id: "r-sky-1",
-    title: "Sampan Motalib Skyline Architectural Rendering",
+    title: "Sampan  Skyline Architectural Rendering",
     category: "exterior" as const,
     categoryLabel: "Exterior Renders",
     image: "/images/projects/Sampan-White-House-&-Motel.png",
@@ -106,19 +106,20 @@ const landmarks = [
   { landmark: "Dhaka Airport Highway", distance: "10 km", driveTime: "18 Mins" },
 ];
 
-export default function SampanMotalibSkylinePage() {
+export default function SampanSkylinePage() {
   return (
     <main className="bg-[#f3f6f2] text-[#183b2b] antialiased selection:bg-[#0284c7] selection:text-white">
 
       {/* 1. Hero Overview — Skyline Blue (#0284c7) Accent */}
       <RealEstateHero
-        title="Sampan Motalib Skyline"
+        title="Sampan  Skyline"
         subtitle="Pre-Launch 18-Storey High-Rise Residential Tower"
         divisionName="Sampan Development Ltd"
         statusBadge="Coming Soon — Pre-Launch Bookings"
         statusType="coming-soon"
         description="Experience pre-launch pricing on an 18-storey high-rise luxury residential tower featuring smart home automation and panoramic urban views."
-        image="/images/projects/Sampan-White-House-&-Motel.ng"
+        image="/images/our_divisions/sampan--skyline/-skyline.png"
+
         facts={facts}
         accentColor="#0284c7"
         badgeColor="#0284c7"
@@ -143,7 +144,7 @@ export default function SampanMotalibSkylinePage() {
 
       {/* 4. Location + Map */}
       <RealEstateLocationMap
-        projectName="Sampan Motalib Skyline"
+        projectName="Sampan  Skyline"
         address="Central Dhaka Urban Corridor, Bangladesh."
         gpsCoordinates="23.7412° N, 90.3754° E"
         embedMapUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14607.6!2d90.3754!3d23.7412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDQ0JzI4LjMiTiA5MMKwMjInMzEuNCJF!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd"
@@ -186,13 +187,13 @@ export default function SampanMotalibSkylinePage() {
 
       {/* 10. Brochure Download */}
       <DownloadableBrochureCTA
-        projectName="Sampan Motalib Skyline"
+        projectName="Sampan  Skyline"
         bgTheme="divisions-green"
       />
 
       {/* 11. Site Visit Form */}
       <SiteVisitBookingForm
-        projectName="Sampan Motalib Skyline"
+        projectName="Sampan  Skyline"
         bgTheme="about-ivory"
       />
 

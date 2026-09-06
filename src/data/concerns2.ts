@@ -24,7 +24,7 @@ export const concerns2: Concern[] = [
     category: "Development & Construction",
     tagline: "Commercial + residential construction project",
     logo: "/images/brand/sampanmotolibskyline.webp",
-    href: "/our_divisions/real-state-and-land-investment/sampan-motalib-skyline",
+    href: "/our_divisions/real-state-and-land-investment/sampan-skyline",
   },
   {
     id: 4,

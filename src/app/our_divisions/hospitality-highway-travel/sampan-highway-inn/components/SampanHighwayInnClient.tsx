@@ -49,7 +49,7 @@ export default function SampanHighwayInnClient() {
       {/* <PricingOverview /> */}
 
       {/* 12. VIRTUAL TOUR (360° Walkthrough Simulator & Interactive Hotspots) */}
-      <VirtualTourViewer />
+      {/* <VirtualTourViewer /> */}
 
       {/* 5. PHOTO / VIDEO GALLERY (Masonry Showcase & Drone Video) */}
       <PhotoVideoGallery />

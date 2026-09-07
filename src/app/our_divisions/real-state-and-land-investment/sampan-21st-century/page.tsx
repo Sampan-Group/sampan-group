@@ -255,13 +255,13 @@ export default function Sampan21stCenturyPage() {
       />
 
       {/* 7. Construction Progress */}
-      <ConstructionProgressTracker
+      {/* <ConstructionProgressTracker
         overallCompletionPercentage={100}
         expectedHandoverDate="Active Development"
         currentPhase="Structure & Floor Layout Construction"
         milestones={progressMilestones}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* 8. Legal Credentials */}
       <LegalCredentialsModule
@@ -276,10 +276,10 @@ export default function Sampan21stCenturyPage() {
       />
 
       {/* 10. Payment Calculator */}
-      <PaymentPlanCalculator
+      {/* <PaymentPlanCalculator
         defaultPropertyPriceBDT={12000000}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 11. Brochure Download */}
       <DownloadableBrochureCTA

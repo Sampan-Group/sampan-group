@@ -36,9 +36,12 @@ const units = [
     priceRange: "BDT 58 Lacs",
     orientation: "Ashulia Metro Corridor",
     highlights: [
-      "14-Storey Planned Residential Tower",
+      "B+G 12-floor building, engineered for modern contemporary living",
+      "Exclusive rooftop drone landing station.",
+      "State-of-the-art gym and private swimming pool",
       // "Sub-Kabala Land Deed Registration",
       "20 Mins to Uttara Metro Station",
+      "Spacious community hall and a dedicated prayer room.",
     ],
     image: "/images/our_divisions/sampan-metro-square/metro-square.png",
     link: "/our_divisions/real-state-and-land-investment/sampan-metro-square",
@@ -53,7 +56,11 @@ const units = [
     balconies: 1,
     priceRange: "BDT 1.2 Crore+",
     orientation: "Commercial Highway Hub",
-    highlights: ["Multi-Storey Trade Outlets & Executive Offices", "High Lease Rental Opportunities", "Ample Underground Valet Parking"],
+    highlights: [
+      "The epicentre of Modern Commerce",
+      "High Lease Rental Opportunities",
+      "Ample Underground Valet Parking",
+    ],
     link: "/our_divisions/real-state-and-land-investment/sampan-trade-emporium",
   },
   {
@@ -66,7 +73,11 @@ const units = [
     balconies: 1,
     priceRange: "BDT 45 Lacs+",
     orientation: "Dhaka-Mymensingh Highway, Mawna",
-    highlights: ["Prime Highway Transit Landmark", "Luxury Guest Suites & Multi-Cuisine Restaurant", "Ample Highway Parking & 24/7 Security"],
+    highlights: [
+      "Prime Highway Transit Landmark",
+      "Luxury Guest Suites & Multi-Cuisine Restaurant",
+      "Ample Highway Parking & 24/7 Security",
+    ],
     image: "/images/projects/sampan-highway-inn.png",
     link: "/our_divisions/hospitality-highway-travel/sampan-highway-inn",
   },
@@ -80,7 +91,11 @@ const units = [
     balconies: 1,
     priceRange: "BDT 50 Lacs+",
     orientation: "Express Highway Corridor, Mawna",
-    highlights: ["Modern Highway Transit Accommodation", "VIP Club Lounge & Corporate Meeting Facilities", "Direct Expressway Access & Valet Services"],
+    highlights: [
+      "Modern Highway Transit Accommodation",
+      "VIP Club Lounge & Corporate Meeting Facilities",
+      "Direct Expressway Access & Valet Services",
+    ],
     image: "/images/projects/express-highway-inn.jpg",
     link: "/our_divisions/hospitality-highway-travel/express-highway-inn",
   },
@@ -94,7 +109,11 @@ const units = [
     balconies: 1,
     priceRange: "BDT 38 Lacs+",
     orientation: "Scenic Highway Zone, Mawna",
-    highlights: ["Comfortable Motel Suites & Green Courtyard", "Family-Friendly Rest Stop & Dining Experience", "Dedicated Highway Tourist Hospitality"],
+    highlights: [
+      "Comfortable Motel Suites & Green Courtyard",
+      "Family-Friendly Rest Stop & Dining Experience",
+      "Dedicated Highway Tourist Hospitality",
+    ],
     image: "/images/projects/Sampan-White-House-&-Motel.png",
     link: "/our_divisions/hospitality-highway-travel/sampan-white-house",
   },
@@ -108,7 +127,11 @@ const units = [
     balconies: 2,
     priceRange: "BDT 95 Lacs",
     orientation: "Shanti Niketon, Gulshan Link",
-    highlights: ["8-Storied Landmark on Gulshan Link Road", "RAJUK Approved Structural Design", "40% Open Space & Ample Ventilation"],
+    highlights: [
+      "8-Storied Landmark on Gulshan Link Road",
+      "RAJUK Approved Structural Design",
+      "40% Open Space & Ample Ventilation",
+    ],
     image: "/images/projects/sampanniketon.jpg",
     link: "/our_divisions/real-state-and-land-investment/sampan-niketon",
   },
@@ -122,7 +145,11 @@ const units = [
     balconies: 3,
     priceRange: "BDT 1.45 Crore",
     orientation: "Bashundhara R/A",
-    highlights: ["Exclusive Prime Residential Neighborhood", "Smart Home Automation Systems", "Rooftop Garden & Lounge"],
+    highlights: [
+      "Exclusive Prime Residential Neighborhood",
+      "Smart Home Automation Systems",
+      "Rooftop Garden & Lounge",
+    ],
     image: "/images/projects/sampantaj.jpg",
     link: "/our_divisions/real-state-and-land-investment/sampan-taj",
   },
@@ -153,7 +180,11 @@ const units = [
     balconies: 3,
     priceRange: "BDT 85 Lacs",
     orientation: "Urban Metro Skyline",
-    highlights: ["High-Elevation City Panoramas", "Dedicated Sub-Station & 100% Power Backup", "Multi-Tier Biometric Security"],
+    highlights: [
+      "High-Elevation City Panoramas",
+      "Dedicated Sub-Station & 100% Power Backup",
+      "Multi-Tier Biometric Security",
+    ],
     link: "/our_divisions/real-state-and-land-investment/sampan-skyline",
   },
   {
@@ -166,7 +197,11 @@ const units = [
     balconies: 0,
     priceRange: "BDT 65 Lacs+",
     orientation: "Metro Rail Interchange",
-    highlights: ["Prime Footfall Metro Transit Location", "Boutique Cafe & Retail Showroom Bays", "High Rental Yield Investment"],
+    highlights: [
+      "Prime Footfall Metro Transit Location",
+      "Boutique Cafe & Retail Showroom Bays",
+      "High Rental Yield Investment",
+    ],
     link: "/our_divisions/real-state-and-land-investment/sampan-cafe-metro",
   },
   {
@@ -179,7 +214,11 @@ const units = [
     balconies: 1,
     priceRange: "BDT 1.1 Crore",
     orientation: "Commercial Core Zone",
-    highlights: ["Modern Corporate Suites & Financial Counters", "Central HVAC & Energy Efficient Facade", "24/7 Monitored Access Control"],
+    highlights: [
+      "Modern Corporate Suites & Financial Counters",
+      "Central HVAC & Energy Efficient Facade",
+      "24/7 Monitored Access Control",
+    ],
     image: "/images/projects/21.jpg",
     link: "/our_divisions/real-state-and-land-investment/sampan-21st-century",
   },
@@ -200,9 +239,27 @@ const landShareTiers = [
 ];
 
 const progressMilestones = [
-  { stage: "Land Acquisition & Title Deed Verification", completionPercent: 100, status: "Completed" as const, targetDate: "Done (2024)", notes: "100% Mutation & Clear Deed Titles Secured" /* Sub-Kabala */ },
-  { stage: "Architectural Engineering & RAJUK Approvals", completionPercent: 90, status: "In Progress" as const, targetDate: "Q3 2026", notes: "Soil test reports & structural engineering clearance complete" },
-  { stage: "Piling, Construction & Handover", completionPercent: 45, status: "In Progress" as const, targetDate: "Q4 2028", notes: "Ongoing structural frame casting across project sites" },
+  {
+    stage: "Land Acquisition & Title Deed Verification",
+    completionPercent: 100,
+    status: "Completed" as const,
+    targetDate: "Done (2024)",
+    notes: "100% Mutation & Clear Deed Titles Secured" /* Sub-Kabala */,
+  },
+  {
+    stage: "Architectural Engineering & RAJUK Approvals",
+    completionPercent: 90,
+    status: "In Progress" as const,
+    targetDate: "Q3 2026",
+    notes: "Soil test reports & structural engineering clearance complete",
+  },
+  {
+    stage: "Piling, Construction & Handover",
+    completionPercent: 45,
+    status: "In Progress" as const,
+    targetDate: "Q4 2028",
+    notes: "Ongoing structural frame casting across project sites",
+  },
 ];
 
 const floorPlans = [
@@ -212,8 +269,13 @@ const floorPlans = [
     category: "Division Master Plan",
     sizeSqFt: "Multi-Acre Development Grid",
     image: "/images/concerns/sampan-dev-ltd.png",
-    description: "Master architectural planning incorporating green zones, commercial facades, and residential towers.",
-    features: ["Sustainable Green Corridors", "100% Sound Earthquake Resistant Grid", "Gated Security Control"],
+    description:
+      "Master architectural planning incorporating green zones, commercial facades, and residential towers.",
+    features: [
+      "Sustainable Green Corridors",
+      "100% Sound Earthquake Resistant Grid",
+      "Gated Security Control",
+    ],
   },
 ];
 
@@ -223,14 +285,16 @@ const legalCredentials = [
     approvalTitle: "Clear Land Deed Titles", // Sub-Kabala
     referenceNumber: "CS, SA, RS & City Jorip Cleared",
     status: "100% Verified",
-    description: "All division land parcels mutated with zero legal encumbrances.",
+    description:
+      "All division land parcels mutated with zero legal encumbrances.",
   },
   {
     authority: "RAJUK / Local Municipalities",
     approvalTitle: "Urban Development & Setback Clearances",
     referenceNumber: "RAJUK / Municipality Approved Plans",
     status: "Approved",
-    description: "Approved structural height and setback clearances under urban development guidelines.",
+    description:
+      "Approved structural height and setback clearances under urban development guidelines.",
   },
 ];
 
@@ -242,28 +306,36 @@ const renders = [
     categoryLabel: "Exterior Architecture",
     image: "/images/concerns/sampan-dev-ltd.png",
     type: "image" as const,
-    description: "Flagship urban architecture and land-share developments across prime transit corridors.",
+    description:
+      "Flagship urban architecture and land-share developments across prime transit corridors.",
   },
 ];
 
 const landmarks = [
-  { landmark: "Ashulia Metro Corridor", distance: "6 km", driveTime: "15 Mins" },
+  {
+    landmark: "Ashulia Metro Corridor",
+    distance: "6 km",
+    driveTime: "15 Mins",
+  },
   { landmark: "Expressway Transit Hub", distance: "4 km", driveTime: "8 Mins" },
-  { landmark: "Hazrat Shahjalal Int'l Airport", distance: "12 km", driveTime: "25 Mins" },
+  {
+    landmark: "Hazrat Shahjalal Int'l Airport",
+    distance: "12 km",
+    driveTime: "25 Mins",
+  },
 ];
 
 export default function SampanDevelopmentLtdPage() {
   return (
     <main className="bg-[#f3f6f2] text-[#183b2b] antialiased selection:bg-[#ca8a04] selection:text-neutral-950">
-
       {/* 1. Hero Overview - Dark for Transparent Navbar Contrast */}
       <RealEstateHero2
         title="Sampan Development Ltd"
-        subtitle="Master Architectural & Land Development Flagship"
+        subtitle="Architecting Legacy."
         divisionName="Real Estate & Land Investment Division"
         statusBadge="Division Flagship"
         statusType="flagship"
-        description="The flagship real estate company of Sampan Group. Engineering commercial trade emporiums, residential land-share towers, and sustainable infrastructure across Bangladesh."
+        description="Visionary commercial and residential developments. Engineered for modern living, strategic growth, and enduring value."
         image="/images/projects/sampan-development.jpeg"
         facts={facts}
         accentColor="#0284c7"
@@ -337,12 +409,12 @@ export default function SampanDevelopmentLtdPage() {
       />
 
       {/* 9. Payment Calculator - AboutPreview Warm Ivory bg-[#F5F5F2] */}
-      <PaymentPlanCalculator
+      {/* <PaymentPlanCalculator
         title="Investment Payment Plan Estimator"
         subtitle="Estimate down payments, flexible monthly installment schedules, and handover balances."
         defaultPropertyPriceBDT={5800000}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* 10. Brochure Download - DivisionsSection Soft Green bg-[#f3f6f2] */}
       <DownloadableBrochureCTA
@@ -357,7 +429,6 @@ export default function SampanDevelopmentLtdPage() {
         projectName="Sampan Development Ltd"
         bgTheme="about-ivory"
       />
-
     </main>
   );
 }

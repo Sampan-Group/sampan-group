@@ -113,10 +113,10 @@ export default function SampanNexusPage() {
       />
 
       {/* 2. Unit Configurations */}
-      <UnitTypesAndSizes
+      {/* <UnitTypesAndSizes
         units={units}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 3. Land Share Model */}
       <LandShareStructure

@@ -26,6 +26,7 @@ import RealEstateLocationMap from "../components/RealEstateLocationMap";
 import RealEstateEnquiryForm from "../components/RealEstateEnquiryForm";
 import DownloadableBrochureCTA from "../components/DownloadableBrochureCTA";
 import SiteVisitBookingForm from "../components/SiteVisitBookingForm";
+import SurroundingUniversitiesModule from "../components/SurroundingUniversitiesModule";
 
 export const metadata: Metadata = {
   title: "Sampan Metro Square | Ashulia Land-Share Residential Project",
@@ -214,11 +215,15 @@ const renders = [
 ];
 
 const landmarks = [
+  { landmark: "Eastern University (Ashulia Model Town)", distance: "0.8 km", driveTime: "2 Mins" },
+  { landmark: "Manarat International University", distance: "1.2 km", driveTime: "3 Mins" },
+  { landmark: "Daffodil International University (Smart Campus)", distance: "1.8 km", driveTime: "4 Mins" },
+  { landmark: "Asian University of Bangladesh", distance: "2.0 km", driveTime: "4 Mins" },
+  { landmark: "City University (Khagan Campus)", distance: "2.4 km", driveTime: "5 Mins" },
+  { landmark: "Ahsanullah University (Campus Extension)", distance: "4.8 km", driveTime: "10 Mins" },
+  { landmark: "BRAC University (Residential Campus)", distance: "5.5 km", driveTime: "12 Mins" },
   { landmark: "Uttara Metro Rail Station", distance: "6.5 km", driveTime: "20 Mins" },
-  { landmark: "Ashulia Highway Interchange", distance: "2 km", driveTime: "5 Mins" },
   { landmark: "Hazrat Shahjalal Int'l Airport", distance: "12 km", driveTime: "25 Mins" },
-  { landmark: "Reputable Universities (8+) & Schools (16+)", distance: "3 km", driveTime: "8 Mins" },
-  { landmark: "Major Commercial Banking Hub (5+ Banks)", distance: "1 km", driveTime: "3 Mins" },
 ];
 
 export default function SampanMetroSquarePage() {
@@ -282,12 +287,12 @@ export default function SampanMetroSquarePage() {
       </section>
 
       {/* Unit Types & Layout Configurations */}
-      <UnitTypesAndSizes
+      {/* <UnitTypesAndSizes
         title="Apartment Unit Configurations"
         subtitle="Explore expansive residential layouts engineered for modern contemporary living starting at 1,300+ sq ft."
         units={units}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 3. Land Share Structure - Equity & Ownership */}
       <LandShareStructure
@@ -364,8 +369,15 @@ export default function SampanMetroSquarePage() {
         </div>
       </section>
 
+      {/* Surrounding Universities Enclave - Highlighting 7 Premier Institutions */}
+      <SurroundingUniversitiesModule
+        title="Surrounded by Dhaka's Premier Universities."
+        subtitle="Ashulia Model Town is the intellectual and higher-education capital of metropolitan Dhaka. Positioned directly amidst 7 prestigious universities, Sampan Metro Square guarantees continuous year-round rental occupancy and enduring capital appreciation."
+        bgTheme="divisions-green"
+      />
+
       {/* 6. Project Benefits - Elevated Amenities */}
-      <section className="py-24 relative overflow-hidden bg-[#f3f6f2] text-[#183b2b] border-b border-[#183b2b]/15">
+      <section className="py-24 relative overflow-hidden bg-[#F5F5F2] text-neutral-950 border-b border-neutral-300/60">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_8%_4%,rgba(0,161,116,0.09),transparent_26%),radial-gradient(circle_at_94%_92%,rgba(239,99,107,0.07),transparent_23%)]"

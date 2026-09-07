@@ -255,13 +255,13 @@ export default function SampanTajPage() {
       />
 
       {/* 7. Construction Progress */}
-      <ConstructionProgressTracker
+      {/* <ConstructionProgressTracker
         overallCompletionPercentage={100}
         expectedHandoverDate="Active Construction Phase"
         currentPhase="Piling & Structural Frame Construction"
         milestones={progressMilestones}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 8. Legal Credentials */}
       <LegalCredentialsModule
@@ -276,10 +276,10 @@ export default function SampanTajPage() {
       />
 
       {/* 10. Payment Calculator */}
-      <PaymentPlanCalculator
+      {/* <PaymentPlanCalculator
         defaultPropertyPriceBDT={13500000}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 11. Brochure CTA */}
       <DownloadableBrochureCTA

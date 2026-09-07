@@ -130,6 +130,18 @@ const projectsList = [
     link: "/our_divisions/real-state-and-land-investment/sampan-niketon",
     highlights: ["Family Community Living", "Courtyard Landscaping", "Secure Gated Compound"],
   },
+  {
+    id: "sampan-condominium",
+    name: "Sampan Condominium",
+    category: "Luxury High-Rise Living",
+    status: "Upcoming Project",
+    statusType: "coming-soon",
+    location: "Strategic Prime Sector",
+    description: "16-storied state-of-the-art luxury residential condominium featuring modern sky living, fitness center, and premium lifestyle amenities.",
+    image: "/images/projects/sampan-condominium.jpg",
+    link: "/our_divisions/real-state-and-land-investment/sampan-condominium",
+    highlights: ["16-Storey Luxury Tower", "Infinity Pool & Sky Lounge", "1,850 - 3,200 sq.ft Units"],
+  },
 ];
 
 export default function RealEstateArchivePage() {

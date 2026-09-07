@@ -337,12 +337,12 @@ export default function SampanDevelopmentLtdPage() {
       />
 
       {/* 9. Payment Calculator - AboutPreview Warm Ivory bg-[#F5F5F2] */}
-      <PaymentPlanCalculator
+      {/* <PaymentPlanCalculator
         title="Investment Payment Plan Estimator"
         subtitle="Estimate down payments, flexible monthly installment schedules, and handover balances."
         defaultPropertyPriceBDT={5800000}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* 10. Brochure Download - DivisionsSection Soft Green bg-[#f3f6f2] */}
       <DownloadableBrochureCTA

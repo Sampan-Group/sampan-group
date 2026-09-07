@@ -150,7 +150,7 @@ export default function SampanMetroSquarePage() {
         subtitle="Ashulia Land-Share Residential Project"
         divisionName="Sampan Development Ltd"
         description="Own a piece of Ashulia's next address—a land-share residential project for people who want to invest in a future home, not only a plot."
-        image="/images/metro-square/tower-home.webp"
+        image="/images/projects/sampanmetrosquare.jpg"
         facts={facts}
         accentColor="#dc2626"
         locationLabel="Ashulia Metro Corridor, Dhaka"
@@ -223,12 +223,12 @@ export default function SampanMetroSquarePage() {
       />
 
       {/* 9. Payment Plan Calculator */}
-      <PaymentPlanCalculator
+      {/* <PaymentPlanCalculator
         title="Payment Plan & Installment Calculator"
         subtitle="Estimate down payment and monthly installment schedules."
         defaultPropertyPriceBDT={5800000}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* 10. Downloadable Brochure */}
       <DownloadableBrochureCTA

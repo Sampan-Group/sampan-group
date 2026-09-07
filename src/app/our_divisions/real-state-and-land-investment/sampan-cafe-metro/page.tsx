@@ -36,7 +36,7 @@ export default function SampanCafeMetroPage() {
         statusBadge="Ongoing Operation"
         statusType="ongoing"
         description="A premier highway stopover combining high-pressure hydro car washing, organic coffee dining, and a curated Sampan Auto vehicle showroom."
-        image="/images/projects/sampanmetrosquare.jpg"
+        image="/images/projects/sampanmetrosquare.jspg"
         facts={facts}
         accentColor="#4c2a85"
         badgeColor="#b21f24"

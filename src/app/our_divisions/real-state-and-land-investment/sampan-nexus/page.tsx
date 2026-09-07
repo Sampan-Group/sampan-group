@@ -138,13 +138,13 @@ export default function SampanNexusPage() {
       />
 
       {/* 5. Construction Progress */}
-      <ConstructionProgressTracker
+      {/* <ConstructionProgressTracker
         overallCompletionPercentage={20}
         expectedHandoverDate="Q4 2029"
         currentPhase="Master Layout & Soil Testing"
         milestones={progressMilestones}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* 6. Floor Plans */}
       <FloorPlansViewer
@@ -165,10 +165,10 @@ export default function SampanNexusPage() {
       />
 
       {/* 9. Payment Calculator */}
-      <PaymentPlanCalculator
+      {/* <PaymentPlanCalculator
         defaultPropertyPriceBDT={4200000}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* 10. Brochure Download */}
       <DownloadableBrochureCTA

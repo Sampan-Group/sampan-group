@@ -84,7 +84,7 @@ export default function BookEnquireCTA({ onOpenBookingWidget }: { onOpenBookingW
               </a>
 
               <a
-                href="mailto:info@sampangroup.com.bd"
+                href="mailto:info@sampangroup.com.bd.bd"
                 className="group p-5 rounded-none bg-white border border-neutral-200 hover:border-emerald-700 transition-all duration-300 flex items-start gap-4 shadow-sm"
               >
                 <div className="p-3 rounded-none bg-emerald-50 text-emerald-800 group-hover:bg-emerald-700 group-hover:text-white transition-colors">
@@ -92,7 +92,7 @@ export default function BookEnquireCTA({ onOpenBookingWidget }: { onOpenBookingW
                 </div>
                 <div>
                   <p className="font-mono text-[10px] font-bold uppercase tracking-wider text-neutral-500">Corporate Enquiries</p>
-                  <p className="text-xs font-bold text-neutral-950 mt-0.5 group-hover:text-emerald-700 transition-colors truncate">info@sampangroup.com.bd</p>
+                  <p className="text-xs font-bold text-neutral-950 mt-0.5 group-hover:text-emerald-700 transition-colors truncate">info@sampangroup.com.bd.bd</p>
                   <p className="text-[10px] text-neutral-400 mt-1 font-mono">Official RFP &amp; Contracts</p>
                 </div>
               </a>

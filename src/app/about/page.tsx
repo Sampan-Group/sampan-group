@@ -5,7 +5,7 @@ import LeadershipSection from "@/components/LeadershipSection";
 export const metadata = {
   title: "About Us | Sampan Group",
   description:
-    "Learn about Sampan Group, our vision, and the value we create across industries.",
+    "Learn about Sampan Group, our vision, change somethings and the value we create across industries.",
 };
 
 export default function AboutPage() {

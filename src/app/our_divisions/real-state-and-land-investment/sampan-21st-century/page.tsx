@@ -15,7 +15,7 @@ import RealEstateLocationMap from "../components/RealEstateLocationMap";
 export const metadata: Metadata = {
   title: "Sampan Twenty First Century | Luxury 2,000 sq ft Residences",
   description:
-    "Official presentation of Sampan Twenty First Century — 2,000 sq ft luxury apartments, south-facing with 40% open space, 25ft wide road, and earthquake-resistant BNBC engineering by Sampan Developments Ltd.",
+    "Official presentation of Sampan Twenty First Century - 2,000 sq ft luxury apartments, south-facing with 40% open space, 25ft wide road, and earthquake-resistant BNBC engineering by Sampan Developments Ltd.",
 };
 
 const facts = [
@@ -69,7 +69,7 @@ const progressMilestones = [
 const floorPlans = [
   {
     id: "fp-21st-typical",
-    name: "Sampan Twentyfirst Century — Typical Floor Plan",
+    name: "Sampan Twentyfirst Century - Typical Floor Plan",
     category: "Typical Apartment Layout",
     sizeSqFt: "2,000 sq ft",
     image: "/images/projects/21.jpg",
@@ -83,7 +83,7 @@ const floorPlans = [
   },
   {
     id: "fp-21st-ground",
-    name: "Sampan Twentyfirst Century — Ground Floor Plan",
+    name: "Sampan Twentyfirst Century - Ground Floor Plan",
     category: "Parking & Utility Layout",
     sizeSqFt: "2,000 sq ft Ground Footprint",
     image: "/images/projects/21.jpg",

@@ -28,7 +28,7 @@ export default function SampanCafeMetroPage() {
   return (
     <main className="bg-[#f3f6f2] text-[#183b2b] antialiased selection:bg-[#4c2a85] selection:text-white">
 
-      {/* 1. Hero Overview — Custom Purple (#4c2a85) Accent & Red (#b21f24) Badge from Logo */}
+      {/* 1. Hero Overview - Custom Purple (#4c2a85) Accent & Red (#b21f24) Badge from Logo */}
       <RealEstateHero
         title="Sampan Cafe Metro"
         subtitle="Auto Service, Hydro Car Wash & Garden Cafe"

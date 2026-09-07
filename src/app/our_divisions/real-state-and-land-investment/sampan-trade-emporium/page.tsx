@@ -110,7 +110,7 @@ export default function SampanTradeEmporiumPage() {
   return (
     <main className="bg-[#f3f6f2] text-[#183b2b] antialiased selection:bg-[#026597] selection:text-white">
 
-      {/* 1. Hero Overview — Trade Emporium Blue (#026597) Accent from Logo */}
+      {/* 1. Hero Overview - Trade Emporium Blue (#026597) Accent from Logo */}
       <RealEstateHero
         title="Sampan Trade Emporium"
         subtitle="Commercial Trade Center & Corporate Office Hub"

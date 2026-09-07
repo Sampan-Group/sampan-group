@@ -86,7 +86,7 @@ export default function LeadershipMessage() {
     () => {
       const mm = gsap.matchMedia();
 
-      /* Reduced motion — show everything instantly */
+      /* Reduced motion - show everything instantly */
       mm.add("(prefers-reduced-motion: reduce)", () => {
         gsap.set(
           [
@@ -268,7 +268,7 @@ export default function LeadershipMessage() {
           );
         });
 
-        /* ── Cinematic parallax (Mobile — reduced) ── */
+        /* ── Cinematic parallax (Mobile - reduced) ── */
         mm.add("(max-width: 1023px)", () => {
           gsap.fromTo(
             ".lead-image",
@@ -424,7 +424,7 @@ export default function LeadershipMessage() {
                 <iframe
                   className="absolute inset-0 h-full w-full"
                   src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0&modestbranding=1&color=white`}
-                  title="Leadership Message — Emamul Hasan, Managing Director, Sampan Group"
+                  title="Leadership Message - Emamul Hasan, Managing Director, Sampan Group"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen

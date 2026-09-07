@@ -27,7 +27,7 @@ const facts = [
 const units = [
   {
     id: "type-a",
-    name: "Type A — 1,350 sq ft Suite",
+    name: "Type A - 1,350 sq ft Suite",
     category: "3-Bedroom Layout",
     sizeSqFt: "1,350 sq ft",
     bedrooms: 3,
@@ -39,7 +39,7 @@ const units = [
   },
   {
     id: "type-b",
-    name: "Type B — 1,480 sq ft Luxury Suite",
+    name: "Type B - 1,480 sq ft Luxury Suite",
     category: "3-Bedroom Deluxe",
     sizeSqFt: "1,480 sq ft",
     bedrooms: 3,
@@ -144,7 +144,7 @@ export default function SampanMetroSquarePage() {
   return (
     <main className="bg-[#f3f6f2] text-[#183b2b] antialiased selection:bg-[#dc2626] selection:text-white">
 
-      {/* 1. Hero Overview — Sleek Minimal RealEstateHero2 */}
+      {/* 1. Hero Overview - Sleek Minimal RealEstateHero2 */}
       <RealEstateHero2
         title="Sampan Metro Square"
         subtitle="Ashulia Land-Share Residential Project"

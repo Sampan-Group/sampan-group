@@ -27,49 +27,49 @@ const milestones = [
     year: "1998",
     title: "The Foundation",
     desc: "Sampan Group is established, beginning its journey in real estate development.",
-    image: "/images/about/m1.jpg",
+    image: "/images/awards/Our-Curated-Gallery-Photo-Frame-2.webp",
   },
   {
     year: "2005",
     title: "Expansion into Hospitality",
     desc: "Launched our first resort, marking our entry into the premium hospitality sector.",
-    image: "/images/about/m2.jpg",
+    image: "/images/awards/Our-Curated-Gallery-Photo-Frame-3.webp",
   },
   {
     year: "2012",
     title: "Diversification",
     desc: "Expanded into agro and retail, building a diversified business portfolio.",
-    image: "/images/about/m3.jpg",
+    image: "/images/awards/Our-Curated-Gallery-Photo-Frame.webp",
   },
   {
-    year: "2018",
+    year: "2016",
     title: "Maritime & Energy",
     desc: "Ventured into alternative assets and green energy infrastructure.",
-    image: "/images/about/m4.jpg",
+    image: "/images/awards/Our-Curated-Gallery-Photo-Frame-3.webp",
   },
   {
     year: "2026",
     title: "Global Footprint",
     desc: "Strengthening international partnerships and NRB investment desks.",
-    image: "/images/about/m5.jpg",
+    image: "/images/awards/mou.jpeg",
   },
 ];
 
 const leaders = [
   {
-    name: "MD. Sampan Hossain",
-    role: "Chairman & Managing Director",
-    image: "/images/leader1.jpg",
+    name: "MD. EMAMUL HASAN",
+    role: "Managing Director & CEO",
+    image: "/images/leadership/Md._EMAMUL_HASAN.png",
   },
   {
-    name: "Tahsin Rahman",
-    role: "Chief Executive Officer",
-    image: "/images/leader2.jpg",
+    name: "Major Md. Zahidul Islam (Retd)",
+    role: "Executive Director",
+    image: "/images/leadership/Major_Md._Zahidul_Islam_(Retd).png",
   },
   {
-    name: "Anika Tabassum",
-    role: "Chief Financial Officer",
-    image: "/images/leader3.jpg",
+    name: "Shohidul Islam",
+    role: "Director",
+    image: "/images/leadership/Shohidul_Islam.png",
   },
 ];
 
@@ -324,7 +324,7 @@ export default function AboutUsPage() {
       <section className="hero-section relative h-screen min-h-[700px] w-full flex items-end bg-[#071018] text-white overflow-hidden">
         <div className="hero-bg absolute inset-0 opacity-0 will-change-transform">
           <Image
-            src="/images/about-hero.jpg"
+            src="/images/about/sampangroupteam.png"
             alt="Sampan Group Architecture"
             fill
             className="object-cover"
@@ -393,7 +393,7 @@ export default function AboutUsPage() {
           <div className="relative w-full">
             <div className="img-reveal-wrapper relative aspect-[21/9] w-full overflow-hidden bg-neutral-100">
               <Image
-                src="/images/about-large.jpg"
+                src="/images/about/large.jpg"
                 alt="Group Headquarters"
                 fill
                 className="img-reveal object-cover will-change-transform"
@@ -402,7 +402,7 @@ export default function AboutUsPage() {
             </div>
             <div className="img-reveal-wrapper absolute -bottom-12 right-8 md:right-20 w-1/3 aspect-[4/3] overflow-hidden border-8 border-white shadow-2xl hidden md:block">
               <Image
-                src="/images/about-small.jpg"
+                src="/images/about/achivement.png"
                 alt="Secondary"
                 fill
                 className="img-reveal object-cover will-change-transform"
@@ -728,12 +728,12 @@ export default function AboutUsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {leaders.map((l, i) => (
               <div key={i} className="group cursor-pointer">
-                <div className="relative aspect-[4/5] w-full overflow-hidden bg-neutral-100 mb-4">
+                <div className="relative aspect-[4/5] w-full overflow-hidden  mb-4">
                   <Image
                     src={l.image}
                     alt={l.name}
                     fill
-                    className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                    className="object-cover  group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                     sizes="33vw"
                   />
                   <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#007DC5] group-hover:w-full transition-all duration-500"></div>
@@ -788,82 +788,8 @@ export default function AboutUsPage() {
             <span className="quote-line block">and communities.”</span>
           </div>
           <p className="quote-line mt-12 text-sm uppercase tracking-[0.3em] text-white/70">
-            — Sampan Group
+            - Sampan Group
           </p>
-        </div>
-      </section>
-
-      {/* 11. CONTACT / OFFICE FOOTER */}
-      <section className="bg-[#071018] text-white pt-24 pb-12">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-12">
-          <div className="grid grid-cols-12 gap-8 pb-16 border-b border-white/10">
-            <div className="col-span-12 lg:col-span-7">
-              <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-semibold leading-[1.05] tracking-tight mb-6">
-                Let&apos;s Build What&apos;s Next.
-              </h2>
-              <p className="text-lg text-white/60 max-w-lg mb-10">
-                Connect with Sampan Group to explore opportunities, partnerships
-                and our growing portfolio of businesses.
-              </p>
-              <Link
-                href="/contact"
-                className="group inline-flex items-center gap-4 bg-[#007DC5] px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-[#071018] transition-colors"
-              >
-                Contact Sampan Group <FiArrowRight />
-              </Link>
-            </div>
-            <div className="col-span-12 lg:col-span-5 grid grid-cols-2 gap-8">
-              <div>
-                <h4 className="text-xs uppercase tracking-widest text-white/40 mb-4">
-                  Head Office
-                </h4>
-                <p className="text-white/80 mb-2">Sampan Group</p>
-                <p className="text-white/60 text-sm">
-                  Gulshan, Dhaka, Bangladesh
-                </p>
-              </div>
-              <div>
-                <h4 className="text-xs uppercase tracking-widest text-white/40 mb-4">
-                  Contact
-                </h4>
-                <p className="flex items-center gap-2 text-white/60 text-sm mb-2">
-                  <FiMail /> info@sampangroup.com
-                </p>
-                <p className="flex items-center gap-2 text-white/60 text-sm">
-                  <FiPhone /> +880 1000 00000
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="pt-12 grid grid-cols-12 gap-8 items-center">
-            <div className="col-span-6">
-              <span className="text-2xl font-bold tracking-tight">
-                SAMPAN GROUP
-              </span>
-            </div>
-            <div className="col-span-6 flex justify-end gap-6 text-xs uppercase tracking-widest text-white/60">
-              <Link href="#" className="hover:text-white">
-                About
-              </Link>
-              <Link href="#" className="hover:text-white">
-                Businesses
-              </Link>
-              <Link href="#" className="hover:text-white">
-                Projects
-              </Link>
-              <Link href="#" className="hover:text-white">
-                Contact
-              </Link>
-            </div>
-          </div>
-          <div className="mt-12 pt-8 border-t border-white/10 flex justify-between text-xs text-white/40">
-            <span>© 2026 Sampan Group. All rights reserved.</span>
-            <div className="flex gap-6">
-              <Link href="#">Privacy Policy</Link>
-              <Link href="#">Terms & Conditions</Link>
-            </div>
-          </div>
         </div>
       </section>
     </main>

@@ -318,7 +318,7 @@ export default function CareersPage() {
       <section className="hero-section relative h-screen min-h-[700px] w-full flex items-end bg-[#071018] text-white overflow-hidden">
         <div className="hero-bg absolute inset-0 opacity-0 will-change-transform">
           <Image
-            src="/images/careers-hero.jpg"
+            src="/images/career/career.jpeg"
             alt="Life at Sampan"
             fill
             className="object-cover"
@@ -371,7 +371,7 @@ export default function CareersPage() {
           <div className="col-span-12 lg:col-span-7">
             <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-100">
               <Image
-                src="/images/life-sampan.jpg"
+                src="/images/sampangroupteam.png"
                 alt="Life at Sampan"
                 fill
                 className="object-cover will-change-transform"
@@ -448,7 +448,7 @@ export default function CareersPage() {
 
           <div className="video-wrapper relative w-full max-w-5xl mx-auto aspect-video bg-black cursor-pointer group opacity-0">
             <Image
-              src="/images/day-video.jpg"
+              src="/images/about/sampangroupteam.png"
               alt="Day in the Life"
               fill
               className="object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500"

@@ -15,7 +15,7 @@ import RealEstateHero2 from "../components/RealEstateHero2";
 export const metadata: Metadata = {
   title: "Sampan Niketon | 1,250 sft Residential Apartments in Shanti Niketon",
   description:
-    "Official presentation of Sampan Niketon — 8-storied residential building on Gulshan Link Road (Plot 168/10, Shanti Niketon) with 1,250 sft South & North-facing units, RAJUK approval, and 40% open space.",
+    "Official presentation of Sampan Niketon - 8-storied residential building on Gulshan Link Road (Plot 168/10, Shanti Niketon) with 1,250 sft South & North-facing units, RAJUK approval, and 40% open space.",
 };
 
 const facts = [
@@ -28,7 +28,7 @@ const facts = [
 const units = [
   {
     id: "nik-type-a",
-    name: "Type-A Residence — 1,250 sq ft (South Facing)",
+    name: "Type-A Residence - 1,250 sq ft (South Facing)",
     category: "3-Bedroom South Facing Suite",
     sizeSqFt: "1,250 sq ft",
     bedrooms: 3,
@@ -46,7 +46,7 @@ const units = [
   },
   {
     id: "nik-type-b",
-    name: "Type-B Residence — 1,250 sq ft (North Facing)",
+    name: "Type-B Residence - 1,250 sq ft (North Facing)",
     category: "3-Bedroom North Facing Suite",
     sizeSqFt: "1,250 sq ft",
     bedrooms: 3,
@@ -87,7 +87,7 @@ const progressMilestones = [
 const floorPlans = [
   {
     id: "fp-nik-type-a",
-    name: "Sampan Niketon — Type-A Floor Plan (South Facing)",
+    name: "Sampan Niketon - Type-A Floor Plan (South Facing)",
     category: "1,250 sq ft Typical Layout",
     sizeSqFt: "1,250 sq ft",
     image: "/images/projects/sampanniketon.jpg",
@@ -101,7 +101,7 @@ const floorPlans = [
   },
   {
     id: "fp-nik-type-b",
-    name: "Sampan Niketon — Type-B Floor Plan (North Facing)",
+    name: "Sampan Niketon - Type-B Floor Plan (North Facing)",
     category: "1,250 sq ft Typical Layout",
     sizeSqFt: "1,250 sq ft",
     image: "/images/projects/sampanniketon.jpg",

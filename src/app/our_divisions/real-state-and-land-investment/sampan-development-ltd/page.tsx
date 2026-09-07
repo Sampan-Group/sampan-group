@@ -244,7 +244,7 @@ export default function SampanDevelopmentLtdPage() {
   return (
     <main className="bg-[#f3f6f2] text-[#183b2b] antialiased selection:bg-[#ca8a04] selection:text-neutral-950">
 
-      {/* 1. Hero Overview — Dark for Transparent Navbar Contrast */}
+      {/* 1. Hero Overview - Dark for Transparent Navbar Contrast */}
       <RealEstateHero2
         title="Sampan Development Ltd"
         subtitle="Master Architectural & Land Development Flagship"
@@ -258,7 +258,7 @@ export default function SampanDevelopmentLtdPage() {
         badgeColor="#0284c7"
       />
 
-      {/* 2. Unit Configurations — DivisionsSection Soft Green bg-[#f3f6f2] */}
+      {/* 2. Unit Configurations - DivisionsSection Soft Green bg-[#f3f6f2] */}
       <UnitTypesAndSizes
         title="Featured Division Developments"
         subtitle="Explore flagship apartment layouts, commercial spaces, and estimated pricing."
@@ -266,7 +266,7 @@ export default function SampanDevelopmentLtdPage() {
         bgTheme="divisions-green"
       />
 
-      {/* 3. Land Share Model — AboutPreview Warm Ivory bg-[#F5F5F2] */}
+      {/* 3. Land Share Model - AboutPreview Warm Ivory bg-[#F5F5F2] */}
       <LandShareStructure
         title="Flagship Land Share Ownership Model"
         subtitle="Direct Sub-Kabala land deed registration with zero middleman markups across all project sites."
@@ -277,7 +277,7 @@ export default function SampanDevelopmentLtdPage() {
         bgTheme="about-ivory"
       />
 
-      {/* 4. Location + Map — DivisionsSection Soft Green bg-[#f3f6f2] */}
+      {/* 4. Location + Map - DivisionsSection Soft Green bg-[#f3f6f2] */}
       <RealEstateLocationMap
         title="Strategic Corridor Locations"
         subtitle="Positioned along high-growth transit corridors in Ashulia, Dhaka, and Expressway Hubs."
@@ -289,7 +289,7 @@ export default function SampanDevelopmentLtdPage() {
         bgTheme="divisions-green"
       />
 
-      {/* 5. Construction Progress — AboutPreview Warm Ivory bg-[#F5F5F2] */}
+      {/* 5. Construction Progress - AboutPreview Warm Ivory bg-[#F5F5F2] */}
       {/* <ConstructionProgressTracker
         title="Division Project Development Status"
         subtitle="Track live site developments, architectural milestones, and expected handover timelines."
@@ -300,7 +300,7 @@ export default function SampanDevelopmentLtdPage() {
         bgTheme="about-ivory"
       /> */}
 
-      {/* 6. Floor Plans — DivisionsSection Soft Green bg-[#f3f6f2] */}
+      {/* 6. Floor Plans - DivisionsSection Soft Green bg-[#f3f6f2] */}
       <FloorPlansViewer
         title="Master Blueprints & Plot Layouts"
         subtitle="Examine precision engineered architectural floor plan layouts and master site plans."
@@ -308,7 +308,7 @@ export default function SampanDevelopmentLtdPage() {
         bgTheme="divisions-green"
       />
 
-      {/* 7. Legal Credentials — AboutPreview Warm Ivory bg-[#F5F5F2] */}
+      {/* 7. Legal Credentials - AboutPreview Warm Ivory bg-[#F5F5F2] */}
       <LegalCredentialsModule
         title="Regulatory Approvals & Legal Clearances"
         subtitle="100% verified clear land title deeds and government municipal sanctions."
@@ -316,7 +316,7 @@ export default function SampanDevelopmentLtdPage() {
         bgTheme="about-ivory"
       />
 
-      {/* 8. 3D Renders — DivisionsSection Soft Green bg-[#f3f6f2] */}
+      {/* 8. 3D Renders - DivisionsSection Soft Green bg-[#f3f6f2] */}
       <WalkthroughRenderGallery
         title="3D Renders & Architectural Showcase"
         subtitle="Explore photorealistic 3D architectural renders of flagship division developments."
@@ -324,7 +324,7 @@ export default function SampanDevelopmentLtdPage() {
         bgTheme="divisions-green"
       />
 
-      {/* 9. Payment Calculator — AboutPreview Warm Ivory bg-[#F5F5F2] */}
+      {/* 9. Payment Calculator - AboutPreview Warm Ivory bg-[#F5F5F2] */}
       <PaymentPlanCalculator
         title="Investment Payment Plan Estimator"
         subtitle="Estimate down payments, flexible monthly installment schedules, and handover balances."
@@ -332,13 +332,13 @@ export default function SampanDevelopmentLtdPage() {
         bgTheme="about-ivory"
       />
 
-      {/* 10. Brochure Download — DivisionsSection Soft Green bg-[#f3f6f2] */}
+      {/* 10. Brochure Download - DivisionsSection Soft Green bg-[#f3f6f2] */}
       <DownloadableBrochureCTA
         projectName="Sampan Development Ltd"
         bgTheme="divisions-green"
       />
 
-      {/* 11. Site Visit Form — AboutPreview Warm Ivory bg-[#F5F5F2] */}
+      {/* 11. Site Visit Form - AboutPreview Warm Ivory bg-[#F5F5F2] */}
       <SiteVisitBookingForm
         title="Book VIP Site Visit & Property Consultation"
         subtitle="Schedule a guided site tour with our property team. Complimentary vehicle transport available upon request."

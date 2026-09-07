@@ -110,7 +110,7 @@ export default function SampanAutoPage() {
   return (
     <main className="bg-[#f3f6f2] text-[#183b2b] antialiased selection:bg-[#4c2a85] selection:text-white">
 
-      {/* 1. Hero Overview — Purple (#4c2a85) Accent from Logo */}
+      {/* 1. Hero Overview - Purple (#4c2a85) Accent from Logo */}
       <MobilityHero
         title="Sampan Auto"
         subtitle="Japanese Vehicle Imports, Recondition Cars & Genuine Parts"
@@ -157,7 +157,7 @@ export default function SampanAutoPage() {
         accentColor="#4c2a85"
       />
 
-      {/* 5. Section 3: Contact / CTA — Call or WhatsApp */}
+      {/* 5. Section 3: Contact / CTA - Call or WhatsApp */}
       <MobilityOnlineRequestForm
         title="Contact Sales Desk or Request Import Quote"
         subtitle="Call our sales team directly or send us a message on WhatsApp for instant auction sheet verification."

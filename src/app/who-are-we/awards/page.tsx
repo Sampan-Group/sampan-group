@@ -298,7 +298,7 @@ export default function AccreditationHonorsAwardsPage() {
       <section className="hero-section relative h-screen min-h-[700px] w-full flex items-end bg-[#071018] text-white overflow-hidden">
         <div className="hero-bg absolute inset-0 opacity-0 will-change-transform">
           <Image
-            src="/images/recognition-hero.jpg"
+            src="/images/awards/Mockup.jpg"
             alt="Recognition"
             fill
             className="object-cover"
@@ -538,7 +538,7 @@ export default function AccreditationHonorsAwardsPage() {
       </section>
 
       {/* 06. RECOGNITION ARCHIVE */}
-      <section className="bg-white py-24 lg:py-32 border-t border-[#E4E9ED]">
+      {/* <section className="bg-white py-24 lg:py-32 border-t border-[#E4E9ED]">
         <div className="mx-auto max-w-[1200px] px-6 md:px-12">
           <div className="mb-16">
             <p className="reveal-up text-xs font-semibold uppercase tracking-[0.3em] text-[#007DC5] mb-4">
@@ -572,7 +572,7 @@ export default function AccreditationHonorsAwardsPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 07. PRESS MENTIONS */}
       <section className="bg-[#F5F7F8] py-24 lg:py-32 border-y border-[#E4E9ED]">
@@ -605,7 +605,7 @@ export default function AccreditationHonorsAwardsPage() {
                     “{press.quote}”
                   </blockquote>
                   <p className="text-sm text-neutral-500 mb-6">
-                    — {press.publication}
+                    - {press.publication}
                   </p>
                   <Link
                     href="#"
@@ -670,76 +670,6 @@ export default function AccreditationHonorsAwardsPage() {
         </div>
       </section>
 
-      {/* 10. FOOTER */}
-      <footer className="bg-[#071018] text-white pt-24 pb-12">
-        <div className="mx-auto max-w-[1600px] px-6 md:px-12">
-          <div className="flex flex-col md:flex-row justify-between items-start gap-12 pb-16 border-b border-white/10">
-            <h2 className="text-[clamp(3rem,5vw,6rem)] font-bold tracking-tighter">
-              SAMPAN GROUP
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-sm">
-              <div className="flex flex-col gap-3">
-                <span className="text-white/40 uppercase tracking-widest text-xs mb-2">
-                  Company
-                </span>
-                <Link
-                  href="/about"
-                  className="hover:text-[#007DC5] transition-colors"
-                >
-                  About
-                </Link>
-                <Link
-                  href="/businesses"
-                  className="hover:text-[#007DC5] transition-colors"
-                >
-                  Businesses
-                </Link>
-                <Link
-                  href="/projects"
-                  className="hover:text-[#007DC5] transition-colors"
-                >
-                  Projects
-                </Link>
-              </div>
-              <div className="flex flex-col gap-3">
-                <span className="text-white/40 uppercase tracking-widest text-xs mb-2">
-                  Recognition
-                </span>
-                <Link
-                  href="/recognition"
-                  className="hover:text-[#007DC5] transition-colors"
-                >
-                  Accreditations
-                </Link>
-                <Link
-                  href="/recognition"
-                  className="hover:text-[#007DC5] transition-colors"
-                >
-                  Honors & Awards
-                </Link>
-                <Link
-                  href="/newsroom"
-                  className="hover:text-[#007DC5] transition-colors"
-                >
-                  Newsroom
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
-            <span>© 2026 Sampan Group. All rights reserved.</span>
-            <div className="flex gap-6">
-              <Link href="#" className="hover:text-white transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="hover:text-white transition-colors">
-                Terms & Conditions
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
 
       {/* LIGHTBOX / CERTIFICATE MODAL */}
       {selectedImage && (

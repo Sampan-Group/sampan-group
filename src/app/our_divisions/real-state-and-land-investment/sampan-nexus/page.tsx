@@ -27,7 +27,7 @@ const facts = [
 const units = [
   {
     id: "nex-a",
-    name: "Nexus Residential Unit — 1,250 sq ft",
+    name: "Nexus Residential Unit - 1,250 sq ft",
     category: "3-Bedroom Apartment",
     sizeSqFt: "1,250 sq ft",
     bedrooms: 3,
@@ -98,12 +98,12 @@ export default function SampanNexusPage() {
   return (
     <main className="bg-[#f3f6f2] text-[#183b2b] antialiased selection:bg-[#0284c7] selection:text-white">
 
-      {/* 1. Hero Overview — Custom Ocean Blue (#0284c7) Accent & Green (#10b981) Badge from Logo */}
+      {/* 1. Hero Overview - Custom Ocean Blue (#0284c7) Accent & Green (#10b981) Badge from Logo */}
       <RealEstateHero
         title="Sampan Nexus"
         subtitle="Mawna Mixed-Use Industrial Corridor Project"
         divisionName="Sampan Development Ltd"
-        statusBadge="Coming Soon — Early Inquiries"
+        statusBadge="Coming Soon - Early Inquiries"
         statusType="coming-soon"
         description="A strategic mixed-use project combining commercial spaces and residential land-share apartments in the rapidly growing Mawna industrial belt."
         image="/images/our_divisions/sampan-nexus/nexus.jpeg"

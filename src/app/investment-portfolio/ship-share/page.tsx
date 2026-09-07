@@ -72,17 +72,17 @@ const legalCredentials = [
 
 const galleryImages = [
   {
-    src: "/images/ship-1.jpg",
+    src: "/images/land/infrastructure.jpg",
     size: "col-span-12 md:col-span-8 row-span-2",
     alt: "Cargo Vessel",
   },
   {
-    src: "/images/port-1.jpg",
+    src: "/images/land/infrastructure1.jpg",
     size: "col-span-6 md:col-span-4",
     alt: "Port Operations",
   },
   {
-    src: "/images/bridge-1.jpg",
+    src: "/images/land/infrastructure3.jpg",
     size: "col-span-6 md:col-span-4",
     alt: "Ship Bridge",
   },
@@ -378,7 +378,7 @@ export default function ShipSpaceSharePage() {
       <section className="hero-section relative min-h-screen md:h-screen w-full flex items-center bg-neutral-950 text-white overflow-hidden pt-20 pb-10 md:pt-0 md:pb-0">
         <div className="absolute inset-0 overflow-hidden">
           <Image
-            src="/images/ship-hero.jpg"
+            src="/images/investment-portfolio/shipshare.jpg"
             alt="Maritime Vessel"
             fill
             className="hero-bg-image object-cover will-change-transform"
@@ -462,7 +462,7 @@ export default function ShipSpaceSharePage() {
         <div className="mx-auto max-w-[1600px] px-6 sm:px-8 md:px-12">
           <div className="aa-parallax-image-wrapper relative aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden mb-12 bg-neutral-200">
             <Image
-              src="/images/vessel-overview.jpg"
+              src="/images/investment-portfolio/vassel.jpg"
               alt="Vessel Overview"
               fill
               className="aa-parallax-image object-cover will-change-transform"

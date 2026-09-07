@@ -15,7 +15,7 @@ import RealEstateLocationMap from "../components/RealEstateLocationMap";
 export const metadata: Metadata = {
   title: "Sampan Taj | 1,350 sft Single-Unit Luxury Residences in Bashundhara",
   description:
-    "Official presentation of Sampan Taj in Block F, Bashundhara R/A — 9-storied boutique residential building with 1 apartment per floor (1,350 sft), 40% open space, and premium finishes by Sampan Developments Ltd.",
+    "Official presentation of Sampan Taj in Block F, Bashundhara R/A - 9-storied boutique residential building with 1 apartment per floor (1,350 sft), 40% open space, and premium finishes by Sampan Developments Ltd.",
 };
 
 const facts = [
@@ -28,7 +28,7 @@ const facts = [
 const units = [
   {
     id: "taj-1350-suite",
-    name: "Sampan Taj Single Unit Residence — 1,350 sq ft",
+    name: "Sampan Taj Single Unit Residence - 1,350 sq ft",
     category: "3-Bedroom Single Unit Flat per Floor",
     sizeSqFt: "1,350 sq ft",
     bedrooms: 3,
@@ -70,7 +70,7 @@ const progressMilestones = [
 const floorPlans = [
   {
     id: "fp-taj-typical",
-    name: "Sampan Taj — Typical Floor Plan (1,350 sft)",
+    name: "Sampan Taj - Typical Floor Plan (1,350 sft)",
     category: "Typical Single Unit Floor Layout",
     sizeSqFt: "1,350 sq ft",
     image: "/images/projects/sampantaj.jpg",

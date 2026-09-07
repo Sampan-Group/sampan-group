@@ -125,8 +125,8 @@ export default function SiteVisitBookingForm({
                   <div className="space-y-1">
                     <label className="block uppercase opacity-70">Transport Pickup Needed?</label>
                     <select className="w-full bg-white border border-neutral-300 p-3 text-xs text-neutral-950 focus:border-[#ca8a04] focus:outline-none">
-                      <option>Yes — Request AC Car Pickup</option>
-                      <option>No — Self Driving to Site</option>
+                      <option>Yes - Request AC Car Pickup</option>
+                      <option>No - Self Driving to Site</option>
                     </select>
                   </div>
 

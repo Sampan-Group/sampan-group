@@ -266,13 +266,13 @@ export default function SampanNiketonPage() {
       />
 
       {/* 7. Construction Progress */}
-      <ConstructionProgressTracker
+      {/* <ConstructionProgressTracker
         overallCompletionPercentage={100}
         expectedHandoverDate="Handed Over"
         currentPhase="Fully Completed & Inhabited Project"
         milestones={progressMilestones}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* 8. Legal Credentials */}
       <LegalCredentialsModule
@@ -287,10 +287,10 @@ export default function SampanNiketonPage() {
       />
 
       {/* 10. Payment Calculator */}
-      <PaymentPlanCalculator
+      {/* <PaymentPlanCalculator
         defaultPropertyPriceBDT={12500000}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 11. Brochure CTA */}
       <DownloadableBrochureCTA

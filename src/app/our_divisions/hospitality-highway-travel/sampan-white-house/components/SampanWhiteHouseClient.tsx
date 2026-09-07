@@ -27,46 +27,46 @@ export default function SampanWhiteHouseClient() {
   return (
     <main className="bg-[#F5F5F2] text-neutral-900 antialiased selection:bg-[#e8b84b] selection:text-neutral-950">
 
-      {/* 1. OVERVIEW (Hero with Background Image & Transparent Navbar Dark Contrast) */}
+      {/* OVERVIEW (Hero with Background Image & Transparent Navbar Dark Contrast) */}
       <HeroOverview onOpenBooking={() => scrollToSection("booking-widget")} />
 
-      {/* 10. ONLINE BOOKING WIDGET (Instant Calculator & Reservation) */}
+      {/* ONLINE BOOKING WIDGET (Instant Calculator & Reservation) */}
       {/* <OnlineBookingWidget /> */}
 
-      {/* 9. MILESTONE COUNTER (Track Record & Scale) */}
+      {/* MILESTONE COUNTER (Track Record & Scale) */}
       <MilestoneCounter />
 
-      {/* 2. FACILITIES / OFFERINGS LIST (Category Filtered Cards) */}
+      {/* FACILITIES / OFFERINGS LIST (Category Filtered Cards) */}
       <FacilitiesList />
 
-      {/* 14. DEDICATED HIGHWAY-ROUTE MAP (Corridor Map & Mile Markers) */}
+      {/* DEDICATED HIGHWAY-ROUTE MAP (Corridor Map & Mile Markers) */}
       <HighwayRouteVisualizer />
 
-      {/* 3. LOCATION + LIVE MAP (GPS Coordinates, Hub Distances & Embedded Map) */}
+      {/* LOCATION + LIVE MAP (GPS Coordinates, Hub Distances & Embedded Map) */}
       <LocationAndMap />
 
-      {/* 6. ROOM / PACKAGE PRICING OVERVIEW (Transparent Tiers & Inclusions) */}
+      {/* ROOM / PACKAGE PRICING OVERVIEW (Transparent Tiers & Inclusions) */}
       {/* <PricingOverview /> */}
 
-      {/* 12. VIRTUAL TOUR (360° Walkthrough Simulator & Interactive Hotspots) */}
-      <VirtualTourViewer />
+      {/* VIRTUAL TOUR (360° Walkthrough Simulator & Interactive Hotspots) */}
+      {/* <VirtualTourViewer /> */}
 
-      {/* 5. PHOTO / VIDEO GALLERY (Masonry Showcase & Drone Video) */}
+      {/* PHOTO / VIDEO GALLERY (Masonry Showcase & Drone Video) */}
       <PhotoVideoGallery />
 
-      {/* 7. "NEARBY AT THIS LOCATION" MODULE (Adjacent Assets & Attractions) */}
+      {/* "NEARBY AT THIS LOCATION" MODULE (Adjacent Assets & Attractions) */}
       <NearbyLocationModule />
 
-      {/* 8. PRESS / MEDIA MENTIONS CAROUSEL (National Press Mentions) */}
+      {/* PRESS / MEDIA MENTIONS CAROUSEL (National Press Mentions) */}
       <PressMediaCarousel />
 
-      {/* 11. GUEST REVIEWS (Verified Traveler Feedback & Rating Scorecard) */}
+      {/* GUEST REVIEWS (Verified Traveler Feedback & Rating Scorecard) */}
       <GuestReviews />
 
-      {/* 13. USER-GENERATED CONTENT FEED (#SampanWhiteHouse Community) */}
+      {/* USER-GENERATED CONTENT FEED (#SampanWhiteHouse Community) */}
       <UGCFeed />
 
-      {/* 4. BOOK / ENQUIRE CTA (Direct Hotline, WhatsApp & Instant Form) */}
+      {/* BOOK / ENQUIRE CTA (Direct Hotline, WhatsApp & Instant Form) */}
       <BookEnquireCTA onOpenBookingWidget={() => scrollToSection("booking-widget")} />
 
       {/* Floating Highway Quick Navigation Bar (Square Style) */}

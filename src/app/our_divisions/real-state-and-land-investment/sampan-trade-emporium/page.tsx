@@ -179,10 +179,10 @@ export default function SampanTradeEmporiumPage() {
       />
 
       {/* 9. Payment Calculator */}
-      <PaymentPlanCalculator
+      {/* <PaymentPlanCalculator
         defaultPropertyPriceBDT={12000000}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* 10. Brochure Download */}
       <DownloadableBrochureCTA

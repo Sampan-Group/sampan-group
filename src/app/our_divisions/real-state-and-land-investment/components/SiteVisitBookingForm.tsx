@@ -8,6 +8,7 @@ export interface SiteVisitBookingFormProps {
   subtitle?: string;
   projectName: string;
   bgTheme?: "divisions-green" | "about-ivory" | "white";
+  submitButtonText?: string;
 }
 
 export default function SiteVisitBookingForm({
@@ -15,6 +16,7 @@ export default function SiteVisitBookingForm({
   subtitle = "Schedule a guided site tour with our property team. Complimentary vehicle transport available upon request.",
   projectName,
   bgTheme = "about-ivory",
+  submitButtonText = "Confirm VIP Site Visit Slot",
 }: SiteVisitBookingFormProps) {
   const [submitted, setSubmitted] = useState(false);
 
@@ -134,7 +136,7 @@ export default function SiteVisitBookingForm({
                     type="submit"
                     className="w-full bg-[#183b2b] hover:bg-[#ca8a04] text-white hover:text-neutral-950 py-4 font-bold uppercase tracking-[0.2em] transition-all shadow-md mt-2 cursor-pointer"
                   >
-                    Confirm VIP Site Visit Slot
+                    {submitButtonText}
                   </button>
                 </form>
               )}

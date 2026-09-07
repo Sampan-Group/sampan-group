@@ -29,8 +29,8 @@ export default function Home() {
         <Counter />
         {/* <CompletedProjectsEditorial /> */}
         <ProjectsSection />
+        <ClientLocationMap />
       </div>{" "}
-      <ClientLocationMap />
       <LeadershipMessage />
       <AwardsRecognition />
       <AffiliationSection />

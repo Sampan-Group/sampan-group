@@ -64,9 +64,7 @@ export default function AboutPage() {
             </p>
             <p>
               Every venture is guided by the same standards—innovation,
-              integrity, quality, and long-term thinking. Through strategic
-              investment and disciplined management, SAMPAN creates connected
-              ecosystems that support economic development and enrich the
+              integrity enrich the
               communities around them.
             </p>
             <p>

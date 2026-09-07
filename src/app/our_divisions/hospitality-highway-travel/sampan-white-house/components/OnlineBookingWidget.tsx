@@ -240,7 +240,7 @@ export default function OnlineBookingWidget({
             <input
               type="tel"
               required
-              placeholder="+880 1XXXXXXXXX"
+              placeholder="+880 1912234588"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               className="w-full bg-transparent text-sm font-medium text-neutral-950 placeholder-neutral-400 focus:outline-none"

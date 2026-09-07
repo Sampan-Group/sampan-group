@@ -122,7 +122,7 @@ const socialLinks = [
   },
   {
     label: "WhatsApp",
-    href: "https://wa.me/8801XXXXXXXXX",
+    href: "https://wa.me/8801912234588",
     Icon: FaWhatsapp,
   },
 ];

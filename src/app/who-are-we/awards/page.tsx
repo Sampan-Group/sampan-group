@@ -21,10 +21,10 @@ if (typeof window !== "undefined") {
 
 // --- Provided Gallery Images ---
 const galleryImages = [
-  { id: "img-01", src: "/images/awards/Our-Curated-Gallery-Photo-Frame.webp" },
+  { id: "img-01", src: "/images/awards/W-2.png" },
   {
     id: "img-02",
-    src: "/images/awards/Our-Curated-Gallery-Photo-Frame-1.webp",
+    src: "/images/awards/Boss-Award-5.jpg",
   },
   {
     id: "img-03",
@@ -32,17 +32,17 @@ const galleryImages = [
   },
   {
     id: "img-04",
-    src: "/images/awards/Our-Curated-Gallery-Photo-Frame-3.webp",
+    src: "/images/awards/Boss-Award-3.jpg",
   },
   {
     id: "img-05",
-    src: "/images/awards/Our-Curated-Gallery-Photo-Frame-4.webp",
+    src: "/images/awards/Boss-Award-2.jpg",
   },
   {
     id: "img-06",
-    src: "/images/awards/Our-Curated-Gallery-Photo-Frame-5.webp",
+    src: "/images/awards/mou.jpeg",
   },
-  { id: "img-07", src: "/images/awards/boss.jpeg" },
+  { id: "img-07", src: "/images/awards/Boss-Award-1.jpg" },
   { id: "img-08", src: "/images/awards/purple.jpeg" },
   { id: "img-09", src: "/images/awards/mou.jpeg" },
   { id: "img-10", src: "/images/awards/express.jpeg" },
@@ -298,7 +298,7 @@ export default function AccreditationHonorsAwardsPage() {
       <section className="hero-section relative h-screen min-h-[700px] w-full flex items-end bg-[#071018] text-white overflow-hidden">
         <div className="hero-bg absolute inset-0 opacity-0 will-change-transform">
           <Image
-            src="/images/awards/Mockup.jpg"
+            src="/images/awards/awards5.jpeg"
             alt="Recognition"
             fill
             className="object-cover"
@@ -401,7 +401,7 @@ export default function AccreditationHonorsAwardsPage() {
                   src={galleryImages[0].src}
                   alt="Featured Award"
                   fill
-                  className="img-reveal object-cover will-change-transform"
+                  className="img-reveal object-cover object-top will-change-transform"
                   sizes="80vw"
                 />
               </div>
@@ -443,7 +443,7 @@ export default function AccreditationHonorsAwardsPage() {
                     src={img.src}
                     alt={`Award ${i + 2}`}
                     fill
-                    className="img-reveal object-cover group-hover:scale-105 transition-transform duration-700 will-change-transform"
+                    className="img-reveal object-contain group-hover:scale-105 transition-transform duration-700 will-change-transform"
                     sizes="33vw"
                   />
                   <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#007DC5] group-hover:w-full transition-all duration-500"></div>

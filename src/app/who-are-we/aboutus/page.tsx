@@ -239,7 +239,7 @@ export default function AboutUsPage() {
 
       {/* 03. HERITAGE / MILESTONES TIMELINE */}
       {/* Desktop Version (Horizontal Scroll) */}
-      <section id="heritage-section" className="bg-[#050505] h-screen w-full overflow-hidden hidden lg:block text-white relative">
+      {/* <section id="heritage-section" className="bg-[#050505] h-screen w-full overflow-hidden hidden lg:block text-white relative">
         <div className="absolute top-0 left-0 w-full h-[2px] bg-white/5 z-10">
           <div ref={timelineProgressRef} className="h-full w-full bg-emerald-500 origin-left scale-x-0"></div>
         </div>
@@ -271,7 +271,7 @@ export default function AboutUsPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Mobile Version (Vertical Timeline) */}
       <section className="bg-[#050505] py-24 lg:hidden text-white">

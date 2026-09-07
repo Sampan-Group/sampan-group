@@ -806,19 +806,18 @@ export default function NewsroomPage() {
               href="mailto:media@sampangroup.com"
               className="reveal-up flex items-center gap-4 text-lg border-b border-[#E5E9EC] pb-4 hover:text-[#007DC5] transition-colors"
             >
-              <FiMail /> media@sampangroup.com
-            </a>
+              <FiMail /> info@sampangroup.com.bd</a>
             <a
-              href="tel:+8801000000000"
+              href="tel:+8801912234588"
               className="reveal-up flex items-center gap-4 text-lg border-b border-[#E5E9EC] pb-4 hover:text-[#007DC5] transition-colors"
             >
-              <FiPhone /> +880 1000 00000
+              <FiPhone /> +880 1912-234588
             </a>
             <Link
-              href="#"
+              href="/contact"
               className="reveal-up group mt-4 inline-flex items-center gap-4 text-sm font-bold uppercase tracking-widest text-[#071018] hover:text-[#007DC5] transition-colors"
             >
-              Contact Media Team{" "}
+              Contact With Us{" "}
               <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>

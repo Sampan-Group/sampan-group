@@ -766,7 +766,7 @@ export default function ExpressHighwayInnClubLoungePage() {
                       id="phone"
                       required
                       className="w-full px-4 py-3.5 rounded-none bg-white border border-neutral-300 text-neutral-950 placeholder-neutral-400 focus:outline-none focus:border-[#2563eb] transition-colors"
-                      placeholder="+880 1XXXXXXXXX"
+                      placeholder="+880 1912234588"
                     />
                   </div>
 

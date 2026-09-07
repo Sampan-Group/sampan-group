@@ -25,29 +25,29 @@ if (typeof window !== "undefined") {
 
 const cultureKeywords = ["PEOPLE", "PURPOSE", "GROWTH", "IMPACT"];
 
-const testimonials = [
-  {
-    name: "Tahsin Rahman",
-    role: "Project Manager, Development",
-    quote:
-      "Sampan has given me the opportunity to learn, contribute, and grow in ways I never imagined.",
-    image: "/images/emp-1.jpg",
-  },
-  {
-    name: "Anika Tabassum",
-    role: "Hospitality Lead",
-    quote:
-      "Every day is a chance to create premium experiences. The team feels more like a family.",
-    image: "/images/emp-2.jpg",
-  },
-  {
-    name: "Arif Hossain",
-    role: "Agro Specialist",
-    quote:
-      "Working towards sustainable agriculture here gives my work real meaning and impact.",
-    image: "/images/emp-3.jpg",
-  },
-];
+// const testimonials = [
+//   {
+//     name: "Tahsin Rahman",
+//     role: "Project Manager, Development",
+//     quote:
+//       "Sampan has given me the opportunity to learn, contribute, and grow in ways I never imagined.",
+//     image: "/images/emp-1.jpg",
+//   },
+//   {
+//     name: "Anika Tabassum",
+//     role: "Hospitality Lead",
+//     quote:
+//       "Every day is a chance to create premium experiences. The team feels more like a family.",
+//     image: "/images/emp-2.jpg",
+//   },
+//   {
+//     name: "Arif Hossain",
+//     role: "Agro Specialist",
+//     quote:
+//       "Working towards sustainable agriculture here gives my work real meaning and impact.",
+//     image: "/images/emp-3.jpg",
+//   },
+// ];
 
 const photoWall = [
   {
@@ -470,7 +470,7 @@ export default function CareersPage() {
       </section>
 
       {/* 05. EMPLOYEE TESTIMONIALS */}
-      <section className="bg-white py-24 lg:py-32 border-b border-[#E5E9EC]">
+      {/* <section className="bg-white py-24 lg:py-32 border-b border-[#E5E9EC]">
         <div className="mx-auto max-w-[1200px] px-6 md:px-12 grid grid-cols-12 gap-8 lg:gap-16 items-center">
           <div className="col-span-12 md:col-span-5">
             <div className="relative aspect-[4/5] w-full overflow-hidden bg-neutral-100">
@@ -526,7 +526,7 @@ export default function CareersPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 06. EMPLOYEE PHOTO WALL */}
       <section className="bg-[#F5F7F8] py-24 lg:py-32">

@@ -151,7 +151,7 @@ export default function BookEnquireCTA({ onOpenBookingWidget }: { onOpenBookingW
                         <input
                           type="tel"
                           required
-                          placeholder="+880 1XXXXXXXXX"
+                          placeholder="+880 1912234588"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           className="w-full bg-[#F5F5F2] border border-neutral-300 rounded-none p-3.5 text-neutral-950 placeholder-neutral-400 focus:outline-none focus:border-[#e8b84b]"

@@ -51,9 +51,9 @@ const landShareTiers = [
     title: "21st Century Land Share Tier",
     shareSize: "Undivided Proportional Land Share",
     equityRatio: "1 Full Apartment Share",
-    deedRegistration: "Sub-Kabala Registered (REHAB Member Developer)",
+    // deedRegistration: "Sub-Kabala Registered (REHAB Member Developer)",
     keyBenefits: [
-      "Direct Sub-Kabala Land Share Registration",
+      // "Direct Sub-Kabala Land Share Registration",
       "40% Open Space with landscaped front setback",
       "Built by Sampan Developments Ltd (REHAB Member)",
     ],
@@ -61,7 +61,7 @@ const landShareTiers = [
 ];
 
 const progressMilestones = [
-  { stage: "Land Title Mutation & Sub-Kabala", completionPercent: 100, status: "Completed" as const, targetDate: "Done", notes: "Clear Title Deed" },
+  { stage: "Land Title Mutation" /* & Sub-Kabala */, completionPercent: 100, status: "Completed" as const, targetDate: "Done", notes: "Clear Title Deed" },
   { stage: "Architectural & Floor Plan Approval", completionPercent: 100, status: "Completed" as const, targetDate: "Done", notes: "2,000 sq ft Typical Layout" },
   { stage: "Foundation & Construction Work", completionPercent: 25, status: "In Progress" as const, targetDate: "Active Phase", notes: "Piling & Structure Setup" },
 ];
@@ -163,7 +163,7 @@ const specifications: SpecificationCategory[] = [
 const legalCredentials = [
   {
     authority: "REHAB & Ministry of Land",
-    approvalTitle: "Clear Sub-Kabala Land Title & Mutation",
+    approvalTitle: "Clear Land Title & Mutation", // Sub-Kabala
     referenceNumber: "REHAB Member Developer",
     status: "100% Cleared",
     description: "Developed by Sampan Developments Ltd, official REHAB Member with clear title deed and registered land share.",
@@ -239,7 +239,7 @@ export default function Sampan21stCenturyPage() {
       <LandShareStructure
         totalLandArea="20 Katha"
         totalSharesCount="Land Share Registered"
-        registrationStatus="Sub-Kabala Ready"
+        // registrationStatus="Sub-Kabala Ready"
         tiers={landShareTiers}
         bgTheme="about-ivory"
       />

@@ -44,7 +44,7 @@ const landShareTiers = [
     title: "Nexus Growth Land Share",
     shareSize: "1.0 Katha Undivided",
     equityRatio: "1 Residential Unit Share",
-    deedRegistration: "Sub-Kabala Registered",
+    // deedRegistration: "Sub-Kabala Registered",
     keyBenefits: ["Low Entry Capital", "High Industrial Corridor Demand", "Transparent Cost Model"],
   },
 ];
@@ -122,7 +122,7 @@ export default function SampanNexusPage() {
       <LandShareStructure
         totalLandArea="16 Katha"
         totalSharesCount="48 Land Shares"
-        registrationStatus="Sub-Kabala Ready"
+        // registrationStatus="Sub-Kabala Ready"
         tiers={landShareTiers}
         bgTheme="about-ivory"
       />

@@ -56,7 +56,7 @@ const landShareTiers = [
     title: "Pre-Launch Skyline Land Share",
     shareSize: "1.4 Katha Undivided",
     equityRatio: "1 Penthouse / Suite Share",
-    deedRegistration: "Sub-Kabala Direct Transfer",
+    // deedRegistration: "Sub-Kabala Direct Transfer",
     keyBenefits: ["Pre-Construction Discount", "Guaranteed Floor Selection Priority", "High Growth Appreciation"],
   },
 ];
@@ -137,7 +137,7 @@ export default function SampanSkylinePage() {
       <LandShareStructure
         totalLandArea="15 Katha"
         totalSharesCount="54 Pre-Launch Shares"
-        registrationStatus="Sub-Kabala Ready"
+        // registrationStatus="Sub-Kabala Ready"
         tiers={landShareTiers}
         bgTheme="about-ivory"
       />

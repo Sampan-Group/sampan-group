@@ -52,7 +52,7 @@ export default function UnitTypesAndSizes({
 
   return (
     <section id="unit-types" className={`py-24 relative overflow-hidden ${containerClasses}`}>
-      
+
       {/* Signature DivisionsSection Radial Ambient Overlay */}
       <div
         aria-hidden="true"
@@ -60,7 +60,7 @@ export default function UnitTypesAndSizes({
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16">
-        
+
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
@@ -78,7 +78,7 @@ export default function UnitTypesAndSizes({
         </div>
 
         {/* Filter Tabs */}
-        {categories.length > 2 && (
+        {/* {categories.length > 2 && (
           <div className="flex flex-wrap gap-2 mb-12 border-b border-current/15 pb-4">
             {categories.map((cat) => (
               <button
@@ -94,7 +94,7 @@ export default function UnitTypesAndSizes({
               </button>
             ))}
           </div>
-        )}
+        )} */}
 
         {/* Cards Grid with Photo Space */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

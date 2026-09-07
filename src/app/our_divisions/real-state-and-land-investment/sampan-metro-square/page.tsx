@@ -56,14 +56,14 @@ const landShareTiers = [
     title: "Standard Residential Land Share",
     shareSize: "1.2 Katha Undivided",
     equityRatio: "1 Apartment Unit Share",
-    deedRegistration: "Direct Sub-Kabala Deed",
+    // deedRegistration: "Direct Sub-Kabala Deed",
     keyBenefits: ["Direct Mutual Land Deed Registration", "Zero Middleman Profit Margin", "Transparent Construction Cost Sharing"],
   },
   {
     title: "Commercial & Corner Land Share",
     shareSize: "1.5 Katha Undivided",
     equityRatio: "1 Unit + Parking Share",
-    deedRegistration: "Direct Sub-Kabala Deed",
+    // deedRegistration: "Direct Sub-Kabala Deed",
     keyBenefits: ["Priority Floor & Unit Selection", "Includes Covered Ground Parking Share", "High Capital Appreciation Potential"],
   },
 ];
@@ -167,10 +167,10 @@ export default function SampanMetroSquarePage() {
       {/* 3. Land Share Structure */}
       <LandShareStructure
         title="Land Share Ownership Structure"
-        subtitle="Direct Sub-Kabala land deed registration with zero middleman markups."
+        subtitle="Direct land deed registration with zero middleman markups."
         totalLandArea="12 Katha"
         totalSharesCount="48 Land Shares"
-        registrationStatus="Sub-Kabala Deed Ready"
+        // registrationStatus="Sub-Kabala Deed Ready"
         tiers={landShareTiers}
         bgTheme="about-ivory"
       />

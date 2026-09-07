@@ -35,7 +35,11 @@ const units = [
     balconies: 2,
     priceRange: "BDT 58 Lacs",
     orientation: "Ashulia Metro Corridor",
-    highlights: ["14-Storey Planned Residential Tower", "Sub-Kabala Land Deed Registration", "20 Mins to Uttara Metro Station"],
+    highlights: [
+      "14-Storey Planned Residential Tower",
+      // "Sub-Kabala Land Deed Registration",
+      "20 Mins to Uttara Metro Station",
+    ],
     image: "/images/our_divisions/sampan-metro-square/metro-square.png",
     link: "/our_divisions/real-state-and-land-investment/sampan-metro-square",
   },
@@ -132,7 +136,11 @@ const units = [
     balconies: 2,
     priceRange: "BDT 42 Lacs+",
     orientation: "Mawna Growth Hub",
-    highlights: ["Commercial Retail + Residential Apartments", "Rapidly Growing Industrial Growth Belt", "Sub-Kabala Ready Land Registration"],
+    highlights: [
+      "Commercial Retail + Residential Apartments",
+      "Rapidly Growing Industrial Growth Belt",
+      // "Sub-Kabala Ready Land Registration",
+    ],
     link: "/our_divisions/real-state-and-land-investment/sampan-nexus",
   },
   {
@@ -182,13 +190,17 @@ const landShareTiers = [
     title: "Master Division Land Share Portfolio",
     shareSize: "1.0 - 1.5 Katha Undivided",
     equityRatio: "1 Unit Ownership Share",
-    deedRegistration: "Direct Sub-Kabala Deed",
-    keyBenefits: ["Direct Government Registered Sub-Kabala Deed", "Zero Intermediary Profit Margins", "Transparent Construction Cost Schedule"],
+    // deedRegistration: "Direct Sub-Kabala Deed",
+    keyBenefits: [
+      // "Direct Government Registered Sub-Kabala Deed",
+      "Zero Intermediary Profit Margins",
+      "Transparent Construction Cost Schedule",
+    ],
   },
 ];
 
 const progressMilestones = [
-  { stage: "Land Acquisition & Title Deed Verification", completionPercent: 100, status: "Completed" as const, targetDate: "Done (2024)", notes: "100% Mutation & Clear Sub-Kabala Titles Secured" },
+  { stage: "Land Acquisition & Title Deed Verification", completionPercent: 100, status: "Completed" as const, targetDate: "Done (2024)", notes: "100% Mutation & Clear Deed Titles Secured" /* Sub-Kabala */ },
   { stage: "Architectural Engineering & RAJUK Approvals", completionPercent: 90, status: "In Progress" as const, targetDate: "Q3 2026", notes: "Soil test reports & structural engineering clearance complete" },
   { stage: "Piling, Construction & Handover", completionPercent: 45, status: "In Progress" as const, targetDate: "Q4 2028", notes: "Ongoing structural frame casting across project sites" },
 ];
@@ -208,7 +220,7 @@ const floorPlans = [
 const legalCredentials = [
   {
     authority: "Ministry of Land / AC Land",
-    approvalTitle: "Clear Sub-Kabala Land Deed Titles",
+    approvalTitle: "Clear Land Deed Titles", // Sub-Kabala
     referenceNumber: "CS, SA, RS & City Jorip Cleared",
     status: "100% Verified",
     description: "All division land parcels mutated with zero legal encumbrances.",
@@ -269,10 +281,10 @@ export default function SampanDevelopmentLtdPage() {
       {/* 3. Land Share Model — AboutPreview Warm Ivory bg-[#F5F5F2] */}
       <LandShareStructure
         title="Flagship Land Share Ownership Model"
-        subtitle="Direct Sub-Kabala land deed registration with zero middleman markups across all project sites."
+        subtitle="Direct land deed registration with zero middleman markups across all project sites."
         totalLandArea="50+ Katha Portfolio"
         totalSharesCount="200+ Land Shares"
-        registrationStatus="Sub-Kabala Deed Cleared"
+        // registrationStatus="Sub-Kabala Deed Cleared"
         tiers={landShareTiers}
         bgTheme="about-ivory"
       />

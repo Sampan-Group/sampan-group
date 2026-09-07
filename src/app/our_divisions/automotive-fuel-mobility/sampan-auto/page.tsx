@@ -27,7 +27,11 @@ const offeredServices = [
   {
     title: "Ready Showroom Vehicle Inventory",
     description: "Browse high-spec Toyota Noah, Lexus RX, Prado, Premio, and Honda Grace ready for immediate delivery in our Expressway showroom.",
-    highlights: ["Ready Sub-Kabala Tax Token & Smart Card", "Zero Mileage In-Country Drive", "Complimentary First Service"],
+    highlights: [
+      // "Ready Sub-Kabala Tax Token & Smart Card",
+      "Zero Mileage In-Country Drive",
+      "Complimentary First Service",
+    ],
   },
   {
     title: "Genuine OEM Japanese Spare Parts",

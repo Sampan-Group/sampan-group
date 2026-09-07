@@ -52,9 +52,9 @@ const landShareTiers = [
     title: "Bashundhara Block-F Land Share Tier",
     shareSize: "3.5 Katha Total Land Share",
     equityRatio: "1 Full Floor Apartment Share (1/8th Share)",
-    deedRegistration: "Sub-Kabala Registered (REHAB Member Developer)",
+    // deedRegistration: "Sub-Kabala Registered (REHAB Member Developer)",
     keyBenefits: [
-      "Direct Sub-Kabala Land Share Registration in Bashundhara R/A",
+      // "Direct Sub-Kabala Land Share Registration in Bashundhara R/A",
       "Single Flat Per Floor confidentiality and high privacy",
       "Developed by Sampan Developments Ltd (REHAB Member)",
     ],
@@ -160,7 +160,7 @@ const specifications: SpecificationCategory[] = [
 const legalCredentials = [
   {
     authority: "Bashundhara R/A & Ministry of Land",
-    approvalTitle: "Plot 235 Block-F Sub-Kabala Deed & Mutation",
+    approvalTitle: "Plot 235 Block-F Deed & Mutation", // Sub-Kabala Deed
     referenceNumber: "REHAB Member Developer",
     status: "100% Cleared",
     description: "Clear deed title in Block F, Bashundhara R/A by Sampan Developments Ltd (REHAB Member).",
@@ -239,7 +239,7 @@ export default function SampanTajPage() {
       <LandShareStructure
         totalLandArea="3.5 Katha"
         totalSharesCount="8 Exclusive Flat Shares"
-        registrationStatus="Sub-Kabala Ready"
+        // registrationStatus="Sub-Kabala Ready"
         tiers={landShareTiers}
         bgTheme="about-ivory"
       />

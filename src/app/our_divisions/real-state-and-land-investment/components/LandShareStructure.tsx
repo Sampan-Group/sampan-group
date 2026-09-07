@@ -6,7 +6,7 @@ export interface LandShareTier {
   title: string;
   shareSize: string;
   equityRatio: string;
-  deedRegistration: string;
+  deedRegistration?: string;
   keyBenefits: string[];
 }
 
@@ -15,7 +15,7 @@ export interface LandShareStructureProps {
   subtitle?: string;
   totalLandArea: string;
   totalSharesCount: string;
-  registrationStatus: string;
+  registrationStatus?: string;
   tiers: LandShareTier[];
   bgTheme?: "divisions-green" | "about-ivory" | "white";
 }
@@ -72,13 +72,15 @@ export default function LandShareStructure({
             <span className="text-xs font-mono uppercase opacity-60">Total Shares Allotted</span>
             <p className="text-3xl font-mono font-bold text-current">{totalSharesCount}</p>
           </div>
-          <div className="border border-current/15 bg-white p-6 space-y-1 shadow-sm">
-            <span className="text-xs font-mono uppercase opacity-60">Legal Deed Registration</span>
-            <p className="text-lg font-mono font-bold text-emerald-700 flex items-center gap-2 mt-2">
-              <FaShieldAlt />
-              <span>{registrationStatus}</span>
-            </p>
-          </div>
+          {registrationStatus && (
+            <div className="border border-current/15 bg-white p-6 space-y-1 shadow-sm">
+              <span className="text-xs font-mono uppercase opacity-60">Legal Deed Registration</span>
+              <p className="text-lg font-mono font-bold text-emerald-700 flex items-center gap-2 mt-2">
+                <FaShieldAlt />
+                <span>{registrationStatus}</span>
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Tiers Grid */}
@@ -106,10 +108,12 @@ export default function LandShareStructure({
                     <span>Equity Ownership Ratio:</span>
                     <span className="font-bold text-[#ca8a04]">{tier.equityRatio}</span>
                   </div>
-                  <div className="flex justify-between opacity-80">
-                    <span>Deed Transfer:</span>
-                    <span className="font-bold text-current">{tier.deedRegistration}</span>
-                  </div>
+                  {tier.deedRegistration && (
+                    <div className="flex justify-between opacity-80">
+                      <span>Deed Transfer:</span>
+                      <span className="font-bold text-current">{tier.deedRegistration}</span>
+                    </div>
+                  )}
                 </div>
 
                 <div className="space-y-2 pt-2">

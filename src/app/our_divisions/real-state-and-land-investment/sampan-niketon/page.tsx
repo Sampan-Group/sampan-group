@@ -69,9 +69,9 @@ const landShareTiers = [
     title: "Shanti Niketon Land Share Tier",
     shareSize: "5 Katha Undivided Proportional Share",
     equityRatio: "1 Residential Unit Share",
-    deedRegistration: "Sub-Kabala Registered with RAJUK Approval",
+    // deedRegistration: "Sub-Kabala Registered with RAJUK Approval",
     keyBenefits: [
-      "Direct Sub-Kabala Land Registration",
+      // "Direct Sub-Kabala Land Registration",
       "RAJUK Approved Plan (No. RAJUK/NAA/3C-491/11/697 STHA)",
       "High Value Asset in Tejgaon-Gulshan Link Road corridor",
     ],
@@ -250,7 +250,7 @@ export default function SampanNiketonPage() {
       <LandShareStructure
         totalLandArea="5 Katha"
         totalSharesCount="14 Residential Units"
-        registrationStatus="Sub-Kabala Ready"
+        // registrationStatus="Sub-Kabala Ready"
         tiers={landShareTiers}
         bgTheme="about-ivory"
       />

@@ -57,7 +57,7 @@ const landShareTiers = [
     title: "Residency Land Share Tier A",
     shareSize: "1.3 Katha Undivided",
     equityRatio: "1 Suite Unit Share",
-    deedRegistration: "Sub-Kabala Registered",
+    // deedRegistration: "Sub-Kabala Registered",
     keyBenefits: ["Direct Land Mutation Title", "Access to Express Highway Inn Swimming Pool & Gym", "High Rental Yield Potential"],
   },
 ];

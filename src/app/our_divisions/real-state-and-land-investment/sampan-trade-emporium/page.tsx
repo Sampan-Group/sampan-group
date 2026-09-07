@@ -56,7 +56,7 @@ const landShareTiers = [
     title: "Commercial Unit Share",
     shareSize: "0.8 Katha Undivided",
     equityRatio: "1 Commercial Unit Share",
-    deedRegistration: "Sub-Kabala Registered",
+    // deedRegistration: "Sub-Kabala Registered",
     keyBenefits: ["Commercial Zoning Approval", "High Lease Rental Yield", "Dedicated Underground Parking"],
   },
 ];
@@ -136,7 +136,7 @@ export default function SampanTradeEmporiumPage() {
       <LandShareStructure
         totalLandArea="14 Katha"
         totalSharesCount="42 Commercial Shares"
-        registrationStatus="Sub-Kabala Ready"
+        // registrationStatus="Sub-Kabala Ready"
         tiers={landShareTiers}
         bgTheme="about-ivory"
       />

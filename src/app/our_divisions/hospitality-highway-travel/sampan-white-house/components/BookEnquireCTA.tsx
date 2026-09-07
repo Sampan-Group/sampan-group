@@ -38,7 +38,7 @@ export default function BookEnquireCTA({ onOpenBookingWidget }: { onOpenBookingW
           <div className="lg:col-span-6 space-y-8">
             <div className="inline-flex items-center gap-2 border border-[#ca8a04]/30 bg-amber-50 px-4 py-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-[#ca8a04]">
               <FaHeadset />
-              <span>04 / 24/7 Front Desk &amp; Event Concierge</span>
+              <span>24/7 Front Desk &amp; Event Concierge</span>
             </div>
 
             <h2 className="text-[clamp(2.2rem,4.5vw,4rem)] font-semibold leading-[0.95] tracking-[-0.03em] text-neutral-950">

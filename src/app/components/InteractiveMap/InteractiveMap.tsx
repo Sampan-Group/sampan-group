@@ -253,12 +253,6 @@ export default function LocationMap() {
       <div className="relative z-10 mx-auto max-w-[1400px] px-[5vw]">
         {/* ====== SECTION HEADER ====== */}
         <div className="map-header mb-16 max-w-3xl lg:mb-20">
-          <div className="mb-6 flex items-center gap-4">
-            <span className="h-px w-10 bg-emerald-600" />
-            <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.4em] text-neutral-500">
-              04 / Our Reach
-            </span>
-          </div>
           <h2 className="text-[clamp(2.5rem,5vw,4.5rem)] font-semibold leading-[0.95] tracking-[-0.03em] text-neutral-950">
             Growing across
             <br />

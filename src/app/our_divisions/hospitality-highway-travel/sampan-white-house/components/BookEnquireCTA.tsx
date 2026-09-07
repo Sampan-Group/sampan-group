@@ -84,7 +84,7 @@ export default function BookEnquireCTA({ onOpenBookingWidget }: { onOpenBookingW
               </a>
 
               <a
-                href="mailto:info@sampangroup.com.bd"
+                href="mailto:info@sampangroup.com.bd.bd"
                 className="group p-5 rounded-none bg-white border border-neutral-200 hover:border-[#e8b84b] transition-all duration-300 flex items-start gap-4 shadow-sm"
               >
                 <div className="p-3 rounded-none bg-amber-50 text-[#ca8a04] group-hover:bg-[#e8b84b] group-hover:text-neutral-950 transition-colors">
@@ -92,7 +92,7 @@ export default function BookEnquireCTA({ onOpenBookingWidget }: { onOpenBookingW
                 </div>
                 <div>
                   <p className="font-mono text-[10px] font-bold uppercase tracking-wider text-neutral-500">Event Proposals</p>
-                  <p className="text-xs font-bold text-neutral-950 mt-0.5 group-hover:text-[#ca8a04] transition-colors truncate">info@sampangroup.com.bd</p>
+                  <p className="text-xs font-bold text-neutral-950 mt-0.5 group-hover:text-[#ca8a04] transition-colors truncate">info@sampangroup.com.bd.bd</p>
                   <p className="text-[10px] text-neutral-400 mt-1 font-mono">White Hall RFP &amp; Galas</p>
                 </div>
               </a>

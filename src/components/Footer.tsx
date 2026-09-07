@@ -727,7 +727,7 @@ export default function Footer() {
         {/* ============ CONTACT + SOCIAL ============ */}
         <div className="f-anim grid grid-cols-1 gap-4 py-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 lg:py-10">
           <a
-            href="mailto:info@sampangroup.com.bd"
+            href="mailto:info@sampangroup.com.bd.bd"
             className="group flex items-center gap-3 rounded-lg border border-white/[0.04] p-3 transition-all duration-300 hover:border-emerald-500/15 hover:bg-white/[0.015]"
           >
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/[0.05] bg-white/[0.015] transition-all duration-300 group-hover:border-emerald-500/25 group-hover:bg-emerald-500/[0.04]">
@@ -738,7 +738,7 @@ export default function Footer() {
                 Email
               </span>
               <span className="text-[13px] text-white/[0.55] transition-colors duration-300 group-hover:text-white/[0.85]">
-                info@sampangroup.com.bd
+                info@sampangroup.com.bd.bd
               </span>
             </div>
           </a>

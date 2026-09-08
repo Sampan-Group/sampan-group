@@ -43,10 +43,10 @@ export default function SampanCafeMetroPage() {
       />
 
       {/* 2. Cafe Metro Special Component */}
-      <CafeMetroSpecial />
+      {/* <CafeMetroSpecial /> */}
 
       {/* 3. Location + Map */}
-      <RealEstateLocationMap
+      {/* <RealEstateLocationMap
         title="Expressway Location & Access"
         subtitle="Positioned along the main arterial corridor for fast stopovers."
         projectName="Sampan Cafe Metro"
@@ -55,7 +55,7 @@ export default function SampanCafeMetroPage() {
         embedMapUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14605.6!2d90.3845!3d23.7512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDQ1JzA0LjMiTiA5MMKwMjMnMDQuMiJF!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd"
         landmarks={landmarks}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* 4. Site Visit / Slot Enquiry */}
       <SiteVisitBookingForm

@@ -24,7 +24,120 @@ const facts = [
   { value: "Dhaka & Beyond", label: "Prime Corridors" },
 ];
 
-const units = [
+// Successful Projects
+const successfulProjects = [
+  {
+    id: "sdl-sampan-highway-inn",
+    name: "Sampan Highway Inn",
+    category: "Highway Hospitality",
+    sizeSqFt: "450–1,200 sq ft",
+    bedrooms: 1,
+    bathrooms: 1,
+    balconies: 1,
+    priceRange: "BDT 45 Lacs+",
+    orientation: "Dhaka-Mymensingh Highway, Mawna",
+    highlights: [
+      "Prime Highway Transit Landmark",
+      "Luxury Guest Suites & Multi-Cuisine Restaurant",
+      "Ample Highway Parking & 24/7 Security",
+    ],
+    image: "/images/projects/sampan-highway-inn.png",
+    link: "/our_divisions/hospitality-highway-travel/sampan-highway-inn",
+  },
+  {
+    id: "sdl-flagship-9",
+    name: "Sampan 21st Century ",
+    category: "Commercial Trade Center",
+    sizeSqFt: "800–2,500 sq ft",
+    bedrooms: 0,
+    bathrooms: 2,
+    balconies: 1,
+    priceRange: "BDT 1.1 Crore",
+    orientation: "Commercial Core Zone",
+    highlights: [
+      "Modern Corporate Suites & Financial Counters",
+      "Central HVAC & Energy Efficient Facade",
+      "24/7 Monitored Access Control",
+    ],
+    image: "/images/projects/21.jpg",
+    link: "/our_divisions/real-state-and-land-investment/sampan-21st-century",
+  },
+  {
+    id: "sdl-flagship-5",
+    name: "Sampan Taj ",
+    category: "Luxury Condominium",
+    sizeSqFt: "1,800+ sq ft",
+    bedrooms: 3,
+    bathrooms: 4,
+    balconies: 3,
+    priceRange: "BDT 1.45 Crore",
+    orientation: "Bashundhara R/A",
+    highlights: [
+      "Exclusive Prime Residential Neighborhood",
+      "Smart Home Automation Systems",
+      "Rooftop Garden & Lounge",
+    ],
+    image: "/images/projects/sampantaj.jpg",
+    link: "/our_divisions/real-state-and-land-investment/sampan-taj",
+  },
+  {
+    id: "sdl-flagship-4",
+    name: "Sampan Niketon",
+    category: "Premium Residential",
+    sizeSqFt: "1,250 sq ft",
+    bedrooms: 3,
+    bathrooms: 3,
+    balconies: 2,
+    priceRange: "BDT 95 Lacs",
+    orientation: "Shanti Niketon, Gulshan Link",
+    highlights: [
+      "8-Storied Landmark on Gulshan Link Road",
+      "RAJUK Approved Structural Design",
+      "40% Open Space & Ample Ventilation",
+    ],
+    image: "/images/projects/sampanniketon.jpg",
+    link: "/our_divisions/real-state-and-land-investment/sampan-niketon",
+  },
+  {
+    id: "sdl-sampan-white-house",
+    name: "Sampan White House",
+    category: "Highway Hospitality",
+    sizeSqFt: "400–1,100 sq ft",
+    bedrooms: 1,
+    bathrooms: 1,
+    balconies: 1,
+    priceRange: "BDT 38 Lacs+",
+    orientation: "Scenic Highway Zone, Mawna",
+    highlights: [
+      "Comfortable Motel Suites & Green Courtyard",
+      "Family-Friendly Rest Stop & Dining Experience",
+      "Dedicated Highway Tourist Hospitality",
+    ],
+    image: "/images/projects/Sampan-White-House-&-Motel.png",
+    link: "/our_divisions/hospitality-highway-travel/sampan-white-house",
+  },
+];
+
+// Upcoming and Ongoing Projects
+const upcomingProjects = [
+  {
+    id: "sdl-express-highway-inn",
+    name: "Express Highway Inn",
+    category: "Highway Hospitality",
+    sizeSqFt: "500–1,400 sq ft",
+    bedrooms: 1,
+    bathrooms: 1,
+    balconies: 1,
+    priceRange: "BDT 50 Lacs+",
+    orientation: "Express Highway Corridor, Mawna",
+    highlights: [
+      "Modern Highway Transit Accommodation",
+      "VIP Club Lounge & Corporate Meeting Facilities",
+      "Direct Expressway Access & Valet Services",
+    ],
+    image: "/images/projects/express-highway-inn.jpg",
+    link: "/our_divisions/hospitality-highway-travel/express-highway-inn",
+  },
   {
     id: "sdl-flagship-1",
     name: "Sampan Metro Square",
@@ -63,96 +176,11 @@ const units = [
     ],
     link: "/our_divisions/real-state-and-land-investment/sampan-trade-emporium",
   },
-  {
-    id: "sdl-sampan-highway-inn",
-    name: "Sampan Highway Inn",
-    category: "Highway Hospitality",
-    sizeSqFt: "450–1,200 sq ft",
-    bedrooms: 1,
-    bathrooms: 1,
-    balconies: 1,
-    priceRange: "BDT 45 Lacs+",
-    orientation: "Dhaka-Mymensingh Highway, Mawna",
-    highlights: [
-      "Prime Highway Transit Landmark",
-      "Luxury Guest Suites & Multi-Cuisine Restaurant",
-      "Ample Highway Parking & 24/7 Security",
-    ],
-    image: "/images/projects/sampan-highway-inn.png",
-    link: "/our_divisions/hospitality-highway-travel/sampan-highway-inn",
-  },
-  {
-    id: "sdl-express-highway-inn",
-    name: "Express Highway Inn",
-    category: "Highway Hospitality",
-    sizeSqFt: "500–1,400 sq ft",
-    bedrooms: 1,
-    bathrooms: 1,
-    balconies: 1,
-    priceRange: "BDT 50 Lacs+",
-    orientation: "Express Highway Corridor, Mawna",
-    highlights: [
-      "Modern Highway Transit Accommodation",
-      "VIP Club Lounge & Corporate Meeting Facilities",
-      "Direct Expressway Access & Valet Services",
-    ],
-    image: "/images/projects/express-highway-inn.jpg",
-    link: "/our_divisions/hospitality-highway-travel/express-highway-inn",
-  },
-  {
-    id: "sdl-sampan-white-house",
-    name: "Sampan White House",
-    category: "Highway Hospitality",
-    sizeSqFt: "400–1,100 sq ft",
-    bedrooms: 1,
-    bathrooms: 1,
-    balconies: 1,
-    priceRange: "BDT 38 Lacs+",
-    orientation: "Scenic Highway Zone, Mawna",
-    highlights: [
-      "Comfortable Motel Suites & Green Courtyard",
-      "Family-Friendly Rest Stop & Dining Experience",
-      "Dedicated Highway Tourist Hospitality",
-    ],
-    image: "/images/projects/Sampan-White-House-&-Motel.png",
-    link: "/our_divisions/hospitality-highway-travel/sampan-white-house",
-  },
-  {
-    id: "sdl-flagship-4",
-    name: "Sampan Niketon",
-    category: "Premium Residential",
-    sizeSqFt: "1,250 sq ft",
-    bedrooms: 3,
-    bathrooms: 3,
-    balconies: 2,
-    priceRange: "BDT 95 Lacs",
-    orientation: "Shanti Niketon, Gulshan Link",
-    highlights: [
-      "8-Storied Landmark on Gulshan Link Road",
-      "RAJUK Approved Structural Design",
-      "40% Open Space & Ample Ventilation",
-    ],
-    image: "/images/projects/sampanniketon.jpg",
-    link: "/our_divisions/real-state-and-land-investment/sampan-niketon",
-  },
-  {
-    id: "sdl-flagship-5",
-    name: "Sampan Taj ",
-    category: "Luxury Condominium",
-    sizeSqFt: "1,800+ sq ft",
-    bedrooms: 3,
-    bathrooms: 4,
-    balconies: 3,
-    priceRange: "BDT 1.45 Crore",
-    orientation: "Bashundhara R/A",
-    highlights: [
-      "Exclusive Prime Residential Neighborhood",
-      "Smart Home Automation Systems",
-      "Rooftop Garden & Lounge",
-    ],
-    image: "/images/projects/sampantaj.jpg",
-    link: "/our_divisions/real-state-and-land-investment/sampan-taj",
-  },
+
+
+
+
+
   {
     id: "sdl-flagship-6",
     name: "Sampan Nexus ",
@@ -204,25 +232,9 @@ const units = [
     ],
     link: "/our_divisions/real-state-and-land-investment/sampan-cafe-metro",
   },
-  {
-    id: "sdl-flagship-9",
-    name: "Sampan 21st Century ",
-    category: "Commercial Trade Center",
-    sizeSqFt: "800–2,500 sq ft",
-    bedrooms: 0,
-    bathrooms: 2,
-    balconies: 1,
-    priceRange: "BDT 1.1 Crore",
-    orientation: "Commercial Core Zone",
-    highlights: [
-      "Modern Corporate Suites & Financial Counters",
-      "Central HVAC & Energy Efficient Facade",
-      "24/7 Monitored Access Control",
-    ],
-    image: "/images/projects/21.jpg",
-    link: "/our_divisions/real-state-and-land-investment/sampan-21st-century",
-  },
 ];
+
+const units = [...successfulProjects, ...upcomingProjects];
 
 const landShareTiers = [
   {
@@ -342,16 +354,28 @@ export default function SampanDevelopmentLtdPage() {
         badgeColor="#0284c7"
       />
 
-      {/* 2. Unit Configurations - DivisionsSection Soft Green bg-[#f3f6f2] */}
+      {/* 2. Successful Projects */}
       <UnitTypesAndSizes
-        title="Featured Division Developments"
-        subtitle="Explore flagship apartment layouts, commercial spaces, and estimated pricing."
-        units={units}
+        id="successful-projects"
+        badge="Delivered Portfolio"
+        title="Successful Projects"
+        subtitle="Completed landmark developments across our residential, commercial, and highway hospitality portfolio."
+        units={successfulProjects}
         bgTheme="divisions-green"
       />
 
+      {/* 3. Upcoming & Ongoing Projects */}
+      <UnitTypesAndSizes
+        id="upcoming-projects"
+        badge="Active Pipeline"
+        title="Upcoming & Ongoing Projects"
+        subtitle="Explore upcoming developments, transit hubs, and residential land-share projects currently under planning and execution."
+        units={upcomingProjects}
+        bgTheme="about-ivory"
+      />
+
       {/* 3. Land Share Model - AboutPreview Warm Ivory bg-[#F5F5F2] */}
-      <LandShareStructure
+      {/* <LandShareStructure
         title="Flagship Land Share Ownership Model"
         subtitle="Direct land deed registration with zero middleman markups across all project sites."
         totalLandArea="50+ Katha Portfolio"
@@ -359,10 +383,10 @@ export default function SampanDevelopmentLtdPage() {
         // registrationStatus="Sub-Kabala Deed Cleared"
         tiers={landShareTiers}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* 4. Location + Map - DivisionsSection Soft Green bg-[#f3f6f2] */}
-      <RealEstateLocationMap
+      {/* <RealEstateLocationMap
         title="Strategic Corridor Locations"
         subtitle="Positioned along high-growth transit corridors in Ashulia, Dhaka, and Expressway Hubs."
         projectName="Sampan Development Ltd"
@@ -371,7 +395,7 @@ export default function SampanDevelopmentLtdPage() {
         embedMapUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14600.0!2d90.4125!3d23.8103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDQ4JzM3LjEiTiA5MMKwMjQnNDUuMCJF!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd"
         landmarks={landmarks}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 5. Construction Progress - AboutPreview Warm Ivory bg-[#F5F5F2] */}
       {/* <ConstructionProgressTracker
@@ -385,12 +409,12 @@ export default function SampanDevelopmentLtdPage() {
       /> */}
 
       {/* 6. Floor Plans - DivisionsSection Soft Green bg-[#f3f6f2] */}
-      <FloorPlansViewer
+      {/* <FloorPlansViewer
         title="Master Blueprints & Plot Layouts"
         subtitle="Examine precision engineered architectural floor plan layouts and master site plans."
         plans={floorPlans}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 7. Legal Credentials - AboutPreview Warm Ivory bg-[#F5F5F2] */}
       {/* <LegalCredentialsModule
@@ -401,12 +425,12 @@ export default function SampanDevelopmentLtdPage() {
       /> */}
 
       {/* 8. 3D Renders - DivisionsSection Soft Green bg-[#f3f6f2] */}
-      <WalkthroughRenderGallery
+      {/* <WalkthroughRenderGallery
         title="3D Renders & Architectural Showcase"
         subtitle="Explore photorealistic 3D architectural renders of flagship division developments."
         items={renders}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 9. Payment Calculator - AboutPreview Warm Ivory bg-[#F5F5F2] */}
       {/* <PaymentPlanCalculator

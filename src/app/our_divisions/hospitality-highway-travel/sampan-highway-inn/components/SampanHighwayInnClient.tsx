@@ -58,13 +58,13 @@ export default function SampanHighwayInnClient() {
       <NearbyLocationModule />
 
       {/* PRESS / MEDIA MENTIONS CAROUSEL (National Press & Critics) */}
-      <PressMediaCarousel />
+      {/* <PressMediaCarousel /> */}
 
       {/* GUEST REVIEWS (Verified Traveler Feedback & Rating Scorecard) */}
-      <GuestReviews />
+      {/* <GuestReviews /> */}
 
       {/* USER-GENERATED CONTENT FEED (#SampanHighwayInn Social Community) */}
-      <UGCFeed />
+      {/* <UGCFeed /> */}
 
       {/* BOOK / ENQUIRE CTA (Direct Hotline, WhatsApp & Instant Form) */}
       <BookEnquireCTA onOpenBookingWidget={() => scrollToSection("booking-widget")} />

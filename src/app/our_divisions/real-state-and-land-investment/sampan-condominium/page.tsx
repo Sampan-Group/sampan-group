@@ -200,7 +200,7 @@ const renders = [
     title: "Sampan Condominium - Architectural Facade",
     category: "exterior" as const,
     categoryLabel: "Exterior Architecture",
-    image: "/images/projects/sampan-condominium.jpg",
+    image: "/images/projects/unit-coming-soon.jpg",
     type: "image" as const,
     description: "Contemporary architectural facade featuring double-glazed glass curtain walls, private sky terraces, and illuminated grand entrance within Express Highway Inn complex.",
   },
@@ -209,7 +209,7 @@ const renders = [
     title: "Panoramic Sky Living & Dining Suite",
     category: "interior" as const,
     categoryLabel: "Interior Living",
-    image: "/images/projects/sampan-condominium-interior.jpg",
+    image: "/images/projects/unit-coming-soon.jpg",
     type: "image" as const,
     description: "Expansive floor-to-ceiling glass panoramic living room with designer marble kitchen island and twilight vistas.",
   },
@@ -244,30 +244,30 @@ export default function SampanCondominiumPage() {
       />
 
       {/* Explore the Residences - Unit Configurations */}
-      <UnitTypesAndSizes
+      {/* <UnitTypesAndSizes
         id="residences"
         title="Condominium Residences & Suite Configurations"
         subtitle="Discover available 3 & 4 bedroom private units with soundproof acoustic glazing, panoramic balconies, and premium finishes."
         units={units}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* Building Specifications & Shared Amenities Module */}
-      <BuildingSpecificationsModule
+      {/* <BuildingSpecificationsModule
         projectName="Sampan Condominium"
         subheading="Comprehensive structural engineering, acoustic privacy standards, and joint ownership of world-class complex amenities."
         categories={specifications}
         developerInfo={developerInfo}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* Floor Plans & Layouts */}
-      <FloorPlansViewer
+      {/* <FloorPlansViewer
         title="Condominium Floor Plans & Layouts"
         subtitle="Detailed architectural floor layouts showcasing optimized space planning, natural daylight, and cross-ventilation."
         plans={floorPlans}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* Architectural Perspectives & Renders */}
       <WalkthroughRenderGallery
@@ -278,15 +278,15 @@ export default function SampanCondominiumPage() {
       />
 
       {/* Legal & Regulatory Clearances */}
-      <LegalCredentialsModule
+      {/* <LegalCredentialsModule
         title="Verified Legal Clearances & Credentials"
         subtitle="Every aspect of land ownership, zoning approval, and engineering clearance is verified and legally compliant."
         credentials={legalCredentials}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 2. Location & Map */}
-      <RealEstateLocationMap
+      {/* <RealEstateLocationMap
         title="Strategic Connectivity."
         subtitle="Prominently situated within the Express Highway Inn footprint. Offering immediate transit access to major corridors while maintaining a secure, serene residential environment."
         projectName="Sampan Condominium"
@@ -296,7 +296,7 @@ export default function SampanCondominiumPage() {
         landmarks={landmarks}
         ctaText="View Interactive Map"
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* 3. Enquiry Form */}
       <RealEstateEnquiryForm

@@ -149,7 +149,7 @@ export default function SampanAutoPage() {
       />
 
       {/* 4. Section 2, 10: Location + Map & "Nearby" Link to Sampan Cafe Metro */}
-      <MobilityLocationAndNearby
+      {/* <MobilityLocationAndNearby
         title="Showroom Location & Transit Amenities"
         subtitle="Located at the Expressway Transit Corridor right beside Sampan Cafe Metro and Highway Inn."
         concernName="Sampan Auto Showroom"
@@ -159,7 +159,7 @@ export default function SampanAutoPage() {
         nearbyFacilities={nearbyFacilities}
         bgTheme="divisions-green"
         accentColor="#4c2a85"
-      />
+      /> */}
 
       {/* 5. Section 3: Contact / CTA - Call or WhatsApp */}
       <MobilityOnlineRequestForm

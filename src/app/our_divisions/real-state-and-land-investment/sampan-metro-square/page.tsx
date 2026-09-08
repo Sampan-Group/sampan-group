@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 const facts = [
   { value: "12 Katha", label: "Land Footprint" },
   { value: "B+G 12", label: "Floors Architecture" },
-  { value: "1,300+ sq ft", label: "Expansive Units" },
+  { value: "1,300± sq ft", label: "Expansive Units" },
   { value: "72 Shares", label: "Exclusive Allotted" },
 ];
 
@@ -161,7 +161,7 @@ const floorPlans = [
     name: "Master Architectural Site Plan (12 Katha)",
     category: "Site Plan",
     sizeSqFt: "12 Katha Footprint",
-    image: "/images/projects/sampanmetrosquare.jpg",
+    image: "/images/projects/unit-coming-soon.jpg",
     description: "Architectural footprint engineered on 12 Katha land with 40-ft road frontage, perimeter security, and landscaped setbacks.",
     features: ["12 Katha Master Land Footprint", "B+G 12-Floor Structural Grid", "Gated Security Guard Post"],
   },
@@ -199,7 +199,7 @@ const renders = [
     title: "Sampan Metro Square Exterior Elevation",
     category: "exterior" as const,
     categoryLabel: "Exterior Renders",
-    image: "/images/projects/sampanmetrosquare.jpg",
+    image: "/images/projects/unit-coming-soon.jpg",
     type: "image" as const,
     description: "B+G 12-floor modern glass & contemporary facade designed for elevated urban living.",
   },
@@ -208,7 +208,7 @@ const renders = [
     title: "Living Room Interior Render",
     category: "interior" as const,
     categoryLabel: "Interior Vistas",
-    image: "/images/concerns/sampan-dev-ltd.png",
+    image: "/images/projects/unit-coming-soon.jpg",
     type: "image" as const,
     description: "Expansive 3-bedroom living and dining area with ambient natural lighting and premium finishes.",
   },
@@ -279,7 +279,7 @@ export default function SampanMetroSquarePage() {
             </div>
             <div className="border border-neutral-300 bg-white p-6 space-y-1 shadow-sm">
               <span className="text-xs font-mono uppercase text-neutral-500">Expansive Units</span>
-              <p className="text-3xl font-mono font-bold text-neutral-950">1,300+ sq ft</p>
+              <p className="text-3xl font-mono font-bold text-neutral-950">1,300± sq ft</p>
               <p className="text-xs text-neutral-600 pt-1">Spacious 3-bedroom modern residences</p>
             </div>
           </div>
@@ -430,12 +430,12 @@ export default function SampanMetroSquarePage() {
       </section>
 
       {/* Floor Plans Viewer */}
-      <FloorPlansViewer
+      {/* <FloorPlansViewer
         title="Floor Plans & Architectural Blueprints"
         subtitle="Inspect structural blueprints and floor plan arrangements for the B+G 12-floor residential tower."
         plans={floorPlans}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* Legal Credentials */}
       {/* <LegalCredentialsModule
@@ -446,16 +446,16 @@ export default function SampanMetroSquarePage() {
       /> */}
 
       {/* 3D Walkthrough Gallery */}
-      <WalkthroughRenderGallery
+      {/* <WalkthroughRenderGallery
         title="3D Render Gallery"
         subtitle="Photorealistic architectural renders of Sampan Metro Square tower."
         items={renders}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* 7. Enquiry Form - Private Consultation */}
       <RealEstateEnquiryForm
-        title="Private Consultation."
+        title="Book a visit."
         subtitle="Connect with our property advisors to secure your share and discuss equity models."
         projectName="Sampan Metro Square"
         submitButtonText="Request Details"

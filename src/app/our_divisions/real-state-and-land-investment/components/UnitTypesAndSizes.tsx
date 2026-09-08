@@ -23,6 +23,7 @@ export interface UnitTypeItem {
 
 export interface UnitTypesAndSizesProps {
   id?: string;
+  badge?: string;
   title?: string;
   subtitle?: string;
   units: UnitTypeItem[];
@@ -32,6 +33,7 @@ export interface UnitTypesAndSizesProps {
 
 export default function UnitTypesAndSizes({
   id = "unit-types",
+  badge = "Unit Configurations",
   title = "Apartment Unit Configurations",
   subtitle = "Explore available apartment unit layouts, floor areas, dimensions, and orientation specs.",
   units,
@@ -64,19 +66,19 @@ export default function UnitTypesAndSizes({
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16">
 
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <div>
-            <div className="inline-flex items-center gap-2 border border-[#ca8a04]/40 bg-[#ca8a04]/10 px-3.5 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#ca8a04] mb-4">
-              <FaBuilding className="text-xs" />
-              <span>Unit Configurations</span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-light tracking-tight text-current">
-              {title}
-            </h2>
+        <div className="mb-14 max-w-3xl">
+          <div className="inline-flex items-center gap-2 border border-[#ca8a04]/40 bg-[#ca8a04]/10 px-3.5 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#ca8a04] mb-4">
+            <FaBuilding className="text-xs" />
+            <span>{badge}</span>
           </div>
-          <p className="max-w-md text-sm leading-relaxed opacity-80 font-normal">
-            {subtitle}
-          </p>
+          <h2 className="text-3xl sm:text-5xl font-light tracking-tight text-current">
+            {title}
+          </h2>
+          {subtitle && (
+            <p className="mt-4 max-w-2xl text-sm sm:text-base leading-relaxed opacity-80 font-normal">
+              {subtitle}
+            </p>
+          )}
         </div>
 
         {/* Filter Tabs */}
@@ -153,7 +155,7 @@ export default function UnitTypesAndSizes({
                     </h3>
 
                     {/* Specs Strip */}
-                    <div className="grid grid-cols-3 gap-2 p-3.5 bg-[#f3f6f2] border border-current/10 font-mono text-xs text-center">
+                    {/* <div className="grid grid-cols-3 gap-2 p-3.5 bg-[#f3f6f2] border border-current/10 font-mono text-xs text-center">
                       <div>
                         <span className="block opacity-60 text-[10px] uppercase">Size</span>
                         <span className="font-bold text-[#ca8a04]">{unit.sizeSqFt}</span>
@@ -170,7 +172,7 @@ export default function UnitTypesAndSizes({
                           <FaBath className="text-xs" /> {unit.bathrooms}
                         </span>
                       </div>
-                    </div>
+                    </div> */}
 
                     {/* Highlights */}
                     <div className="space-y-2 pt-1 text-xs">

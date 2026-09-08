@@ -58,13 +58,13 @@ export default function SampanWhiteHouseClient() {
       <NearbyLocationModule />
 
       {/* PRESS / MEDIA MENTIONS CAROUSEL (National Press Mentions) */}
-      <PressMediaCarousel />
+      {/* <PressMediaCarousel /> */}
 
       {/* GUEST REVIEWS (Verified Traveler Feedback & Rating Scorecard) */}
-      <GuestReviews />
+      {/* <GuestReviews /> */}
 
       {/* USER-GENERATED CONTENT FEED (#SampanWhiteHouse Community) */}
-      <UGCFeed />
+      {/* <UGCFeed /> */}
 
       {/* BOOK / ENQUIRE CTA (Direct Hotline, WhatsApp & Instant Form) */}
       <BookEnquireCTA onOpenBookingWidget={() => scrollToSection("booking-widget")} />

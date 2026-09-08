@@ -43,6 +43,7 @@ const units = [
       "Kitchen (10'-4\" x 6'-3\") with dedicated utility verandah & double gas burner line",
       "25'-0\" Wide Front Road Facing with landscaped entry approach",
     ],
+    image: "/images/projects/21.jpg"
   },
 ];
 
@@ -215,10 +216,10 @@ export default function Sampan21stCenturyPage() {
       />
 
       {/* 2. Unit Configurations */}
-      <UnitTypesAndSizes
+      {/* <UnitTypesAndSizes
         units={units}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 3. Building Specifications Module (New from Brochure) */}
       <BuildingSpecificationsModule
@@ -236,23 +237,23 @@ export default function Sampan21stCenturyPage() {
       />
 
       {/* 5. Land Share Model */}
-      <LandShareStructure
+      {/* <LandShareStructure
         totalLandArea="20 Katha"
         totalSharesCount="Land Share Registered"
         // registrationStatus="Sub-Kabala Ready"
         tiers={landShareTiers}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* 6. Location + Map */}
-      <RealEstateLocationMap
+      {/* <RealEstateLocationMap
         projectName="Sampan Twenty First Century"
         address="25-ft Wide Road, Dhaka, Bangladesh."
         gpsCoordinates="23.8212° N, 90.3554° E"
         embedMapUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14599.6!2d90.3554!3d23.8212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDQ5JzE2LjMiTiA5MMKwMjEnMTkuNCJF!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd"
         landmarks={landmarks}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 7. Construction Progress */}
       {/* <ConstructionProgressTracker
@@ -270,10 +271,10 @@ export default function Sampan21stCenturyPage() {
       /> */}
 
       {/* 9. 3D Renders & Elevation */}
-      <WalkthroughRenderGallery
+      {/* <WalkthroughRenderGallery
         items={renders}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* 10. Payment Calculator */}
       {/* <PaymentPlanCalculator

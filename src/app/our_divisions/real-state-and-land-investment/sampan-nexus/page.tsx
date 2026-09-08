@@ -61,7 +61,7 @@ const floorPlans = [
     name: "Sampan Nexus Master Site Layout",
     category: "Master Plan",
     sizeSqFt: "16 Katha Footprint",
-    image: "/images/concerns/3-sampan-eco-agro.ng",
+    image: "/images/projects/unit-coming-soon.jpg",
     description: "Mixed-use layout integrating ground commercial retail with residential towers.",
     features: ["Mixed-Use Zoning", "Wide Internal Access Roads", "Green Landscaping"],
   },
@@ -83,7 +83,7 @@ const renders = [
     title: "Sampan Nexus Mixed-Use Render",
     category: "exterior" as const,
     categoryLabel: "Exterior Renders",
-    image: "/images/concerns/3-sampan-eco-agro.png",
+    image: "/images/projects/unit-coming-soon.jpg",
     type: "image" as const,
     description: "Modern mixed-use architecture in the Mawna growth hub.",
   },
@@ -128,14 +128,14 @@ export default function SampanNexusPage() {
       />
 
       {/* 4. Location + Map */}
-      <RealEstateLocationMap
+      {/* <RealEstateLocationMap
         projectName="Sampan Nexus"
         address="Mawna Growth Hub Corridor, Bangladesh."
         gpsCoordinates="24.2312° N, 90.3954° E"
         embedMapUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14545.6!2d90.3954!3d24.2312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDEzJzUyLjMiTiA5MMKwMjMnNDMuNCJF!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd"
         landmarks={landmarks}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 5. Construction Progress */}
       {/* <ConstructionProgressTracker
@@ -153,10 +153,10 @@ export default function SampanNexusPage() {
       />
 
       {/* 7. Legal Credentials */}
-      <LegalCredentialsModule
+      {/* <LegalCredentialsModule
         credentials={legalCredentials}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* 8. 3D Renders */}
       <WalkthroughRenderGallery

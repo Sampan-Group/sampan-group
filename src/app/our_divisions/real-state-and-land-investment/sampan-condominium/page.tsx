@@ -1,27 +1,26 @@
 import type { Metadata } from "next";
-import RealEstateHero from "../components/RealEstateHero";
+import RealEstateHero2 from "../components/RealEstateHero2";
 import UnitTypesAndSizes from "../components/UnitTypesAndSizes";
-import LandShareStructure from "../components/LandShareStructure";
 import FloorPlansViewer from "../components/FloorPlansViewer";
 import BuildingSpecificationsModule, { SpecificationCategory } from "../components/BuildingSpecificationsModule";
 import LegalCredentialsModule from "../components/LegalCredentialsModule";
 import WalkthroughRenderGallery from "../components/WalkthroughRenderGallery";
-import PaymentPlanCalculator from "../components/PaymentPlanCalculator";
-import SiteVisitBookingForm from "../components/SiteVisitBookingForm";
-import DownloadableBrochureCTA from "../components/DownloadableBrochureCTA";
 import RealEstateLocationMap from "../components/RealEstateLocationMap";
+import RealEstateEnquiryForm from "../components/RealEstateEnquiryForm";
+import DownloadableBrochureCTA from "../components/DownloadableBrochureCTA";
+import SiteVisitBookingForm from "../components/SiteVisitBookingForm";
 
 export const metadata: Metadata = {
-  title: "Sampan Condominium | 16-Storied Luxury High-Rise Living",
+  title: "Sampan Condominium | Residential Elegance at Express Highway Inn Complex",
   description:
-    "Official presentation of Sampan Condominium - 16-storied landmark residential tower offering 1,450 to 2,200 sq ft luxury apartments with 40% open space, panoramic city skyline views, sky gardens, and earthquake-resistant BNBC engineering by Sampan Development Ltd.",
+    "Sampan Condominium - Redefining residential elegance within the Express Highway Inn complex. Experience absolute unit privacy balanced with joint ownership of world-class shared amenities by Sampan Development Ltd.",
 };
 
 const facts = [
-  { value: "16-Storied", label: "G+15 High-Rise Tower" },
-  { value: "1,450–2,200 sft", label: "Luxury Suites" },
-  { value: "40% Open Space", label: "Lush Sky Gardens" },
-  { value: "Prime Corridor", label: "City Skyline Views" },
+  { value: "Private Units", label: "Absolute Privacy" },
+  { value: "Shared Luxury", label: "Joint Ownership Amenities" },
+  { value: "Express Highway Inn", label: "Master Complex Footprint" },
+  { value: "Hospitality-Grade", label: "Tranquillity & Luxury" },
 ];
 
 const units = [
@@ -34,14 +33,14 @@ const units = [
     bathrooms: 4,
     balconies: 4,
     priceRange: "Contact for Official Pricing",
-    orientation: "South-East Corner with Panoramic Skyline View",
+    orientation: "South-East Corner with Panoramic Scenic View",
     highlights: [
       "Master Suite (16'-2\" x 12'-0\") with walk-in wardrobe, attached luxury bath & private panoramic balcony",
-      "Expansive Living & Formal Dining with floor-to-ceiling soundproof glass facade",
+      "Expansive Living & Formal Dining with floor-to-ceiling soundproof acoustic glass facade",
       "2 Deluxe Bedrooms with ensuite bathrooms & private garden verandas",
       "Executive Study / Guest Room (12'-0\" x 11'-6\") with cross-ventilation",
       "Gourmet Island Kitchen with connected utility gallery & maid's quarters with bath",
-      "Dual Dedicated Basement Valet Parking Bays",
+      "Dual Dedicated Covered Valet Parking Bays & EV supercharger access",
     ],
     image: "/images/projects/sampan-condominium-interior.jpg",
   },
@@ -74,30 +73,16 @@ const units = [
     bathrooms: 3,
     balconies: 2,
     priceRange: "Contact for Official Pricing",
-    orientation: "Front Expressway & Green Boulevard View",
+    orientation: "Expressway Boulevard & Landscaped Garden View",
     highlights: [
-      "Well-proportioned 3-Bedroom urban layout optimized for modern family comfort",
+      "Well-proportioned 3-Bedroom layout optimized for modern family comfort",
       "Open-concept Living & Dining Hall with wide sliding glass balcony doors",
       "Master Bed with designer porcelain tile bathroom & private morning view deck",
       "Modern Modular Kitchen layout with heavy-duty exhaust line & utility bay",
       "High-efficiency cross-ventilation designed to reduce artificial cooling demand",
       "Designated Reserved Car Parking Bay with automated RFID gate access",
     ],
-    image: "/images/projects/unit-coming-soon.jpg",
-  },
-];
-
-const landShareTiers = [
-  {
-    title: "Condominium Land Share Ownership Tier",
-    shareSize: "Proportional Undivided Land Share",
-    equityRatio: "1 Full Apartment Unit Share",
-    keyBenefits: [
-      "Direct Government Registered Land Deed Allocation",
-      "Zero Middleman Profit Margin & Complete Construction Cost Transparency",
-      "Exclusive Access to Rooftop Infinity Terrace, Fitness Gymnasium & Resident Lounge",
-      "Developed by Sampan Development Ltd (Official REHAB Member)",
-    ],
+    image: "/images/projects/sampan-condominium.jpg",
   },
 ];
 
@@ -134,6 +119,17 @@ const floorPlans = [
 
 const specifications: SpecificationCategory[] = [
   {
+    categoryName: "Shared World-Class Amenities",
+    iconName: "utility",
+    items: [
+      "Full joint ownership access to Express Highway Inn complex amenities, gardens, and recreation spaces.",
+      "24/7 on-site multi-cuisine dining, cafe, and exclusive priority in-residence room service delivery.",
+      "Resort-style swimming pool, wellness fitness gymnasium, and steam/sauna facilities.",
+      "Executive business lounge, private meeting suites, and White Hall banquet event center access.",
+      "High-speed multi-bay EV charging hub, automated RFID security gates, and 24/7 manned surveillance.",
+    ],
+  },
+  {
     categoryName: "Structural & Engineering",
     iconName: "structure",
     items: [
@@ -144,53 +140,23 @@ const specifications: SpecificationCategory[] = [
     ],
   },
   {
-    categoryName: "Building Entrance & Security",
-    iconName: "doors",
+    categoryName: "Privacy, Acoustics & Finishes",
+    iconName: "floors",
     items: [
-      "Double-height grand entrance reception lobby with marble cladding and air-conditioned guest waiting lounge.",
-      "24/7 CCTV surveillance covering perimeter, lobbies, parking bays, and elevator access points.",
-      "Automated RFID barrier gate at entry and exit for seamless authorized vehicle movement.",
-      "Central intercom network linking reception desk and guard room to all individual condominium residences.",
+      "Acoustically insulated double-glazed windows ensuring absolute private tranquillity from highway surroundings.",
+      "Solid decorative seasoned wood main entrance doors with high-security biometric locks & brass hardware.",
+      "24\" x 24\" / 32\" x 32\" imported mirror-finish porcelain floor tiles in living, dining, and all bedrooms.",
+      "Separate utility balconies with dedicated washing machine inlet, drainage outlet & anti-skid rustic ceramic tiling.",
     ],
   },
   {
     categoryName: "Elevator & Power Infrastructure",
     iconName: "lift",
     items: [
-      "Dual European/Japanese-standard high-speed passenger elevators (10-passenger capacity) with V3F smooth ride control.",
+      "Dual European-standard high-speed passenger elevators (10-passenger capacity) with V3F smooth ride control.",
       "One dedicated heavy-duty medical stretcher elevator with automatic emergency rescue device (ARD).",
-      "100% full standby diesel sound-attenuated generator backup for elevators, water pumps, common lighting, and apartment emergency lines.",
-      "Independent electrical substation with HT/LT panel, power factor improvement (PFI) plant & lightning protection arrestors.",
-    ],
-  },
-  {
-    categoryName: "Apartment Interiors & Finishes",
-    iconName: "floors",
-    items: [
-      "24\" x 24\" or 32\" x 32\" imported mirror-finish porcelain floor tiles in living, dining, and all bedrooms.",
-      "Solid decorative teak/chittagong wood main entrance door with high-security biometric lock & brass fittings.",
-      "Concealed copper wiring with European modular switches, circuit breakers & master distribution board.",
-      "Double-glazed soundproof sliding glass windows with thermal barrier and safety lock systems.",
-    ],
-  },
-  {
-    categoryName: "Kitchen & Utility Gallery",
-    iconName: "kitchen",
-    items: [
-      "Custom granite kitchen worktop with double stainless steel sink and swivel mixer tap.",
-      "Concealed piping provision for gas pipeline / central LPG reticulation with dedicated gas leak sensors.",
-      "Heavy-duty exhaust fan opening and provision for modern kitchen hood ventilation.",
-      "Separate utility balcony with washing machine inlet, drainage outlet & anti-skid rustic ceramic tiling.",
-    ],
-  },
-  {
-    categoryName: "Rooftop Wellness & Community",
-    iconName: "utility",
-    items: [
-      "Landscaped rooftop sky garden with green seating alcoves, walking track, and panoramic city vistas.",
-      "Equipped residents' fitness gymnasium with modern cardio equipment and locker facilities.",
-      "Multipurpose community lounge & prayer hall for resident family gatherings and celebrations.",
-      "Energy-efficient solar panels installed on rooftop to power common corridor and perimeter lighting.",
+      "100% full standby sound-attenuated diesel generator backup for elevators, pumps, common lighting, and residences.",
+      "Independent electrical substation with HT/LT panels, power factor improvement (PFI) plant & lightning protection.",
     ],
   },
 ];
@@ -199,21 +165,21 @@ const developerInfo = {
   companyName: "Sampan Development Ltd",
   tagline: "A Sister Concern of Sampan Group",
   corporateOffice: "Dhaka, Bangladesh",
-  phones: ["+880 1713-000000", "+880 2-9880000"],
+  phones: ["+880 1929-918408", "+880 1713-000000"],
   website: "https://www.sampangroup.com.bd",
   rehabMember: true,
 };
 
 const legalCredentials = [
   {
-    authority: "RAJUK / Urban Development Authority",
-    approvalTitle: "Architectural & Structural Vetting Clearance",
-    referenceNumber: "RAJUK Building Clearance Approved",
+    authority: "Urban Development & Building Authority",
+    approvalTitle: "Architectural & Structural Engineering Clearance",
+    referenceNumber: "Building Code Clearance Approved",
     status: "100% Verified",
-    description: "Approved multi-storey residential building design compliant with setbacks, height restrictions, and road expansion norms.",
+    description: "Approved multi-storey residential building design compliant with setbacks, height regulations, and highway buffer norms.",
   },
   {
-    authority: "Ministry of Land & Sub-Registry Office",
+    authority: "Ministry of Land & Revenue Registry",
     approvalTitle: "Clear Title Mutation & Land Demarcation",
     referenceNumber: "CS, SA, RS & City Jorip Mutation Cleared",
     status: "100% Mutation Secured",
@@ -231,12 +197,12 @@ const legalCredentials = [
 const renders = [
   {
     id: "r-condo-1",
-    title: "Sampan Condominium - 16-Storied Architectural Facade",
+    title: "Sampan Condominium - Architectural Facade",
     category: "exterior" as const,
     categoryLabel: "Exterior Architecture",
     image: "/images/projects/sampan-condominium.jpg",
     type: "image" as const,
-    description: "Contemporary architectural facade featuring double-glazed glass curtain walls, private sky terraces, and illuminated grand entrance.",
+    description: "Contemporary architectural facade featuring double-glazed glass curtain walls, private sky terraces, and illuminated grand entrance within Express Highway Inn complex.",
   },
   {
     id: "r-condo-2",
@@ -245,54 +211,57 @@ const renders = [
     categoryLabel: "Interior Living",
     image: "/images/projects/sampan-condominium-interior.jpg",
     type: "image" as const,
-    description: "Expansive floor-to-ceiling glass panoramic living room with designer marble kitchen island and twilight skyline vistas.",
+    description: "Expansive floor-to-ceiling glass panoramic living room with designer marble kitchen island and twilight vistas.",
   },
 ];
 
 const landmarks = [
-  { landmark: "Transit Corridor Interchange", distance: "800 m", driveTime: "3 Mins" },
-  { landmark: "Metro Rail Station", distance: "2.5 km", driveTime: "7 Mins" },
-  { landmark: "Premier Educational Institutions", distance: "3.2 km", driveTime: "10 Mins" },
-  { landmark: "Commercial Shopping & Corporate Hub", distance: "1.5 km", driveTime: "5 Mins" },
-  { landmark: "Hazrat Shahjalal International Airport", distance: "14 km", driveTime: "25 Mins" },
+  { landmark: "Express Highway Inn Complex", distance: "0 m", driveTime: "On-Site Footprint" },
+  { landmark: "Bhanga Junction Expressway Interchange", distance: "16 km", driveTime: "15 Mins" },
+  { landmark: "Padma Bridge Toll Plaza (Mawa)", distance: "39 km", driveTime: "30 Mins" },
+  { landmark: "Gopalganj District Hub", distance: "36 km", driveTime: "32 Mins" },
+  { landmark: "Barishal Divisional Airport Hub", distance: "68 km", driveTime: "55 Mins" },
+  { landmark: "Dhaka Zero Point / Jatrabari", distance: "74 km", driveTime: "1h 05m" },
+  { landmark: "Khulna Divisional City Hub", distance: "106 km", driveTime: "1h 35m" },
 ];
 
 export default function SampanCondominiumPage() {
   return (
     <main className="bg-[#f3f6f2] text-[#183b2b] antialiased selection:bg-[#25633a] selection:text-white">
 
-      {/* 1. Hero Overview */}
-      <RealEstateHero
-        title="Sampan Condominium"
-        subtitle="16-Storied Modern High-Rise Luxury Residences"
+      {/* 1. Project Overview */}
+      <RealEstateHero2
+        title="Sampan Condominium."
+        subtitle="Residential Elegance within Express Highway Inn Complex"
         divisionName="Sampan Development Ltd"
-        statusBadge="Prime Corridor Landmark"
-        statusType="ongoing"
-        description="An iconic 16-storied residential condominium offering 1,450 to 2,200 sq ft residences, 40% open space with sky gardens, double-height luxury reception, dual high-speed elevators, and earthquake-resistant BNBC engineering."
+        description="Redefining residential elegance within the Express Highway Inn complex. Experience the absolute privacy of your own premium unit, perfectly balanced with joint ownership of world-class shared amenities. A seamless blend of residential tranquillity and hospitality-grade luxury."
         image="/images/projects/sampan-condominium.jpg"
         facts={facts}
-        accentColor="#25633a"
-        badgeColor="#25633a"
+        accentColor="#ca8a04"
+        locationLabel="Express Highway Inn Footprint, Dhaka–Khulna Expressway Corridor"
+        primaryCtaLabel="Explore the Residences"
+        primaryCtaLink="#residences"
       />
 
-      {/* 2. Unit Configurations */}
+      {/* Explore the Residences - Unit Configurations */}
       <UnitTypesAndSizes
-        title="Condominium Suite Configurations"
-        subtitle="Explore available 3 & 4 bedroom residences, floor dimensions, panoramic balconies, and specifications."
+        id="residences"
+        title="Condominium Residences & Suite Configurations"
+        subtitle="Discover available 3 & 4 bedroom private units with soundproof acoustic glazing, panoramic balconies, and premium finishes."
         units={units}
         bgTheme="divisions-green"
       />
 
-      {/* 3. Building Specifications Module */}
+      {/* Building Specifications & Shared Amenities Module */}
       <BuildingSpecificationsModule
         projectName="Sampan Condominium"
-        subheading="Comprehensive architectural, structural engineering, fittings, and infrastructure specifications."
+        subheading="Comprehensive structural engineering, acoustic privacy standards, and joint ownership of world-class complex amenities."
         categories={specifications}
         developerInfo={developerInfo}
         bgTheme="about-ivory"
       />
 
-      {/* 4. Floor Plans Viewer */}
+      {/* Floor Plans & Layouts */}
       <FloorPlansViewer
         title="Condominium Floor Plans & Layouts"
         subtitle="Detailed architectural floor layouts showcasing optimized space planning, natural daylight, and cross-ventilation."
@@ -300,60 +269,74 @@ export default function SampanCondominiumPage() {
         bgTheme="divisions-green"
       />
 
-      {/* 5. Land Share Structure */}
-      <LandShareStructure
-        title="Condominium Land Share Model"
-        subtitle="Direct government registered land deed allocation with zero intermediary markups and full construction transparency."
-        totalLandArea="35+ Katha Footprint"
-        totalSharesCount="120 Land Shares"
-        tiers={landShareTiers}
+      {/* Architectural Perspectives & Renders */}
+      <WalkthroughRenderGallery
+        title="Architectural Perspectives & Virtual Renders"
+        subtitle="Experience modern condominium living within the Express Highway Inn footprint through high-resolution architectural visualizations."
+        items={renders}
         bgTheme="about-ivory"
       />
 
-      {/* 6. Location & Connectivity Map */}
-      <RealEstateLocationMap
-        title="Strategic Corridor Location & Accessibility"
-        subtitle="Positioned along prime urban growth corridors with rapid access to transit networks, commercial hubs, and lifestyle amenities."
-        projectName="Sampan Condominium"
-        address="Prime Urban Corridor, Dhaka, Bangladesh."
-        gpsCoordinates="23.8342° N, 90.3789° E"
-        embedMapUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14601.6!2d90.3789!3d23.8342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDUwJzAzLjEiTiA5MMKwMjInNDQuMCJF!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd"
-        landmarks={landmarks}
-        bgTheme="divisions-green"
-      />
-
-      {/* 7. Legal Credentials Module */}
+      {/* Legal & Regulatory Clearances */}
       <LegalCredentialsModule
         title="Verified Legal Clearances & Credentials"
         subtitle="Every aspect of land ownership, zoning approval, and engineering clearance is verified and legally compliant."
         credentials={legalCredentials}
-        bgTheme="about-ivory"
-      />
-
-      {/* 8. 3D Renders & Walkthrough Gallery */}
-      <WalkthroughRenderGallery
-        title="Architectural Perspectives & Virtual Renders"
-        subtitle="Experience the grandeur of modern condominium living through high-resolution architectural visualizations."
-        items={renders}
         bgTheme="divisions-green"
       />
 
-      {/* 9. Payment Plan Calculator */}
-      {/* <PaymentPlanCalculator
-        defaultPropertyPriceBDT={16500000}
+      {/* 2. Location & Map */}
+      <RealEstateLocationMap
+        title="Strategic Connectivity."
+        subtitle="Prominently situated within the Express Highway Inn footprint. Offering immediate transit access to major corridors while maintaining a secure, serene residential environment."
+        projectName="Sampan Condominium"
+        address="Express Highway Inn Footprint, Dhaka–Khulna Expressway Corridor, Bangladesh."
+        gpsCoordinates="23.260465° N, 89.765979° E"
+        embedMapUrl="https://www.google.com/maps?q=23.2604651,89.7659791&hl=en&z=14&output=embed"
+        landmarks={landmarks}
+        ctaText="View Interactive Map"
         bgTheme="about-ivory"
-      /> */}
+      />
 
-      {/* 10. Downloadable Brochure CTA */}
+      {/* 3. Enquiry Form */}
+      <RealEstateEnquiryForm
+        title="Private Consultation."
+        subtitle="Connect with our property advisors to discuss unit availability, pricing, and the exclusive benefits of our condominium ownership model."
+        projectName="Sampan Condominium"
+        submitButtonText="Inquire"
+        phoneLabel="Contact Number"
+        unitPreferences={[
+          "Grand Sky Suite (2,200 sq ft)",
+          "Executive Urban Residence (1,750 sq ft)",
+          "Contemporary Suite (1,450 sq ft)",
+          "Custom Penthouse Unit",
+          "General Condominium Inquiry",
+        ]}
+        advisoryServices={[
+          "Direct condominium unit ownership & title allocation",
+          "Exclusive joint ownership of Express Highway Inn complex amenities",
+          "Full pricing schedule & ownership model consultation",
+        ]}
+        bgTheme="divisions-green"
+      />
+
+      {/* 4. Downloadable Brochure */}
       <DownloadableBrochureCTA
         projectName="Sampan Condominium"
-        bgTheme="divisions-green"
+        badge="Official Prospectus"
+        title="The Prospectus."
+        subtitle="Download the official Sampan Condominium prospectus. Review detailed architectural floor plans, shared amenity access, and complete investment frameworks."
+        ctaText="Download PDF Brochure"
+        bgTheme="about-ivory"
       />
 
-      {/* 11. Site Visit Booking Form */}
+      {/* 5. Site Visit Booking */}
       <SiteVisitBookingForm
+        title="Experience Sampan."
+        subtitle="Schedule a private, guided viewing of our model units."
         projectName="Sampan Condominium"
-        bgTheme="about-ivory"
+        submitButtonText="Book site visit"
+        bgTheme="divisions-green"
       />
 
     </main>

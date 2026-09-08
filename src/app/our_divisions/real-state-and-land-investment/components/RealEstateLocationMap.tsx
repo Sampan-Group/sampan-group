@@ -17,6 +17,7 @@ export interface RealEstateLocationMapProps {
   embedMapUrl: string;
   landmarks: LandmarkDistance[];
   bgTheme?: "divisions-green" | "about-ivory" | "white";
+  ctaText?: string;
 }
 
 export default function RealEstateLocationMap({
@@ -28,6 +29,7 @@ export default function RealEstateLocationMap({
   embedMapUrl,
   landmarks,
   bgTheme = "divisions-green",
+  ctaText,
 }: RealEstateLocationMapProps) {
   const containerClasses = {
     "divisions-green": "bg-[#f3f6f2] text-[#183b2b] border-b border-[#183b2b]/15",
@@ -104,7 +106,7 @@ export default function RealEstateLocationMap({
               className="w-full inline-flex items-center justify-center gap-2 bg-[#183b2b] hover:bg-[#ca8a04] text-white hover:text-neutral-950 py-3.5 font-mono text-xs font-bold uppercase tracking-[0.2em] transition-all shadow-md"
             >
               <FaDirections />
-              <span>Get Live Directions</span>
+              <span>{ctaText || "Get Live Directions"}</span>
               <FaExternalLinkAlt className="text-xs" />
             </a>
           </div>

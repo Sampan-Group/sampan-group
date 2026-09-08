@@ -9,6 +9,9 @@ export interface RealEstateEnquiryFormProps {
   projectName?: string;
   submitButtonText?: string;
   bgTheme?: "divisions-green" | "about-ivory" | "white";
+  unitPreferences?: string[];
+  phoneLabel?: string;
+  advisoryServices?: string[];
 }
 
 export default function RealEstateEnquiryForm({
@@ -17,12 +20,16 @@ export default function RealEstateEnquiryForm({
   projectName = "Sampan Metro Square",
   submitButtonText = "Request Details",
   bgTheme = "divisions-green",
+  unitPreferences,
+  phoneLabel = "Phone Number",
+  advisoryServices,
 }: RealEstateEnquiryFormProps) {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNumber: "",
     email: "",
+    unitPreference: unitPreferences ? unitPreferences[0] : "",
     message: "",
   });
 
@@ -70,18 +77,16 @@ export default function RealEstateEnquiryForm({
                   Investor Advisory Services
                 </div>
                 <ul className="space-y-2 opacity-85">
-                  <li className="flex items-center gap-2">
-                    <FaCheckCircle className="text-[#ca8a04] text-[11px]" />
-                    <span>Direct equity allocation &amp; share distribution</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <FaCheckCircle className="text-[#ca8a04] text-[11px]" />
-                    <span>100% transparent construction cost model review</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <FaCheckCircle className="text-[#ca8a04] text-[11px]" />
-                    <span>Verified clear land deed documentation inspection</span>
-                  </li>
+                  {(advisoryServices || [
+                    "Direct equity allocation & share distribution",
+                    "100% transparent construction cost model review",
+                    "Verified clear land deed documentation inspection"
+                  ]).map((srv, idx) => (
+                    <li key={idx} className="flex items-center gap-2">
+                      <FaCheckCircle className="text-[#ca8a04] text-[11px]" />
+                      <span>{srv}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
@@ -104,7 +109,7 @@ export default function RealEstateEnquiryForm({
                   <FaCheckCircle className="text-5xl text-emerald-700 mx-auto animate-bounce" />
                   <h3 className="text-2xl font-bold text-neutral-950">Inquiry Received!</h3>
                   <p className="text-xs text-neutral-600 max-w-md mx-auto">
-                    Thank you for reaching out regarding <span className="font-bold text-[#ca8a04]">{projectName}</span>. A senior property advisor will connect with you shortly to share comprehensive equity details.
+                    Thank you for reaching out regarding <span className="font-bold text-[#ca8a04]">{projectName}</span>. A senior property advisor will connect with you shortly to share comprehensive unit availability and pricing details.
                   </p>
                 </div>
               ) : (
@@ -128,7 +133,7 @@ export default function RealEstateEnquiryForm({
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-1">
-                      <label className="block uppercase opacity-70">Phone Number</label>
+                      <label className="block uppercase opacity-70">{phoneLabel}</label>
                       <input
                         type="tel"
                         required
@@ -139,17 +144,34 @@ export default function RealEstateEnquiryForm({
                       />
                     </div>
 
-                    <div className="space-y-1">
-                      <label className="block uppercase opacity-70">Email</label>
-                      <input
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="yourname@domain.com"
-                        className="w-full bg-white border border-neutral-300 p-3.5 text-xs text-neutral-950 focus:border-[#ca8a04] focus:outline-none"
-                      />
-                    </div>
+                    {unitPreferences && unitPreferences.length > 0 ? (
+                      <div className="space-y-1">
+                        <label className="block uppercase opacity-70">Unit Preference</label>
+                        <select
+                          value={formData.unitPreference}
+                          onChange={(e) => setFormData({ ...formData, unitPreference: e.target.value })}
+                          className="w-full bg-white border border-neutral-300 p-3.5 text-xs text-neutral-950 focus:border-[#ca8a04] focus:outline-none cursor-pointer"
+                        >
+                          {unitPreferences.map((opt, idx) => (
+                            <option key={idx} value={opt}>
+                              {opt}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    ) : (
+                      <div className="space-y-1">
+                        <label className="block uppercase opacity-70">Email</label>
+                        <input
+                          type="email"
+                          required
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          placeholder="yourname@domain.com"
+                          className="w-full bg-white border border-neutral-300 p-3.5 text-xs text-neutral-950 focus:border-[#ca8a04] focus:outline-none"
+                        />
+                      </div>
+                    )}
                   </div>
 
                   <div className="space-y-1">
@@ -158,7 +180,7 @@ export default function RealEstateEnquiryForm({
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="I am interested in securing a land share unit at Sampan Metro Square and would like to review the equity structure..."
+                      placeholder={`I am interested in securing a condominium unit at ${projectName} and would like to discuss unit availability, pricing, and shared amenity access...`}
                       className="w-full bg-white border border-neutral-300 p-3.5 text-xs text-neutral-950 focus:border-[#ca8a04] focus:outline-none resize-y"
                     />
                   </div>

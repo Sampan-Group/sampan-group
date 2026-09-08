@@ -22,6 +22,7 @@ export interface UnitTypeItem {
 }
 
 export interface UnitTypesAndSizesProps {
+  id?: string;
   title?: string;
   subtitle?: string;
   units: UnitTypeItem[];
@@ -30,6 +31,7 @@ export interface UnitTypesAndSizesProps {
 }
 
 export default function UnitTypesAndSizes({
+  id = "unit-types",
   title = "Apartment Unit Configurations",
   subtitle = "Explore available apartment unit layouts, floor areas, dimensions, and orientation specs.",
   units,
@@ -51,7 +53,7 @@ export default function UnitTypesAndSizes({
   }[bgTheme];
 
   return (
-    <section id="unit-types" className={`py-24 relative overflow-hidden ${containerClasses}`}>
+    <section id={id} className={`py-24 relative overflow-hidden ${containerClasses}`}>
 
       {/* Signature DivisionsSection Radial Ambient Overlay */}
       <div

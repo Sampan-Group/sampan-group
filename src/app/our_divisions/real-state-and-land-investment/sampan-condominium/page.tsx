@@ -270,12 +270,12 @@ export default function SampanCondominiumPage() {
       /> */}
 
       {/* Architectural Perspectives & Renders */}
-      <WalkthroughRenderGallery
+      {/* <WalkthroughRenderGallery
         title="Architectural Perspectives & Virtual Renders"
         subtitle="Experience modern condominium living within the Express Highway Inn footprint through high-resolution architectural visualizations."
         items={renders}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* Legal & Regulatory Clearances */}
       {/* <LegalCredentialsModule
@@ -300,7 +300,7 @@ export default function SampanCondominiumPage() {
 
       {/* 3. Enquiry Form */}
       <RealEstateEnquiryForm
-        title="Private Consultation."
+        title="Book a visit."
         subtitle="Connect with our property advisors to discuss unit availability, pricing, and the exclusive benefits of our condominium ownership model."
         projectName="Sampan Condominium"
         submitButtonText="Inquire"

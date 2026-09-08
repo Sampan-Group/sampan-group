@@ -12,7 +12,7 @@ export interface SiteVisitBookingFormProps {
 }
 
 export default function SiteVisitBookingForm({
-  title = "Book VIP Site Visit & Consultation",
+  title = "Book a Visit",
   subtitle = "Schedule a guided site tour with our property team. Complimentary vehicle transport available upon request.",
   projectName,
   bgTheme = "about-ivory",
@@ -33,7 +33,7 @@ export default function SiteVisitBookingForm({
 
   return (
     <section id="site-visit" className={`py-24 relative overflow-hidden ${containerClasses}`}>
-      
+
       {/* Signature DivisionsSection Radial Ambient Overlay */}
       <div
         aria-hidden="true"
@@ -41,12 +41,12 @@ export default function SiteVisitBookingForm({
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16">
-        
+
         <div className="border border-current/15 bg-white p-8 sm:p-12 relative overflow-hidden shadow-sm">
           <div className="absolute top-0 left-0 h-1.5 w-full bg-[#ca8a04]" />
 
           <div className="grid lg:grid-cols-12 gap-8 items-center">
-            
+
             <div className="lg:col-span-6 space-y-6">
               <div className="inline-flex items-center gap-2 border border-[#ca8a04]/40 bg-[#ca8a04]/10 px-3.5 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#ca8a04]">
                 <FaCalendarAlt className="text-xs" />

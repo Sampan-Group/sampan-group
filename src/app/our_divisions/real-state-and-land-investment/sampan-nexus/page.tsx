@@ -119,13 +119,13 @@ export default function SampanNexusPage() {
       /> */}
 
       {/* 3. Land Share Model */}
-      <LandShareStructure
+      {/* <LandShareStructure
         totalLandArea="16 Katha"
         totalSharesCount="48 Land Shares"
         // registrationStatus="Sub-Kabala Ready"
         tiers={landShareTiers}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* 4. Location + Map */}
       {/* <RealEstateLocationMap
@@ -147,10 +147,10 @@ export default function SampanNexusPage() {
       /> */}
 
       {/* 6. Floor Plans */}
-      <FloorPlansViewer
+      {/* <FloorPlansViewer
         plans={floorPlans}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 7. Legal Credentials */}
       {/* <LegalCredentialsModule
@@ -159,10 +159,10 @@ export default function SampanNexusPage() {
       /> */}
 
       {/* 8. 3D Renders */}
-      <WalkthroughRenderGallery
+      {/* <WalkthroughRenderGallery
         items={renders}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 9. Payment Calculator */}
       {/* <PaymentPlanCalculator

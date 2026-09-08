@@ -216,13 +216,13 @@ export default function SampanShortDriveRangePage() {
       /> */}
 
       {/* SECTION 6: Online Bay Booking System */}
-      <GolfBayBookingWidget />
+      {/* <GolfBayBookingWidget /> */}
 
       {/* SECTION 7: Leaderboard / Scoring Feature */}
-      <GolfLeaderboard />
+      {/* <GolfLeaderboard /> */}
 
       {/* SECTION 8: Group / Corporate Event Packages */}
-      <GolfCorporatePackages />
+      {/* <GolfCorporatePackages /> */}
 
       {/* SECTION 9: Photo / Video Gallery */}
       <GolfMediaGallery

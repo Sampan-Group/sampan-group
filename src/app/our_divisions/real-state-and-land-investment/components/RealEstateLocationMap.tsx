@@ -18,6 +18,7 @@ export interface RealEstateLocationMapProps {
   landmarks: LandmarkDistance[];
   bgTheme?: "divisions-green" | "about-ivory" | "white";
   ctaText?: string;
+  googleMapsUrl?: string;
 }
 
 export default function RealEstateLocationMap({
@@ -30,6 +31,7 @@ export default function RealEstateLocationMap({
   landmarks,
   bgTheme = "divisions-green",
   ctaText,
+  googleMapsUrl,
 }: RealEstateLocationMapProps) {
   const containerClasses = {
     "divisions-green": "bg-[#f3f6f2] text-[#183b2b] border-b border-[#183b2b]/15",
@@ -100,7 +102,7 @@ export default function RealEstateLocationMap({
             </div>
 
             <a
-              href={`https://maps.google.com/?q=${encodeURIComponent(gpsCoordinates)}`}
+              href={googleMapsUrl || `https://maps.google.com/?q=${encodeURIComponent(gpsCoordinates)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full inline-flex items-center justify-center gap-2 bg-[#183b2b] hover:bg-[#ca8a04] text-white hover:text-neutral-950 py-3.5 font-mono text-xs font-bold uppercase tracking-[0.2em] transition-all shadow-md"

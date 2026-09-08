@@ -275,10 +275,10 @@ export default function SampanNiketonPage() {
       /> */}
 
       {/* 8. Legal Credentials */}
-      <LegalCredentialsModule
+      {/* <LegalCredentialsModule
         credentials={legalCredentials}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 9. 3D Renders / Project Photos */}
       <WalkthroughRenderGallery

@@ -186,8 +186,8 @@ export default function UnitTypesAndSizes({
                   {/* Card Footer */}
                   <div className="pt-5 border-t border-current/15 flex items-center justify-between">
                     <div>
-                      <span className="text-[10px] font-mono uppercase block opacity-60">Estimated Price</span>
-                      <span className="font-mono font-bold text-lg text-[#ca8a04]">{unit.priceRange}</span>
+                      {/* <span className="text-[10px] font-mono uppercase block opacity-60">Estimated Price</span>
+                      <span className="font-mono font-bold text-lg text-[#ca8a04]">{unit.priceRange}</span> */}
                     </div>
 
                     {unit.link || unit.href ? (
@@ -195,14 +195,14 @@ export default function UnitTypesAndSizes({
                         href={unit.link || unit.href!}
                         className="bg-[#183b2b] hover:bg-[#ca8a04] text-white hover:text-neutral-950 px-5 py-2.5 font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-sm inline-flex items-center justify-center cursor-pointer"
                       >
-                        Inquire
+                        Learn More
                       </Link>
                     ) : (
                       <button
                         onClick={() => onSelectUnit && onSelectUnit(unit.id)}
                         className="bg-[#183b2b] hover:bg-[#ca8a04] text-white hover:text-neutral-950 px-5 py-2.5 font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-sm cursor-pointer"
                       >
-                        Inquire
+                        Learn More
                       </button>
                     )}
                   </div>

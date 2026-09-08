@@ -28,7 +28,7 @@ const galleryImages = [
   },
   {
     id: "img-03",
-    src: "/images/awards/Our-Curated-Gallery-Photo-Frame-2.webp",
+    src: "/images/awards/Boss-Award-4.jpg",
   },
   {
     id: "img-04",

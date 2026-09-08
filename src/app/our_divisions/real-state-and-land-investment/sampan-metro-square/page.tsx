@@ -311,8 +311,9 @@ export default function SampanMetroSquarePage() {
         subtitle="Located in Ashulia Model Town (Amin Mohammad Group), Block–A, Road–11, 12, Plot–A (33, 34, 35, 36). Positioned right next to the Ashulia growth corridor, ensuring seamless accessibility and appreciating value."
         projectName="Sampan Metro Square"
         address="Ashulia Model Town (Amin Mohammad Group), Block–A, Road–11, 12, Plot–A (33, 34, 35, 36), Ashulia, Dhaka"
-        gpsCoordinates="23.8712° N, 90.3254° E"
-        embedMapUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14595.6!2d90.3254!3d23.8712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDUyJzE2LjMiTiA5MMKwMTknMzEuNCJF!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd"
+        gpsCoordinates="23.8704° N, 90.3148° E"
+        embedMapUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.5407189150123!2d90.31223757402395!3d23.870437478588713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c3000c8cf04b%3A0x2edcd08f02adb65c!2sSampan%20Metro%20Square!5e0!3m2!1sen!2sbd!4v1788852483456!5m2!1sen!2sbd"
+        googleMapsUrl="https://maps.app.goo.gl/3JKeytsHT6AzjtCt5"
         landmarks={landmarks}
         bgTheme="divisions-green"
       />
@@ -370,11 +371,11 @@ export default function SampanMetroSquarePage() {
       </section>
 
       {/* Surrounding Universities Enclave - Highlighting 7 Premier Institutions */}
-      <SurroundingUniversitiesModule
+      {/* <SurroundingUniversitiesModule
         title="Surrounded by Dhaka's Premier Universities."
         subtitle="Ashulia Model Town is the intellectual and higher-education capital of metropolitan Dhaka. Positioned directly amidst 7 prestigious universities, Sampan Metro Square guarantees continuous year-round rental occupancy and enduring capital appreciation."
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 6. Project Benefits - Elevated Amenities */}
       <section className="py-24 relative overflow-hidden bg-[#F5F5F2] text-neutral-950 border-b border-neutral-300/60">
@@ -437,12 +438,12 @@ export default function SampanMetroSquarePage() {
       />
 
       {/* Legal Credentials */}
-      <LegalCredentialsModule
+      {/* <LegalCredentialsModule
         title="Legal & Regulatory Clearances"
         subtitle="100% clear land title deed mutation and municipality approvals."
         credentials={legalCredentials}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 3D Walkthrough Gallery */}
       <WalkthroughRenderGallery

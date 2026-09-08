@@ -167,10 +167,10 @@ export default function SampanTradeEmporiumPage() {
       />
 
       {/* 7. Legal Credentials */}
-      <LegalCredentialsModule
+      {/* <LegalCredentialsModule
         credentials={legalCredentials}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* 8. 3D Renders */}
       <WalkthroughRenderGallery

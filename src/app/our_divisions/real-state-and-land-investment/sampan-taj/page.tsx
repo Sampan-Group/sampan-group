@@ -264,10 +264,10 @@ export default function SampanTajPage() {
       /> */}
 
       {/* 8. Legal Credentials */}
-      <LegalCredentialsModule
+      {/* <LegalCredentialsModule
         credentials={legalCredentials}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 9. 3D Renders */}
       <WalkthroughRenderGallery

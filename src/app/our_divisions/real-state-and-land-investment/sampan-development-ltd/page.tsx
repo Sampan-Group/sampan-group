@@ -393,12 +393,12 @@ export default function SampanDevelopmentLtdPage() {
       />
 
       {/* 7. Legal Credentials - AboutPreview Warm Ivory bg-[#F5F5F2] */}
-      <LegalCredentialsModule
+      {/* <LegalCredentialsModule
         title="Regulatory Approvals & Legal Clearances"
         subtitle="100% verified clear land title deeds and government municipal sanctions."
         credentials={legalCredentials}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* 8. 3D Renders - DivisionsSection Soft Green bg-[#f3f6f2] */}
       <WalkthroughRenderGallery

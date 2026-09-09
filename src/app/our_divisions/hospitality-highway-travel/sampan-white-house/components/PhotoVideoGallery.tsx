@@ -236,7 +236,7 @@ export default function PhotoVideoGallery() {
                 </div>
                 <h3 className="text-2xl font-bold text-white">Sampan White House Drone Film</h3>
                 <p className="text-sm text-neutral-400 mt-2 max-w-md mx-auto">
-                  Cinematic 4K aerial overview of the highway frontage, White Hall banquet hall, soundproof suites, and garden dining.
+                  Cinematic 4K aerial overview of the highway frontage, White Hall banquet hall, "" suites, and garden dining.
                 </p>
                 <p className="font-mono text-xs text-[#e8b84b] mt-4 uppercase tracking-wider">
                   Full 4K Video Streaming Ready

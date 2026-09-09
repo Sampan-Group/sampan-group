@@ -28,7 +28,7 @@ const productRange = [
     weightOrVolume: "14.5 kg / Block",
     materialGrade: "Compressive Strength > 10 MPa",
     moq: "2,000 Blocks",
-    description: "High-density load-bearing hollow concrete block designed for exterior perimeter walls and soundproof partition walls.",
+    description: "High-density load-bearing hollow concrete block designed for exterior perimeter walls and "" partition walls.",
     highlights: ["35% Reduction in Building Thermal Transfer", "Fire Resistance Rating > 4 Hours", "Zero Clay Burning (100% Eco-Friendly)"],
   },
   {

@@ -56,7 +56,7 @@ export default function HeroOverview({ onOpenBooking }: { onOpenBooking: () => v
 
           {/* Tagline & Subheading */}
           <p className="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-xl font-light tracking-wide border-l-2 border-emerald-400/80 pl-4">
-            Refined soundproof suites, 24/7 gourmet dining, and ultra-fast EV supercharging on the Dhaka–Khulna corridor.
+            Refined "" suites, 24/7 gourmet dining, and ultra-fast EV supercharging on the Dhaka–Khulna corridor.
           </p>
 
           {/* Square Quick Action CTAs */}
@@ -97,11 +97,11 @@ export default function HeroOverview({ onOpenBooking }: { onOpenBooking: () => v
               <p className="text-xs font-bold text-white uppercase tracking-wider">EV Charging</p>
               <p className="text-[11px] text-white/50 mt-0.5">Ultra-Fast DC</p>
             </div>
-
+            {/* 
             <div className="border-l-2 border-emerald-500 pl-4">
               <p className="text-xs font-bold text-white uppercase tracking-wider">VVIP Rooms</p>
-              <p className="text-[11px] text-white/50 mt-0.5">100% Soundproof</p>
-            </div>
+              <p className="text-[11px] text-white/50 mt-0.5">100% ""</p>
+            </div> */}
 
             <div className="border-l-2 border-emerald-500 pl-4">
               <p className="text-xs font-bold text-white uppercase tracking-wider">Secure Parking</p>

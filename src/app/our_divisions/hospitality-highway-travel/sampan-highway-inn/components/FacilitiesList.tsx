@@ -28,12 +28,12 @@ const facilitiesData = [
   {
     id: "vvip-suites",
     category: "suites",
-    title: "VVIP Soundproof Suites & Rest Rooms",
+    title: "VVIP Suites & Rest Rooms",
     badge: "Premium Comfort",
     image: "/images/facilities/highway_inn/all_day_comfort.png",
     description:
-      "Acoustically engineered, triple-glazed soundproof suites offering plush king-size beds, private en-suite rain showers, smart IPTV, and climate control for quiet respite from highway rumble.",
-    features: ["Acoustic Soundproofing", "King Orthopaedic Bedding", "High-Speed Fiber Wi-Fi", "In-Room Gourmet Service", "Hourly & Overnight Options"],
+      "Acoustically engineered, triple-glazed  suites offering plush king-size beds, private en-suite rain showers, smart IPTV, and climate control for quiet respite from highway rumble.",
+    features: ["King Orthopaedic Bedding", "High-Speed Fiber Wi-Fi", "In-Room Gourmet Service", "Hourly & Overnight Options"],
     hours: "24/7 Available",
   },
   // {
@@ -89,7 +89,7 @@ const facilitiesData = [
     description:
       "A sister hospitality property providing flexible hourly stays, quiet rooms, and private parking.",
     features: [
-      "Soundproof Motel Suites",
+      " Motel Suites",
       "Flexible Hourly & Overnight Stays",
       "White Hall Banquet Facility",
       "Secure Gated Parking",

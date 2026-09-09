@@ -64,14 +64,16 @@ export default function SampanAgroGolfClubLoungePage() {
         title="Sampan Agro & Golf Club & Lounge"
         subtitle="Exclusive SAGCL VIP Membership Shares, Private Lounge & Resort Privileges"
         concernName="Sampan Agro & Golf Club & Lounge (SAGCL)"
-        statusBadge="Ongoing Development — Membership Pre-Launch 2026"
+        statusBadge="Ongoing Development - Membership Pre-Launch 2026"
         description="The pinnacle of private club membership in Bangladesh, offering executive lounge access, priority golf fairway tee-times, villa discounts, and digital member portal services."
         facts={clubFacts}
-        bannerImage="/images/brand/sampanagroandgolfclubandlounge.png"
+        logo="/images/brand/sampanagroandgolfclubandlounge.png"
+        bannerImage="/images/our_divisions/sampan-agro-golf-club-lounge/hero_banner.jpg"
+        backgroundImage="/images/our_divisions/sampan-agro-golf-club-lounge/hero_banner.jpg"
       />
 
       {/* SECTION 2 & 3: Membership Tiers & Pricing per Tier */}
-      <ClubMembershipTiers />
+      {/* <ClubMembershipTiers /> */}
 
       {/* SECTION 4: Facility Photo Gallery */}
       <GolfMediaGallery
@@ -84,20 +86,20 @@ export default function SampanAgroGolfClubLoungePage() {
       <ClubMemberPortalTeaser />
 
       {/* SECTION 6: Referral Program Details */}
-      <ClubReferralProgram />
+      {/* <ClubReferralProgram /> */}
 
       {/* SECTION 7: FAQ Accordion */}
       <ClubFAQ />
 
       {/* SECTION 8: Location + Map */}
-      <GolfLocationAndMap
+      {/* <GolfLocationAndMap
         title="SAGCL Club & Lounge Location"
         subtitle="Located within the main clubhouse complex at Sampan Agro & Golf Complex, Sreemangal."
         projectName="Sampan Agro & Golf Club & Lounge (SAGCL)"
         address="Sampan Agro & Golf Complex, Sreemangal, Moulvibazar, Sylhet Division, Bangladesh."
         gpsCoordinates="24.3000° N, 91.7000° E"
         landmarks={clubLandmarks}
-      />
+      /> */}
 
       {/* SECTION 9: "Nearby at this location" module */}
       <GolfNearbyModule

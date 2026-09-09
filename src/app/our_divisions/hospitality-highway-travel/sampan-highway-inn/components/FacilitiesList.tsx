@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { 
-  FaBed, 
-  FaUtensils, 
-  FaBolt, 
-  FaCar, 
-  FaGlassCheers, 
-  FaHandsWash, 
-  FaShoppingBag, 
+import {
+  FaBed,
+  FaUtensils,
+  FaBolt,
+  FaCar,
+  FaGlassCheers,
+  FaHandsWash,
+  FaShoppingBag,
   FaMoneyBillWave,
   FaCheck,
   FaArrowRight
@@ -36,28 +36,28 @@ const facilitiesData = [
     features: ["Acoustic Soundproofing", "King Orthopaedic Bedding", "High-Speed Fiber Wi-Fi", "In-Room Gourmet Service", "Hourly & Overnight Options"],
     hours: "24/7 Available",
   },
-  {
-    id: "dining-bakery",
-    category: "dining",
-    title: "24/7 Highway Multi-Cuisine Restaurant & Cafe",
-    badge: "Farm-to-Table",
-    image: "/images/facilities/express_highway_inn/1.Highway-Club-&-Lounge.png",
-    description:
-      "Indulge in authentic Bengali culinary specialties, live tandoor and kebabs, fresh bakery treats, and artisanal barista coffee prepared with organic farm ingredients.",
-    features: ["Authentic Bengali Curries", "Live Grill & Barbecue", "Fresh Espresso Bar", "Family Dining Halls", "Express 15-min Takeaway"],
-    hours: "24/7 All-Day Service",
-  },
-  {
-    id: "ev-charging",
-    category: "ev",
-    title: "Ultra-Fast 120kW DC EV Supercharging Plaza",
-    badge: "Green Mobility",
-    image: "/images/facilities/express_highway_inn/6.EV-Car-Charging.png",
-    description:
-      "High-output DC dual-gun rapid charging stations alongside Level 2 AC chargers compatible with Tesla, BYD, Audi, BMW, MG, Hyundai, and all EV models.",
-    features: ["120kW High-Speed DC", "Dual CCS2 & Type 2 Connectors", "Canopied Charging Bays", "Priority Lounge Access", "App & Cashless Payment"],
-    hours: "24/7 Continuous Power",
-  },
+  // {
+  //   id: "dining-bakery",
+  //   category: "dining",
+  //   title: "24/7 Highway Multi-Cuisine Restaurant & Cafe",
+  //   badge: "Farm-to-Table",
+  //   image: "/images/facilities/express_highway_inn/1.Highway-Club-&-Lounge.png",
+  //   description:
+  //     "Indulge in authentic Bengali culinary specialties, live tandoor and kebabs, fresh bakery treats, and artisanal barista coffee prepared with organic farm ingredients.",
+  //   features: ["Authentic Bengali Curries", "Live Grill & Barbecue", "Fresh Espresso Bar", "Family Dining Halls", "Express 15-min Takeaway"],
+  //   hours: "24/7 All-Day Service",
+  // },
+  // {
+  //   id: "ev-charging",
+  //   category: "ev",
+  //   title: "Ultra-Fast 120kW DC EV Supercharging Plaza",
+  //   badge: "Green Mobility",
+  //   image: "/images/facilities/express_highway_inn/6.EV-Car-Charging.png",
+  //   description:
+  //     "High-output DC dual-gun rapid charging stations alongside Level 2 AC chargers compatible with Tesla, BYD, Audi, BMW, MG, Hyundai, and all EV models.",
+  //   features: ["120kW High-Speed DC", "Dual CCS2 & Type 2 Connectors", "Canopied Charging Bays", "Priority Lounge Access", "App & Cashless Payment"],
+  //   hours: "24/7 Continuous Power",
+  // },
   {
     id: "party-center",
     category: "events",
@@ -81,38 +81,55 @@ const facilitiesData = [
     hours: "On Demand & Booking",
   },
   {
-    id: "car-wash",
-    category: "ev",
-    title: "Automated Touchless Car Wash & Express Detailing",
-    badge: "Vehicle Care",
-    image: "/images/facilities/express_highway_inn/7.Automatic-Car-Wash.png",
+    id: "sampan-white-house",
+    category: "events",
+    title: "Sampan White House",
+    badge: "Highway Motel",
+    image: "/images/featuredConcerns/highway-motel.png",
     description:
-      "High-pressure underbody rinse, foam wash, and rapid drying system that leaves your car immaculate while you dine or rest inside the lounge.",
-    features: ["Touchless Jet Cleaning", "Underbody Mud Flush", "Ceramic Wax Gloss Coating", "Interior Quick Vacuum", "Tire Pressure & Air Station"],
-    hours: "7:00 AM – 11:00 PM",
+      "A sister hospitality property providing flexible hourly stays, quiet rooms, and private parking.",
+    features: [
+      "Soundproof Motel Suites",
+      "Flexible Hourly & Overnight Stays",
+      "White Hall Banquet Facility",
+      "Secure Gated Parking",
+      "24/7 Dining & Room Service",
+    ],
+    hours: "24/7 Available",
   },
-  {
-    id: "prayer-washrooms",
-    category: "essentials",
-    title: "Spotless Sanitized Restrooms & Dedicated Prayer Halls",
-    badge: "Hygiene Standard",
-    image: "/images/facilities/express_highway_inn/11.Prayers-Room.png",
-    description:
-      "Impeccably clean, air-conditioned prayer spaces with separated wudu facilities for ladies and gentlemen, plus spotless baby-care restrooms.",
-    features: ["Separate Men & Women Halls", "Modern Wudu Ablution Area", "Baby Changing Facilities", "Wheelchair Accessible", "Continuous Sanitation Staff"],
-    hours: "24/7 Spotless",
-  },
-  {
-    id: "sampan-mart",
-    category: "essentials",
-    title: "24/7 Sampan Mart & Travel Convenience",
-    badge: "Travel Essentials",
-    image: "/images/facilities/express_highway_inn/4.Sampan-Mart.png",
-    description:
-      "Stock up on cold beverages, snacks, local confectionery, organic highway produce, road trip essentials, personal care, and vehicle accessories.",
-    features: ["Cold Drinks & Mineral Water", "Snacks & Local Delights", "First-Aid & Pharmacy Essentials", "Car Accessories & Chargers", "ATM / CRM Banking Booth"],
-    hours: "24/7 Open",
-  },
+  // {
+  //   id: "car-wash",
+  //   category: "ev",
+  //   title: "Automated Touchless Car Wash & Express Detailing",
+  //   badge: "Vehicle Care",
+  //   image: "/images/facilities/express_highway_inn/7.Automatic-Car-Wash.png",
+  //   description:
+  //     "High-pressure underbody rinse, foam wash, and rapid drying system that leaves your car immaculate while you dine or rest inside the lounge.",
+  //   features: ["Touchless Jet Cleaning", "Underbody Mud Flush", "Ceramic Wax Gloss Coating", "Interior Quick Vacuum", "Tire Pressure & Air Station"],
+  //   hours: "7:00 AM – 11:00 PM",
+  // },
+  // {
+  //   id: "prayer-washrooms",
+  //   category: "essentials",
+  //   title: "Spotless Sanitized Restrooms & Dedicated Prayer Halls",
+  //   badge: "Hygiene Standard",
+  //   image: "/images/facilities/express_highway_inn/11.Prayers-Room.png",
+  //   description:
+  //     "Impeccably clean, air-conditioned prayer spaces with separated wudu facilities for ladies and gentlemen, plus spotless baby-care restrooms.",
+  //   features: ["Separate Men & Women Halls", "Modern Wudu Ablution Area", "Baby Changing Facilities", "Wheelchair Accessible", "Continuous Sanitation Staff"],
+  //   hours: "24/7 Spotless",
+  // },
+  // {
+  //   id: "sampan-mart",
+  //   category: "essentials",
+  //   title: "24/7 Sampan Mart & Travel Convenience",
+  //   badge: "Travel Essentials",
+  //   image: "/images/facilities/express_highway_inn/4.Sampan-Mart.png",
+  //   description:
+  //     "Stock up on cold beverages, snacks, local confectionery, organic highway produce, road trip essentials, personal care, and vehicle accessories.",
+  //   features: ["Cold Drinks & Mineral Water", "Snacks & Local Delights", "First-Aid & Pharmacy Essentials", "Car Accessories & Chargers", "ATM / CRM Banking Booth"],
+  //   hours: "24/7 Open",
+  // },
 ];
 
 export default function FacilitiesList({ onSelectFacility }: { onSelectFacility?: (title: string) => void }) {
@@ -125,22 +142,22 @@ export default function FacilitiesList({ onSelectFacility }: { onSelectFacility?
   return (
     <section id="facilities" className="bg-[#faf9f6] py-24 sm:py-32 text-[#1a1a1a]">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
-        
+
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col gap-6 mb-12 max-w-3xl">
           <div>
             <div className="flex items-center gap-3 mb-4">
               <span className="h-px w-10 bg-emerald-600" />
               <p className="text-xs font-bold uppercase tracking-[0.28em] text-emerald-800">
-                02 — World-Class Facilities
+                World-Class Facilities
               </p>
             </div>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#111111] leading-tight">
+            <h2 className="text-3xl sm:text-5xl lg:text-5xl font-bold tracking-tight text-[#111111] leading-tight">
               Thoughtfully curated <br />
               <span className="text-emerald-700">for every traveler.</span>
             </h2>
           </div>
-          <p className="max-w-md text-sm sm:text-base text-neutral-600 leading-relaxed">
+          <p className="max-w-2xl text-sm sm:text-base text-neutral-600 leading-relaxed">
             Whether you need a rapid 15-minute coffee break or a full celebratory weekend, our multi-acre complex provides complete comfort under one roof.
           </p>
         </div>
@@ -151,11 +168,10 @@ export default function FacilitiesList({ onSelectFacility }: { onSelectFacility?
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
-                activeCategory === cat.id
-                  ? "bg-[#070b09] text-white shadow-md"
-                  : "bg-white text-neutral-600 hover:bg-neutral-100 hover:text-black border border-neutral-200"
-              }`}
+              className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${activeCategory === cat.id
+                ? "bg-[#070b09] text-white shadow-md"
+                : "bg-white text-neutral-600 hover:bg-neutral-100 hover:text-black border border-neutral-200"
+                }`}
             >
               {cat.label}
             </button>

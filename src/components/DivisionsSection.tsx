@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { concerns } from "@/data/concerns"; // Ensure this points to your correct file path
+import { concerns2 as concerns } from "@/data/concerns2";
+// Ensure this points to your correct file path
 import { divisionGroups } from "@/data/divisions";
 
 const taglines: Record<string, string> = {
   "real-estate": "Own land, not just visit it.",
-  hospitality: "Stay, celebrate, and unwind — on the highway and beyond.",
+  hospitality: "Stay, celebrate, and unwind - on the highway and beyond.",
   agro: "From our farm to your table.",
   retail: "Everyday essentials, always nearby.",
   manufacturing: "Built by us, for what we build.",
@@ -61,8 +62,15 @@ export default function DivisionsSection() {
             <section key={division.id} className=" first:border-t-0">
               <header className="grid min-h-[5.5rem] gap-2 py-4 sm:grid-cols-[minmax(0,1fr)_minmax(16rem,0.85fr)] sm:items-center sm:gap-8 sm:py-5">
                 <h3 className="text-[clamp(1.25rem,2vw,2rem)] font-medium leading-tight tracking-[-0.035em]">
-                  {division.title}
+                  <Link
+                    href={division.href}
+                    className="hover:text-[#008f68] transition-colors inline-flex items-center gap-2 group"
+                  >
+                    {division.title}
+                    <span className="text-[#ef636b] transition-transform duration-300 group-hover:translate-x-1">→</span>
+                  </Link>
                 </h3>
+
 
                 <p className="max-w-xl text-xs leading-5 text-[#183b2b]/52 sm:justify-self-end sm:text-right sm:text-sm">
                   {taglines[division.id] ??
@@ -84,10 +92,11 @@ export default function DivisionsSection() {
                       className="group/card relative h-full min-h-[10rem] border border-[#183b2b]/10 bg-white/90 transition duration-300 hover:-translate-y-0.5 hover:border-[#008f68]/30 hover:bg-white hover:shadow-[0_14px_35px_rgba(14,47,33,0.07)]"
                     >
                       <Link
-                        href={"/comming-soon"}
+                        href={item.href || concern.href || "/comming-soon"}
                         aria-label={`Explore ${concern.name}`}
                         className="flex h-full min-h-[10rem] min-w-0 flex-col p-4 sm:p-5"
                       >
+
                         <div className="flex items-start gap-4">
                           <div className="relative h-12 w-32 sm:h-14 sm:w-36">
                             <Image
@@ -101,7 +110,7 @@ export default function DivisionsSection() {
                         </div>
 
                         <div className="mt-auto min-w-0 pt-4">
-                          <p className="text-[0.62rem] font-semibold leading-4 text-[#91b594] [overflow-wrap:anywhere]">
+                          <p className="text-[0.65rem] font-semibold leading-4 text-[#91b594] [overflow-wrap:anywhere]">
                             {concern.tagline ??
                               "Part of Sampan Group’s connected portfolio."}
                           </p>

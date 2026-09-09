@@ -182,10 +182,12 @@ export default function SampanGolfAcademyPage() {
         title="Sampan Golf Academy"
         subtitle="Professional PGA-Certified Golf Training & Development"
         concernName="Sampan Golf Academy"
-        statusBadge="Coming Soon — Launching Q4 2026"
+        statusBadge="Coming Soon - Launching Q4 2026"
         description="Bangladesh's premier high-tech golf academy combining PGA Class A coaching, TrackMan 4 dual-radar simulators, putting studios, and junior development pathways."
         facts={academyFacts}
-        bannerImage="/images/brand/golfacademy.png"
+        logo="/images/brand/golfacademy.png"
+        bannerImage="/images/our_divisions/sampan-golf-academy/hero_banner.jpg"
+        backgroundImage="/images/our_divisions/sampan-golf-academy/hero_banner.jpg"
       />
 
       {/* SECTION 2: What It Offers */}
@@ -207,11 +209,11 @@ export default function SampanGolfAcademyPage() {
       <GolfInstructorProfiles />
 
       {/* SECTION 5: Program Pricing / Package Tiers */}
-      <GolfPricingTiers
+      {/* <GolfPricingTiers
         title="Academy Program Pricing & Package Tiers"
         subtitle="Flexible coaching packages designed for complete beginners, intermediate golfers, and junior talent."
         tiers={academyPricing}
-      />
+      /> */}
 
       {/* SECTION 6: Junior / Youth Program Spotlight */}
       <GolfJuniorSpotlight />

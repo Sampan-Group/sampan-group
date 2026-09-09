@@ -260,7 +260,7 @@ export default function ExpressHighwayInnPage() {
     <main className="bg-[#F5F5F2] text-neutral-900 antialiased scroll-smooth selection:bg-[#58b9eb]/30 selection:text-neutral-900">
 
       {/* ================= 1. OVERVIEW (HERO WITH BACKGROUND IMAGE & DARK CONTRAST) ================= */}
-      <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-neutral-950 text-white pt-32 pb-20 lg:py-0 border-b border-white/10">
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-neutral-950 text-white pt-20 pb-10 lg:pt-24 lg:pb-14 border-b border-white/10">
         {/* Real Background Image with cinematic dark gradient overlay */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -269,7 +269,7 @@ export default function ExpressHighwayInnPage() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center brightness-[0.85]"
+            className="object-cover object-center"
           />
           {/* Dual-layer dark gradient for text readability and navbar contrast */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 to-black/60" />
@@ -281,136 +281,67 @@ export default function ExpressHighwayInnPage() {
         <div className="pointer-events-none absolute right-10 bottom-10 h-80 w-80 rounded-none bg-[#58b9eb]/10 blur-[120px] z-0" />
 
         {/* Hero Content Container */}
-        <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 py-12 lg:py-24">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
+        <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 pt-2 pb-8 lg:pb-12">
+          {/* Main Headline & Content */}
+          <div className="max-w-4xl space-y-5 sm:space-y-6">
 
-            {/* Left Headline & Content */}
-            <div className="lg:col-span-7 max-w-2xl">
-
-              {/* Eyebrow Square Badge */}
-              <div className="mb-6 inline-flex items-center gap-3 border border-[#58b9eb]/50 bg-[#58b9eb]/15 backdrop-blur-md px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-[#58b9eb]">
-                <span className="h-2 w-2 rounded-none bg-[#58b9eb]" />
-                <span>Express Highway Inn • Luxury Transit Hub</span>
-              </div>
-
-              {/* Headline */}
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-[-0.03em] text-white">
-                Express <br />
-                <span className="text-[#58b9eb]">
-                  Highway Inn
-                </span>
-              </h1>
-
-              {/* Subheadline */}
-              <p className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-white/75 font-normal">
-                Where relaxation meets luxury. A seamless fusion of comfort,
-                elegance, and tailored services engineered for the modern highway traveler.
-              </p>
-
-              {/* Square Action Buttons */}
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <Link
-                  href="#waitlist"
-                  className="group inline-flex items-center justify-center gap-2 rounded-none bg-[#58b9eb] hover:bg-[#3aa6df] px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-neutral-950 transition-all duration-300 shadow-lg shadow-[#58b9eb]/20"
-                >
-                  <span>Join Waitlist</span>
-                  <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
-
-                <Link
-                  href="#masterplan"
-                  className="inline-flex items-center justify-center rounded-none border border-white/25 bg-white/5 hover:border-white hover:bg-white hover:text-black px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 backdrop-blur-sm"
-                >
-                  View Masterplan
-                </Link>
-
-                <Link
-                  href="#facilities-gallery"
-                  className="inline-flex items-center justify-center rounded-none border border-[#58b9eb]/40 bg-[#58b9eb]/10 hover:bg-[#58b9eb]/20 px-6 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#58b9eb] transition-all duration-300 backdrop-blur-sm"
-                >
-                  Explore Facilities
-                </Link>
-              </div>
-
-              {/* Quick Metrics (Square Cards) */}
-              <div className="mt-10 pt-8 border-t border-white/15 grid grid-cols-3 gap-4 text-xs">
-                <div className="border-l-2 border-[#58b9eb] pl-4">
-                  <p className="text-xl sm:text-2xl font-bold text-white">5.2 Acres</p>
-                  <p className="text-white/50 mt-0.5 font-mono text-[10px] uppercase tracking-wider">Total Area</p>
-                </div>
-                <div className="border-l-2 border-[#58b9eb] pl-4">
-                  <p className="text-xl sm:text-2xl font-bold text-[#58b9eb]">85K sq. ft.</p>
-                  <p className="text-white/50 mt-0.5 font-mono text-[10px] uppercase tracking-wider">Built Complex</p>
-                </div>
-                <div className="border-l-2 border-[#58b9eb] pl-4">
-                  <p className="text-xl sm:text-2xl font-bold text-white">200+ Bays</p>
-                  <p className="text-white/50 mt-0.5 font-mono text-[10px] uppercase tracking-wider">EV &amp; Parking</p>
-                </div>
-              </div>
-
+            {/* Eyebrow Square Badge */}
+            <div className="inline-flex items-center gap-3 border border-[#58b9eb]/50 bg-[#58b9eb]/15 backdrop-blur-md px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-[#58b9eb]">
+              <span className="h-2 w-2 rounded-none bg-[#58b9eb]" />
+              <span>Express Highway Inn • Luxury Transit Hub</span>
             </div>
 
-            {/* Right: Founding Membership Spotlight Card (Glassmorphic Luxury) */}
-            <div className="lg:col-span-5">
-              <div className="group relative rounded-none border border-white/15 bg-black/60 backdrop-blur-xl p-8 sm:p-10 shadow-2xl transition-all duration-500 hover:border-[#58b9eb]/80">
-                {/* Top Cyan Accent Line */}
-                <div className="absolute top-0 left-0 h-[3px] w-full bg-[#58b9eb]" />
+            {/* Headline */}
+            <h1 className="text-[clamp(2.4rem,4.8vw,4.2rem)] font-bold leading-[0.98] tracking-[-0.03em] text-white">
+              Express <br />
+              <span className="text-[#58b9eb] block mt-1">
+                Highway Inn
+              </span>
+            </h1>
 
-                <div className="flex items-start justify-between">
-                  <div>
-                    <span className="inline-block rounded-none bg-[#58b9eb]/20 border border-[#58b9eb]/50 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[#58b9eb]">
-                      Founding Member
-                    </span>
-                    <h3 className="mt-3 text-xl font-bold text-white">
-                      Exclusive Early Access
-                    </h3>
-                    <p className="mt-1 text-xs text-white/60 leading-relaxed">
-                      Secure lifetime privileges and priority reservations prior to our grand opening.
-                    </p>
-                  </div>
-                  <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-none border border-[#58b9eb]/40 bg-[#58b9eb]/15 text-[#58b9eb]">
-                    <FaStar className="text-sm" />
-                  </div>
-                </div>
+            {/* Subheadline */}
+            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-md font-light tracking-wide border-l-2 border-[#58b9eb]/80 pl-4">
+              Soundproof suites, 24/7 dining, and tailored services for highway travelers.
+            </p>
 
-                <div className="mt-6 space-y-2.5 text-xs text-white/80 border-t border-white/10 pt-5">
-                  <div className="flex items-center gap-2.5">
-                    <FaCheck className="text-[#58b9eb] text-[10px] flex-shrink-0" />
-                    <span>20% Lifetime discount across all services</span>
-                  </div>
-                  <div className="flex items-center gap-2.5">
-                    <FaCheck className="text-[#58b9eb] text-[10px] flex-shrink-0" />
-                    <span>Complimentary ultra-fast EV charging</span>
-                  </div>
-                  <div className="flex items-center gap-2.5">
-                    <FaCheck className="text-[#58b9eb] text-[10px] flex-shrink-0" />
-                    <span>Exclusive VIP lounge &amp; private meeting access</span>
-                  </div>
-                </div>
+            {/* Square Action Buttons */}
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link
+                href="#waitlist"
+                className="group inline-flex items-center justify-center gap-2 rounded-none bg-[#58b9eb] hover:bg-[#3aa6df] px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-neutral-950 transition-all duration-300 shadow-lg shadow-[#58b9eb]/20"
+              >
+                <span>Join Waitlist</span>
+                <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
 
-                <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-4">
-                  <div>
-                    <p className="font-mono text-[10px] uppercase tracking-wider text-white/40">
-                      Starting at
-                    </p>
-                    <p className="text-2xl font-extrabold text-white">৳50,000</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-mono text-[10px] uppercase tracking-wider text-white/40">
-                      Availability
-                    </p>
-                    <span className="inline-block rounded-none border border-[#58b9eb]/60 bg-[#58b9eb]/20 px-3 py-1 font-mono text-[10px] font-bold text-[#58b9eb]">
-                      Only 100 Spots
-                    </span>
-                  </div>
-                </div>
+              <Link
+                href="#masterplan"
+                className="inline-flex items-center justify-center rounded-none border border-white/25 bg-white/5 hover:border-white hover:bg-white hover:text-black px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 backdrop-blur-sm"
+              >
+                View Masterplan
+              </Link>
 
-                <Link
-                  href="#waitlist"
-                  className="mt-6 block text-center w-full py-3.5 rounded-none bg-[#58b9eb] hover:bg-[#3aa6df] text-neutral-950 font-mono text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 shadow-md shadow-[#58b9eb]/20"
-                >
-                  Claim Founding Pass
-                </Link>
+              <Link
+                href="#facilities-gallery"
+                className="inline-flex items-center justify-center rounded-none border border-[#58b9eb]/40 bg-[#58b9eb]/10 hover:bg-[#58b9eb]/20 px-6 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#58b9eb] transition-all duration-300 backdrop-blur-sm"
+              >
+                Explore Facilities
+              </Link>
+            </div>
+
+            {/* Quick Metrics (Square Cards) */}
+            <div className="mt-10 pt-8 border-t border-white/15 grid grid-cols-3 gap-4 text-xs">
+              <div className="border-l-2 border-[#58b9eb] pl-4">
+                <p className="text-xl sm:text-2xl font-bold text-white">5.2 Acres</p>
+                <p className="text-white/50 mt-0.5 font-mono text-[10px] uppercase tracking-wider">Total Area</p>
+              </div>
+              <div className="border-l-2 border-[#58b9eb] pl-4">
+                <p className="text-xl sm:text-2xl font-bold text-[#58b9eb]">85K sq. ft.</p>
+                <p className="text-white/50 mt-0.5 font-mono text-[10px] uppercase tracking-wider">Built Complex</p>
+              </div>
+              <div className="border-l-2 border-[#58b9eb] pl-4">
+                <p className="text-xl sm:text-2xl font-bold text-white">200+ Bays</p>
+                <p className="text-white/50 mt-0.5 font-mono text-[10px] uppercase tracking-wider">EV &amp; Parking</p>
               </div>
             </div>
 
@@ -534,8 +465,8 @@ export default function ExpressHighwayInnPage() {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`px-5 py-2.5 rounded-none font-mono text-xs font-bold uppercase tracking-[0.18em] transition-all duration-300 cursor-pointer ${activeCategory === cat
-                    ? "bg-neutral-950 text-white shadow-sm"
-                    : "bg-neutral-100 text-neutral-700 hover:bg-[#58b9eb] hover:text-white border border-neutral-200"
+                  ? "bg-neutral-950 text-white shadow-sm"
+                  : "bg-neutral-100 text-neutral-700 hover:bg-[#58b9eb] hover:text-white border border-neutral-200"
                   }`}
               >
                 {cat}
@@ -720,8 +651,8 @@ export default function ExpressHighwayInnPage() {
                 key={i}
                 onClick={() => setSelectedImage(src)}
                 className={`group relative overflow-hidden rounded-none bg-neutral-100 border border-neutral-200 shadow-sm cursor-pointer ${i === 0
-                    ? "aspect-[16/10] md:col-span-2 md:row-span-2 md:aspect-auto min-h-[340px]"
-                    : "aspect-[16/10]"
+                  ? "aspect-[16/10] md:col-span-2 md:row-span-2 md:aspect-auto min-h-[340px]"
+                  : "aspect-[16/10]"
                   }`}
               >
                 <Image
@@ -756,7 +687,7 @@ export default function ExpressHighwayInnPage() {
           <div className="flex items-center gap-4 mb-6"> 
             <span className="h-px w-12 bg-[#58b9eb]"></span> 
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1a1a1a]/50"> 
-              06 — Development Timeline 
+              06 - Development Timeline 
             </p> 
           </div> 
           <h2 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl mb-16"> 
@@ -824,7 +755,7 @@ export default function ExpressHighwayInnPage() {
           <div className="flex items-center gap-4 mb-6"> 
             <span className="h-px w-12 bg-[#58b9eb]"></span> 
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1a1a1a]/50"> 
-              07 — Membership Options 
+              07 - Membership Options 
             </p> 
           </div> 
           <h2 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl mb-4"> 
@@ -914,7 +845,7 @@ export default function ExpressHighwayInnPage() {
       </section> */}
 
       {/* ================= 8. NEARBY AT THIS LOCATION ================= */}
-      <section className="bg-[#F5F5F2] px-6 py-24 sm:px-10 lg:px-16 lg:py-32 border-b border-neutral-200">
+      {/* <section className="bg-[#F5F5F2] px-6 py-24 sm:px-10 lg:px-16 lg:py-32 border-b border-neutral-200">
         <div className="mx-auto max-w-[1440px]">
 
           <div className="mb-6 flex items-center gap-4">
@@ -939,7 +870,7 @@ export default function ExpressHighwayInnPage() {
                 key={i}
                 className="group flex flex-col overflow-hidden rounded-none border border-neutral-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-[#58b9eb] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.08)]"
               >
-                {/* Top Cyan Hover Line */}
+
                 <div className="h-[3px] w-0 bg-[#58b9eb] transition-all duration-500 group-hover:w-full" />
 
                 <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
@@ -970,7 +901,7 @@ export default function ExpressHighwayInnPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ================= 9. INTERACTIVE MASTERPLAN MAP (PRESERVED COMMENTED OUT) ================= */}
       {/* <section className="bg-white px-6 py-24 sm:px-10 lg:px-16 lg:py-32"> 
@@ -978,7 +909,7 @@ export default function ExpressHighwayInnPage() {
           <div className="flex items-center gap-4 mb-6"> 
             <span className="h-px w-12 bg-[#58b9eb]"></span> 
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1a1a1a]/50"> 
-              09 — Interactive Masterplan 
+              09 - Interactive Masterplan 
             </p> 
           </div> 
           <h2 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl mb-12"> 
@@ -1153,7 +1084,7 @@ export default function ExpressHighwayInnPage() {
       </section> */}
 
       {/* ================= 12. FOUNDING MEMBER PRICING ================= */}
-      <section className="bg-[#58b9eb] px-6 py-24 text-neutral-950 sm:px-10 lg:px-16 lg:py-32 border-b border-neutral-200">
+      {/* <section className="bg-[#58b9eb] px-6 py-24 text-neutral-950 sm:px-10 lg:px-16 lg:py-32 border-b border-neutral-200">
         <div className="mx-auto max-w-[1440px]">
 
           <div className="flex items-center gap-4 mb-6">
@@ -1231,7 +1162,7 @@ export default function ExpressHighwayInnPage() {
 
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ================= FINAL CTA ================= */}
       <section className="bg-[#F5F5F2] px-6 py-24 sm:px-10 lg:px-16 lg:py-32 text-center border-b border-neutral-200">

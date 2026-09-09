@@ -26,13 +26,13 @@ const transitionOptions: Array<{
   value: TransitionMode;
   label: string;
 }> = [
-  { value: "crossfade", label: "Original" },
-  { value: "parallax", label: "Parallax" },
-  { value: "mask", label: "Masked reveal" },
-  { value: "split", label: "Split panels" },
-  { value: "blur", label: "Blur to sharp" },
-  { value: "pan", label: "Slow pan" },
-];
+    { value: "crossfade", label: "Original" },
+    { value: "parallax", label: "Parallax" },
+    { value: "mask", label: "Masked reveal" },
+    { value: "split", label: "Split panels" },
+    { value: "blur", label: "Blur to sharp" },
+    { value: "pan", label: "Slow pan" },
+  ];
 
 type HeroSlide = {
   id: string;
@@ -66,7 +66,7 @@ const slides: HeroSlide[] = [
     subhead:
       "A land-share residential project built for people who want to invest in a home, not just a plot.",
     cta: "Explore Metro Square",
-    href: "#",
+    href: "/our_divisions/real-state-and-land-investment/sampan-metro-square",
     image: "/images/projects/sampanmetrosquare.jpg",
     imagePosition: "center center",
     drift: "driftLeft",
@@ -94,6 +94,30 @@ const slides: HeroSlide[] = [
     image: "/images/projects/lshs.jpg",
     imagePosition: "center center",
     drift: "driftLeft",
+  },
+  {
+    id: "sa",
+    title: "Sampan Auto",
+    eyebrow: "Our First & Well-Recognized Business",
+    subhead:
+      "One of Sampan's pioneering and well-established businesses, offering vehicle sales, imports, and genuine Japanese automotive parts.",
+    cta: "Explore Sampan Auto",
+    href: "https://www.sampangroup.com.bd/sampan-auto",
+    image: "/images/our_divisions/sampan-auto/sampan-auto.png",
+    imagePosition: "center center",
+    drift: "driftLeft",
+  },
+  {
+    id: "sagr",
+    title: "Sampan Agro and Golf Resort",
+    eyebrow: "A modern family Resort for everyone",
+    subhead:
+      "Discover a perfect blend of nature and luxury at Sampan Agro and Golf Resort. Your ultimate escape for relaxation, recreation, and family fun.",
+    cta: "Explore Sampan Agro and Golf Resort",
+    href: "/our_divisions/agro-and-resort/sampan-agro-and-golf-resort",
+    image: "/images/our_divisions/sampan-agro-golf-resort/sampan-agro-golf-resort.png",
+    imagePosition: "center center",
+    drift: "driftRight",
   },
 ];
 
@@ -200,9 +224,8 @@ export default function HeroCarousel({
 
   return (
     <section
-      className={`${styles.hero} relative w-full ${
-        showAnimationPicker ? styles.heroWithPicker : ""
-      }`}
+      className={`${styles.hero} relative w-full ${showAnimationPicker ? styles.heroWithPicker : ""
+        }`}
       role="region"
       aria-roledescription="carousel"
       aria-label="Sampan Group featured destinations and projects"
@@ -217,9 +240,8 @@ export default function HeroCarousel({
           return (
             <div
               key={slide.id}
-              className={`${styles.slide} ${styles[slide.drift]} ${transitionClassName} ${
-                isActive ? styles.slideActive : ""
-              }`}
+              className={`${styles.slide} ${styles[slide.drift]} ${transitionClassName} ${isActive ? styles.slideActive : ""
+                }`}
             >
               <Image
                 src={slide.image}
@@ -273,9 +295,8 @@ export default function HeroCarousel({
                   <button
                     key={option.value}
                     type="button"
-                    className={`${styles.animationOption} ${
-                      selected ? styles.animationOptionActive : ""
-                    }`}
+                    className={`${styles.animationOption} ${selected ? styles.animationOptionActive : ""
+                      }`}
                     aria-pressed={selected}
                     onClick={() => previewAnimation(option.value)}
                   >

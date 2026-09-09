@@ -39,13 +39,13 @@ const logisticsCorridors = [
 export default function SampanIndustrialParkPage() {
   return (
     <main className="bg-[#f3f6f2] text-[#183b2b] antialiased selection:bg-[#047857] selection:text-white">
-      
-      {/* 1. Hero Overview — Forest Green (#047857) Accent from Gear Logo */}
+
+      {/* 1. Hero Overview - Forest Green (#047857) Accent from Gear Logo */}
       <ManufacturingHero
         title="Sampan Industrial Park"
         subtitle="Master Planned Industrial Hub & Factory Plot Leasing"
         divisionName="Manufacturing & Industrial Division"
-        statusBadge="Coming Soon — Plot Allocation Open"
+        statusBadge="Coming Soon - Plot Allocation Open"
         statusType="coming-soon"
         description="A 50+ acre master-planned industrial zone in Mawna engineered for high-capacity manufacturing, heavy power substations, central effluent treatment, and direct freight logistics."
         image="/images/brand/industrialpark.png"
@@ -77,7 +77,7 @@ export default function SampanIndustrialParkPage() {
       />
 
       {/* 4. Section 7: "Located At" Note & Logistical Map */}
-      <IndustrialLocationNote
+      {/* <IndustrialLocationNote
         title="Park Location & Logistical Access"
         subtitle="Positioned right on the Mawna industrial belt with immediate access to major national freight highways."
         concernName="Sampan Industrial Park"
@@ -87,7 +87,7 @@ export default function SampanIndustrialParkPage() {
         logisticsCorridors={logisticsCorridors}
         bgTheme="divisions-green"
         accentColor="#047857"
-      />
+      /> */}
 
     </main>
   );

@@ -26,48 +26,48 @@ export default function SampanHighwayInnClient() {
 
   return (
     <main className="bg-[#F5F5F2] text-neutral-900 antialiased selection:bg-emerald-600 selection:text-white">
-      
-      {/* 1. OVERVIEW (Hero & Brand Introduction) */}
+
+      {/* OVERVIEW (Hero & Brand Introduction) */}
       <HeroOverview onOpenBooking={() => scrollToSection("booking-widget")} />
 
-      {/* 10. ONLINE BOOKING WIDGET (Interactive Calculator & Instant Reservation) */}
-      <OnlineBookingWidget />
+      {/* ONLINE BOOKING WIDGET (Interactive Calculator & Instant Reservation) */}
+      {/* <OnlineBookingWidget /> */}
 
-      {/* 9. MILESTONE COUNTER (Track Record & Scale) */}
+      {/* MILESTONE COUNTER (Track Record & Scale) */}
       <MilestoneCounter />
 
-      {/* 2. FACILITIES / OFFERINGS LIST (Category Filtered Cards) */}
+      {/* FACILITIES / OFFERINGS LIST (Category Filtered Cards) */}
       <FacilitiesList />
 
-      {/* 14. DEDICATED HIGHWAY-ROUTE MAP (Corridor Map & Mile Markers) */}
+      {/* DEDICATED HIGHWAY-ROUTE MAP (Corridor Map & Mile Markers) */}
       <HighwayRouteVisualizer />
 
-      {/* 3. LOCATION + LIVE MAP (GPS Coordinates, Hub Distances & Embedded Map) */}
+      {/* LOCATION + LIVE MAP (GPS Coordinates, Hub Distances & Embedded Map) */}
       <LocationAndMap />
 
-      {/* 6. ROOM / PACKAGE PRICING OVERVIEW (Transparent Tiers & Inclusions) */}
-      <PricingOverview />
+      {/* ROOM / PACKAGE PRICING OVERVIEW (Transparent Tiers & Inclusions) */}
+      {/* <PricingOverview /> */}
 
-      {/* 12. VIRTUAL TOUR (360° Walkthrough Simulator & Interactive Hotspots) */}
-      <VirtualTourViewer />
+      {/* VIRTUAL TOUR (360° Walkthrough Simulator & Interactive Hotspots) */}
+      {/* <VirtualTourViewer /> */}
 
-      {/* 5. PHOTO / VIDEO GALLERY (Masonry Showcase & Drone Video) */}
+      {/* PHOTO / VIDEO GALLERY (Masonry Showcase & Drone Video) */}
       <PhotoVideoGallery />
 
-      {/* 7. "NEARBY AT THIS LOCATION" MODULE (Adjacent Assets & Attractions) */}
+      {/* "NEARBY AT THIS LOCATION" MODULE (Adjacent Assets & Attractions) */}
       <NearbyLocationModule />
 
-      {/* 8. PRESS / MEDIA MENTIONS CAROUSEL (National Press & Critics) */}
-      <PressMediaCarousel />
+      {/* PRESS / MEDIA MENTIONS CAROUSEL (National Press & Critics) */}
+      {/* <PressMediaCarousel /> */}
 
-      {/* 11. GUEST REVIEWS (Verified Traveler Feedback & Rating Scorecard) */}
-      <GuestReviews />
+      {/* GUEST REVIEWS (Verified Traveler Feedback & Rating Scorecard) */}
+      {/* <GuestReviews /> */}
 
-      {/* 13. USER-GENERATED CONTENT FEED (#SampanHighwayInn Social Community) */}
-      <UGCFeed />
+      {/* USER-GENERATED CONTENT FEED (#SampanHighwayInn Social Community) */}
+      {/* <UGCFeed /> */}
 
-      {/* 4. BOOK / ENQUIRE CTA (Direct Hotline, WhatsApp & Instant Form) */}
-      <BookEnquireCTA onOpenBookingWidget={() => scrollToSection("booking-widget")} />
+      {/* BOOK / ENQUIRE CTA (Direct Hotline, WhatsApp & Instant Form) */}
+      {/* <BookEnquireCTA onOpenBookingWidget={() => scrollToSection("booking-widget")} /> */}
 
       {/* Floating Highway Quick Navigation Bar (Square Style) */}
       <aside aria-label="Highway Quick Navigation" className="fixed bottom-6 inset-x-0 z-40 flex justify-center pointer-events-none px-4">
@@ -88,13 +88,13 @@ export default function SampanHighwayInnClient() {
             <span className="hidden sm:inline">Facilities</span>
           </button>
 
-          <button
+          {/* <button
             onClick={() => scrollToSection("virtual-tour")}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-none hover:bg-white/10 text-neutral-300 hover:text-white transition-colors cursor-pointer"
           >
             <FaCompass className="text-emerald-400" />
             <span className="hidden md:inline">360° Tour</span>
-          </button>
+          </button> */}
 
           <button
             onClick={() => scrollToSection("booking-widget")}
@@ -105,11 +105,11 @@ export default function SampanHighwayInnClient() {
           </button>
 
           <a
-            href="tel:+8801929918408"
+            href="tel:+880 1711-459387"
             className="flex items-center gap-1.5 bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-none transition-colors"
           >
             <FaPhoneAlt className="text-amber-400 text-[10px]" />
-            <span className="hidden lg:inline">+880 1929-918408</span>
+            <span className="hidden lg:inline">+880 1711-459387</span>
           </a>
         </div>
       </aside>

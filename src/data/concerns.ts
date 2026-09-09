@@ -19,7 +19,7 @@ export const concerns: Concern[] = [
   },
   {
     id: 3,
-    name: "Sampan Motalib Skyline",
+    name: "Sampan  Skyline",
     category: "Development & Construction",
     tagline: "Commercial + residential construction project",
     logo: "/images/brand/sampanmotolibskyline.webp",
@@ -96,6 +96,14 @@ export const concerns: Concern[] = [
     category: "Development & Construction",
     tagline: "New Auto showroom + cafe, car wash, facilities.",
     logo: "/images/brand/sampancafemetro.png",
+  },
+  {
+    id: 39,
+    name: "Sampan Condominium",
+    category: "Development & Construction",
+    tagline: "16-storied modern luxury high-rise residences.",
+    logo: "/images/brand/development.png",
+    href: "/our_divisions/real-state-and-land-investment/sampan-condominium",
   },
 
   // Hospitality, Resort & Highway Travel

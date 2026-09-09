@@ -22,12 +22,13 @@ import {
   FaStore,
   FaCrown,
   FaDumbbell,
-  FaMoneyCheckAlt
+  FaMoneyCheckAlt,
 } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
 
 // --- Real Club & Lounge Assets ---
-const heroBackground = "/images/facilities/express_highway_inn/1.Highway-Club-&-Lounge.png";
+const heroBackground =
+  "/images/facilities/express_highway_inn/1.Highway-Club-&-Lounge.png";
 const masterplanImage = "/images/projects/express-highway-inn.png";
 const clubLogo = "/images/brand/ecl.png";
 
@@ -156,7 +157,13 @@ const clubFacilities = [
 ];
 
 // --- Club Categories for Filtering ---
-const facilityCategories = ["All", "Lounge & Leisure", "Sports & Fitness", "Wellness", "Mobility & Services"];
+const facilityCategories = [
+  "All",
+  "Lounge & Leisure",
+  "Sports & Fitness",
+  "Wellness",
+  "Mobility & Services",
+];
 
 const nearbyLocations = [
   {
@@ -229,9 +236,8 @@ export default function ExpressHighwayInnClubLoungePage() {
 
   return (
     <main className="bg-[#F5F5F2] text-neutral-900 antialiased scroll-smooth selection:bg-[#2563eb]/30 selection:text-neutral-900">
-      
       {/* ================= 1. OVERVIEW (HERO WITH REAL BACKGROUND & DARK CONTRAST) ================= */}
-      <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-neutral-950 text-white pt-32 pb-20 lg:py-0 border-b border-white/10">
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-neutral-950 text-white pt-20 pb-10 lg:pt-24 lg:pb-14 border-b border-white/10">
         {/* Real Background Image with cinematic dark gradient overlay */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -240,7 +246,7 @@ export default function ExpressHighwayInnClubLoungePage() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center brightness-[0.8]"
+            className="object-cover object-center"
           />
           {/* Dual-layer dark gradient for high text contrast and seamless transparent navbar */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 to-black/60" />
@@ -252,139 +258,81 @@ export default function ExpressHighwayInnClubLoungePage() {
         <div className="pointer-events-none absolute right-10 bottom-10 h-80 w-80 rounded-none bg-[#3b82f6]/15 blur-[120px] z-0" />
 
         {/* Hero Content Container */}
-        <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 py-12 lg:py-24">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left Headline & Content */}
-            <div className="lg:col-span-7 max-w-2xl">
-              
-              {/* Eyebrow Square Badge (Royal Sapphire) */}
-              <div className="mb-6 inline-flex items-center gap-3 border border-[#3b82f6]/50 bg-[#2563eb]/20 backdrop-blur-md px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-[#60a5fa]">
+        <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 pt-2 pb-8 lg:pb-12">
+          {/* Main Headline & Content */}
+          <div className="max-w-4xl space-y-5 sm:space-y-6">
+            {/* Eyebrow Square Badge (Royal Sapphire) */}
+            {/* <div className="inline-flex items-center gap-3 border border-[#3b82f6]/50 bg-[#2563eb]/20 backdrop-blur-md px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-[#60a5fa]">
                 <span className="h-2 w-2 rounded-none bg-[#3b82f6]" />
                 <span>Private Members&apos; Club &amp; Lounge • Membership Share</span>
-              </div>
+              </div>*/}
 
-              {/* Headline */}
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-[-0.03em] text-white">
-                Express Highway Inn <br />
-                <span className="text-[#3b82f6]">
-                  Club &amp; Lounge
-                </span>
-              </h1>
+            {/* Headline */}
+            <h1 className="text-[clamp(2.4rem,4.8vw,4.2rem)] font-bold leading-[0.98] tracking-[-0.03em] text-white">
+              Express Highway Inn <br />
+              <span className="text-[#3b82f6] block mt-1">
+                Club &amp; Lounge
+              </span>
+            </h1>
 
-              {/* Subheadline */}
-              <p className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-white/75 font-normal">
-                An elite private sanctuary engineered for highway travelers, executives, and families. 
-                Experience bespoke lounges, recreation suites, wellness facilities, and exclusive membership share privileges.
-              </p>
+            {/* Subheadline */}
+            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-md font-light tracking-wide border-l-2 border-[#3b82f6]/80 pl-4">
+              Private member lounges, wellness suites, and exclusive
+              membership share privileges.
+            </p>
 
-              {/* Square Action Buttons */}
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <Link
-                  href="#waitlist"
-                  className="group inline-flex items-center justify-center gap-2 rounded-none bg-[#2563eb] hover:bg-[#1d4ed8] px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 shadow-lg shadow-[#2563eb]/25"
-                >
-                  <span>Join Members Waitlist</span>
-                  <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
-                
-                <Link
-                  href="#club-overview"
-                  className="inline-flex items-center justify-center rounded-none border border-white/25 bg-white/5 hover:border-white hover:bg-white hover:text-black px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 backdrop-blur-sm"
-                >
-                  View Club Privileges
-                </Link>
+            {/* Square Action Buttons */}
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link
+                href="#waitlist"
+                className="group inline-flex items-center justify-center gap-2 rounded-none bg-[#2563eb] hover:bg-[#1d4ed8] px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 shadow-lg shadow-[#2563eb]/25"
+              >
+                <span>Join Members Waitlist</span>
+                <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
 
-                <Link
-                  href="#facilities-gallery"
-                  className="inline-flex items-center justify-center rounded-none border border-[#3b82f6]/40 bg-[#2563eb]/10 hover:bg-[#2563eb]/20 px-6 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#60a5fa] transition-all duration-300 backdrop-blur-sm"
-                >
-                  Explore 12+ Facilities
-                </Link>
-              </div>
+              <Link
+                href="#club-overview"
+                className="inline-flex items-center justify-center rounded-none border border-white/25 bg-white/5 hover:border-white hover:bg-white hover:text-black px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 backdrop-blur-sm"
+              >
+                View Club Privileges
+              </Link>
 
-              {/* Quick Metrics (Square Cards) */}
-              <div className="mt-10 pt-8 border-t border-white/15 grid grid-cols-3 gap-4 text-xs">
-                <div className="border-l-2 border-[#3b82f6] pl-4">
-                  <p className="text-xl sm:text-2xl font-bold text-white">Private</p>
-                  <p className="text-white/50 mt-0.5 font-mono text-[10px] uppercase tracking-wider">Access Tier</p>
-                </div>
-                <div className="border-l-2 border-[#3b82f6] pl-4">
-                  <p className="text-xl sm:text-2xl font-bold text-[#60a5fa]">12+ Suites</p>
-                  <p className="text-white/50 mt-0.5 font-mono text-[10px] uppercase tracking-wider">Club Amenities</p>
-                </div>
-                <div className="border-l-2 border-[#3b82f6] pl-4">
-                  <p className="text-xl sm:text-2xl font-bold text-white">Lifetime</p>
-                  <p className="text-white/50 mt-0.5 font-mono text-[10px] uppercase tracking-wider">Share Dividend</p>
-                </div>
-              </div>
-
+              <Link
+                href="#facilities-gallery"
+                className="inline-flex items-center justify-center rounded-none border border-[#3b82f6]/40 bg-[#2563eb]/10 hover:bg-[#2563eb]/20 px-6 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#60a5fa] transition-all duration-300 backdrop-blur-sm"
+              >
+                Explore 12+ Facilities
+              </Link>
             </div>
 
-            {/* Right: Founding Club Shareholder Spotlight Card (Glassmorphic Luxury) */}
-            <div className="lg:col-span-5">
-              <div className="group relative rounded-none border border-white/15 bg-black/60 backdrop-blur-xl p-8 sm:p-10 shadow-2xl transition-all duration-500 hover:border-[#3b82f6]/80">
-                {/* Top Royal Blue Accent Line */}
-                <div className="absolute top-0 left-0 h-[3px] w-full bg-[#2563eb]" />
-
-                <div className="flex items-start justify-between">
-                  <div>
-                    <span className="inline-block rounded-none bg-[#2563eb]/20 border border-[#3b82f6]/50 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[#60a5fa]">
-                      Founding Club Share
-                    </span>
-                    <h3 className="mt-3 text-xl font-bold text-white">
-                      Lifetime Membership Pass
-                    </h3>
-                    <p className="mt-1 text-xs text-white/60 leading-relaxed">
-                      Become a founding shareholder member with guaranteed capital appreciation, priority access, and VIP family privileges.
-                    </p>
-                  </div>
-                  <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-none border border-[#3b82f6]/40 bg-[#2563eb]/15 text-[#60a5fa]">
-                    <FaCrown className="text-sm" />
-                  </div>
-                </div>
-
-                <div className="mt-6 space-y-2.5 text-xs text-white/80 border-t border-white/10 pt-5">
-                  <div className="flex items-center gap-2.5">
-                    <FaCheck className="text-[#3b82f6] text-[10px] flex-shrink-0" />
-                    <span>Unlimited access to Executive Club &amp; VVIP Lounge</span>
-                  </div>
-                  <div className="flex items-center gap-2.5">
-                    <FaCheck className="text-[#3b82f6] text-[10px] flex-shrink-0" />
-                    <span>Complimentary Heated Pool, GYM &amp; Billiards Room</span>
-                  </div>
-                  <div className="flex items-center gap-2.5">
-                    <FaCheck className="text-[#3b82f6] text-[10px] flex-shrink-0" />
-                    <span>Free monthly automated car wash &amp; EV Supercharging</span>
-                  </div>
-                </div>
-
-                <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-4">
-                  <div>
-                    <p className="font-mono text-[10px] uppercase tracking-wider text-white/40">
-                      Founding Share
-                    </p>
-                    <p className="text-2xl font-extrabold text-white">৳75,000</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-mono text-[10px] uppercase tracking-wider text-white/40">
-                      Share Pool
-                    </p>
-                    <span className="inline-block rounded-none border border-[#3b82f6]/60 bg-[#2563eb]/20 px-3 py-1 font-mono text-[10px] font-bold text-[#60a5fa]">
-                      Limited 50 Shares
-                    </span>
-                  </div>
-                </div>
-
-                <Link
-                  href="#waitlist"
-                  className="mt-6 block text-center w-full py-3.5 rounded-none bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-mono text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 shadow-md shadow-[#2563eb]/25"
-                >
-                  Apply For Club Share
-                </Link>
+            {/* Quick Metrics (Square Cards) */}
+            <div className="mt-10 pt-8 border-t border-white/15 grid grid-cols-3 gap-4 text-xs">
+              <div className="border-l-2 border-[#3b82f6] pl-4">
+                <p className="text-xl sm:text-2xl font-bold text-white">
+                  Private
+                </p>
+                <p className="text-white/50 mt-0.5 font-mono text-[10px] uppercase tracking-wider">
+                  Access Tier
+                </p>
+              </div>
+              <div className="border-l-2 border-[#3b82f6] pl-4">
+                <p className="text-xl sm:text-2xl font-bold text-[#60a5fa]">
+                  12+ Suites
+                </p>
+                <p className="text-white/50 mt-0.5 font-mono text-[10px] uppercase tracking-wider">
+                  Club Amenities
+                </p>
+              </div>
+              <div className="border-l-2 border-[#3b82f6] pl-4">
+                <p className="text-xl sm:text-2xl font-bold text-white">
+                  Lifetime
+                </p>
+                <p className="text-white/50 mt-0.5 font-mono text-[10px] uppercase tracking-wider">
+                  Share Dividend
+                </p>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -395,7 +343,6 @@ export default function ExpressHighwayInnClubLoungePage() {
         className="relative bg-[#F5F5F2] px-6 py-24 sm:px-10 lg:px-16 lg:py-32 border-b border-neutral-200"
       >
         <div className="mx-auto max-w-[1440px]">
-          
           <div className="mb-6 flex items-center gap-4">
             <span className="h-px w-10 bg-[#2563eb]" />
             <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.4em] text-neutral-600">
@@ -406,11 +353,12 @@ export default function ExpressHighwayInnClubLoungePage() {
           <h2 className="mb-12 text-[clamp(2.5rem,5vw,4.5rem)] font-semibold leading-[0.95] tracking-[-0.03em] text-neutral-950">
             A sanctuary for discerning minds.
             <br />
-            <span className="text-neutral-400">Exclusivity on the corridor.</span>
+            <span className="text-neutral-400">
+              Exclusivity on the corridor.
+            </span>
           </h2>
 
           <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-            
             {/* Masterplan Image Card */}
             <div className="group relative aspect-[16/9] overflow-hidden rounded-none bg-white shadow-md border border-neutral-200">
               <Image
@@ -428,7 +376,6 @@ export default function ExpressHighwayInnClubLoungePage() {
 
             {/* Club Spec Cards (Square Architecture) */}
             <div className="space-y-4">
-              
               <div className="group relative rounded-none border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-[#2563eb] hover:-translate-y-1">
                 <div className="absolute top-0 left-0 h-[3px] w-0 bg-[#2563eb] transition-all duration-500 group-hover:w-full" />
                 <h3 className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[#2563eb]">
@@ -438,7 +385,8 @@ export default function ExpressHighwayInnClubLoungePage() {
                   35,000 sq. ft.
                 </p>
                 <p className="mt-1 text-xs text-neutral-500">
-                  Two-tier architectural complex reserved exclusively for members and invited guests
+                  Two-tier architectural complex reserved exclusively for
+                  members and invited guests
                 </p>
               </div>
 
@@ -451,7 +399,8 @@ export default function ExpressHighwayInnClubLoungePage() {
                   100% Reciprocal
                 </p>
                 <p className="mt-1 text-xs text-neutral-500">
-                  Cross-privileges across all upcoming Sampan Group hospitality properties and golf resorts
+                  Cross-privileges across all upcoming Sampan Group hospitality
+                  properties and golf resorts
                 </p>
               </div>
 
@@ -464,10 +413,10 @@ export default function ExpressHighwayInnClubLoungePage() {
                   Dedicated Bays
                 </p>
                 <p className="mt-1 text-xs text-neutral-500">
-                  Valet parking, private EV supercharging lanes, and complimentary touchless car detailing
+                  Valet parking, private EV supercharging lanes, and
+                  complimentary touchless car detailing
                 </p>
               </div>
-
             </div>
           </div>
         </div>
@@ -479,7 +428,6 @@ export default function ExpressHighwayInnClubLoungePage() {
         className="bg-white px-6 py-24 sm:px-10 lg:px-16 lg:py-32 border-b border-neutral-200 relative overflow-hidden"
       >
         <div className="mx-auto max-w-[1440px] relative z-10">
-          
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
               <div className="flex items-center gap-4 mb-4">
@@ -494,7 +442,8 @@ export default function ExpressHighwayInnClubLoungePage() {
               </h2>
             </div>
             <p className="max-w-md text-sm text-neutral-500 leading-relaxed">
-              Every detail is engineered to offer members a refined respite with world-class dining, wellness, sports, and business lounges.
+              Every detail is engineered to offer members a refined respite with
+              world-class dining, wellness, sports, and business lounges.
             </p>
           </div>
 
@@ -504,11 +453,10 @@ export default function ExpressHighwayInnClubLoungePage() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-2.5 rounded-none font-mono text-xs font-bold uppercase tracking-[0.18em] transition-all duration-300 cursor-pointer ${
-                  activeCategory === cat
+                className={`px-5 py-2.5 rounded-none font-mono text-xs font-bold uppercase tracking-[0.18em] transition-all duration-300 cursor-pointer ${activeCategory === cat
                     ? "bg-neutral-950 text-white shadow-sm"
                     : "bg-neutral-100 text-neutral-700 hover:bg-[#2563eb] hover:text-white border border-neutral-200"
-                }`}
+                  }`}
               >
                 {cat}
               </button>
@@ -535,7 +483,7 @@ export default function ExpressHighwayInnClubLoungePage() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-60 transition-opacity" />
-                  
+
                   {/* Square Badge */}
                   <div className="absolute top-3.5 left-3.5 bg-white/90 backdrop-blur-md px-3 py-1 rounded-none border border-neutral-200 font-mono text-[9px] font-bold uppercase tracking-widest text-[#1d4ed8]">
                     {facility.badge}
@@ -558,7 +506,9 @@ export default function ExpressHighwayInnClubLoungePage() {
                       0{i + 1}
                     </span>
                     <span className="text-[11px] text-neutral-300">•</span>
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-neutral-500">{facility.category}</span>
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-neutral-500">
+                      {facility.category}
+                    </span>
                   </div>
 
                   <h3 className="text-lg font-bold text-neutral-950 group-hover:text-[#2563eb] transition-colors leading-snug">
@@ -572,7 +522,6 @@ export default function ExpressHighwayInnClubLoungePage() {
               </article>
             ))}
           </div>
-
         </div>
       </section>
 
@@ -582,7 +531,6 @@ export default function ExpressHighwayInnClubLoungePage() {
         className="bg-[#F5F5F2] px-6 py-24 sm:px-10 lg:px-16 lg:py-32 border-b border-neutral-200"
       >
         <div className="mx-auto max-w-[1440px]">
-          
           <div className="mb-6 flex items-center gap-4">
             <span className="h-px w-10 bg-[#2563eb]" />
             <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.4em] text-neutral-600">
@@ -597,17 +545,16 @@ export default function ExpressHighwayInnClubLoungePage() {
           </h2>
 
           <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-            
             <div className="flex flex-col justify-between space-y-8">
-              
               <div className="space-y-6">
                 <div>
                   <h3 className="text-xl font-bold text-neutral-950 mb-2">
                     Direct Highway Entry Ramps
                   </h3>
                   <p className="text-sm text-neutral-600 leading-relaxed">
-                    Located directly on the primary national arterial corridor with
-                    smooth entry and exit deceleration lanes. Zero detour required.
+                    Located directly on the primary national arterial corridor
+                    with smooth entry and exit deceleration lanes. Zero detour
+                    required.
                   </p>
                 </div>
 
@@ -652,7 +599,6 @@ export default function ExpressHighwayInnClubLoungePage() {
                   <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
               </div>
-
             </div>
 
             <div className="relative aspect-[16/10] overflow-hidden rounded-none border border-neutral-200 shadow-md lg:aspect-auto lg:h-full min-h-[380px] bg-white">
@@ -663,7 +609,6 @@ export default function ExpressHighwayInnClubLoungePage() {
                 loading="lazy"
               />
             </div>
-
           </div>
         </div>
       </section>
@@ -671,7 +616,6 @@ export default function ExpressHighwayInnClubLoungePage() {
       {/* ================= 5. PHOTO GALLERY ================= */}
       <section className="bg-white px-6 py-24 sm:px-10 lg:px-16 lg:py-32 border-b border-neutral-200">
         <div className="mx-auto max-w-[1440px]">
-          
           <div className="mb-6 flex items-center gap-4">
             <span className="h-px w-10 bg-[#2563eb]" />
             <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.4em] text-neutral-600">
@@ -682,7 +626,9 @@ export default function ExpressHighwayInnClubLoungePage() {
           <h2 className="mb-12 text-[clamp(2.2rem,4.5vw,4rem)] font-semibold leading-[0.95] tracking-[-0.03em] text-neutral-950">
             Visual elegance.
             <br />
-            <span className="text-neutral-400">Moments across the private club.</span>
+            <span className="text-neutral-400">
+              Moments across the private club.
+            </span>
           </h2>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -690,11 +636,10 @@ export default function ExpressHighwayInnClubLoungePage() {
               <div
                 key={i}
                 onClick={() => setSelectedImage(src)}
-                className={`group relative overflow-hidden rounded-none bg-neutral-100 border border-neutral-200 shadow-sm cursor-pointer ${
-                  i === 0
+                className={`group relative overflow-hidden rounded-none bg-neutral-100 border border-neutral-200 shadow-sm cursor-pointer ${i === 0
                     ? "aspect-[16/10] md:col-span-2 md:row-span-2 md:aspect-auto min-h-[340px]"
                     : "aspect-[16/10]"
-                }`}
+                  }`}
               >
                 <Image
                   src={src}
@@ -717,7 +662,8 @@ export default function ExpressHighwayInnClubLoungePage() {
           </div>
 
           <p className="mt-10 text-center font-mono text-xs text-neutral-400 uppercase tracking-wider">
-            High-definition 3D virtual walkthroughs and member lounge previews releasing as construction progresses.
+            High-definition 3D virtual walkthroughs and member lounge previews
+            releasing as construction progresses.
           </p>
         </div>
       </section>
@@ -729,7 +675,6 @@ export default function ExpressHighwayInnClubLoungePage() {
       >
         <div className="mx-auto max-w-[1440px] relative z-10">
           <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20 items-center">
-            
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <span className="h-px w-10 bg-[#2563eb]"></span>
@@ -743,7 +688,9 @@ export default function ExpressHighwayInnClubLoungePage() {
               </h2>
 
               <p className="text-base sm:text-lg text-neutral-600 mb-8 font-normal leading-relaxed">
-                Experience unparalleled exclusivity, networking with fellow leaders, and lifetime amenities. Pre-launch founding members receive preferred share valuations and lifetime dividend rights.
+                Experience unparalleled exclusivity, networking with fellow
+                leaders, and lifetime amenities. Pre-launch founding members
+                receive preferred share valuations and lifetime dividend rights.
               </p>
 
               <ul className="space-y-4 mb-8 text-sm">
@@ -753,7 +700,10 @@ export default function ExpressHighwayInnClubLoungePage() {
                   "Complimentary EV fast charging, pool, gym, and car wash",
                   "Invitation to exclusive private launch gala and networking summits",
                 ].map((benefit, i) => (
-                  <li key={i} className="flex items-center gap-3 text-neutral-700">
+                  <li
+                    key={i}
+                    className="flex items-center gap-3 text-neutral-700"
+                  >
                     <div className="w-5 h-5 rounded-none bg-[#2563eb]/20 text-[#2563eb] flex items-center justify-center text-xs flex-shrink-0">
                       <FaCheck className="text-[9px]" />
                     </div>
@@ -768,9 +718,15 @@ export default function ExpressHighwayInnClubLoungePage() {
               <div className="absolute top-0 left-0 h-[3px] w-full bg-[#2563eb]" />
 
               {!formSubmitted ? (
-                <form onSubmit={handleWaitlistSubmit} className="space-y-5 text-xs">
+                <form
+                  onSubmit={handleWaitlistSubmit}
+                  className="space-y-5 text-xs"
+                >
                   <div>
-                    <label htmlFor="name" className="block font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-700 mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-700 mb-2"
+                    >
                       Full Name *
                     </label>
                     <input
@@ -783,7 +739,10 @@ export default function ExpressHighwayInnClubLoungePage() {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-700 mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-700 mb-2"
+                    >
                       Corporate / Personal Email *
                     </label>
                     <input
@@ -796,7 +755,10 @@ export default function ExpressHighwayInnClubLoungePage() {
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-700 mb-2">
+                    <label
+                      htmlFor="phone"
+                      className="block font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-700 mb-2"
+                    >
                       Phone Number / WhatsApp *
                     </label>
                     <input
@@ -809,16 +771,25 @@ export default function ExpressHighwayInnClubLoungePage() {
                   </div>
 
                   <div>
-                    <label htmlFor="membership-type" className="block font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-700 mb-2">
+                    <label
+                      htmlFor="membership-type"
+                      className="block font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-700 mb-2"
+                    >
                       Membership Share Category
                     </label>
                     <select
                       id="membership-type"
                       className="w-full px-4 py-3.5 rounded-none bg-white border border-neutral-300 text-neutral-950 focus:outline-none focus:border-[#2563eb] transition-colors cursor-pointer"
                     >
-                      <option value="founding-shareholder">Founding Club Shareholder (৳75,000)</option>
-                      <option value="executive-annual">Executive Annual Member (৳35,000/yr)</option>
-                      <option value="corporate-fleet">Corporate Fleet Partner Pass</option>
+                      <option value="founding-shareholder">
+                        Founding Club Shareholder (৳75,000)
+                      </option>
+                      <option value="executive-annual">
+                        Executive Annual Member (৳35,000/yr)
+                      </option>
+                      <option value="corporate-fleet">
+                        Corporate Fleet Partner Pass
+                      </option>
                     </select>
                   </div>
 
@@ -834,9 +805,13 @@ export default function ExpressHighwayInnClubLoungePage() {
                   <div className="w-16 h-16 rounded-none bg-[#2563eb]/20 text-[#2563eb] text-3xl flex items-center justify-center mx-auto border border-[#2563eb]/40">
                     <FaCheck />
                   </div>
-                  <h3 className="text-2xl font-bold text-neutral-950">Application Received!</h3>
+                  <h3 className="text-2xl font-bold text-neutral-950">
+                    Application Received!
+                  </h3>
                   <p className="text-xs text-neutral-600 leading-relaxed max-w-sm mx-auto">
-                    Thank you for applying. Our membership secretary will review your details and contact you with share prospectus materials.
+                    Thank you for applying. Our membership secretary will review
+                    your details and contact you with share prospectus
+                    materials.
                   </p>
                   <button
                     onClick={() => setFormSubmitted(false)}
@@ -847,15 +822,13 @@ export default function ExpressHighwayInnClubLoungePage() {
                 </div>
               )}
             </div>
-
           </div>
         </div>
       </section>
 
       {/* ================= 7. FOUNDING SHARE PRICING (ROYAL SAPPHIRE BANNER) ================= */}
-      <section className="bg-[#2563eb] px-6 py-24 text-white sm:px-10 lg:px-16 lg:py-32 border-b border-neutral-200">
+      {/* <section className="bg-[#2563eb] px-6 py-24 text-white sm:px-10 lg:px-16 lg:py-32 border-b border-neutral-200">
         <div className="mx-auto max-w-[1440px]">
-          
           <div className="flex items-center gap-4 mb-6">
             <span className="h-px w-10 bg-white"></span>
             <span className="font-mono text-[11px] font-bold uppercase tracking-[0.4em] text-white">
@@ -868,15 +841,20 @@ export default function ExpressHighwayInnClubLoungePage() {
           </h2>
 
           <p className="max-w-2xl text-base sm:text-lg text-white/80 mb-12 font-medium">
-            Lock in founding share status before our grand opening. Enjoy capital appreciation, lifetime club privileges, and transferable shares.
+            Lock in founding share status before our grand opening. Enjoy
+            capital appreciation, lifetime club privileges, and transferable
+            shares.
           </p>
 
           <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20 items-center">
-            
             <div className="bg-white p-8 sm:p-10 rounded-none shadow-xl border border-neutral-200 text-neutral-950">
               <div className="flex items-baseline gap-3 mb-6">
-                <span className="text-5xl font-extrabold text-neutral-950">৳75,000</span>
-                <span className="font-mono text-xs font-semibold text-neutral-500 uppercase tracking-wider">one-time share</span>
+                <span className="text-5xl font-extrabold text-neutral-950">
+                  ৳75,000
+                </span>
+                <span className="font-mono text-xs font-semibold text-neutral-500 uppercase tracking-wider">
+                  one-time share
+                </span>
               </div>
 
               <h3 className="text-lg font-bold text-neutral-950 mb-4">
@@ -900,8 +878,12 @@ export default function ExpressHighwayInnClubLoungePage() {
 
               <div className="mt-8 pt-6 border-t border-neutral-100 flex items-center justify-between">
                 <div>
-                  <p className="text-xs text-neutral-500">Post-launch market value:</p>
-                  <p className="text-xl font-bold line-through text-neutral-400">৳100,000</p>
+                  <p className="text-xs text-neutral-500">
+                    Post-launch market value:
+                  </p>
+                  <p className="text-xl font-bold line-through text-neutral-400">
+                    ৳100,000
+                  </p>
                 </div>
                 <span className="bg-neutral-950 text-white font-mono text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-none">
                   Save ৳25,000 (25% off)
@@ -915,8 +897,9 @@ export default function ExpressHighwayInnClubLoungePage() {
               </div>
 
               <p className="text-base text-white/90 mb-8 leading-relaxed font-normal">
-                This exclusive founding tier is reserved for early patrons during our
-                development phase. All privileges and voting rights are protected in perpetuity.
+                This exclusive founding tier is reserved for early patrons
+                during our development phase. All privileges and voting rights
+                are protected in perpetuity.
               </p>
 
               <Link
@@ -927,15 +910,13 @@ export default function ExpressHighwayInnClubLoungePage() {
                 <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
-
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ================= 8. NEARBY AT THIS LOCATION ================= */}
       <section className="bg-[#F5F5F2] px-6 py-24 sm:px-10 lg:px-16 lg:py-32 border-b border-neutral-200">
         <div className="mx-auto max-w-[1440px]">
-          
           <div className="mb-6 flex items-center gap-4">
             <span className="h-px w-10 bg-[#2563eb]" />
             <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.4em] text-neutral-600">
@@ -948,7 +929,8 @@ export default function ExpressHighwayInnClubLoungePage() {
           </h2>
 
           <p className="mb-16 max-w-2xl text-sm sm:text-base text-neutral-500">
-            Discover neighboring Sampan Group commercial centers and developments across the regional corridor.
+            Discover neighboring Sampan Group commercial centers and
+            developments across the regional corridor.
           </p>
 
           <div className="grid gap-8 md:grid-cols-3">
@@ -997,7 +979,8 @@ export default function ExpressHighwayInnClubLoungePage() {
             Elevate your highway journey.
           </h2>
           <p className="max-w-2xl mx-auto text-base text-neutral-600 mb-10">
-            Secure your membership share today and become a founding patron of the Express Highway Inn Club &amp; Lounge.
+            Secure your membership share today and become a founding patron of
+            the Express Highway Inn Club &amp; Lounge.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
@@ -1035,7 +1018,8 @@ export default function ExpressHighwayInnClubLoungePage() {
             <Image
               src={selectedImage}
               alt="Club & Lounge Facility Zoom"
-              fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-contain"
             />
           </div>
@@ -1051,37 +1035,53 @@ export default function ExpressHighwayInnClubLoungePage() {
                 Express Highway Inn Club &amp; Lounge
               </h3>
               <p className="text-xs sm:text-sm text-neutral-500 leading-relaxed max-w-md">
-                An exclusive private sanctuary engineered for highway travelers, executives, and families.
-                A prestigious concern of Sampan Group.
+                An exclusive private sanctuary engineered for highway travelers,
+                executives, and families. A prestigious concern of Sampan Group.
               </p>
             </div>
             <div>
-              <h4 className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-950 mb-4">Quick Links</h4>
+              <h4 className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-950 mb-4">
+                Quick Links
+              </h4>
               <ul className="space-y-2.5 text-xs">
                 <li>
-                  <Link href="#club-overview" className="hover:text-[#2563eb] transition-colors">
+                  <Link
+                    href="#club-overview"
+                    className="hover:text-[#2563eb] transition-colors"
+                  >
                     Club Masterplan
                   </Link>
                 </li>
                 <li>
-                  <Link href="#facilities-gallery" className="hover:text-[#2563eb] transition-colors">
+                  <Link
+                    href="#facilities-gallery"
+                    className="hover:text-[#2563eb] transition-colors"
+                  >
                     Facilities Gallery
                   </Link>
                 </li>
                 <li>
-                  <Link href="#waitlist" className="hover:text-[#2563eb] transition-colors">
+                  <Link
+                    href="#waitlist"
+                    className="hover:text-[#2563eb] transition-colors"
+                  >
                     Join Waitlist
                   </Link>
                 </li>
                 <li>
-                  <Link href="#location" className="hover:text-[#2563eb] transition-colors">
+                  <Link
+                    href="#location"
+                    className="hover:text-[#2563eb] transition-colors"
+                  >
                     Location
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h4 className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-950 mb-4">Concierge Desk</h4>
+              <h4 className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-950 mb-4">
+                Concierge Desk
+              </h4>
               <ul className="space-y-2.5 text-xs text-neutral-500">
                 <li>National Highway Corridor, Bangladesh</li>
                 <li>+880 1929-918408</li>
@@ -1091,7 +1091,8 @@ export default function ExpressHighwayInnClubLoungePage() {
           </div>
           <div className="pt-8 border-t border-neutral-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500 font-mono">
             <p>
-              © {new Date().getFullYear()} Express Highway Inn Club &amp; Lounge. A Sampan Group Concern.
+              © {new Date().getFullYear()} Express Highway Inn Club &amp;
+              Lounge. A Sampan Group Concern.
             </p>
             <div className="flex gap-6">
               <Link href="#" className="hover:text-[#2563eb] transition-colors">
@@ -1104,7 +1105,6 @@ export default function ExpressHighwayInnClubLoungePage() {
           </div>
         </div>
       </footer>
-
     </main>
   );
 }

@@ -18,14 +18,14 @@ export const concerns2: Concern[] = [
     logo: "/images/brand/sampanmetrosquare.png",
     href: "/our_divisions/real-state-and-land-investment/sampan-metro-square",
   },
-  {
-    id: 3,
-    name: "Sampan Motalib Skyline",
-    category: "Development & Construction",
-    tagline: "Commercial + residential construction project",
-    logo: "/images/brand/sampanmotolibskyline.webp",
-    href: "/our_divisions/real-state-and-land-investment/sampan-motalib-skyline",
-  },
+  // {
+  //   id: 3,
+  //   name: "Sampan Skyline",
+  //   category: "Development & Construction",
+  //   tagline: "Commercial + residential construction project",
+  //   logo: "/images/brand/sampanmotolibskyline.webp",
+  //   href: "/our_divisions/real-state-and-land-investment/sampan-skyline",
+  // },
   {
     id: 4,
     name: "Sampan Nexus",
@@ -42,14 +42,14 @@ export const concerns2: Concern[] = [
     logo: "/images/brand/sampantradeemporium.png",
     href: "/our_divisions/real-state-and-land-investment/sampan-trade-emporium",
   },
-  {
-    id: 6,
-    name: "Sampan Tower 1 & 2",
-    category: "Development & Construction",
-    tagline: "Hotel/motel beside Express Highway Inn.",
-    logo: "/images/brand/sampantower.png",
-    href: "/our_divisions/real-state-and-land-investment/sampan-residency-tower-1-2",
-  },
+  // {
+  //   id: 6,
+  //   name: "Sampan Tower 1 & 2",
+  //   category: "Development & Construction",
+  //   tagline: "Hotel/motel beside Express Highway Inn.",
+  //   logo: "/images/brand/sampantower.png",
+  //   href: "/our_divisions/real-state-and-land-investment/sampan-residency-tower-1-2",
+  // },
   {
     id: 7,
     name: "Sampan 21st Century",
@@ -108,6 +108,14 @@ export const concerns2: Concern[] = [
     tagline: "New Auto showroom + cafe, car wash, facilities.",
     logo: "/images/brand/sampanauto.png",
     href: "/our_divisions/real-state-and-land-investment/sampan-cafe-metro",
+  },
+  {
+    id: 39,
+    name: "Sampan Condominium",
+    category: "Development & Construction",
+    tagline: "16-storied modern luxury high-rise residences.",
+    logo: "/images/brand/development.png",
+    href: "/our_divisions/real-state-and-land-investment/sampan-condominium",
   },
 
   // Hospitality, Resort & Highway Travel
@@ -302,7 +310,8 @@ export const concerns2: Concern[] = [
     category: "Professional Education",
     tagline: "CIPS-Accredited UK Procurement & Supply Chain, Hospitality & Business Qualifications",
     logo: "/images/brand/lshs.png",
-    href: "/our_divisions/professional-education/london-school-of-higher-studies",
+    // href: "/our_divisions/professional-education/london-school-of-higher-studies",
+    href: "https://london-schools-seven.vercel.app/",
   },
 
   {

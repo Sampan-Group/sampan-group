@@ -1,7 +1,9 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
-import { FaBed, FaBath, FaVectorSquare, FaCompass, FaCheckCircle, FaBuilding } from "react-icons/fa";
+import { FaBed, FaBath, FaCompass, FaCheckCircle, FaBuilding } from "react-icons/fa";
 
 export interface UnitTypeItem {
   id: string;
@@ -14,9 +16,14 @@ export interface UnitTypeItem {
   priceRange: string;
   orientation: string;
   highlights: string[];
+  image?: string;
+  link?: string;
+  href?: string;
 }
 
 export interface UnitTypesAndSizesProps {
+  id?: string;
+  badge?: string;
   title?: string;
   subtitle?: string;
   units: UnitTypeItem[];
@@ -25,6 +32,8 @@ export interface UnitTypesAndSizesProps {
 }
 
 export default function UnitTypesAndSizes({
+  id = "unit-types",
+  badge = "Unit Configurations",
   title = "Apartment Unit Configurations",
   subtitle = "Explore available apartment unit layouts, floor areas, dimensions, and orientation specs.",
   units,
@@ -46,8 +55,8 @@ export default function UnitTypesAndSizes({
   }[bgTheme];
 
   return (
-    <section id="unit-types" className={`py-24 relative overflow-hidden ${containerClasses}`}>
-      
+    <section id={id} className={`py-24 relative overflow-hidden ${containerClasses}`}>
+
       {/* Signature DivisionsSection Radial Ambient Overlay */}
       <div
         aria-hidden="true"
@@ -55,25 +64,25 @@ export default function UnitTypesAndSizes({
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16">
-        
+
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <div>
-            <div className="inline-flex items-center gap-2 border border-[#ca8a04]/40 bg-[#ca8a04]/10 px-3.5 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#ca8a04] mb-4">
-              <FaBuilding className="text-xs" />
-              <span>Unit Configurations</span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-light tracking-tight text-current">
-              {title}
-            </h2>
-          </div>
-          <p className="max-w-md text-sm leading-relaxed opacity-80 font-normal">
-            {subtitle}
-          </p>
+        <div className="mb-14 max-w-3xl">
+          {/* <div className="inline-flex items-center gap-2 border border-[#ca8a04]/40 bg-[#ca8a04]/10 px-3.5 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#ca8a04] mb-4">
+            <FaBuilding className="text-xs" />
+            <span>{badge}</span>
+          </div> */}
+          <h2 className="text-3xl sm:text-5xl font-light tracking-tight text-current">
+            {title}
+          </h2>
+          {subtitle && (
+            <p className="mt-4 max-w-2xl text-sm sm:text-base leading-relaxed opacity-80 font-normal">
+              {subtitle}
+            </p>
+          )}
         </div>
 
         {/* Filter Tabs */}
-        {categories.length > 2 && (
+        {/* {categories.length > 2 && (
           <div className="flex flex-wrap gap-2 mb-12 border-b border-current/15 pb-4">
             {categories.map((cat) => (
               <button
@@ -89,76 +98,121 @@ export default function UnitTypesAndSizes({
               </button>
             ))}
           </div>
-        )}
+        )} */}
 
-        {/* Cards Grid */}
+        {/* Cards Grid with Photo Space */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredUnits.map((unit) => (
-            <div
-              key={unit.id}
-              className="border border-current/15 bg-white p-8 flex flex-col justify-between space-y-6 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group"
-            >
-              <div className="space-y-4">
-                <div className="flex justify-between items-start">
-                  <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#ca8a04] bg-[#ca8a04]/10 px-2.5 py-1 border border-[#ca8a04]/30">
-                    {unit.category}
-                  </span>
-                  <span className="font-mono text-xs opacity-75 font-bold flex items-center gap-1">
-                    <FaCompass className="text-[#ca8a04]" />
-                    {unit.orientation}
-                  </span>
-                </div>
+          {filteredUnits.map((unit) => {
+            const hasImage = Boolean(unit.image && unit.image.trim().length > 0);
+            const displayImage = hasImage ? unit.image! : "/images/projects/unit-coming-soon.jpg";
 
-                <h3 className="text-2xl font-bold text-current leading-snug">{unit.name}</h3>
+            return (
+              <div
+                key={unit.id}
+                className="border border-current/15 bg-white flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 relative group"
+              >
+                {/* Photo Space with Coming Soon Fallback */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-900 border-b border-current/10">
+                  <Image
+                    src={displayImage}
+                    alt={unit.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 
-                {/* Specs Strip */}
-                <div className="grid grid-cols-3 gap-2 p-4 bg-[#f3f6f2] border border-current/10 font-mono text-xs text-center">
-                  <div>
-                    <span className="block opacity-60 text-[10px] uppercase">Size</span>
-                    <span className="font-bold text-[#ca8a04]">{unit.sizeSqFt}</span>
-                  </div>
-                  <div>
-                    <span className="block opacity-60 text-[10px] uppercase">Bedrooms</span>
-                    <span className="font-bold flex items-center justify-center gap-1 text-current">
-                      <FaBed className="text-xs" /> {unit.bedrooms}
+                  {/* Category Badge */}
+                  <div className="absolute top-3 left-3 z-10">
+                    <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-neutral-900 bg-white/95 px-2.5 py-1 shadow-sm backdrop-blur-sm">
+                      {unit.category}
                     </span>
                   </div>
-                  <div>
-                    <span className="block opacity-60 text-[10px] uppercase">Baths</span>
-                    <span className="font-bold flex items-center justify-center gap-1 text-current">
-                      <FaBath className="text-xs" /> {unit.bathrooms}
-                    </span>
-                  </div>
-                </div>
 
-                {/* Highlights */}
-                <div className="space-y-2 pt-2 text-xs">
-                  {unit.highlights.map((h, i) => (
-                    <div key={i} className="flex items-center gap-2 opacity-90">
-                      <FaCheckCircle className="text-[#ca8a04] text-[11px] shrink-0" />
-                      <span>{h}</span>
+                  {/* Coming Soon Indicator */}
+                  {!hasImage && (
+                    <div className="absolute top-3 right-3 z-10">
+                      <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-amber-300 bg-black/80 border border-amber-500/40 px-3 py-1 shadow-md backdrop-blur-sm">
+                        Upcoming Unit
+                      </span>
                     </div>
-                  ))}
+                  )}
+
+                  {/* Orientation Tag */}
+                  <div className="absolute bottom-3 left-3 right-3 z-10 flex items-center justify-between text-white font-mono text-[11px]">
+                    <span className="flex items-center gap-1.5 font-bold tracking-wider drop-shadow-md">
+                      <FaCompass className="text-amber-400" />
+                      {unit.orientation}
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              {/* Card Footer */}
-              <div className="pt-6 border-t border-current/15 flex items-center justify-between">
-                <div>
-                  <span className="text-[10px] font-mono uppercase block opacity-60">Estimated Price</span>
-                  <span className="font-mono font-bold text-lg text-[#ca8a04]">{unit.priceRange}</span>
+                {/* Card Content */}
+                <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-6">
+                  <div className="space-y-4">
+                    <h3 className="text-xl sm:text-2xl font-bold text-current leading-snug tracking-tight">
+                      {unit.name}
+                    </h3>
+
+                    {/* Specs Strip */}
+                    {/* <div className="grid grid-cols-3 gap-2 p-3.5 bg-[#f3f6f2] border border-current/10 font-mono text-xs text-center">
+                      <div>
+                        <span className="block opacity-60 text-[10px] uppercase">Size</span>
+                        <span className="font-bold text-[#ca8a04]">{unit.sizeSqFt}</span>
+                      </div>
+                      <div>
+                        <span className="block opacity-60 text-[10px] uppercase">Bedrooms</span>
+                        <span className="font-bold flex items-center justify-center gap-1 text-current">
+                          <FaBed className="text-xs" /> {unit.bedrooms > 0 ? unit.bedrooms : "N/A"}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="block opacity-60 text-[10px] uppercase">Baths</span>
+                        <span className="font-bold flex items-center justify-center gap-1 text-current">
+                          <FaBath className="text-xs" /> {unit.bathrooms}
+                        </span>
+                      </div>
+                    </div> */}
+
+                    {/* Highlights */}
+                    <div className="space-y-2 pt-1 text-xs">
+                      {unit.highlights.map((h, i) => (
+                        <div key={i} className="flex items-start gap-2 opacity-90">
+                          <FaCheckCircle className="text-[#ca8a04] text-[11px] shrink-0 mt-0.5" />
+                          <span className="leading-snug text-neutral-800">{h}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Card Footer */}
+                  <div className="pt-5 border-t border-current/15 flex items-center justify-between">
+                    <div>
+                      {/* <span className="text-[10px] font-mono uppercase block opacity-60">Estimated Price</span>
+                      <span className="font-mono font-bold text-lg text-[#ca8a04]">{unit.priceRange}</span> */}
+                    </div>
+
+                    {unit.link || unit.href ? (
+                      <Link
+                        href={unit.link || unit.href!}
+                        className="bg-[#183b2b] hover:bg-[#ca8a04] text-white hover:text-neutral-950 px-5 py-2.5 font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-sm inline-flex items-center justify-center cursor-pointer"
+                      >
+                        Learn More
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={() => onSelectUnit && onSelectUnit(unit.id)}
+                        className="bg-[#183b2b] hover:bg-[#ca8a04] text-white hover:text-neutral-950 px-5 py-2.5 font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-sm cursor-pointer"
+                      >
+                        Learn More
+                      </button>
+                    )}
+                  </div>
                 </div>
 
-                <button
-                  onClick={() => onSelectUnit && onSelectUnit(unit.id)}
-                  className="bg-[#183b2b] hover:bg-[#ca8a04] text-white hover:text-neutral-950 px-5 py-2.5 font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-sm cursor-pointer"
-                >
-                  Inquire
-                </button>
               </div>
-
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>

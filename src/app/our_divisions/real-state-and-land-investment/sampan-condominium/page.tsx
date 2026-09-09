@@ -20,7 +20,7 @@ const facts = [
   { value: "Private Units", label: "Absolute Privacy" },
   { value: "Shared Luxury", label: "Joint Ownership Amenities" },
   { value: "Express Highway Inn", label: "Master Complex Footprint" },
-  { value: "Hospitality-Grade", label: "Tranquillity & Luxury" },
+  { value: "Residential-Grade", label: "Tranquillity & Luxury" },
 ];
 
 const units = [
@@ -234,7 +234,7 @@ export default function SampanCondominiumPage() {
         title="Sampan Condominium."
         subtitle="Residential Elegance within Express Highway Inn Complex"
         divisionName="Sampan Development Ltd"
-        description="Redefining residential elegance within the Express Highway Inn complex. Experience the absolute privacy of your own premium unit, perfectly balanced with joint ownership of world-class shared amenities. A seamless blend of residential tranquillity and hospitality-grade luxury."
+        description="Redefining residential elegance within the Express Highway Inn complex. Experience the absolute privacy of your own premium unit, perfectly balanced with joint ownership of world-class shared amenities."
         image="/images/projects/sampan-condominium.jpg"
         facts={facts}
         accentColor="#ca8a04"

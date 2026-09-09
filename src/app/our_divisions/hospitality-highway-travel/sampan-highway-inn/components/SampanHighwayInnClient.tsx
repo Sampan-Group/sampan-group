@@ -88,13 +88,13 @@ export default function SampanHighwayInnClient() {
             <span className="hidden sm:inline">Facilities</span>
           </button>
 
-          <button
+          {/* <button
             onClick={() => scrollToSection("virtual-tour")}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-none hover:bg-white/10 text-neutral-300 hover:text-white transition-colors cursor-pointer"
           >
             <FaCompass className="text-emerald-400" />
             <span className="hidden md:inline">360° Tour</span>
-          </button>
+          </button> */}
 
           <button
             onClick={() => scrollToSection("booking-widget")}

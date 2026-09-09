@@ -125,21 +125,21 @@ export default function SampanTradeEmporiumPage() {
       />
 
       {/* 2. Unit Configurations */}
-      <UnitTypesAndSizes
+      {/* <UnitTypesAndSizes
         title="Retail Outlets & Office Configurations"
         subtitle="Explore commercial space dimensions, floor areas, and pricing."
         units={units}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 3. Land Share Model */}
-      <LandShareStructure
+      {/* <LandShareStructure
         totalLandArea="14 Katha"
         totalSharesCount="42 Commercial Shares"
         // registrationStatus="Sub-Kabala Ready"
         tiers={landShareTiers}
         bgTheme="about-ivory"
-      />
+      /> */}
 
       {/* 4. Location + Map */}
       {/* <RealEstateLocationMap
@@ -161,10 +161,10 @@ export default function SampanTradeEmporiumPage() {
       /> */}
 
       {/* 6. Floor Plans */}
-      <FloorPlansViewer
+      {/* <FloorPlansViewer
         plans={floorPlans}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 7. Legal Credentials */}
       {/* <LegalCredentialsModule
@@ -173,10 +173,10 @@ export default function SampanTradeEmporiumPage() {
       /> */}
 
       {/* 8. 3D Renders */}
-      <WalkthroughRenderGallery
+      {/* <WalkthroughRenderGallery
         items={renders}
         bgTheme="divisions-green"
-      />
+      /> */}
 
       {/* 9. Payment Calculator */}
       {/* <PaymentPlanCalculator

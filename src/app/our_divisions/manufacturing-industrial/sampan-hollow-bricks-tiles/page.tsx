@@ -117,7 +117,7 @@ const logisticsCorridors = [
 export default function SampanHollowBricksTilesPage() {
   return (
     <main className="bg-[#f3f6f2] text-[#183b2b] antialiased selection:bg-[#991b1b] selection:text-white">
-      
+
       {/* 1. Hero Overview - Brick Red (#991b1b) Accent from SHBT Logo */}
       <ManufacturingHero
         title="Sampan Hollow Bricks & Tiles"
@@ -161,7 +161,7 @@ export default function SampanHollowBricksTilesPage() {
       />
 
       {/* 5. Section 5, 6, 7, 10: Capacity Stats, Video Production Line, Photos & Client List */}
-      <FactorySpecsAndCapacity
+      {/* <FactorySpecsAndCapacity
         title="Production Capacity, Video Footage & Client Roster"
         subtitle="High-output German block pressing technology delivering 50,000 units daily for major construction projects."
         stats={capacityStats}
@@ -171,10 +171,10 @@ export default function SampanHollowBricksTilesPage() {
         productionVideoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ"
         bgTheme="about-ivory"
         accentColor="#991b1b"
-      />
+      /> */}
 
       {/* 6. Section 8: "Located At" Note & Logistical Map */}
-      <IndustrialLocationNote
+      {/* <IndustrialLocationNote
         title="Plant Location & Delivery Access"
         subtitle="Located at Sampan Industrial Park in Mawna for fast freight dispatch across Bangladesh."
         concernName="Sampan Hollow Bricks & Tiles"
@@ -184,7 +184,7 @@ export default function SampanHollowBricksTilesPage() {
         logisticsCorridors={logisticsCorridors}
         bgTheme="divisions-green"
         accentColor="#991b1b"
-      />
+      /> */}
 
     </main>
   );

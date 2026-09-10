@@ -103,7 +103,7 @@ export const concerns: Concern[] = [
     category: "Development & Construction",
     tagline: "16-storied modern luxury high-rise residences.",
     logo: "/images/brand/development.png",
-    href: "/our_divisions/real-state-and-land-investment/sampan-condominium",
+    href: "/our-divisions/real-state-and-land-investment/sampan-condominium",
   },
 
   // Hospitality, Resort & Highway Travel

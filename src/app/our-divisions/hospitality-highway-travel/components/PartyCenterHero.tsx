@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface FactItem {
   value: string;
   label: string;
@@ -9,6 +11,7 @@ interface PartyCenterHeroProps {
   concernName?: string;
   statusBadge?: string;
   description?: string;
+  image?: string;
   facts?: FactItem[];
 }
 
@@ -18,6 +21,7 @@ export default function PartyCenterHero({
   concernName = "Sampan Highway Inn Restaurant & Party Center",
   statusBadge = "Now Booking for Weddings & Corporate Events 2026",
   description = "Bangladesh's leading highway event venue and multi-cuisine restaurant - featuring central air-conditioned banquet halls accommodating up to 500+ guests, gourmet catering, and live BBQ dining.",
+  image = "/images/our-divisions/sampan-highway-inn-party-center/hero.jpg",
   facts = [
     { value: "500+ Capacity", label: "Grand Banquet Hall" },
     { value: "Multi-Cuisine", label: "Feast & Buffet Menus" },
@@ -30,10 +34,26 @@ export default function PartyCenterHero({
   const remainingTitle = titleWords.slice(1).join(" ");
 
   return (
-    <section className="relative overflow-hidden bg-[#1e1b18] text-white pt-20 pb-10 lg:pt-24 lg:pb-14 px-6 sm:px-12 lg:px-20">
+    <section className="relative overflow-hidden bg-[#1e1b18] text-white pt-20 pb-10 lg:pt-24 lg:pb-14 px-6 sm:px-12 lg:px-20 border-b border-white/10">
+      {/* Background Image with Cinematic Dark Gradient Overlay */}
+      {image && (
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          {/* Dark gradient for text legibility and smooth contrast */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" />
+        </div>
+      )}
+
       {/* Background Radial Glow */}
-      <div className="absolute top-0 right-0 -translate-y-12 translate-x-12 w-96 h-96 rounded-full bg-amber-500/15 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 translate-y-12 -translate-x-12 w-96 h-96 rounded-full bg-red-700/15 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 -translate-y-12 translate-x-12 w-96 h-96 rounded-full bg-amber-500/15 blur-3xl pointer-events-none z-0" />
+      <div className="absolute bottom-0 left-0 translate-y-12 -translate-x-12 w-96 h-96 rounded-full bg-red-700/15 blur-3xl pointer-events-none z-0" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Main Content */}

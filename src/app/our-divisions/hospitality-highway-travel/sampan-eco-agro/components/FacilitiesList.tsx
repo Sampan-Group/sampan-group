@@ -1,228 +1,178 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import {
-  FaAppleAlt,
   FaBed,
-  FaUtensils,
   FaFish,
-  FaPaw,
-  FaStore,
-  FaUsers,
-  FaSpa,
+  FaLeaf,
+  FaAppleAlt,
+  FaWater,
   FaCheckCircle,
-  FaFilter
+  FaArrowRight
 } from "react-icons/fa";
 
 interface Facility {
   id: string;
   name: string;
-  category: "farm" | "stay" | "dining" | "activities" | "events";
-  categoryLabel: string;
+  badge: string;
   description: string;
   image: string;
   highlights: string[];
+  hours: string;
   icon: any;
 }
 
 const facilitiesData: Facility[] = [
   {
-    id: "organic-orchard",
-    name: "Organic Fruit & Vegetable Orchards",
-    category: "farm",
-    categoryLabel: "Organic Farm",
-    description: "50+ acres of chemical-free orchards growing seasonal mangoes, guavas, papayas, lychees, and organic winter vegetables.",
-    image: "/images/our-divisions/sampan-eco-agro/Harvesting_Sorting.png",
-    highlights: ["Pick-Your-Own Harvest Experience", "100% Chemical & Pesticide Free", "Guided Agri-Tours"],
-    icon: FaAppleAlt,
-  },
-  {
-    id: "lakeview-cottages",
-    name: "Lakeview Luxury Eco-Cottages",
-    category: "stay",
-    categoryLabel: "Accommodations",
-    description: "Crafted with eco-friendly natural wood and bamboo, equipped with modern air conditioning, plush bedding, and private lake balconies.",
-    image: "/images/concerns/3-sampan-eco-agro.png",
-    highlights: ["Private Waterfront Veranda", "Modern Climate Control", "24/7 Room Service"],
+    id: "resort-stay",
+    name: "Lakeview Luxury Resort & Eco-Cottages",
+    badge: "Resort Stay",
+    description: "Serene lakeside wooden cottages and deluxe eco-suites designed for peaceful overnight stays, weekend family holidays, and countryside retreats.",
+    image: "/images/our-divisions/sampan-eco-agro/frontview2.jpg",
+    highlights: ["Overnight & Hourly Accommodations", "Private Lake Veranda & AC Suites", "24/7 Room & Hospitality Service", "Family & Executive Suites"],
+    hours: "24 Hours Check-in",
     icon: FaBed,
   },
   {
-    id: "farm-restaurant",
-    name: "Farm-to-Table Garden Restaurant",
-    category: "dining",
-    categoryLabel: "Dining & Harvest",
-    description: "Authentic cuisine prepared daily with freshly harvested farm produce, local lake fish, organic poultry, and cold-pressed juices.",
-    image: "/images/our-divisions/sampan-eco-agro/hero_banner.png",
-    highlights: ["Organic Breakfast Buffet", "Live Clay-Oven BBQ", "Fresh Cold-Pressed Juices"],
-    icon: FaUtensils,
+    id: "fruit-orchards",
+    name: "Multi-Fruit Organic Orchards (Mango, Dragonfruit, Lemon & Malta)",
+    badge: "Fruit Orchards",
+    description: "Vast chemical-free orchards growing sweet Haribhanga mangoes, vibrant dragonfruits, fragrant Kagoji lemons, juicy maltas, and seasonal guavas.",
+    image: "/images/our-divisions/sampan-eco-agro/mango.jpg",
+    highlights: ["Fresh Mango, Dragonfruit, Lemon & Malta", "100% Chemical-Free Cultivation", "Pick-Your-Own Fruit Experience", "Fresh Harvest Packing for Visitors"],
+    hours: "Daytime Guided Tours",
+    icon: FaAppleAlt,
   },
   {
-    id: "lake-fishing",
-    name: "Lakefront Fishing & Boating Deck",
-    category: "activities",
-    categoryLabel: "Activities & Recreation",
-    description: "Natural freshwater lake stocked with local fish species. Features pedal boats, wooden rowboats, and comfortable angling spots.",
-    image: "/images/concerns/eco-agro.png",
-    highlights: ["Angling Equipment Rental", "Wooden Boat Rides", "Sunset Lake Pier"],
+    id: "fish-farming",
+    name: "Freshwater Fish Farming & Aquaculture",
+    badge: "Fish Farming",
+    description: "Expansive bio-secure freshwater ponds dedicated to sustainable fish farming of Rui, Katla, Tilapia, and native species in clean natural water.",
+    image: "/images/our-divisions/sampan-eco-agro/fish.jpg",
+    highlights: ["Scientific Freshwater Aquaculture", "Recreational Angling & Fishing Pier", "Live Catch-and-Cook Service", "Sustainably Fed & Managed Ponds"],
+    hours: "Open All Week",
     icon: FaFish,
   },
-  // {
-  //   id: "agro-petting-zoo",
-  //   name: "Agro-Educational Zone & Petting Zoo",
-  //   category: "activities",
-  //   categoryLabel: "Activities & Recreation",
-  //   description: "Family-friendly agricultural learning area where children can interact with farm animals, learn seed germination, and explore soil biology.",
-  //   image: "/images/our-divisions/eco_agro/seasonal.jpg",
-  //   highlights: ["Interactive Farm Animal Visits", "Kids Planting Workshops", "Nature Trail Walk"],
-  //   icon: FaPaw,
-  // },
   {
-    id: "farm-bazaar",
-    name: "Expressway Farm Fresh Bazaar",
-    category: "dining",
-    categoryLabel: "Dining & Harvest",
-    description: "Direct highway-side produce market offering daily harvested fruits, organic honey, mustard oil, and eco-certified packaged goods for travelers.",
-    image: "/images/concerns/eco-agro.png",
-    highlights: ["Daily Direct Harvest Sales", "Pure Farm Honey & Ghee", "Traveler Refreshment Corner"],
-    icon: FaStore,
+    id: "botanical-gardens",
+    name: "Lush Flower & Botanical Gardens",
+    badge: "Botanical Gardens",
+    description: "Vibrant flower gardens, winding shaded walking trails, and curated exotic plants creating a tranquil setting for relaxation and photography.",
+    image: "/images/our-divisions/sampan-eco-agro/flower-garden.jpeg",
+    highlights: ["Landscaped Seasonal Flower Displays", "Shaded Walkways & Photo Spots", "Herbal & Aromatic Plant Flora", "Clean Countryside Air"],
+    hours: "Sunrise to Sunset",
+    icon: FaLeaf,
   },
-  // {
-  //   id: "event-lawns",
-  //   name: "Open-Air Green Lawns & Event Pavilion",
-  //   category: "events",
-  //   categoryLabel: "Event Grounds",
-  //   description: "Lush multi-acre open lawns designed for destination eco-weddings, corporate retreats, team-building sessions, and family picnics.",
-  //   image: "/images/featuredConcerns/sampan-agro-golf-resort.png",
-  //   highlights: ["Capacity for Up to 1,000 Guests", "Stage & Catering Setup", "Ample Highway Parking"],
-  //   icon: FaUsers,
-  // },
   {
-    id: "herbal-garden",
-    name: "Herbal & Botanical Healing Garden",
-    category: "farm",
-    categoryLabel: "Organic Farm",
-    description: "Curated collection of over 80 medicinal plants, aromatic herbs, and traditional flora with informative botanical placards.",
-    image: "/images/our-divisions/eco_agro/fruits.jpg",
-    highlights: ["Guided Botanical Walks", "Organic Herbal Teas", "Traditional Wellness Flora"],
-    icon: FaSpa,
+    id: "natural-lake",
+    name: "Natural Freshwater Lake & Boating",
+    badge: "Lake Recreation",
+    description: "Serene multi-acre freshwater lake surrounded by greenery, featuring peaceful wooden boat rides, lakeside sunset decks, and breeze verandas.",
+    image: "/images/our-divisions/sampan-eco-agro/lake.jpg",
+    highlights: ["Peaceful Wooden Boat Rides", "Lakeside Sunset Pier & Benches", "Cool Waterfront Breeze", "Ideal for Nature Photography"],
+    hours: "Open Daily",
+    icon: FaWater,
+  },
+  {
+    id: "farm-vegetables",
+    name: "Organic Vegetable & Field Harvest",
+    badge: "Farm Harvest",
+    description: "Rich soil-cultivated fields growing natural pumpkins, gourds, leafy greens, and seasonal vegetables without synthetic pesticides.",
+    image: "/images/our-divisions/sampan-eco-agro/pumpkin.jpg",
+    highlights: ["Chemical-Free Soil Cultivation", "Daily Farm-Fresh Harvests", "Direct Farm-to-Table Dining Supply", "Traveler Farm Bazaar Purchases"],
+    hours: "Daily Harvest",
+    icon: FaLeaf,
   },
 ];
 
 export default function FacilitiesList() {
-  const [activeCategory, setActiveCategory] = useState<string>("all");
-
-  const filteredFacilities = activeCategory === "all"
-    ? facilitiesData
-    : facilitiesData.filter(f => f.category === activeCategory);
-
   return (
-    <section id="facilities" className="py-24 bg-white text-[#173326] relative overflow-hidden border-b border-[#173326]/15">
+    <section id="facilities" className="py-24 bg-[#faf9f6] text-[#173326] relative overflow-hidden border-b border-[#173326]/15">
       <div className="mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 relative z-10">
 
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div className="flex flex-col gap-6 mb-16 max-w-3xl">
           <div>
-            <div className="inline-flex items-center gap-2 border border-[#2f6b45]/30 bg-[#2f6b45]/10 px-3.5 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#2f6b45] mb-4">
-              <span>02 • What We Offer</span>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-10 bg-[#2f6b45]" />
+              <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#2f6b45]">
+                What We Offer
+              </p>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-light tracking-tight text-[#173326]">
-              Resort Facilities &amp; <span className="font-semibold text-[#2f6b45]">Agro Offerings</span>
+            <h2 className="text-3xl sm:text-5xl lg:text-5xl font-bold tracking-tight text-[#173326] leading-tight">
+              Resort Facilities &amp; <br />
+              <span className="text-[#2f6b45]">Agro Offerings</span>
             </h2>
           </div>
-          <p className="max-w-md text-sm text-[#173326]/75 leading-relaxed font-normal">
-            Immerse yourself in 50+ acres of natural beauty, organic agriculture, serene lakefront stays, and refreshing countryside dining.
+          <p className="max-w-2xl text-sm sm:text-base text-neutral-600 leading-relaxed font-normal">
+            Immerse yourself in 50+ acres of natural beauty, organic orchards, fish farming ponds, serene lakefront stays, and refreshing countryside gardens.
           </p>
         </div>
 
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap items-center gap-2 mb-12 border-b border-[#173326]/15 pb-6">
-          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#173326]/60 mr-4">
-            <FaFilter className="text-[#2f6b45]" />
-            <span>Filter:</span>
-          </div>
-
-          {[
-            { id: "all", label: "All Facilities" },
-            { id: "farm", label: "Organic Farm" },
-            { id: "stay", label: "Accommodations" },
-            { id: "dining", label: "Dining & Harvest" },
-            { id: "activities", label: "Activities & Recreation" },
-            { id: "events", label: "Event Grounds" },
-          ].map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setActiveCategory(cat.id)}
-              className={`px-5 py-2.5 font-mono text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${activeCategory === cat.id
-                ? "bg-[#173326] text-white shadow-md"
-                : "bg-[#f4f1e8] text-[#173326] hover:bg-[#2f6b45] hover:text-white border border-[#173326]/15"
-                }`}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
-
         {/* Facilities Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {filteredFacilities.map((facility) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {facilitiesData.map((facility) => {
             const Icon = facility.icon;
             return (
-              <div
+              <article
                 key={facility.id}
-                className="group border border-[#173326]/20 bg-[#fbfdfa] hover:border-[#2f6b45] transition-all duration-500 flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-lg"
+                className="group flex flex-col rounded-2xl overflow-hidden bg-white border border-[#173326]/15 shadow-sm hover:shadow-xl hover:border-[#2f6b45]/40 transition-all duration-500 hover:-translate-y-1.5"
               >
-                <div>
-                  {/* Image Header */}
-                  <div className="relative h-48 w-full overflow-hidden bg-neutral-200">
-                    <Image
-                      src={facility.image}
-                      alt={facility.name}
-                      fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity" />
+                {/* Image Header */}
+                <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
+                  <Image
+                    src={facility.image}
+                    alt={facility.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#b9e583]">
+                    {facility.badge}
+                  </div>
+                  <div className="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-2.5 py-0.5 rounded-full text-[10px] font-semibold text-neutral-800">
+                    {facility.hours}
+                  </div>
+                </div>
 
-                    <span className="absolute top-4 left-4 bg-white/95 border border-[#2f6b45]/30 text-[#2f6b45] font-mono text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 backdrop-blur-md shadow-sm">
-                      {facility.categoryLabel}
+                {/* Body Content */}
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="flex items-center gap-2 mb-2 text-[#2f6b45]">
+                    <Icon className="text-sm" />
+                    <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#2f6b45]">
+                      {facility.badge}
                     </span>
-
-                    <div className="absolute bottom-4 left-4 h-10 w-10 bg-[#173326] text-white flex items-center justify-center font-bold shadow-lg">
-                      <Icon className="text-lg text-[#b9e583]" />
-                    </div>
                   </div>
 
-                  {/* Body Content */}
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-[#173326] group-hover:text-[#2f6b45] transition-colors leading-snug">
-                      {facility.name}
-                    </h3>
-                    <p className="text-xs text-[#173326]/70 mt-3 leading-relaxed font-normal">
-                      {facility.description}
-                    </p>
+                  <h3 className="text-lg font-bold text-[#173326] group-hover:text-[#2f6b45] transition-colors leading-snug">
+                    {facility.name}
+                  </h3>
 
-                    {/* Feature Highlights */}
-                    <div className="mt-5 space-y-2 border-t border-[#173326]/10 pt-4">
-                      {facility.highlights.map((h, i) => (
-                        <div key={i} className="flex items-center gap-2 text-xs text-[#173326]/85">
-                          <FaCheckCircle className="text-[#2f6b45] text-[11px] shrink-0" />
-                          <span>{h}</span>
-                        </div>
-                      ))}
-                    </div>
+                  <p className="mt-3 text-xs sm:text-sm text-neutral-600 leading-relaxed flex-1">
+                    {facility.description}
+                  </p>
+
+                  {/* Feature Highlights */}
+                  <div className="mt-5 pt-4 border-t border-neutral-100 space-y-1.5">
+                    {facility.highlights.map((h, i) => (
+                      <div key={i} className="flex items-center gap-2 text-xs text-neutral-700">
+                        <FaCheckCircle className="text-[#2f6b45] text-[10px] shrink-0" />
+                        <span className="truncate">{h}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 pt-4 border-t border-neutral-100 flex items-center justify-between">
+                    <a
+                      href="#booking-widget"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#2f6b45] group-hover:text-[#173326] transition-colors"
+                    >
+                      <span>Inquire Access</span>
+                      <FaArrowRight className="text-[10px] transition-transform group-hover:translate-x-1" />
+                    </a>
                   </div>
                 </div>
-
-                <div className="p-6 pt-0">
-                  <a
-                    href="#booking-widget"
-                    className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#2f6b45] hover:text-[#173326] transition-colors mt-2"
-                  >
-                    <span>Inquire Package</span>
-                    <span>→</span>
-                  </a>
-                </div>
-              </div>
+              </article>
             );
           })}
         </div>
@@ -231,3 +181,4 @@ export default function FacilitiesList() {
     </section>
   );
 }
+

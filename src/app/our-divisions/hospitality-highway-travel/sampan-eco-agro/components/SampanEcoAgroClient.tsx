@@ -55,7 +55,7 @@ export default function SampanEcoAgroClient() {
       <PhotoVideoGallery />
 
       {/* 7. "NEARBY AT THIS LOCATION" MODULE (Adjacent Assets & Attractions) */}
-      <NearbyLocationModule />
+      {/* <NearbyLocationModule /> */}
 
       {/* 8. PRESS / MEDIA MENTIONS CAROUSEL (National Press Mentions) */}
       {/* <PressMediaCarousel /> */}

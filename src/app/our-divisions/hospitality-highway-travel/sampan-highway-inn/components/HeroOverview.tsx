@@ -13,7 +13,7 @@ import {
 import { HiSparkles } from "react-icons/hi2";
 import { FiArrowRight } from "react-icons/fi";
 
-const heroImage = "/images/projects/sampan-highway-inn.png";
+const heroImage = "/images/our-divisions/sampan-highway-inn/heromain3.jpg";
 
 export default function HeroOverview({ onOpenBooking }: { onOpenBooking: () => void }) {
   return (
@@ -29,8 +29,8 @@ export default function HeroOverview({ onOpenBooking }: { onOpenBooking: () => v
           className="object-cover object-center"
         />
         {/* Dual-layer dark gradient for text readability and navbar contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 to-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-black/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/72 to-black/45" />
+        {/* <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-black/75" /> */}
       </div>
 
       {/* Subtle Ambient Glow */}
@@ -56,7 +56,7 @@ export default function HeroOverview({ onOpenBooking }: { onOpenBooking: () => v
 
           {/* Tagline & Subheading */}
           <p className="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-xl font-light tracking-wide border-l-2 border-emerald-400/80 pl-4">
-            Refined "" suites, 24/7 gourmet dining, and ultra-fast EV supercharging on the Dhaka–Khulna corridor.
+            24/7 gourmet dining, and ultra-fast EV supercharging on the Dhaka–Khulna corridor.
           </p>
 
           {/* Square Quick Action CTAs */}

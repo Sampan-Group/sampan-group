@@ -116,7 +116,7 @@ export const navItems: NavItem[] = [
   {
     id: "2",
     label: "Our Divisions",
-    href: "/our_divisions",
+    href: "/our-divisions",
     layout: "concerns", // Uses the same column layout as Concerns
     megaMenu: divisionMegaMenu,
   },

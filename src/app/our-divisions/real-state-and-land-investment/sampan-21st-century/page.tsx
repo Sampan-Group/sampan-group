@@ -209,7 +209,11 @@ export default function Sampan21stCenturyPage() {
         statusBadge="REHAB Registered Project"
         statusType="ongoing"
         description="A premier South-facing residential address engineered with 40% open space, 2,000 sq ft typical floor plans, 25ft wide road frontage, and BNBC earthquake-resistant structural standards."
+<<<<<<< HEAD
         image="/images/projects/Sampan-21st-Century-Inn.jpeg"
+=======
+        image="/images/projects/21st.jpeg"
+>>>>>>> da7d38fc887853141cb2473300dab01f02052f8b
         facts={facts}
         accentColor="#25633a"
         badgeColor="#00a651"

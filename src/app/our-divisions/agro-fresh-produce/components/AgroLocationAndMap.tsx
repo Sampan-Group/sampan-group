@@ -1,15 +1,26 @@
 "use client";
 
+<<<<<<< HEAD
 import { FaMapMarkerAlt, FaCompass, FaPhoneAlt, FaClock, FaTractor, FaFacebook, FaRoute, FaArrowRight } from "react-icons/fa";
+=======
+import { FaMapMarkerAlt, FaCompass, FaPhoneAlt, FaClock, FaTractor, FaTruck, FaExternalLinkAlt } from "react-icons/fa";
+>>>>>>> da7d38fc887853141cb2473300dab01f02052f8b
 
 export interface AgroLocationFacility {
   name: string;
   type: string;
   address: string;
+<<<<<<< HEAD
   phone?: string;
   operatingHours?: string;
   gpsCoordinates?: string;
   keyAssets?: string[];
+=======
+  phone: string;
+  operatingHours: string;
+  gpsCoordinates: string;
+  keyAssets: string[];
+>>>>>>> da7d38fc887853141cb2473300dab01f02052f8b
 }
 
 export interface AgroLocationAndMapProps {
@@ -17,9 +28,13 @@ export interface AgroLocationAndMapProps {
   subtitle?: string;
   concernName: string;
   facilities: AgroLocationFacility[];
+<<<<<<< HEAD
   embedMapUrl?: string;
   facebookUrl?: string;
   directions?: string[];
+=======
+  embedMapUrl: string;
+>>>>>>> da7d38fc887853141cb2473300dab01f02052f8b
   bgTheme?: "divisions-green" | "about-ivory" | "white";
   accentColor?: string;
 }
@@ -30,8 +45,11 @@ export default function AgroLocationAndMap({
   concernName,
   facilities,
   embedMapUrl,
+<<<<<<< HEAD
   facebookUrl,
   directions,
+=======
+>>>>>>> da7d38fc887853141cb2473300dab01f02052f8b
   bgTheme = "divisions-green",
   accentColor = "#15803d",
 }: AgroLocationAndMapProps) {
@@ -65,6 +83,7 @@ export default function AgroLocationAndMap({
           </p>
         </div>
 
+<<<<<<< HEAD
         {/* 2-Column Grid: Facility Details + Map or Verified Location Hub Card */}
         <div className="grid lg:grid-cols-12 gap-8 items-stretch">
           
@@ -237,6 +256,78 @@ export default function AgroLocationAndMap({
                 </div>
               </div>
             )}
+=======
+        {/* 2-Column Grid: Facility Details + Embedded Map */}
+        <div className="grid lg:grid-cols-12 gap-8 items-start">
+          
+          {/* Left: Facilities List */}
+          <div className="lg:col-span-6 space-y-6">
+            {facilities.map((fac, idx) => (
+              <div
+                key={idx}
+                className="border border-neutral-300 bg-white p-8 space-y-4 shadow-sm hover:shadow-md transition duration-300"
+              >
+                <div className="flex items-center justify-between border-b border-neutral-200 pb-4">
+                  <div>
+                    <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-emerald-700 block">
+                      {fac.type}
+                    </span>
+                    <h3 className="text-xl font-bold text-neutral-950 mt-0.5">
+                      {fac.name}
+                    </h3>
+                  </div>
+                  <FaTractor className="text-emerald-700 text-xl" />
+                </div>
+
+                <div className="space-y-2 font-mono text-xs text-neutral-700">
+                  <div className="flex items-start gap-2.5">
+                    <FaMapMarkerAlt className="text-emerald-600 text-sm shrink-0 mt-0.5" />
+                    <span>{fac.address}</span>
+                  </div>
+
+                  <div className="flex items-center gap-2.5">
+                    <FaPhoneAlt className="text-emerald-600 text-xs shrink-0" />
+                    <span>{fac.phone}</span>
+                  </div>
+
+                  <div className="flex items-center gap-2.5">
+                    <FaClock className="text-emerald-600 text-xs shrink-0" />
+                    <span>{fac.operatingHours}</span>
+                  </div>
+
+                  <div className="flex items-center gap-2.5">
+                    <FaCompass className="text-emerald-600 text-xs shrink-0" />
+                    <span>GPS: {fac.gpsCoordinates}</span>
+                  </div>
+                </div>
+
+                <div className="pt-3 border-t border-neutral-100 font-mono text-[11px] text-neutral-600">
+                  <span className="font-bold text-neutral-900 block mb-1">On-Site Infrastructure:</span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {fac.keyAssets.map((asset, aIdx) => (
+                      <span key={aIdx} className="bg-emerald-50 text-emerald-800 border border-emerald-200 px-2 py-0.5 text-[10px]">
+                        {asset}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Right: Embedded Google Map */}
+          <div className="lg:col-span-6 border border-neutral-300 bg-white p-2 shadow-lg h-[480px] lg:h-[580px] relative">
+            <iframe
+              src={embedMapUrl}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title={`${concernName} Location Map`}
+            />
+>>>>>>> da7d38fc887853141cb2473300dab01f02052f8b
           </div>
 
         </div>

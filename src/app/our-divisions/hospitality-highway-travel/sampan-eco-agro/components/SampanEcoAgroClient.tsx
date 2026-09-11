@@ -30,14 +30,7 @@ export default function SampanEcoAgroClient() {
       {/* 1. OVERVIEW (Hero with Dark Forest Contrast) */}
       <HeroOverview onOpenBooking={() => scrollToSection("book-enquire-cta")} />
 
-<<<<<<< HEAD
       {/* 2. MILESTONE COUNTER (Track Record & Scale) */}
-=======
-      {/* 10. ONLINE BOOKING WIDGET (Instant Calculator & Reservation) */}
-      {/* <OnlineBookingWidget /> */}
-
-      {/* 9. MILESTONE COUNTER (Track Record & Scale) */}
->>>>>>> da7d38fc887853141cb2473300dab01f02052f8b
       <MilestoneCounter />
 
       {/* 3. FACILITIES / RESORT OFFERINGS LIST (Category Filtered Cards) */}
@@ -46,44 +39,17 @@ export default function SampanEcoAgroClient() {
       {/* 4. ROOM / PACKAGE PRICING OVERVIEW (Commented out per client request until pricing is finalized) */}
       {/* <PricingOverview onSelectPackage={() => scrollToSection("book-enquire-cta")} /> */}
 
-<<<<<<< HEAD
       {/* 5. ONLINE BOOKING WIDGET (Commented out per client request until cost estimator/payment details are provided) */}
       {/* <OnlineBookingWidget /> */}
 
       {/* 6. PHOTO / VIDEO GALLERY (Resort Showcase & YouTube Video) */}
-=======
-      {/* 3. LOCATION + LIVE MAP (GPS Coordinates, Hub Distances & Embedded Map) */}
-      {/* <LocationAndMap /> */}
-
-      {/* 6. ROOM / PACKAGE PRICING OVERVIEW (Transparent Tiers & Inclusions) */}
-      {/* <PricingOverview onSelectPackage={() => scrollToSection("booking-widget")} /> */}
-
-      {/* 12. VIRTUAL TOUR (360° Walkthrough Simulator & Interactive Hotspots) */}
-      {/* <VirtualTourViewer /> */}
-
-      {/* 5. PHOTO / VIDEO GALLERY (Meet the Harvest Showcase & YouTube Video) */}
->>>>>>> da7d38fc887853141cb2473300dab01f02052f8b
       <PhotoVideoGallery />
 
       {/* 7. DEDICATED HIGHWAY-ROUTE MAP (Corridor Map & Mile Markers) */}
       <HighwayRouteVisualizer />
 
-<<<<<<< HEAD
       {/* 8. BOOK / ENQUIRE CTA (Direct Hotline, WhatsApp & Instant Form) */}
       <BookEnquireCTA onOpenBookingWidget={() => scrollToSection("book-enquire-cta")} />
-=======
-      {/* 8. PRESS / MEDIA MENTIONS CAROUSEL (National Press Mentions) */}
-      {/* <PressMediaCarousel /> */}
-
-      {/* 11. GUEST REVIEWS (Verified Traveler Feedback & Rating Scorecard) */}
-      {/* <GuestReviews /> */}
-
-      {/* 13. USER-GENERATED CONTENT FEED (#SampanEcoAgro Community) */}
-      {/* <UGCFeed /> */}
-
-      {/* 4. BOOK / ENQUIRE CTA (Direct Hotline, WhatsApp & Instant Form) */}
-      <BookEnquireCTA onOpenBookingWidget={() => scrollToSection("booking-widget")} />
->>>>>>> da7d38fc887853141cb2473300dab01f02052f8b
 
       {/* Floating Quick Navigation Dock */}
       <aside aria-label="Resort Quick Navigation" className="fixed bottom-6 inset-x-0 z-40 flex justify-center pointer-events-none px-4">

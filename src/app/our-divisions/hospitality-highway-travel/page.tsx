@@ -431,7 +431,7 @@ export default function HospitalityHighwayTravelPage() {
             href="/contact"
             className="shrink-0 bg-[#ef636b] hover:bg-white text-[#071b13] px-8 py-4 text-xs font-bold uppercase tracking-[0.16em] transition-all duration-300"
           >
-            Contact Division Office
+            Contact Division Office.
           </Link>
         </div>
       </section>

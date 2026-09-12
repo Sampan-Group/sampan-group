@@ -8,14 +8,15 @@ import {
   FaBed,
   FaPhoneAlt,
   FaShieldAlt,
-  FaClock
+  FaClock,
+  FaFacebook
 } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi2";
 import { FiArrowRight } from "react-icons/fi";
 
-const heroImage = "/images/projects/sampan-highway-inn.png";
+const heroImage = "/images/our-divisions/sampan-highway-inn/heromain3.jpg";
 
-export default function HeroOverview({ onOpenBooking }: { onOpenBooking: () => void }) {
+export default function HeroOverview({ onOpenBooking }: { onOpenBooking?: () => void }) {
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-neutral-950 text-white pt-20 pb-10 lg:pt-24 lg:pb-14 border-b border-white/10">
       {/* Real Background Image with cinematic dark gradient overlay */}
@@ -29,8 +30,8 @@ export default function HeroOverview({ onOpenBooking }: { onOpenBooking: () => v
           className="object-cover object-center"
         />
         {/* Dual-layer dark gradient for text readability and navbar contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 to-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-black/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/72 to-black/45" />
+        {/* <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-black/75" /> */}
       </div>
 
       {/* Subtle Ambient Glow */}
@@ -56,18 +57,12 @@ export default function HeroOverview({ onOpenBooking }: { onOpenBooking: () => v
 
           {/* Tagline & Subheading */}
           <p className="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-xl font-light tracking-wide border-l-2 border-emerald-400/80 pl-4">
-            Refined "" suites, 24/7 gourmet dining, and ultra-fast EV supercharging on the Dhaka–Khulna corridor.
+            24/7 gourmet dining, and ultra-fast EV supercharging on the Dhaka–Khulna corridor.
           </p>
 
           {/* Square Quick Action CTAs */}
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <button
-              onClick={onOpenBooking}
-              className="group relative inline-flex items-center justify-center gap-3 rounded-none bg-emerald-600 hover:bg-emerald-500 px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white shadow-lg shadow-emerald-900/30 transition-all duration-300 cursor-pointer"
-            >
-              <span>Reserve A Room / Table</span>
-              <FiArrowRight className="text-sm transition-transform group-hover:translate-x-1" />
-            </button>
+
 
             <a
               href="#route-map"
@@ -75,6 +70,17 @@ export default function HeroOverview({ onOpenBooking }: { onOpenBooking: () => v
             >
               <FaRoute className="text-emerald-400" />
               <span>View Route Map</span>
+            </a>
+
+            <a
+              href="https://www.facebook.com/sampanhighwayinn/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative inline-flex items-center justify-center gap-3 rounded-none bg-emerald-600 hover:bg-emerald-500 px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white shadow-lg shadow-emerald-900/30 transition-all duration-300"
+            >
+              <FaFacebook className="text-base" />
+              <span>Facebook Page</span>
+              <FiArrowRight className="text-sm transition-transform group-hover:translate-x-1" />
             </a>
             {/* 
             <a

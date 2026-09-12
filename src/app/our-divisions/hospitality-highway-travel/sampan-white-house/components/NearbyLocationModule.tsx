@@ -24,7 +24,7 @@ const nearbySpots: NearbySpot[] = [
     type: "Automotive & Fuel",
     distance: "100 m",
     driveTime: "1 min walk",
-    image: "/images/concerns/sampan-filling-station.png",
+    image: "/images/our-divisions/sampan-filling-station/hero.jpeg",
     description: "24/7 high-volume highway refuel, octane & diesel station with dedicated heavy vehicle bays.",
     link: "/our-divisions/automotive-fuel-mobility/sampan-filling-station",
   },
@@ -34,7 +34,7 @@ const nearbySpots: NearbySpot[] = [
     type: "Clean Mobility & Fuel",
     distance: "150 m",
     driveTime: "2 min walk",
-    image: "/images/concerns/lpg.png",
+    image: "/images/our-divisions/lpg-filling-station/hero.jpeg",
     description: "State-of-the-art LPG autogas conversion and rapid dispenser refueling station.",
     link: "/our-divisions/automotive-fuel-mobility/sampan-lpg-filling-station",
   },
@@ -84,7 +84,7 @@ export default function NearbyLocationModule() {
   return (
     <section className="bg-[#F5F5F2] py-24 sm:py-32 text-neutral-950 border-b border-neutral-200">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
-        
+
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
@@ -99,7 +99,7 @@ export default function NearbyLocationModule() {
               <span className="text-[#ca8a04]">Sampan corridor network.</span>
             </h2>
           </div>
-          
+
           <p className="max-w-md text-sm text-neutral-500 leading-relaxed font-normal">
             Discover other high-value Sampan Group developments, natural riverfronts, and tourism landmarks in the immediate corridor vicinity.
           </p>

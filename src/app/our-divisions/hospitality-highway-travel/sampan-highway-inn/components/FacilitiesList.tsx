@@ -1,144 +1,95 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import {
-  FaBed,
-  FaUtensils,
-  FaBolt,
-  FaCar,
-  FaGlassCheers,
-  FaHandsWash,
-  FaShoppingBag,
-  FaMoneyBillWave,
   FaCheck,
   FaArrowRight
 } from "react-icons/fa";
 
-const categories = [
-  { id: "all", label: "All Facilities" },
-  { id: "suites", label: "Suites & Rest", icon: FaBed },
-  { id: "dining", label: "Dining & Bakery", icon: FaUtensils },
-  { id: "ev", label: "EV & Auto Care", icon: FaBolt },
-  { id: "events", label: "Events & Meetings", icon: FaGlassCheers },
-  { id: "essentials", label: "Travel Essentials", icon: FaShoppingBag },
-];
-
 const facilitiesData = [
   {
     id: "vvip-suites",
-    category: "suites",
-    title: "VVIP Suites & Rest Rooms",
+    title: "VVIP Rest Suites",
     badge: "Premium Comfort",
     image: "/images/facilities/highway_inn/all_day_comfort.png",
     description:
-      "Acoustically engineered, triple-glazed  suites offering plush king-size beds, private en-suite rain showers, smart IPTV, and climate control for quiet respite from highway rumble.",
-    features: ["King Orthopaedic Bedding", "High-Speed Fiber Wi-Fi", "In-Room Gourmet Service", "Hourly & Overnight Options"],
+      "Acoustically engineered suites offering plush king-size beds, private en-suite rain showers, smart IPTV, and climate control for quiet respite from highway rumble.",
+    features: ["King Orthopaedic Bedding", "High-Speed Fiber Wi-Fi", "In-Room Gourmet Service", "Hourly & Overnight Stays"],
+    hours: "24/7 Available",
+  },
+  {
+    id: "vip-lounge",
+    title: "VIP Executive Lounge",
+    badge: "Exclusive Lounge",
+    image: "/images/our-divisions/sampan-highway-inn/vvip-lounge.jpeg",
+    description:
+      "Lavish seating with quiet ambiance, complimentary refreshments, and premium amenities for executives and families seeking an upscale rest stop.",
+    features: ["Plush Leather Recliners", "Complimentary Refreshments", "Dedicated Service Staff", "Workstations & High-Speed Wi-Fi"],
+    hours: "24/7 Open",
+  },
+  {
+    id: "fast-food",
+    title: "Sampan Fast Food",
+    badge: "Quick Bites",
+    image: "/images/our-divisions/sampan-highway-inn/fast-food.jpeg",
+    description:
+      "Serving up delicious, piping-hot burgers, crispy fried chicken, wraps, and quick savory bites prepared freshly to keep you energized on your journey.",
+    features: ["Fresh Burgers & Wraps", "Crispy Fried Chicken", "Express 10-Min Ordering", "Takeaway & Dine-In"],
+    hours: "24/7 Service",
+  },
+  {
+    id: "sweet-shop",
+    title: "Sampan Sweet Shop",
+    badge: "Traditional Delights",
+    image: "/images/our-divisions/sampan-highway-inn/sweet-shop.jpg",
+    description:
+      "Discover traditional Bengali sweets, freshly baked delicacies, and gourmet treats prepared daily with pure chhana, ghee, and premium ingredients.",
+    features: ["Traditional Chhana Sweets", "Fresh Ghee Delicacies", "Gift Box Packaging", "Daily Fresh Batches"],
+    hours: "7:00 AM – 11:30 PM",
+  },
+  {
+    id: "juice-bar",
+    title: "Sampan Juice Bar",
+    badge: "Fresh & Healthy",
+    image: "/images/our-divisions/sampan-highway-inn/sampan-juicebar.jpg",
+    description:
+      "Quench your thirst with freshly pressed, handcrafted juices, energizing seasonal fruit blends, smoothies, and detox drinks with zero artificial additives.",
+    features: ["100% Pure Fresh Fruits", "Seasonal Smoothies & Shakes", "Detox & Energy Blends", "Hygienic Cold-Pressed"],
+    hours: "8:00 AM – 12:00 AM",
+  },
+  {
+    id: "sampan-achar",
+    title: "Sampan Achar & Regional Delicacies",
+    badge: "Artisanal Spices",
+    image: "/images/our-divisions/sampan-highway-inn/sampan-achar.jpg",
+    description:
+      "A taste of authentic heritage packed in jars — artisanal pickles, specialty chutneys, and regional culinary treasures crafted with traditional family recipes.",
+    features: ["Traditional Homemade Recipes", "Sun-Dried Mustard Oil Base", "Assorted Mango, Olive & Garlic", "Travel-Friendly Sealed Jars"],
     hours: "24/7 Available",
   },
   // {
-  //   id: "dining-bakery",
-  //   category: "dining",
-  //   title: "24/7 Highway Multi-Cuisine Restaurant & Cafe",
-  //   badge: "Farm-to-Table",
-  //   image: "/images/facilities/express_highway_inn/1.Highway-Club-&-Lounge.png",
+  //   id: "banquet-party-center",
+  //   title: "Celebration & Banquet Hall",
+  //   badge: "Events & Galas",
+  //   image: "/images/facilities/highway_inn/party_reservation.png",
   //   description:
-  //     "Indulge in authentic Bengali culinary specialties, live tandoor and kebabs, fresh bakery treats, and artisanal barista coffee prepared with organic farm ingredients.",
-  //   features: ["Authentic Bengali Curries", "Live Grill & Barbecue", "Fresh Espresso Bar", "Family Dining Halls", "Express 15-min Takeaway"],
-  //   hours: "24/7 All-Day Service",
-  // },
-  // {
-  //   id: "ev-charging",
-  //   category: "ev",
-  //   title: "Ultra-Fast 120kW DC EV Supercharging Plaza",
-  //   badge: "Green Mobility",
-  //   image: "/images/facilities/express_highway_inn/6.EV-Car-Charging.png",
-  //   description:
-  //     "High-output DC dual-gun rapid charging stations alongside Level 2 AC chargers compatible with Tesla, BYD, Audi, BMW, MG, Hyundai, and all EV models.",
-  //   features: ["120kW High-Speed DC", "Dual CCS2 & Type 2 Connectors", "Canopied Charging Bays", "Priority Lounge Access", "App & Cashless Payment"],
-  //   hours: "24/7 Continuous Power",
+  //     "Magnificent event venue with modern acoustic treatment, flexible seating for 250+ guests, tailored banquet catering, and celebratory decor for highway stop celebrations.",
+  //   features: ["250+ Seating Capacity", "Full Banquet Catering", "AV Sound & Stage Lighting", "Dedicated Event Coordinator"],
+  //   hours: "Advance Reservation",
   // },
   {
-    id: "party-center",
-    category: "events",
-    title: "Celebration & Banquet Party Center",
-    badge: "Events & Galas",
-    image: "/images/facilities/highway_inn/party_reservation.png",
-    description:
-      "Magnificent event venue with modern acoustic treatment, flexible seating arrangements up to 250+ guests, tailored banquet catering, and celebratory decor.",
-    features: ["250+ Seating Capacity", "Full Banquet Catering", "AV Sound & Stage Lighting", "Dedicated Event Coordinator", "Ample VIP Parking"],
-    hours: "Advance Reservation",
-  },
-  {
-    id: "official-outing",
-    category: "events",
-    title: "Executive Business Lounge & Meeting Suites",
+    id: "executive-meetings",
+    title: "Meeting & Corporate Conference Hub",
     badge: "Corporate Ready",
     image: "/images/facilities/highway_inn/Official-Outing.png",
     description:
-      "Conduct professional meetings, team debriefs, and corporate offsite retreats in our fully equipped conference rooms with high-speed presentation tech.",
-    features: ["HD Projection & Video Tech", "Ergonomic Conference Seating", "High-Speed Fiber Network", "Coffee & Lunch Catering", "Private Secretariat Desk"],
+      "Conduct professional meetings, team debriefs, and corporate offsite retreats in equipped conference spaces with presentation tech and catering.",
+    features: ["HD Projection & Video Tech", "Ergonomic Conference Seating", "High-Speed Fiber Network", "Coffee & Lunch Catering"],
     hours: "On Demand & Booking",
   },
-  {
-    id: "sampan-white-house",
-    category: "events",
-    title: "Sampan White House",
-    badge: "Highway Motel",
-    image: "/images/featuredConcerns/highway-motel.png",
-    description:
-      "A sister hospitality property providing flexible hourly stays, quiet rooms, and private parking.",
-    features: [
-      " Motel Suites",
-      "Flexible Hourly & Overnight Stays",
-      "White Hall Banquet Facility",
-      "Secure Gated Parking",
-      "24/7 Dining & Room Service",
-    ],
-    hours: "24/7 Available",
-  },
-  // {
-  //   id: "car-wash",
-  //   category: "ev",
-  //   title: "Automated Touchless Car Wash & Express Detailing",
-  //   badge: "Vehicle Care",
-  //   image: "/images/facilities/express_highway_inn/7.Automatic-Car-Wash.png",
-  //   description:
-  //     "High-pressure underbody rinse, foam wash, and rapid drying system that leaves your car immaculate while you dine or rest inside the lounge.",
-  //   features: ["Touchless Jet Cleaning", "Underbody Mud Flush", "Ceramic Wax Gloss Coating", "Interior Quick Vacuum", "Tire Pressure & Air Station"],
-  //   hours: "7:00 AM – 11:00 PM",
-  // },
-  // {
-  //   id: "prayer-washrooms",
-  //   category: "essentials",
-  //   title: "Spotless Sanitized Restrooms & Dedicated Prayer Halls",
-  //   badge: "Hygiene Standard",
-  //   image: "/images/facilities/express_highway_inn/11.Prayers-Room.png",
-  //   description:
-  //     "Impeccably clean, air-conditioned prayer spaces with separated wudu facilities for ladies and gentlemen, plus spotless baby-care restrooms.",
-  //   features: ["Separate Men & Women Halls", "Modern Wudu Ablution Area", "Baby Changing Facilities", "Wheelchair Accessible", "Continuous Sanitation Staff"],
-  //   hours: "24/7 Spotless",
-  // },
-  // {
-  //   id: "sampan-mart",
-  //   category: "essentials",
-  //   title: "24/7 Sampan Mart & Travel Convenience",
-  //   badge: "Travel Essentials",
-  //   image: "/images/facilities/express_highway_inn/4.Sampan-Mart.png",
-  //   description:
-  //     "Stock up on cold beverages, snacks, local confectionery, organic highway produce, road trip essentials, personal care, and vehicle accessories.",
-  //   features: ["Cold Drinks & Mineral Water", "Snacks & Local Delights", "First-Aid & Pharmacy Essentials", "Car Accessories & Chargers", "ATM / CRM Banking Booth"],
-  //   hours: "24/7 Open",
-  // },
 ];
 
 export default function FacilitiesList({ onSelectFacility }: { onSelectFacility?: (title: string) => void }) {
-  const [activeCategory, setActiveCategory] = useState("all");
-
-  const filteredFacilities = activeCategory === "all"
-    ? facilitiesData
-    : facilitiesData.filter((item) => item.category === activeCategory);
-
   return (
     <section id="facilities" className="bg-[#faf9f6] py-24 sm:py-32 text-[#1a1a1a]">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
@@ -158,29 +109,13 @@ export default function FacilitiesList({ onSelectFacility }: { onSelectFacility?
             </h2>
           </div>
           <p className="max-w-2xl text-sm sm:text-base text-neutral-600 leading-relaxed">
-            Whether you need a rapid 15-minute coffee break or a full celebratory weekend, our multi-acre complex provides complete comfort under one roof.
+            Whether you need a quick refreshing bite, authentic Bengali sweets, artisanal pickles, or a quiet restful suite, our transit hub provides complete comfort and hospitality under one roof.
           </p>
-        </div>
-
-        {/* Category Tabs */}
-        <div className="flex flex-wrap gap-2 pb-4 mb-12 border-b border-neutral-200">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setActiveCategory(cat.id)}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${activeCategory === cat.id
-                ? "bg-[#070b09] text-white shadow-md"
-                : "bg-white text-neutral-600 hover:bg-neutral-100 hover:text-black border border-neutral-200"
-                }`}
-            >
-              {cat.label}
-            </button>
-          ))}
         </div>
 
         {/* Facilities Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {filteredFacilities.map((item, index) => (
+          {facilitiesData.map((item, index) => (
             <article
               key={item.id}
               className="group flex flex-col rounded-2xl overflow-hidden bg-white border border-neutral-200/80 shadow-sm hover:shadow-xl hover:border-emerald-500/40 transition-all duration-500 hover:-translate-y-1.5"
@@ -204,9 +139,9 @@ export default function FacilitiesList({ onSelectFacility }: { onSelectFacility?
 
               {/* Card Body */}
               <div className="flex flex-1 flex-col p-6">
-                <span className="text-[11px] font-mono font-bold text-neutral-400 mb-2">
+                {/* <span className="text-[11px] font-mono font-bold text-neutral-400 mb-2">
                   0{index + 1}
-                </span>
+                </span> */}
 
                 <h3 className="text-lg font-bold text-[#111111] group-hover:text-emerald-700 transition-colors leading-snug">
                   {item.title}
@@ -229,6 +164,7 @@ export default function FacilitiesList({ onSelectFacility }: { onSelectFacility?
                 <div className="mt-6 pt-4 border-t border-neutral-100 flex items-center justify-between">
                   <a
                     href="#booking-widget"
+                    onClick={() => onSelectFacility?.(item.title)}
                     className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-700 group-hover:text-emerald-900 transition-colors"
                   >
                     <span>Reserve Access</span>

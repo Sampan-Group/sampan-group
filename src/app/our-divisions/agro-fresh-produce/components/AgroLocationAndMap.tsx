@@ -7,8 +7,8 @@ export interface AgroLocationFacility {
   type: string;
   address: string;
   phone: string;
-  operatingHours: string;
-  gpsCoordinates: string;
+  operatingHours?: string;
+  gpsCoordinates?: string;
   keyAssets: string[];
 }
 
@@ -17,7 +17,9 @@ export interface AgroLocationAndMapProps {
   subtitle?: string;
   concernName: string;
   facilities: AgroLocationFacility[];
-  embedMapUrl: string;
+  embedMapUrl?: string;
+  facebookUrl?: string;
+  directions?: string[];
   bgTheme?: "divisions-green" | "about-ivory" | "white";
   accentColor?: string;
 }
@@ -39,9 +41,9 @@ export default function AgroLocationAndMap({
 
   return (
     <section id="location-map" className={`py-24 relative overflow-hidden ${containerClasses}`}>
-      
+
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16">
-        
+
         {/* Header */}
         <div className="max-w-3xl mb-16">
           <div
@@ -63,7 +65,7 @@ export default function AgroLocationAndMap({
 
         {/* 2-Column Grid: Facility Details + Embedded Map */}
         <div className="grid lg:grid-cols-12 gap-8 items-start">
-          
+
           {/* Left: Facilities List */}
           <div className="lg:col-span-6 space-y-6">
             {facilities.map((fac, idx) => (
@@ -94,15 +96,19 @@ export default function AgroLocationAndMap({
                     <span>{fac.phone}</span>
                   </div>
 
-                  <div className="flex items-center gap-2.5">
-                    <FaClock className="text-emerald-600 text-xs shrink-0" />
-                    <span>{fac.operatingHours}</span>
-                  </div>
+                  {fac.operatingHours && (
+                    <div className="flex items-center gap-2.5">
+                      <FaClock className="text-emerald-600 text-xs shrink-0" />
+                      <span>{fac.operatingHours}</span>
+                    </div>
+                  )}
 
-                  <div className="flex items-center gap-2.5">
-                    <FaCompass className="text-emerald-600 text-xs shrink-0" />
-                    <span>GPS: {fac.gpsCoordinates}</span>
-                  </div>
+                  {fac.gpsCoordinates && (
+                    <div className="flex items-center gap-2.5">
+                      <FaCompass className="text-emerald-600 text-xs shrink-0" />
+                      <span>GPS: {fac.gpsCoordinates}</span>
+                    </div>
+                  )}
                 </div>
 
                 <div className="pt-3 border-t border-neutral-100 font-mono text-[11px] text-neutral-600">
@@ -122,7 +128,7 @@ export default function AgroLocationAndMap({
           {/* Right: Embedded Google Map */}
           <div className="lg:col-span-6 border border-neutral-300 bg-white p-2 shadow-lg h-[480px] lg:h-[580px] relative">
             <iframe
-              src={embedMapUrl}
+              src={embedMapUrl || "https://maps.google.com/maps?q=Alphadanga+Faridpur+Bangladesh&t=&z=13&ie=UTF8&iwloc=&output=embed"}
               width="100%"
               height="100%"
               style={{ border: 0 }}

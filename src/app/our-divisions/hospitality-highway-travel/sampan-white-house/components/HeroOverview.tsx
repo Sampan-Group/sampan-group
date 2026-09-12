@@ -29,8 +29,9 @@ export default function HeroOverview({ onOpenBooking }: { onOpenBooking: () => v
           className="object-cover object-center"
         />
         {/* Dual-layer dark gradient for text contrast and seamless transparent navbar */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 to-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-black/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/72 to-black/45" />
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 to-black/60" /> */}
+        {/* <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-black/75" /> */}
       </div>
 
       {/* Subtle Warm Amber Gold Glow */}

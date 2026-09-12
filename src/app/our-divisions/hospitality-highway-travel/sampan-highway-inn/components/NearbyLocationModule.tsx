@@ -23,7 +23,8 @@ const nearbySpots: NearbySpot[] = [
     type: "Automotive & Fuel",
     distance: "100 m",
     driveTime: "1 min walk",
-    image: "/images/concerns/sampan-filling-station.png",
+
+    image: "/images/our-divisions/sampan-filling-station/hero.jpeg",
     description: "24/7 high-volume highway refuel, octane & diesel station with dedicated heavy vehicle bays.",
     link: "/our-divisions/automotive-fuel-mobility/sampan-filling-station",
   },
@@ -33,7 +34,7 @@ const nearbySpots: NearbySpot[] = [
     type: "Clean Mobility & Fuel",
     distance: "150 m",
     driveTime: "2 min walk",
-    image: "/images/concerns/lpg.png",
+    image: "/images/our-divisions/lpg-filling-station/hero.jpeg",
     description: "State-of-the-art LPG autogas conversion and rapid dispenser refueling station.",
     link: "/our-divisions/automotive-fuel-mobility/sampan-lpg-filling-station",
   },

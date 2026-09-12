@@ -523,7 +523,7 @@ export default function ExpressHighwayInnClubLoungePage() {
           </div>
 
           <h2 className="mb-12 text-[clamp(2.2rem,4.5vw,4rem)] font-semibold leading-[0.95] tracking-[-0.03em] text-neutral-950">
-            Strategically positioned.
+            Strategically positioned
             <br />
             <span className="text-neutral-400">Direct highway frontage.</span>
           </h2>

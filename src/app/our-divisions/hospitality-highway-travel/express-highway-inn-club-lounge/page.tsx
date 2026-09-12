@@ -231,7 +231,7 @@ export default function ExpressHighwayInnClubLoungePage() {
     <main className="bg-[#F5F5F2] text-neutral-900 antialiased scroll-smooth selection:bg-[#58b9eb]/30 selection:text-neutral-900">
 
       {/* ================= 1. OVERVIEW (HERO WITH BACKGROUND IMAGE & DARK CONTRAST) ================= */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-neutral-950 text-white pt-20 pb-10 lg:pt-24 lg:pb-14 border-b border-white/10">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-950 text-white pt-24 pb-16 lg:pt-28 lg:pb-20 border-b border-white/10">
         {/* Real Background Image with cinematic dark gradient overlay */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -256,10 +256,10 @@ export default function ExpressHighwayInnClubLoungePage() {
           <div className="max-w-4xl space-y-5 sm:space-y-6">
 
             {/* Eyebrow Square Badge */}
-            <div className="inline-flex items-center gap-3 border border-[#58b9eb]/50 bg-[#58b9eb]/15 backdrop-blur-md px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-[#58b9eb]">
+            {/* <div className="inline-flex items-center gap-3 border border-[#58b9eb]/50 bg-[#58b9eb]/15 backdrop-blur-md px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-[#58b9eb]">
               <span className="h-2 w-2 rounded-none bg-[#58b9eb]" />
               <span>Express Highway Inn Club &amp; Lounge • Exclusive Member Realm</span>
-            </div>
+            </div> */}
 
             {/* Headline */}
             <h1 className="text-[clamp(2.4rem,4.8vw,4.2rem)] font-bold leading-[0.98] tracking-[-0.03em] text-white">
@@ -301,10 +301,10 @@ export default function ExpressHighwayInnClubLoungePage() {
 
             {/* Quick Metrics (Square Cards) */}
             <div className="mt-10 pt-8 border-t border-white/15 grid grid-cols-3 gap-4 text-xs">
-              <div className="border-l-2 border-[#58b9eb] pl-4">
+              {/* <div className="border-l-2 border-[#58b9eb] pl-4">
                 <p className="text-xl sm:text-2xl font-bold text-white">35K sq. ft.</p>
                 <p className="text-white/50 mt-0.5 font-mono text-[10px] uppercase tracking-wider">Dedicated Wing</p>
-              </div>
+              </div> */}
               <div className="border-l-2 border-[#58b9eb] pl-4">
                 <p className="text-xl sm:text-2xl font-bold text-[#58b9eb]">12+ Suites</p>
                 <p className="text-white/50 mt-0.5 font-mono text-[10px] uppercase tracking-wider">Club Amenities</p>

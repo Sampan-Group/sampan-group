@@ -12,7 +12,7 @@ const heroImage = "/images/our-divisions/sampan-highway-inn-party-center/hero.jp
 
 export default function PartyCenterHeroOverview({ onOpenBooking }: HeroOverviewProps) {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-neutral-950 text-white pt-20 pb-10 lg:pt-24 lg:pb-14 border-b border-white/10">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-950 text-white pt-24 pb-16 lg:pt-28 lg:pb-20 border-b border-white/10">
       {/* Background Image with dark gradient overlay */}
       <div className="absolute inset-0 z-0">
         <Image

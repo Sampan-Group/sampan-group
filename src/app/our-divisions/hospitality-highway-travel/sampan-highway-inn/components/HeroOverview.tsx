@@ -18,7 +18,7 @@ const heroImage = "/images/our-divisions/sampan-highway-inn/heromain3.jpg";
 
 export default function HeroOverview({ onOpenBooking }: { onOpenBooking?: () => void }) {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-neutral-950 text-white pt-20 pb-10 lg:pt-24 lg:pb-14 border-b border-white/10">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-950 text-white pt-24 pb-16 lg:pt-28 lg:pb-20 border-b border-white/10">
       {/* Real Background Image with cinematic dark gradient overlay */}
       <div className="absolute inset-0 z-0">
         <Image

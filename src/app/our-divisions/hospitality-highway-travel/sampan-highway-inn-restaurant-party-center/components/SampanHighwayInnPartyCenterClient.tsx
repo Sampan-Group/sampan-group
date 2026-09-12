@@ -36,13 +36,13 @@ export default function SampanHighwayInnPartyCenterClient() {
       <PartyCenterFacilitiesList onSelectFacility={() => scrollToSection("booking-form")} />
 
       {/* MENU OVERVIEW & FEAST OFFERINGS */}
-      <PartyCenterMenuOverview />
+      {/* <PartyCenterMenuOverview /> */}
 
       {/* AVAILABILITY CALENDAR */}
-      <PartyCenterAvailabilityCalendar />
+      {/* <PartyCenterAvailabilityCalendar /> */}
 
       {/* MENU CUSTOMIZATION & CATERING BUILDER */}
-      <PartyCenterMenuCustomizer />
+      {/* <PartyCenterMenuCustomizer /> */}
 
       {/* HIGHWAY CORRIDOR ROUTE MAP */}
       <PartyCenterHighwayRouteVisualizer />
@@ -57,13 +57,13 @@ export default function SampanHighwayInnPartyCenterClient() {
       <PartyCenterVirtualTour />
 
       {/* TESTIMONIALS & PAST EVENT REVIEWS */}
-      <PartyCenterTestimonials />
+      {/* <PartyCenterTestimonials /> */}
 
       {/* "NEARBY AT THIS LOCATION" MODULE */}
       <PartyCenterNearbyLocationModule />
 
       {/* ONLINE DATE-CHECK & BOOKING REQUEST FORM */}
-      <PartyCenterDateCheckForm />
+      {/* <PartyCenterDateCheckForm /> */}
 
       {/* Floating Highway Quick Navigation Bar (Matching Highway Inn with Amber Palette) */}
       <aside aria-label="Highway Quick Navigation" className="fixed bottom-6 inset-x-0 z-40 flex justify-center pointer-events-none px-4">

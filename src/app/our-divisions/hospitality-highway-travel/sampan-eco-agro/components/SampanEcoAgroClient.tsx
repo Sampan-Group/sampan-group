@@ -31,7 +31,7 @@ export default function SampanEcoAgroClient() {
       <HeroOverview onOpenBooking={() => scrollToSection("book-enquire-cta")} />
 
       {/* 2. MILESTONE COUNTER (Track Record & Scale) */}
-      <MilestoneCounter />
+      {/* <MilestoneCounter /> */}
 
       {/* 3. FACILITIES / RESORT OFFERINGS LIST (Category Filtered Cards) */}
       <FacilitiesList />

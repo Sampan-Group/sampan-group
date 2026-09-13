@@ -109,7 +109,8 @@ export default function SampanHighwayInnClient() {
             className="flex items-center gap-1.5 bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-none transition-colors"
           >
             <FaPhoneAlt className="text-amber-400 text-[10px]" />
-            <span className="hidden lg:inline">+880 1711-459387</span>
+            <span className="hidden lg:inline">
+              +01929-918408</span>
           </a>
         </div>
       </aside>

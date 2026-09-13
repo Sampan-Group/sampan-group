@@ -52,8 +52,8 @@ export default function SampanEcoAgroClient() {
       <BookEnquireCTA onOpenBookingWidget={() => scrollToSection("book-enquire-cta")} />
 
       {/* Floating Quick Navigation Dock */}
-      <aside aria-label="Resort Quick Navigation" className="fixed bottom-6 inset-x-0 z-40 flex justify-center pointer-events-none px-4">
-        <div className="pointer-events-auto bg-[#07130d]/90 border border-[#b9e583]/40 backdrop-blur-xl px-4 py-2.5 shadow-2xl flex items-center gap-2 sm:gap-4 text-xs font-mono font-bold text-white">
+      {/* <aside aria-label="Resort Quick Navigation" className="fixed bottom-6 inset-x-0 z-40 flex justify-center pointer-events-none px-4">
+        <div className="pointer-events-auto bg-[#07130d]/65 border border-[#b9e583]/30 backdrop-blur-xl px-4 py-2.5 shadow-2xl flex items-center gap-2 sm:gap-4 text-xs font-mono font-bold text-white">
 
           <button
             onClick={() => scrollToSection("gallery")}
@@ -96,7 +96,7 @@ export default function SampanEcoAgroClient() {
           </a>
 
         </div>
-      </aside>
+      </aside> */}
 
     </main>
   );

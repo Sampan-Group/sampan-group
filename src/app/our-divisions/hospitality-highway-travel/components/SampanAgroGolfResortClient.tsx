@@ -395,7 +395,7 @@ export default function SampanAgroGolfResortClient() {
     <main className="bg-[#f8faf6] text-[#183b2b] selection:bg-[#2d6a4f] selection:text-white">
 
       {/* ================= 1. HERO SECTION ================= */}
-      <section className="relative min-h-[62vh] sm:min-h-[68vh] flex items-center justify-center overflow-hidden bg-[#091a11] text-white pt-20 pb-10 sm:pt-24 sm:pb-12 border-b border-white/10">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#091a11] text-white pt-24 pb-16 sm:pt-28 sm:pb-20 border-b border-white/10">
         <div className="absolute inset-0 z-0">
           <Image
             src={heroImage}
@@ -416,10 +416,10 @@ export default function SampanAgroGolfResortClient() {
           <div className="max-w-4xl space-y-4 sm:space-y-5">
 
             {/* Status Badge */}
-            <div className="inline-flex items-center gap-2.5 border border-emerald-500/50 bg-emerald-950/70 backdrop-blur-md px-3.5 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-400">
+            {/* <div className="inline-flex items-center gap-2.5 border border-emerald-500/50 bg-emerald-950/70 backdrop-blur-md px-3.5 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-400">
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
               <span>100-Acre Masterplanned Eco-Agro &amp; Golf Resort • Moulvibazar</span>
-            </div>
+            </div> */}
 
             {/* Headline */}
             <h1 className="text-[clamp(2.3rem,4.5vw,4.2rem)] font-bold tracking-tight text-white leading-[1.02]">
@@ -1284,7 +1284,7 @@ export default function SampanAgroGolfResortClient() {
 
 
       {/* ================= FLOATING QUICK NAVIGATION BAR ================= */}
-      <aside aria-label="Resort Navigation" className="fixed bottom-6 inset-x-0 z-40 flex justify-center pointer-events-none px-4">
+      {/* <aside aria-label="Resort Navigation" className="fixed bottom-6 inset-x-0 z-40 flex justify-center pointer-events-none px-4">
         <div className="pointer-events-auto bg-neutral-950/90 border border-white/20 backdrop-blur-xl px-4 py-2.5 rounded-none shadow-2xl flex items-center gap-2 sm:gap-4 text-xs font-mono font-bold text-white">
           <button
             onClick={() => scrollTo("benefits")}
@@ -1342,7 +1342,7 @@ export default function SampanAgroGolfResortClient() {
             <span className="hidden lg:inline">+8801906-896326  </span>
           </a>
         </div>
-      </aside>
+      </aside> */}
 
 
       {/* ================= FULLSCREEN LIGHTBOX MODAL ================= */}

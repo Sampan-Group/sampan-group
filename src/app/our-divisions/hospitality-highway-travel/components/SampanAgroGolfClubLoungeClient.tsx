@@ -446,7 +446,7 @@ export default function SampanAgroGolfClubLoungeClient() {
     <main className="bg-[#f8faf6] text-[#183b2b] selection:bg-[#2d6a4f] selection:text-white">
 
       {/* ================= 1. HERO SECTION ================= */}
-      <section className="relative min-h-[62vh] sm:min-h-[68vh] flex items-center justify-center overflow-hidden bg-[#091a11] text-white pt-20 pb-10 sm:pt-24 sm:pb-12 border-b border-white/10">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#091a11] text-white pt-24 pb-16 sm:pt-28 sm:pb-20 border-b border-white/10">
         <div className="absolute inset-0 z-0">
           <Image
             src={heroImage}
@@ -467,10 +467,10 @@ export default function SampanAgroGolfClubLoungeClient() {
           <div className="max-w-4xl space-y-4 sm:space-y-5">
 
             {/* Status Badge */}
-            <div className="inline-flex items-center gap-2.5 border border-emerald-500/50 bg-emerald-950/70 backdrop-blur-md px-3.5 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-400">
+            {/* <div className="inline-flex items-center gap-2.5 border border-emerald-500/50 bg-emerald-950/70 backdrop-blur-md px-3.5 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-400">
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
               <span>Exclusive Golf Club, VIP Executive Lounges &amp; Agro Estate • Moulvibazar</span>
-            </div>
+            </div> */}
 
             {/* Headline */}
             <h1 className="text-[clamp(2.3rem,4.5vw,4.2rem)] font-bold tracking-tight text-white leading-[1.02]">
@@ -659,11 +659,10 @@ export default function SampanAgroGolfClubLoungeClient() {
               <button
                 key={cat}
                 onClick={() => setActiveTab(cat)}
-                className={`px-5 py-2.5 rounded-full text-xs font-bold font-mono uppercase tracking-wider transition-all duration-300 cursor-pointer whitespace-nowrap ${
-                  activeTab === cat
+                className={`px-5 py-2.5 rounded-full text-xs font-bold font-mono uppercase tracking-wider transition-all duration-300 cursor-pointer whitespace-nowrap ${activeTab === cat
                     ? "bg-[#183b2b] text-white shadow-md"
                     : "bg-white text-neutral-600 hover:bg-neutral-100 hover:text-black border border-neutral-200"
-                }`}
+                  }`}
               >
                 {cat}
               </button>
@@ -739,9 +738,8 @@ export default function SampanAgroGolfClubLoungeClient() {
               <div
                 key={item.id}
                 onClick={() => setLightboxImage(item.src)}
-                className={`group relative overflow-hidden rounded-none bg-neutral-900 border border-white/10 shadow-lg cursor-pointer ${
-                  index === 0 ? "aspect-[4/3] sm:col-span-2 sm:row-span-2 min-h-[340px]" : "aspect-[4/3]"
-                }`}
+                className={`group relative overflow-hidden rounded-none bg-neutral-900 border border-white/10 shadow-lg cursor-pointer ${index === 0 ? "aspect-[4/3] sm:col-span-2 sm:row-span-2 min-h-[340px]" : "aspect-[4/3]"
+                  }`}
               >
                 <Image
                   src={item.src}

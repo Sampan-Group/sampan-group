@@ -225,7 +225,7 @@ export default function SampanMartClient() {
             <h1 className="text-[clamp(2.4rem,4.8vw,4.2rem)] font-bold tracking-tight text-white leading-[0.98]">
               Sampan <br />
               <span className="text-amber-400 block mt-1">
-                Mart 24/7
+                Mart
               </span>
             </h1>
 

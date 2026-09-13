@@ -146,10 +146,10 @@ export default function SampanPetBeverageClient() {
                 <p className="text-sm sm:text-base font-bold text-orange-400 uppercase tracking-wider">Food Grade</p>
                 <p className="text-[11px] text-white/60 mt-0.5 font-mono">Virgin PET Resin</p>
               </div>
-              <div className="border-l-2 border-orange-400 pl-4">
+              {/* <div className="border-l-2 border-orange-400 pl-4">
                 <p className="text-sm sm:text-base font-bold text-white uppercase tracking-wider">Automated Line</p>
                 <p className="text-[11px] text-white/60 mt-0.5 font-mono">High-Speed Bottling</p>
-              </div>
+              </div> */}
               <div className="border-l-2 border-orange-400 pl-4">
                 <p className="text-sm sm:text-base font-bold text-white uppercase tracking-wider">Industrial Park</p>
                 <p className="text-[11px] text-white/60 mt-0.5 font-mono">Anchor Facility</p>
@@ -161,7 +161,7 @@ export default function SampanPetBeverageClient() {
       </section>
 
       {/* ================= 2. CAPABILITIES & PRODUCTION (NO EYEBROW) ================= */}
-      <section id="capabilities" className="py-20 sm:py-24 px-6 sm:px-10 lg:px-16 bg-[#fcfbf9] border-b border-neutral-200">
+      {/* <section id="capabilities" className="py-20 sm:py-24 px-6 sm:px-10 lg:px-16 bg-[#fcfbf9] border-b border-neutral-200">
         <div className="mx-auto max-w-[1440px]">
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -210,7 +210,7 @@ export default function SampanPetBeverageClient() {
           </div>
 
         </div>
-      </section>
+      </section> */}
 
       {/* ================= 3. PLANT PHOTOS (NO EYEBROW) ================= */}
       <section id="gallery" className="py-24 sm:py-28 px-6 sm:px-10 lg:px-16 bg-white border-b border-neutral-200">

@@ -187,7 +187,7 @@ export default function SampanHollowBricksTilesClient() {
       </section>
 
       {/* ================= 2. ECO ADVANTAGES & CAPACITY ================= */}
-      <section className="py-20 sm:py-24 px-6 sm:px-10 lg:px-16 bg-[#fcfbf9] border-b border-neutral-200">
+      {/* <section className="py-20 sm:py-24 px-6 sm:px-10 lg:px-16 bg-[#fcfbf9] border-b border-neutral-200">
         <div className="mx-auto max-w-[1440px]">
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -231,7 +231,7 @@ export default function SampanHollowBricksTilesClient() {
           </div>
 
         </div>
-      </section>
+      </section> */}
 
       {/* ================= 3. CORE PRODUCTS (HOLLOW BLOCKS & PAVERS) ================= */}
       <section id="products" className="py-24 sm:py-28 px-6 sm:px-10 lg:px-16 bg-white border-b border-neutral-200">

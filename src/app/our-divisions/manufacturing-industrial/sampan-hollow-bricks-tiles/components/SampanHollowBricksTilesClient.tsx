@@ -57,23 +57,20 @@ const mainProducts: ProductItem[] = [
 
 interface ParkingTile {
   id: string;
-  name: string;
-  code: string;
   image: string;
-  texture: string;
 }
 
 const parkingTilesCollection: ParkingTile[] = [
-  { id: "pt-1", name: "Geometric Star Paver", code: "Model PT-01", image: "/images/our-divisions/sampan-hollow-bricks/Parking-Tiles-1.jpg", texture: "Heavy-Duty Grip" },
-  { id: "pt-2", name: "Cross Fluted Surface", code: "Model PT-02", image: "/images/our-divisions/sampan-hollow-bricks/Parking-Tiles-2.jpg", texture: "Anti-Skid Ribbed" },
-  { id: "pt-3", name: "Interlock Wave Pattern", code: "Model PT-03", image: "/images/our-divisions/sampan-hollow-bricks/Parking-Tiles-3.jpg", texture: "Traffic Load Rated" },
-  { id: "pt-4", name: "Square Matrix Paver", code: "Model PT-04", image: "/images/our-divisions/sampan-hollow-bricks/Parking-Tiles-4.jpg", texture: "High-Abrasion Proof" },
-  { id: "pt-5", name: "Diamond Check Textured", code: "Model PT-05", image: "/images/our-divisions/sampan-hollow-bricks/Parking-Tiles-5.jpg", texture: "All-Weather Drainage" },
-  { id: "pt-6", name: "Radial Cobble Design", code: "Model PT-06", image: "/images/our-divisions/sampan-hollow-bricks/Parking-Tiles-6.jpg", texture: "Heavy Axle Bearing" },
-  { id: "pt-7", name: "Sunburst Relief Paver", code: "Model PT-07", image: "/images/our-divisions/sampan-hollow-bricks/Parking-Tiles-7.jpg", texture: "Commercial Parking" },
-  { id: "pt-8", name: "Hexagonal Grip Tile", code: "Model PT-08", image: "/images/our-divisions/sampan-hollow-bricks/Parking-Tiles-8.jpg", texture: "Slip-Resistant" },
-  { id: "pt-9", name: "Multi-Groove Tread", code: "Model PT-09", image: "/images/our-divisions/sampan-hollow-bricks/Parking-Tiles-9.jpg", texture: "Wash-Resistant" },
-  { id: "pt-10", name: "Classic Stud Pavement", code: "Model PT-10", image: "/images/our-divisions/sampan-hollow-bricks/Parking-Tiles-10.jpg", texture: "High Tensile Concrete" },
+  { id: "pt-1", image: "/images/our-divisions/sampan-hollow-bricks/Parking-Tiles-1.jpg" },
+  { id: "pt-2", image: "/images/our-divisions/sampan-hollow-bricks/Parking-Tiles-2.jpg" },
+  { id: "pt-3", image: "/images/our-divisions/sampan-hollow-bricks/Parking-Tiles-3.jpg" },
+  { id: "pt-4", image: "/images/our-divisions/sampan-hollow-bricks/Parking-Tiles-4.jpg" },
+  { id: "pt-5", image: "/images/our-divisions/sampan-hollow-bricks/Parking-Tiles-5.jpg" },
+  { id: "pt-6", image: "/images/our-divisions/sampan-hollow-bricks/Parking-Tiles-6.jpg" },
+  { id: "pt-7", image: "/images/our-divisions/sampan-hollow-bricks/Parking-Tiles-7.jpg" },
+  { id: "pt-8", image: "/images/our-divisions/sampan-hollow-bricks/Parking-Tiles-8.jpg" },
+  { id: "pt-9", image: "/images/our-divisions/sampan-hollow-bricks/Parking-Tiles-9.jpg" },
+  { id: "pt-10", image: "/images/our-divisions/sampan-hollow-bricks/Parking-Tiles-10.jpg" },
 ];
 
 const ecoAdvantages = [
@@ -318,33 +315,19 @@ export default function SampanHollowBricksTilesClient() {
               <div
                 key={tile.id}
                 onClick={() => setSelectedImage(tile.image)}
-                className="group relative flex flex-col bg-[#161010] border border-white/10 hover:border-red-500 rounded-none overflow-hidden transition-all duration-300 hover:shadow-lg cursor-pointer"
+                className="group relative aspect-square w-full bg-[#161010] border border-white/10 hover:border-red-500 rounded-none overflow-hidden transition-all duration-300 hover:shadow-lg cursor-pointer"
               >
-                <div className="relative aspect-square w-full overflow-hidden bg-black/40">
-                  <Image
-                    src={tile.image}
-                    alt={tile.name}
-                    fill
-                    sizes="(max-width: 768px) 50vw, 20vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2.5">
-                    <span className="font-mono text-[9px] text-white flex items-center gap-1">
-                      <FaExpand className="text-[8px]" /> Enlarge
-                    </span>
-                  </div>
-                </div>
-
-                <div className="p-3">
-                  <span className="font-mono text-[9px] font-bold text-red-400 block mb-0.5">
-                    {tile.code}
+                <Image
+                  src={tile.image}
+                  alt="Parking Tile"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 20vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2.5">
+                  <span className="font-mono text-[9px] text-white flex items-center gap-1">
+                    <FaExpand className="text-[8px]" /> Enlarge
                   </span>
-                  <h4 className="text-xs font-bold text-white truncate">
-                    {tile.name}
-                  </h4>
-                  <p className="font-mono text-[10px] text-neutral-400 mt-1">
-                    {tile.texture}
-                  </p>
                 </div>
               </div>
             ))}

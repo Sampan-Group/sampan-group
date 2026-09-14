@@ -401,6 +401,7 @@ export const carStockList: CarStockItem[] = [
     priceLakh: "23.80",
     category: "mpv-van",
     categoryLabel: "MPV & Minivan",
+    image: "/images/our-divisions/sampan-auto/with_engine/SIENTA_X_Hybrid_NHP170-7210623.jpg"
   },
   {
     sl: 20,
@@ -419,6 +420,7 @@ export const carStockList: CarStockItem[] = [
     priceLakh: "24.50",
     category: "mpv-van",
     categoryLabel: "MPV & Minivan",
+    image: "/images/our-divisions/sampan-auto/with_engine/SIENTA_X_Hybrid_NHP170-7221446.jpg"
   },
   {
     sl: 21,
@@ -437,6 +439,7 @@ export const carStockList: CarStockItem[] = [
     priceLakh: "24.80",
     category: "mpv-van",
     categoryLabel: "MPV & Minivan",
+    image: "/images/our-divisions/sampan-auto/with_engine/SIENTA_G_Hybrid_NHP170-7222773.jpg"
   },
 
   // --- Sienta Non-Hybrid ---
@@ -457,6 +460,7 @@ export const carStockList: CarStockItem[] = [
     priceLakh: "28.00",
     category: "mpv-van",
     categoryLabel: "MPV & Minivan",
+    image: "/images/our-divisions/sampan-auto/with_engine/SIENTA _G_OCTANE_NSP170-7248168_Engine– 2NR-1183960.jpg"
   },
   {
     sl: 23,
@@ -475,6 +479,7 @@ export const carStockList: CarStockItem[] = [
     priceLakh: "27.00",
     category: "mpv-van",
     categoryLabel: "MPV & Minivan",
+    image: "/images/our-divisions/sampan-auto/with_engine/SIENTA_X_OCTANE_NSP170-7241871.jpg"
   },
   {
     sl: 24,
@@ -493,6 +498,7 @@ export const carStockList: CarStockItem[] = [
     priceLakh: "27.00",
     category: "mpv-van",
     categoryLabel: "MPV & Minivan",
+    image: "/images/our-divisions/sampan-auto/with_engine/SIENTA_G_OCTANE_NSP170-7249367.jpg"
   },
 
   // --- Toyota Prius ---
@@ -513,6 +519,7 @@ export const carStockList: CarStockItem[] = [
     priceLakh: "34.00",
     category: "sedan-wagon",
     categoryLabel: "Sedan & Wagon",
+    image: "/images/our-divisions/sampan-auto/with_engine/Prius_S_Touring.jpg"
   },
   {
     sl: 26,
@@ -531,6 +538,7 @@ export const carStockList: CarStockItem[] = [
     priceLakh: "33.50",
     category: "sedan-wagon",
     categoryLabel: "Sedan & Wagon",
+    image: "/images/our-divisions/sampan-auto/with_engine/Prius_A_Premium.jpg"
   },
 
   // --- Corolla Sedan Hybrid ---

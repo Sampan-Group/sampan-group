@@ -529,8 +529,8 @@ export default function SampanEcoAgroProduceClient() {
               <div className="space-y-3 pt-1 text-sm text-neutral-700">
                 <div className="flex items-center gap-2">
                   <span className="font-mono text-xs text-neutral-400">Phone:</span>
-                  <a href="tel:+8801929918408" className="font-mono font-bold text-emerald-700 hover:underline">
-                    +880 1929-918408
+                  <a href="tel:+8801929918400" className="font-mono font-bold text-emerald-700 hover:underline">
+                    +8801929918400
                   </a>
                 </div>
                 <div className="flex items-center gap-2">

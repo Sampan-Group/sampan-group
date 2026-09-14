@@ -18,9 +18,9 @@ const heroBackground = "/images/our-divisions/sampan-sweet-box/DSC00468.JPG";
 // Photo Gallery Items (no sweet names, pure visual showcase from folder)
 const galleryItems = [
   { id: "g-1", src: "/images/our-divisions/sampan-sweet-box/DSC00468.JPG" },
-  { id: "g-2", src: "/images/our-divisions/sampan-sweet-box/DSC00471.JPG" },
-  { id: "g-3", src: "/images/our-divisions/sampan-sweet-box/DSC00473.JPG" },
-  { id: "g-4", src: "/images/our-divisions/sampan-sweet-box/DSC00482.JPG" },
+  // { id: "g-2", src: "/images/our-divisions/sampan-sweet-box/DSC00471.JPG" },
+  // { id: "g-3", src: "/images/our-divisions/sampan-sweet-box/DSC00473.JPG" },
+  // { id: "g-4", src: "/images/our-divisions/sampan-sweet-box/DSC00482.JPG" },
   { id: "g-5", src: "/images/our-divisions/sampan-sweet-box/Image-2.jpg" },
   { id: "g-6", src: "/images/our-divisions/sampan-sweet-box/Image-1.jpg" },
   { id: "g-7", src: "/images/our-divisions/sampan-sweet-box/Image-3.jpg" },
@@ -145,7 +145,7 @@ export default function SampanSweetBoxClient() {
             sizes="100vw"
             className="object-cover object-center opacity-40"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/72 to-black/45" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/60 to-black/35" />
 
         </div>
 

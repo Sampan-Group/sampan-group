@@ -10,7 +10,7 @@ export interface CarStockItem {
   color: string;
   grade: string;
   mileage: string;
-  location: "Port" | "Showroom" | "In Transit";
+  location: "Port" | "Showroom" | "In Transit" | "Upcoming";
   locationRaw: string;
   priceLakh: string;
   isSold?: boolean;
@@ -758,5 +758,26 @@ export const carStockList: CarStockItem[] = [
     category: "sedan-wagon",
     categoryLabel: "Sedan & Wagon",
     image: "/images/our-divisions/sampan-auto/with_engine/FIELDER_EX_Octane.jpg"
+  },
+
+  // --- Lexus RX300 ---
+  {
+    sl: 38,
+    model: "Lexus RX300",
+    subModel: "Version L",
+    chassis: "AGL20W",
+    engine: "8AR-FTS (Non-Hybrid)",
+    features: "Version L, Black Exterior, Grade 4.5, 46,400 KM Mileage, AGL20W Chassis, Premium Lexus Identity, Expected Arrival: Late August",
+    lcNo: "Direct Booking / Sourcing",
+    year: 2021,
+    color: "Black",
+    grade: "4.5",
+    mileage: "46,400 km",
+    location: "Upcoming",
+    locationRaw: "Upcoming (Late August)",
+    priceLakh: "Call for Price",
+    category: "suv-crossover",
+    categoryLabel: "SUV & Crossover",
+    image: "/images/our-divisions/sampan-auto/with_engine/Lexus_RX300_Version_L_2021.jpg",
   },
 ];

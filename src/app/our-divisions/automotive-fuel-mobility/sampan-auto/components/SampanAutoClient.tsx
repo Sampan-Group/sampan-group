@@ -102,6 +102,7 @@ export default function SampanAutoClient() {
   const withPhotoCount = carStockList.filter((c) => c.image).length;
   const showroomCount = carStockList.filter((c) => c.location === "Showroom").length;
   const portCount = carStockList.filter((c) => c.location === "Port").length;
+  const upcomingCount = carStockList.filter((c) => c.location === "Upcoming" || c.location === "In Transit").length;
 
   return (
     <main className="bg-[#fcfbf9] text-[#1a1714] selection:bg-amber-600 selection:text-white">
@@ -448,6 +449,18 @@ export default function SampanAutoClient() {
                   >
                     Port ({portCount})
                   </button>
+                  {upcomingCount > 0 && (
+                    <button
+                      onClick={() => setSelectedLocation(selectedLocation === "Upcoming" ? "all" : "Upcoming")}
+                      className={`px-3 py-2 text-[11px] font-mono font-bold uppercase tracking-wider rounded-none cursor-pointer border ${
+                        selectedLocation === "Upcoming"
+                          ? "bg-emerald-700 text-white border-emerald-700"
+                          : "bg-white text-neutral-700 border-neutral-200 hover:border-neutral-400"
+                      }`}
+                    >
+                      Upcoming ({upcomingCount})
+                    </button>
+                  )}
                   <button
                     onClick={() => setOnlyWithPhotos(!onlyWithPhotos)}
                     className={`px-3 py-2 text-[11px] font-mono font-bold uppercase tracking-wider rounded-none cursor-pointer inline-flex items-center gap-1.5 border ${
@@ -552,6 +565,8 @@ export default function SampanAutoClient() {
                         className={`inline-flex items-center gap-1 text-[10px] font-mono px-2 py-0.5 font-bold uppercase ${
                           car.location === "Showroom"
                             ? "bg-amber-600 text-white"
+                            : car.location === "Upcoming" || car.location === "In Transit"
+                            ? "bg-emerald-700 text-white"
                             : "bg-neutral-900 text-white"
                         }`}
                       >
@@ -606,6 +621,8 @@ export default function SampanAutoClient() {
                         <span className="font-mono text-sm font-bold text-neutral-950">
                           {car.isSold ? (
                             <span className="text-neutral-400 line-through">Pre-Sold</span>
+                          ) : car.priceLakh.toLowerCase().includes("call") || car.priceLakh.toLowerCase().includes("request") ? (
+                            <span className="text-amber-800 text-xs">{car.priceLakh}</span>
                           ) : (
                             <span>{car.priceLakh} Lac</span>
                           )}
@@ -863,6 +880,8 @@ export default function SampanAutoClient() {
                       <span className="text-xl font-bold font-mono text-neutral-950">
                         {selectedCar.isSold ? (
                           <span className="text-neutral-400">Pre-Sold</span>
+                        ) : selectedCar.priceLakh.toLowerCase().includes("call") || selectedCar.priceLakh.toLowerCase().includes("request") ? (
+                          <span className="text-amber-700">{selectedCar.priceLakh}</span>
                         ) : (
                           <span>BDT {selectedCar.priceLakh} Lac</span>
                         )}

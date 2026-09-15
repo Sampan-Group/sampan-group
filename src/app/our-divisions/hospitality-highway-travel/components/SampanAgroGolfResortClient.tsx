@@ -110,14 +110,14 @@ const ownershipBenefits = [
     image: "/images/our-divisions/sampan-agro-golf-resort/basketball.jpg",
     description: "Floodlit championship courts for tennis, badminton, and basketball with professional equipment.",
   },
-  {
-    id: 9,
-    title: "Super Shop & Pharmacy",
-    category: "Convenience",
-    icon: FaStore,
-    image: "/images/our-divisions/mini-sampan-super-shop/mart.jpg",
-    description: "On-site convenience store for daily groceries, travel essentials, and fully stocked pharmacy.",
-  },
+  // {
+  //   id: 9,
+  //   title: "Super Shop & Pharmacy",
+  //   category: "Convenience",
+  //   icon: FaStore,
+  //   image: "/images/our-divisions/mini-sampan-super-shop/mart.jpg",
+  //   description: "On-site convenience store for daily groceries, travel essentials, and fully stocked pharmacy.",
+  // },
   {
     id: 10,
     title: "Library & Reading Lounge",

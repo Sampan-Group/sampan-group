@@ -213,7 +213,35 @@ export default function Navbar2() {
                 className="transition-transform duration-300 group-hover:translate-x-1"
               >
                 {/* ↗ */}
-                <BsArrowUpRight />
+                {/* <BsArrowUpRight /> */}
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M16.3891 8.11096L8.61091 15.8891"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M16.3891 8.11096L16.7426 12"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M16.3891 8.11096L12.5 7.75741"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+
+
               </span>
             </Link>
           </div>

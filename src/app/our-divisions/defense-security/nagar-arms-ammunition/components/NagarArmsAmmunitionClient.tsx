@@ -58,7 +58,7 @@ const facilityGallery: GalleryImage[] = [
   { id: "img-9", image: "/images/our-divisions/nagar-arms-ammunation/7.jpeg" },
   { id: "img-10", image: "/images/our-divisions/nagar-arms-ammunation/8.jpeg" },
   { id: "img-11", image: "/images/our-divisions/nagar-arms-ammunation/9.jpeg" },
-  { id: "img-12", image: "/images/our-divisions/nagar-arms-ammunation/10.jpeg" },
+  { id: "img-12", image: "/images/our-divisions/nagar-arms-ammunation/13.jpeg" },
 ];
 
 export default function NagarArmsAmmunitionClient() {

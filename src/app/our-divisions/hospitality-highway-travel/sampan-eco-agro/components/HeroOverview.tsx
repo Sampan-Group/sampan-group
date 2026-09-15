@@ -83,13 +83,13 @@ export default function HeroOverview({ onOpenBooking }: { onOpenBooking: () => v
 
 
 
-            <a
+            {/* <a
               href="tel:+8801929918400"
               className="inline-flex items-center justify-center gap-2 border border-white/15 bg-black/40 hover:bg-white/10 px-6 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white/80 hover:text-white transition-all duration-300 backdrop-blur-sm"
             >
               <FaPhoneAlt className="text-xs text-[#b9e583]" />
               <span>+8801929918400</span>
-            </a>
+            </a> */}
           </div>
 
           {/* Quick Value Badges */}

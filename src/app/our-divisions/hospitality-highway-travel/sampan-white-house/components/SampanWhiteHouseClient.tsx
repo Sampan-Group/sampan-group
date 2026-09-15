@@ -28,7 +28,7 @@ export default function SampanWhiteHouseClient() {
     <main className="bg-[#F5F5F2] text-neutral-900 antialiased selection:bg-[#e8b84b] selection:text-neutral-950">
 
       {/* OVERVIEW (Hero with Background Image & Transparent Navbar Dark Contrast) */}
-      <HeroOverview onOpenBooking={() => scrollToSection("booking-widget")} />
+      <HeroOverview />
 
       {/* ONLINE BOOKING WIDGET (Instant Calculator & Reservation) */}
       {/* <OnlineBookingWidget /> */}
@@ -40,7 +40,7 @@ export default function SampanWhiteHouseClient() {
       <FacilitiesList />
 
       {/* DEDICATED HIGHWAY-ROUTE MAP (Corridor Map & Mile Markers) */}
-      <HighwayRouteVisualizer />
+      {/* <HighwayRouteVisualizer /> */}
 
       {/* LOCATION + LIVE MAP (GPS Coordinates, Hub Distances & Embedded Map) */}
       <LocationAndMap />

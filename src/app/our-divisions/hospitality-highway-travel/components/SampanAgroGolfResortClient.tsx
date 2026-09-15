@@ -198,14 +198,14 @@ const ownershipBenefits = [
     image: "/images/our-divisions/sampan-agro-golf-resort/man-farmer-with-homemade-vegetables.jpg",
     description: "Extensive fruit orchards (mango, lemon, malta, dragonfruit) and automated greenhouse vegetable zones.",
   },
-  {
-    id: 20,
-    title: "Bonfire, Picnic Spot & BBQ Zone",
-    category: "Leisure",
-    icon: FaFire,
-    image: "/images/our-divisions/sampan-agro-golf-resort/Sampan-Agro-&-Golf-Resort-5.jpg",
-    description: "Open-air starlight fire pits, family picnic gazebos, and personal barbecue grill stations.",
-  },
+  // {
+  //   id: 20,
+  //   title: "Bonfire, Picnic Spot & BBQ Zone",
+  //   category: "Leisure",
+  //   icon: FaFire,
+  //   image: "/images/our-divisions/sampan-agro-golf-resort/Sampan-Agro-&-Golf-Resort-5.jpg",
+  //   description: "Open-air starlight fire pits, family picnic gazebos, and personal barbecue grill stations.",
+  // },
 ];
 
 const galleryMedia = [

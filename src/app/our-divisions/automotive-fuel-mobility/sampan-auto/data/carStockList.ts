@@ -639,7 +639,7 @@ export const carStockList: CarStockItem[] = [
     priceLakh: "26.50",
     category: "sedan-wagon",
     categoryLabel: "Sedan & Wagon",
-    image: "/images/our-divisions/sampan-auto/with_engine/Axio_EX_Octane.jpg"
+    image: "/images/our-divisions/sampan-auto/with_engine/AXIO_EX_OCTANE.jpg"
   },
   {
     sl: 32,

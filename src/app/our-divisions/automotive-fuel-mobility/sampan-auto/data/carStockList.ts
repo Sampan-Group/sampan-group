@@ -559,6 +559,7 @@ export const carStockList: CarStockItem[] = [
     priceLakh: "31.00",
     category: "sedan-wagon",
     categoryLabel: "Sedan & Wagon",
+    image: "/images/our-divisions/sampan-auto/with_engine/COROLLA_WxB2.jpg"
   },
 
   // --- Corolla Touring Hybrid ---
@@ -579,6 +580,7 @@ export const carStockList: CarStockItem[] = [
     priceLakh: "27.00",
     category: "sedan-wagon",
     categoryLabel: "Sedan & Wagon",
+    image: "/images/our-divisions/sampan-auto/with_engine/Corolla_S_Touring.jpg"
   },
   {
     sl: 29,
@@ -597,6 +599,7 @@ export const carStockList: CarStockItem[] = [
     priceLakh: "29.00",
     category: "sedan-wagon",
     categoryLabel: "Sedan & Wagon",
+    image: "/images/our-divisions/sampan-auto/with_engine/Corolla_WxB_Touring.jpg"
   },
   {
     sl: 30,
@@ -615,6 +618,7 @@ export const carStockList: CarStockItem[] = [
     priceLakh: "28.00",
     category: "sedan-wagon",
     categoryLabel: "Sedan & Wagon",
+    image: "/images/our-divisions/sampan-auto/with_engine/Corolla _S_Touring2.jpg"
   },
 
   // --- Axio Non-Hybrid ---
@@ -635,6 +639,7 @@ export const carStockList: CarStockItem[] = [
     priceLakh: "26.50",
     category: "sedan-wagon",
     categoryLabel: "Sedan & Wagon",
+    image: "/images/our-divisions/sampan-auto/with_engine/Axio_EX_Octane.jpg"
   },
   {
     sl: 32,
@@ -653,6 +658,7 @@ export const carStockList: CarStockItem[] = [
     priceLakh: "26.50",
     category: "sedan-wagon",
     categoryLabel: "Sedan & Wagon",
+    image: "/images/our-divisions/sampan-auto/with_engine/AXIO_EX_OCTANE2.jpg"
   },
 
   // --- Fielder Hybrid ---
@@ -673,6 +679,7 @@ export const carStockList: CarStockItem[] = [
     priceLakh: "22.00",
     category: "sedan-wagon",
     categoryLabel: "Sedan & Wagon",
+    image: "/images/our-divisions/sampan-auto/with_engine/FIELDER_EX_Hybrid.jpeg"
   },
   {
     sl: 34,
@@ -691,6 +698,7 @@ export const carStockList: CarStockItem[] = [
     priceLakh: "21.00",
     category: "sedan-wagon",
     categoryLabel: "Sedan & Wagon",
+    image: "/images/our-divisions/sampan-auto/with_engine/FIELDER_EX_Hybrid.jpg"
   },
   {
     sl: 35,
@@ -709,6 +717,7 @@ export const carStockList: CarStockItem[] = [
     priceLakh: "22.60",
     category: "sedan-wagon",
     categoryLabel: "Sedan & Wagon",
+    image: "/images/our-divisions/sampan-auto/with_engine/FIELDER_EX_Hybrid3.jpg"
   },
   {
     sl: 36,
@@ -727,6 +736,7 @@ export const carStockList: CarStockItem[] = [
     priceLakh: "21.50",
     category: "sedan-wagon",
     categoryLabel: "Sedan & Wagon",
+    image: "/images/our-divisions/sampan-auto/with_engine/FIELDER_EX_Hybrid4.jpg"
   },
 
   // --- Fielder Non-Hybrid ---
@@ -747,5 +757,6 @@ export const carStockList: CarStockItem[] = [
     priceLakh: "24.00",
     category: "sedan-wagon",
     categoryLabel: "Sedan & Wagon",
+    image: "/images/our-divisions/sampan-auto/with_engine/FIELDER_EX_Octane.jpg"
   },
 ];

@@ -110,14 +110,14 @@ const ownershipBenefits = [
     image: "/images/our-divisions/sampan-agro-golf-resort/basketball.jpg",
     description: "Floodlit championship courts for tennis, badminton, and basketball with professional equipment.",
   },
-  {
-    id: 9,
-    title: "Super Shop & Pharmacy",
-    category: "Convenience",
-    icon: FaStore,
-    image: "/images/our-divisions/mini-sampan-super-shop/mart.jpg",
-    description: "On-site convenience store for daily groceries, travel essentials, and fully stocked pharmacy.",
-  },
+  // {
+  //   id: 9,
+  //   title: "Super Shop & Pharmacy",
+  //   category: "Convenience",
+  //   icon: FaStore,
+  //   image: "/images/our-divisions/mini-sampan-super-shop/mart.jpg",
+  //   description: "On-site convenience store for daily groceries, travel essentials, and fully stocked pharmacy.",
+  // },
   {
     id: 10,
     title: "Library & Reading Lounge",
@@ -198,14 +198,14 @@ const ownershipBenefits = [
     image: "/images/our-divisions/sampan-agro-golf-resort/man-farmer-with-homemade-vegetables.jpg",
     description: "Extensive fruit orchards (mango, lemon, malta, dragonfruit) and automated greenhouse vegetable zones.",
   },
-  {
-    id: 20,
-    title: "Bonfire, Picnic Spot & BBQ Zone",
-    category: "Leisure",
-    icon: FaFire,
-    image: "/images/our-divisions/sampan-agro-golf-resort/Sampan-Agro-&-Golf-Resort-5.jpg",
-    description: "Open-air starlight fire pits, family picnic gazebos, and personal barbecue grill stations.",
-  },
+  // {
+  //   id: 20,
+  //   title: "Bonfire, Picnic Spot & BBQ Zone",
+  //   category: "Leisure",
+  //   icon: FaFire,
+  //   image: "/images/our-divisions/sampan-agro-golf-resort/Sampan-Agro-&-Golf-Resort-5.jpg",
+  //   description: "Open-air starlight fire pits, family picnic gazebos, and personal barbecue grill stations.",
+  // },
 ];
 
 const galleryMedia = [

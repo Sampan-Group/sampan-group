@@ -213,8 +213,8 @@ export default function Navbar2() {
                 className="transition-transform duration-300 group-hover:translate-x-1"
               >
                 {/* ↗ */}
-                {/* <BsArrowUpRight /> */}
-                <svg
+                <BsArrowUpRight />
+                {/* <svg
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -239,7 +239,7 @@ export default function Navbar2() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
-                </svg>
+                </svg> */}
 
 
               </span>

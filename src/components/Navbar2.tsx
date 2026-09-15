@@ -7,7 +7,6 @@ import { useEffect, useRef, useState } from "react";
 import { navItems } from "@/data/navigation";
 import type { NavItem } from "@/types/NavItem";
 import MegaMenu from "@/components/MegaMenu";
-import { BsArrowUpRight } from "react-icons/bs";
 
 const lightNavbarRoutes = ["/concerns"];
 
@@ -210,38 +209,20 @@ export default function Navbar2() {
               Let&apos;s talk
               <span
                 aria-hidden="true"
-                className="transition-transform duration-300 group-hover:translate-x-1"
+                className="shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
               >
-                {/* ↗ */}
-                <BsArrowUpRight />
-                {/* <svg
+                <svg
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                  aria-hidden="true"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-3.5 w-3.5"
                 >
-                  <path
-                    d="M16.3891 8.11096L8.61091 15.8891"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M16.3891 8.11096L16.7426 12"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M16.3891 8.11096L12.5 7.75741"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg> */}
-
-
+                  <line x1="7" y1="17" x2="17" y2="7" />
+                  <polyline points="7 7 17 7 17 17" />
+                </svg>
               </span>
             </Link>
           </div>
@@ -369,7 +350,20 @@ export default function Navbar2() {
                 className="flex items-center justify-between border border-neutral-900 px-6 py-5 text-sm font-bold uppercase tracking-[0.15em] text-neutral-900 transition hover:bg-neutral-900 hover:text-white"
               >
                 Let&apos;s talk
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true" className="shrink-0">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-4 w-4"
+                  >
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </span>
               </Link>
             </div>
           </nav>

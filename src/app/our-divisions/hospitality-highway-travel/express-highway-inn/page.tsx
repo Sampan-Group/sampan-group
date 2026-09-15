@@ -250,7 +250,7 @@ const nearbyLocations = [
     type: "Express Convenience",
     description:
       "Quick-stop express retail kiosk for instant refreshments and travel accessories.",
-    image: "/images/our-divisions/mini-sampan-super-shop/mart.jpg",
+    image: "/images/our-divisions/mini-sampan-super-shop/Web-Banner-new.jpg",
   },
   {
     name: "Sampan Condominium",

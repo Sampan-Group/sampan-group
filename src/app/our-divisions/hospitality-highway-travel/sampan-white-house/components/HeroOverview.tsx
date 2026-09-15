@@ -15,7 +15,7 @@ import { FiArrowRight } from "react-icons/fi";
 
 const heroImage = "/images/projects/Sampan-White-House-&-Motel.png";
 
-export default function HeroOverview({ onOpenBooking }: { onOpenBooking: () => void }) {
+export default function HeroOverview({ onOpenBooking }: { onOpenBooking?: () => void } = {}) {
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-neutral-950 text-white pt-20 pb-10 lg:pt-24 lg:pb-14 border-b border-white/10">
       {/* Real Background Image with cinematic dark gradient overlay */}
@@ -62,13 +62,13 @@ export default function HeroOverview({ onOpenBooking }: { onOpenBooking: () => v
 
           {/* Square Quick Action CTAs */}
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <button
-              onClick={onOpenBooking}
+            <a
+              href="#facilities"
               className="group relative inline-flex items-center justify-center gap-3 rounded-none bg-[#e8b84b] hover:bg-[#d4a43e] px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-neutral-950 shadow-lg shadow-[#e8b84b]/20 transition-all duration-300 cursor-pointer"
             >
-              <span>Reserve A Room / Hall</span>
+              <span>Explore Facilities</span>
               <FiArrowRight className="text-sm transition-transform group-hover:translate-x-1" />
-            </button>
+            </a>
 
             <a
               href="#location"

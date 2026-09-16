@@ -362,7 +362,7 @@ export default function SampanEcoAgroProduceClient() {
         concernName="Sampan Eco & Agro"
         storyParagraphs={storyParagraphs}
         pillars={storyPillars}
-        farmImage="/images/our-divisions/eco-agro/veg2.jpg"
+        farmImage="/images/our-divisions/sampan-eco-agro/vegetables-table-garden-sunlight.jpg"
         bgTheme="divisions-green"
         accentColor="#15803d"
       />

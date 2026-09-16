@@ -102,7 +102,7 @@ export default function UGCFeed() {
             <article
               key={post.id}
               onClick={() => setSelectedPost(post)}
-              className="group relative overflow-hidden rounded-3xl bg-white border border-neutral-200/80 shadow-sm hover:shadow-xl hover:border-emerald-500/40 transition-all duration-300 cursor-pointer flex flex-col"
+              className="group relative overflow-hidden rounded-none bg-white border border-neutral-200/80 shadow-sm hover:shadow-xl hover:border-emerald-500/40 transition-all duration-300 cursor-pointer flex flex-col"
             >
               {/* Post Header */}
               <div className="p-4 flex items-center justify-between border-b border-neutral-100">
@@ -123,9 +123,10 @@ export default function UGCFeed() {
                 <Image
                   src={post.image}
                   alt={post.caption}
-                  fill
+                  width={500}
+                  height={500}
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
                 {/* Hover Like Overlay */}

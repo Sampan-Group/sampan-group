@@ -106,7 +106,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="h-full antialiased"
+      className="antialiased"
       suppressHydrationWarning
     >
       <head>
@@ -137,7 +137,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col" suppressHydrationWarning>
+      <body className="min-h-screen flex flex-col" suppressHydrationWarning>
         <AnimationProvider>
           <Navbar2 />
           {children}

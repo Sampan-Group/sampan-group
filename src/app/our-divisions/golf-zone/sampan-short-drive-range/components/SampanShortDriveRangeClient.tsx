@@ -147,7 +147,7 @@ export default function SampanShortDriveRangeClient() {
     <main className="bg-[#f8faf6] text-[#183b2b] selection:bg-emerald-700 selection:text-white overflow-x-hidden w-full">
 
       {/* ================= 1. HERO SECTION ================= */}
-      <section className="relative min-h-0 sm:min-h-screen flex flex-col justify-start sm:justify-center overflow-hidden bg-[#07150d] text-white pt-24 pb-12 sm:pt-28 sm:pb-20 border-b border-white/10">
+      <section data-no-reveal className="relative min-h-0 sm:min-h-screen flex flex-col justify-start sm:justify-center overflow-hidden bg-[#07150d] text-white pt-24 pb-12 sm:pt-28 sm:pb-20 border-b border-white/10">
         {/* Real Background Image with Dark Nature Gradient Overlay */}
         <div className="absolute inset-0 z-0">
           <Image

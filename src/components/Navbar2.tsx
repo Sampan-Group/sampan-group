@@ -105,7 +105,7 @@ export default function Navbar2() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${showSolidNav
+      className={`fixed inset-x-0 top-0 z-50 w-full max-w-[100vw] overflow-x-clip transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${showSolidNav
         ? "border-b border-black/10 bg-white/90 py-3 text-neutral-950 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)] backdrop-blur-2xl"
         : "border-b border-transparent bg-transparent py-5 text-white"
         }`}
@@ -261,114 +261,114 @@ export default function Navbar2() {
             />
           </div>
         )}
-
-        {/* MOBILE MENU OVERLAY */}
-        {mobileMenuOpen && (
-          <nav
-            data-lenis-prevent
-            aria-label="Mobile navigation"
-            className="absolute inset-x-0 top-full max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain border-x border-b border-neutral-200 bg-white text-neutral-950 shadow-2xl lg:hidden"
-          >
-            <div className="flex flex-col p-8">
-              {navItems
-                .filter((i) => i.href !== "/contact")
-                .map((item, index) => (
-                  <div
-                    key={item.id}
-                    className={index !== 0 ? "border-t border-neutral-100" : ""}
-                  >
-                    {item.megaMenu ? (
-                      <div>
-                        <button
-                          type="button"
-                          aria-expanded={openMobileMegaId === item.id}
-                          onClick={() =>
-                            setOpenMobileMegaId(
-                              openMobileMegaId === item.id ? null : item.id,
-                            )
-                          }
-                          className="flex w-full items-center justify-between py-5 text-3xl font-semibold tracking-tight"
-                        >
-                          {item.label}
-                          <span
-                            aria-hidden="true"
-                            className={`text-2xl text-neutral-400 transition-transform duration-300 ${openMobileMegaId === item.id ? "rotate-45" : ""
-                              }`}
-                          >
-                            +
-                          </span>
-                        </button>
-
-                        {openMobileMegaId === item.id && (
-                          <div className="space-y-6 border-t border-neutral-100 bg-neutral-50 px-4 py-6">
-                            {item.megaMenu.map((column) => (
-                              <div key={column.id}>
-                                {item.layout === "concerns" && (
-                                  <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-700">
-                                    {column.title}
-                                  </p>
-                                )}
-                                <div className="space-y-1">
-                                  {column.items.map((link) => (
-                                    <div
-                                      key={link.id}
-                                      className="flex items-center justify-between gap-2 py-2"
-                                    >
-                                      <NavigationLink
-                                        item={link}
-                                        onClick={closeMenus}
-                                        className="text-lg text-neutral-600 transition hover:text-emerald-800"
-                                      />
-                                      {link.comingSoon && (
-                                        <span className="rounded-full border border-emerald-700/30 bg-emerald-50 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.18em] text-emerald-700">
-                                          Coming Soon
-                                        </span>
-                                      )}
-                                    </div>
-                                  ))}
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ) : (
-                      <NavigationLink
-                        item={item}
-                        onClick={closeMenus}
-                        className="block py-5 text-3xl font-semibold tracking-tight transition-colors hover:text-emerald-600"
-                      />
-                    )}
-                  </div>
-                ))}
-            </div>
-
-            <div className="border-t border-neutral-100 p-8">
-              <Link
-                href="/contact"
-                onClick={closeMenus}
-                className="flex items-center justify-between border border-neutral-900 px-6 py-5 text-sm font-bold uppercase tracking-[0.15em] text-neutral-900 transition hover:bg-neutral-900 hover:text-white"
-              >
-                Let&apos;s talk
-                <span aria-hidden="true" className="shrink-0">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="h-4 w-4"
-                  >
-                    <line x1="7" y1="17" x2="17" y2="7" />
-                    <polyline points="7 7 17 7 17 17" />
-                  </svg>
-                </span>
-              </Link>
-            </div>
-          </nav>
-        )}
       </div>
+
+      {/* MOBILE MENU OVERLAY */}
+      {mobileMenuOpen && (
+        <nav
+          data-lenis-prevent
+          aria-label="Mobile navigation"
+          className="w-full max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain border-t border-neutral-200 bg-white text-neutral-950 shadow-2xl lg:hidden"
+        >
+          <div className="flex flex-col p-6 sm:p-8">
+            {navItems
+              .filter((i) => i.href !== "/contact")
+              .map((item, index) => (
+                <div
+                  key={item.id}
+                  className={index !== 0 ? "border-t border-neutral-100" : ""}
+                >
+                  {item.megaMenu ? (
+                    <div>
+                      <button
+                        type="button"
+                        aria-expanded={openMobileMegaId === item.id}
+                        onClick={() =>
+                          setOpenMobileMegaId(
+                            openMobileMegaId === item.id ? null : item.id,
+                          )
+                        }
+                        className="flex w-full items-center justify-between py-4 sm:py-5 text-2xl sm:text-3xl font-semibold tracking-tight"
+                      >
+                        {item.label}
+                        <span
+                          aria-hidden="true"
+                          className={`text-2xl text-neutral-400 transition-transform duration-300 ${openMobileMegaId === item.id ? "rotate-45" : ""
+                            }`}
+                        >
+                          +
+                        </span>
+                      </button>
+
+                      {openMobileMegaId === item.id && (
+                        <div className="space-y-6 border-t border-neutral-100 bg-neutral-50 px-4 py-6">
+                          {item.megaMenu.map((column) => (
+                            <div key={column.id}>
+                              {item.layout === "concerns" && (
+                                <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-700">
+                                  {column.title}
+                                </p>
+                              )}
+                              <div className="space-y-1">
+                                {column.items.map((link) => (
+                                  <div
+                                    key={link.id}
+                                    className="flex items-center justify-between gap-2 py-2"
+                                  >
+                                    <NavigationLink
+                                      item={link}
+                                      onClick={closeMenus}
+                                      className="text-base sm:text-lg text-neutral-600 transition hover:text-emerald-800"
+                                    />
+                                    {link.comingSoon && (
+                                      <span className="rounded-full border border-emerald-700/30 bg-emerald-50 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.18em] text-emerald-700">
+                                        Coming Soon
+                                      </span>
+                                    )}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <NavigationLink
+                      item={item}
+                      onClick={closeMenus}
+                      className="block py-4 sm:py-5 text-2xl sm:text-3xl font-semibold tracking-tight transition-colors hover:text-emerald-600"
+                    />
+                  )}
+                </div>
+              ))}
+          </div>
+
+          <div className="border-t border-neutral-100 p-6 sm:p-8">
+            <Link
+              href="/contact"
+              onClick={closeMenus}
+              className="flex items-center justify-between border border-neutral-900 px-6 py-4 sm:py-5 text-sm font-bold uppercase tracking-[0.15em] text-neutral-900 transition hover:bg-neutral-900 hover:text-white"
+            >
+              Let&apos;s talk
+              <span aria-hidden="true" className="shrink-0">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-4 w-4"
+                >
+                  <line x1="7" y1="17" x2="17" y2="7" />
+                  <polyline points="7 7 17 7 17 17" />
+                </svg>
+              </span>
+            </Link>
+          </div>
+        </nav>
+      )}
     </header>
   );
 }

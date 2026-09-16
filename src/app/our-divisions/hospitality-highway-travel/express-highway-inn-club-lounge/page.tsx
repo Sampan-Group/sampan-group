@@ -284,10 +284,10 @@ export default function ExpressHighwayInnClubLoungePage() {
             </p>
 
             {/* Square Action Buttons */}
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:items-center gap-3.5 sm:gap-4">
               <Link
                 href="#facilities-gallery"
-                className="group inline-flex items-center justify-center gap-2 rounded-none bg-[#58b9eb] hover:bg-[#3aa6df] px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-neutral-950 transition-all duration-300 shadow-lg shadow-[#58b9eb]/20"
+                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-none bg-[#58b9eb] hover:bg-[#3aa6df] px-7 py-3.5 sm:px-8 sm:py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-neutral-950 transition-all duration-300 shadow-lg shadow-[#58b9eb]/20 text-center"
               >
                 <span>Explore Facilities</span>
                 <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -295,14 +295,14 @@ export default function ExpressHighwayInnClubLoungePage() {
 
               {/* <Link
                 href="#masterplan"
-                className="inline-flex items-center justify-center rounded-none border border-white/25 bg-white/5 hover:border-white hover:bg-white hover:text-black px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 backdrop-blur-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center rounded-none border border-white/25 bg-white/5 hover:border-white hover:bg-white hover:text-black px-7 py-3.5 sm:px-8 sm:py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 backdrop-blur-sm text-center"
               >
                 View Masterplan
               </Link> */}
 
               <Link
                 href="#location"
-                className="inline-flex items-center justify-center rounded-none border border-[#58b9eb]/40 bg-[#58b9eb]/10 hover:bg-[#58b9eb]/20 px-6 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#58b9eb] transition-all duration-300 backdrop-blur-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center rounded-none border border-[#58b9eb]/40 bg-[#58b9eb]/10 hover:bg-[#58b9eb]/20 px-7 py-3.5 sm:px-8 sm:py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#58b9eb] transition-all duration-300 backdrop-blur-sm text-center"
               >
                 Location &amp; Access
               </Link>

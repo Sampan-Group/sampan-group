@@ -18,7 +18,7 @@ const heroImage = "/images/our-divisions/sampan-highway-inn/heromain3.jpg";
 
 export default function HeroOverview({ onOpenBooking }: { onOpenBooking?: () => void }) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-950 text-white pt-24 pb-16 lg:pt-28 lg:pb-20 border-b border-white/10">
+    <section className="relative min-h-0 sm:min-h-screen flex flex-col justify-start sm:justify-center overflow-hidden bg-neutral-950 text-white pt-24 pb-12 sm:pt-28 sm:pb-20 border-b border-white/10">
       {/* Real Background Image with cinematic dark gradient overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -31,14 +31,14 @@ export default function HeroOverview({ onOpenBooking }: { onOpenBooking?: () => 
         />
         {/* Dual-layer dark gradient for text readability and navbar contrast */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/72 to-black/45" />
-        {/* <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-black/75" /> */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/25 to-black/75" />
       </div>
 
       {/* Subtle Ambient Glow */}
       <div className="pointer-events-none absolute top-1/4 left-10 w-96 h-96 bg-emerald-500/15 rounded-none blur-[140px] z-0" />
       <div className="pointer-events-none absolute bottom-10 right-10 w-96 h-96 bg-amber-500/10 rounded-none blur-[120px] z-0" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 pt-2 pb-8 lg:pb-12">
+      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 pt-0 sm:pt-2 pb-8 lg:pb-12">
         {/* Main Hero Text Content */}
         <div className="max-w-4xl space-y-4 sm:space-y-5">
           {/* Highway Corridor Square Eyebrow Badge */}

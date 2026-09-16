@@ -153,9 +153,9 @@ export default function PartyCenterPhotoVideoGallery() {
           <div>
             <button
               onClick={() => setIsVideoModalOpen(true)}
-              className="inline-flex items-center gap-3 rounded-2xl bg-[#070b09] hover:bg-amber-950 text-white px-6 py-3.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-md cursor-pointer"
+              className="inline-flex items-center gap-3 rounded-none bg-[#070b09] hover:bg-amber-950 text-white px-6 py-3.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-md cursor-pointer"
             >
-              <div className="w-7 h-7 rounded-full bg-amber-400 text-black flex items-center justify-center">
+              <div className="w-7 h-7 rounded-none bg-amber-400 text-black flex items-center justify-center">
                 <FaPlay className="text-[10px] ml-0.5" />
               </div>
               <span>Watch Drone Tour Video</span>
@@ -169,7 +169,7 @@ export default function PartyCenterPhotoVideoGallery() {
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+              className={`px-5 py-2.5 rounded-none text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
                 activeCategory === cat.id
                   ? "bg-[#070b09] text-white shadow-md"
                   : "bg-white text-neutral-600 hover:bg-neutral-100 hover:text-black border border-neutral-200"
@@ -226,7 +226,7 @@ export default function PartyCenterPhotoVideoGallery() {
           >
             <button
               onClick={() => setLightboxIndex(null)}
-              className="absolute top-6 right-6 z-50 text-white/70 hover:text-white p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+              className="absolute top-6 right-6 z-50 text-white/70 hover:text-white p-3 rounded-none bg-white/10 hover:bg-white/20 transition-colors"
               aria-label="Close Lightbox"
             >
               <FaTimes className="text-lg" />
@@ -235,7 +235,7 @@ export default function PartyCenterPhotoVideoGallery() {
             {/* Left Nav */}
             <button
               onClick={handlePrev}
-              className="absolute left-6 top-1/2 -translate-y-1/2 z-50 text-white p-4 rounded-full bg-white/10 hover:bg-white/20 transition-colors hidden sm:flex items-center justify-center"
+              className="absolute left-6 top-1/2 -translate-y-1/2 z-50 text-white p-4 rounded-none bg-white/10 hover:bg-white/20 transition-colors hidden sm:flex items-center justify-center"
               aria-label="Previous image"
             >
               <FaChevronLeft className="text-xl" />
@@ -244,7 +244,7 @@ export default function PartyCenterPhotoVideoGallery() {
             {/* Lightbox Image Stage */}
             <div
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-5xl w-full max-h-[85vh] aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl border border-white/10 flex flex-col justify-end"
+              className="relative max-w-5xl w-full max-h-[85vh] aspect-[16/10] rounded-none overflow-hidden shadow-2xl border border-white/10 flex flex-col justify-end"
             >
               <Image
                 src={filteredItems[lightboxIndex].src}
@@ -277,7 +277,7 @@ export default function PartyCenterPhotoVideoGallery() {
             {/* Right Nav */}
             <button
               onClick={handleNext}
-              className="absolute right-6 top-1/2 -translate-y-1/2 z-50 text-white p-4 rounded-full bg-white/10 hover:bg-white/20 transition-colors hidden sm:flex items-center justify-center"
+              className="absolute right-6 top-1/2 -translate-y-1/2 z-50 text-white p-4 rounded-none bg-white/10 hover:bg-white/20 transition-colors hidden sm:flex items-center justify-center"
               aria-label="Next image"
             >
               <FaChevronRight className="text-xl" />
@@ -293,11 +293,11 @@ export default function PartyCenterPhotoVideoGallery() {
           >
             <div
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-4xl rounded-3xl overflow-hidden bg-[#070b09] border border-white/15 p-8 text-white shadow-2xl"
+              className="relative w-full max-w-4xl rounded-none overflow-hidden bg-[#070b09] border border-white/15 p-8 text-white shadow-2xl"
             >
               <div className="flex items-center justify-between pb-6 border-b border-white/10">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400">
+                  <div className="p-2 rounded-none bg-amber-500/10 text-amber-400">
                     <FaVideo />
                   </div>
                   <div>
@@ -311,13 +311,13 @@ export default function PartyCenterPhotoVideoGallery() {
                 </div>
                 <button
                   onClick={() => setIsVideoModalOpen(false)}
-                  className="text-neutral-400 hover:text-white p-2"
+                  className="text-neutral-400 hover:text-white p-2 rounded-none"
                 >
                   <FaTimes />
                 </button>
               </div>
 
-              <div className="relative aspect-[16/9] rounded-2xl overflow-hidden bg-black mt-6 flex items-center justify-center border border-white/10">
+              <div className="relative aspect-[16/9] rounded-none overflow-hidden bg-black mt-6 flex items-center justify-center border border-white/10">
                 <video
                   src="/videos/sampan-highway-inn-party-center.MP4"
                   controls
@@ -332,7 +332,7 @@ export default function PartyCenterPhotoVideoGallery() {
               <div className="mt-6 flex justify-end">
                 <button
                   onClick={() => setIsVideoModalOpen(false)}
-                  className="px-6 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-semibold text-white uppercase tracking-wider cursor-pointer"
+                  className="px-6 py-2.5 rounded-none bg-white/10 hover:bg-white/20 text-xs font-semibold text-white uppercase tracking-wider cursor-pointer"
                 >
                   Close Video
                 </button>

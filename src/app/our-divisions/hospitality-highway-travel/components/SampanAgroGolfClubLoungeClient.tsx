@@ -590,7 +590,7 @@ export default function SampanAgroGolfClubLoungeClient() {
                         {lounge.category}
                       </span>
                     </div>
-                    <div className="absolute bottom-4 right-4 h-8 w-8 rounded-full bg-black/60 text-white flex items-center justify-center backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="absolute bottom-4 right-4 h-8 w-8 rounded-none bg-black/60 text-white flex items-center justify-center backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
                       <FaExpand className="text-xs" />
                     </div>
                   </div>
@@ -659,7 +659,7 @@ export default function SampanAgroGolfClubLoungeClient() {
               <button
                 key={cat}
                 onClick={() => setActiveTab(cat)}
-                className={`px-5 py-2.5 rounded-full text-xs font-bold font-mono uppercase tracking-wider transition-all duration-300 cursor-pointer whitespace-nowrap ${activeTab === cat
+                className={`px-5 py-2.5 rounded-none text-xs font-bold font-mono uppercase tracking-wider transition-all duration-300 cursor-pointer whitespace-nowrap ${activeTab === cat
                   ? "bg-[#183b2b] text-white shadow-md"
                   : "bg-white text-neutral-600 hover:bg-neutral-100 hover:text-black border border-neutral-200"
                   }`}
@@ -765,7 +765,7 @@ export default function SampanAgroGolfClubLoungeClient() {
                       {item.caption}
                     </p>
                   </div>
-                  <div className="h-9 w-9 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/40 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                  <div className="h-9 w-9 rounded-none bg-emerald-500/20 text-emerald-300 border border-emerald-400/40 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-all">
                     <FaExpand className="text-xs" />
                   </div>
                 </div>
@@ -872,7 +872,7 @@ export default function SampanAgroGolfClubLoungeClient() {
                   className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <div className="bg-emerald-600 text-white p-3 rounded-full shadow-lg">
+                  <div className="bg-emerald-600 text-white p-3 rounded-none shadow-lg">
                     <FaExpand className="text-sm" />
                   </div>
                 </div>
@@ -913,7 +913,7 @@ export default function SampanAgroGolfClubLoungeClient() {
                   className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <div className="bg-emerald-600 text-white p-3 rounded-full shadow-lg">
+                  <div className="bg-emerald-600 text-white p-3 rounded-none shadow-lg">
                     <FaExpand className="text-sm" />
                   </div>
                 </div>
@@ -954,7 +954,7 @@ export default function SampanAgroGolfClubLoungeClient() {
                   className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <div className="bg-emerald-600 text-white p-3 rounded-full shadow-lg">
+                  <div className="bg-emerald-600 text-white p-3 rounded-none shadow-lg">
                     <FaExpand className="text-sm" />
                   </div>
                 </div>
@@ -1235,7 +1235,7 @@ export default function SampanAgroGolfClubLoungeClient() {
             <div className="lg:col-span-7 bg-white text-neutral-900 p-8 sm:p-12 shadow-2xl">
               {inquirySubmitted ? (
                 <div className="py-12 text-center space-y-4">
-                  <div className="h-16 w-16 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
+                  <div className="h-16 w-16 bg-emerald-100 text-emerald-700 rounded-none flex items-center justify-center mx-auto">
                     <FaCheck className="text-2xl" />
                   </div>
                   <h3 className="text-2xl font-bold text-neutral-900">

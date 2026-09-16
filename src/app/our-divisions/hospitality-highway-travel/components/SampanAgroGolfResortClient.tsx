@@ -590,7 +590,7 @@ export default function SampanAgroGolfResortClient() {
               <button
                 key={cat}
                 onClick={() => setActiveTab(cat)}
-                className={`px-5 py-2.5 rounded-full text-xs font-bold font-mono uppercase tracking-wider transition-all duration-300 cursor-pointer ${activeTab === cat
+                className={`px-5 py-2.5 rounded-none text-xs font-bold font-mono uppercase tracking-wider transition-all duration-300 cursor-pointer ${activeTab === cat
                   ? "bg-[#183b2b] text-white shadow-md"
                   : "bg-white text-neutral-600 hover:bg-neutral-100 hover:text-black border border-neutral-200"
                   }`}
@@ -832,7 +832,7 @@ export default function SampanAgroGolfResortClient() {
                   className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <div className="bg-emerald-600 text-white p-3 rounded-full shadow-lg">
+                  <div className="bg-emerald-600 text-white p-3 rounded-none shadow-lg">
                     <FaExpand className="text-sm" />
                   </div>
                 </div>
@@ -873,7 +873,7 @@ export default function SampanAgroGolfResortClient() {
                   className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <div className="bg-emerald-600 text-white p-3 rounded-full shadow-lg">
+                  <div className="bg-emerald-600 text-white p-3 rounded-none shadow-lg">
                     <FaExpand className="text-sm" />
                   </div>
                 </div>
@@ -914,7 +914,7 @@ export default function SampanAgroGolfResortClient() {
                   className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <div className="bg-emerald-600 text-white p-3 rounded-full shadow-lg">
+                  <div className="bg-emerald-600 text-white p-3 rounded-none shadow-lg">
                     <FaExpand className="text-sm" />
                   </div>
                 </div>
@@ -1176,7 +1176,7 @@ export default function SampanAgroGolfResortClient() {
 
             {inquirySubmitted ? (
               <div className="bg-emerald-50 border border-emerald-300 p-8 text-center space-y-4">
-                <div className="w-12 h-12 bg-emerald-600 text-white rounded-full flex items-center justify-center mx-auto text-xl">
+                <div className="w-12 h-12 bg-emerald-600 text-white rounded-none flex items-center justify-center mx-auto text-xl">
                   <FaCheck />
                 </div>
                 <h3 className="text-xl font-bold text-emerald-950">
@@ -1353,7 +1353,7 @@ export default function SampanAgroGolfResortClient() {
         >
           <button
             onClick={() => setLightboxImage(null)}
-            className="absolute top-6 right-6 z-50 text-white/70 hover:text-white p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors cursor-pointer"
+            className="absolute top-6 right-6 z-50 text-white/70 hover:text-white p-3 rounded-none bg-white/10 hover:bg-white/20 transition-colors cursor-pointer"
             aria-label="Close Lightbox"
           >
             <FaTimes className="text-lg" />

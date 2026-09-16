@@ -343,27 +343,27 @@ const clubGallery = [
     src: "/images/our-divisions/sampan-agro-golf-resort/basketball.jpg",
     caption: "All-weather multi-sport courts for tennis, basketball, badminton, and active club play.",
   },
-  {
-    id: "cg-cred-1",
-    title: "Official Certificate of Share",
-    category: "Official Documents",
-    src: "/images/our-divisions/sampan-agro-golf-resort/certificate-of-share.jpg",
-    caption: "Statutory share certificate issued by Sampan Developments Ltd. (REHAB Member No. 1257/2012).",
-  },
-  {
-    id: "cg-cred-2",
-    title: "Permanent Member Loyalty Card",
-    category: "Official Documents",
-    src: "/images/our-divisions/sampan-agro-golf-resort/loyalty-card-permanent-member.jpg",
-    caption: "Official green RFID smart card for permanent & life members offering 24/7 nationwide club privileges.",
-  },
-  {
-    id: "cg-cred-3",
-    title: "Official Certificate of Member",
-    category: "Official Documents",
-    src: "/images/our-divisions/sampan-agro-golf-resort/certificate-of-member.jpg",
-    caption: "Member induction certificate endorsed by President Emamul Hasan granting full club rights and tournament access.",
-  },
+  // {
+  //   id: "cg-cred-1",
+  //   title: "Official Certificate of Share",
+  //   category: "Official Documents",
+  //   src: "/images/our-divisions/sampan-agro-golf-resort/certificate-of-share.jpg",
+  //   caption: "Statutory share certificate issued by Sampan Developments Ltd. (REHAB Member No. 1257/2012).",
+  // },
+  // {
+  //   id: "cg-cred-2",
+  //   title: "Permanent Member Loyalty Card",
+  //   category: "Official Documents",
+  //   src: "/images/our-divisions/sampan-agro-golf-resort/loyalty-card-permanent-member.jpg",
+  //   caption: "Official green RFID smart card for permanent & life members offering 24/7 nationwide club privileges.",
+  // },
+  // {
+  //   id: "cg-cred-3",
+  //   title: "Official Certificate of Member",
+  //   category: "Official Documents",
+  //   src: "/images/our-divisions/sampan-agro-golf-resort/certificate-of-member.jpg",
+  //   caption: "Member induction certificate endorsed by President Emamul Hasan granting full club rights and tournament access.",
+  // },
 ];
 
 // Member Privileges (NO 01, 02 numbers!)
@@ -660,8 +660,8 @@ export default function SampanAgroGolfClubLoungeClient() {
                 key={cat}
                 onClick={() => setActiveTab(cat)}
                 className={`px-5 py-2.5 rounded-full text-xs font-bold font-mono uppercase tracking-wider transition-all duration-300 cursor-pointer whitespace-nowrap ${activeTab === cat
-                    ? "bg-[#183b2b] text-white shadow-md"
-                    : "bg-white text-neutral-600 hover:bg-neutral-100 hover:text-black border border-neutral-200"
+                  ? "bg-[#183b2b] text-white shadow-md"
+                  : "bg-white text-neutral-600 hover:bg-neutral-100 hover:text-black border border-neutral-200"
                   }`}
               >
                 {cat}

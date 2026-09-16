@@ -638,9 +638,9 @@ export default function SampanAgroGolfResortClient() {
                     </div>
 
                     {/* Floating Icon overlapping image bottom */}
-                    <div className="absolute -bottom-3.5 right-4 z-10 w-9 h-9 bg-white border border-neutral-200 shadow-md flex items-center justify-center text-emerald-700 text-sm group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                    {/* <div className="absolute -bottom-3.5 right-4 z-10 w-9 h-9 bg-white border border-neutral-200 shadow-md flex items-center justify-center text-emerald-700 text-sm group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                       <Icon />
-                    </div>
+                    </div> */}
                   </div>
 
                   {/* Card Content */}

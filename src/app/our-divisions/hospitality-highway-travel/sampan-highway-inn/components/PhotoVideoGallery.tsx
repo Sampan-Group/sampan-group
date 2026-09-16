@@ -199,15 +199,17 @@ export default function PhotoVideoGallery() {
             <div
               key={item.id}
               onClick={() => setLightboxIndex(index)}
-              className={`group relative overflow-hidden rounded-2xl bg-neutral-200 shadow-sm border border-neutral-200 cursor-pointer ${index === 0 ? "aspect-[4/3] sm:col-span-2 sm:row-span-2 sm:aspect-auto min-h-[320px]" : "aspect-[4/3]"
-                }`}
+              className={`group relative overflow-hidden rounded-none bg-neutral-200 shadow-sm border border-neutral-200 cursor-pointer aspect-square ${
+                index === 0 ? "sm:col-span-2 sm:row-span-2" : ""
+              }`}
             >
               <Image
                 src={item.src}
                 alt={item.title}
-                fill
+                width={800}
+                height={800}
                 sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
 
               {/* Hover Dark Overlay */}
@@ -220,7 +222,7 @@ export default function PhotoVideoGallery() {
               </div>
 
               {/* Expand Icon Badge */}
-              <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/50 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="absolute top-4 right-4 w-9 h-9 rounded-none bg-black/50 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                 <FaExpand className="text-xs" />
               </div>
             </div>

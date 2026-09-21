@@ -484,7 +484,7 @@ export default function SampanHollowBricksTilesClient() {
                 Inside Sampan Industrial Park
               </span>
               <h3 className="text-2xl sm:text-4xl font-bold text-white">
-                Manufacturing Anchor in Alfadanga, Faridpur
+                Manufacturing Hub in Alfadanga, Faridpur
               </h3>
               <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed">
                 Operating directly within Sampan Industrial Park in Alfadanga alongside Sampan PET &amp; Beverage with direct access to high-capacity power lines, heavy freight roads, and centralized logistics.
@@ -517,7 +517,7 @@ export default function SampanHollowBricksTilesClient() {
 
           <div className="max-w-3xl mb-14">
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-950 leading-tight">
-              Plant Location &amp; Wholesale Supply
+              Location &amp; Wholesale Supply
             </h2>
             <p className="mt-4 text-sm sm:text-base text-neutral-600 leading-relaxed">
               Located in Alfadanga, Faridpur. Supplying contractors, real estate developers, and municipal road projects across Bangladesh.
@@ -531,11 +531,12 @@ export default function SampanHollowBricksTilesClient() {
                 <FaMapMarkerAlt className="text-lg" />
               </div>
               <h3 className="text-xl font-bold text-neutral-950">
-                Plant Location
+                Factory Location
               </h3>
               <p className="text-sm text-neutral-600 leading-relaxed font-mono">
                 Sampan Hollow Bricks &amp; Tiles <br />
                 Sampan Industrial Park <br />
+                Sampan Pet & Beverage<br />
                 Alfadanga, Faridpur, Bangladesh
               </p>
               <p className="pt-2 text-[11px] text-neutral-400 font-mono border-t border-neutral-100">
@@ -660,67 +661,7 @@ export default function SampanHollowBricksTilesClient() {
         </div>
       )}
 
-      {/* ================= 7. SQUARE MINIMAL FOOTER ================= */}
-      <footer className="bg-white border-t border-neutral-200 px-6 py-12 sm:px-10 lg:px-16 text-neutral-600">
-        <div className="mx-auto max-w-[1440px]">
-          <div className="grid gap-12 md:grid-cols-4 mb-12">
-            <div className="md:col-span-2">
-              <h3 className="text-2xl font-bold text-neutral-950 mb-3">
-                Sampan Hollow Bricks &amp; Tiles
-              </h3>
-              <p className="text-xs sm:text-sm text-neutral-500 leading-relaxed max-w-md">
-                Automated eco-friendly concrete hollow blocks, interlocking pavers, and heavy-duty parking tiles plant inside Sampan Industrial Park in Alfadanga, Faridpur. A Sampan Group Venture.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-950 mb-4">
-                Products &amp; Catalogue
-              </h4>
-              <ul className="space-y-2.5 text-xs font-mono">
-                <li>
-                  <button onClick={() => scrollTo("products")} className="hover:text-red-700 transition-colors text-left">
-                    Hollow Blocks &amp; Pavers
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => scrollTo("tiles")} className="hover:text-red-700 transition-colors text-left">
-                    Parking Tiles (10 Designs)
-                  </button>
-                </li>
-                <li>
-                  <Link href="/our-divisions/manufacturing-industrial/sampan-industrial-park" className="hover:text-red-700 transition-colors">
-                    Sampan Industrial Park
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-950 mb-4">
-                Plant Location
-              </h4>
-              <ul className="space-y-2.5 text-xs text-neutral-500 font-mono">
-                <li>Sampan Industrial Park</li>
-                <li>Alfadanga, Faridpur, Bangladesh</li>
-                <li>Tel: +880 1929918400</li>
-                <li>info@sampangroup.com.bd.bd</li>
-              </ul>
-            </div>
-          </div>
-          <div className="pt-8 border-t border-neutral-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500 font-mono">
-            <p>
-              © {new Date().getFullYear()} Sampan Hollow Bricks &amp; Tiles. All Rights Reserved.
-            </p>
-            <div className="flex gap-6">
-              <Link href="/our-divisions/manufacturing-industrial" className="hover:text-red-700 transition-colors">
-                Manufacturing Division Archive
-              </Link>
-              <Link href="/our-divisions/manufacturing-industrial/sampan-pet-beverage" className="hover:text-red-700 transition-colors">
-                PET &amp; Beverage
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+
 
     </main>
   );

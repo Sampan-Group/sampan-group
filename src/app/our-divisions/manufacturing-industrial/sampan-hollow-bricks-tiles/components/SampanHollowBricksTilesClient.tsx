@@ -267,7 +267,7 @@ export default function SampanHollowBricksTilesClient() {
                 onClick={() => scrollTo("products")}
                 className="group inline-flex items-center justify-center gap-2 rounded-none bg-red-700 hover:bg-red-600 px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 shadow-lg shadow-red-950/40 cursor-pointer"
               >
-                <span>Product Catalogue ({mainProducts.length})</span>
+                <span>Product Catalogue </span>
                 <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
               </button>
 
@@ -275,15 +275,21 @@ export default function SampanHollowBricksTilesClient() {
                 onClick={() => scrollTo("tiles")}
                 className="inline-flex items-center justify-center rounded-none border border-white/25 bg-white/5 hover:border-white hover:bg-white hover:text-black px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 backdrop-blur-sm cursor-pointer"
               >
-                Parking Tiles (10 Designs)
+                Parking Tiles
               </button>
 
-              <button
+              {/* <button
                 onClick={() => scrollTo("location")}
                 className="inline-flex items-center justify-center rounded-none border border-red-500/40 bg-red-950/30 hover:bg-red-900/60 px-7 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-red-300 transition-all duration-300 backdrop-blur-sm cursor-pointer"
               >
                 Wholesale Inquiries
-              </button>
+              </button> */}
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-none border border-red-500/40 bg-red-950/30 hover:bg-red-900/60 px-7 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-red-300 transition-all duration-300 backdrop-blur-sm cursor-pointer"
+              >
+                Wholesale Inquiries
+              </Link>
             </div>
 
             {/* Quick Metrics */}
@@ -301,7 +307,7 @@ export default function SampanHollowBricksTilesClient() {
                 <p className="text-[11px] text-white/60 mt-0.5 font-mono">High Compressive</p>
               </div>
               <div className="border-l-2 border-red-500 pl-4">
-                <p className="text-sm sm:text-base font-bold text-white uppercase tracking-wider">10 Tile Types</p>
+                <p className="text-sm sm:text-base font-bold text-white uppercase tracking-wider">10+ Tile Types</p>
                 <p className="text-[11px] text-white/60 mt-0.5 font-mono">Heavy Vehicle Rated</p>
               </div>
             </div>
@@ -338,11 +344,10 @@ export default function SampanHollowBricksTilesClient() {
                 key={cat.id}
                 type="button"
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-4 py-2.5 rounded-none font-mono text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
-                  activeCategory === cat.id
-                    ? "bg-red-700 text-white shadow-sm"
-                    : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
-                }`}
+                className={`px-4 py-2.5 rounded-none font-mono text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${activeCategory === cat.id
+                  ? "bg-red-700 text-white shadow-sm"
+                  : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
+                  }`}
               >
                 <span>{cat.label}</span>
                 <span className={`ml-2 text-[10px] ${activeCategory === cat.id ? "text-white/80" : "text-neutral-500"}`}>
@@ -370,20 +375,18 @@ export default function SampanHollowBricksTilesClient() {
                 <div className="absolute top-0 left-0 h-[3px] w-0 bg-red-600 transition-all duration-500 group-hover:w-full z-20" />
 
                 <div
-                  className={`relative w-full h-64 overflow-hidden border-b border-neutral-100 ${
-                    product.contain ? "bg-[#f8f6f3] flex items-center justify-center p-6" : "bg-neutral-200"
-                  }`}
+                  className={`relative w-full h-64 overflow-hidden border-b border-neutral-100 ${product.contain ? "bg-[#f8f6f3] flex items-center justify-center p-6" : "bg-neutral-200"
+                    }`}
                 >
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className={`${
-                      product.contain
-                        ? "object-contain p-4 transition-transform duration-700 group-hover:scale-105 drop-shadow-md"
-                        : "object-cover transition-transform duration-700 group-hover:scale-105"
-                    }`}
+                    className={`${product.contain
+                      ? "object-contain p-4 transition-transform duration-700 group-hover:scale-105 drop-shadow-md"
+                      : "object-cover transition-transform duration-700 group-hover:scale-105"
+                      }`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                     <span className="inline-flex items-center gap-1.5 font-mono text-[10px] text-white bg-red-700 px-2.5 py-1">
@@ -608,7 +611,7 @@ export default function SampanHollowBricksTilesClient() {
           >
             <FaTimes className="text-lg" />
           </button>
-          
+
           <div
             onClick={(e) => e.stopPropagation()}
             className="relative max-w-4xl w-full max-h-[90vh] rounded-none overflow-hidden border border-white/20 shadow-2xl bg-[#141010] flex flex-col"

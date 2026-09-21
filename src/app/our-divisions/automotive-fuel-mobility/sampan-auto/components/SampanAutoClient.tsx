@@ -133,7 +133,7 @@ export default function SampanAutoClient() {
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 pt-2 pb-8 lg:pb-12">
-          <div className="max-w-4xl space-y-5 sm:space-y-6">
+          <div className="max-w-5xl space-y-5 sm:space-y-6">
 
             {/* Headline */}
             <h1 className="text-[clamp(2.4rem,4.8vw,4.2rem)] font-bold tracking-tight text-white leading-[0.98]">
@@ -148,19 +148,19 @@ export default function SampanAutoClient() {
               Specializing in imported Japanese reconditioned vehicles and quality pre-owned cars. Explore our live sales stock currently in port and showroom, or place a bespoke on-demand import order.
             </p>
 
-            {/* Square Action Buttons */}
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            {/* Square Action Buttons (All 4 in a single line on desktop) */}
+            <div className="mt-6 sm:mt-8 flex flex-wrap lg:flex-nowrap items-center gap-2.5 sm:gap-3 font-mono text-xs">
               <button
                 onClick={() => scrollTo("inventory")}
-                className="group inline-flex items-center justify-center gap-2 rounded-none bg-amber-600 hover:bg-amber-500 px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 shadow-lg shadow-amber-950/40 cursor-pointer"
+                className="group inline-flex items-center justify-center gap-2 rounded-none bg-amber-600 hover:bg-amber-500 px-4 py-2.5 sm:px-5 sm:py-3 font-mono text-xs font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 shadow-lg shadow-amber-950/40 cursor-pointer text-center whitespace-nowrap"
               >
-                <span>Sales Stock ({carStockList.length} Cars)</span>
+                <span>Sales Stock </span>
                 <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
               </button>
 
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-none border border-amber-500/60 bg-amber-500/15 hover:bg-amber-600 hover:border-amber-600 hover:text-white px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-amber-300 transition-all duration-300 backdrop-blur-sm cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 rounded-none border border-amber-500/60 bg-amber-500/15 hover:bg-amber-600 hover:border-amber-600 hover:text-white px-4 py-2.5 sm:px-5 sm:py-3 font-mono text-xs font-bold uppercase tracking-[0.14em] text-amber-300 transition-all duration-300 backdrop-blur-sm cursor-pointer text-center whitespace-nowrap"
               >
                 <span>Get a Car</span>
                 <FiArrowRight className="text-xs" />
@@ -168,7 +168,7 @@ export default function SampanAutoClient() {
 
               <button
                 onClick={() => scrollTo("process")}
-                className="inline-flex items-center justify-center rounded-none border border-white/25 bg-white/5 hover:border-white hover:bg-white hover:text-black px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 backdrop-blur-sm cursor-pointer"
+                className="inline-flex items-center justify-center rounded-none border border-white/25 bg-white/5 hover:border-white hover:bg-white hover:text-black px-4 py-2.5 sm:px-5 sm:py-3 font-mono text-xs font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 backdrop-blur-sm cursor-pointer text-center whitespace-nowrap"
               >
                 How Sourcing Works
               </button>
@@ -177,7 +177,7 @@ export default function SampanAutoClient() {
                 href="https://www.facebook.com/sampandhaka"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-none bg-[#1877F2] hover:bg-[#166fe5] px-7 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 shadow-md cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 rounded-none bg-[#1877F2] hover:bg-[#166fe5] px-4 py-2.5 sm:px-5 sm:py-3 font-mono text-xs font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 shadow-md cursor-pointer text-center whitespace-nowrap"
               >
                 <FaFacebookF className="text-sm" />
                 <span>Facebook Page</span>
@@ -303,13 +303,20 @@ export default function SampanAutoClient() {
               </div>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <button
+                {/* <button
                   onClick={() => scrollTo("contact")}
                   className="inline-flex items-center gap-2 rounded-none bg-[#111318] hover:bg-amber-800 text-white px-7 py-3.5 font-mono text-xs font-bold uppercase tracking-[0.18em] transition-colors shadow-sm cursor-pointer"
                 >
                   <span>Request Vehicle Sourcing</span>
                   <FiArrowRight className="text-xs" />
-                </button>
+                </button> */}
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-none bg-[#111318] hover:bg-amber-800 text-white px-7 py-3.5 font-mono text-xs font-bold uppercase tracking-[0.18em] transition-colors shadow-sm cursor-pointer"
+                >
+                  <span>Request Vehicle Sourcing</span>
+                  <FiArrowRight className="text-xs" />
+                </Link>
 
                 <a
                   href="https://www.facebook.com/sampandhaka"

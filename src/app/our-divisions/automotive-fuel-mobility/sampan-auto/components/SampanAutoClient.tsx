@@ -21,6 +21,7 @@ import {
 } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
 import { carStockList, CarStockItem } from "../data/carStockList";
+import SampanCafeMetroFeature from "@/app/projects/SampanCafeMetro/page";
 
 // Hero Background: Authentic showroom banner from sampan-auto folder
 const heroBackground = "/images/our-divisions/sampan-auto/Website-Banner-2.jpg";
@@ -73,7 +74,14 @@ export default function SampanAutoClient() {
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+      const navOffset = 80;
+      const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - navOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+      window.history.replaceState(null, "", `#${id}`);
     }
   };
 
@@ -107,7 +115,7 @@ export default function SampanAutoClient() {
   const upcomingCount = carStockList.filter((c) => c.location === "Upcoming" || c.location === "In Transit").length;
 
   return (
-    <main className="bg-[#fcfbf9] text-[#1a1714] selection:bg-amber-600 selection:text-white">
+    <main className="bg-[#fcfbf9] text-[#1a1714] selection:bg-amber-600 selection:text-white overflow-x-hidden w-full">
 
       {/* ================= 1. HERO SECTION (SHOWROOM BANNER) ================= */}
       <section className="relative min-h-[75vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#0c0d10] text-white pt-24 pb-16 lg:pt-28 lg:pb-20 border-b border-white/10">
@@ -125,7 +133,7 @@ export default function SampanAutoClient() {
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 pt-2 pb-8 lg:pb-12">
-          <div className="max-w-4xl space-y-5 sm:space-y-6">
+          <div className="max-w-5xl space-y-5 sm:space-y-6">
 
             {/* Headline */}
             <h1 className="text-[clamp(2.4rem,4.8vw,4.2rem)] font-bold tracking-tight text-white leading-[0.98]">
@@ -140,19 +148,27 @@ export default function SampanAutoClient() {
               Specializing in imported Japanese reconditioned vehicles and quality pre-owned cars. Explore our live sales stock currently in port and showroom, or place a bespoke on-demand import order.
             </p>
 
-            {/* Square Action Buttons */}
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            {/* Square Action Buttons (All 4 in a single line on desktop) */}
+            <div className="mt-6 sm:mt-8 flex flex-wrap lg:flex-nowrap items-center gap-2.5 sm:gap-3 font-mono text-xs">
               <button
                 onClick={() => scrollTo("inventory")}
-                className="group inline-flex items-center justify-center gap-2 rounded-none bg-amber-600 hover:bg-amber-500 px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 shadow-lg shadow-amber-950/40 cursor-pointer"
+                className="group inline-flex items-center justify-center gap-2 rounded-none bg-amber-600 hover:bg-amber-500 px-4 py-2.5 sm:px-5 sm:py-3 font-mono text-xs font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 shadow-lg shadow-amber-950/40 cursor-pointer text-center whitespace-nowrap"
               >
-                <span>Sales Stock ({carStockList.length} Cars)</span>
+                <span>Sales Stock </span>
                 <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
               </button>
 
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-none border border-amber-500/60 bg-amber-500/15 hover:bg-amber-600 hover:border-amber-600 hover:text-white px-4 py-2.5 sm:px-5 sm:py-3 font-mono text-xs font-bold uppercase tracking-[0.14em] text-amber-300 transition-all duration-300 backdrop-blur-sm cursor-pointer text-center whitespace-nowrap"
+              >
+                <span>Get a Car</span>
+                <FiArrowRight className="text-xs" />
+              </Link>
+
               <button
                 onClick={() => scrollTo("process")}
-                className="inline-flex items-center justify-center rounded-none border border-white/25 bg-white/5 hover:border-white hover:bg-white hover:text-black px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 backdrop-blur-sm cursor-pointer"
+                className="inline-flex items-center justify-center rounded-none border border-white/25 bg-white/5 hover:border-white hover:bg-white hover:text-black px-4 py-2.5 sm:px-5 sm:py-3 font-mono text-xs font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 backdrop-blur-sm cursor-pointer text-center whitespace-nowrap"
               >
                 How Sourcing Works
               </button>
@@ -161,7 +177,7 @@ export default function SampanAutoClient() {
                 href="https://www.facebook.com/sampandhaka"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-none bg-[#1877F2] hover:bg-[#166fe5] px-7 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 shadow-md cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 rounded-none bg-[#1877F2] hover:bg-[#166fe5] px-4 py-2.5 sm:px-5 sm:py-3 font-mono text-xs font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 shadow-md cursor-pointer text-center whitespace-nowrap"
               >
                 <FaFacebookF className="text-sm" />
                 <span>Facebook Page</span>
@@ -175,7 +191,7 @@ export default function SampanAutoClient() {
                 <p className="text-[11px] text-white/60 mt-0.5 font-mono">Bespoke Sourcing</p>
               </div>
               <div className="border-l-2 border-amber-400 pl-4">
-                <p className="text-sm sm:text-base font-bold text-amber-400 uppercase tracking-wider">Recondition &amp; Used</p>
+                <p className="text-sm sm:text-base font-bold text-amber-400 uppercase tracking-wider">Imported</p>
                 <p className="text-[11px] text-white/60 mt-0.5 font-mono">Certified Inspections</p>
               </div>
               <div className="border-l-2 border-amber-400 pl-4">
@@ -238,7 +254,7 @@ export default function SampanAutoClient() {
                   </div>
 
                   <div className="mt-6 pt-4 border-t border-neutral-100 flex items-center justify-between text-[11px] font-mono text-amber-800 font-bold">
-                    <span>Verified Process</span>
+                    <span>Step {idx + 1}</span>
                     <FaCheck className="text-[10px] text-amber-600" />
                   </div>
                 </div>
@@ -287,13 +303,20 @@ export default function SampanAutoClient() {
               </div>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <button
+                {/* <button
                   onClick={() => scrollTo("contact")}
                   className="inline-flex items-center gap-2 rounded-none bg-[#111318] hover:bg-amber-800 text-white px-7 py-3.5 font-mono text-xs font-bold uppercase tracking-[0.18em] transition-colors shadow-sm cursor-pointer"
                 >
                   <span>Request Vehicle Sourcing</span>
                   <FiArrowRight className="text-xs" />
-                </button>
+                </button> */}
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-none bg-[#111318] hover:bg-amber-800 text-white px-7 py-3.5 font-mono text-xs font-bold uppercase tracking-[0.18em] transition-colors shadow-sm cursor-pointer"
+                >
+                  <span>Request Vehicle Sourcing</span>
+                  <FiArrowRight className="text-xs" />
+                </Link>
 
                 <a
                   href="https://www.facebook.com/sampandhaka"
@@ -372,7 +395,7 @@ export default function SampanAutoClient() {
               <div className="flex items-center gap-4 mb-3">
                 <span className="h-px w-10 bg-amber-600" />
                 <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.4em] text-amber-700">
-                  Stock Inventory ({carStockList.length} Vehicles)
+                  Stock Inventory
                 </span>
               </div>
               <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-950 leading-tight">
@@ -417,8 +440,8 @@ export default function SampanAutoClient() {
                 <button
                   onClick={() => setSelectedLocation("all")}
                   className={`px-3 py-1.5 text-[11px] font-mono font-bold uppercase tracking-wider rounded-none cursor-pointer border ${selectedLocation === "all"
-                      ? "bg-[#111318] text-white border-[#111318]"
-                      : "bg-white text-neutral-700 border-neutral-200 hover:border-neutral-400"
+                    ? "bg-[#111318] text-white border-[#111318]"
+                    : "bg-white text-neutral-700 border-neutral-200 hover:border-neutral-400"
                     }`}
                 >
                   All ({carStockList.length})
@@ -426,8 +449,8 @@ export default function SampanAutoClient() {
                 <button
                   onClick={() => setSelectedLocation(selectedLocation === "Showroom" ? "all" : "Showroom")}
                   className={`px-3 py-1.5 text-[11px] font-mono font-bold uppercase tracking-wider rounded-none cursor-pointer border ${selectedLocation === "Showroom"
-                      ? "bg-amber-600 text-white border-amber-600"
-                      : "bg-white text-neutral-700 border-neutral-200 hover:border-neutral-400"
+                    ? "bg-amber-600 text-white border-amber-600"
+                    : "bg-white text-neutral-700 border-neutral-200 hover:border-neutral-400"
                     }`}
                 >
                   Showroom ({showroomCount})
@@ -435,8 +458,8 @@ export default function SampanAutoClient() {
                 <button
                   onClick={() => setSelectedLocation(selectedLocation === "Port" ? "all" : "Port")}
                   className={`px-3 py-1.5 text-[11px] font-mono font-bold uppercase tracking-wider rounded-none cursor-pointer border ${selectedLocation === "Port"
-                      ? "bg-neutral-900 text-white border-neutral-900"
-                      : "bg-white text-neutral-700 border-neutral-200 hover:border-neutral-400"
+                    ? "bg-neutral-900 text-white border-neutral-900"
+                    : "bg-white text-neutral-700 border-neutral-200 hover:border-neutral-400"
                     }`}
                 >
                   Port ({portCount})
@@ -445,8 +468,8 @@ export default function SampanAutoClient() {
                   <button
                     onClick={() => setSelectedLocation(selectedLocation === "Upcoming" ? "all" : "Upcoming")}
                     className={`px-3 py-1.5 text-[11px] font-mono font-bold uppercase tracking-wider rounded-none cursor-pointer border ${selectedLocation === "Upcoming"
-                        ? "bg-emerald-700 text-white border-emerald-700"
-                        : "bg-white text-neutral-700 border-neutral-200 hover:border-neutral-400"
+                      ? "bg-emerald-700 text-white border-emerald-700"
+                      : "bg-white text-neutral-700 border-neutral-200 hover:border-neutral-400"
                       }`}
                   >
                     Upcoming ({upcomingCount})
@@ -468,8 +491,8 @@ export default function SampanAutoClient() {
                     key={tab.id}
                     onClick={() => setSelectedCategory(tab.id)}
                     className={`px-3.5 py-2 text-[11px] font-mono font-bold uppercase tracking-wider transition-colors rounded-none cursor-pointer border ${selectedCategory === tab.id
-                        ? "bg-[#111318] text-white border-[#111318]"
-                        : "bg-neutral-100 text-neutral-700 border-neutral-200 hover:bg-neutral-200"
+                      ? "bg-[#111318] text-white border-[#111318]"
+                      : "bg-neutral-100 text-neutral-700 border-neutral-200 hover:bg-neutral-200"
                       }`}
                   >
                     {tab.label}
@@ -564,10 +587,10 @@ export default function SampanAutoClient() {
                     <div className="absolute top-3 left-3 z-10">
                       <span
                         className={`inline-flex items-center gap-1 text-[10px] font-mono px-2 py-0.5 font-bold uppercase ${car.location === "Showroom"
-                            ? "bg-amber-600 text-white"
-                            : car.location === "Upcoming" || car.location === "In Transit"
-                              ? "bg-emerald-700 text-white"
-                              : "bg-neutral-900 text-white"
+                          ? "bg-amber-600 text-white"
+                          : car.location === "Upcoming" || car.location === "In Transit"
+                            ? "bg-emerald-700 text-white"
+                            : "bg-neutral-900 text-white"
                           }`}
                       >
                         <FaMapMarkerAlt className="text-[8px]" />
@@ -649,7 +672,44 @@ export default function SampanAutoClient() {
         </div>
       </section>
 
-      {/* ================= 5. DIRECT SOURCING INQUIRY & CONTACT ================= */}
+      {/* ================= 5. UPCOMING SISTER DESTINATION: SAMPAN CAFE METRO ================= */}
+      <section id="cafe-metro-intro" className="scroll-mt-20 pt-20 sm:pt-24 pb-8 px-6 sm:px-10 lg:px-16 bg-[#fcfbf9] border-b border-neutral-200">
+        <div className="mx-auto max-w-[1440px]">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <div className="flex items-center gap-4 mb-3">
+                <span className="h-px w-10 bg-amber-600" />
+                <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.4em] text-amber-700">
+                  Upcoming Sister Facility
+                </span>
+              </div>
+              <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-950 leading-tight">
+                Upcoming Near Sampan Auto. <br />
+                <span className="text-amber-700">Sampan Cafe Metro.</span>
+              </h2>
+            </div>
+            <div className="max-w-md space-y-3">
+              <span className="inline-flex items-center gap-2 rounded-none bg-amber-100 border border-amber-300 text-amber-900 px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider">
+                <span className="w-2 h-2 rounded-full bg-amber-600 animate-pulse" />
+                <span>Planned Adjacent Hub</span>
+              </span>
+              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-mono">
+                An upcoming multi-tier automotive and lifestyle destination being established near Sampan Auto, integrating an expansive car showroom, artisanal café, hydro car wash, and wellness lounge.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <SampanCafeMetroFeature
+        id="cafe-metro"
+        badge=""
+        eyebrow="Upcoming Destination • Adjacent to Sampan Auto"
+        title="Sampan Cafe Metro"
+        subtitle="Coming soon right near Sampan Auto — an all-in-one automotive lifestyle destination featuring a contemporary car showroom, café, swimming pool, gym, and professional car-wash experience, all under one roof."
+      />
+
+      {/* ================= 6. DIRECT SOURCING INQUIRY & CONTACT ================= */}
       <section id="contact" className="py-24 sm:py-28 px-6 sm:px-10 lg:px-16 bg-[#0c0d10] text-white border-b border-white/10">
         <div className="mx-auto max-w-[1440px]">
 
@@ -916,77 +976,7 @@ export default function SampanAutoClient() {
       )}
 
       {/* ================= 6. SQUARE MINIMAL FOOTER ================= */}
-      <footer className="bg-white border-t border-neutral-200 px-6 py-12 sm:px-10 lg:px-16 text-neutral-600">
-        <div className="mx-auto max-w-[1440px]">
-          <div className="grid gap-12 md:grid-cols-4 mb-12">
-            <div className="md:col-span-2">
-              <h3 className="text-2xl font-bold text-neutral-950 mb-3">
-                Sampan Auto
-              </h3>
-              <p className="text-xs sm:text-sm text-neutral-500 leading-relaxed max-w-md">
-                Automotive vehicle importer and dealer offering Japanese recondition pre-orders, verified used cars, and doorstep delivery across Bangladesh. A division of Sampan Group.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-950 mb-4">
-                Quick Links
-              </h4>
-              <ul className="space-y-2.5 text-xs font-mono">
-                <li>
-                  <button onClick={() => scrollTo("process")} className="hover:text-amber-700 transition-colors text-left">
-                    How Sourcing Works
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => scrollTo("inventory")} className="hover:text-amber-700 transition-colors text-left">
-                    Import Showcase
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => scrollTo("contact")} className="hover:text-amber-700 transition-colors text-left">
-                    Order Inquiries
-                  </button>
-                </li>
-                <li>
-                  <a
-                    href="https://www.facebook.com/sampandhaka"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-amber-700 transition-colors inline-flex items-center gap-1.5"
-                  >
-                    <span>Facebook Page</span>
-                    <FaExternalLinkAlt className="text-[9px]" />
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-950 mb-4">
-                Contact Desk
-              </h4>
-              <ul className="space-y-2.5 text-xs text-neutral-500 font-mono">
-                <li>Dhaka, Bangladesh</li>
-                <li>+880 1929-918408</li>
-                <li>+880 1929-918400</li>
-                <li>facebook.com/sampandhaka</li>
-              </ul>
-            </div>
-          </div>
-          <div className="pt-8 border-t border-neutral-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500 font-mono">
-            <p>
-              © {new Date().getFullYear()} Sampan Auto. A Sampan Group Venture.
-            </p>
-            <div className="flex gap-6">
-              <Link href="/our-divisions/automotive-fuel-mobility/sampan-filling-station" className="hover:text-amber-700 transition-colors">
-                Sampan Filling Station
-              </Link>
-              <Link href="/our-divisions/automotive-fuel-mobility/sampan-lpg-filling-station" className="hover:text-amber-700 transition-colors">
-                Sampan LPG Station
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+
 
     </main>
   );

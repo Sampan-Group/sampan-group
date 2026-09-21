@@ -21,6 +21,7 @@ import {
 } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
 import { carStockList, CarStockItem } from "../data/carStockList";
+import SampanCafeMetroFeature from "@/app/projects/SampanCafeMetro/page";
 
 // Hero Background: Authentic showroom banner from sampan-auto folder
 const heroBackground = "/images/our-divisions/sampan-auto/Website-Banner-2.jpg";
@@ -73,7 +74,14 @@ export default function SampanAutoClient() {
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+      const navOffset = 80;
+      const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - navOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+      window.history.replaceState(null, "", `#${id}`);
     }
   };
 
@@ -107,7 +115,7 @@ export default function SampanAutoClient() {
   const upcomingCount = carStockList.filter((c) => c.location === "Upcoming" || c.location === "In Transit").length;
 
   return (
-    <main className="bg-[#fcfbf9] text-[#1a1714] selection:bg-amber-600 selection:text-white">
+    <main className="bg-[#fcfbf9] text-[#1a1714] selection:bg-amber-600 selection:text-white overflow-x-hidden w-full">
 
       {/* ================= 1. HERO SECTION (SHOWROOM BANNER) ================= */}
       <section className="relative min-h-[75vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#0c0d10] text-white pt-24 pb-16 lg:pt-28 lg:pb-20 border-b border-white/10">
@@ -657,7 +665,44 @@ export default function SampanAutoClient() {
         </div>
       </section>
 
-      {/* ================= 5. DIRECT SOURCING INQUIRY & CONTACT ================= */}
+      {/* ================= 5. UPCOMING SISTER DESTINATION: SAMPAN CAFE METRO ================= */}
+      <section id="cafe-metro-intro" className="scroll-mt-20 pt-20 sm:pt-24 pb-8 px-6 sm:px-10 lg:px-16 bg-[#fcfbf9] border-b border-neutral-200">
+        <div className="mx-auto max-w-[1440px]">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <div className="flex items-center gap-4 mb-3">
+                <span className="h-px w-10 bg-amber-600" />
+                <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.4em] text-amber-700">
+                  Upcoming Sister Facility
+                </span>
+              </div>
+              <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-950 leading-tight">
+                Upcoming Near Sampan Auto. <br />
+                <span className="text-amber-700">Sampan Cafe Metro.</span>
+              </h2>
+            </div>
+            <div className="max-w-md space-y-3">
+              <span className="inline-flex items-center gap-2 rounded-none bg-amber-100 border border-amber-300 text-amber-900 px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider">
+                <span className="w-2 h-2 rounded-full bg-amber-600 animate-pulse" />
+                <span>Planned Adjacent Hub</span>
+              </span>
+              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-mono">
+                An upcoming multi-tier automotive and lifestyle destination being established near Sampan Auto, integrating an expansive car showroom, artisanal café, hydro car wash, and wellness lounge.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <SampanCafeMetroFeature
+        id="cafe-metro"
+        badge=""
+        eyebrow="Upcoming Destination • Adjacent to Sampan Auto"
+        title="Sampan Cafe Metro"
+        subtitle="Coming soon right near Sampan Auto — an all-in-one automotive lifestyle destination featuring a contemporary car showroom, café, swimming pool, gym, and professional car-wash experience, all under one roof."
+      />
+
+      {/* ================= 6. DIRECT SOURCING INQUIRY & CONTACT ================= */}
       <section id="contact" className="py-24 sm:py-28 px-6 sm:px-10 lg:px-16 bg-[#0c0d10] text-white border-b border-white/10">
         <div className="mx-auto max-w-[1440px]">
 

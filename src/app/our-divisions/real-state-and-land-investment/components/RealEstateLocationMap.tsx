@@ -15,7 +15,7 @@ export interface RealEstateLocationMapProps {
   address: string;
   gpsCoordinates: string;
   embedMapUrl: string;
-  landmarks: LandmarkDistance[];
+  landmarks?: LandmarkDistance[];
   bgTheme?: "divisions-green" | "about-ivory" | "white";
   ctaText?: string;
   googleMapsUrl?: string;
@@ -28,7 +28,7 @@ export default function RealEstateLocationMap({
   address,
   gpsCoordinates,
   embedMapUrl,
-  landmarks,
+  landmarks = [],
   bgTheme = "divisions-green",
   ctaText,
   googleMapsUrl,
@@ -68,8 +68,8 @@ export default function RealEstateLocationMap({
 
         <div className="grid lg:grid-cols-12 gap-8 items-stretch">
 
-          {/* Left Column: Location Specs & Landmarks */}
-          <div className="lg:col-span-5 border border-current/15 p-8 bg-white flex flex-col justify-between space-y-6 shadow-sm">
+          {/* Left Column: Location Specs & Landmarks (50% Width on Desktop) */}
+          <div className="lg:col-span-6 border border-current/15 p-8 bg-white flex flex-col justify-between space-y-6 shadow-sm">
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-[#ca8a04]">
                 <FaCompass className="text-xl" />
@@ -87,18 +87,20 @@ export default function RealEstateLocationMap({
               </div>
 
               {/* Landmark Distance Matrix */}
-              <div className="space-y-3 pt-2">
-                <span className="font-mono text-xs font-bold uppercase block opacity-60 border-b border-current/10 pb-2">
-                  Proximity to Key Landmarks
-                </span>
+              {landmarks.length > 0 && (
+                <div className="space-y-3 pt-2">
+                  <span className="font-mono text-xs font-bold uppercase block opacity-60 border-b border-current/10 pb-2">
+                    Proximity to Key Landmarks
+                  </span>
 
-                {landmarks.map((lm, idx) => (
-                  <div key={idx} className="flex items-center justify-between text-xs py-1.5 border-b border-current/10">
-                    <span className="opacity-90">{lm.landmark}</span>
-                    <span className="font-mono font-bold text-[#ca8a04]">{lm.distance} ({lm.driveTime})</span>
-                  </div>
-                ))}
-              </div>
+                  {landmarks.map((lm, idx) => (
+                    <div key={idx} className="flex items-center justify-between text-xs py-1.5 border-b border-current/10">
+                      <span className="opacity-90">{lm.landmark}</span>
+                      <span className="font-mono font-bold text-[#ca8a04]">{lm.distance} ({lm.driveTime})</span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             <a
@@ -113,8 +115,8 @@ export default function RealEstateLocationMap({
             </a>
           </div>
 
-          {/* Right Column: Embedded Map */}
-          <div className="lg:col-span-7 border border-current/15 relative min-h-[420px] overflow-hidden bg-neutral-200 shadow-sm">
+          {/* Right Column: Embedded Map (50% Width on Desktop) */}
+          <div className="lg:col-span-6 border border-current/15 relative min-h-[420px] overflow-hidden bg-neutral-200 shadow-sm">
             <iframe
               title={`${projectName} Location Map`}
               src={embedMapUrl}

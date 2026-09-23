@@ -5,7 +5,7 @@ import { FaMapMarkerAlt, FaCompass, FaClock, FaDirections, FaExternalLinkAlt } f
 export interface LandmarkDistance {
   landmark: string;
   distance: string;
-  driveTime: string;
+  driveTime?: string;
 }
 
 export interface RealEstateLocationMapProps {
@@ -23,7 +23,7 @@ export interface RealEstateLocationMapProps {
 
 export default function RealEstateLocationMap({
   title = "Location & Regional Accessibility",
-  // subtitle = "Strategically positioned along major growth corridors with direct connectivity to commercial and residential hubs.",
+  subtitle,
   projectName,
   address,
   gpsCoordinates,
@@ -61,9 +61,11 @@ export default function RealEstateLocationMap({
               {title}
             </h2>
           </div>
-          <p className="max-w-md text-sm leading-relaxed opacity-80 font-normal">
-            { }
-          </p>
+          {subtitle && (
+            <p className="max-w-md text-sm leading-relaxed opacity-80 font-normal">
+              {subtitle}
+            </p>
+          )}
         </div>
 
         <div className="grid lg:grid-cols-12 gap-8 items-stretch">
@@ -96,7 +98,9 @@ export default function RealEstateLocationMap({
                   {landmarks.map((lm, idx) => (
                     <div key={idx} className="flex items-center justify-between text-xs py-1.5 border-b border-current/10">
                       <span className="opacity-90">{lm.landmark}</span>
-                      <span className="font-mono font-bold text-[#ca8a04]">{lm.distance} ({lm.driveTime})</span>
+                      <span className="font-mono font-bold text-[#ca8a04]">
+                        {lm.distance}{lm.driveTime ? ` (${lm.driveTime})` : ""}
+                      </span>
                     </div>
                   ))}
                 </div>

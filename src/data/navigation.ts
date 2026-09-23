@@ -52,7 +52,7 @@ const whoAreWeMenu: MegaMenuColumn[] = [
       {
         id: "newsroom",
         label: "Newsroom / Media",
-        href: "/who-are-we/blogs",
+        href: "/who-are-we/media-rooms",
         description: "Latest news, announcements, media & updates.",
       },
       {

@@ -27,7 +27,7 @@ const sitemap = [
       { label: "About Us", href: "/who-are-we/aboutus" },
       { label: "Careers", href: "/who-are-we/career" },
       { label: "Investment Portfolio", href: "/investment-portfolio" },
-      { label: "Newsroom", href: "/who-are-we/blogs" },
+      { label: "Newsroom", href: "/who-are-we/media-rooms" },
       { label: "Accreditation & Awards", href: "/who-are-we/awards" },
       { label: "Contact Us", href: "/contact" },
     ],

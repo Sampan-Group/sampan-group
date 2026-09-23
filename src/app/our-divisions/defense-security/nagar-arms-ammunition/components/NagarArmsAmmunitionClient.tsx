@@ -49,16 +49,16 @@ interface GalleryImage {
 const facilityGallery: GalleryImage[] = [
   { id: "img-1", image: "/images/our-divisions/nagar-arms-ammunation/Nagar-Arms-Image-13.jpg" },
   { id: "img-2", image: "/images/our-divisions/nagar-arms-ammunation/Nagar-Arms-&-Ammunition-iamge-6.jpg" },
-  { id: "img-3", image: "/images/our-divisions/nagar-arms-ammunation/1.jpeg" },
-  { id: "img-4", image: "/images/our-divisions/nagar-arms-ammunation/2.jpeg" },
-  { id: "img-5", image: "/images/our-divisions/nagar-arms-ammunation/3.jpeg" },
-  { id: "img-6", image: "/images/our-divisions/nagar-arms-ammunation/4.jpeg" },
-  { id: "img-7", image: "/images/our-divisions/nagar-arms-ammunation/5.jpeg" },
-  { id: "img-8", image: "/images/our-divisions/nagar-arms-ammunation/6.jpeg" },
-  { id: "img-9", image: "/images/our-divisions/nagar-arms-ammunation/7.jpeg" },
-  { id: "img-10", image: "/images/our-divisions/nagar-arms-ammunation/8.jpeg" },
-  { id: "img-11", image: "/images/our-divisions/nagar-arms-ammunation/9.jpeg" },
-  { id: "img-12", image: "/images/our-divisions/nagar-arms-ammunation/13.jpeg" },
+  { id: "img-3", image: "/images/our-divisions/nagar-arms-ammunation/Nagar-Arms-Image.jpg" },
+  { id: "img-4", image: "/images/our-divisions/nagar-arms-ammunation/Nagar-Arms-Image-1.jpg" },
+  { id: "img-5", image: "/images/our-divisions/nagar-arms-ammunation/Nagar-Arms-Image-2.jpg" },
+  { id: "img-6", image: "/images/our-divisions/nagar-arms-ammunation/Nagar-Arms-Image-3.jpg" },
+  { id: "img-7", image: "/images/our-divisions/nagar-arms-ammunation/Nagar-Arms-Image-4.jpg" },
+  { id: "img-8", image: "/images/our-divisions/nagar-arms-ammunation/Nagar-Arms-Image-5.jpg" },
+  { id: "img-9", image: "/images/our-divisions/nagar-arms-ammunation/Nagar-Arms-Image-6.jpg" },
+  { id: "img-10", image: "/images/our-divisions/nagar-arms-ammunation/Nagar-Arms-Image-7.jpg" },
+  { id: "img-11", image: "/images/our-divisions/nagar-arms-ammunation/Nagar-Arms-Image-8.jpg" },
+  { id: "img-12", image: "/images/our-divisions/nagar-arms-ammunation/Nagar-Arms-Image-10.jpg" },
 ];
 
 export default function NagarArmsAmmunitionClient() {

@@ -32,6 +32,98 @@ const featuredStory = {
 };
 
 const allPosts = [
+  // --- ADDED NEWS BASED ON LINKS ---
+  {
+    id: 16,
+    type: "PRESS RELEASE",
+    division: "Corporate",
+    title: "London School of Higher Studies Affiliated with CIPS for Professional Training",
+    date: "06 OCT 2026",
+    image: "/images/projects/lshs.jpg",
+    href: "https://study.cips.org/countries/bangladesh/london-school-of-higher-studies/"
+  },
+  {
+    id: 15,
+    type: "BLOG",
+    division: "Hospitality",
+    title: "Sampan Highway Inn Recognized on Restaurant Guru for Premium Dining",
+    date: "09 OCT 2026",
+    image: "/news/shampan-highway.webp",
+    href: "https://restaurantguru.com/Sampan-Highway-Inn-Restaurant-and-Party-Centre-Gopalganj"
+  },
+  {
+    id: 14,
+    type: "PRESS RELEASE",
+    division: "Corporate",
+    title: "Explore the Latest Updates at the Sampan Mart Media Center",
+    date: "11 OCT 2026",
+    image: "/images/brand/sampanauto.png",
+    href: "https://sampanmart.com/media-center"
+  },
+  {
+    id: 13,
+    type: "BLOG",
+    division: "Hospitality",
+    title: "Sampan Highway Inn Featured on Mindtrip AI Platform",
+    date: "12 OCT 2026",
+    image: "/images/blogs/hospitality.jpg",
+    href: "https://mindtrip.ai/restaurant/bangladesh/sampan-highway-inn-restaurant-party-centre/re-3PQ6koHb"
+  },
+  {
+    id: 7,
+    type: "PRESS RELEASE",
+    division: "Corporate",
+    title: "Sampan Group Registers New Entity in the UK to Accelerate Global Operations",
+    date: "10 OCT 2026",
+    image: "/images/news-uk-expansion.jpg",
+    href: "https://find-and-update.company-information.service.gov.uk/company/14937766"
+  },
+  {
+    id: 8,
+    type: "PRESS RELEASE",
+    division: "Corporate",
+    title: "FBCCI Features Managing Director Md Emamul Hasan in Leadership Profile",
+    date: "05 OCT 2026",
+    image: "/news/boss.png",
+    href: "https://fbcci.org/web/profile/mr-md-emamul-hasan"
+  },
+  {
+    id: 9,
+    type: "BLOG",
+    division: "Development",
+    title: "Sampan Group and Grameen Trust Join Forces to Advance Social Business",
+    date: "28 SEP 2026",
+    image: "/news/thirdnews.jpg",
+    href: "https://grameentrust.org/the-latest/news/news-list/649410a8311d0c3d25c41ce6"
+  },
+  {
+    id: 10,
+    type: "BLOG",
+    division: "Hospitality",
+    title: "Architectural Brilliance: Sampan Express Highway Inn Featured in ArchiAccent",
+    date: "20 SEP 2026",
+    image: "/news/2-3.webp",
+    href: "https://archiaccent.com/portfolio/express-highway-inn/"
+  },
+  {
+    id: 11,
+    type: "BLOG",
+    division: "Automotive",
+    title: "Sampan Autos and Sampan Mart Expand Digital Commerce Capabilities",
+    date: "15 SEP 2026",
+    image: "/images/brand/sampanauto.png",
+    href: "https://www.mawbiz.com.bd/Sampan.Autos"
+  },
+  {
+    id: 12,
+    type: "PRESS RELEASE",
+    division: "Corporate",
+    title: "Case Study Highlights Sampan Group's Digital Transformation Journey",
+    date: "08 SEP 2026",
+    image: "/news/shampan-highway.webp",
+    href: "https://quicklyservices.com/case-studies/sampan"
+  },
+  // --- EXISTING POSTS ---
   {
     id: 1,
     type: "PRESS RELEASE",
@@ -113,6 +205,17 @@ const blogPosts = [
     image: "/images/projects/lshs.jpg",
     size: "sm",
   },
+  // --- ADDED BLOG POST ---
+  {
+    id: 4,
+    category: "ARCHITECTURE",
+    title: "Designing the Future: Sampan Express Highway Inn",
+    excerpt: "A look into the architectural mastery behind our premium hospitality venture.",
+    date: "20 SEP 2026",
+    image: "/images/blogs/hospitality.jpg",
+    size: "sm",
+    href: "https://archiaccent.com/portfolio/express-highway-inn/"
+  },
 ];
 
 const photos = [
@@ -158,10 +261,11 @@ const videos = [
 const socialPosts = [
   {
     platform: "LINKEDIN",
-    date: "02 SEP 2026",
+    date: "05 OCT 2026",
     content:
-      "We are thrilled to announce our latest strategic expansion. Read the full press release on our newsroom.",
+      "We are honored that the FBCCI has featured our Managing Director, Mr. Md Emamul Hasan, highlighting his vision and leadership for Sampan Group.",
     image: "/images/blogs/image-editing.jpg",
+    href: "https://fbcci.org/web/profile/mr-md-emamul-hasan",
   },
   {
     platform: "FACEBOOK",
@@ -490,7 +594,18 @@ export default function NewsroomPage() {
                 </div>
                 <div className="col-span-12 md:col-span-7">
                   <h3 className="text-xl md:text-2xl font-semibold tracking-tight mb-2 group-hover:translate-x-2 transition-transform duration-300">
-                    {post.title}
+                    {post.href ? (
+                      <a 
+                        href={post.href} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="hover:text-[#007DC5] transition-colors"
+                      >
+                        {post.title}
+                      </a>
+                    ) : (
+                      post.title
+                    )}
                   </h3>
                   <div className="flex gap-4 text-xs text-neutral-500 uppercase tracking-widest">
                     <span>{post.date}</span>
@@ -591,13 +706,26 @@ export default function NewsroomPage() {
                   <span className="text-xs text-neutral-500 uppercase tracking-widest">
                     {post.date}
                   </span>
-                  <Link
-                    href="#"
-                    className="group inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-[#071018] hover:text-[#007DC5] transition-colors"
-                  >
-                    Read More{" "}
-                    <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  
+                  {post.href ? (
+                    <a
+                      href={post.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-[#071018] hover:text-[#007DC5] transition-colors"
+                    >
+                      Read More{" "}
+                      <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  ) : (
+                    <Link
+                      href="#"
+                      className="group inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-[#071018] hover:text-[#007DC5] transition-colors"
+                    >
+                      Read More{" "}
+                      <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  )}
                 </div>
               </div>
             ))}
@@ -733,13 +861,26 @@ export default function NewsroomPage() {
                 <p className="text-neutral-700 leading-relaxed mb-6 flex-grow">
                   {post.content}
                 </p>
-                <Link
-                  href="#"
-                  className="group/link inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-[#071018] hover:text-[#007DC5] transition-colors mt-auto"
-                >
-                  View Post{" "}
-                  <FiArrowRight className="group-hover/link:translate-x-1 transition-transform" />
-                </Link>
+                
+                {post.href ? (
+                  <a
+                    href={post.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/link inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-[#071018] hover:text-[#007DC5] transition-colors mt-auto"
+                  >
+                    View Post{" "}
+                    <FiArrowRight className="group-hover/link:translate-x-1 transition-transform" />
+                  </a>
+                ) : (
+                  <Link
+                    href="#"
+                    className="group/link inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-[#071018] hover:text-[#007DC5] transition-colors mt-auto"
+                  >
+                    View Post{" "}
+                    <FiArrowRight className="group-hover/link:translate-x-1 transition-transform" />
+                  </Link>
+                )}
               </div>
             ))}
           </div>

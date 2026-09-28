@@ -271,16 +271,7 @@ export default function ContactPage() {
       </section>
 
       {/* Floating WhatsApp & Live Chat Widgets */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3 md:bottom-8 md:right-8">
-        {/* Live Chat Widget Placeholder */}
-        <button 
-          className="bg-neutral-950 text-white p-4 shadow-xl flex items-center gap-3 hover:bg-neutral-800 transition-colors duration-300 group backdrop-blur-md border border-white/10"
-          aria-label="Open Live Chat"
-        >
-          <FiMessageSquare className="w-5 h-5 md:w-6 md:h-6" />
-          <span className="hidden md:block font-mono text-[11px] tracking-[0.25em] uppercase">Live Chat</span>
-        </button>
-        
+      <div className="hidden md:fixed bottom-6 right-6 z-50 flex flex-col gap-3 md:bottom-24 md:right-8">        
         {/* WhatsApp Widget */}
         <a 
           href="https://wa.me/8801912234588" 

@@ -35,22 +35,22 @@ const locationContacts = [
     name: "Express Highway Inn",
     type: "Hospitality & Facilities",
     address: "Dhaka–Chattogram Highway, Bangladesh",
-    phone: "+880 1700 000 001",
-    email: "expressinn@sampangroup.com.bd",
+    phone: "+880 1906-896327",
+    email: "info@sampangroup.com.bd",
   },
   {
     name: "Sampan Highway Inn",
     type: "Hospitality & Travel Stop",
     address: "Dhaka–Khulna Highway, Bangladesh",
-    phone: "+880 1700 000 002",
-    email: "highwayinn@sampangroup.com.bd",
+    phone: "+880 1906-896327",
+    email: "info@sampangroup.com.bd",
   },
   {
     name: "Sampan Agro & Golf Resort",
     type: "Lifestyle & Leisure",
     address: "Moulvibazar, Bangladesh",
-    phone: "+880 1700 000 003",
-    email: "agrogolf@sampangroup.com.bd",
+    phone: "+880 1906-896327",
+    email: "info@sampangroup.com.bd",
   },
 ];
 

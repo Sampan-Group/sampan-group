@@ -4,6 +4,7 @@ import AnimationProvider from "@/components/providers/AnimationProvider";
 import Navbar3 from "@/components/Navbar3";
 import Footer from "@/components/Footer";
 import Navbar2 from "@/components/Navbar2";
+import FloatingContact from "./components/FloatingContact/FloatingContact";
 
 // const SITE_URL = "https://www.sampangroup.com.bd";
 const SITE_URL = "https://sampangroup.vercel.app";
@@ -141,6 +142,7 @@ export default function RootLayout({
         <AnimationProvider>
           <Navbar2 />
           {children}
+          <FloatingContact/>
           <Footer />
         </AnimationProvider>
       </body>

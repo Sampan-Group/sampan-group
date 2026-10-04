@@ -54,7 +54,7 @@ const slides: HeroSlide[] = [
     subhead:
       "Cozy rooms, honest meals, a place to breathe before the road takes you again.",
     cta: "Visit us",
-    href: "https://www.sampangroup.com.bd/sampan-highway-inn-restaurant-party-centre",
+    href: "https://www.sampanhighwayinn.com/",
     image: "/images/featuredConcerns/highway-inn.png",
     imagePosition: "center center",
     drift: "driftRight",
@@ -102,7 +102,7 @@ const slides: HeroSlide[] = [
     subhead:
       "One of Sampan's pioneering and well-established businesses, offering vehicle sales, imports, and genuine Japanese automotive parts.",
     cta: "Explore Sampan Auto",
-    href: "https://www.sampangroup.com.bd/sampan-auto",
+    href: "/our-divisions/automotive-fuel-mobility/sampan-auto",
     image: "/images/our-divisions/sampan-auto/sampan-auto.png",
     imagePosition: "center center",
     drift: "driftLeft",
@@ -114,7 +114,7 @@ const slides: HeroSlide[] = [
     subhead:
       "Discover a perfect blend of nature and luxury at Sampan Agro and Golf Resort. Your ultimate escape for relaxation, recreation, and family fun.",
     cta: "Explore Sampan Agro and Golf Resort",
-    href: "/our-divisions/agro-and-resort/sampan-agro-and-golf-resort",
+    href: "/our-divisions/hospitality-highway-travel/sampan-agro-golf-resort",
     image: "/images/our-divisions/sampan-agro-golf-resort/sampan-agro-golf-resort.png",
     imagePosition: "center center",
     drift: "driftRight",

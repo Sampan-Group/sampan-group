@@ -6,8 +6,8 @@ import Footer from "@/components/Footer";
 import Navbar2 from "@/components/Navbar2";
 import FloatingContact from "./components/FloatingContact/FloatingContact";
 
-// const SITE_URL = "https://www.sampangroup.com.bd";
-const SITE_URL = "https://sampangroup.vercel.app";
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.sampangroup.com.bd";
 const LOGO_URL = `${SITE_URL}/images/brand/sampangroup.png`;
 
 export const metadata: Metadata = {

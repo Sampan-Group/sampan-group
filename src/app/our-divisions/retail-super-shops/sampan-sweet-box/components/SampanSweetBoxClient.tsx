@@ -25,12 +25,12 @@ const heroBackground = "/images/our-divisions/sampan-sweet-box/DSC00468.JPG";
 // const heroBackground = "/images/our-divisions/sampan-highway-inn/sweet-shop.JPG";
 // Photo Gallery Items (no sweet names, pure visual showcase from folder)
 const galleryItems = [
-  { id: "g-1", src: "/images/our-divisions/sampan-sweet-box/DSC00468.JPG" },
+  { id: "g-1", src: "/images/our-divisions/sampan-sweet-box/1.jpeg" },
   // { id: "g-2", src: "/images/our-divisions/sampan-sweet-box/DSC00471.JPG" },
   // { id: "g-3", src: "/images/our-divisions/sampan-sweet-box/DSC00473.JPG" },
   // { id: "g-4", src: "/images/our-divisions/sampan-sweet-box/DSC00482.JPG" },
-  { id: "g-5", src: "/images/our-divisions/sampan-sweet-box/Image-2.jpg" },
-  { id: "g-6", src: "/images/our-divisions/sampan-sweet-box/Image-1.jpg" },
+  { id: "g-5", src: "/images/our-divisions/sampan-sweet-box/2.jpeg" },
+  { id: "g-6", src: "/images/our-divisions/sampan-sweet-box/3.jpeg" },
   { id: "g-7", src: "/images/our-divisions/sampan-sweet-box/Image-3.jpg" },
   { id: "g-8", src: "/images/our-divisions/sampan-sweet-box/Gemini_Generated_Image_8pnlof8pnlof8pnl.jpg" },
   { id: "g-9", src: "/images/our-divisions/sampan-sweet-box/Gemini_Generated_Image_dim99ydim99ydim9.jpg" },

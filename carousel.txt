@@ -43,7 +43,7 @@ needs these elements to animate them.
 
 currentIndex remembers the visible slide without causing a render. It is used
 to identify the outgoing slide. hasInitialized prevents the first slide from
-performing a normal transition on page load.
+performing a normal transition on page load..
 
 3. Rendering all slides
 -----------------------

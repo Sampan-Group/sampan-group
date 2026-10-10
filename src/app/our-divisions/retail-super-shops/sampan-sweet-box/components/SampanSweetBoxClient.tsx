@@ -270,7 +270,7 @@ export default function SampanSweetBoxClient() {
           </div>
 
           {/* Clean Gallery Grid (No Filter Buttons, No Sweet Names) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 relative">
             {galleryItems.map((item, index) => (
               <div
                 key={item.id}
@@ -278,12 +278,17 @@ export default function SampanSweetBoxClient() {
                 className={`group relative overflow-hidden bg-neutral-900 border border-neutral-200 hover:border-amber-600 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer ${index === 0 ? "aspect-[4/3] sm:col-span-2 sm:row-span-2 min-h-[300px]" : "aspect-[4/3]"
                   }`}
               >
-                <Image
+                {/* <Image
                   src={item.src}
                   alt="Sampan Sweet Box"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                /> */}
+                <img
+                  src={item.src}
+                  alt="Sampan Sweet Box"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4">
                   <span className="font-mono text-[11px] font-bold tracking-wider text-amber-300 uppercase">

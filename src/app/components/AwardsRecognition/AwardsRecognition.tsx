@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -331,14 +330,10 @@ export default function AwardsRecognition() {
             className="lightbox-image-wrapper relative h-[70vh] w-[90vw] max-w-5xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <Image
+            <img
               src={galleryImages[activeIndex].src}
               alt={`Enlarged view of Sampan Group Gallery Image ${activeIndex + 1}`}
-              fill
-              sizes="90vw"
-              quality={100} // Maximize lightbox image quality
-              priority // Prioritize loading the expanded image instantly
-              className="object-contain"
+              className="h-full w-full object-contain"
             />
           </div>
 
@@ -376,12 +371,11 @@ export default function AwardsRecognition() {
                       : "border-transparent opacity-50 hover:opacity-100"
                   }`}
                 >
-                  <Image
+                  <img
                     src={img.src}
                     alt={`Thumbnail ${i + 1}`}
-                    fill
-                    sizes="48px"
-                    quality={90}
+                    loading="lazy"
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
                     className="object-cover"
                   />
                 </button>
@@ -415,14 +409,12 @@ function MarqueeItem({
       className="group relative h-[240px] w-[240px] shrink-0 cursor-pointer overflow-hidden border border-neutral-200 bg-neutral-100 lg:h-[380px] lg:w-[380px]"
       onClick={onClick}
     >
-      <Image
+      <img
         src={image.src}
         alt={`Sampan Group Gallery Image ${index + 1}`}
-        fill
-        // Updated sizes to accurately reflect CSS breakpoints for optimal Next.js srcset generation
-        sizes="(min-width: 1024px) 380px, 240px"
-        quality={90} // Increased from default 75 to 90 for premium sharpness
-        priority={priority} // Eager-loads the first few visible images to prevent layout shift
+        loading={priority ? "eager" : "lazy"}
+        // Replicates next/image `fill` behaviour without touching className
+        style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
         // Removed grayscale and opacity hover effects. Images are now always full color.
         className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-105"
       />
@@ -442,3 +434,4 @@ function MarqueeItem({
     </div>
   );
 }
+

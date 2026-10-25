@@ -213,10 +213,9 @@ function AffiliationCard({ aff }: AffiliationCardProps) {
       {/* Logo Container - Fixed aspect ratio for perfect grid alignment */}
       <div className="relative flex aspect-[4/3] w-full items-center justify-center">
         <div className="relative h-full w-full max-w-[140px]">
-          <Image
+          <img
             src={aff.logo}
             alt={`${aff.name} Logo`}
-            fill
             className="object-contain opacity-70 transition-all duration-500 ease-out group-hover:scale-110 group-hover:opacity-100"
             sizes="(min-width: 1024px) 25vw, 50vw"
           />

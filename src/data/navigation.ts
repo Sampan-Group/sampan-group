@@ -89,13 +89,13 @@ const investmentMenu: MegaMenuColumn[] = [
         href: "/investment-portfolio/club-membership-share",
         description: "Lifestyle & Hospitality",
       },
-      {
-        id: "ship-space-share",
-        label: "Ship Space Share",
-        href: "/investment-portfolio/ship-share",
-        description: "Maritime Investment",
-        // comingSoon: true,
-      },
+      // {
+      //   id: "ship-space-share",
+      //   label: "Ship Space Share",
+      //   href: "/investment-portfolio/ship-share",
+      //   description: "Maritime Investment",
+      //   // comingSoon: true,
+      // },
     ],
   },
 ];

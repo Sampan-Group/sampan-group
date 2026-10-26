@@ -41,7 +41,7 @@ export default function SampanAutoFeature() {
         src="/images/our-divisions/sampan-auto/sampan-auto.png"
         alt="Sampan Auto showroom with three premium vehicles"
         sizes="100vw"
-        className="w-full h-full object-cover object-[58%_center]"
+        className="absolute inset-0 w-full h-full object-cover object-[58%_center]"
       />
 
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_30%,rgba(77,183,255,0.16),transparent_34%)]" />

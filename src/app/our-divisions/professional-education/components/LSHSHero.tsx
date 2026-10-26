@@ -1,113 +1,244 @@
-interface FactItem {
-  value: string;
-  label: string;
-}
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
 
 interface LSHSHeroProps {
-  title?: string;
-  subtitle?: string;
-  description?: string;
-  facts?: FactItem[];
-  statusBadge?: string;
+  onOpenAssessment?: () => void;
+  onOpenVideo?: () => void;
 }
 
-export default function LSHSHero({
-  title = "London School of Higher Studies (LSHS)",
-  subtitle = "Build A Stronger Business with CIPS - The World's Leading Procurement Qualification",
-  description = "LSHS is an officially approved CIPS UK Study and Exam Centre (Centre No: 10005967). Receive identical UK qualifications in Bangladesh, taught by a 25-year CIPS Fellow while saving over 80% on overall expenses.",
-  facts = [
-    { value: "No: 10005967", label: "Official CIPS Approved Centre" },
-    { value: "25-Yr Fellow", label: "Expert CIPS Tutor Support" },
-    { value: "Save 80%+", label: "Expense Savings vs UK Study" },
-    { value: "20% Higher", label: "Average Salary Boost" },
-  ],
-  statusBadge = "A Sampan Group Concern",
-}: LSHSHeroProps) {
-  const titleWords = title.trim().split(" ");
-  const firstWord = titleWords[0];
-  const remainingTitle = titleWords.slice(1).join(" ");
+export default function LSHSHero({ onOpenAssessment, onOpenVideo }: LSHSHeroProps) {
+  const [showVideoModal, setShowVideoModal] = useState(false);
+
+  const handleVideoClick = () => {
+    if (onOpenVideo) {
+      onOpenVideo();
+    } else {
+      setShowVideoModal(true);
+    }
+  };
 
   return (
-    <section className="relative overflow-hidden bg-[#0c4a6e] text-white pt-20 pb-12 sm:pt-24 sm:pb-14 lg:pt-24 lg:pb-16 px-6 sm:px-12 lg:px-20">
-      {/* Background Radial Glow */}
-      <div className="absolute top-0 right-0 -translate-y-12 translate-x-12 w-96 h-96 rounded-full bg-[#0b73b9]/20 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 translate-y-12 -translate-x-12 w-96 h-96 rounded-full bg-[#f4d210]/15 blur-3xl pointer-events-none" />
+    <>
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#062438] via-[#0c4a6e] to-[#072d42] text-white pt-14 pb-16 sm:pt-20 sm:pb-20 lg:pt-24 lg:pb-24 px-4 sm:px-8 lg:px-16">
+        {/* Ambient atmospheric glows */}
+        <div className="absolute top-0 right-0 -translate-y-12 translate-x-12 w-[32rem] h-[32rem] rounded-full bg-[#0b73b9]/25 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 translate-y-16 -translate-x-12 w-[28rem] h-[28rem] rounded-full bg-[#f4d210]/15 blur-3xl pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Main Column Content */}
-        <div className="max-w-4xl space-y-4 sm:space-y-5">
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-[#0b73b9]/30 text-sky-200 border border-[#0b73b9]/50">
-              Professional Education Division
+        <div className="relative z-10 max-w-7xl mx-auto">
+          {/* Breadcrumb / Division Badge */}
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-6">
+            <Link
+              href="/our-divisions"
+              className="text-xs font-semibold uppercase tracking-wider text-sky-200/80 hover:text-white transition-colors"
+            >
+              Our Divisions
+            </Link>
+            <span className="text-sky-400/50">/</span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold tracking-wider uppercase bg-[#0b73b9]/40 text-sky-200 border border-[#38bdf8]/30">
+              Professional Education
             </span>
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-[#f4d210]/20 text-[#f4d210] border border-[#f4d210]/40">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold tracking-wider uppercase bg-[#f4d210]/20 text-[#f4d210] border border-[#f4d210]/40">
               <span className="w-2 h-2 rounded-full bg-[#f4d210] animate-pulse" />
-              {statusBadge}
+              A Sampan Group Concern
             </span>
           </div>
 
-          <h1 className="text-[clamp(2.4rem,4.8vw,4.2rem)] font-bold tracking-tight text-white font-serif leading-[0.98]">
-            <span>{firstWord}</span>
-            {remainingTitle && (
-              <>
-                <br />
-                <span className="block mt-1">{remainingTitle}</span>
-              </>
-            )}
-          </h1>
-
-          {subtitle && (
-            <p className="text-base sm:text-lg lg:text-xl font-medium text-[#f4d210] tracking-wide leading-snug max-w-3xl">
-              {subtitle}
-            </p>
-          )}
-
-          <p className="text-xs sm:text-sm text-sky-100/80 leading-relaxed max-w-xl font-light tracking-wide border-l-2 border-[#f4d210]/60 pl-4">
-            {description}
-          </p>
-
-          {/* Quick Contact & Action Buttons */}
-          <div className="pt-2 flex flex-wrap gap-4">
-            <a
-              href="#enrollment-form"
-              className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-bold text-sm bg-[#f4d210] hover:bg-amber-300 text-slate-900 shadow-lg shadow-sky-950/50 transition-all hover:scale-[1.02]"
-            >
-              Apply for CIPS Admission →
-            </a>
-            <a
-              href="#courses"
-              className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-semibold text-sm bg-white/10 hover:bg-white/15 text-white border border-white/20 transition-all"
-            >
-              Explore Level 2 to MCIPS Pathway
-            </a>
-          </div>
-
-          {/* Official Accreditation Badges & Social Links */}
-          <div className="pt-4 flex flex-wrap items-center gap-6 text-xs text-sky-100/90 font-medium border-t border-sky-800/40">
-            <span className="flex items-center gap-1.5">
-              🌐 <a href="https://www.lshs.co.uk" target="_blank" rel="noreferrer" className="text-[#f4d210] hover:underline font-bold">www.lshs.co.uk</a>
-            </span>
-            <span className="flex items-center gap-1.5">
-              📜 License: <strong className="text-white font-mono">TRAD/DNCC/034723/2025</strong>
-            </span>
-            <span className="flex items-center gap-3">
-              <a href="https://facebook.com/lshs.co.uk/" target="_blank" rel="noreferrer" className="text-sky-200 hover:text-[#f4d210]">Facebook</a>
-              <span>•</span>
-              <a href="https://linkedin.com/company/lshs.co.uk" target="_blank" rel="noreferrer" className="text-sky-200 hover:text-[#f4d210]">LinkedIn</a>
-            </span>
-          </div>
-
-          {/* Facts Grid */}
-          <div className="pt-6 border-t border-sky-800/50 grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {facts.map((fact, idx) => (
-              <div key={idx} className="bg-sky-950/50 border border-sky-800/40 rounded-xl p-4">
-                <div className="text-xl sm:text-2xl font-bold text-[#f4d210]">{fact.value}</div>
-                <div className="text-xs text-sky-200/70 mt-1 font-medium">{fact.label}</div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            {/* Left Content Column */}
+            <div className="lg:col-span-7 space-y-6">
+              {/* Eyebrow */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-sky-900/60 border border-sky-400/30 text-xs sm:text-sm font-semibold text-sky-200">
+                <span className="text-[#f4d210] font-bold">🇬🇧</span>
+                <span>London School of Higher Studies</span>
+                <span className="text-sky-400">•</span>
+                <span className="text-[#f4d210] font-bold">CIPS Approved Study Centre</span>
               </div>
-            ))}
+
+              {/* Headline */}
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white font-serif leading-[1.08]">
+                Build Your Career on a <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f4d210] via-amber-200 to-[#f4d210]">Global Standard</span>
+              </h1>
+
+              {/* Body */}
+              <p className="text-base sm:text-lg text-sky-100/90 leading-relaxed font-light">
+                Welcome to the <strong className="text-white font-semibold">London School of Higher Studies (LSHS)</strong>. We help ambitious professionals gain the world&apos;s leading procurement and supply chain qualification — studied flexibly, assessed rigorously, and recognised by employers worldwide.
+              </p>
+
+              {/* Key Trust Signals */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-3 text-center">
+                  <div className="text-xs text-sky-200/80">Centre No</div>
+                  <div className="text-sm font-bold font-mono text-[#f4d210]">10005967</div>
+                  <div className="text-[10px] text-sky-300/70">Official CIPS UK</div>
+                </div>
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-3 text-center">
+                  <div className="text-xs text-sky-200/80">Pathway</div>
+                  <div className="text-sm font-bold text-white">Level 2 → 6</div>
+                  <div className="text-[10px] text-sky-300/70">MCIPS Chartered</div>
+                </div>
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-3 text-center">
+                  <div className="text-xs text-sky-200/80">Cost Savings</div>
+                  <div className="text-sm font-bold text-[#f4d210]">Save 80%+</div>
+                  <div className="text-[10px] text-sky-300/70">vs UK Campus Study</div>
+                </div>
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-3 text-center">
+                  <div className="text-xs text-sky-200/80">Global Reach</div>
+                  <div className="text-sm font-bold text-white">150+ Countries</div>
+                  <div className="text-[10px] text-sky-300/70">Distance & Classroom</div>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="pt-2 flex flex-wrap gap-3.5 sm:gap-4 items-center">
+                <a
+                  href="#pathway"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-bold text-sm bg-[#f4d210] hover:bg-amber-300 text-slate-950 shadow-lg shadow-amber-500/20 transition-all hover:scale-[1.02]"
+                >
+                  Explore CIPS Courses ↓
+                </a>
+
+                <a
+                  href="https://cips.lshs.co.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-[#0b73b9] hover:bg-sky-500 text-white shadow-lg shadow-sky-900/40 transition-all hover:scale-[1.02]"
+                >
+                  <span>Visit Main LSHS Portal</span>
+                  <span className="text-xs">↗</span>
+                </a>
+
+                {onOpenAssessment && (
+                  <button
+                    onClick={onOpenAssessment}
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-sm bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all"
+                  >
+                    <span>🧭 Find My Level</span>
+                    <span className="text-[10px] font-bold bg-[#f4d210] text-slate-950 px-1.5 py-0.5 rounded">Quiz</span>
+                  </button>
+                )}
+              </div>
+
+              {/* Direct Admission Link Highlight */}
+              <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-sky-200/90">
+                <a
+                  href="https://forms.gle/kHkicZ6TaHQRoMck6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-[#f4d210] hover:underline font-semibold"
+                >
+                  <span>📋 Direct Admission Form (Google Form) ↗</span>
+                </a>
+                <span className="text-sky-500">•</span>
+                <a href="#enquiry" className="hover:text-white transition-colors">
+                  Talk to an Advisor
+                </a>
+                <span className="text-sky-500">•</span>
+                <span className="font-mono text-sky-300/80">License: TRAD/DNCC/034723/2025</span>
+              </div>
+            </div>
+
+            {/* Right Media Preview Column with Blue Light Shade */}
+            <div className="lg:col-span-5">
+              <div className="relative group rounded-3xl overflow-hidden border-2 border-sky-400/30 bg-gradient-to-b from-sky-900/80 via-slate-900 to-[#0c4a6e] p-2 shadow-2xl shadow-sky-950/80">
+                {/* Glow behind card */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-sky-500/20 via-[#f4d210]/20 to-sky-600/20 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition duration-500 pointer-events-none" />
+
+                <div className="relative rounded-2xl overflow-hidden bg-slate-950 aspect-video flex flex-col justify-end p-5 sm:p-6">
+                  {/* YouTube thumbnail backdrop */}
+                  <img
+                    src="https://img.youtube.com/vi/cmEz18xDW_U/maxresdefault.jpg"
+                    alt="LSHS CIPS Demo Class Trailer"
+                    className="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-700"
+                  />
+                  {/* Blue light shade overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-sky-950/60 to-transparent" />
+                  <div className="absolute inset-0 bg-[#0b73b9]/25 mix-blend-color" />
+
+                  {/* Play Button Trigger */}
+                  <div className="relative z-10 flex flex-col items-center justify-center my-auto py-6">
+                    <button
+                      onClick={handleVideoClick}
+                      className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#f4d210] hover:bg-amber-300 text-slate-950 flex items-center justify-center shadow-xl shadow-amber-500/30 transform group-hover:scale-110 transition-all duration-300 cursor-pointer"
+                      aria-label="Play 5 minute demo class trailer"
+                    >
+                      <svg className="w-7 h-7 sm:w-8 sm:h-8 fill-current ml-1" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </button>
+                    <span className="mt-3 text-xs font-bold uppercase tracking-wider text-white bg-slate-900/80 px-3 py-1 rounded-full border border-sky-400/30">
+                      Watch 5-Min Demo Class Trailer
+                    </span>
+                  </div>
+
+                  {/* Card Bottom Meta */}
+                  <div className="relative z-10 pt-2 border-t border-white/10 flex items-center justify-between text-xs text-sky-200">
+                    <span className="flex items-center gap-1.5 font-medium text-white">
+                      <span className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
+                      LSHS Executive Preview
+                    </span>
+                    <a
+                      href="https://youtu.be/cmEz18xDW_U"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sky-300 hover:text-white underline text-[11px]"
+                    >
+                      Open on YouTube ↗
+                    </a>
+                  </div>
+                </div>
+
+                {/* Card Sub-Banner */}
+                <div className="p-4 bg-sky-950/60 flex items-center justify-between text-xs">
+                  <div>
+                    <span className="text-white font-bold block">Study Centre (Distance & Classroom)</span>
+                    <span className="text-sky-300/80 text-[11px]">Identical UK CIPS syllabus & certification</span>
+                  </div>
+                  <a
+                    href="https://cips.lshs.co.uk/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#f4d210] font-bold hover:underline shrink-0 ml-3"
+                  >
+                    cips.lshs.co.uk ↗
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Embedded Video Modal */}
+      {showVideoModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+          <div className="relative w-full max-w-4xl bg-slate-900 border border-sky-500/30 rounded-2xl overflow-hidden shadow-2xl">
+            <div className="flex items-center justify-between px-4 py-3 bg-sky-950 border-b border-sky-800 text-white">
+              <span className="text-sm font-bold flex items-center gap-2">
+                <span>🇬🇧</span>
+                London School of Higher Studies — CIPS Promo Trailer
+              </span>
+              <button
+                onClick={() => setShowVideoModal(false)}
+                className="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-lg font-bold"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="relative aspect-video w-full bg-black">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/cmEz18xDW_U?autoplay=1"
+                title="LSHS CIPS Trailer"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

@@ -92,7 +92,7 @@ export const concerns: Concern[] = [
   },
   {
     id: 13,
-    name: "Sampan Cafe Metro",
+    name: "Sampan City End",
     category: "Development & Construction",
     tagline: "New Auto showroom + cafe, car wash, facilities.",
     logo: "/images/brand/sampancafemetro.png",

@@ -44,7 +44,7 @@ export default function SampanCafeMetroFeature({
   id,
   badge,
   eyebrow = "Our New-Generation Automotive Destination",
-  title = "Sampan Cafe Metro",
+  title = "Sampan City End",
   subtitle = "A modern automotive lifestyle destination featuring a contemporary car showroom, café, swimming pool, gym, and professional car-wash experience, all under one roof.",
 }: SampanCafeMetroFeatureProps = {}) {
   const layout = getCafeMetroLayout();
@@ -110,7 +110,7 @@ export default function SampanCafeMetroFeature({
               href="/our-divisions/real-state-and-land-investment/sampan-cafe-metro"
               className="group mt-8 inline-flex min-h-14 items-center justify-between gap-10 bg-[#a8df73] px-6 text-xs font-bold uppercase tracking-[0.15em] text-[#07131f] transition duration-300 hover:bg-white"
             >
-              Explore Cafe Metro
+              Explore Sampan City End
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 <Arrow />
               </span>

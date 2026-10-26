@@ -7,7 +7,6 @@ import LSHSAccreditationProof from "./LSHSAccreditationProof";
 import LSHSGlobalReach from "./LSHSGlobalReach";
 import LSHSFAQ from "./LSHSFAQ";
 import LSHSEnquiryForm from "./LSHSEnquiryForm";
-import LSHSLiveChatWidget from "./LSHSLiveChatWidget";
 
 export default function LSHSLandingClient() {
   return (
@@ -32,9 +31,6 @@ export default function LSHSLandingClient() {
 
       {/* 7. Executive Consultation & Quick Enquiry */}
       <LSHSEnquiryForm />
-
-      {/* Live Chat Support Widget */}
-      <LSHSLiveChatWidget />
     </div>
   );
 }

@@ -43,7 +43,7 @@ const sitemap = [
       { label: "Niketon", href: "/our-divisions/real-state-and-land-investment/sampan-niketon" },
       { label: "21st Century", href: "/our-divisions/real-state-and-land-investment/sampan-21st-century" },
       { label: "Trade Emporium", href: "/our-divisions/real-state-and-land-investment/sampan-trade-emporium" },
-      { label: "Cafe Metro", href: "/our-divisions/real-state-and-land-investment/sampan-cafe-metro" },
+      { label: "City End", href: "/our-divisions/real-state-and-land-investment/sampan-cafe-metro" },
     ],
   },
   {

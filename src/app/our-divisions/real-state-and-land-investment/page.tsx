@@ -35,7 +35,7 @@ const projectsList = [
   },
   {
     id: "sampan-cafe-metro",
-    name: "Sampan Cafe Metro",
+    name: "Sampan City End",
     category: "Auto & Hospitality Hybrid",
     status: "Ongoing Operation",
     statusType: "ongoing",

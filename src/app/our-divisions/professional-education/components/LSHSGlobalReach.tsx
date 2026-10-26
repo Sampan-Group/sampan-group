@@ -1,24 +1,30 @@
 "use client";
 
-const countries = [
-  { name: "United Kingdom", flag: "🇬🇧", code: "UK Hub" },
-  { name: "Bangladesh", flag: "🇧🇩", code: "Dhaka Study Centre" },
-  { name: "United Arab Emirates", flag: "🇦🇪", code: "Middle East" },
-  { name: "Australia", flag: "🇦🇺", code: "Oceania" },
-  { name: "New Zealand", flag: "🇳🇿", code: "Oceania" },
-  { name: "South Africa", flag: "🇿🇦", code: "Africa" },
-  { name: "Nigeria", flag: "🇳🇬", code: "West Africa" },
-  { name: "Ghana", flag: "🇬🇭", code: "West Africa" },
-  { name: "Kenya", flag: "🇰🇪", code: "East Africa" },
-  { name: "Zambia", flag: "🇿🇲", code: "Southern Africa" },
-  { name: "Qatar", flag: "🇶🇦", code: "Gulf Region" },
-  { name: "+150 Countries", flag: "🌐", code: "Global Distance" },
+interface CountryItem {
+  name: string;
+  iso: string;
+  code: string;
+}
+
+const countries: CountryItem[] = [
+  { name: "United Kingdom", iso: "gb", code: "UK Hub" },
+  { name: "Bangladesh", iso: "bd", code: "Dhaka Study Centre" },
+  { name: "United Arab Emirates", iso: "ae", code: "Middle East" },
+  { name: "Australia", iso: "au", code: "Oceania" },
+  { name: "New Zealand", iso: "nz", code: "Oceania" },
+  { name: "South Africa", iso: "za", code: "Africa" },
+  { name: "Nigeria", iso: "ng", code: "West Africa" },
+  { name: "Ghana", iso: "gh", code: "West Africa" },
+  { name: "Kenya", iso: "ke", code: "East Africa" },
+  { name: "Zambia", iso: "zm", code: "Southern Africa" },
+  { name: "Qatar", iso: "qa", code: "Gulf Region" },
+  { name: "+150 Countries", iso: "globe", code: "Global Distance" },
 ];
 
 const ambassadors = [
   {
     country: "Bangladesh & South Asia",
-    flag: "🇧🇩",
+    iso: "bd",
     title: "Regional Admissions Coordinator",
     role: "On-campus study, computer exam booking, and local fee payments",
     contact: "admissions@lshs.co.uk",
@@ -26,7 +32,7 @@ const ambassadors = [
   },
   {
     country: "United Kingdom & Europe",
-    flag: "🇬🇧",
+    iso: "gb",
     title: "UK Academic Directorate",
     role: "Distance learning curriculum, CIPS UK tutor allocation, and MCIPS audits",
     contact: "info@lshs.co.uk",
@@ -34,7 +40,7 @@ const ambassadors = [
   },
   {
     country: "Middle East & Africa",
-    flag: "🌍",
+    iso: "globe",
     title: "International Learner Support",
     role: "Time-zone aligned tutoring schedules, corporate cohorts, and virtual classrooms",
     contact: "global@lshs.co.uk",
@@ -59,16 +65,28 @@ export default function LSHSGlobalReach() {
           </p>
         </div>
 
-        {/* Flags Grid */}
+        {/* Flags Grid with Country Code CDN images */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 mb-16">
           {countries.map((c, idx) => (
             <div
               key={idx}
-              className="p-3.5 sm:p-4 rounded-2xl bg-slate-50 hover:bg-sky-50/70 border border-slate-200/90 hover:border-sky-300 transition-all text-center group flex flex-col items-center justify-center"
+              className="p-4 rounded-2xl bg-slate-50 hover:bg-sky-50/70 border border-slate-200/90 hover:border-sky-300 transition-all text-center group flex flex-col items-center justify-center shadow-xs hover:shadow-sm"
             >
-              <span className="text-2xl sm:text-3xl mb-1.5 transform group-hover:scale-110 transition-transform">
-                {c.flag}
-              </span>
+              {c.iso === "globe" ? (
+                <div className="w-10 h-7 rounded shadow-xs mb-2 flex items-center justify-center bg-sky-100 text-sky-800 text-base font-bold">
+                  🌐
+                </div>
+              ) : (
+                <div className="w-10 h-7 rounded shadow-xs overflow-hidden border border-slate-200/80 bg-slate-100 mb-2 flex items-center justify-center transform group-hover:scale-105 transition-transform">
+                  <img
+                    src={`https://flagcdn.com/${c.iso}.svg`}
+                    alt={`${c.name} flag`}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              )}
+
               <span className="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-[#0b73b9] transition-colors leading-tight">
                 {c.name}
               </span>
@@ -98,8 +116,19 @@ export default function LSHSGlobalReach() {
                 className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-6 flex flex-col justify-between hover:bg-white/15 transition-all"
               >
                 <div>
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-2xl">{amb.flag}</span>
+                  <div className="flex items-center gap-3 mb-3">
+                    {amb.iso === "globe" ? (
+                      <span className="text-2xl">🌍</span>
+                    ) : (
+                      <div className="w-8 h-5.5 rounded overflow-hidden shadow-xs border border-white/20 shrink-0">
+                        <img
+                          src={`https://flagcdn.com/${amb.iso}.svg`}
+                          alt={`${amb.country} flag`}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
                     <span className="text-xs font-bold uppercase tracking-wider text-[#f4d210]">
                       {amb.country}
                     </span>

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import gsap from "gsap";
@@ -139,11 +138,10 @@ export default function EcoAgroFarmPage() {
             </p>
           </div>
           <div className="farm-reveal-image relative h-[55vh] min-h-[28rem] overflow-hidden">
-            <Image
+            <img
               src={farmImage}
-              alt="Fresh produce at Sampan ECO and Agro"
-              fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover"
+              alt="Fresh produce at Sampan ECO and Agro" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
@@ -159,7 +157,7 @@ export default function EcoAgroFarmPage() {
               Meet the harvest.
             </h2>
             <div className="mt-10 hidden aspect-[4/5] overflow-hidden lg:block">
-              <Image
+              <img
                 src={crops[activeCrop].image}
                 alt={crops[activeCrop].name}
                 width={800}
@@ -265,20 +263,18 @@ export default function EcoAgroFarmPage() {
           </div>
           <div className="mt-14 grid gap-5 md:grid-cols-[1.2fr_0.8fr]">
             <div className="relative h-[32rem] overflow-hidden">
-              <Image
+              <img
                 src={farmImage}
-                alt="Life at Sampan farm"
-                fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover"
+                alt="Life at Sampan farm" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="w-full h-full object-cover"
               />
             </div>
             <div className="grid gap-5">
               <div className="relative h-56 overflow-hidden">
-                <Image
+                <img
                   src={farmMark}
-                  alt="Sampan ECO and Agro"
-                  fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover"
+                  alt="Sampan ECO and Agro" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="flex min-h-56 items-end bg-[#dce7d6] p-7 text-2xl leading-tight">
@@ -319,11 +315,10 @@ export default function EcoAgroFarmPage() {
       </section>
 
       <section className="relative flex min-h-[70vh] items-end overflow-hidden bg-[#10251b] text-white">
-        <Image
+        <img
           src={farmImage}
-          alt="Sampan ECO and Agro fields"
-          fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover opacity-50"
+          alt="Sampan ECO and Agro fields" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="w-full h-full object-cover opacity-50"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#10251b] to-transparent" />
         <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 pb-16 sm:px-8 lg:px-12 lg:pb-24">

@@ -2,7 +2,6 @@
 
 import React, { useState, useMemo, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -342,12 +341,10 @@ export default function BusinessArchivePage() {
       <section className="hero-section relative h-screen w-full flex items-center justify-center bg-black text-white overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 overflow-hidden">
-          <Image
+          <img
             src="/images/hero-business-archive.jpg" // Replace with your architectural hero image
             alt="Sampan Group Architecture"
-            fill
-            className="hero-bg-image object-cover opacity-0 will-change-transform"
-            priority
+            className="w-full h-full hero-bg-image object-cover opacity-0 will-change-transform"
             sizes="100vw"
           />
         </div>
@@ -529,12 +526,11 @@ export default function BusinessArchivePage() {
                       className={`archive-image-wrapper relative ${aspectClass} w-full overflow-hidden bg-[#EFEFED]`}
                     >
                       <div className="archive-image-inner absolute inset-0 will-change-transform">
-                        <Image
+                        <img
                           src={item.logo}
                           alt={item.name}
-                          fill
                           loading="lazy"
-                          className="object-contain p-8 transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+                          className="w-full h-full object-contain p-8 transition-transform duration-700 ease-out group-hover:scale-[1.06]"
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </div>

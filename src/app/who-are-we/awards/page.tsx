@@ -2,7 +2,6 @@
 
 import React, { useState, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -297,12 +296,10 @@ export default function AccreditationHonorsAwardsPage() {
       {/* 01. HERO */}
       <section className="hero-section relative h-screen min-h-[700px] w-full flex items-end bg-[#071018] text-white overflow-hidden">
         <div className="hero-bg absolute inset-0 opacity-0 will-change-transform">
-          <Image
+          <img
             src="/images/awards/awards5.jpeg"
             alt="Recognition"
-            fill
-            className="object-cover"
-            priority
+            className="w-full h-full object-cover"
             sizes="100vw"
           />
         </div>
@@ -397,11 +394,10 @@ export default function AccreditationHonorsAwardsPage() {
                 className="img-reveal-wrapper relative aspect-[16/10] w-full overflow-hidden bg-neutral-100 cursor-pointer"
                 onClick={() => setSelectedImage(galleryImages[0].src)}
               >
-                <Image
+                <img
                   src={galleryImages[0].src}
                   alt="Featured Award"
-                  fill
-                  className="img-reveal object-cover object-top will-change-transform"
+                  className="w-full h-full img-reveal object-cover object-top will-change-transform"
                   sizes="80vw"
                 />
               </div>
@@ -439,11 +435,10 @@ export default function AccreditationHonorsAwardsPage() {
                 onClick={() => setSelectedImage(img.src)}
               >
                 <div className="img-reveal-wrapper relative aspect-[4/3] w-full overflow-hidden bg-neutral-100 mb-4">
-                  <Image
+                  <img
                     src={img.src}
                     alt={`Award ${i + 2}`}
-                    fill
-                    className="img-reveal object-contain group-hover:scale-105 transition-transform duration-700 will-change-transform"
+                    className="w-full h-full img-reveal object-contain group-hover:scale-105 transition-transform duration-700 will-change-transform"
                     sizes="33vw"
                   />
                   <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#007DC5] group-hover:w-full transition-all duration-500"></div>
@@ -687,11 +682,10 @@ export default function AccreditationHonorsAwardsPage() {
             className="relative w-full max-w-4xl aspect-[4/3]"
             onClick={(e) => e.stopPropagation()}
           >
-            <Image
+            <img
               src={selectedImage}
               alt="Certificate Preview"
-              fill
-              className="object-contain"
+              className="w-full h-full object-contain"
               sizes="100vw"
             />
           </div>

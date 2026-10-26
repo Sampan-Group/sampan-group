@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FaShoppingBag, FaStore, FaClock, FaPhoneAlt, FaPercentage, FaCheckCircle, FaStar } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
 
@@ -51,13 +50,11 @@ export default function RetailHero({
 
       {/* Background Hero Banner with Dark Gradient Overlay */}
       <div className="absolute inset-0 z-0">
-        <Image
+        <img
           src={bannerImage}
           alt={title}
-          fill
-          priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="w-full h-full object-cover object-center"
         />
         {/* brightness-[0.35] */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#090d16]/95 via-[#090d16]/80 to-[#090d16]/40" />
@@ -76,7 +73,7 @@ export default function RetailHero({
             {/* Top Badge & Logo Strip */}
             {/* <div className="flex flex-wrap items-center gap-3">
               <div className="relative h-10 w-28 bg-white/95 border border-white/20 px-3 py-1.5 flex items-center justify-center shadow-md">
-                <Image
+                <img
                   src={logo}
                   alt={concernName}
                   width={100}

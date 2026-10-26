@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import {
   FaHotel,
   FaMapMarkerAlt,
@@ -284,12 +283,11 @@ export default function HospitalityHighwayTravelPage() {
               >
                 {/* Image Container */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-900">
-                  <Image
+                  <img
                     src={concern.image}
                     alt={concern.name}
-                    fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 

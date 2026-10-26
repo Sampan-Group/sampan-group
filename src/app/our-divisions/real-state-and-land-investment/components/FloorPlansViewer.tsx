@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { FaDraftingCompass, FaExpand, FaTimes, FaFileDownload, FaCheckCircle } from "react-icons/fa";
 
 export interface FloorPlanItem {
@@ -81,11 +80,10 @@ export default function FloorPlansViewer({
 
           {/* Blueprint Image Preview */}
           <div className="lg:col-span-8 relative aspect-[16/10] w-full border border-current/10 overflow-hidden bg-[#f3f6f2] group">
-            <Image
+            <img
               src={activePlan.image}
-              alt={activePlan.name}
-              fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-contain p-4 transition-transform duration-500 group-hover:scale-102"
+              alt={activePlan.name} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-102"
             />
 
             <button
@@ -149,11 +147,10 @@ export default function FloorPlansViewer({
             </button>
 
             <div className="relative flex-1 w-full overflow-hidden">
-              <Image
+              <img
                 src={activePlan.image}
-                alt={activePlan.name}
-                fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-contain"
+                alt={activePlan.name} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="w-full h-full object-contain"
               />
             </div>
 

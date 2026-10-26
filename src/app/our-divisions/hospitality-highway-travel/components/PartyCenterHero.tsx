@@ -1,4 +1,3 @@
-import Image from "next/image";
 
 interface FactItem {
   value: string;
@@ -38,13 +37,11 @@ export default function PartyCenterHero({
       {/* Background Image with Cinematic Dark Gradient Overlay */}
       {image && (
         <div className="absolute inset-0 z-0">
-          <Image
+          <img
             src={image}
             alt={title}
-            fill
-            priority
             sizes="100vw"
-            className="object-cover object-center"
+            className="w-full h-full object-cover object-center"
           />
           {/* Dark gradient for text legibility and smooth contrast */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" />

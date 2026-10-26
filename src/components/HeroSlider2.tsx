@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const slides = [
@@ -80,13 +79,11 @@ export default function HeroSlider2() {
           key={item.name}
           className={`absolute inset-0 transition-opacity duration-[1400ms] ${index === active ? "opacity-100" : "pointer-events-none opacity-0"}`}
         >
-          <Image
+          <img
             src={item.image}
             alt={item.name}
-            fill
-            priority={index === 0}
             sizes="100vw"
-            className={`object-cover transition-transform duration-[6500ms] ease-linear ${index === active ? "scale-110" : "scale-100"}`}
+            className={`w-full h-full object-cover transition-transform duration-[6500ms] ease-linear ${index === active ? "scale-110" : "scale-100"}`}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/15" />
         </div>

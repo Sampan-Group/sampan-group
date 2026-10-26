@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { FaStore, FaShoppingBasket, FaGift, FaExchangeAlt, FaAward, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
@@ -83,7 +82,7 @@ export default function RetailSuperShopsArchivePage() {
                 <div className="space-y-4">
                   {concern.logo && (
                     <div className="relative h-20 w-full bg-[#f8f9fa] border border-neutral-200 p-4 flex items-center justify-center">
-                      <Image
+                      <img
                         src={concern.logo}
                         alt={concern.name}
                         width={160}

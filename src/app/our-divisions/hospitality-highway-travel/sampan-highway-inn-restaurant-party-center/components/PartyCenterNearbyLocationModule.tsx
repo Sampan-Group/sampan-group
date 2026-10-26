@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { FaMapMarkerAlt, FaClock, FaExternalLinkAlt } from "react-icons/fa";
 
@@ -133,12 +132,11 @@ export default function PartyCenterNearbyLocationModule() {
             >
               {/* Image Preview */}
               <div className="relative aspect-square overflow-hidden bg-neutral-900">
-                <Image
+                <img
                   src={spot.image}
                   alt={spot.name}
-                  fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
                 {/* Distance Chip */}

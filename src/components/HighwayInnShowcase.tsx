@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { highwayInnFacilities } from "@/data/highwayInnFacility";
 
@@ -119,16 +118,15 @@ function ShowcaseCard({
         variant === "lead" ? "lg:row-span-2 lg:min-h-[500px]" : "min-h-[240px]"
       }`}
     >
-      <Image
+      <img
         src={facility.image}
         alt={facility.alt}
-        fill
         sizes={
           variant === "lead"
             ? "(min-width: 1024px) 55vw, 95vw"
             : "(min-width: 1024px) 35vw, 95vw"
         }
-        className="object-cover transition duration-700 ease-out group-hover:scale-105"
+        className="w-full h-full object-cover transition duration-700 ease-out group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-black/10" />
       <div className="absolute inset-x-0 bottom-0 bg-black/35 p-6 backdrop-blur-[2px] sm:p-8">

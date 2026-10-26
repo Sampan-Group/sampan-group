@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Concern } from "@/types/Concern";
 
@@ -17,7 +16,7 @@ export default function ConcernCard({ concern }: { concern: Concern }) {
     <article className="group overflow-hidden rounded-2xl border border-neutral-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-xl">
       <div className="flex h-44 items-center justify-center bg-neutral-100 p-8 transition-colors duration-300 group-hover:bg-neutral-200/70">
         {concern.logo ? (
-          <Image
+          <img
             src={concern.logo}
             alt={`${concern.name} logo`}
             width={240}

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { FaShoppingBasket, FaTag, FaCheckCircle, FaStar, FaLeaf, FaExternalLinkAlt } from "react-icons/fa";
 
 export interface RetailProductItem {
@@ -107,11 +106,10 @@ export default function RetailProductCatalog({
             >
               {/* Product Image Box */}
               <div className="relative h-60 w-full overflow-hidden bg-neutral-100 border-b border-current/10">
-                <Image
+                <img
                   src={item.image}
-                  alt={item.name}
-                  fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  alt={item.name} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 
                 {/* Category Badge */}

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -287,12 +286,10 @@ export default function ClubMembershipPage() {
 
         <div className="relative w-full h-[40vh] lg:h-full lg:w-1/2 order-1 lg:order-2 overflow-hidden">
           <div className="parallax-img absolute inset-0 w-full h-[120%] scale-110">
-            <Image
+            <img
               src="/images/club/hero.png"
               alt="Sampan Club Premium Interior"
-              fill
-              priority
-              className="object-cover object-center"
+              className="w-full h-full object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
@@ -446,11 +443,10 @@ export default function ClubMembershipPage() {
                     transform: activeTier === i ? "scale(1)" : "scale(1.1)",
                   }}
                 >
-                  <Image
+                  <img
                     src={tier.img}
                     alt={`${tier.name} Tier`}
-                    fill
-                    className="object-cover"
+                    className="w-full h-full object-cover"
                     sizes="50vw"
                   />
                   <div className="absolute inset-0 bg-[#050505]/50"></div>
@@ -495,11 +491,10 @@ export default function ClubMembershipPage() {
                   className={`overflow-hidden transition-all duration-500 ${mobileTier === i ? "max-h-[600px] opacity-100 pb-8" : "max-h-0 opacity-0"}`}
                 >
                   <div className="relative w-full h-48 mb-6 overflow-hidden">
-                    <Image
+                    <img
                       src={tier.img}
                       alt={`${tier.name} Tier`}
-                      fill
-                      className="object-cover"
+                      className="w-full h-full object-cover"
                       sizes="100vw"
                     />
                     <div className="absolute inset-0 bg-[#050505]/40"></div>
@@ -555,11 +550,10 @@ export default function ClubMembershipPage() {
                 className="fade-up group relative h-[500px] overflow-hidden border border-white/10"
               >
                 <div className="parallax-img absolute inset-0 w-full h-[120%]">
-                  <Image
+                  <img
                     src={op.img}
                     alt={op.title}
-                    fill
-                    className="object-cover scale-110 group-hover:scale-100 transition-transform duration-[1.2s] ease-out"
+                    className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-[1.2s] ease-out"
                     sizes="50vw"
                   />
                 </div>
@@ -613,11 +607,10 @@ export default function ClubMembershipPage() {
             >
               <div className="relative w-[65vw] h-[70vh] overflow-hidden group border border-white/10">
                 <div className="parallax-img absolute inset-0 w-full h-[120%]">
-                  <Image
+                  <img
                     src={s.img}
                     alt={s.title}
-                    fill
-                    className="object-cover scale-110 group-hover:scale-100 transition-transform duration-[1.2s] ease-out"
+                    className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-[1.2s] ease-out"
                     sizes="100vw"
                   />
                 </div>
@@ -649,11 +642,10 @@ export default function ClubMembershipPage() {
               key={t.num}
               className="relative h-[400px] overflow-hidden border border-white/10"
             >
-              <Image
+              <img
                 src={t.img}
                 alt={t.title}
-                fill
-                className="object-cover"
+                className="w-full h-full object-cover"
                 sizes="100vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent"></div>
@@ -760,11 +752,10 @@ export default function ClubMembershipPage() {
           </blockquote>
           <div className="mt-16 flex flex-col items-center fade-up">
             <div className="relative w-16 h-16 rounded-full bg-neutral-200 mb-4 overflow-hidden border border-neutral-300">
-              <Image
+              <img
                 src="/images/club/member-avatar.jpg"
                 alt="Premium Member"
-                fill
-                className="object-cover"
+                className="w-full h-full object-cover"
                 sizes="64px"
               />
             </div>
@@ -927,11 +918,10 @@ export default function ClubMembershipPage() {
       <section className="bg-[#050505] text-white grid grid-cols-1 lg:grid-cols-2 min-h-screen">
         <div className="relative h-[40vh] lg:h-auto overflow-hidden">
           <div className="parallax-img absolute inset-0 w-full h-[120%]">
-            <Image
+            <img
               src="/images/club/sampangroup.jpg"
               alt="Sampan Group Facility"
-              fill
-              className="object-cover"
+              className="w-full h-full object-cover"
               sizes="50vw"
             />
           </div>
@@ -1075,11 +1065,10 @@ export default function ClubMembershipPage() {
       {/* 12. FINAL CTA */}
       <section className="relative h-screen flex flex-col justify-center items-center text-center overflow-hidden">
         <div className="parallax-img absolute inset-0 w-full h-[120%]">
-          <Image
+          <img
             src="/images/club/cta-bg.jpg"
             alt="Luxury Background"
-            fill
-            className="object-cover"
+            className="w-full h-full object-cover"
             sizes="100vw"
           />
         </div>

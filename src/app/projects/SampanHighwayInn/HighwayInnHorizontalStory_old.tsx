@@ -232,13 +232,13 @@
 //             {({ isActive }) => (
 //               <article className="group relative flex h-full w-full items-end overflow-hidden">
 //                 <div className="absolute inset-0">
-//                   <Image
+//                   <img
 //                     src={image}
 //                     alt=""
-//                     fill
-//                     priority={number === "01"}
+//
+//
 //                     sizes="100vw"
-//                     className={`object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+//                     className={`w-full h-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
 //                       isActive ? "scale-[1.045]" : "scale-100"
 //                     }`}
 //                   />
@@ -612,13 +612,13 @@
 //                 className="highway-story-panel group relative flex h-full min-h-0 w-screen shrink-0 items-end overflow-hidden border-r border-white/12"
 //               >
 //                 <div className="highway-story-media absolute -inset-x-[4%] inset-y-0 scale-[1.06] will-change-transform">
-//                   <Image
+//                   <img
 //                     src={image}
 //                     alt=""
-//                     fill
+//
 //                     sizes="100vw"
-//                     className="object-cover"
-//                     priority={number === "01"}
+//                     className="w-full h-full object-cover"
+//
 //                   />
 //                 </div>
 

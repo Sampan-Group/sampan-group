@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { FaInstagram, FaHeart, FaComment, FaTimes, FaCamera } from "react-icons/fa";
 
 const ugcPosts = [
@@ -120,7 +119,7 @@ export default function UGCFeed() {
 
               {/* Photo */}
               <div className="relative aspect-square overflow-hidden bg-neutral-100">
-                <Image
+                <img
                   src={post.image}
                   alt={post.caption}
                   width={500}
@@ -174,11 +173,10 @@ export default function UGCFeed() {
               </button>
 
               <div className="md:col-span-7 relative aspect-square bg-neutral-900">
-                <Image
+                <img
                   src={selectedPost.image}
-                  alt={selectedPost.caption}
-                  fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover"
+                  alt={selectedPost.caption} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="w-full h-full object-cover"
                 />
               </div>
 

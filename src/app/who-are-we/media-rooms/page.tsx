@@ -2,7 +2,6 @@
 
 import React, { useState, useMemo, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -442,12 +441,10 @@ export default function NewsroomPage() {
       {/* 01. PAGE HERO */}
       <section className="relative h-screen min-h-[700px] w-full flex items-center bg-[#071018] text-white overflow-hidden">
         <div className="hero-bg absolute inset-0 opacity-0 will-change-transform">
-          <Image
+          <img
             src="/images/awards/Mockup.jpg"
             alt="Newsroom"
-            fill
-            className="object-cover"
-            priority
+            className="w-full h-full object-cover"
             sizes="100vw"
           />
         </div>
@@ -481,11 +478,10 @@ export default function NewsroomPage() {
         <div className="mx-auto max-w-[1600px] px-6 md:px-12 grid grid-cols-12 gap-8 lg:gap-16 items-center">
           <div className="col-span-12 lg:col-span-7">
             <div className="img-reveal-wrapper relative aspect-[4/3] w-full overflow-hidden bg-neutral-100">
-              <Image
+              <img
                 src={featuredStory.image}
                 alt={featuredStory.title}
-                fill
-                className="img-reveal object-cover will-change-transform"
+                className="w-full h-full img-reveal object-cover will-change-transform"
                 sizes="50vw"
               />
             </div>
@@ -615,7 +611,7 @@ export default function NewsroomPage() {
                 </div>
                 <div className="col-span-12 md:col-span-3 flex justify-end items-center gap-6">
                   <div className="hidden md:block w-20 h-20 overflow-hidden bg-neutral-100">
-                    <Image
+                    <img
                       src={post.image}
                       alt={post.title}
                       width={80}
@@ -685,11 +681,10 @@ export default function NewsroomPage() {
                 <div
                   className={`img-reveal-wrapper relative overflow-hidden bg-neutral-100 mb-6 ${post.size === "lg" ? "aspect-[16/10]" : "aspect-[4/3]"}`}
                 >
-                  <Image
+                  <img
                     src={post.image}
                     alt={post.title}
-                    fill
-                    className="img-reveal object-cover group-hover:scale-105 transition-transform duration-700 will-change-transform"
+                    className="w-full h-full img-reveal object-cover group-hover:scale-105 transition-transform duration-700 will-change-transform"
                     sizes="50vw"
                   />
                 </div>
@@ -751,11 +746,10 @@ export default function NewsroomPage() {
                 key={i}
                 className={`relative overflow-hidden group bg-neutral-100 ${photo.size}`}
               >
-                <Image
+                <img
                   src={photo.src}
                   alt={photo.category}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 will-change-transform"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 will-change-transform"
                   sizes="33vw"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors duration-500 flex flex-col items-center justify-center z-[1]">
@@ -796,11 +790,10 @@ export default function NewsroomPage() {
                 <div
                   className={`relative overflow-hidden bg-black ${video.size === "main" ? "aspect-video" : "aspect-video"}`}
                 >
-                  <Image
+                  <img
                     src={video.thumbnail}
                     alt={video.title}
-                    fill
-                    className="object-cover opacity-80 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700 will-change-transform"
+                    className="w-full h-full object-cover opacity-80 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700 will-change-transform"
                     sizes="50vw"
                   />
                   <div className="absolute inset-0 flex items-center justify-center z-[1]">
@@ -850,11 +843,10 @@ export default function NewsroomPage() {
                   <span className="text-xs text-neutral-400">{post.date}</span>
                 </div>
                 <div className="relative aspect-video w-full overflow-hidden bg-neutral-100 mb-6">
-                  <Image
+                  <img
                     src={post.image}
                     alt="Social Post"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="33vw"
                   />
                 </div>

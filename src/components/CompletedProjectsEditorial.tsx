@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Projects } from "@/data/projects";
@@ -71,13 +70,11 @@ export default function CompletedProjectsEditorial() {
                       }
                 }
               >
-                <Image
+                <img
                   src={project.logo}
                   alt={project.name}
-                  fill
                   sizes="(max-width: 1024px) 90vw, 45vw"
-                  className="object-cover"
-                  priority={isFront && activeIndex === 0}
+                  className="w-full h-full object-cover"
                 />
               </div>
             );

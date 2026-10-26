@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { getSampanAutoLayout } from "./sampan-auto-layout";
@@ -38,13 +37,11 @@ export default function SampanAutoFeature() {
 
   return (
     <section className="relative left-1/2 isolate min-h-[100svh] w-[100dvw] max-w-none -translate-x-1/2 overflow-hidden bg-[#07131f] text-white">
-      <Image
+      <img
         src="/images/our-divisions/sampan-auto/sampan-auto.png"
         alt="Sampan Auto showroom with three premium vehicles"
-        fill
-        priority={false}
         sizes="100vw"
-        className="object-cover object-[58%_center]"
+        className="w-full h-full object-cover object-[58%_center]"
       />
 
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_30%,rgba(77,183,255,0.16),transparent_34%)]" />

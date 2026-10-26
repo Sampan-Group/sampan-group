@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 type Variant = "inn" | "motel" | "golf";
@@ -55,12 +54,10 @@ export default function HospitalityModernPage({
   return (
     <main className={background}>
       <section className="relative flex min-h-[92svh] items-end overflow-hidden">
-        <Image
+        <img
           src={c.hero}
-          alt={c.title}
-          fill sizes="100vw"
-          priority
-          className="object-cover opacity-65"
+          alt={c.title} sizes="100vw"
+          className="w-full h-full object-cover opacity-65"
         />
         <div
           className={`absolute inset-0 ${c.dark ? "bg-gradient-to-t from-[#101512] via-black/35 to-transparent" : "bg-gradient-to-t from-[#24251f]/70 via-black/15 to-transparent"}`}
@@ -113,11 +110,10 @@ export default function HospitalityModernPage({
       >
         <div className="mx-auto grid w-full max-w-[1400px] gap-14 px-6 sm:px-8 lg:grid-cols-2 lg:items-center lg:gap-24 lg:px-12">
           <div className="relative aspect-[4/5] overflow-hidden">
-            <Image
+            <img
               src={gallery[1]}
-              alt={`${c.title} experience`}
-              fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover"
+              alt={`${c.title} experience`} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="w-full h-full object-cover"
             />
           </div>
           <div>
@@ -173,7 +169,7 @@ export default function HospitalityModernPage({
                 key={`${src}-${i}`}
                 className={`relative overflow-hidden ${i === 1 ? "md:translate-y-12" : ""} ${i === 2 ? "md:-translate-y-4" : ""}`}
               >
-                <Image
+                <img
                   src={src}
                   alt={c.title}
                   width={900}

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FaMapPin, FaBed, FaGasPump, FaCoffee, FaGlassMartiniAlt, FaDirections } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
 
@@ -106,11 +105,10 @@ export default function RetailNearbyModule({
                 </div>
 
                 <div className="h-8 w-24 relative opacity-90">
-                  <Image
+                  <img
                     src={item.logo}
-                    alt={item.name}
-                    fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-contain object-left"
+                    alt={item.name} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="w-full h-full object-contain object-left"
                   />
                 </div>
 

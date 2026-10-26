@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import {
   FaCompass,
   FaExpand,
@@ -113,12 +112,11 @@ export default function VirtualTourViewer() {
 
         {/* Virtual Tour Screen (Square & High Contrast) */}
         <div className="relative aspect-[16/9] w-full overflow-hidden rounded-none border border-neutral-300 bg-neutral-950 shadow-lg">
-          <Image
+          <img
             src={currentZone.image}
             alt={currentZone.name}
-            fill
             sizes="100vw"
-            className="object-cover transition-transform duration-700 hover:scale-105"
+            className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 

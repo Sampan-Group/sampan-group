@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import {
   FaGraduationCap,
   FaUniversity,
@@ -280,7 +279,7 @@ export default function SurroundingUniversitiesModule({
                   }`}
                 >
                   <div className="h-10 w-10 sm:h-12 sm:w-12 relative flex items-center justify-center">
-                    <Image
+                    <img
                       src={uni.logo}
                       alt={`${uni.name} Logo`}
                       width={48}
@@ -358,7 +357,7 @@ export default function SurroundingUniversitiesModule({
                   <div className="flex items-center gap-4">
                     {/* University Logo Badge */}
                     <div className="h-12 w-12 sm:h-14 sm:w-14 bg-white border border-neutral-200 p-1.5 shrink-0 flex items-center justify-center shadow-xs">
-                      <Image
+                      <img
                         src={uni.logo}
                         alt={`${uni.name} Logo`}
                         width={48}
@@ -407,7 +406,7 @@ export default function SurroundingUniversitiesModule({
                 <div className="flex items-center gap-4 sm:gap-5">
                   {/* Big University Logo */}
                   <div className="h-16 w-16 sm:h-20 sm:w-20 bg-white border border-neutral-200 p-2 shrink-0 flex items-center justify-center shadow-sm">
-                    <Image
+                    <img
                       src={selectedUni.logo}
                       alt={`${selectedUni.name} Official Logo`}
                       width={80}

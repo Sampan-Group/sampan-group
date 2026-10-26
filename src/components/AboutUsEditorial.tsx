@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaBriefcase, FaBuilding, FaLeaf, FaUsers } from "react-icons/fa6";
@@ -231,7 +230,7 @@ export default function AboutUsEditorial() {
               </h3>
               <div className="mt-10 grid gap-5 lg:grid-cols-2">
                 <div className="overflow-hidden bg-[#D6A400]">
-                  <Image
+                  <img
                     src="/images/Boss-profile-1.png"
                     alt="Md. Emamul Hasan, Managing Director and CEO"
                     width={700}

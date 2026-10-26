@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -438,13 +437,11 @@ export default function DivisionsGrid2() {
                   className="absolute inset-0 overflow-hidden rounded-sm bg-neutral-900"
                   style={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
                 >
-                  <Image
+                  <img
                     src={div.image}
                     alt={div.title}
-                    fill
                     sizes="520px"
-                    className="object-cover"
-                    priority={i === 0}
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </div>
@@ -534,12 +531,11 @@ export default function DivisionsGrid2() {
 
                 {/* Mobile Image with Scroll Reveal */}
                 <div className="mobile-row-img relative aspect-[4/3] w-full overflow-hidden rounded-sm bg-neutral-900">
-                  <Image
+                  <img
                     src={div.image}
                     alt={div.title}
-                    fill
                     sizes="100vw"
-                    className="object-cover"
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 </div>

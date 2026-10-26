@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FaLeaf, FaSeedling, FaTractor, FaPhoneAlt, FaCheckCircle, FaAward } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
 
@@ -49,13 +48,11 @@ export default function AgroHero({
 
       {/* Background Hero Banner with Dark Gradient Overlay */}
       <div className="absolute inset-0 z-0">
-        <Image
+        <img
           src={bannerImage}
           alt={title}
-          fill
-          priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="w-full h-full object-cover object-center"
         />
         {/* brightness-[0.3] */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#06180e]/95 via-[#06180e]/85 to-[#06180e]/45" />
@@ -93,7 +90,7 @@ export default function AgroHero({
             {/* Logo + Title */}
             <div className="flex items-center gap-5">
               <div className="relative h-16 w-24 bg-white/95 border border-white/20 p-2 flex items-center justify-center shrink-0 shadow-lg">
-                <Image
+                <img
                   src={logo}
                   alt={`${concernName} logo`}
                   width={80}

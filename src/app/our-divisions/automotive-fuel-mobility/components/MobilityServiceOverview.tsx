@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FaCogs, FaClock, FaCheckCircle, FaCamera, FaSignal, FaShieldAlt } from "react-icons/fa";
 
 export interface OfferedServiceItem {
@@ -128,11 +127,10 @@ export default function MobilityServiceOverview({
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {photoGallery.map((photo, i) => (
                 <div key={i} className="relative aspect-[4/3] border border-current/15 overflow-hidden bg-neutral-200 shadow-sm">
-                  <Image
+                  <img
                     src={photo}
-                    alt={`Facility Photo ${i + 1}`}
-                    fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-500 hover:scale-105"
+                    alt={`Facility Photo ${i + 1}`} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
               ))}

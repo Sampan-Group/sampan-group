@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -224,7 +223,7 @@ export default function AboutUsPage() {
       {/* 01. CINEMATIC HERO */}
       <section className="hero-section relative min-h-[100svh] w-full flex items-end bg-[#050505] text-white overflow-hidden">
         <div className="hero-bg absolute inset-0 opacity-0 will-change-transform">
-          <Image src="/images/about/About-Our-Company-2.png" alt="Sampan Group Architecture" fill className="object-cover" priority sizes="100vw" />
+          <img src="/images/about/About-Our-Company-2.png" alt="Sampan Group Architecture" className="w-full h-full object-cover" sizes="100vw" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/30 to-transparent z-[1]"></div>
         <div className="absolute inset-0 z-[2] opacity-[0.15]"></div>
@@ -281,11 +280,10 @@ export default function AboutUsPage() {
           {/* Simplified Image Layout for responsiveness */}
           <div className="relative w-full mt-16 lg:mt-24">
             <div className="img-reveal-wrapper relative aspect-[16/10] md:aspect-[16/9] w-full overflow-hidden bg-neutral-200 border border-neutral-300">
-              <Image
+              <img
                 src="/images/about/legacy.avif"
                 alt="Group Headquarters"
-                fill
-                className="img-reveal object-cover will-change-transform"
+                className="w-full h-full img-reveal object-cover will-change-transform"
                 sizes="100vw"
               />
             </div>
@@ -314,7 +312,7 @@ export default function AboutUsPage() {
             {milestones.map((m, i) => (
               <div key={i} className="w-[450px] shrink-0 group flex flex-col">
                 <div className="relative aspect-[4/3] w-full overflow-hidden mb-6 bg-white/5 border border-white/10">
-                  <Image src={m.image} alt={m.title} fill className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" sizes="450px" />
+                  <img src={m.image} alt={m.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" sizes="450px" />
                 </div>
                 <div className="flex items-center gap-4 mb-4 relative">
                   <span className="text-6xl font-bold text-white/[0.02] absolute -ml-4 -mt-4 pointer-events-none">{m.year}</span>
@@ -351,7 +349,7 @@ export default function AboutUsPage() {
                   <h3 className="text-xl font-semibold mb-3 tracking-[-0.02em]">{m.title}</h3>
                   <p className="text-white/60 mb-6 text-sm leading-relaxed">{m.desc}</p>
                   <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-900 border border-white/10">
-                    <Image src={m.image} alt={m.title} fill className="object-cover" sizes="100vw" />
+                    <img src={m.image} alt={m.title} className="w-full h-full object-cover" sizes="100vw" />
                   </div>
                 </div>
               </div>
@@ -553,7 +551,7 @@ export default function AboutUsPage() {
             {leaders.map((l, i) => (
               <div key={i} className="group cursor-pointer">
                 <div className="relative aspect-[3/4] w-full overflow-hidden mb-6 bg-white/5 border border-white/10">
-                  <Image src={l.image} alt={l.name} fill className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" sizes="(max-width: 768px) 100vw, 33vw" />
+                  <img src={l.image} alt={l.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" sizes="(max-width: 768px) 100vw, 33vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-500"></div>
                 </div>
                 <h3 className="text-xl md:text-2xl font-semibold transition-transform duration-500 group-hover:-translate-y-1 tracking-[-0.02em]">{l.name}</h3>

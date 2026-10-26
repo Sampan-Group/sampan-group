@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const experiences = [
@@ -23,12 +22,11 @@ function Arrow() {
 export default function SampanAgroGolfFeature() {
   return (
     <section className="relative left-1/2 isolate min-h-[680px] w-screen -translate-x-1/2 overflow-hidden bg-[#071b13] text-white lg:min-h-[650px]">
-      <Image
+      <img
         src="/images/featuredConcerns/sampan-agro-golf-resort.png"
         alt="Aerial concept view of Sampan Agro & Golf Resort"
-        fill
         sizes="100vw"
-        className="object-cover object-[62%_center]"
+        className="w-full h-full object-cover object-[62%_center]"
       />
 
       <div className="absolute inset-0 bg-[#061b12]/25" />

@@ -2,7 +2,6 @@
 
 import React, { useState, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -229,7 +228,7 @@ export default function ShipSpaceSharePage() {
       {/* 1. HERO SECTION */}
       <section className="hero-section relative h-screen w-full flex items-center bg-neutral-950 text-white overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <Image src="/images/ship-hero.jpg" alt="Maritime Vessel" fill className="hero-bg-image object-cover will-change-transform" priority sizes="100vw" />
+          <img src="/images/ship-hero.jpg" alt="Maritime Vessel" className="w-full h-full hero-bg-image object-cover will-change-transform" sizes="100vw" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 to-black/70 z-[1]"></div>
 
@@ -289,7 +288,7 @@ export default function ShipSpaceSharePage() {
       <section className="bg-[#f8f8f8] py-20 lg:py-32">
         <div className="mx-auto max-w-[1600px] px-6 md:px-12">
           <div className="aa-parallax-image-wrapper relative aspect-[21/9] w-full overflow-hidden mb-12 bg-neutral-200">
-            <Image src="/images/vessel-overview.jpg" alt="Vessel Overview" fill className="aa-parallax-image object-cover will-change-transform" sizes="100vw" />
+            <img src="/images/vessel-overview.jpg" alt="Vessel Overview" className="w-full h-full aa-parallax-image object-cover will-change-transform" sizes="100vw" />
           </div>
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 md:col-span-5 reveal-up">
@@ -355,7 +354,7 @@ export default function ShipSpaceSharePage() {
         <div className="mx-auto max-w-[1600px] px-6 md:px-12 grid grid-cols-12 gap-8 items-center">
           <div className="col-span-12 md:col-span-5 reveal-up">
             <div className="aa-parallax-image-wrapper relative aspect-[3/4] w-full overflow-hidden bg-neutral-900 group">
-              <Image src="/images/prospectus.jpg" alt="Prospectus" fill className="aa-parallax-image object-cover group-hover:scale-105 transition-transform duration-700 will-change-transform" sizes="33vw" />
+              <img src="/images/prospectus.jpg" alt="Prospectus" className="w-full h-full aa-parallax-image object-cover group-hover:scale-105 transition-transform duration-700 will-change-transform" sizes="33vw" />
             </div>
           </div>
           <div className="col-span-12 md:col-span-7 reveal-up md:pl-12">
@@ -391,7 +390,7 @@ export default function ShipSpaceSharePage() {
         <div className="mx-auto max-w-[1200px] px-6 grid grid-cols-12 gap-8 items-center">
           <div className="aa-parallax-image-wrapper col-span-12 md:col-span-4 overflow-hidden">
             <div className="relative aspect-square w-full rounded-full overflow-hidden">
-              <Image src="/images/investor.jpg" alt="Investor" fill className="aa-parallax-image object-cover will-change-transform" sizes="33vw" />
+              <img src="/images/investor.jpg" alt="Investor" className="w-full h-full aa-parallax-image object-cover will-change-transform" sizes="33vw" />
             </div>
           </div>
           <div className="col-span-12 md:col-span-8 reveal-up">
@@ -420,7 +419,7 @@ export default function ShipSpaceSharePage() {
             {galleryImages.map((img, i) => (
               <div key={i} className={`${img.size} relative overflow-hidden group bg-neutral-200`}>
                 <div className="absolute inset-0 overflow-hidden">
-                  <Image src={img.src} alt={img.alt} fill className="gallery-parallax object-cover group-hover:scale-105 transition-transform duration-500 will-change-transform" sizes="50vw" />
+                  <img src={img.src} alt={img.alt} className="w-full h-full gallery-parallax object-cover group-hover:scale-105 transition-transform duration-500 will-change-transform" sizes="50vw" />
                 </div>
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-500 z-[1]"></div>
                 <div className="absolute bottom-6 left-6 z-[2] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -505,7 +504,7 @@ export default function ShipSpaceSharePage() {
       <section className="bg-white py-20 lg:py-32">
         <div className="mx-auto max-w-[1600px] px-6 md:px-12">
           <div className="aa-parallax-image-wrapper relative aspect-video w-full overflow-hidden bg-neutral-900 cursor-pointer group">
-            <Image src="/images/ship-video.jpg" alt="Video Tour" fill className="aa-parallax-image object-cover opacity-70 group-hover:scale-[1.12] transition-transform duration-700 will-change-transform" sizes="100vw" />
+            <img src="/images/ship-video.jpg" alt="Video Tour" className="w-full h-full aa-parallax-image object-cover opacity-70 group-hover:scale-[1.12] transition-transform duration-700 will-change-transform" sizes="100vw" />
             <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
               <div className="h-20 w-20 rounded-full border border-white/80 flex items-center justify-center group-hover:bg-emerald-500 group-hover:border-emerald-500 transition-all duration-300">
                 <FiPlay className="ml-1 text-white text-2xl" />
@@ -570,7 +569,7 @@ export default function ShipSpaceSharePage() {
       {/* 14. FINAL CTA */}
       <section className="cta-section relative min-h-[90vh] bg-black text-white flex flex-col justify-center overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <Image src="/images/ship-cta.jpg" alt="Ocean Horizon" fill className="cta-bg-image object-cover opacity-40 will-change-transform" sizes="100vw" />
+          <img src="/images/ship-cta.jpg" alt="Ocean Horizon" className="w-full h-full cta-bg-image object-cover opacity-40 will-change-transform" sizes="100vw" />
         </div>
         <div className="absolute inset-0 bg-black/50 z-[1]"></div>
 

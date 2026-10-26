@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -156,12 +155,11 @@ export default function InvestmentPortfolio() {
             >
               {/* Image Wrapper */}
               <div className="ip-card-img absolute inset-0 h-[120%] w-full -top-[10%] will-change-transform">
-                <Image
+                <img
                   src={inv.image}
                   alt={inv.name}
-                  fill
                   sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover opacity-70 grayscale-[20%] transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-100 group-hover:grayscale-0"
+                  className="w-full h-full object-cover opacity-70 grayscale-[20%] transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-100 group-hover:grayscale-0"
                 />
               </div>
 

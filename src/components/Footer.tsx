@@ -2,7 +2,6 @@
 
 import { useRef, useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -611,7 +610,7 @@ export default function Footer() {
         aria-hidden="true"
       >
         <div className="footer-ghost-logo w-[140vw] sm:w-[110vw] lg:w-[85vw] max-w-[1400px]">
-          <Image
+          <img
             src="/images/Sampan-Group.png"
             alt=""
             width={1400}
@@ -637,12 +636,11 @@ export default function Footer() {
               className="inline-block"
               aria-label="Sampan Group Home"
             >
-              <Image
+              <img
                 src="/images/brand/sampangroup.png"
                 alt="Sampan Group"
                 width={400}
                 height={100}
-                priority
                 className="h-14 w-40 object-contain opacity-90 transition-all duration-500 hover:opacity-100 hover:drop-shadow-[0_0_16px_rgba(16,185,129,0.1)] sm:h-16 sm:w-48 lg:h-20 lg:w-52"
               />
             </Link>

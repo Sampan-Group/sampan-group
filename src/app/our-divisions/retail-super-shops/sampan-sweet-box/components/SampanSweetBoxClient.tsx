@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import {
   FaMapMarkerAlt,
@@ -151,13 +150,11 @@ export default function SampanSweetBoxClient() {
       {/* ================= 1. HERO SECTION (LESS WORDY & COMPACT) ================= */}
       <section data-no-reveal className="relative min-h-0 sm:min-h-screen flex flex-col justify-start sm:justify-center overflow-hidden bg-[#140d06] text-white pt-24 pb-12 sm:pt-28 sm:pb-20 border-b border-amber-900/30">
         <div className="absolute inset-0 z-0">
-          <Image
+          <img
             src={heroBackground}
             alt="Sampan Sweet Box"
-            fill
-            priority
             sizes="100vw"
-            className="object-cover object-center opacity-40"
+            className="w-full h-full object-cover object-center opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-black/20 to-black/10" />
 
@@ -278,12 +275,11 @@ export default function SampanSweetBoxClient() {
                 className={`group relative overflow-hidden bg-neutral-900 border border-neutral-200 hover:border-amber-600 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer ${index === 0 ? "aspect-[4/3] sm:col-span-2 sm:row-span-2 min-h-[300px]" : "aspect-[4/3]"
                   }`}
               >
-                {/* <Image
+                {/* <img
                   src={item.src}
                   alt="Sampan Sweet Box"
-                  fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                 /> */}
                 <img
                   src={item.src}
@@ -336,12 +332,11 @@ export default function SampanSweetBoxClient() {
                 className="group relative flex flex-col h-full rounded-none overflow-hidden bg-[#16120b] border border-white/10 hover:border-amber-500/60 transition-all duration-300"
               >
                 <div className="relative h-52 w-full overflow-hidden bg-neutral-900 shrink-0">
-                  <Image
+                  <img
                     src={spot.image}
                     alt={spot.name}
-                    fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#16120b] via-transparent to-black/30" />
 
@@ -543,7 +538,7 @@ export default function SampanSweetBoxClient() {
             className="relative max-w-6xl max-h-[90vh] w-full h-full flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <Image
+            <img
               src={lightboxImage}
               alt="Sampan Sweet Box"
               width={1600}

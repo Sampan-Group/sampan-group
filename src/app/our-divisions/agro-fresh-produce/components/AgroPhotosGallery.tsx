@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { FaCamera, FaExpand, FaTimes } from "react-icons/fa";
 
 export interface AgroPhotoItem {
@@ -67,12 +66,11 @@ export default function AgroPhotosGallery({
               onClick={() => setSelectedPhoto(photo)}
               className="group relative h-72 border border-neutral-300 bg-black overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition duration-500"
             >
-              <Image
+              <img
                 src={photo.image}
                 alt={photo.title}
-                fill
                 sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover object-center group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent p-6 flex flex-col justify-end">
@@ -112,11 +110,10 @@ export default function AgroPhotosGallery({
             </button>
 
             <div className="relative h-[450px] w-full border border-white/10">
-              <Image
+              <img
                 src={selectedPhoto.image}
-                alt={selectedPhoto.title}
-                fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-contain"
+                alt={selectedPhoto.title} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="w-full h-full object-contain"
               />
             </div>
 

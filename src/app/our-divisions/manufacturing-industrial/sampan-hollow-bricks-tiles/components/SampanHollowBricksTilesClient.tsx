@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import {
   FaCubes,
@@ -234,13 +233,11 @@ export default function SampanHollowBricksTilesClient() {
       {/* ================= 1. HERO SECTION (NO EYEBROW) ================= */}
       <section className="relative min-h-[70vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-[#140b0b] text-white pt-24 pb-16 lg:pt-28 lg:pb-20 border-b border-white/10">
         <div className="absolute inset-0 z-0">
-          <Image
+          <img
             src={heroBackground}
             alt="Sampan Hollow Bricks Plant"
-            fill
-            priority
             sizes="100vw"
-            className="object-cover object-center opacity-70"
+            className="w-full h-full object-cover object-center opacity-70"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/30" />
         </div>
@@ -378,12 +375,11 @@ export default function SampanHollowBricksTilesClient() {
                   className={`relative w-full h-64 overflow-hidden border-b border-neutral-100 ${product.contain ? "bg-[#f8f6f3] flex items-center justify-center p-6" : "bg-neutral-200"
                     }`}
                 >
-                  <Image
+                  <img
                     src={product.image}
                     alt={product.name}
-                    fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className={`${product.contain
+                    className={`w-full h-full ${product.contain
                       ? "object-contain p-4 transition-transform duration-700 group-hover:scale-105 drop-shadow-md"
                       : "object-cover transition-transform duration-700 group-hover:scale-105"
                       }`}
@@ -450,12 +446,11 @@ export default function SampanHollowBricksTilesClient() {
                 }
                 className="group relative aspect-square w-full bg-[#161010] border border-white/10 hover:border-red-500 rounded-none overflow-hidden transition-all duration-300 hover:shadow-lg cursor-pointer"
               >
-                <Image
+                <img
                   src={tile.image}
                   alt={`Parking Tile Design #${idx + 1}`}
-                  fill
                   sizes="(max-width: 768px) 50vw, 20vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2.5">
                   <span className="font-mono text-[9px] text-white flex items-center gap-1">
@@ -618,12 +613,11 @@ export default function SampanHollowBricksTilesClient() {
             className="relative max-w-4xl w-full max-h-[90vh] rounded-none overflow-hidden border border-white/20 shadow-2xl bg-[#141010] flex flex-col"
           >
             <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] bg-[#1a1414] flex items-center justify-center p-6">
-              <Image
+              <img
                 src={selectedModalItem.image}
                 alt={selectedModalItem.title}
-                fill
                 sizes="(max-width: 768px) 100vw, 80vw"
-                className="object-contain p-4"
+                className="w-full h-full object-contain p-4"
               />
             </div>
 

@@ -1,7 +1,6 @@
 "use client";
 
 import { FormEvent } from "react";
-import Image from "next/image";
 import { FiMail, FiPhone, FiMapPin, FiClock, FiArrowRight, FiMessageSquare } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -67,13 +66,11 @@ export default function ContactPage() {
         
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <Image
+          <img
             src="/images/sampan-3.png" // Your banner image
             alt="Sampan Group Architecture"
-            fill
-            priority
             sizes="100vw"
-            className="object-cover object-center"
+            className="w-full h-full object-cover object-center"
           />
         </div>
 

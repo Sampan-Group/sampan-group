@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import {
   FaShieldAlt,
@@ -73,13 +72,11 @@ export default function SampanFireArmsCoClient() {
       {/* ================= 1. HERO SECTION (NO EYEBROW / COMPACT) ================= */}
       <section className="relative min-h-[68vh] lg:min-h-[78vh] flex items-center justify-center overflow-hidden bg-[#0e0a0a] text-white pt-24 pb-16 lg:pt-28 lg:pb-20 border-b border-white/10">
         <div className="absolute inset-0 z-0">
-          <Image
+          <img
             src={bannerImage}
             alt="Sampan Fire Arms Co. Facility"
-            fill
-            priority
             sizes="100vw"
-            className="object-cover object-center opacity-70"
+            className="w-full h-full object-cover object-center opacity-70"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/35" />
         </div>
@@ -224,12 +221,11 @@ export default function SampanFireArmsCoClient() {
                 className="group relative aspect-[4/3] w-full bg-[#140e0e] border border-neutral-200 hover:border-red-600 rounded-none overflow-hidden transition-all duration-300 hover:shadow-lg cursor-pointer"
               >
                 <div className="absolute top-0 left-0 h-[3px] w-0 bg-red-600 transition-all duration-500 group-hover:w-full z-20" />
-                <Image
+                <img
                   src={item.image}
                   alt="Sampan Fire Arms Facility Showcase"
-                  fill
                   sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4 z-10">
                   <span className="font-mono text-[10px] text-white flex items-center gap-1.5 font-bold uppercase tracking-wider">
@@ -358,12 +354,11 @@ export default function SampanFireArmsCoClient() {
             onClick={(e) => e.stopPropagation()}
             className="relative max-w-5xl w-full max-h-[85vh] aspect-[16/10] rounded-none overflow-hidden border border-white/20 shadow-2xl bg-black"
           >
-            <Image
+            <img
               src={selectedImage}
               alt="Sampan Fire Arms Co. Preview"
-              fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-contain"
+              className="w-full h-full object-contain"
             />
           </div>
         </div>

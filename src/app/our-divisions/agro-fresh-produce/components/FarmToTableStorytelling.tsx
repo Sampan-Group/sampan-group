@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FaSeedling, FaSun, FaWater, FaTruckLoading, FaCheckCircle, FaAward, FaHeartbeat } from "react-icons/fa";
 
 export interface StoryPillar {
@@ -82,12 +81,11 @@ export default function FarmToTableStorytelling({
           {/* Left Column: Farm Image with Badge */}
           <div className="lg:col-span-6 relative">
             <div className="relative h-[420px] sm:h-[500px] w-full border border-neutral-300 shadow-xl overflow-hidden group">
-              <Image
+              <img
                 src={farmImage}
                 alt={`${concernName} Farm Facility`}
-                fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
               

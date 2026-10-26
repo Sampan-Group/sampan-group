@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -63,12 +62,11 @@ function GridVersion() {
                 }`}
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-neutral-200">
-                  <Image
+                  <img
                     src={project.logo}
                     alt={project.name}
-                    fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 58vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/5 to-transparent" />
                   <span className="absolute left-5 top-5 text-xs font-medium tracking-[0.2em] text-white/80">
@@ -154,14 +152,12 @@ function ShowcaseVersion() {
       <div className="mx-auto mt-14 grid max-w-7xl gap-10 px-6 lg:mt-20 lg:grid-cols-12 lg:items-start lg:gap-14 lg:px-10">
         <div className="lg:col-span-7">
           <div className="relative aspect-[16/10] overflow-hidden bg-stone-200">
-            <Image
+            <img
               key={activeProject.id}
               src={activeProject.logo}
               alt={activeProject.name}
-              fill
               sizes="(max-width: 1024px) 100vw, 700px"
-              className="showcase-image object-cover"
-              priority={false}
+              className="w-full h-full showcase-image object-cover"
             />
           </div>
 

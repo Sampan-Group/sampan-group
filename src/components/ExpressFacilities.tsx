@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { expressFacilities } from "@/data/expressFacilities";
 
@@ -61,12 +60,11 @@ export default function ExpressFacilities() {
       <div className="mx-auto grid w-full max-w-[1200px] gap-10 lg:grid-cols-[0.85fr_1.4fr] lg:items-center lg:gap-16">
         <div>
           <div className="relative aspect-[0.82] overflow-hidden bg-[#211d1a]">
-            <Image
+            <img
               src="/images/projects/express-highway-inn.jpg"
               alt="Express Highway Inn facility"
-              fill
               sizes="(min-width: 1024px) 38vw, 90vw"
-              className="object-cover"
+              className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-8">
@@ -124,12 +122,11 @@ export default function ExpressFacilities() {
                 className="group min-w-0"
               >
                 <div className="relative aspect-[1.35] overflow-hidden bg-[#211d1a]">
-                  <Image
+                  <img
                     src={facility.image}
                     alt={facility.alt}
-                    fill
                     sizes="(min-width: 1024px) 22vw, (min-width: 640px) 42vw, 90vw"
-                    className="object-cover transition duration-700 ease-out group-hover:scale-105"
+                    className="w-full h-full object-cover transition duration-700 ease-out group-hover:scale-105"
                   />
                 </div>
                 <p className="mt-3 text-xs font-medium uppercase tracking-[0.12em] text-emerald-300/80">

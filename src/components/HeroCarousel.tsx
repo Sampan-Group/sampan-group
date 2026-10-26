@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import {
   useEffect,
@@ -243,13 +242,10 @@ export default function HeroCarousel({
               className={`${styles.slide} ${styles[slide.drift]} ${transitionClassName} ${isActive ? styles.slideActive : ""
                 }`}
             >
-              <Image
+              <img
                 src={slide.image}
                 alt=""
-                fill
-                priority={index === 0}
-                sizes="100vw"
-                className={styles.media}
+                className={`w-full h-full object-cover absolute inset-0 ${styles.media}`}
                 style={{ objectPosition: slide.imagePosition }}
               />
             </div>

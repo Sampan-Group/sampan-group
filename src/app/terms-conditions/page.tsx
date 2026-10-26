@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -341,13 +340,11 @@ export default function TermsConditionsPage() {
       {/* 01. HERO SECTION */}
       <section className="hero-section relative h-screen min-h-[700px] w-full flex items-end overflow-hidden bg-[#0A0A0A] text-white">
         <div className="hero-bg absolute inset-0 z-0">
-          <Image
+          <img
             src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=2000&q=80"
             alt="Sampan Group Terms"
-            fill
-            priority
             sizes="100vw"
-            className="object-cover"
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-[#0A0A0A]/60" />
         </div>
@@ -391,12 +388,11 @@ export default function TermsConditionsPage() {
                 <div className={`reveal-up relative w-full aspect-[4/5] overflow-hidden ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
                   {/* Parallax Wrapper - Extended height for smooth scroll movement */}
                   <div className="parallax-img absolute inset-x-0 -top-[15%] h-[130%]">
-                    <Image
+                    <img
                       src={section.image}
                       alt={section.titlePrefix + section.titleEmphasis}
-                      fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-cover"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   {/* Vignette overlay for luxury feel */}

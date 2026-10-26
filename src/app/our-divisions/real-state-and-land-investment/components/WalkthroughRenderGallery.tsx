@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { FaPlay, FaExpand, FaTimes, FaCamera, FaVideo, FaCube } from "react-icons/fa";
 
 export interface RenderGalleryItem {
@@ -93,11 +92,10 @@ export default function WalkthroughRenderGallery({
               className="group border border-current/15 bg-white relative overflow-hidden cursor-pointer hover:border-[#ca8a04] transition-all duration-500 shadow-sm hover:shadow-md"
             >
               <div className="relative h-64 w-full overflow-hidden bg-neutral-200">
-                <Image
+                <img
                   src={item.image}
-                  alt={item.title}
-                  fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  alt={item.title} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity" />
 
@@ -155,11 +153,10 @@ export default function WalkthroughRenderGallery({
                 </div>
               ) : (
                 <div className="relative aspect-[16/10] w-full border border-white/20 overflow-hidden bg-black">
-                  <Image
+                  <img
                     src={selectedMedia.image}
-                    alt={selectedMedia.title}
-                    fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover"
+                    alt={selectedMedia.title} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               )}

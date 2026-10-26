@@ -2,7 +2,6 @@
 
 import { useRef, useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -635,13 +634,11 @@ export default function SampanDevelopmentLtd() {
             {/* Right: Image Zone (Hard Diagonal Cut) */}
             <div className="relative col-span-1 lg:col-span-5">
               <div className="h-img-mask relative h-[55vh] w-full lg:h-screen lg:clip-path-[polygon(25%_0,_100%_0,_100%_100%,_0%_100%)]">
-                <Image
+                <img
                   src="/images.jpg"
                   alt="Sampan Development Ltd - Architectural Perspective"
-                  fill
-                  priority
                   sizes="(min-width:1024px)42vw,100vw"
-                  className="object-cover scale-110"
+                  className="w-full h-full object-cover scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent lg:bg-gradient-to-r lg:from-black/80 lg:via-transparent lg:to-transparent" />
               </div>
@@ -747,11 +744,10 @@ export default function SampanDevelopmentLtd() {
                 {/* Image Column (Parallax) */}
                 <div className="relative col-span-12 hidden h-[70vh] overflow-hidden lg:col-span-7 lg:block">
                   <div className="story-parallax-img absolute inset-0 h-[120%] w-full -top-[10%]">
-                    <Image
+                    <img
                       src="/images.jpg"
                       alt="SDL development overview"
-                      fill
-                      className="object-cover"
+                      className="w-full h-full object-cover"
                       sizes="(min-width:1024px)58vw,100vw"
                     />
                   </div>
@@ -822,11 +818,10 @@ export default function SampanDevelopmentLtd() {
                     zIndex: i === 0 ? 10 : 0,
                   }}
                 >
-                  <Image
+                  <img
                     src="/images.jpg"
                     alt={p.name}
-                    fill
-                    className="object-cover scale-110"
+                    className="w-full h-full object-cover scale-110"
                     sizes="(min-width:1024px)58vw,100vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -1032,11 +1027,10 @@ export default function SampanDevelopmentLtd() {
                   </div>
                   {/* Image panel */}
                   <div className="relative h-[50vh] lg:h-full">
-                    <Image
+                    <img
                       src="/images.jpg"
                       alt={s.title}
-                      fill
-                      className="object-cover"
+                      className="w-full h-full object-cover"
                       sizes="50vw"
                     />
                     <div className="absolute inset-0 bg-black/[0.04]" />
@@ -1062,11 +1056,10 @@ export default function SampanDevelopmentLtd() {
                 className="pointer-events-none absolute inset-0 z-0 overflow-hidden transition-opacity duration-700"
                 style={{ opacity: activeCat >= 0 ? 1 : 0 }}
               >
-                <Image
+                <img
                   src="/images.jpg"
-                  alt=""
-                  fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover scale-110"
+                  alt="" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="w-full h-full object-cover scale-110"
                 />
                 <div className="absolute inset-0 bg-white/90 backdrop-blur-xl" />
               </div>
@@ -1200,7 +1193,7 @@ export default function SampanDevelopmentLtd() {
         {/* ============================================================ */}
         <section className="fc-sec relative flex min-h-[80vh] items-center overflow-hidden bg-[#050505]">
           <div className="absolute inset-0 z-0 opacity-0 transition-opacity duration-1500 hover:opacity-[0.08]">
-            <Image src="/images/concerns/sampan-dev-ltd.png" alt="" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" />
+            <img src="/images/concerns/sampan-dev-ltd.png" alt="" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="w-full h-full object-cover" />
           </div>
 
           <div className="relative z-10 mx-auto w-full max-w-[1400px] px-8 py-32 lg:px-20 lg:py-0">

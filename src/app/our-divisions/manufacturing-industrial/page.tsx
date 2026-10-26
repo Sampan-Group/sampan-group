@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { FaIndustry, FaMapMarkerAlt, FaArrowRight, FaCheckCircle, FaCogs } from "react-icons/fa";
 
 export const metadata: Metadata = {
@@ -84,12 +83,11 @@ export default function ManufacturingIndustrialArchivePage() {
                 <div>
                   {/* Photo Header Box */}
                   <div className="relative h-56 w-full overflow-hidden bg-neutral-900">
-                    <Image
+                    <img
                       src={concern.image}
                       alt={concern.name}
-                      fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-85"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
 

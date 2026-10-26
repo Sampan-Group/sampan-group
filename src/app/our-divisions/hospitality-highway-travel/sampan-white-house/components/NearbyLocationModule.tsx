@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { FaMapPin, FaCompass } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
@@ -128,12 +127,11 @@ export default function NearbyLocationModule() {
 
               {/* Image with Distance Tag */}
               <div className="relative aspect-[16/10] overflow-hidden bg-neutral-100">
-                <Image
+                <img
                   src={spot.image}
                   alt={spot.name}
-                  fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute top-3.5 right-3.5 bg-white/95 border border-neutral-200 px-3 py-1 font-mono text-[10px] font-bold text-neutral-950 shadow-sm">
                   {spot.distance} • {spot.driveTime}

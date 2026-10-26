@@ -2,7 +2,6 @@
 
 import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -470,13 +469,11 @@ export default function DivisionsGrid() {
                       : "opacity-0 pointer-events-none"
                   }`}
                 >
-                  <Image
+                  <img
                     src={div.image}
                     alt={div.title}
-                    fill
                     sizes="100vw"
-                    className="object-cover"
-                    priority={i === 0}
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent" />
 
@@ -633,13 +630,11 @@ export default function DivisionsGrid() {
                     }}
                     className="absolute inset-0 will-change-transform"
                   >
-                    <Image
+                    <img
                       src={div.image}
                       alt={div.title}
-                      fill
                       sizes="(min-width: 1024px) 60vw, 100vw"
-                      className="object-cover"
-                      priority={i === 0}
+                      className="w-full h-full object-cover"
                     />
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent" />

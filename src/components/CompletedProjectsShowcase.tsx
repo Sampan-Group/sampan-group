@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Projects } from "@/data/projects";
@@ -32,14 +31,12 @@ export default function CompletedProjectsShowcase() {
 
   return (
     <section className="relative isolate h-[620px] overflow-hidden bg-neutral-900 text-white lg:h-[680px]">
-      <Image
+      <img
         key={`background-${activeProject.id}`}
         src={activeProject.logo}
         alt=""
-        fill
-        priority
         sizes="100vw"
-        className="object-cover transition-opacity duration-1000"
+        className="w-full h-full object-cover transition-opacity duration-1000"
       />
       <div className="absolute inset-0 bg-[#071526]/55" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#071526]/80 via-[#071526]/35 to-[#071526]/10" />
@@ -76,13 +73,12 @@ export default function CompletedProjectsShowcase() {
 
         <div className="absolute right-8 top-1/2 hidden w-[48%] max-w-[760px] -translate-y-1/2 lg:block">
           <div className="relative aspect-[1.45] overflow-hidden bg-transparent shadow-2xl shadow-black/25">
-            <Image
+            <img
               key={activeProject.id}
               src={activeProject.logo}
               alt={activeProject.name}
-              fill
               sizes="48vw"
-              className="object-contain transition-opacity duration-1000"
+              className="w-full h-full object-contain transition-opacity duration-1000"
             />
           </div>
           <div className="mt-6 flex items-center justify-end gap-3 sm:gap-5">

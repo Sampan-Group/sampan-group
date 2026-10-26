@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -173,13 +172,11 @@ export default function HighwayInnEditorial() {
                   className="hi-slide-image absolute inset-0"
                   style={{ opacity: i === 0 ? 1 : 0, clipPath: i === 0 ? "inset(0 0% 0 0)" : "inset(0 100% 0 0)" }}
                 >
-                  <Image
+                  <img
                     src={slide.image}
                     alt={slide.name}
-                    fill
                     sizes="(min-width: 1024px) 60vw, 100vw"
-                    className="object-cover"
-                    priority={i === 0}
+                    className="w-full h-full object-cover"
                   />
                   {/* Cinematic Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />

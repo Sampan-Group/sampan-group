@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import {
   FaGolfBall,
@@ -450,13 +449,11 @@ export default function SampanAgroGolfClubLoungeClient() {
       {/* ================= 1. HERO SECTION ================= */}
       <section data-no-reveal className="relative min-h-0 sm:min-h-screen flex flex-col justify-start sm:justify-center overflow-hidden bg-[#091a11] text-white pt-24 pb-12 sm:pt-28 sm:pb-20 border-b border-white/10">
         <div className="absolute inset-0 z-0">
-          <Image
+          <img
             src={heroImage}
             alt="Sampan Agro & Golf Club & Lounge"
-            fill
-            priority
             sizes="100vw"
-            className="object-cover object-center opacity-70"
+            className="w-full h-full object-cover object-center opacity-70"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#06140d]/95 via-[#06140d]/80 to-[#06140d]/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#06140d] via-transparent to-black/40" />
@@ -579,12 +576,11 @@ export default function SampanAgroGolfClubLoungeClient() {
                   className="group bg-[#fcfdfb] border border-neutral-200 overflow-hidden flex flex-col hover:border-emerald-700 hover:shadow-xl transition-all duration-300"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden bg-neutral-900 cursor-pointer" onClick={() => setLightboxImage(lounge.image)}>
-                    <Image
+                    <img
                       src={lounge.image}
                       alt={lounge.title}
-                      fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                     <div className="absolute top-4 left-4">
@@ -743,12 +739,11 @@ export default function SampanAgroGolfClubLoungeClient() {
                 className={`group relative overflow-hidden rounded-none bg-neutral-900 border border-white/10 shadow-lg cursor-pointer ${index === 0 ? "aspect-[4/3] sm:col-span-2 sm:row-span-2 min-h-[340px]" : "aspect-[4/3]"
                   }`}
               >
-                <Image
+                <img
                   src={item.src}
                   alt={item.title}
-                  fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
 
@@ -866,12 +861,11 @@ export default function SampanAgroGolfClubLoungeClient() {
               className="group bg-white border border-neutral-200 hover:border-emerald-600 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer"
             >
               <div className="relative aspect-[3/4] bg-neutral-100 overflow-hidden border-b border-neutral-100">
-                <Image
+                <img
                   src="/images/our-divisions/sampan-agro-golf-resort/certificate-of-share.jpg"
                   alt="Official Certificate of Share"
-                  fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <div className="bg-emerald-600 text-white p-3 rounded-none shadow-lg">
@@ -907,12 +901,11 @@ export default function SampanAgroGolfClubLoungeClient() {
               className="group bg-white border border-neutral-200 hover:border-emerald-600 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer"
             >
               <div className="relative aspect-[3/4] bg-neutral-100 overflow-hidden border-b border-neutral-100 flex items-center justify-center">
-                <Image
+                <img
                   src="/images/our-divisions/sampan-agro-golf-resort/loyalty-card-permanent-member.jpg"
                   alt="Permanent Member Loyalty Card"
-                  fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <div className="bg-emerald-600 text-white p-3 rounded-none shadow-lg">
@@ -948,12 +941,11 @@ export default function SampanAgroGolfClubLoungeClient() {
               className="group bg-white border border-neutral-200 hover:border-emerald-600 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer"
             >
               <div className="relative aspect-[3/4] bg-neutral-100 overflow-hidden border-b border-neutral-100">
-                <Image
+                <img
                   src="/images/our-divisions/sampan-agro-golf-resort/certificate-of-member.jpg"
                   alt="Official Certificate of Member"
-                  fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <div className="bg-emerald-600 text-white p-3 rounded-none shadow-lg">
@@ -1404,7 +1396,7 @@ export default function SampanAgroGolfClubLoungeClient() {
             className="relative max-w-6xl max-h-[90vh] w-full h-full flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <Image
+            <img
               src={lightboxImage}
               alt="Sampan Agro & Golf Club Gallery Preview"
               width={1600}

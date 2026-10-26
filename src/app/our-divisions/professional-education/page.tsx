@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import LSHSHero from "./components/LSHSHero";
 import LSHSAccreditationProof from "./components/LSHSAccreditationProof";
@@ -76,11 +75,10 @@ export default function ProfessionalEducationArchivePage() {
 
                   <div className="flex items-center gap-6 mb-6">
                     <div className="relative w-24 h-24 bg-white p-2 rounded-2xl border border-sky-200 flex-shrink-0 shadow-sm">
-                      <Image
+                      <img
                         src={concern.image}
-                        alt={concern.name}
-                        fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-contain p-1"
+                        alt={concern.name} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="w-full h-full object-contain p-1"
                       />
                     </div>
                     <div>

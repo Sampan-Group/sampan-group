@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import {
   FaCompass,
   FaEye,
@@ -137,12 +136,11 @@ export default function VirtualTourViewer() {
 
         {/* Interactive Virtual Viewport */}
         <div className="relative rounded-none overflow-hidden border border-white/15 bg-neutral-950 shadow-2xl aspect-[16/9] max-h-[680px] min-h-[400px]">
-          <Image
+          <img
             src={currentZone.image}
             alt={currentZone.name}
-            fill
             sizes="100vw"
-            className="object-cover transition-all duration-700 filter brightness-90 contrast-105"
+            className="w-full h-full object-cover transition-all duration-700 filter brightness-90 contrast-105"
           />
 
           {/* Vignette Gradients */}

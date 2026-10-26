@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { FaLeaf, FaShoppingBasket, FaTag, FaCheckCircle, FaAward, FaBoxes } from "react-icons/fa";
 
 export interface AgroProductItem {
@@ -107,12 +106,11 @@ export default function AgroProductsCatalog({
                 {/* Product Header / Image & Details */}
                 <div>
                   <div className="relative h-56 w-full bg-[#f8f9fa] border-b border-neutral-200 overflow-hidden">
-                    <Image
+                    <img
                       src={product.image}
                       alt={product.name}
-                      fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className={`${
+                      className={`w-full h-full ${
                         useContain ? "object-contain p-6" : "object-cover"
                       } group-hover:scale-105 transition-transform duration-500`}
                     />

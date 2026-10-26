@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { FaMapPin, FaBed, FaGasPump, FaUtensils, FaGolfBall, FaStore } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
@@ -90,7 +89,7 @@ export default function AgroNearbyModule({
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="relative h-14 w-36 bg-[#f8f9fa] border border-neutral-200 p-2 flex items-center justify-center">
-                    <Image
+                    <img
                       src={concern.logo}
                       alt={concern.name}
                       width={120}

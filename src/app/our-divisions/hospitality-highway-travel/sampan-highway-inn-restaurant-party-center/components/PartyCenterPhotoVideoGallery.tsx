@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import {
   FaPlay,
   FaTimes,
@@ -190,7 +189,7 @@ export default function PartyCenterPhotoVideoGallery() {
                 index === 0 ? "sm:col-span-2 sm:row-span-2" : ""
               }`}
             >
-              <Image
+              <img
                 src={item.src}
                 alt={item.title}
                 width={800}
@@ -246,12 +245,11 @@ export default function PartyCenterPhotoVideoGallery() {
               onClick={(e) => e.stopPropagation()}
               className="relative max-w-5xl w-full max-h-[85vh] aspect-[16/10] rounded-none overflow-hidden shadow-2xl border border-white/10 flex flex-col justify-end"
             >
-              <Image
+              <img
                 src={filteredItems[lightboxIndex].src}
                 alt={filteredItems[lightboxIndex].title}
-                fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-contain"
+                className="w-full h-full object-contain"
               />
 
               <div className="relative z-10 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6 text-white">

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const youtubeVideoId = "Ub9yFQIlOBo";
@@ -28,12 +27,11 @@ export default function FullWidthVideo() {
     <>
       <section className="relative w-full overflow-hidden bg-neutral-950">
         <div className="relative min-h-[50vh] w-full sm:min-h-[65vh] lg:min-h-[78vh]">
-          <Image
+          <img
             src="/images/projects/express-highway-inn.jpg"
             alt="Sampan Group visual presentation"
-            fill
             sizes="100vw"
-            className="object-cover"
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/35" />
           <button

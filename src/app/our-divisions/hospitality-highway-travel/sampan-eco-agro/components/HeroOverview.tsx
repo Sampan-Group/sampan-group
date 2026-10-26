@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import {
   FaLeaf,
   FaRoute,
@@ -16,13 +15,11 @@ export default function HeroOverview({ onOpenBooking }: { onOpenBooking: () => v
     <section id="overview" data-no-reveal className="relative min-h-0 sm:min-h-screen flex flex-col justify-start sm:justify-center overflow-hidden bg-[#0c1c14] text-white pt-24 pb-12 sm:pt-28 sm:pb-20 border-b border-white/10">
       {/* Background Image with Dark Nature Gradient Overlay */}
       <div className="absolute inset-0 z-0">
-        <Image
+        <img
           src={heroImage}
           alt="Sampan Eco & Agro Resort Lakeview Cottages"
-          fill
-          priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="w-full h-full object-cover object-center"
         />
         {/* Dual-layer dark gradient for text readability and navbar contrast */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#07130d]/95 via-[#07130d]/80 to-[#07130d]/50" />

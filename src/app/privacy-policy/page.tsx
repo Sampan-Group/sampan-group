@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -246,13 +245,11 @@ export default function PrivacyPolicyPage() {
       {/* 01. HERO SECTION */}
       <section className="hero-section relative h-screen min-h-[700px] w-full flex items-end overflow-hidden bg-[#0A0A0A] text-white">
         <div className="hero-bg absolute inset-0 z-0">
-          <Image
+          <img
             src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=2000&q=80"
             alt="Sampan Group Architecture"
-            fill
-            priority
             sizes="100vw"
-            className="object-cover"
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-[#0A0A0A]/60" />
         </div>
@@ -295,12 +292,11 @@ export default function PrivacyPolicyPage() {
                 {/* Image Column - Alternates Left/Right */}
                 <div className={`reveal-up relative w-full aspect-[4/5] overflow-hidden ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
                   <div className="parallax-img absolute inset-0 h-[120%] -top-[10%]">
-                    <Image
+                    <img
                       src={section.image}
                       alt={section.titlePrefix + section.titleEmphasis}
-                      fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-cover"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   {/* Vignette overlay for luxury feel */}

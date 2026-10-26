@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FaBed, FaBath, FaCompass, FaCheckCircle, FaBuilding } from "react-icons/fa";
@@ -113,12 +112,11 @@ export default function UnitTypesAndSizes({
               >
                 {/* Photo Space with Coming Soon Fallback */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-900 border-b border-current/10">
-                  <Image
+                  <img
                     src={displayImage}
                     alt={unit.name}
-                    fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 

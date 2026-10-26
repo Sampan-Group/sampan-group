@@ -2,7 +2,6 @@
 
 import React, { useState, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -317,12 +316,10 @@ export default function CareersPage() {
       {/* 01. CAREERS HERO */}
       <section className="hero-section relative h-screen min-h-[700px] w-full flex items-end bg-[#071018] text-white overflow-hidden">
         <div className="hero-bg absolute inset-0 opacity-0 will-change-transform">
-          <Image
+          <img
             src="/images/career/career.jpeg"
             alt="Life at Sampan"
-            fill
-            className="object-cover"
-            priority
+            className="w-full h-full object-cover"
             sizes="100vw"
           />
         </div>
@@ -370,11 +367,10 @@ export default function CareersPage() {
         <div className="mx-auto max-w-[1400px] px-6 md:px-12 grid grid-cols-12 gap-8 lg:gap-16 items-center">
           <div className="col-span-12 lg:col-span-7">
             <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-100">
-              <Image
+              <img
                 src="/images/sampangroupteam.png"
                 alt="Life at Sampan"
-                fill
-                className="object-cover will-change-transform"
+                className="w-full h-full object-cover will-change-transform"
                 sizes="50vw"
               />
             </div>
@@ -447,11 +443,10 @@ export default function CareersPage() {
           </div>
 
           <div className="video-wrapper relative w-full max-w-5xl mx-auto aspect-video bg-black cursor-pointer group opacity-0">
-            <Image
+            <img
               src="/images/about/sampangroupteam.png"
               alt="Day in the Life"
-              fill
-              className="object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500"
+              className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500"
               sizes="100vw"
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -474,11 +469,10 @@ export default function CareersPage() {
         <div className="mx-auto max-w-[1200px] px-6 md:px-12 grid grid-cols-12 gap-8 lg:gap-16 items-center">
           <div className="col-span-12 md:col-span-5">
             <div className="relative aspect-[4/5] w-full overflow-hidden bg-neutral-100">
-              <Image
+              <img
                 src={testimonials[activeTestimonial].image}
                 alt={testimonials[activeTestimonial].name}
-                fill
-                className="object-cover"
+                className="w-full h-full object-cover"
                 sizes="33vw"
               />
             </div>
@@ -545,11 +539,10 @@ export default function CareersPage() {
                 key={i}
                 className={`relative overflow-hidden group bg-neutral-100 ${photo.size}`}
               >
-                <Image
+                <img
                   src={photo.src}
                   alt={photo.label}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 will-change-transform"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 will-change-transform"
                   sizes="33vw"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors duration-500 flex items-end p-6 z-[1]">
@@ -630,11 +623,10 @@ export default function CareersPage() {
                 key={i}
                 className="group relative aspect-[16/10] overflow-hidden bg-neutral-100 cursor-pointer"
               >
-                <Image
+                <img
                   src={div.image}
                   alt={div.name}
-                  fill
-                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 will-change-transform"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 will-change-transform"
                   sizes="50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#071018]/80 to-transparent"></div>
@@ -685,11 +677,10 @@ export default function CareersPage() {
         <div className="mx-auto max-w-[1400px] px-6 md:px-12 grid grid-cols-12 gap-8 lg:gap-16 items-center">
           <div className="col-span-12 lg:col-span-5">
             <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-100">
-              <Image
+              <img
                 src="/images/internship.jpg"
                 alt="Internship"
-                fill
-                className="object-cover"
+                className="w-full h-full object-cover"
                 sizes="33vw"
               />
             </div>

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 type Props = {
@@ -29,12 +28,11 @@ export default function ResidentialProject({
         </div>
         <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
           <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-[#dfe8df]">
-            <Image
+            <img
               src={image}
               alt={name}
-              fill
               sizes="(max-width: 1024px) 100vw, 55vw"
-              className="object-cover transition duration-700 hover:scale-105"
+              className="w-full h-full object-cover transition duration-700 hover:scale-105"
             />
           </div>
           <div>

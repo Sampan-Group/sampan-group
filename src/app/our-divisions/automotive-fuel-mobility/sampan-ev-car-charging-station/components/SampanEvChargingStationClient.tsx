@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import {
   FaBolt,
@@ -153,13 +152,11 @@ export default function SampanEvChargingStationClient() {
       {/* ================= 1. HERO SECTION (NO EYEBROW / COMPACT) ================= */}
       <section className="relative min-h-[65vh] lg:min-h-[75vh] flex items-center justify-center overflow-hidden bg-[#0c120f] text-white pt-24 pb-16 lg:pt-28 lg:pb-20 border-b border-white/10">
         <div className="absolute inset-0 z-0">
-          <Image
+          <img
             src={evImage}
             alt="Sampan EV Car Charging Facility"
-            fill
-            priority
             sizes="100vw"
-            className="object-cover object-center opacity-70"
+            className="w-full h-full object-cover object-center opacity-70"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/35" />
         </div>
@@ -255,12 +252,11 @@ export default function SampanEvChargingStationClient() {
                 onClick={() => setLightboxOpen(true)}
                 className="group relative flex-1 min-h-[300px] border border-neutral-200 bg-black rounded-none overflow-hidden cursor-pointer"
               >
-                <Image
+                <img
                   src={evImage}
                   alt="Planned EV Charging Facility"
-                  fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105 opacity-90"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 opacity-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
                   <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-emerald-400">
@@ -336,12 +332,11 @@ export default function SampanEvChargingStationClient() {
                 className="group relative flex flex-col h-full rounded-none overflow-hidden bg-[#121915] border border-white/10 hover:border-emerald-500/60 transition-all duration-300"
               >
                 <div className="relative h-52 w-full overflow-hidden bg-neutral-900 shrink-0">
-                  <Image
+                  <img
                     src={spot.image}
                     alt={spot.name}
-                    fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#121915] via-transparent to-black/30" />
 
@@ -541,12 +536,11 @@ export default function SampanEvChargingStationClient() {
             onClick={(e) => e.stopPropagation()}
             className="relative max-w-5xl w-full max-h-[85vh] aspect-[16/10] rounded-none overflow-hidden border border-white/20 shadow-2xl bg-black"
           >
-            <Image
+            <img
               src={evImage}
               alt="Sampan EV Charging Facility Layout"
-              fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-contain"
+              className="w-full h-full object-contain"
             />
           </div>
         </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import {
   FaIndustry,
@@ -137,13 +136,11 @@ export default function SampanIndustrialParkClient() {
       {/* ================= 1. HERO SECTION (NO EYEBROW / COMPACT) ================= */}
       <section className="relative min-h-[68vh] lg:min-h-[78vh] flex items-center justify-center overflow-hidden bg-[#0c1410] text-white pt-24 pb-16 lg:pt-28 lg:pb-20 border-b border-white/10">
         <div className="absolute inset-0 z-0">
-          <Image
+          <img
             src={heroBackground}
             alt="Sampan Industrial Park Overview"
-            fill
-            priority
             sizes="100vw"
-            className="object-cover object-center opacity-70"
+            className="w-full h-full object-cover object-center opacity-70"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/30" />
         </div>
@@ -236,12 +233,11 @@ export default function SampanIndustrialParkClient() {
                 className="group relative flex flex-col bg-white border border-neutral-200 rounded-none overflow-hidden hover:border-emerald-700 hover:shadow-lg transition-all duration-300"
               >
                 <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-neutral-900">
-                  <Image
+                  <img
                     src={unit.image}
                     alt={unit.name}
-                    fill
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
                   <div className="absolute top-4 left-4">
@@ -366,12 +362,11 @@ export default function SampanIndustrialParkClient() {
                 <div className="absolute top-0 left-0 h-[3px] w-0 bg-emerald-600 transition-all duration-500 group-hover:w-full z-20" />
 
                 <div className="relative w-full flex-1 min-h-[240px] overflow-hidden bg-neutral-200">
-                  <Image
+                  <img
                     src={item.image}
                     alt={item.title}
-                    fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 z-10">
                     <span className="font-mono text-[9px] font-bold uppercase tracking-widest text-emerald-400 block mb-0.5">
@@ -505,12 +500,11 @@ export default function SampanIndustrialParkClient() {
             onClick={(e) => e.stopPropagation()}
             className="relative max-w-5xl w-full max-h-[85vh] aspect-[16/10] rounded-none overflow-hidden border border-white/20 shadow-2xl bg-black"
           >
-            <Image
+            <img
               src={selectedImage}
               alt="Sampan Industrial Park Preview"
-              fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-contain"
+              className="w-full h-full object-contain"
             />
           </div>
         </div>

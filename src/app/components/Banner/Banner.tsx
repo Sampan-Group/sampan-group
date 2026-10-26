@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef, useCallback } from "react"; // Fixed: Added useCallback
 import Link from "next/link";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -343,13 +342,11 @@ export default function HeroCarousel() {
 
           {/* Image Animation Wrapper */}
           <div className="image-wrapper absolute inset-0 h-full w-full will-change-transform">
-            <Image
+            <img
               src={slide.image}
               alt={slide.title}
-              fill
-              priority={i === 0}
               sizes="100vw"
-              className="object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
 

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 interface NearbyConcern {
@@ -89,11 +88,10 @@ export default function GolfNearbyModule({
 
                 <div className="flex items-center gap-3 sm:gap-4 mb-4">
                   <div className="relative w-12 h-12 rounded-none bg-white p-1.5 flex-shrink-0 border border-emerald-700/30">
-                    <Image
+                    <img
                       src={item.logo}
-                      alt={item.name}
-                      fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-contain p-1"
+                      alt={item.name} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="w-full h-full object-contain p-1"
                     />
                   </div>
                   <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-amber-400 transition-colors font-serif leading-tight">

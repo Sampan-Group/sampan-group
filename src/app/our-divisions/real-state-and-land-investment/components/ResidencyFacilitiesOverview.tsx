@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FaSwimmingPool, FaDumbbell, FaCheckCircle, FaAward } from "react-icons/fa";
 
 export interface FacilityItem {
@@ -114,12 +113,11 @@ export default function ResidencyFacilitiesOverview({
               >
                 {/* Image Container with subtle zoom */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-900">
-                  <Image
+                  <img
                     src={facility.image}
                     alt={facility.title}
-                    fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                   
                   {/* Subtle vignette gradient */}

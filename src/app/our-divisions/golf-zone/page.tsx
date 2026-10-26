@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import GolfHero from "./components/GolfHero";
 import GolfLocationAndMap from "./components/GolfLocationAndMap";
@@ -98,11 +97,10 @@ export default function GolfZonePage() {
 
                   <div className="flex items-center gap-4 sm:gap-6 mb-6">
                     <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-white p-2 rounded-none border border-emerald-200 flex-shrink-0 shadow-sm">
-                      <Image
+                      <img
                         src={concern.image}
-                        alt={concern.name}
-                        fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-contain p-1"
+                        alt={concern.name} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="w-full h-full object-contain p-1"
                       />
                     </div>
                     <div className="min-w-0 flex-1">

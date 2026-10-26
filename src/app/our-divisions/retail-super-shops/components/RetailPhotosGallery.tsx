@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { FaCamera, FaExpand, FaTimes } from "react-icons/fa";
 
 export interface GalleryPhotoItem {
@@ -74,11 +73,10 @@ export default function RetailPhotosGallery({
               className="group border border-current/15 bg-white overflow-hidden cursor-pointer relative shadow-sm hover:shadow-md transition-all"
             >
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-200">
-                <Image
+                <img
                   src={photo.image}
-                  alt={photo.title}
-                  fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  alt={photo.title} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -120,11 +118,10 @@ export default function RetailPhotosGallery({
             <h3 className="text-2xl font-bold text-white">{selectedPhoto.title}</h3>
 
             <div className="relative aspect-[16/10] w-full border border-white/20 overflow-hidden">
-              <Image
+              <img
                 src={selectedPhoto.image}
-                alt={selectedPhoto.title}
-                fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-contain"
+                alt={selectedPhoto.title} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="w-full h-full object-contain"
               />
             </div>
 

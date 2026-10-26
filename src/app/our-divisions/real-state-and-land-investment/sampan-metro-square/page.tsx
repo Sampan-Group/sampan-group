@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import {
   FaBuilding,
@@ -369,12 +368,11 @@ export default function SampanMetroSquarePage() {
                   className="border border-neutral-300/80 bg-white overflow-hidden relative flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 group"
                 >
                   <div className="relative h-48 w-full overflow-hidden bg-neutral-100">
-                    <Image
+                    <img
                       src={benefit.image}
                       alt={benefit.title}
-                      fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none" />
 
@@ -454,12 +452,11 @@ export default function SampanMetroSquarePage() {
                           className={`relative h-full flex-1 transition-all duration-500 ease-out hover:flex-[2.2] group/photo overflow-hidden ${i === 0 ? "border-r border-white/30" : ""
                             }`}
                         >
-                          <Image
+                          <img
                             src={img.src}
                             alt={img.label || amenity.title}
-                            fill
                             sizes="(max-width: 768px) 50vw, 25vw"
-                            className="object-cover group-hover/photo:scale-110 transition-transform duration-500 ease-out"
+                            className="w-full h-full object-cover group-hover/photo:scale-110 transition-transform duration-500 ease-out"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent pointer-events-none" />
 
@@ -486,12 +483,11 @@ export default function SampanMetroSquarePage() {
                     </div>
                   ) : (
                     <div className="relative h-48 w-full overflow-hidden bg-neutral-100">
-                      <Image
+                      <img
                         src={amenity.images[0].src}
                         alt={amenity.title}
-                        fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                        className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none" />
 

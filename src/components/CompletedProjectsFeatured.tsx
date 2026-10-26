@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -106,14 +105,12 @@ export default function CompletedProjectsFeatured() {
         </div>
 
         <div className="relative min-h-[70vh] overflow-hidden bg-neutral-950 text-white sm:min-h-[620px]">
-          <Image
+          <img
             key={activeProject.id}
             src={activeProject.logo}
             alt={activeProject.name}
-            fill
             sizes="(max-width: 1024px) 100vw, 1200px"
-            className="featured-project-image object-cover"
-            priority={activeIndex === 0}
+            className="w-full h-full featured-project-image object-cover"
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/10" />

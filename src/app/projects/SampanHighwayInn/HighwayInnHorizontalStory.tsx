@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 
@@ -155,13 +154,11 @@ export default function HighwayInnHorizontalStory() {
                         }
                   }
                 >
-                  <Image
+                  <img
                     src={image.src}
                     alt={isFront ? image.alt : ""}
-                    fill
-                    priority={isFront && activeIndex === 0}
                     sizes="(max-width: 1024px) 90vw, 48vw"
-                    className="object-cover"
+                    className="w-full h-full object-cover"
                   />
                   <div
                     aria-hidden="true"

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FaHardHat, FaCheckCircle, FaClock, FaCalendarAlt, FaCamera } from "react-icons/fa";
 
 export interface ProgressMilestone {
@@ -138,11 +137,10 @@ export default function ConstructionProgressTracker({
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {sitePhotos.map((photo, i) => (
                 <div key={i} className="relative aspect-[4/3] border border-current/15 overflow-hidden bg-neutral-200 shadow-sm">
-                  <Image
+                  <img
                     src={photo}
-                    alt={`Site Photo ${i + 1}`}
-                    fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-500 hover:scale-105"
+                    alt={`Site Photo ${i + 1}`} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
               ))}

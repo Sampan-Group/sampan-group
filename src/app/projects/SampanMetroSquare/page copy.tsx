@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const projectFacts = [
@@ -98,13 +97,11 @@ export default function SampanMetroSquarePage() {
         <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,.7)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.7)_1px,transparent_1px)] [background-size:72px_72px]" />
 
         <div className="pointer-events-none absolute bottom-0 right-[-18rem] z-[1] h-[72%] w-[78rem] sm:right-[-12rem] sm:h-[82%] lg:right-[-5rem] lg:h-[91%] lg:w-[72%]">
-          <Image
+          <img
             src="/images/metro-square/tower-visual.webp"
             alt="Architectural visualization of the proposed Sampan Metro Square tower"
-            fill
-            priority
             sizes="(max-width: 1024px) 100vw, 68vw"
-            className="object-contain object-bottom [mask-image:linear-gradient(to_bottom,black_0%,black_66%,transparent_96%)]"
+            className="w-full h-full object-contain object-bottom [mask-image:linear-gradient(to_bottom,black_0%,black_66%,transparent_96%)]"
           />
         </div>
         <div className="absolute inset-0 z-[2] bg-gradient-to-t from-[#052e20] via-transparent to-transparent" />
@@ -257,12 +254,11 @@ export default function SampanMetroSquarePage() {
           <div className="mt-14 overflow-hidden bg-[#ece9dd] p-3 lg:mt-20 lg:p-5">
             <div className="grid lg:grid-cols-[1fr_20rem]">
               <div className="relative min-h-[25rem] overflow-hidden bg-[#e8e5da] lg:min-h-[34rem]">
-                <Image
+                <img
                   src="/images/metro-square/location-map.webp"
                   alt="Map showing Sampan Metro Square in relation to nearby universities and Uttara Metro stations"
-                  fill
                   sizes="(max-width: 1024px) 100vw, 70vw"
-                  className="object-contain p-4 sm:p-8"
+                  className="w-full h-full object-contain p-4 sm:p-8"
                 />
               </div>
               <div className="flex flex-col justify-between bg-[#f8f6ed] p-7 text-[#123c2b] sm:p-9">
@@ -315,12 +311,11 @@ export default function SampanMetroSquarePage() {
                 key={amenity.title}
                 className={`group relative isolate overflow-hidden ${amenity.className}`}
               >
-                <Image
+                <img
                   src={amenity.image}
                   alt={`Planned ${amenity.title.toLowerCase()} at Sampan Metro Square`}
-                  fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover transition duration-1000 ease-out group-hover:scale-[1.04]"
+                  className="w-full h-full object-cover transition duration-1000 ease-out group-hover:scale-[1.04]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
                 <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-5">
@@ -376,12 +371,11 @@ export default function SampanMetroSquarePage() {
 
             <div className="order-1 bg-[#e7e3d5] p-4 sm:p-8 lg:order-2 lg:p-10">
               <div className="relative aspect-[4/3]">
-                <Image
+                <img
                   src="/images/metro-square/floor-plan.webp"
                   alt="Proposed typical floor plan for Sampan Metro Square"
-                  fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-contain"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-[#123c2b]/20 pt-5 text-[0.65rem] font-bold uppercase tracking-[0.18em]">

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FiArrowRight } from "react-icons/fi";
 import { FaRoute, FaFacebook } from "react-icons/fa";
 
@@ -15,13 +14,11 @@ export default function PartyCenterHeroOverview({ onOpenBooking }: HeroOverviewP
     <section data-no-reveal className="relative min-h-0 sm:min-h-screen flex flex-col justify-start sm:justify-center overflow-hidden bg-neutral-950 text-white pt-24 pb-12 sm:pt-28 sm:pb-20 border-b border-white/10">
       {/* Background Image with dark gradient overlay */}
       <div className="absolute inset-0 z-0">
-        <Image
+        <img
           src={heroImage}
           alt="Sampan Highway Inn Restaurant & Party Center"
-          fill
-          priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="w-full h-full object-cover object-center"
         />
         {/* Balanced dark gradient for text readability and navbar contrast */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" />

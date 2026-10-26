@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import {
   FaGasPump,
@@ -217,13 +216,11 @@ export default function SampanFillingStationClient() {
       <section className="relative min-h-[75vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#0a110d] text-white pt-24 pb-16 lg:pt-28 lg:pb-20 border-b border-emerald-900/30">
         {/* Authentic 4K Station Image with Balanced Gradient Overlay */}
         <div className="absolute inset-0 z-0">
-          <Image
+          <img
             src={heroBackground}
             alt="Sampan Filling Station Forecourt"
-            fill
-            priority
             sizes="100vw"
-            className="object-cover object-center opacity-85"
+            className="w-full h-full object-cover object-center opacity-85"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/25" />
         </div>
@@ -497,12 +494,11 @@ export default function SampanFillingStationClient() {
                 <div className="absolute top-0 left-0 h-[3px] w-0 bg-emerald-600 transition-all duration-500 group-hover:w-full z-20" />
 
                 <div className="relative w-full flex-1 min-h-[240px] overflow-hidden bg-neutral-200">
-                  <Image
+                  <img
                     src={item.image}
                     alt={item.title}
-                    fill
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 sm:p-6 z-10">
                     <div className="flex items-end justify-between gap-3">
@@ -574,12 +570,11 @@ export default function SampanFillingStationClient() {
                 className="group relative flex flex-col h-full rounded-none overflow-hidden bg-[#111c16] border border-white/10 hover:border-emerald-500/60 transition-all duration-300"
               >
                 <div className="relative h-52 w-full overflow-hidden bg-neutral-900 shrink-0">
-                  <Image
+                  <img
                     src={spot.image}
                     alt={spot.name}
-                    fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#111c16] via-transparent to-black/30" />
 
@@ -785,12 +780,11 @@ export default function SampanFillingStationClient() {
             onClick={(e) => e.stopPropagation()}
             className="relative max-w-5xl w-full max-h-[85vh] aspect-[16/10] rounded-none overflow-hidden border border-white/20 shadow-2xl bg-black"
           >
-            <Image
+            <img
               src={selectedImage}
               alt="Sampan Filling Station Preview"
-              fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-contain"
+              className="w-full h-full object-contain"
             />
           </div>
         </div>

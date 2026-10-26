@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useMemo, useState } from "react";
 import { concerns } from "@/data/concerns";
 
@@ -74,7 +73,7 @@ export default function ConcernsSection3() {
             >
               <div className="flex min-h-28 flex-1 items-center justify-center sm:min-h-36">
                 {concern.logo ? (
-                  <Image
+                  <img
                     src={concern.logo}
                     alt={`${concern.name} logo`}
                     width={220}

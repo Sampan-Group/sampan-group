@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import {
   FaGasPump,
@@ -184,13 +183,11 @@ export default function SampanLpgFillingStationClient() {
       {/* ================= 1. HERO SECTION (NO STATUS BADGE / EYEBROW) ================= */}
       <section className="relative min-h-[70vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-[#0c0e0d] text-white pt-24 pb-16 lg:pt-28 lg:pb-20 border-b border-white/10">
         <div className="absolute inset-0 z-0">
-          <Image
+          <img
             src={heroBackground}
             alt="Sampan LPG Station Forecourt"
-            fill
-            priority
             sizes="100vw"
-            className="object-cover object-center opacity-80"
+            className="w-full h-full object-cover object-center opacity-80"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/25" />
         </div>
@@ -348,12 +345,11 @@ export default function SampanLpgFillingStationClient() {
                 <div className="absolute top-0 left-0 h-[3px] w-0 bg-amber-600 transition-all duration-500 group-hover:w-full z-20" />
 
                 <div className="relative w-full flex-1 min-h-[240px] overflow-hidden bg-neutral-200">
-                  <Image
+                  <img
                     src={item.image}
                     alt={item.title}
-                    fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 z-10">
                     <div className="flex items-end justify-between gap-3">
@@ -416,12 +412,11 @@ export default function SampanLpgFillingStationClient() {
                 className="group relative flex flex-col h-full rounded-none overflow-hidden bg-[#121614] border border-white/10 hover:border-amber-500/60 transition-all duration-300"
               >
                 <div className="relative h-52 w-full overflow-hidden bg-neutral-900 shrink-0">
-                  <Image
+                  <img
                     src={spot.image}
                     alt={spot.name}
-                    fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#121614] via-transparent to-black/30" />
 
@@ -626,12 +621,11 @@ export default function SampanLpgFillingStationClient() {
             onClick={(e) => e.stopPropagation()}
             className="relative max-w-5xl w-full max-h-[85vh] aspect-[16/10] rounded-none overflow-hidden border border-white/20 shadow-2xl bg-black"
           >
-            <Image
+            <img
               src={selectedImage}
               alt="Sampan LPG Station Preview"
-              fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-contain"
+              className="w-full h-full object-contain"
             />
           </div>
         </div>

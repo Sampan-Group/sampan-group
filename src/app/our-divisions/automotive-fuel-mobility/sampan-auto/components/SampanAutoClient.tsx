@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import {
   FaCar,
@@ -121,13 +120,11 @@ export default function SampanAutoClient() {
       <section className="relative min-h-[75vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#0c0d10] text-white pt-24 pb-16 lg:pt-28 lg:pb-20 border-b border-white/10">
         {/* Authentic Showroom Image with Balanced Gradient Overlay */}
         <div className="absolute inset-0 z-0">
-          <Image
+          <img
             src={heroBackground}
             alt="Sampan Auto Showroom Display"
-            fill
-            priority
             sizes="100vw"
-            className="object-cover object-center opacity-85"
+            className="w-full h-full object-cover object-center opacity-85"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/35" />
         </div>
@@ -555,12 +552,11 @@ export default function SampanAutoClient() {
                   <div className="relative w-full h-[200px] overflow-hidden bg-neutral-100 flex items-center justify-center">
                     {car.image ? (
                       <>
-                        <Image
+                        <img
                           src={car.image}
                           alt={`${car.model} ${car.subModel}`}
-                          fill
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute top-3 right-3 z-10">
                           <span className="inline-flex items-center gap-1 bg-black/75 backdrop-blur-xs text-white text-[10px] font-mono px-2 py-0.5 font-bold uppercase">
@@ -852,12 +848,11 @@ export default function SampanAutoClient() {
               {/* Image Preview / Placeholder */}
               <div className="md:col-span-6 bg-neutral-950 relative min-h-[260px] md:min-h-[380px] flex items-center justify-center">
                 {selectedCar.image ? (
-                  <Image
+                  <img
                     src={selectedCar.image}
                     alt={`${selectedCar.model} ${selectedCar.subModel}`}
-                    fill
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-contain"
+                    className="w-full h-full object-contain"
                   />
                 ) : (
                   <div className="text-center p-8 space-y-3 text-neutral-400">

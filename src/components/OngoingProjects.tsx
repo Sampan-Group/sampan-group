@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Projects } from "@/data/projects";
@@ -50,12 +49,11 @@ export default function OngoingProjects() {
                 {/* Image wrapper - explicit relative + h-full guarantees
                     the fill image always has a computed height */}
                 <div className="absolute inset-0">
-                  <Image
+                  <img
                     src={project.logo}
                     alt={project.name}
-                    fill
                     sizes="(max-width: 640px) 100vw, 33vw"
-                    className={`object-cover transition duration-1000 ease-out ${
+                    className={`w-full h-full object-cover transition duration-1000 ease-out ${
                       isActive ? "scale-110" : "scale-100"
                     }`}
                   />

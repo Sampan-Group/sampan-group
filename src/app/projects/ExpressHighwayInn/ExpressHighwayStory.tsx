@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import {
@@ -27,13 +26,11 @@ export default function ExpressHighwayStory() {
       aria-labelledby="express-highway-title"
       className="relative left-1/2 isolate min-h-[100svh] w-[100dvw] max-w-none -translate-x-1/2 overflow-hidden bg-[#071b13] text-white"
     >
-      <Image
+      <img
         src="/images/projects/express-highway-inn.jpg"
         alt="Express Highway Inn"
-        fill
-        priority
         sizes="100vw"
-        className="object-cover"
+        className="w-full h-full object-cover"
       />
 
       {/* Overlays */}

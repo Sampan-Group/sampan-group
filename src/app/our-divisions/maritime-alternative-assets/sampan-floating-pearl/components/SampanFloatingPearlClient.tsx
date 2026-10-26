@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import {
   FaShip,
@@ -165,12 +164,10 @@ export default function SampanFloatingPearlClient() {
       {/* 1. HERO SECTION (Compact, impactful, square styling) */}
       <section className="relative bg-[#07162C] text-white pt-28 pb-20 sm:pt-36 sm:pb-28 overflow-hidden border-b border-cyan-950">
         <div className="absolute inset-0 z-0 opacity-30">
-          <Image
+          <img
             src="/images/our-divisions/sampan-floating-pearl/WhatsApp Image 2026-08-01 at 17.41.07 (1).jpeg"
             alt="Sampan Floating Pearl Hero"
-            fill
-            priority
-            className="object-cover object-center"
+            className="w-full h-full object-cover object-center"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#07162C] via-[#07162C]/80 to-transparent z-0" />
@@ -351,12 +348,11 @@ export default function SampanFloatingPearlClient() {
                 className="group relative bg-white border border-neutral-200 rounded-none overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-all duration-300"
               >
                 <div className="relative aspect-[16/10] bg-neutral-900 overflow-hidden">
-                  <Image
+                  <img
                     src={photo.src}
                     alt={photo.title}
-                    fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                     <span className="text-white text-xs font-mono flex items-center gap-1.5">
@@ -414,12 +410,10 @@ export default function SampanFloatingPearlClient() {
 
             {/* Modal Image Frame */}
             <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-black overflow-hidden border border-neutral-900">
-              <Image
+              <img
                 src={filteredPhotos[activeModalIndex].src}
                 alt={filteredPhotos[activeModalIndex].title}
-                fill
-                priority
-                className="object-contain"
+                className="w-full h-full object-contain"
               />
             </div>
 

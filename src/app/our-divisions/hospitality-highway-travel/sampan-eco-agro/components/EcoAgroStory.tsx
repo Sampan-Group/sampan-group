@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import gsap from "gsap";
@@ -89,11 +88,10 @@ export default function EcoAgroStory() {
       <div className="mx-auto grid max-w-[1400px] gap-12 px-6 py-20 lg:grid-cols-[1fr_0.9fr] lg:gap-20 lg:px-12 lg:py-32">
         <div className="eco-collage-left">
           <div className="eco-story-image relative h-[68vh] min-h-0 overflow-hidden will-change-[clip-path]">
-            <Image
+            <img
               src={panels[0].image}
-              alt="Sampan Eco and Agro"
-              fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover"
+              alt="Sampan Eco and Agro" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent" />
           </div>
@@ -107,11 +105,10 @@ export default function EcoAgroStory() {
             </p>
           </article>
           <div className="relative h-[24rem] overflow-hidden">
-            <Image
+            <img
               src="/images/concerns/eco-agro.png"
-              alt="Fresh produce grown at Sampan Eco and Agro"
-              fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover object-[70%_center]"
+              alt="Fresh produce grown at Sampan Eco and Agro" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="w-full h-full object-cover object-[70%_center]"
             />
           </div>
           {panels.slice(1).map((panel) => (

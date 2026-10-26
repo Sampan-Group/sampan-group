@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 const leaders = [
   { role: "Managing Director & CEO", name: "Md. Emamul Hasan", image: "/images/leadership/Md._EMAMUL_HASAN.png", summary: "A diversified business leader with experience across real estate, trade, amusement, agriculture, and automotive ventures.", highlights: ["Founded leadership since 2007", "Former BRAC Bank executive", "BARVIDA and BADIA leadership"], bio: `A seasoned professional with a rich tapestry of experience spanning various industries and sectors. With a distinguished track record as Managing Director across companies under the SAMPAN umbrella, MD Emamul Hasan brings a wealth of expertise to every role he undertakes.\n\nHis journey includes business leadership, industry associations, and community engagement. His achievements in banking and sales performance further demonstrate his exceptional ability to drive results.` },
@@ -37,7 +36,7 @@ export default function LeadershipSection() {
             const expanded = expandedLeaders.has(leader.name);
             return (
               <article key={leader.name} className="overflow-hidden border border-white/10 bg-[#080808]">
-                <div className="relative aspect-[0.9] overflow-hidden bg-[#211d1a]"><Image src={leader.image} alt={`${leader.name}, ${leader.role}`} fill sizes="(min-width: 1024px) 30vw, 90vw" className="object-cover object-top transition duration-700 hover:scale-105" /></div>
+                <div className="relative aspect-[0.9] overflow-hidden bg-[#211d1a]"><img src={leader.image} alt={`${leader.name}, ${leader.role}`} sizes="(min-width: 1024px) 30vw, 90vw" className="w-full h-full object-cover object-top transition duration-700 hover:scale-105" /></div>
                 <div className="p-6 sm:p-7">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-red-400">{leader.role}</p>
                   <h3 className="mt-3 text-2xl font-semibold tracking-tight">{leader.name}</h3>

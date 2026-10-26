@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { concerns2 as concerns } from "@/data/concerns2";
@@ -99,12 +98,11 @@ export default function DivisionsSection() {
 
                         <div className="flex items-start gap-4">
                           <div className="relative h-12 w-32 sm:h-14 sm:w-36">
-                            <Image
+                            <img
                               src={concern.logo || "/images/default-logo.png"} // Added fallback
                               alt={`${concern.name} logo`}
-                              fill
                               sizes="(max-width: 640px) 128px, 144px"
-                              className="object-contain object-left transition-transform duration-500 group-hover/card:scale-[1.04]"
+                              className="w-full h-full object-contain object-left transition-transform duration-500 group-hover/card:scale-[1.04]"
                             />
                           </div>
                         </div>

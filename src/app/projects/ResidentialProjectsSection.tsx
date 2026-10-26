@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -60,12 +59,11 @@ export default function ResidentialProjectsSection() {
                     : "sm:flex-[0.7]"
               }`}
             >
-              <Image
+              <img
                 src={image}
                 alt={name}
-                fill
                 sizes="(max-width: 640px) 100vw, 40vw"
-                className={`object-cover transition duration-1000 ${
+                className={`w-full h-full object-cover transition duration-1000 ${
                   isActive ? "scale-105" : "scale-100"
                 }`}
               />

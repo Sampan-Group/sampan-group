@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FaIndustry, FaFileDownload, FaPhoneAlt, FaCogs } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
 
@@ -48,13 +47,11 @@ export default function ManufacturingHero({
 
       {/* Background Image with Dark Vignette for Navbar Readability */}
       <div className="absolute inset-0 z-0">
-        <Image
+        <img
           src={image}
           alt={title}
-          fill
-          priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="w-full h-full object-cover object-center"
         />
         {/* brightness-[0.35] */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#090d16]/95 via-[#090d16]/85 to-[#090d16]/50" />

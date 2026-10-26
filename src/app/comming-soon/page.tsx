@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { FiArrowRight } from "react-icons/fi";
@@ -172,11 +171,9 @@ export default function ComingSoon() {
     >
       {/* ── Full Screen Background Image ── */}
       <div className="cs-bg-image absolute inset-0 z-0">
-        <Image
+        <img
           src="/images/projects/coming-soon-abstract.jpg"
           alt="Sampan Group Development"
-          fill
-          priority
           sizes="100vw"
           className="h-full w-full object-cover opacity-35 brightness-[0.7]"
         />

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import {
   FaPlay,
   FaTimes,
@@ -145,12 +144,11 @@ export default function PhotoVideoGallery() {
               onClick={() => setLightboxIndex(index)}
               className="group relative overflow-hidden rounded-none bg-neutral-200 shadow-sm border border-neutral-200/80 cursor-pointer aspect-[16/10] hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
             >
-              <Image
+              <img
                 src={item.src}
                 alt={item.title}
-                fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
 
               {/* Category Pill Badge */}
@@ -219,11 +217,10 @@ export default function PhotoVideoGallery() {
               onClick={(e) => e.stopPropagation()}
               className="relative max-w-5xl w-full max-h-[85vh] aspect-[16/10] rounded-none overflow-hidden shadow-2xl border border-white/10 flex flex-col justify-end bg-black"
             >
-              <Image
+              <img
                 src={galleryItems[lightboxIndex].src}
                 alt={galleryItems[lightboxIndex].title}
-                fill
-                className="object-contain"
+                className="w-full h-full object-contain"
                 sizes="100vw"
               />
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6 text-white">

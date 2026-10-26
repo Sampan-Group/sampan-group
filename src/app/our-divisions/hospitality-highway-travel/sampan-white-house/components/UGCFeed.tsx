@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { FaInstagram, FaHeart, FaComment, FaTimes } from "react-icons/fa";
 
 const ugcPosts = [
@@ -82,12 +81,11 @@ export default function UGCFeed() {
               onClick={() => setSelectedPost(post)}
               className="group relative aspect-[4/5] overflow-hidden rounded-none bg-neutral-100 border border-neutral-200 hover:border-[#e8b84b] cursor-pointer shadow-sm transition-all duration-500 hover:-translate-y-1"
             >
-              <Image
+              <img
                 src={post.image}
                 alt={post.author}
-                fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute top-0 left-0 h-[3px] w-0 bg-[#e8b84b] transition-all duration-500 group-hover:w-full z-10" />
 
@@ -130,7 +128,7 @@ export default function UGCFeed() {
               </button>
 
               <div className="relative aspect-[16/10] w-full rounded-none overflow-hidden bg-black mb-6">
-                <Image src={selectedPost.image} alt={selectedPost.author} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-contain" />
+                <img src={selectedPost.image} alt={selectedPost.author} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="w-full h-full object-contain" />
               </div>
 
               <div className="flex items-center justify-between border-b border-neutral-200 pb-3 mb-3">

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import {
   FaBolt,
@@ -242,13 +241,10 @@ export default function ExpressHighwayInnClubLoungePage() {
       <section data-no-reveal className="relative min-h-0 sm:min-h-screen flex flex-col justify-start sm:justify-center overflow-hidden bg-neutral-950 text-white pt-24 pb-12 sm:pt-28 sm:pb-20 border-b border-white/10">
         {/* Real Background Image with cinematic dark gradient overlay */}
         <div className="absolute inset-0 z-0">
-          <Image
+          <img
             src={heroBackground}
             alt="Express Highway Inn Club & Lounge"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
+            className="h-full w-full object-cover object-center"
           />
           {/* Dual-layer dark gradient for text readability and navbar contrast */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" />
@@ -353,13 +349,10 @@ export default function ExpressHighwayInnClubLoungePage() {
             onClick={() => setSelectedImage(masterplanImage)}
             className="group relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[16/9] overflow-hidden rounded-none bg-white shadow-xl border border-neutral-200 cursor-pointer"
           >
-            <Image
+            <img
               src={masterplanImage}
               alt="Express Highway Inn Club & Lounge Masterplan"
-              fill
-              priority
-              sizes="(max-width: 1440px) 100vw, 1440px"
-              className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
+              className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
             />
             <div className="absolute top-0 left-0 h-[4px] w-0 bg-[#58b9eb] transition-all duration-700 group-hover:w-full z-10" />
             <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-10 bg-white/95 backdrop-blur-md px-4 py-2 rounded-none border border-neutral-200 font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-neutral-900 shadow-sm flex items-center gap-2">
@@ -470,12 +463,10 @@ export default function ExpressHighwayInnClubLoungePage() {
 
                 {/* Gallery Image */}
                 <div className="relative aspect-[16/10] overflow-hidden bg-neutral-200">
-                  <Image
+                  <img
                     src={facility.image}
                     alt={facility.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-60 transition-opacity" />
 
@@ -635,12 +626,10 @@ export default function ExpressHighwayInnClubLoungePage() {
                   : "aspect-[16/10]"
                   }`}
               >
-                <Image
+                <img
                   src={item.src}
                   alt={item.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute top-0 left-0 h-[3px] w-0 bg-[#58b9eb] transition-all duration-700 group-hover:w-full z-10" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col justify-end p-5 sm:p-6">
@@ -697,12 +686,10 @@ export default function ExpressHighwayInnClubLoungePage() {
                 <div className="h-[3px] w-0 bg-[#58b9eb] transition-all duration-500 group-hover:w-full" />
 
                 <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
-                  <Image
+                  <img
                     src={location.image}
                     alt={location.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute top-4 right-4 bg-white/95 border border-neutral-200 px-3 py-1 font-mono text-[10px] font-bold text-neutral-950 shadow-sm">
                     {location.distance}
@@ -742,12 +729,10 @@ export default function ExpressHighwayInnClubLoungePage() {
             onClick={(e) => e.stopPropagation()}
             className="relative max-w-5xl w-full max-h-[85vh] aspect-[16/10] rounded-none overflow-hidden border border-white/20 shadow-2xl bg-black"
           >
-            <Image
+            <img
               src={selectedImage}
               alt="Express Highway Inn Club & Lounge Facility Zoom"
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-contain"
+              className="h-full w-full object-contain"
             />
           </div>
         </div>

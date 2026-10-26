@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { concerns2 } from "@/data/concerns2";
@@ -214,12 +213,11 @@ export default function OurDivisionsPage() {
                         <div className="flex min-h-14 items-start justify-between gap-3">
                           {logo ? (
                             <div className="relative h-12 w-24 sm:h-14 sm:w-36">
-                              <Image
+                              <img
                                 src={logo}
                                 alt={`${concern.name} logo`}
-                                fill
                                 sizes="(max-width: 640px) 96px, 144px"
-                                className="object-contain object-left transition-transform duration-500 group-hover/card:scale-[1.035]"
+                                className="w-full h-full object-contain object-left transition-transform duration-500 group-hover/card:scale-[1.035]"
                               />
                             </div>
                           ) : (

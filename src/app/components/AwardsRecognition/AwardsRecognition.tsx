@@ -333,7 +333,8 @@ export default function AwardsRecognition() {
             <img
               src={galleryImages[activeIndex].src}
               alt={`Enlarged view of Sampan Group Gallery Image ${activeIndex + 1}`}
-              className="h-full w-full object-contain"
+              sizes="90vw" // Maximize lightbox image // Prioritize loading the expanded image instantly
+              className="w-full h-full object-contain"
             />
           </div>
 
@@ -374,9 +375,8 @@ export default function AwardsRecognition() {
                   <img
                     src={img.src}
                     alt={`Thumbnail ${i + 1}`}
-                    loading="lazy"
-                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
-                    className="object-cover"
+                    sizes="48px"
+                    className="w-full h-full object-cover"
                   />
                 </button>
               ))}
@@ -412,11 +412,10 @@ function MarqueeItem({
       <img
         src={image.src}
         alt={`Sampan Group Gallery Image ${index + 1}`}
-        loading={priority ? "eager" : "lazy"}
-        // Replicates next/image `fill` behaviour without touching className
-        style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
+        // Updated sizes to accurately reflect CSS breakpoints for optimal Next.js srcset generation
+        sizes="(min-width: 1024px) 380px, 240px" // Increased from default 75 to 90 for premium sharpness // Eager-loads the first few visible images to prevent layout shift
         // Removed grayscale and opacity hover effects. Images are now always full color.
-        className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-105"
+        className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-105"
       />
 
       {/* Architectural Top-Right Index (Always Visible) */}

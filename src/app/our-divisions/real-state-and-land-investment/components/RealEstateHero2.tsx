@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FiArrowDownRight, FiArrowRight, FiPhone } from "react-icons/fi";
 
 export interface HeroFact {
@@ -49,13 +48,11 @@ export default function RealEstateHero2({
 
       {/* 1. Immersive Architectural Backdrop with High-Contrast Vignette */}
       <div className="absolute inset-0 z-0">
-        <Image
+        <img
           src={image}
           alt={title}
-          fill
-          priority
           sizes="100vw"
-          className="object-cover object-center scale-[1.01]"
+          className="w-full h-full object-cover object-center scale-[1.01]"
         />
 
         {/* Deep, solid architectural scrim to guarantee 100% readable text without being washed out */}

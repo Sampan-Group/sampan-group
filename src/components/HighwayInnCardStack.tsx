@@ -1,7 +1,6 @@
 "use client";
 
 import { useLayoutEffect, useRef, useState } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { highwayInnFacilities } from "@/data/highwayInnFacility";
 
@@ -71,12 +70,11 @@ export default function HighwayInnCardStack() {
     <section className="bg-[#080808] px-10 py-16 text-white sm:px-12 lg:px-20 lg:py-24">
       <div className="mx-auto grid max-w-[1700px] gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-20">
         <div className="relative aspect-[0.82] overflow-hidden rounded-2xl bg-[#211d1a]">
-          <Image
+          <img
             src="/images/featuredConcerns/highway-inn.png"
             alt="Express Highway Inn exterior"
-            fill
             sizes="(min-width: 1024px) 40vw, 90vw"
-            className="object-cover"
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-x-0 bottom-0 bg-black/70 p-6 backdrop-blur-[2px] sm:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-red-400">
@@ -105,12 +103,11 @@ export default function HighwayInnCardStack() {
                 }}
                 className="absolute left-[19%] top-0 h-full w-[62%] origin-center overflow-hidden rounded-2xl border border-white/15 bg-[#211d1a] shadow-2xl"
               >
-                <Image
+                <img
                   src={facility.image}
                   alt={facility.alt}
-                  fill
                   sizes="(min-width: 1024px) 45vw, 85vw"
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                 />
                 <div
                     className={`absolute inset-x-0 bottom-0 bg-black/75 p-5 backdrop-blur-[2px] transition-opacity duration-500 sm:p-7 ${

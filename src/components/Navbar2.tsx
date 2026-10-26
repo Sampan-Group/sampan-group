@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { navItems } from "@/data/navigation";
@@ -119,12 +118,11 @@ export default function Navbar2() {
             aria-label="Sampan Group home"
             className="group relative z-10 flex items-center"
           >
-            <Image
+            <img
               src="/images/Sampan-Group.webp"
               alt="Sampan Group"
               width={741}
               height={102}
-              priority
               className={`w-auto object-contain transition-all duration-300 ${showSolidNav ? "h-7 lg:h-8" : "h-8 lg:h-9 brightness-0 invert"
                 }`}
             />

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FaInstagram, FaHeart, FaComment, FaHashtag, FaExternalLinkAlt } from "react-icons/fa";
 
 interface UGCPost {
@@ -101,11 +100,10 @@ export default function UGCFeed() {
 
                 {/* Main Photo */}
                 <div className="relative h-64 w-full overflow-hidden bg-black">
-                  <Image
+                  <img
                     src={post.image}
-                    alt={post.caption}
-                    fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    alt={post.caption} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
 

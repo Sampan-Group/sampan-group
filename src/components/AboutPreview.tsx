@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -263,12 +262,11 @@ export default function AboutPreview() {
 
               {/* ── Logo ── */}
               <div className="relative mb-6 h-14 w-full lg:h-16">
-                <Image
+                <img
                   src={snapshot.logo}
                   alt={`${snapshot.title} logo`}
-                  fill
                   sizes="300px"
-                  className="object-contain object-left transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-[1.04]"
+                  className="w-full h-full object-contain object-left transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-[1.04]"
                 />
               </div>
 

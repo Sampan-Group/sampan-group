@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import {
   FaGolfBall,
@@ -108,13 +107,11 @@ export default function SampanGolfAcademyClient() {
       <section className="relative min-h-0 sm:min-h-screen flex flex-col justify-start sm:justify-center overflow-hidden bg-[#07150d] text-white pt-24 pb-12 sm:pt-28 sm:pb-20 border-b border-white/10">
         {/* Real Background Image with Dark Nature Gradient Overlay */}
         <div className="absolute inset-0 z-0">
-          <Image
+          <img
             src={heroBackground}
             alt="Sampan Golf Academy Green"
-            fill
-            priority
             sizes="100vw"
-            className="object-cover object-center opacity-75"
+            className="w-full h-full object-cover object-center opacity-75"
           />
           {/* Dual-layer dark gradient for optimal contrast and readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/45" />
@@ -319,12 +316,11 @@ export default function SampanGolfAcademyClient() {
                       : "aspect-[16/10]"
                     }`}
                 >
-                  <Image
+                  <img
                     src={item.image}
                     alt={item.title}
-                    fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-6 z-10">
                     <div className="flex items-end justify-between gap-3">
@@ -572,12 +568,11 @@ export default function SampanGolfAcademyClient() {
             onClick={(e) => e.stopPropagation()}
             className="relative max-w-5xl w-full max-h-[85vh] aspect-[4/3] sm:aspect-[16/10] rounded-none overflow-hidden border border-white/20 shadow-2xl bg-black"
           >
-            <Image
+            <img
               src={selectedImage}
               alt="Sampan Golf Academy Fullscreen Preview"
-              fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-contain"
+              className="w-full h-full object-contain"
             />
           </div>
         </div>

@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -172,12 +171,11 @@ export default function NewsroomPreview() {
               {/* Image Wrapper */}
               <div className="relative aspect-[16/10] w-full overflow-hidden">
                 <div className="news-card-img absolute inset-0 h-[120%] w-full -top-[10%] will-change-transform">
-                  <Image
+                  <img
                     src={post.image}
                     alt={post.title}
-                    fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                 </div>
 

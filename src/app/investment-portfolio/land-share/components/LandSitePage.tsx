@@ -2,7 +2,6 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -262,13 +261,11 @@ export default function SampanDevelopmentLtd() {
           style={{ clipPath: "polygon(25% 0, 100% 0, 100% 100%, 0% 100%)" }}
         >
           <div className="relative h-full w-full">
-            <Image
+            <img
               src="/images.jpg"
               alt="SDL Architecture"
-              fill
-              priority
               sizes="100vw"
-              className="object-cover opacity-70 md:opacity-100"
+              className="w-full h-full object-cover opacity-70 md:opacity-100"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent md:bg-gradient-to-r md:from-black/80 md:via-transparent md:to-transparent" />
           </div>
@@ -306,11 +303,10 @@ export default function SampanDevelopmentLtd() {
                 </p>
                 {/* Hover Image Overlay */}
                 <div className="pointer-events-none absolute right-0 top-1/2 z-10 h-64 w-64 translate-x-20 -translate-y-1/2 scale-50 opacity-0 overflow-hidden rounded-lg transition-all duration-500 group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100">
-                  <Image
+                  <img
                     src="/images.jpg"
-                    alt={cat.title}
-                    fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover"
+                    alt={cat.title} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <span className="absolute left-0 bottom-0 h-1 w-0 bg-emerald-600 transition-all duration-500 group-hover:w-full" />
@@ -326,11 +322,10 @@ export default function SampanDevelopmentLtd() {
           <div className="grid grid-cols-12 gap-8">
             <div className="reveal-up col-span-12 md:col-span-8 md:col-start-5">
               <div className="relative aspect-[16/10] w-full overflow-hidden">
-                <Image
+                <img
                   src="/images.jpg"
                   alt="SDL Development"
-                  fill
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                   sizes="(min-width: 768px) 80vw, 100vw"
                 />
               </div>
@@ -403,11 +398,10 @@ export default function SampanDevelopmentLtd() {
                         : "opacity-0 scale-95 -translate-x-10 pointer-events-none"
                       }`}
                   >
-                    <Image
+                    <img
                       src="/images.jpg"
                       alt={project.name}
-                      fill
-                      className="object-cover"
+                      className="w-full h-full object-cover"
                       sizes="50vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -485,11 +479,10 @@ export default function SampanDevelopmentLtd() {
               className="relative w-[60vw] md:w-[40vw] shrink-0"
             >
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-200">
-                <Image
+                <img
                   src="/images.jpg"
                   alt={step.title}
-                  fill
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                   sizes="40vw"
                 />
               </div>
@@ -525,11 +518,10 @@ export default function SampanDevelopmentLtd() {
               >
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0 scale-105 opacity-0 transition-all duration-500 group-hover:scale-100 group-hover:opacity-20">
-                  <Image
+                  <img
                     src="/images.jpg"
                     alt={cat.title}
-                    fill
-                    className="object-cover"
+                    className="w-full h-full object-cover"
                     sizes="100vw"
                   />
                 </div>
@@ -599,11 +591,10 @@ export default function SampanDevelopmentLtd() {
       <section className="relative min-h-screen bg-black text-white flex flex-col justify-center overflow-hidden">
         {/* Subtle Background Image */}
         <div className="absolute inset-0 opacity-10 z-0">
-          <Image
+          <img
             src="/images.jpg"
-            alt="Background"
-            fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover"
+            alt="Background" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="w-full h-full object-cover"
           />
         </div>
 

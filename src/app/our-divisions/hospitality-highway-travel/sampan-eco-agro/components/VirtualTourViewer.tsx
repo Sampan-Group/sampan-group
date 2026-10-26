@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { FaCompass, FaExpand, FaCompress, FaEye, FaMapPin, FaLeaf, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 interface TourHotspot {
@@ -89,11 +88,10 @@ export default function VirtualTourViewer() {
           
           {/* Main Visual Screen */}
           <div className="relative flex-1 min-h-[420px] w-full overflow-hidden">
-            <Image
+            <img
               src={activeHotspot.image}
-              alt={activeHotspot.name}
-              fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover transition-all duration-700 brightness-90"
+              alt={activeHotspot.name} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="w-full h-full object-cover transition-all duration-700 brightness-90"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/40" />
 

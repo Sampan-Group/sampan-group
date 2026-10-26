@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -216,7 +215,7 @@ function AffiliationCard({ aff }: AffiliationCardProps) {
           <img
             src={aff.logo}
             alt={`${aff.name} Logo`}
-            className="object-contain opacity-70 transition-all duration-500 ease-out group-hover:scale-110 group-hover:opacity-100"
+            className="w-full h-full object-contain opacity-70 transition-all duration-500 ease-out group-hover:scale-110 group-hover:opacity-100"
             sizes="(min-width: 1024px) 25vw, 50vw"
           />
         </div>

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { aboutPreview } from "@/data/aboutPreview";
 import LeadershipSection from "@/components/LeadershipSection";
 
@@ -12,13 +11,11 @@ export default function AboutPage() {
   return (
     <main className="bg-[#E8EFE9] text-[#253247]">
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-8 py-24 sm:px-12 lg:px-20">
-        <Image
+        <img
           src="/images/the_village.png"
           alt="Sampan Group project landscape"
-          fill
-          priority
           sizes="100vw"
-          className="object-cover"
+          className="w-full h-full object-cover"
         />
         <div className="pointer-events-none absolute inset-0 bg-black/45" />
 
@@ -136,12 +133,11 @@ export default function AboutPage() {
                 className="reveal-item group overflow-hidden border border-[#253247]/15 bg-white transition duration-500 hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="relative aspect-[1.45] overflow-hidden">
-                  <Image
+                  <img
                     src={image}
                     alt={title}
-                    fill
                     sizes="(max-width: 1024px) 100vw, 33vw"
-                    className="object-cover transition duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-6 sm:p-7">
@@ -164,12 +160,11 @@ export default function AboutPage() {
       <section className="border-y border-[#253247]/10 bg-[#E8EFE9] px-8 py-16 sm:px-12 lg:px-20 lg:py-24">
         <div className="mx-auto grid w-full max-w-[1400px] gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-24">
           <div className="reveal-item relative aspect-[4/3] overflow-hidden">
-            <Image
+            <img
               src="/images/about/vision.png"
               alt="Sampan Group vision"
-              fill
               sizes="(max-width: 1024px) 100vw, 55vw"
-              className="object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
           <div className="reveal-item">
@@ -208,12 +203,11 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="reveal-item relative order-1 aspect-[4/3] overflow-hidden lg:order-2">
-            <Image
+            <img
               src="/images/about/mission.png"
               alt="Sampan Group mission and teamwork"
-              fill
               sizes="(max-width: 1024px) 100vw, 55vw"
-              className="object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>

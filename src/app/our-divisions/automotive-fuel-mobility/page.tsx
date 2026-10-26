@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { FaCar, FaGasPump, FaMapMarkerAlt, FaArrowRight, FaCheckCircle, FaBolt, FaTruck, FaClock } from "react-icons/fa";
 
 export const metadata: Metadata = {
@@ -123,11 +122,10 @@ export default function AutomotiveFuelMobilityArchivePage() {
                   {/* Brand Logo Header Box */}
                   <div className="relative h-60 w-full overflow-hidden bg-neutral-900 flex items-center justify-center p-8">
                     <div className="relative h-36 w-36">
-                      <Image
+                      <img
                         src={concern.image}
-                        alt={concern.name}
-                        fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-contain transition-transform duration-700 group-hover:scale-105"
+                        alt={concern.name} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                       />
                     </div>
                     

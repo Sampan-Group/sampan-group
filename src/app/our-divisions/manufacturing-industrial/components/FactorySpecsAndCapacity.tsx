@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { FaCogs, FaVideo, FaIndustry, FaUsers, FaPlay, FaCheckCircle, FaCamera } from "react-icons/fa";
 
@@ -139,11 +138,10 @@ export default function FactorySpecsAndCapacity({
             <div className="grid grid-cols-2 gap-3">
               {factoryPhotos.map((photo, i) => (
                 <div key={i} className="relative aspect-[4/3] border border-current/15 overflow-hidden bg-neutral-200 shadow-sm">
-                  <Image
+                  <img
                     src={photo}
-                    alt={`Factory Photo ${i + 1}`}
-                    fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-500 hover:scale-105"
+                    alt={`Factory Photo ${i + 1}`} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
               ))}

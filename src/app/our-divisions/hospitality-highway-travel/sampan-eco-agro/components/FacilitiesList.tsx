@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import {
   FaBed,
   FaFish,
@@ -103,12 +102,11 @@ export default function FacilitiesList() {
               >
                 {/* Image Header */}
                 <div className="relative aspect-[16/10] overflow-hidden bg-neutral-100">
-                  <Image
+                  <img
                     src={facility.image}
                     alt={facility.name}
-                    fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-3 py-1 rounded-none text-[10px] font-bold uppercase tracking-widest text-[#b9e583]">
                     {facility.badge}

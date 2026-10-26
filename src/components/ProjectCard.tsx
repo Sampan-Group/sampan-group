@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Project } from "@/types/Project";
 
@@ -21,11 +20,9 @@ export default function ProjectCard({ project, index }: Props) {
       {/* Image */}
 
       <div className="group overflow-hidden rounded-3xl bg-neutral-900">
-        <Image
+        <img
           src={project.logo}
           alt={project.name}
-          width={900}
-          height={700}
           className="h-[450px] w-full object-cover transition duration-700 group-hover:scale-105"
         />
       </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import {
   FaLeaf,
@@ -267,13 +266,11 @@ export default function SampanEcoAgroProduceClient() {
       >
         {/* Real Background Image with Dark Nature Gradient Overlay */}
         <div className="absolute inset-0 z-0">
-          <Image
+          <img
             src={heroBackground}
             alt="Sampan Eco & Agro Cultivation & Harvest Grounds"
-            fill
-            priority
             sizes="100vw"
-            className="object-cover object-center"
+            className="w-full h-full object-cover object-center"
           />
           {/* Dual-layer dark gradient for text readability and navbar contrast */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#07130d]/95 via-[#07130d]/80 to-[#07130d]/50" />
@@ -426,12 +423,11 @@ export default function SampanEcoAgroProduceClient() {
                 <div>
                   {/* Product Image */}
                   <div className="relative h-60 w-full bg-neutral-100 border-b border-neutral-200 overflow-hidden">
-                    <Image
+                    <img
                       src={product.image}
                       alt={product.name}
-                      fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <span className="absolute top-3 right-3 font-mono text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 bg-emerald-700 text-white shadow-sm z-10">
                       {product.tag}

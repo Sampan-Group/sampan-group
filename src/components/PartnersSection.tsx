@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { partners } from "@/data/partners";
 
 export default function PartnersSection() {
@@ -25,7 +24,7 @@ export default function PartnersSection() {
               key={partner.name}
               className="group flex min-h-52 flex-col items-center justify-center border-b border-r border-neutral-950/15 bg-[#E8EFE9] p-6 text-center transition duration-500 hover:bg-white sm:min-h-56 sm:p-8"
             >
-              <Image
+              <img
                 src={partner.logo}
                 alt={partner.name}
                 width={240}

@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -254,12 +253,10 @@ export default function LandSharePage() {
       {/* 1. HERO SECTION */}
       <section className="hero-section relative h-screen w-full flex items-center bg-zinc-950 text-white overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <Image
+          <img
             src="/images/sampangroupteam.png"
             alt="Land Share Background"
-            fill
-            className="hero-bg-image object-cover scale-110 will-change-transform"
-            priority
+            className="w-full h-full hero-bg-image object-cover scale-110 will-change-transform"
             sizes="100vw"
           />
           {/* Architectural Gradient Overlay */}
@@ -492,11 +489,10 @@ export default function LandSharePage() {
             {/* Video Tour */}
             <div className="reveal-up col-span-12 md:col-span-6 flex flex-col justify-center">
               <div className="aa-parallax-image-wrapper group relative aspect-video w-full overflow-hidden bg-zinc-900 cursor-pointer mb-6">
-                <Image
+                <img
                   src="/images.jpg"
                   alt="Video Tour"
-                  fill
-                  className="aa-parallax-image object-cover opacity-60 group-hover:scale-[1.14] transition-transform duration-700 ease-out will-change-transform"
+                  className="w-full h-full aa-parallax-image object-cover opacity-60 group-hover:scale-[1.14] transition-transform duration-700 ease-out will-change-transform"
                   sizes="50vw"
                 />
                 <div className="absolute inset-0 flex items-center justify-center z-10">
@@ -580,11 +576,10 @@ export default function LandSharePage() {
       {/* 8. NRB SECTION & WHATSAPP CTA */}
       <section className="nrb-section relative bg-zinc-950 py-24 lg:py-32 text-white overflow-hidden border-y border-zinc-800">
         <div className="absolute inset-0 overflow-hidden">
-          <Image
+          <img
             src="/nrb-bg.jpg"
             alt="Global Investors"
-            fill
-            className="nrb-bg-image object-cover opacity-20 scale-110 will-change-transform"
+            className="w-full h-full nrb-bg-image object-cover opacity-20 scale-110 will-change-transform"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 to-zinc-950/80 z-[1]"></div>
@@ -675,11 +670,10 @@ export default function LandSharePage() {
       {/* 10. FINAL CTA */}
       <section className="cta-section relative min-h-[60vh] bg-zinc-950 text-white flex flex-col justify-center overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <Image
+          <img
             src="/cta-bg.jpg"
             alt="Ready to Invest"
-            fill
-            className="cta-bg-image object-cover opacity-30 scale-110 will-change-transform"
+            className="w-full h-full cta-bg-image object-cover opacity-30 scale-110 will-change-transform"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 to-zinc-950/80 z-[1]"></div>

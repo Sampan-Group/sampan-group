@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { FaMapMarkerAlt, FaCar, FaExternalLinkAlt, FaClock } from "react-icons/fa";
 
@@ -124,7 +123,7 @@ export default function NearbyLocationModule() {
             >
               {/* Image Preview */}
               <div className="relative aspect-square overflow-hidden bg-neutral-900">
-                <Image
+                <img
                   src={spot.image}
                   alt={spot.name}
                   width={600}

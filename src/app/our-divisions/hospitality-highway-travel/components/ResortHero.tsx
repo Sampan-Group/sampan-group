@@ -1,4 +1,3 @@
-import Image from "next/image";
 
 interface FactItem {
   value: string;
@@ -44,13 +43,11 @@ export default function ResortHero({
       {/* Background Hero Banner with Dark Gradient Overlay */}
       {heroBackground && (
         <div className="absolute inset-0 z-0">
-          <Image
+          <img
             src={heroBackground}
             alt={title}
-            fill
-            priority
             sizes="100vw"
-            className="object-cover object-center"
+            className="w-full h-full object-cover object-center"
           />
           {/* Cinematic dark emerald gradient overlay for legibility & contrast */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#071d13]/95 via-[#071d13]/85 to-[#071d13]/55" />

@@ -2,7 +2,6 @@
 
 import React, { useState, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -397,12 +396,10 @@ export default function ShipSpaceSharePage() {
       {/* 1. HERO SECTION */}
       <section className="hero-section relative min-h-screen md:h-screen w-full flex items-center bg-neutral-950 text-white overflow-hidden pt-20 pb-10 md:pt-0 md:pb-0">
         <div className="absolute inset-0 overflow-hidden">
-          <Image
+          <img
             src="/images/investment-portfolio/shipshareHero.jpeg"
             alt="Maritime Vessel"
-            fill
-            className="hero-bg-image object-cover will-change-transform"
-            priority
+            className="w-full h-full hero-bg-image object-cover will-change-transform"
             sizes="100vw"
           />
         </div>
@@ -481,11 +478,10 @@ export default function ShipSpaceSharePage() {
       <section className="bg-[#f8f8f8] py-16 md:py-20 lg:py-32">
         <div className="mx-auto max-w-[1600px] px-6 sm:px-8 md:px-12">
           <div className="aa-parallax-image-wrapper relative aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden mb-12 bg-neutral-200">
-            <Image
+            <img
               src="/images/investment-portfolio/vassel2.png"
               alt="Vessel Overview"
-              fill
-              className="aa-parallax-image object-cover will-change-transform"
+              className="w-full h-full aa-parallax-image object-cover will-change-transform"
               sizes="100vw"
             />
           </div>
@@ -586,11 +582,10 @@ export default function ShipSpaceSharePage() {
         <div className="mx-auto max-w-[1600px] px-6 sm:px-8 md:px-12 grid grid-cols-12 gap-8 md:gap-12 items-center">
           <div className="col-span-12 md:col-span-5 reveal-up">
             <div className="aa-parallax-image-wrapper relative aspect-[4/3] sm:aspect-[3/4] w-full overflow-hidden bg-neutral-900 group">
-              <Image
+              <img
                 src="/images/prospectus.jpg"
                 alt="Prospectus"
-                fill
-                className="aa-parallax-image object-cover group-hover:scale-105 transition-transform duration-700 will-change-transform"
+                className="w-full h-full aa-parallax-image object-cover group-hover:scale-105 transition-transform duration-700 will-change-transform"
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
@@ -644,11 +639,10 @@ export default function ShipSpaceSharePage() {
         <div className="mx-auto max-w-[1200px] px-6 sm:px-8 grid grid-cols-12 gap-8 md:gap-12 items-center">
           <div className="aa-parallax-image-wrapper col-span-12 md:col-span-4 overflow-hidden max-w-[200px] md:max-w-none mx-auto">
             <div className="relative aspect-square w-full rounded-full overflow-hidden">
-              <Image
+              <img
                 src="/images/investor.jpg"
                 alt="Investor"
-                fill
-                className="aa-parallax-image object-cover will-change-transform"
+                className="w-full h-full aa-parallax-image object-cover will-change-transform"
                 sizes="33vw"
               />
             </div>
@@ -686,11 +680,10 @@ export default function ShipSpaceSharePage() {
                 className={`${img.size} relative overflow-hidden group bg-neutral-200`}
               >
                 <div className="absolute inset-0 overflow-hidden">
-                  <Image
+                  <img
                     src={img.src}
                     alt={img.alt}
-                    fill
-                    className="gallery-parallax object-cover group-hover:scale-105 transition-transform duration-500 will-change-transform"
+                    className="w-full h-full gallery-parallax object-cover group-hover:scale-105 transition-transform duration-500 will-change-transform"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
@@ -831,11 +824,10 @@ export default function ShipSpaceSharePage() {
       <section className="bg-white py-16 md:py-20 lg:py-32">
         <div className="mx-auto max-w-[1600px] px-6 sm:px-8 md:px-12">
           <div className="aa-parallax-image-wrapper relative aspect-video w-full overflow-hidden bg-neutral-900 cursor-pointer group">
-            <Image
+            <img
               src="/images/ship-video.jpg"
               alt="Video Tour"
-              fill
-              className="aa-parallax-image object-cover opacity-70 group-hover:scale-[1.12] transition-transform duration-700 will-change-transform"
+              className="w-full h-full aa-parallax-image object-cover opacity-70 group-hover:scale-[1.12] transition-transform duration-700 will-change-transform"
               sizes="100vw"
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
@@ -937,11 +929,10 @@ export default function ShipSpaceSharePage() {
       {/* 14. FINAL CTA */}
       <section className="cta-section relative min-h-[80vh] md:min-h-[90vh] bg-black text-white flex flex-col justify-center overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <Image
+          <img
             src="/images/ship-cta.jpg"
             alt="Ocean Horizon"
-            fill
-            className="cta-bg-image object-cover opacity-40 will-change-transform"
+            className="w-full h-full cta-bg-image object-cover opacity-40 will-change-transform"
             sizes="100vw"
           />
         </div>

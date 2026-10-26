@@ -27,7 +27,7 @@ export default function ExpressHighwayStory() {
       className="relative left-1/2 isolate min-h-[100svh] w-[100dvw] max-w-none -translate-x-1/2 overflow-hidden bg-[#071b13] text-white"
     >
       <img
-        src="/images/projects/express-highway-inn.jpg"
+        src="/images/our-divisions/express-highway-inn/Modern-Sampan-Highway-Commercial-Complex.png"
         alt="Express Highway Inn"
         sizes="100vw"
         className="absolute inset-0 w-full h-full object-cover"

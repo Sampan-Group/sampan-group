@@ -30,7 +30,7 @@ export default function ExpressHighwayStory() {
         src="/images/projects/express-highway-inn.jpg"
         alt="Express Highway Inn"
         sizes="100vw"
-        className="w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover"
       />
 
       {/* Overlays */}

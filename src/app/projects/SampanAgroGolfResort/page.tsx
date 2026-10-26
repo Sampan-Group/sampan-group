@@ -26,14 +26,14 @@ export default function SampanAgroGolfFeature() {
         src="/images/featuredConcerns/sampan-agro-golf-resort.png"
         alt="Aerial concept view of Sampan Agro & Golf Resort"
         sizes="100vw"
-        className="w-full h-full object-cover object-[62%_center]"
+        className="absolute inset-0 w-full h-full object-cover object-[62%_center]"
       />
 
       <div className="absolute inset-0 bg-[#061b12]/25" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#061b12]/95 via-[#061b12]/62 to-[#061b12]/10" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#061b12]/95 via-transparent to-[#061b12]/25" />
 
-      <div className="relative mx-auto flex min-h-[680px] w-full max-w-[1500px] flex-col px-6 py-16 sm:px-10 lg:min-h-[650px] lg:px-16 lg:py-20">
+      <div className="relative z-10 mx-auto flex min-h-[680px] w-full max-w-[1500px] flex-col px-6 py-16 sm:px-10 lg:min-h-[650px] lg:px-16 lg:py-20">
         {/* <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/20 pb-5">
           <div className="flex items-center gap-3 text-[0.64rem] font-bold uppercase tracking-[0.27em] text-[#d7e969]">
             <span className="h-px w-9 bg-current" />

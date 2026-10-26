@@ -1,8 +1,5 @@
 "use client";
 
-interface LSHSRoadmapProps {
-  onOpenAssessment?: () => void;
-}
 
 const levels = [
   {
@@ -88,7 +85,7 @@ const levels = [
   },
 ];
 
-export default function LSHSRoadmap({ onOpenAssessment }: LSHSRoadmapProps) {
+export default function LSHSRoadmap() {
   return (
     <section id="pathway" className="py-20 px-4 sm:px-8 lg:px-16 bg-white text-slate-900">
       <div className="max-w-7xl mx-auto">
@@ -107,14 +104,6 @@ export default function LSHSRoadmap({ onOpenAssessment }: LSHSRoadmapProps) {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-3">
-            {onOpenAssessment && (
-              <button
-                onClick={onOpenAssessment}
-                className="px-5 py-3 rounded-xl bg-white border-2 border-slate-300 hover:border-[#0b73b9] text-slate-800 font-bold text-xs uppercase tracking-wider transition-all shadow-sm cursor-pointer"
-              >
-                🧭 Diagnostic Quiz
-              </button>
-            )}
             <a
               href="https://cips.lshs.co.uk/"
               target="_blank"
@@ -224,28 +213,6 @@ export default function LSHSRoadmap({ onOpenAssessment }: LSHSRoadmapProps) {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Bottom Banner */}
-        <div className="mt-12 text-center bg-gradient-to-r from-sky-50 to-indigo-50 border border-sky-200/80 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-center sm:text-left">
-            <h4 className="text-base font-bold text-slate-900 font-serif">
-              Unsure which qualification matches your exact job role?
-            </h4>
-            <p className="text-xs text-slate-600 mt-1">
-              Our UK-qualified academic advisors evaluate your CV free of charge.
-            </p>
-          </div>
-          <div className="flex items-center gap-3">
-            <a
-              href="https://forms.gle/kHkicZ6TaHQRoMck6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-5 py-2.5 rounded-xl bg-[#0c4a6e] hover:bg-[#0b73b9] text-white text-xs font-bold uppercase tracking-wider shadow transition-all"
-            >
-              Get Free CV Evaluation ↗
-            </a>
-          </div>
         </div>
       </div>
     </section>

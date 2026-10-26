@@ -1,14 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 
 interface LSHSHeroProps {
-  onOpenAssessment?: () => void;
   onOpenVideo?: () => void;
 }
 
-export default function LSHSHero({ onOpenAssessment, onOpenVideo }: LSHSHeroProps) {
+export default function LSHSHero({ onOpenVideo }: LSHSHeroProps = {}) {
   const [showVideoModal, setShowVideoModal] = useState(false);
 
   const handleVideoClick = () => {
@@ -21,41 +19,16 @@ export default function LSHSHero({ onOpenAssessment, onOpenVideo }: LSHSHeroProp
 
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#062438] via-[#0c4a6e] to-[#072d42] text-white pt-14 pb-16 sm:pt-20 sm:pb-20 lg:pt-24 lg:pb-24 px-4 sm:px-8 lg:px-16">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#062438] via-[#0c4a6e] to-[#072d42] text-white pt-28 pb-16 sm:pt-36 sm:pb-20 lg:pt-40 lg:pb-24 px-4 sm:px-8 lg:px-16">
         {/* Ambient atmospheric glows */}
         <div className="absolute top-0 right-0 -translate-y-12 translate-x-12 w-[32rem] h-[32rem] rounded-full bg-[#0b73b9]/25 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 translate-y-16 -translate-x-12 w-[28rem] h-[28rem] rounded-full bg-[#f4d210]/15 blur-3xl pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto">
-          {/* Breadcrumb / Division Badge */}
-          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-6">
-            <Link
-              href="/our-divisions"
-              className="text-xs font-semibold uppercase tracking-wider text-sky-200/80 hover:text-white transition-colors"
-            >
-              Our Divisions
-            </Link>
-            <span className="text-sky-400/50">/</span>
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold tracking-wider uppercase bg-[#0b73b9]/40 text-sky-200 border border-[#38bdf8]/30">
-              Professional Education
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold tracking-wider uppercase bg-[#f4d210]/20 text-[#f4d210] border border-[#f4d210]/40">
-              <span className="w-2 h-2 rounded-full bg-[#f4d210] animate-pulse" />
-              A Sampan Group Concern
-            </span>
-          </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-6">
-              {/* Eyebrow */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-sky-900/60 border border-sky-400/30 text-xs sm:text-sm font-semibold text-sky-200">
-                <span className="text-[#f4d210] font-bold">🇬🇧</span>
-                <span>London School of Higher Studies</span>
-                <span className="text-sky-400">•</span>
-                <span className="text-[#f4d210] font-bold">CIPS Approved Study Centre</span>
-              </div>
 
               {/* Headline */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white font-serif leading-[1.08]">
@@ -109,16 +82,6 @@ export default function LSHSHero({ onOpenAssessment, onOpenVideo }: LSHSHeroProp
                   <span>Visit Main LSHS Portal</span>
                   <span className="text-xs">↗</span>
                 </a>
-
-                {onOpenAssessment && (
-                  <button
-                    onClick={onOpenAssessment}
-                    className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-sm bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all"
-                  >
-                    <span>🧭 Find My Level</span>
-                    <span className="text-[10px] font-bold bg-[#f4d210] text-slate-950 px-1.5 py-0.5 rounded">Quiz</span>
-                  </button>
-                )}
               </div>
 
               {/* Direct Admission Link Highlight */}

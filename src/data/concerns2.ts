@@ -26,14 +26,14 @@ export const concerns2: Concern[] = [
   //   logo: "/images/brand/sampanmotolibskyline.webp",
   //   href: "/our-divisions/real-state-and-land-investment/sampan-skyline",
   // },
-  {
-    id: 4,
-    name: "Sampan Nexus",
-    category: "Development & Construction",
-    tagline: "Residential building, Mawna via SDL.",
-    logo: "/images/brand/sampannexus.png",
-    href: "/our-divisions/real-state-and-land-investment/sampan-nexus",
-  },
+  // {
+  //   id: 4,
+  //   name: "Sampan Nexus",
+  //   category: "Development & Construction",
+  //   tagline: "Residential building, Mawna via SDL.",
+  //   logo: "/images/brand/sampannexus.png",
+  //   href: "/our-divisions/real-state-and-land-investment/sampan-nexus",
+  // },
   {
     id: 5,
     name: "Sampan Trade Emporium",

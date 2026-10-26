@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
 
-const heroImage = "/images/our-divisions/sampan-eco-agro/frontview2.jpg";
+const heroImage = "/images/our-divisions/sampan-eco-agro/frontview2.webp";
 
 export default function HeroOverview({ onOpenBooking }: { onOpenBooking: () => void }) {
   return (

@@ -24,7 +24,7 @@ const facilitiesData: Facility[] = [
     name: "Lakeview Wooden Cottages",
     badge: "Accommodations",
     description: "Serene lakeside wooden cottages crafted for peaceful overnight stays, refreshing weekend getaways, and quiet countryside relaxation.",
-    image: "/images/our-divisions/sampan-eco-agro/frontview2.jpg",
+    image: "/images/our-divisions/sampan-eco-agro/frontview2.webp",
     icon: FaBed,
   },
   {
@@ -32,7 +32,7 @@ const facilitiesData: Facility[] = [
     name: "Lakeside Open-Air Dining",
     badge: "Dining & Cuisine",
     description: "Waterfront open dining terrace serving freshly prepared traditional dishes and evening barbecue in a tranquil open-air ambiance.",
-    image: "/images/our-divisions/sampan-eco-agro/frontview.jpg",
+    image: "/images/our-divisions/sampan-eco-agro/frontview.webp",
     icon: FaUtensils,
   },
   {
@@ -40,7 +40,7 @@ const facilitiesData: Facility[] = [
     name: "Freshwater Lake & Boating",
     badge: "Lake Recreation",
     description: "A wide natural freshwater lake offering serene wooden boat rides, cooling water breezes, and scenic sunset views.",
-    image: "/images/our-divisions/sampan-eco-agro/lake.jpg",
+    image: "/images/our-divisions/sampan-eco-agro/lake.webp",
     icon: FaWater,
   },
   {
@@ -48,7 +48,7 @@ const facilitiesData: Facility[] = [
     name: "Botanical Gardens & Trails",
     badge: "Nature Promenades",
     description: "Curated floral displays, aromatic botanical pathways, and winding tree canopies immersed in refreshing natural greenery.",
-    image: "/images/our-divisions/sampan-eco-agro/flower-garden.jpeg",
+    image: "/images/our-divisions/sampan-eco-agro/flower-garden.webp",
     icon: FaLeaf,
   },
   {
@@ -56,7 +56,7 @@ const facilitiesData: Facility[] = [
     name: "Sunset Pier & Waterside Deck",
     badge: "Waterfront Pier",
     description: "Peaceful wooden boardwalk extending out over the water, designed for quiet reflection, photography, and evening breezes.",
-    image: "/images/our-divisions/sampan-eco-agro/lake4.jpg",
+    image: "/images/our-divisions/sampan-eco-agro/lake4.webp",
     icon: FaFish,
   },
   {
@@ -64,7 +64,7 @@ const facilitiesData: Facility[] = [
     name: "Landscaped Picnic Lawns",
     badge: "Outdoor Leisure",
     description: "Spacious green open grounds surrounded by palms and trees, ideal for family leisure, outdoor walks, and fresh air.",
-    image: "/images/our-divisions/sampan-eco-agro/frontview3.jpg",
+    image: "/images/our-divisions/sampan-eco-agro/frontview3.webp",
     icon: FaTree,
   },
 ];

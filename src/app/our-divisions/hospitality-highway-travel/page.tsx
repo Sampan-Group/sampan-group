@@ -170,7 +170,7 @@ const hospitalityConcerns = [
     location: "Padma Bridge Expressway Green Belt",
     description:
       "A peaceful lakeside eco-resort sanctuary featuring luxury wooden cottages, serene boat rides, open-air lakeside dining & BBQ, and refreshing nature staycations.",
-    image: "/images/our-divisions/sampan-eco-agro/frontview2.jpg",
+    image: "/images/our-divisions/sampan-eco-agro/frontview2.webp",
     link: "/our-divisions/hospitality-highway-travel/sampan-eco-agro",
     badge: "Eco-Resort & Cottages",
     highlights: [

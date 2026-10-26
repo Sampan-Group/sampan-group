@@ -19,7 +19,7 @@ export const metadata: Metadata = {
       "Organic crop fields, seasonal fruit orchards, and greenhouse floriculture in Alphadanga, Faridpur, Bangladesh.",
     images: [
       {
-        url: "/images/our-divisions/eco-agro/veg2.jpg",
+        url: "/images/our-divisions/eco-agro/veg2.webp",
         width: 1200,
         height: 630,
         alt: "Sampan Eco & Agro Agricultural Harvest",

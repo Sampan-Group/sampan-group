@@ -19,7 +19,7 @@ import AgroPhotosGallery, { AgroPhotoItem } from "../../components/AgroPhotosGal
 import AgroNearbyModule from "../../components/AgroNearbyModule";
 
 // --- Hero Background ---
-const heroBackground = "/images/our-divisions/sampan-eco-agro/frontview2.jpg";
+const heroBackground = "/images/our-divisions/sampan-eco-agro/frontview2.webp";
 
 // --- Storytelling Paragraphs & Pillars (No delivery/bulk claims) ---
 const storyParagraphs = [
@@ -65,7 +65,7 @@ const ecoAgroProducts: SimplifiedProduceItem[] = [
     id: "dragon-fruits",
     name: "Fresh Dragon Fruits",
     category: "Seasonal Fruits",
-    image: "/images/our-divisions/eco-agro/dragon_fruits.png",
+    image: "/images/our-divisions/eco-agro/dragon_fruits.webp",
     tag: "Farm Fresh",
     description: "Vibrant, sweet, nutrient-rich dragon fruits naturally cultivated and hand-harvested in our Alphadanga orchards.",
   },
@@ -73,7 +73,7 @@ const ecoAgroProducts: SimplifiedProduceItem[] = [
     id: "field-pumpkin",
     name: "Sweet Field Pumpkins",
     category: "Fresh Vegetables",
-    image: "/images/our-divisions/eco-agro/pumpkin.jpg",
+    image: "/images/our-divisions/eco-agro/pumpkin.webp",
     tag: "Soil Grown",
     description: "Naturally grown pumpkins with sweet dense flesh, rich natural flavor, and long shelf life.",
   },
@@ -81,7 +81,7 @@ const ecoAgroProducts: SimplifiedProduceItem[] = [
     id: "fresh-eggplants",
     name: "Purple Eggplants (Brinjal)",
     category: "Fresh Vegetables",
-    image: "/images/our-divisions/eco-agro/486247078_122141364842588506_5865218886699525094_n.jpg",
+    image: "/images/our-divisions/eco-agro/486247078_122141364842588506_5865218886699525094_n.webp",
     tag: "Estate Grown",
     description: "Tender, glossy purple eggplants hand-picked fresh from our fertile cultivation rows.",
   },
@@ -89,7 +89,7 @@ const ecoAgroProducts: SimplifiedProduceItem[] = [
     id: "vine-tomatoes",
     name: "Vine-Fresh Tomatoes",
     category: "Fresh Vegetables",
-    image: "/images/our-divisions/eco-agro/485807461_122141364836588506_5451588892501741969_n.jpg",
+    image: "/images/our-divisions/eco-agro/485807461_122141364836588506_5451588892501741969_n.webp",
     tag: "Farm Fresh",
     description: "Sun-nourished vine tomatoes harvested at peak maturity and sorted with care.",
   },
@@ -97,7 +97,7 @@ const ecoAgroProducts: SimplifiedProduceItem[] = [
     id: "estate-mangoes",
     name: "Sweet Orchard Mangoes",
     category: "Seasonal Fruits",
-    image: "/images/our-divisions/eco-agro/mango.jpg",
+    image: "/images/our-divisions/eco-agro/mango.webp",
     tag: "Seasonal",
     description: "Naturally tree-ripened, fragrant sweet mangoes harvested fresh during peak summer harvest.",
   },
@@ -105,7 +105,7 @@ const ecoAgroProducts: SimplifiedProduceItem[] = [
     id: "floriculture-gerbera",
     name: "Greenhouse Gerbera & Cut Flowers",
     category: "Flowers & Floriculture",
-    image: "/images/our-divisions/eco-agro/flower.jpg",
+    image: "/images/our-divisions/eco-agro/flower.webp",
     tag: "Greenhouse",
     description: "Vibrant gerbera daisies and seasonal ornamental cut flowers cultivated under protected greenhouse care.",
   },
@@ -154,56 +154,56 @@ const photos: AgroPhotoItem[] = [
     id: "photo-1",
     title: "Fresh Field Okra & Garden Harvest",
     category: "Fresh Vegetables",
-    image: "/images/our-divisions/eco-agro/veg2.jpg",
+    image: "/images/our-divisions/eco-agro/veg2.webp",
     caption: "Crates of crisp green okra and garden produce harvested fresh in Alphadanga.",
   },
   {
     id: "photo-2",
     title: "Sweet Field Pumpkin Harvest",
     category: "Field Produce",
-    image: "/images/our-divisions/eco-agro/pumpkin.jpg",
+    image: "/images/our-divisions/eco-agro/pumpkin.webp",
     caption: "Naturally soil-grown organic pumpkins arranged in harvest baskets.",
   },
   {
     id: "photo-3",
     title: "Estate Purple Eggplant Harvest",
     category: "Fresh Vegetables",
-    image: "/images/our-divisions/eco-agro/486247078_122141364842588506_5865218886699525094_n.jpg",
+    image: "/images/our-divisions/eco-agro/486247078_122141364842588506_5865218886699525094_n.webp",
     caption: "Glossy purple eggplants sorted fresh from the Alphadanga fields.",
   },
   {
     id: "photo-4",
     title: "Fresh Green & Vine Tomatoes",
     category: "Fresh Vegetables",
-    image: "/images/our-divisions/eco-agro/485807461_122141364836588506_5451588892501741969_n.jpg",
+    image: "/images/our-divisions/eco-agro/485807461_122141364836588506_5451588892501741969_n.webp",
     caption: "Hand-picked vine tomatoes sorted from our Alphadanga farm beds.",
   },
   {
     id: "photo-5",
     title: "Greenhouse Gerbera Floriculture",
     category: "Floriculture",
-    image: "/images/our-divisions/eco-agro/flower.jpg",
+    image: "/images/our-divisions/eco-agro/flower.webp",
     caption: "Commercial gerbera daisy greenhouse rows grown under attentive estate care.",
   },
   {
     id: "photo-6",
     title: "Orchard Mango Harvest Baskets",
     category: "Fruit Orchards",
-    image: "/images/our-divisions/eco-agro/mango.jpg",
+    image: "/images/our-divisions/eco-agro/mango.webp",
     caption: "Freshly picked sweet mangoes gathered directly beneath the estate trees.",
   },
   {
     id: "photo-7",
     title: "Fresh Tuberose Blooms & Harvest",
     category: "Floriculture & Greens",
-    image: "/images/our-divisions/eco-agro/veg.jpg",
+    image: "/images/our-divisions/eco-agro/veg.webp",
     caption: "Fragrant tuberose floral bundles and garden vegetables gathered fresh.",
   },
   {
     id: "photo-8",
     title: "Harvested Farm Mango Baskets",
     category: "Seasonal Fruits",
-    image: "/images/our-divisions/eco-agro/fruits.jpg",
+    image: "/images/our-divisions/eco-agro/fruits.webp",
     caption: "Baskets of orchard mangoes ready during seasonal harvest.",
   },
 ];
@@ -369,7 +369,7 @@ export default function SampanEcoAgroProduceClient() {
         concernName="Sampan Eco & Agro"
         storyParagraphs={storyParagraphs}
         pillars={storyPillars}
-        farmImage="/images/our-divisions/sampan-eco-agro/vegetables-table-garden-sunlight.jpg"
+        farmImage="/images/our-divisions/sampan-eco-agro/vegetables-table-garden-sunlight.webp"
         bgTheme="divisions-green"
         accentColor="#15803d"
       />

@@ -55,12 +55,12 @@ export const divisionGroups = [
     href: "/our-divisions/defense-security",
     items: [32, 33],
   },
-  {
-    id: "maritime",
-    title: "Maritime / Alternative Assets",
-    href: "/our-divisions/maritime-alternative-assets",
-    items: [35],
-  },
+  // {
+  //   id: "maritime",
+  //   title: "Maritime / Alternative Assets",
+  //   href: "/our-divisions/maritime-alternative-assets",
+  //   items: [35],
+  // },
 ].map((group) => ({
   ...group,
   items: group.items.map((concernId) => {

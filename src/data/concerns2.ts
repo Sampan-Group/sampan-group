@@ -106,7 +106,7 @@ export const concerns2: Concern[] = [
     name: "Sampan City End",
     category: "Development & Construction",
     tagline: "New Auto showroom + cafe, car wash, facilities.",
-    logo: "/images/brand/sampancafemetro.png",
+    logo: "/images/brand/Sampan_City_End.png",
     href: "/our-divisions/real-state-and-land-investment/sampan-cafe-metro",
   },
   {

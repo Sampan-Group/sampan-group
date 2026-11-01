@@ -110,13 +110,13 @@ export default function SampanPetBeverageClient() {
 
             {/* Action Buttons */}
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <button
+              {/* <button
                 onClick={() => scrollTo("capabilities")}
                 className="group inline-flex items-center justify-center gap-2 rounded-none bg-orange-600 hover:bg-orange-500 px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 shadow-lg shadow-orange-950/40 cursor-pointer"
               >
                 <span>Plant Capabilities</span>
                 <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-              </button>
+              </button> */}
 
               <button
                 onClick={() => scrollTo("gallery")}

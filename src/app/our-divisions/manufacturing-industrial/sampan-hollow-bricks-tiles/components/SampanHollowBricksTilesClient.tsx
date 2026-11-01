@@ -45,7 +45,7 @@ const mainProducts: ProductItem[] = [
     name: "3-Core Multi-Cavity Hollow Block (4″, 6″ & 8″)",
     category: "blocks",
     categoryLabel: "Load-Bearing & Insulated",
-    image: "/images/our-divisions/sampan-hollow-bricks/brick_paver/Hollow Block+4″, 6″ & 8″.png",
+    image: "/images/our-divisions/sampan-hollow-bricks/brick_paver/Hollow_Block_3_Core.png",
     specs: "3-Chamber Vertical Cavities | High Compressive Strength & Thermal Barrier",
     description: "Uniform multi-chamber hollow blocks with reinforced vertical cores for rebar/mortar infill, conduit routing, and superior thermal insulation.",
     contain: true,

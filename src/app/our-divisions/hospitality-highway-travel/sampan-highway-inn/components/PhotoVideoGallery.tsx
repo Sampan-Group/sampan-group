@@ -96,7 +96,7 @@ const galleryItems = [
     id: 10,
     title: "Sampan Fast Food",
     category: "fast-food",
-    src: "/images/our-divisions/sampan-highway-inn/fast-food.jpeg",
+    src: "/images/our-divisions/sampan-highway-inn/fast-food.webp",
     aspect: "col-span-2 row-span-2",
     caption: "Serving up delicious and quick bites to keep you moving on your journey.",
   },

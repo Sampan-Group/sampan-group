@@ -105,7 +105,7 @@ export default function SampanPetBeverageClient() {
 
             {/* Shortened Subheadline */}
             <p className="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-xl font-light tracking-wide border-l-2 border-orange-500/80 pl-4">
-              Automated food-grade PET bottle preforms and beverage bottling plant located inside Sampan Industrial Park, Alfadanga, Faridpur.
+              Automated food-grade PET preform molding and purified beverage bottling at Sampan Industrial Park, Alfadanga, Faridpur.
             </p>
 
             {/* Action Buttons */}
@@ -149,7 +149,7 @@ export default function SampanPetBeverageClient() {
               </div> */}
               <div className="border-l-2 border-orange-400 pl-4">
                 <p className="text-sm sm:text-base font-bold text-white uppercase tracking-wider">Industrial Park</p>
-                <p className="text-[11px] text-white/60 mt-0.5 font-mono">Anchor Facility</p>
+                <p className="text-[11px] text-white/60 mt-0.5 font-mono">Anchor Plant</p>
               </div>
             </div>
 

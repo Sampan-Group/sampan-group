@@ -31,7 +31,7 @@ const galleryItems = [
     id: 2,
     title: "Sampan Fast Food",
     category: "dining",
-    src: "/images/our-divisions/sampan-highway-inn/fast-food.jpeg",
+    src: "/images/our-divisions/sampan-highway-inn/fast-food.webp",
     aspect: "col-span-1",
     caption: "Delicious gourmet burgers, crispy fried chicken, and quick savory highway bites.",
   },

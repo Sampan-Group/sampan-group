@@ -21,7 +21,7 @@ export const concerns2: Concern[] = [
   // {
   //   id: 3,
   //   name: "Sampan Skyline",
-  //   category: "Development & Construction",
+  ///   category: "Development & Construction",
   //   tagline: "Commercial + residential construction project",
   //   logo: "/images/brand/sampanmotolibskyline.webp",
   //   href: "/our-divisions/real-state-and-land-investment/sampan-skyline",

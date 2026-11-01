@@ -37,7 +37,7 @@ const facilitiesData: FacilityItem[] = [
     title: "Sampan Fast Food",
     category: "Quick Bites & Dining",
     badge: "Quick Bites",
-    image: "/images/our-divisions/sampan-highway-inn/fast-food.jpeg",
+    image: "/images/our-divisions/sampan-highway-inn/fast_food.webp",
     description:
       "Serving up delicious, piping-hot burgers, crispy fried chicken, wraps, and quick savory bites prepared freshly to keep you energized on your journey.",
     hours: "24/7 Service",

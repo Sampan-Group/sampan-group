@@ -112,17 +112,17 @@ export default function SampanPetBeverageClient() {
           );
         });
 
-        // 2. Slow reveal fade-up for content, cards, badges
+        // 2. Reveal fade-up for content, cards, badges (calibrated to match heading rhythm)
         gsap.utils.toArray<HTMLElement>(".fade-up").forEach((el) => {
           gsap.fromTo(
             el,
-            { y: 40, autoAlpha: 0 },
+            { y: 28, autoAlpha: 0 },
             {
               y: 0,
               autoAlpha: 1,
-              duration: 1.2,
+              duration: 0.8,
               ease: "power3.out",
-              scrollTrigger: { trigger: el, start: "top 88%" },
+              scrollTrigger: { trigger: el, start: "top 92%" },
             }
           );
         });
@@ -272,19 +272,16 @@ export default function SampanPetBeverageClient() {
               return (
                 <div
                   key={idx}
-                  className="fade-up group relative flex flex-col justify-between border border-neutral-200/90 bg-white p-7 sm:p-8 rounded-none hover:border-orange-600 hover:shadow-[0_20px_40px_-15px_rgba(234,88,12,0.12)] hover:-translate-y-1.5 transition-all duration-500 overflow-hidden"
+                  className="fade-up group relative flex flex-col justify-between border border-neutral-200/90 bg-white p-7 sm:p-8 rounded-none hover:border-orange-600 hover:shadow-[0_20px_40px_-15px_rgba(234,88,12,0.12)] transition-[border-color,box-shadow] duration-300 overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-orange-500/[0.04] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   <div className="absolute top-0 left-0 h-[3px] w-0 bg-orange-600 transition-all duration-500 group-hover:w-full z-10" />
 
                   <div>
-                    <div className="flex items-center justify-between mb-6">
+                    <div className="mb-6">
                       <div className="w-12 h-12 bg-[#faf8f5] border border-neutral-200/80 flex items-center justify-center text-orange-700 group-hover:bg-orange-600 group-hover:border-orange-600 group-hover:text-white transition-all duration-500 shadow-xs">
                         <Icon className="text-lg" />
                       </div>
-                      <span className="font-mono text-xs font-semibold text-neutral-300 group-hover:text-orange-600/70 transition-colors">
-                        0{idx + 1}
-                      </span>
                     </div>
 
                     <div className="flex items-center gap-2 mb-2">
@@ -342,7 +339,7 @@ export default function SampanPetBeverageClient() {
               <article
                 key={item.id}
                 onClick={() => setSelectedImage(item.image)}
-                className="fade-up group relative flex flex-col justify-between bg-white border border-neutral-200/90 rounded-2xl p-4 sm:p-5 hover:border-neutral-300 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                className="fade-up group relative flex flex-col justify-between bg-white border border-neutral-200/90 rounded-2xl p-4 sm:p-5 hover:border-neutral-300 hover:shadow-lg transition-[border-color,box-shadow] duration-300 cursor-pointer"
               >
                 {/* Photo Viewport with Rounded Corners & Parallax */}
                 <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-neutral-950">
@@ -372,19 +369,14 @@ export default function SampanPetBeverageClient() {
                 {/* Content Area Below Image */}
                 <div className="pt-4 sm:pt-5 px-1 pb-1 flex flex-col justify-between flex-1">
                   <div>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-orange-600" />
-                        <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-orange-700">
-                          {item.category}
-                        </span>
-                      </div>
-                      <span className="font-mono text-xs text-neutral-400">
-                        0{idx + 1}
+                    <div className="flex items-center gap-1.5 mb-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-orange-600" />
+                      <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-orange-700">
+                        {item.category}
                       </span>
                     </div>
 
-                    <h3 className="mt-2.5 text-lg sm:text-xl font-bold text-neutral-900 group-hover:text-orange-700 transition-colors leading-snug">
+                    <h3 className="mt-2 text-lg sm:text-xl font-bold text-neutral-900 group-hover:text-orange-700 transition-colors leading-snug">
                       {item.title}
                     </h3>
 

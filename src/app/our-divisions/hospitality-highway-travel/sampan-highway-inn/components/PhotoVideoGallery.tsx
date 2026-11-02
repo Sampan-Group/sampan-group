@@ -96,7 +96,7 @@ const galleryItems = [
     id: 10,
     title: "Sampan Fast Food",
     category: "fast-food",
-    src: "/images/our-divisions/sampan-highway-inn/fast-food.jpeg",
+    src: "/images/our-divisions/sampan-highway-inn/fast_food.webp",
     aspect: "col-span-2 row-span-2",
     caption: "Serving up delicious and quick bites to keep you moving on your journey.",
   },
@@ -198,9 +198,8 @@ export default function PhotoVideoGallery() {
             <div
               key={item.id}
               onClick={() => setLightboxIndex(index)}
-              className={`group relative overflow-hidden rounded-none bg-neutral-200 shadow-sm border border-neutral-200 cursor-pointer aspect-square ${
-                index === 0 ? "sm:col-span-2 sm:row-span-2" : ""
-              }`}
+              className={`group relative overflow-hidden rounded-none bg-neutral-200 shadow-sm border border-neutral-200 cursor-pointer aspect-square ${index === 0 ? "sm:col-span-2 sm:row-span-2" : ""
+                }`}
             >
               <img
                 src={item.src}

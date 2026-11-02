@@ -43,27 +43,31 @@ const factoryGallery: GalleryItem[] = [
   },
 ];
 
-const productionCapabilities = [
+interface PlantCapability {
+  eyebrow: string;
+  title: string;
+  body: string;
+  footerTag: string;
+}
+
+const plantCapabilities: PlantCapability[] = [
   {
-    name: "Virgin Food-Grade PET Preforms",
-    type: "Bottle Preforms",
-    description:
-      "Precision-injection molded preforms manufactured from 100% virgin food-grade resin with uniform wall thickness and high clarity.",
-    icon: FaWineBottle,
+    eyebrow: "INJECTION MOLDING",
+    title: "Food-Grade PET Preforms",
+    body: "High-clarity preforms molded from 100% virgin food-grade PET resin for water and beverage brands.",
+    footerTag: "100% Virgin Resin ✓",
   },
   {
-    name: "Natural Purified Water Bottling",
-    type: "Beverage Packaging",
-    description:
-      "Fully hygienic reverse-osmosis purified water packaging equipped with UV sterilization and automated capping.",
-    icon: FaWater,
+    eyebrow: "BLOW MOLDING",
+    title: "Custom PET Bottles",
+    body: "Durable, pressure-resistant PET bottles blown in standard and custom sizes from 250ml to 5L.",
+    footerTag: "Leak-Proof Precision ✓",
   },
   {
-    name: "Pressure-Resistant CSD Containers",
-    type: "Specialized Packaging",
-    description:
-      "Engineered carbonated soft drink bottle packaging designed to withstand interior carbonation pressures without base deformation.",
-    icon: FaShieldAlt,
+    eyebrow: "WATER & BEVERAGES",
+    title: "Automated Bottling Line",
+    body: "Multi-stage RO, UV, and ozone-purified drinking water and beverages bottled with zero human touch.",
+    footerTag: "BSTI & FDA Compliant ✓",
   },
 ];
 
@@ -110,13 +114,13 @@ export default function SampanPetBeverageClient() {
 
             {/* Action Buttons */}
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              {/* <button
+              <button
                 onClick={() => scrollTo("capabilities")}
                 className="group inline-flex items-center justify-center gap-2 rounded-none bg-orange-600 hover:bg-orange-500 px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 shadow-lg shadow-orange-950/40 cursor-pointer"
               >
                 <span>Plant Capabilities</span>
                 <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-              </button> */}
+              </button>
 
               <button
                 onClick={() => scrollTo("gallery")}
@@ -157,57 +161,50 @@ export default function SampanPetBeverageClient() {
         </div>
       </section>
 
-      {/* ================= 2. CAPABILITIES & PRODUCTION (NO EYEBROW) ================= */}
-      {/* <section id="capabilities" className="py-20 sm:py-24 px-6 sm:px-10 lg:px-16 bg-[#fcfbf9] border-b border-neutral-200">
+      {/* ================= 2. PLANT CAPABILITIES (3-CARD ROW) ================= */}
+      <section id="capabilities" className="py-20 sm:py-24 px-6 sm:px-10 lg:px-16 bg-[#fcfbf9] border-b border-neutral-200">
         <div className="mx-auto max-w-[1440px]">
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
               <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-950 leading-tight">
-                Automated beverage packaging. <br />
-                <span className="text-orange-700">Hygienic manufacturing.</span>
+                Food-grade packaging. <br />
+                <span className="text-orange-700">Hygienic bottling.</span>
               </h2>
             </div>
-            <p className="max-w-md text-xs sm:text-sm text-neutral-600 leading-relaxed">
-              Operating precision injection and blow molding equipment alongside automated filling lines to deliver hygienic, food-grade packaging from Alfadanga, Faridpur.
-            </p>
+            {/* <p className="max-w-md text-xs sm:text-sm text-neutral-600 leading-relaxed">
+              Automated PET preform molding, bottle blowing, and purified water production in Alfadanga.
+            </p> */}
           </div>
 
           <div className="grid gap-6 sm:grid-cols-3">
-            {productionCapabilities.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={idx}
-                  className="group flex flex-col justify-between border border-neutral-200 bg-white p-6 sm:p-7 rounded-none hover:border-orange-600 hover:shadow-md transition-all duration-300"
-                >
-                  <div>
-                    <div className="w-10 h-10 bg-orange-50 border border-orange-200 flex items-center justify-center text-orange-700 rounded-none group-hover:bg-orange-600 group-hover:text-white transition-colors mb-6">
-                      <Icon className="text-base" />
-                    </div>
-
-                    <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-orange-700 block mb-1">
-                      {item.type}
-                    </span>
-                    <h3 className="text-lg font-bold text-neutral-950 group-hover:text-orange-700 transition-colors">
-                      {item.name}
-                    </h3>
-                    <p className="mt-3 text-xs text-neutral-600 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-
-                  <div className="mt-6 pt-4 border-t border-neutral-100 flex items-center justify-between text-[11px] font-mono text-orange-800 font-bold">
-                    <span>Hygienic Standard</span>
-                    <FaCheck className="text-[10px] text-orange-600" />
-                  </div>
+            {plantCapabilities.map((item, idx) => (
+              <div
+                key={idx}
+                className="group relative flex flex-col justify-between border border-neutral-200 bg-white p-6 sm:p-8 rounded-none hover:border-orange-600 hover:shadow-md transition-all duration-300"
+              >
+                <div className="absolute top-0 left-0 h-[2px] w-0 bg-orange-600 transition-all duration-500 group-hover:w-full" />
+                <div>
+                  <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-orange-700 block mb-2">
+                    {item.eyebrow}
+                  </span>
+                  <h3 className="text-xl font-bold text-neutral-950 group-hover:text-orange-700 transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-xs sm:text-sm text-neutral-600 leading-relaxed font-light">
+                    {item.body}
+                  </p>
                 </div>
-              );
-            })}
+
+                <div className="mt-8 pt-4 border-t border-neutral-100 flex items-center justify-between text-xs font-mono text-orange-800 font-semibold">
+                  <span>{item.footerTag}</span>
+                </div>
+              </div>
+            ))}
           </div>
 
         </div>
-      </section> */}
+      </section>
 
       {/* ================= 3. PLANT PHOTOS (NO EYEBROW) ================= */}
       <section id="gallery" className="py-24 sm:py-28 px-6 sm:px-10 lg:px-16 bg-white border-b border-neutral-200">

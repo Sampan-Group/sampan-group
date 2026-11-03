@@ -784,7 +784,7 @@ export default function Footer() {
         <Separator />
 
         {/* ============ BOTTOM BAR ============ */}
-        <div className="f-anim flex flex-col items-start justify-between gap-4 pt-6 pb-2 sm:flex-row sm:items-center lg:pt-8">
+        <div className="f-anim flex flex-col items-start justify-between gap-4 pt-6 pb-14 sm:pb-16 sm:flex-row sm:items-center sm:pr-16 lg:pt-8">
           <p className="text-[10.5px] text-white/[0.32] font-mono tracking-wide">
             © {new Date().getFullYear()} Sampan Group. All rights reserved.
           </p>

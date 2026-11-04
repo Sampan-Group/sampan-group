@@ -13,6 +13,7 @@ import {
   FaCheck,
   FaShieldAlt,
   FaUtensils,
+  FaExternalLinkAlt,
 } from "react-icons/fa";
 import { FiArrowRight, FiMaximize2 } from "react-icons/fi";
 
@@ -53,9 +54,9 @@ const galleryItems: GalleryItem[] = [
     id: "tow-3",
     title: "24/7 Highway Inn Dispatch Bay",
     category: "STANDBY CREW",
-    image: "/images/our-divisions/sampan-towing/upscalemedia-transformed-(8).jpg",
+    image: "/images/our-divisions/sampan-towing/commercial-dispatch-bay.jpg",
     description:
-      "On-call towing unit and trained crew stationed ready at Sampan Highway Inn.",
+      "Modern commercial tilt-and-slide recovery fleet on 24/7 standby at Sampan Highway Inn dispatch bay.",
   },
 ];
 
@@ -249,7 +250,7 @@ export default function SampanTowingServiceClient() {
   return (
     <main
       ref={containerRef}
-      className="bg-[#fcfbf9] text-[#1a1714] selection:bg-orange-600 selection:text-white"
+      className="bg-[#fcfbf9] text-[#1a1714] selection:bg-orange-600 selection:text-white pb-16 sm:pb-0"
     >
       {/* ================= 1. HERO BANNER (FULL HEIGHT) ================= */}
       <section className="relative min-h-screen min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#110e0c] text-white pt-24 pb-16 lg:pt-28 lg:pb-20 border-b border-white/10">
@@ -284,29 +285,44 @@ export default function SampanTowingServiceClient() {
               24/7 highway breakdown recovery and damage-free towing dispatched directly from Sampan Highway Inn, Kashiani.
             </p>
 
-            {/* Action Buttons */}
-            <div className="fade-up mt-8 flex flex-wrap items-center gap-4">
-              <a
-                href="tel:+8801929918408"
-                className="group inline-flex items-center justify-center gap-2 rounded-none bg-orange-600 hover:bg-orange-500 px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 shadow-lg shadow-orange-950/40 cursor-pointer"
-              >
-                <FaPhoneAlt className="text-xs" />
-                <span>CALL HOTLINE: +880 1929-918408</span>
-              </a>
+            {/* Urgent Emergency Call-to-Action (Above the fold) */}
+            <div className="fade-up pt-1 space-y-3">
+              <div className="inline-flex items-center gap-2 bg-red-600/20 border border-red-500/40 px-3 py-1.5 backdrop-blur-md">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
+                </span>
+                <span className="font-mono text-[10.5px] sm:text-xs font-bold uppercase tracking-wider text-red-200">
+                  Emergency Roadside Recovery • 24/7 On-Call Crew
+                </span>
+              </div>
 
-              <button
-                onClick={() => scrollTo("gallery")}
-                className="inline-flex items-center justify-center rounded-none border border-white/25 bg-white/5 hover:border-white hover:bg-white hover:text-black px-8 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 backdrop-blur-sm cursor-pointer"
-              >
-                SERVICE PHOTOS
-              </button>
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center gap-3.5 sm:gap-4">
+                <a
+                  href="tel:+8801929918400"
+                  className="group inline-flex items-center justify-center gap-3 rounded-none bg-orange-600 hover:bg-orange-500 active:bg-orange-700 px-7 sm:px-9 py-3.5 sm:py-4 font-mono text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-white transition-all duration-300 shadow-xl shadow-orange-950/60 ring-2 ring-orange-500/50 hover:ring-orange-400 cursor-pointer"
+                >
+                  <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
+                    <FaPhoneAlt className="text-[11px] animate-pulse" />
+                  </div>
+                  <span>CALL TOWING HOTLINE: +880 1929-918400</span>
+                </a>
 
-              <button
-                onClick={() => scrollTo("nearby")}
-                className="inline-flex items-center justify-center rounded-none border border-orange-500/40 bg-orange-950/30 hover:bg-orange-900/60 px-7 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-orange-300 transition-all duration-300 backdrop-blur-sm cursor-pointer"
-              >
-                NEARBY PLACES
-              </button>
+                <button
+                  onClick={() => scrollTo("gallery")}
+                  className="inline-flex items-center justify-center rounded-none border border-white/25 bg-white/5 hover:border-white hover:bg-white hover:text-black px-6 sm:px-7 py-3.5 sm:py-4 font-mono text-xs font-bold uppercase tracking-[0.18em] text-white transition-all duration-300 backdrop-blur-sm cursor-pointer"
+                >
+                  SERVICE PHOTOS
+                </button>
+
+                <button
+                  onClick={() => scrollTo("nearby")}
+                  className="inline-flex items-center justify-center rounded-none border border-orange-500/40 bg-orange-950/30 hover:bg-orange-900/60 px-6 sm:px-7 py-3.5 sm:py-4 font-mono text-xs font-bold uppercase tracking-[0.18em] text-orange-300 transition-all duration-300 backdrop-blur-sm cursor-pointer"
+                >
+                  NEARBY PLACES
+                </button>
+              </div>
             </div>
 
             {/* Bottom 4 Stats */}
@@ -466,14 +482,7 @@ export default function SampanTowingServiceClient() {
                 {/* Content Area Below Image */}
                 <div className="pt-4 sm:pt-5 px-1 pb-1 flex flex-col justify-between flex-1">
                   <div>
-                    <div className="flex items-center gap-1.5 mb-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-orange-600" />
-                      <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-orange-700">
-                        {item.category}
-                      </span>
-                    </div>
-
-                    <h3 className="mt-2 text-lg sm:text-xl font-bold text-neutral-900 group-hover:text-orange-700 transition-colors leading-snug">
+                    <h3 className="text-lg sm:text-xl font-bold text-neutral-900 group-hover:text-orange-700 transition-colors leading-snug">
                       {item.title}
                     </h3>
 
@@ -502,18 +511,18 @@ export default function SampanTowingServiceClient() {
             </p>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
             {nearbySpots.map((spot) => (
               <article
                 key={spot.id}
-                className="fade-up group relative flex flex-col justify-between h-full bg-[#181412] border border-white/10 hover:border-orange-500/60 transition-[border-color,box-shadow] duration-300 rounded-none overflow-hidden"
+                className="fade-up group relative flex flex-col justify-between h-full bg-[#181412] border border-white/[0.12] hover:border-orange-500/70 hover:shadow-[0_12px_36px_rgba(0,0,0,0.55)] transition-all duration-300 rounded-none overflow-hidden"
               >
                 {/* Top orange line indicator on hover */}
                 <div className="absolute top-0 left-0 h-[3px] w-0 bg-orange-500 transition-all duration-500 group-hover:w-full z-20" />
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/[0.04] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-                {/* Photo frame with smooth scroll parallax */}
-                <div className="relative h-52 w-full overflow-hidden bg-neutral-900 shrink-0">
+                {/* Photo frame with strict uniform 16:10 aspect ratio and parallax */}
+                <div className="relative w-full aspect-[16/10] overflow-hidden bg-neutral-900 shrink-0">
                   <div className="parallax-img absolute inset-0 w-full h-[112%] -top-[6%]">
                     <img
                       src={spot.image}
@@ -524,14 +533,14 @@ export default function SampanTowingServiceClient() {
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-[#181412] via-transparent to-black/30 pointer-events-none" />
 
-                  <div className="absolute top-4 left-4 z-10">
+                  <div className="absolute top-3.5 left-3.5 z-10">
                     <span className="inline-flex items-center rounded-none bg-black/80 backdrop-blur-md px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-orange-400 border border-orange-500/30 shadow-xs">
                       {spot.badge}
                     </span>
                   </div>
                 </div>
 
-                <div className="p-6 flex flex-col flex-1 justify-between">
+                <div className="p-6 sm:p-7 flex flex-col flex-1 justify-between">
                   <div>
                     <div className="flex items-center gap-2 mb-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
@@ -539,7 +548,7 @@ export default function SampanTowingServiceClient() {
                         {spot.type}
                       </span>
                     </div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-orange-400 transition-colors">
+                    <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-orange-400 transition-colors">
                       {spot.name}
                     </h3>
                     <p className="mt-2 text-xs text-neutral-400 leading-relaxed font-light">
@@ -547,7 +556,7 @@ export default function SampanTowingServiceClient() {
                     </p>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-white/10">
+                  <div className="mt-auto pt-5 border-t border-white/10">
                     <Link
                       href={spot.link}
                       className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-orange-400 hover:text-orange-300 transition-colors"
@@ -577,7 +586,7 @@ export default function SampanTowingServiceClient() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8 items-stretch">
             {/* Card 1: Service Stationed At */}
             <div className="fade-up bg-white border border-neutral-300 p-8 rounded-none shadow-sm space-y-4 flex flex-col justify-between">
               <div className="space-y-4">
@@ -617,7 +626,7 @@ export default function SampanTowingServiceClient() {
             </div>
 
             {/* Card 3: Emergency Hotline */}
-            <div className="fade-up bg-white border border-neutral-300 p-8 rounded-none shadow-sm space-y-4 flex flex-col justify-between">
+            <div className="fade-up bg-white border-2 border-orange-500 bg-orange-50/20 p-8 rounded-none shadow-sm space-y-4 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="w-12 h-12 bg-orange-50 border border-orange-200 flex items-center justify-center text-orange-700 rounded-none">
                   <FaPhoneAlt className="text-base" />
@@ -629,17 +638,17 @@ export default function SampanTowingServiceClient() {
                   <div className="flex items-center gap-2">
                     <span className="font-mono text-xs text-neutral-400">Call:</span>
                     <a
-                      href="tel:+8801929918408"
+                      href="tel:+8801929918400"
                       className="font-mono font-bold text-orange-700 hover:underline"
                     >
-                      +880 1929-918408
+                      +880 1929-918400
                     </a>
                   </div>
                 </div>
               </div>
               <div className="pt-4 border-t border-neutral-100 space-y-2">
                 <a
-                  href="tel:+8801929918408"
+                  href="tel:+8801929918400"
                   className="inline-flex items-center gap-2 rounded-none bg-orange-600 hover:bg-orange-500 text-white px-5 py-2.5 font-mono text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
                 >
                   <FaPhoneAlt className="text-[10px]" />
@@ -651,8 +660,89 @@ export default function SampanTowingServiceClient() {
               </div>
             </div>
           </div>
+
+          {/* Location Map Box (Dedicated Full-Width Block Below the 3 Cards) */}
+          <div className="fade-up mt-8 border border-neutral-300 bg-white p-2.5 sm:p-3.5 shadow-sm">
+            {/* Top Bar with Live Indicator & Info */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-3 py-2.5 mb-2 border-b border-neutral-200">
+              <div className="flex items-center gap-2 text-xs font-mono text-neutral-700 min-w-0">
+                <span className="w-2 h-2 rounded-full bg-orange-600 animate-pulse shrink-0" />
+                <span className="font-bold text-neutral-900 uppercase tracking-wider shrink-0">Map:</span>
+                <span className="truncate">Sampan Highway Inn Base, KM 74, Dhaka–Khulna Highway, Kashiani</span>
+              </div>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Sampan+Highway+Inn,+Kashiani,+Bangladesh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 font-mono text-xs font-bold uppercase tracking-wider text-orange-700 hover:text-orange-950 transition-colors shrink-0"
+              >
+                <span>Open in Maps</span>
+                <FaExternalLinkAlt className="text-[10px]" />
+              </a>
+            </div>
+
+            {/* Embedded Responsive Google Map */}
+            <div className="relative w-full h-[320px] sm:h-[380px] bg-neutral-100 overflow-hidden">
+              <iframe
+                src="https://maps.google.com/maps?q=Sampan+Highway+Inn+Kashiani+Bangladesh&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Sampan Towing Dispatch Base Map"
+                className="w-full h-full"
+              />
+            </div>
+
+            {/* Below the map: Text Link */}
+            <div className="mt-3 px-2 py-1.5 flex items-center justify-between flex-wrap gap-2 text-xs font-mono">
+              <span className="text-neutral-500">
+                Dhaka–Khulna Highway Corridor • KM 74 Kashiani Base
+              </span>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Sampan+Highway+Inn,+Kashiani,+Bangladesh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-orange-700 hover:text-orange-800 hover:underline transition-colors"
+              >
+                <span>VIEW KASHIANI BASE ON GOOGLE MAPS</span>
+                <span className="text-sm font-sans">↗</span>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* ================= 6. MOBILE STICKY EMERGENCY HOTLINE BAR ================= */}
+      <aside
+        aria-label="Mobile Emergency Towing Bar"
+        className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#140e0c]/95 backdrop-blur-md border-t border-orange-500/40 px-4 py-3 shadow-[0_-8px_30px_rgba(0,0,0,0.6)] flex items-center justify-between gap-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]"
+      >
+        <div className="min-w-0 flex items-center gap-2.5">
+          <span className="relative flex h-2.5 w-2.5 shrink-0">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
+          </span>
+          <div className="min-w-0">
+            <p className="font-mono text-[11px] font-bold text-white uppercase tracking-wider truncate">
+              24/7 Towing Base
+            </p>
+            <p className="font-mono text-[10px] text-orange-400 truncate">
+              KM 74, Kashiani
+            </p>
+          </div>
+        </div>
+
+        <a
+          href="tel:+8801929918400"
+          className="shrink-0 inline-flex items-center gap-2 rounded-none bg-orange-600 active:bg-orange-700 text-white px-4 py-2.5 font-mono text-xs font-bold uppercase tracking-wider shadow-lg shadow-orange-950/40"
+        >
+          <FaPhoneAlt className="text-[11px] animate-bounce" />
+          <span>CALL NOW</span>
+        </a>
+      </aside>
 
       {/* Lightbox Modal */}
       {selectedImage && (

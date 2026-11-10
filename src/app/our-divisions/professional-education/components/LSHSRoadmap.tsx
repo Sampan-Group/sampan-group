@@ -90,7 +90,7 @@ export default function LSHSRoadmap() {
     <section id="pathway" className="py-20 px-4 sm:px-8 lg:px-16 bg-white text-slate-900">
       <div className="max-w-7xl mx-auto">
         {/* Quick Scan Under-Hero Bar */}
-        <div className="mb-14 p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/80 flex flex-col lg:flex-row items-center justify-between gap-6">
+        <div className="fade-up mb-14 p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/80 flex flex-col lg:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center lg:text-left">
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#0b73b9]">
               QUALIFICATION PATHWAY
@@ -115,15 +115,20 @@ export default function LSHSRoadmap() {
           </div>
         </div>
 
-        {/* Section Heading */}
+        {/* Section Heading with Line-Mask Reveal */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#0b73b9] bg-sky-100 px-3.5 py-1 rounded-full">
+          <div className="fade-up inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0b73b9] bg-sky-100 px-3.5 py-1 rounded-full mb-4">
             Course Roadmap
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-slate-900 mt-4">
-            Your Path Through the CIPS Levels
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-slate-900 leading-tight">
+            <div className="overflow-hidden">
+              <div className="line-mask">Your Path Through the</div>
+            </div>
+            <div className="overflow-hidden mt-1">
+              <div className="line-mask text-[#0b73b9]">CIPS Qualification Levels</div>
+            </div>
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 mt-4 leading-relaxed">
+          <p className="fade-up text-base sm:text-lg text-slate-600 mt-4 leading-relaxed">
             Progress in stages, from foundational operations to strategic leadership. Choose your starting point based on your current experience; most professionals with some industry background start at Level 4.
           </p>
         </div>
@@ -133,7 +138,7 @@ export default function LSHSRoadmap() {
           {levels.map((item, idx) => (
             <div
               key={idx}
-              className={`rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 relative ${
+              className={`fade-up rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 relative ${
                 item.isFeatured
                   ? "bg-gradient-to-b from-sky-50 via-white to-sky-50/50 border-2 border-[#0b73b9] shadow-xl shadow-sky-950/10 scale-[1.02]"
                   : "bg-white border border-slate-200/90 hover:border-sky-300 hover:shadow-lg"

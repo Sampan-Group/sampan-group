@@ -28,7 +28,7 @@ export default function LSHSAccreditationProof() {
         {/* Top Header Block matching reference site */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           <div className="lg:col-span-7 space-y-6">
-            <div className="flex flex-wrap items-center gap-2.5">
+            <div className="fade-up flex flex-wrap items-center gap-2.5">
               <span className="text-xs font-bold uppercase tracking-widest text-[#0b73b9] bg-sky-100 px-3.5 py-1 rounded-full">
                 ACCREDITATION & RECOGNITION
               </span>
@@ -38,11 +38,16 @@ export default function LSHSAccreditationProof() {
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-slate-900 leading-tight">
-              A CIPS Approved Study Centre and Exam Centre
+              <div className="overflow-hidden">
+                <div className="line-mask">A CIPS Approved Study Centre</div>
+              </div>
+              <div className="overflow-hidden mt-1">
+                <div className="line-mask text-[#0b73b9]">&amp; Official Exam Centre</div>
+              </div>
             </h2>
 
             {/* Badges */}
-            <div className="flex flex-wrap gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#0c4a6e]">
+            <div className="fade-up flex flex-wrap gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#0c4a6e]">
               <span className="bg-sky-100 px-3 py-1.5 rounded-lg border border-sky-200 flex items-center gap-1.5">
                 <span>🌐</span> STUDY CENTRE (DISTANCE LEARNING)
               </span>
@@ -54,15 +59,15 @@ export default function LSHSAccreditationProof() {
               </span>
             </div>
 
-            <p className="text-base text-slate-600 leading-relaxed">
+            <p className="fade-up text-base text-slate-600 leading-relaxed">
               <strong className="text-slate-900 font-semibold">London School of Higher Studies (LSHS)</strong> is a UK-based training provider with a dedicated centre in Dhaka, Bangladesh, delivering CIPS qualifications exclusively. We support learners at every stage of the procurement career journey with structured, industry-aligned courses, flexible study options, and qualified tutors — built around practical, real-world application of the CIPS syllabus.
             </p>
 
-            <p className="text-base text-slate-600 leading-relaxed">
+            <p className="fade-up text-base text-slate-600 leading-relaxed">
               As an Approved Centre, LSHS is recognized to deliver CIPS qualifications and host official CIPS examinations, meaning students can study and sit their computer-based exams through the exact same registered centre.
             </p>
 
-            <div className="p-4 rounded-2xl bg-sky-50 border border-sky-200 text-xs sm:text-sm text-slate-700">
+            <div className="fade-up p-4 rounded-2xl bg-sky-50 border border-sky-200 text-xs sm:text-sm text-slate-700">
               <strong className="text-[#0c4a6e] font-semibold block mb-1">
                 Sampan Group Academic Partnership
               </strong>
@@ -71,12 +76,21 @@ export default function LSHSAccreditationProof() {
           </div>
 
           {/* Right CIPS Certificate Visual Card */}
-          <div className="lg:col-span-5 flex justify-center">
+          <div className="fade-up lg:col-span-5 flex justify-center">
             <div className="w-full max-w-md bg-gradient-to-b from-sky-50 to-white border-2 border-sky-600/30 rounded-3xl p-6 sm:p-7 shadow-xl relative overflow-hidden">
               <div className="bg-[#0c4a6e] text-white p-4 rounded-2xl flex items-center justify-between mb-4">
-                <div>
-                  <h4 className="font-bold text-sm font-serif">CIPS Awarding Body UK</h4>
-                  <p className="text-[10px] text-sky-200">Official Approval Certificate</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-white rounded-lg p-1 flex items-center justify-center shrink-0 shadow-sm">
+                    <img
+                      src="/images/affiliation/cips.png"
+                      alt="CIPS Logo"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-sm font-serif">CIPS Awarding Body UK</h4>
+                    <p className="text-[10px] text-sky-200">Official Approval Certificate</p>
+                  </div>
                 </div>
                 <span className="text-xs font-mono font-bold bg-[#f4d210] text-slate-950 px-2.5 py-1 rounded">
                   No: 10005967
@@ -117,7 +131,7 @@ export default function LSHSAccreditationProof() {
           {recognitionFeatures.map((feat, idx) => (
             <div
               key={idx}
-              className="bg-white border border-slate-200 rounded-2xl p-6 flex items-start gap-4 hover:shadow-md transition-shadow"
+              className="fade-up bg-white border border-slate-200 rounded-2xl p-6 flex items-start gap-4 hover:shadow-md transition-shadow"
             >
               <div className="w-12 h-12 rounded-xl bg-sky-50 border border-sky-200 text-xl flex items-center justify-center shrink-0 shadow-sm">
                 {feat.icon}
@@ -135,7 +149,7 @@ export default function LSHSAccreditationProof() {
         </div>
 
         {/* Official Verification Button */}
-        <div className="text-center pt-4">
+        <div className="fade-up text-center pt-4">
           <a
             href="https://study.cips.org/countries/bangladesh/london-school-of-higher-studies/"
             target="_blank"

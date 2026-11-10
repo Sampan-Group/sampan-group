@@ -54,13 +54,15 @@ export default function LSHSGlobalReach() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#0b73b9] bg-sky-100 px-3.5 py-1 rounded-full">
+          <div className="fade-up inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0b73b9] bg-sky-100 px-3.5 py-1 rounded-full mb-4">
             Global Reach
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-slate-900 mt-4">
-            Supporting Learners Across Borders
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-slate-900 leading-tight">
+            <div className="overflow-hidden">
+              <div className="line-mask">Supporting Learners Across Borders</div>
+            </div>
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 mt-4 leading-relaxed">
+          <p className="fade-up text-base sm:text-lg text-slate-600 mt-4 leading-relaxed">
             Whether you study via live distance learning or on campus, LSHS connects you with students and mentors across over 150 nations worldwide.
           </p>
         </div>
@@ -70,7 +72,7 @@ export default function LSHSGlobalReach() {
           {countries.map((c, idx) => (
             <div
               key={idx}
-              className="p-4 rounded-2xl bg-slate-50 hover:bg-sky-50/70 border border-slate-200/90 hover:border-sky-300 transition-all text-center group flex flex-col items-center justify-center shadow-xs hover:shadow-sm"
+              className="fade-up p-4 rounded-2xl bg-slate-50 hover:bg-sky-50/70 border border-slate-200/90 hover:border-sky-300 transition-all text-center group flex flex-col items-center justify-center shadow-xs hover:shadow-sm"
             >
               {c.iso === "globe" ? (
                 <div className="w-10 h-7 rounded shadow-xs mb-2 flex items-center justify-center bg-sky-100 text-sky-800 text-base font-bold">
@@ -96,7 +98,7 @@ export default function LSHSGlobalReach() {
         </div>
 
         {/* Ambassador Support Cards */}
-        <div className="bg-gradient-to-br from-[#0c4a6e] to-[#072d42] text-white rounded-3xl p-8 sm:p-12 shadow-xl border border-sky-800">
+        <div className="fade-up bg-gradient-to-br from-[#0c4a6e] to-[#072d42] text-white rounded-3xl p-8 sm:p-12 shadow-xl border border-sky-800">
           <div className="max-w-3xl mb-8">
             <span className="text-xs font-bold uppercase tracking-widest text-[#f4d210]">
               Country Ambassador Network

@@ -95,21 +95,25 @@ export default function NearbyLocationModule() {
     <section id="nearby" className="bg-[#0b100d] py-24 sm:py-32 text-white border-t border-white/10 relative overflow-hidden">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
 
-        {/* Section Header */}
+        {/* Section Header with Line-Mask Reveal */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="fade-up flex items-center gap-3 mb-4">
               <span className="h-px w-10 bg-emerald-500" />
               <p className="text-xs font-bold uppercase tracking-[0.28em] text-emerald-400">
                 Regional Surroundings
               </p>
             </div>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
-              Nearby attractions &amp; <br />
-              <span className="text-emerald-400">Sampan destinations.</span>
+              <div className="overflow-hidden">
+                <div className="line-mask">Nearby attractions &amp;</div>
+              </div>
+              <div className="overflow-hidden mt-1">
+                <div className="line-mask text-emerald-400">Sampan destinations.</div>
+              </div>
             </h2>
           </div>
-          <p className="max-w-md text-sm sm:text-base text-neutral-400 leading-relaxed">
+          <p className="fade-up max-w-md text-sm sm:text-base text-neutral-400 leading-relaxed">
             Discover other high-value Sampan Group developments, natural riverfronts, and tourism landmarks in the immediate corridor vicinity.
           </p>
         </div>
@@ -119,27 +123,29 @@ export default function NearbyLocationModule() {
           {nearbySpots.map((spot) => (
             <article
               key={spot.id}
-              className="group flex flex-col rounded-none overflow-hidden bg-white/[0.04] border border-white/10 hover:border-emerald-500/40 hover:bg-white/[0.07] transition-all duration-500 hover:-translate-y-1.5 shadow-lg"
+              className="fade-up group flex flex-col rounded-none overflow-hidden bg-white/[0.04] border border-white/10 hover:border-emerald-500/40 hover:bg-white/[0.07] transition-all duration-500 hover:-translate-y-1.5 shadow-lg"
             >
-              {/* Image Preview */}
+              {/* Image Preview with Parallax Scrub */}
               <div className="relative aspect-square overflow-hidden bg-neutral-900">
-                <img
-                  src={spot.image}
-                  alt={spot.name}
-                  width={600}
-                  height={600}
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+                <div className="parallax-img absolute inset-0 w-full h-[116%] -top-[8%]">
+                  <img
+                    src={spot.image}
+                    alt={spot.name}
+                    width={600}
+                    height={600}
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
 
                 {/* Distance Chip */}
-                <div className="absolute top-3.5 right-3.5 bg-black/80 backdrop-blur-md px-3 py-1 rounded-none border border-white/10 text-xs font-bold text-emerald-400 flex items-center gap-1.5">
+                <div className="absolute top-3.5 right-3.5 bg-black/80 backdrop-blur-md px-3 py-1 rounded-none border border-white/10 text-xs font-bold text-emerald-400 flex items-center gap-1.5 z-10">
                   <FaMapMarkerAlt className="text-[10px]" />
                   <span>{spot.distance}</span>
                 </div>
 
                 {/* Drive Time Chip */}
-                <div className="absolute bottom-3.5 left-3.5 bg-white/90 backdrop-blur-md px-2.5 py-0.5 rounded-none text-[10px] font-semibold text-neutral-900 flex items-center gap-1">
+                <div className="absolute bottom-3.5 left-3.5 bg-white/90 backdrop-blur-md px-2.5 py-0.5 rounded-none text-[10px] font-semibold text-neutral-900 flex items-center gap-1 z-10">
                   <FaClock className="text-[9px] text-emerald-700" />
                   <span>{spot.driveTime}</span>
                 </div>

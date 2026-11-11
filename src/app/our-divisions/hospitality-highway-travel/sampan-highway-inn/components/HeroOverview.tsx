@@ -17,48 +17,50 @@ const heroImage = "/images/our-divisions/sampan-highway-inn/heromain3.jpg";
 
 export default function HeroOverview({ onOpenBooking }: { onOpenBooking?: () => void }) {
   return (
-    <section data-no-reveal className="relative min-h-0 sm:min-h-screen flex flex-col justify-start sm:justify-center overflow-hidden bg-neutral-950 text-white pt-24 pb-12 sm:pt-28 sm:pb-20 border-b border-white/10">
-      {/* Real Background Image with cinematic dark gradient overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="Sampan Highway Inn"
-          sizes="100vw"
-          className="w-full h-full object-cover object-center"
-        />
+    <section className="relative min-h-0 sm:min-h-screen flex flex-col justify-start sm:justify-center overflow-hidden bg-neutral-950 text-white pt-24 pb-12 sm:pt-28 sm:pb-20 border-b border-white/10">
+      {/* Real Background Image with parallax scrub and cinematic dark gradient overlay */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="parallax-img absolute inset-0 w-full h-[124%] -top-[12%]">
+          <img
+            src={heroImage}
+            alt="Sampan Highway Inn"
+            sizes="100vw"
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
         {/* Dual-layer dark gradient for text readability and navbar contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/72 to-black/45" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/25 to-black/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/72 to-black/45 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/25 to-black/75 z-10" />
       </div>
 
       {/* Subtle Ambient Glow */}
-      <div className="pointer-events-none absolute top-1/4 left-10 w-96 h-96 bg-emerald-500/15 rounded-none blur-[140px] z-0" />
-      <div className="pointer-events-none absolute bottom-10 right-10 w-96 h-96 bg-amber-500/10 rounded-none blur-[120px] z-0" />
+      <div className="pointer-events-none absolute top-1/4 left-10 w-96 h-96 bg-emerald-500/15 rounded-none blur-[140px] z-10" />
+      <div className="pointer-events-none absolute bottom-10 right-10 w-96 h-96 bg-amber-500/10 rounded-none blur-[120px] z-10" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 pt-0 sm:pt-2 pb-8 lg:pb-12">
+      <div className="relative z-20 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 pt-0 sm:pt-2 pb-8 lg:pb-12">
         {/* Main Hero Text Content */}
         <div className="max-w-4xl space-y-4 sm:space-y-5">
-          {/* Highway Corridor Square Eyebrow Badge */}
-          {/* <div className="inline-flex items-center gap-3 border border-emerald-500/50 bg-emerald-950/60 backdrop-blur-md px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-emerald-400">
-              <span className="h-2 w-2 rounded-none bg-emerald-400" />
-              <span>Dhaka – Khulna National Highway • KM 103 Transit Hub</span>
-            </div> */}
-
-          {/* Main Headline */}
+          {/* Main Headline with Masked Slow Reveal */}
           <h1 className="text-[clamp(2.4rem,4.8vw,4.2rem)] font-bold tracking-tight text-white leading-[0.98]">
-            Sampan <br />
-            <span className="text-emerald-400 block mt-1">
-              Highway Inn
-            </span>
+            <div className="overflow-hidden">
+              <div className="hero-line-mask line-mask">Sampan</div>
+            </div>
+            <div className="overflow-hidden mt-1">
+              <div className="hero-line-mask line-mask text-emerald-400 block">
+                Highway Inn
+              </div>
+            </div>
           </h1>
 
           {/* Tagline & Subheading */}
-          <p className="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-xl font-light tracking-wide border-l-2 border-emerald-400/80 pl-4">
-            24/7 gourmet dining, restful luxury suites, and highway hospitality on the Dhaka–Khulna corridor,Kashiani (KM 103).
-          </p>
+          <div className="hero-fade-up fade-up">
+            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-xl font-light tracking-wide border-l-2 border-emerald-400/80 pl-4">
+              24/7 gourmet dining, restful luxury suites, and highway hospitality on the Dhaka–Khulna corridor, Kashiani (KM 103).
+            </p>
+          </div>
 
           {/* Square Quick Action CTAs */}
-          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:items-center gap-3.5 sm:gap-4">
+          <div className="hero-fade-up fade-up mt-6 sm:mt-8 flex flex-col sm:flex-row sm:items-center gap-3.5 sm:gap-4">
             <a
               href="#location"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-none border border-white/25 bg-white/5 hover:border-white hover:bg-white hover:text-black px-7 py-3.5 sm:px-8 sm:py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 backdrop-blur-sm text-center"
@@ -77,18 +79,10 @@ export default function HeroOverview({ onOpenBooking }: { onOpenBooking?: () => 
               <span>Facebook Page</span>
               <FiArrowRight className="text-sm transition-transform group-hover:translate-x-1" />
             </a>
-            {/* 
-            <a
-              href="tel:+8801929918408"
-              className="inline-flex items-center justify-center gap-2 rounded-none border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/20 px-6 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-amber-300 transition-all duration-300 backdrop-blur-sm"
-            >
-              <FaPhoneAlt className="text-xs text-amber-400" />
-              <span>+880 1929-918408</span>
-            </a> */}
           </div>
 
           {/* Square Quick Value Badges */}
-          <div className="mt-10 pt-8 border-t border-white/15 grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="hero-fade-up fade-up mt-10 pt-8 border-t border-white/15 grid grid-cols-2 sm:grid-cols-4 gap-4">
             <div className="border-l-2 border-emerald-500 pl-4">
               <p className="text-xs font-bold text-white uppercase tracking-wider">24/7 Service</p>
               <p className="text-[11px] text-white/50 mt-0.5">Always Open</p>

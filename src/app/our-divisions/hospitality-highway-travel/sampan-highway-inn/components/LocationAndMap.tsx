@@ -23,7 +23,7 @@ export default function LocationAndMap() {
 
         {/* Section Header */}
         <div className="flex flex-col gap-3 mb-6 max-w-3xl">
-          <div className="flex items-center gap-3">
+          <div className="fade-up flex items-center gap-3">
             <span className="h-px w-10 bg-emerald-600" />
             <p className="text-xs font-bold uppercase tracking-[0.28em] text-emerald-800">
               Strategic Location
@@ -35,7 +35,7 @@ export default function LocationAndMap() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
 
           {/* Left Column: Details & Distances */}
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-8">
+          <div className="fade-up lg:col-span-5 flex flex-col justify-between space-y-8">
 
             <div className="space-y-6">
               {/* Coordinates Pill */}
@@ -47,7 +47,11 @@ export default function LocationAndMap() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold text-[#111111]">Direct Highway Access</h3>
+                <h3 className="text-2xl font-bold text-[#111111]">
+                  <div className="overflow-hidden">
+                    <div className="line-mask">Direct Highway Access</div>
+                  </div>
+                </h3>
                 <p className="mt-2 text-sm text-neutral-600 leading-relaxed">
                   Located right on the main corridor at KM 103 on the Dhaka–Khulna Highway. No narrow link roads, no rural detours, and no bridge bottlenecks. Turn in seamlessly and re-enter the highway within seconds.
                 </p>
@@ -83,20 +87,12 @@ export default function LocationAndMap() {
                 <FaDirections className="text-base" />
                 <span>Open Google Navigation</span>
               </a>
-
-              {/* <a
-                href="tel:+8801929918408"
-                className="inline-flex items-center gap-2 rounded-none border border-neutral-300 bg-white hover:bg-neutral-100 px-5 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-neutral-800 transition-colors"
-              >
-                <FaPhoneAlt className="text-emerald-600 text-xs" />
-                <span>Route Concierge</span>
-              </a> */}
             </div>
 
           </div>
 
           {/* Right Column: Google Maps Iframe Frame */}
-          <div className="lg:col-span-7">
+          <div className="fade-up lg:col-span-7">
             <div className="relative h-full min-h-[420px] rounded-none overflow-hidden border border-neutral-200 shadow-xl bg-neutral-100">
               <iframe
                 title="Sampan Highway Inn Restaurant & Party Centre Live Map Location"

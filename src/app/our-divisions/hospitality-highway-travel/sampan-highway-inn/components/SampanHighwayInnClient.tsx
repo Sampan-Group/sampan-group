@@ -4,12 +4,16 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+
 import HeroOverview from "./HeroOverview";
-import MilestoneCounter from "./MilestoneCounter";
-import FacilitiesList from "./FacilitiesList";
-import LocationAndMap from "./LocationAndMap";
-import PhotoVideoGallery from "./PhotoVideoGallery";
+import TheExperienceSection from "./TheExperienceSection";
+import DiningSection from "./DiningSection";
+import RestSuitesSection from "./RestSuitesSection";
+import ConvenienceSection from "./ConvenienceSection";
+import GreenRibbonCTA from "./GreenRibbonCTA";
+import MomentsGallery from "./MomentsGallery";
 import NearbyLocationModule from "./NearbyLocationModule";
+import LocationAndWaypoint from "./LocationAndWaypoint";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -18,52 +22,45 @@ if (typeof window !== "undefined") {
 export default function SampanHighwayInnClient() {
   const containerRef = useRef<HTMLElement>(null);
 
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   useGSAP(
     () => {
       const mm = gsap.matchMedia();
 
       mm.add("(prefers-reduced-motion: no-preference)", () => {
         // Hero entrance timeline
-        const heroTl = gsap.timeline({ delay: 0.2 });
+        const heroTl = gsap.timeline({ delay: 0.15 });
         heroTl
           .fromTo(
             ".hero-line-mask",
             { yPercent: 110 },
             {
               yPercent: 0,
-              duration: 1.3,
+              duration: 1.25,
               ease: "power4.out",
-              stagger: 0.15,
+              stagger: 0.12,
             }
           )
           .fromTo(
             ".hero-fade-up",
-            { y: 28, autoAlpha: 0 },
+            { y: 24, autoAlpha: 0 },
             {
               y: 0,
               autoAlpha: 1,
-              duration: 0.85,
+              duration: 0.8,
               ease: "power3.out",
               stagger: 0.1,
             },
-            "-=0.8"
+            "-=0.75"
           );
 
-        // Section headings line-mask reveal on scroll
+        // Section headings line-mask slow reveal on scroll
         gsap.utils.toArray<HTMLElement>(".line-mask:not(.hero-line-mask)").forEach((line) => {
           gsap.fromTo(
             line,
             { yPercent: 100 },
             {
               yPercent: 0,
-              duration: 1.4,
+              duration: 1.3,
               ease: "power4.out",
               scrollTrigger: {
                 trigger: line.parentElement!,
@@ -78,11 +75,11 @@ export default function SampanHighwayInnClient() {
         gsap.utils.toArray<HTMLElement>(".fade-up:not(.hero-fade-up)").forEach((el) => {
           gsap.fromTo(
             el,
-            { y: 28, autoAlpha: 0 },
+            { y: 24, autoAlpha: 0 },
             {
               y: 0,
               autoAlpha: 1,
-              duration: 0.8,
+              duration: 0.75,
               ease: "power3.out",
               scrollTrigger: {
                 trigger: el,
@@ -93,16 +90,36 @@ export default function SampanHighwayInnClient() {
           );
         });
 
-        // Parallax image scrub animation
-        gsap.utils.toArray<HTMLElement>(".parallax-img").forEach((el) => {
+        // 1. Dedicated Hero Background Parallax: translates with scroll depth
+        const heroEl = document.getElementById("hero");
+        if (heroEl) {
           gsap.fromTo(
-            el,
-            { yPercent: -8 },
+            ".parallax-hero",
+            { yPercent: 0 },
             {
-              yPercent: 8,
+              yPercent: 22,
               ease: "none",
               scrollTrigger: {
-                trigger: el.parentElement || el,
+                trigger: heroEl,
+                start: "top top",
+                end: "bottom top",
+                scrub: 1,
+              },
+            }
+          );
+        }
+
+        // 2. Parallax image scrub animation for all content cards
+        gsap.utils.toArray<HTMLElement>(".parallax-img").forEach((el) => {
+          const triggerEl = el.closest("article, .group, section") || el.parentElement || el;
+          gsap.fromTo(
+            el,
+            { yPercent: -10 },
+            {
+              yPercent: 10,
+              ease: "none",
+              scrollTrigger: {
+                trigger: triggerEl,
                 start: "top bottom",
                 end: "bottom top",
                 scrub: 1.2,
@@ -110,6 +127,13 @@ export default function SampanHighwayInnClient() {
             }
           );
         });
+
+        // Refresh triggers once images and fonts are positioned
+        const refreshTimer = setTimeout(() => {
+          ScrollTrigger.refresh();
+        }, 300);
+
+        return () => clearTimeout(refreshTimer);
       });
 
       mm.add("(prefers-reduced-motion: reduce)", () => {
@@ -118,7 +142,7 @@ export default function SampanHighwayInnClient() {
           yPercent: 0,
           autoAlpha: 1,
         });
-        gsap.set(".parallax-img", {
+        gsap.set([".parallax-img", ".parallax-hero"], {
           y: 0,
           yPercent: 0,
           x: 0,
@@ -131,25 +155,34 @@ export default function SampanHighwayInnClient() {
   return (
     <main
       ref={containerRef}
-      className="bg-[#F5F5F2] text-neutral-900 antialiased selection:bg-emerald-600 selection:text-white"
+      className="bg-[#FAF9F6] text-neutral-900 antialiased selection:bg-[#B8F230] selection:text-neutral-950 font-sans"
     >
-      {/* OVERVIEW (Hero & Brand Introduction) */}
-      <HeroOverview onOpenBooking={() => scrollToSection("booking-widget")} />
+      {/* 1. HERO OVERVIEW (Properly exposed night photograph, crisp typography & metrics) */}
+      <HeroOverview />
 
-      {/* MILESTONE COUNTER (Track Record & Scale) */}
-      <MilestoneCounter />
+      {/* 2. THE SAMPAN EXPERIENCE (3-Pillar entry: Dining, Rest, Convenience) */}
+      <TheExperienceSection />
 
-      {/* FACILITIES / OFFERINGS LIST (Category Filtered Cards) */}
-      <FacilitiesList />
+      {/* 3. 01 / DINING (Dark forest green, 24/7 hospitality, real restaurant photography & actions) */}
+      <DiningSection />
 
-      {/* LOCATION + LIVE MAP (GPS Coordinates, Hub Distances & Embedded Map) */}
-      <LocationAndMap />
+      {/* 4. 02 / REST SUITES (Light luxury aesthetic, acoustic quiet, suites showcase & booking action) */}
+      <RestSuitesSection />
 
-      {/* PHOTO / VIDEO GALLERY (Masonry Showcase & Drone Video) */}
-      <PhotoVideoGallery />
+      {/* 5. 03 / HIGHWAY CONVENIENCE (Modern washrooms, 24/7 Mart, Fuel bay, Mosque & Parking) */}
+      <ConvenienceSection />
 
-      {/* "NEARBY AT THIS LOCATION" MODULE (Adjacent Assets & Attractions) */}
+      {/* 6. VIBRANT LIME RIBBON CTA (Clear directional drive action) */}
+      <GreenRibbonCTA />
+
+      {/* 7. MOMENTS AT SAMPAN (Curated authentic photograph gallery with interactive lightbox) */}
+      <MomentsGallery />
+
+      {/* 8. NEARBY ATTRACTIONS & SAMPAN DESTINATIONS */}
       <NearbyLocationModule />
+
+      {/* 9. FIND US & WAYPOINT (Corridor times, waypoint KM 103 card, and embedded interactive map) */}
+      <LocationAndWaypoint />
     </main>
   );
 }

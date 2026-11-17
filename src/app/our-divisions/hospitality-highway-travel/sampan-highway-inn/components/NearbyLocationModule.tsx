@@ -43,7 +43,7 @@ const nearbySpots: NearbySpot[] = [
     type: "Retail Super Shop",
     distance: "10 m",
     driveTime: "In Complex",
-    image: "/images/our-divisions/sampan-highway-inn/latest/sampan-mart-24-7-courtyard.webp",
+    image: "/images/our-divisions/sampan-mart/sampan-mart.png",
     description: "24/7 highway retail super shop stocked with travel essentials, groceries, and fresh snacks.",
     link: "/our-divisions/retail-super-shops/sampan-mart",
   },

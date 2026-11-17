@@ -24,7 +24,7 @@ const pillars: ExperiencePillar[] = [
     tag: "02 / REST",
     title: "Rooms to recharge",
     body: "Take a welcome break from the road with the quiet, acoustically insulated comfort of a restful suite.",
-    image: "/images/facilities/highway_inn/all_day_comfort.png",
+    image: "/images/facilities/highway_inn/warm-modern-bedroom-living-suite.webp",
     actionText: "EXPLORE SUITES",
     targetId: "suites",
   },

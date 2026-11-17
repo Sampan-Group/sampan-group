@@ -15,7 +15,7 @@ const convenienceCards = [
     tag: "COURTYARD SUPER SHOP",
     title: "Sampan Mart 24/7",
     description: "Direct courtyard access to packaged snacks, chilled drinks, travel necessities, artisanal dry fruits, and baby care essentials.",
-    image: "/images/our-divisions/sampan-highway-inn/latest/sampan-mart-24-7-courtyard.webp",
+    image: "/images/our-divisions/sampan-highway-inn/latest/sampan-mart-courtyard-landscaping.webp",
     badge: "Always Open",
   },
   {

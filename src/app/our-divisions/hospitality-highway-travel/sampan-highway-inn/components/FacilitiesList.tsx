@@ -89,21 +89,25 @@ export default function FacilitiesList({ onSelectFacility }: { onSelectFacility?
     <section id="facilities" className="bg-[#faf9f6] py-24 sm:py-32 text-[#1a1a1a] border-b border-neutral-200">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
 
-        {/* Section Header */}
+        {/* Section Header with Line-Mask Reveal */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="flex items-center gap-4 mb-4">
+            <div className="fade-up flex items-center gap-4 mb-4">
               <span className="h-px w-10 bg-emerald-600" />
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.4em] text-neutral-600">
                 World-Class Facilities
               </span>
             </div>
             <h2 className="text-[clamp(2.2rem,4.5vw,4rem)] font-semibold leading-[0.95] tracking-[-0.03em] text-neutral-950">
-              Thoughtfully curated. <br />
-              <span className="text-emerald-700">For every traveler.</span>
+              <div className="overflow-hidden">
+                <div className="line-mask">Thoughtfully curated.</div>
+              </div>
+              <div className="overflow-hidden mt-1">
+                <div className="line-mask text-emerald-700">For every traveler.</div>
+              </div>
             </h2>
           </div>
-          <p className="max-w-md text-sm text-neutral-500 leading-relaxed">
+          <p className="fade-up max-w-md text-sm text-neutral-500 leading-relaxed">
             Whether you need a quick refreshing bite, authentic Bengali sweets, artisanal pickles, or a quiet restful suite, our transit hub provides complete comfort and hospitality under one roof.
           </p>
         </div>
@@ -113,23 +117,25 @@ export default function FacilitiesList({ onSelectFacility }: { onSelectFacility?
           {facilitiesData.map((item) => (
             <article
               key={item.id}
-              className="group relative flex flex-col rounded-none overflow-hidden bg-[#F5F5F2] border border-neutral-200 hover:border-emerald-600 transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] hover:-translate-y-1"
+              className="fade-up group relative flex flex-col rounded-none overflow-hidden bg-[#F5F5F2] border border-neutral-200 hover:border-emerald-600 transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] hover:-translate-y-1"
             >
               {/* Top Emerald Line Hover */}
               <div className="absolute top-0 left-0 h-[3px] w-0 bg-emerald-600 transition-all duration-700 group-hover:w-full z-10" />
 
-              {/* Gallery Image */}
+              {/* Gallery Image with Parallax Scrub */}
               <div className="relative aspect-[16/10] overflow-hidden bg-neutral-200">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-60 transition-opacity" />
+                <div className="parallax-img absolute inset-0 w-full h-[116%] -top-[8%]">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-60 transition-opacity z-10" />
 
                 {/* Square Badge */}
-                <div className="absolute top-3.5 left-3.5 bg-white/90 backdrop-blur-md px-3 py-1 rounded-none border border-neutral-200 font-mono text-[9px] font-bold uppercase tracking-widest text-emerald-800">
+                <div className="absolute top-3.5 left-3.5 bg-white/90 backdrop-blur-md px-3 py-1 rounded-none border border-neutral-200 font-mono text-[9px] font-bold uppercase tracking-widest text-emerald-800 z-10">
                   {item.badge}
                 </div>
               </div>

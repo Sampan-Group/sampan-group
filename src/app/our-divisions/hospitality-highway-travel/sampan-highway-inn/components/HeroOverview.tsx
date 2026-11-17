@@ -1,113 +1,165 @@
 "use client";
 
 import Link from "next/link";
-import {
-  FaRoute,
-  FaBolt,
-  FaBed,
-  FaPhoneAlt,
-  FaShieldAlt,
-  FaClock,
-  FaFacebook
-} from "react-icons/fa";
-import { HiSparkles } from "react-icons/hi2";
-import { FiArrowRight } from "react-icons/fi";
+import { FaRoute, FaCompass, FaChevronDown, FaFacebookF } from "react-icons/fa";
+import { FiArrowUpRight } from "react-icons/fi";
 
-const heroImage = "/images/our-divisions/sampan-highway-inn/heromain3.jpg";
+const heroImage = "/images/our-divisions/sampan-highway-inn/latest/sampan-highway-inn-night-facade.webp";
 
-export default function HeroOverview({ onOpenBooking }: { onOpenBooking?: () => void }) {
+const quickMetrics = [
+  { value: "24 / 7", label: "Highway hospitality" },
+  { value: "Rest & Recharge", label: "Comfortable suites" },
+  { value: "KM 103", label: "Dhaka–Khulna Highway" },
+  { value: "Convenient Parking", label: "Easy highway access" },
+];
+
+export default function HeroOverview() {
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section data-no-reveal className="relative min-h-0 sm:min-h-screen flex flex-col justify-start sm:justify-center overflow-hidden bg-neutral-950 text-white pt-24 pb-12 sm:pt-28 sm:pb-20 border-b border-white/10">
-      {/* Real Background Image with cinematic dark gradient overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="Sampan Highway Inn"
-          sizes="100vw"
-          className="w-full h-full object-cover object-center"
-        />
-        {/* Dual-layer dark gradient for text readability and navbar contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/72 to-black/45" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/25 to-black/75" />
+    <section id="hero" className="relative min-h-screen flex flex-col justify-between overflow-hidden bg-neutral-950 text-white pt-24 sm:pt-28 border-b border-white/10">
+      {/* Background Image: Properly Exposed, High Resolution Property Photo with Parallax */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <div className="parallax-hero absolute inset-0 w-full h-[135%] -top-[15%]">
+          <img
+            src={heroImage}
+            alt="Sampan Highway Inn Kashiani"
+            sizes="100vw"
+            className="w-full h-full object-cover object-center filter brightness-[0.92] contrast-[1.05]"
+          />
+        </div>
+        {/* Soft directional gradient: preserves building vibrancy on right while ensuring crisp readability on left */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-black/60 z-10" />
       </div>
 
-      {/* Subtle Ambient Glow */}
-      <div className="pointer-events-none absolute top-1/4 left-10 w-96 h-96 bg-emerald-500/15 rounded-none blur-[140px] z-0" />
-      <div className="pointer-events-none absolute bottom-10 right-10 w-96 h-96 bg-amber-500/10 rounded-none blur-[120px] z-0" />
+      {/* In-Page Navigation Header Bar (Commented out to prevent visual conflict with main site navbar)
+      <nav
+        aria-label="Highway Inn Navigation"
+        className="relative z-20 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 py-3 border-b border-white/10 flex items-center justify-between text-xs font-mono backdrop-blur-sm"
+      >
+        <div className="flex items-center gap-2">
+          <span className="font-bold tracking-wider uppercase text-[#B8F230]">KM 103</span>
+          <span className="text-white/40">•</span>
+          <span className="text-neutral-300 hidden sm:inline">Kashiani, Dhaka–Khulna Corridor</span>
+        </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 pt-0 sm:pt-2 pb-8 lg:pb-12">
-        {/* Main Hero Text Content */}
-        <div className="max-w-4xl space-y-4 sm:space-y-5">
-          {/* Highway Corridor Square Eyebrow Badge */}
-          {/* <div className="inline-flex items-center gap-3 border border-emerald-500/50 bg-emerald-950/60 backdrop-blur-md px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-emerald-400">
-              <span className="h-2 w-2 rounded-none bg-emerald-400" />
-              <span>Dhaka – Khulna National Highway • KM 103 Transit Hub</span>
-            </div> */}
+        <div className="hidden md:flex items-center gap-8 text-neutral-300 font-medium">
+          <button onClick={() => scrollTo("experiences")} className="hover:text-[#B8F230] transition-colors cursor-pointer">
+            Experiences
+          </button>
+          <button onClick={() => scrollTo("dining")} className="hover:text-[#B8F230] transition-colors cursor-pointer">
+            Dining
+          </button>
+          <button onClick={() => scrollTo("suites")} className="hover:text-[#B8F230] transition-colors cursor-pointer">
+            Rest Suites
+          </button>
+          <button onClick={() => scrollTo("convenience")} className="hover:text-[#B8F230] transition-colors cursor-pointer">
+            Convenience
+          </button>
+          <button onClick={() => scrollTo("gallery")} className="hover:text-[#B8F230] transition-colors cursor-pointer">
+            Gallery
+          </button>
+          <button onClick={() => scrollTo("nearby")} className="hover:text-[#B8F230] transition-colors cursor-pointer">
+            Nearby
+          </button>
+          <button onClick={() => scrollTo("location")} className="hover:text-[#B8F230] transition-colors cursor-pointer">
+            Find Us
+          </button>
+        </div>
+
+        <button
+          onClick={() => scrollTo("location")}
+          className="inline-flex items-center gap-1.5 border border-white/30 hover:border-[#B8F230] hover:text-[#B8F230] px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider transition-colors cursor-pointer"
+        >
+          <span>Plan Your Stop</span>
+          <FiArrowUpRight className="text-sm" />
+        </button>
+      </nav>
+      */}
+
+      {/* Main Hero Content */}
+      <div className="relative z-20 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 py-12 sm:py-20 flex-1 flex flex-col justify-center">
+        <div className="max-w-3xl space-y-6">
+          {/* Eyebrow Badge */}
+          <div className="hero-fade-up flex items-center gap-3 flex-wrap">
+            <span className="h-0.5 w-8 bg-[#B8F230]" />
+            <p className="text-xs font-mono font-bold uppercase tracking-[0.3em] text-[#B8F230]">
+              Welcome to Sampan Highway Inn
+            </p>
+            <span className="text-white/30 hidden sm:inline">•</span>
+            <span className="text-xs font-mono uppercase tracking-wider text-neutral-300 hidden sm:inline">
+              KM 103 Kashiani
+            </span>
+          </div>
 
           {/* Main Headline */}
-          <h1 className="text-[clamp(2.4rem,4.8vw,4.2rem)] font-bold tracking-tight text-white leading-[0.98]">
-            Sampan <br />
-            <span className="text-emerald-400 block mt-1">
-              Highway Inn
-            </span>
+          <h1 className="text-[clamp(2.6rem,5.6vw,5rem)] font-bold tracking-tight text-white leading-[1.02]">
+            <div className="overflow-hidden">
+              <div className="hero-line-mask line-mask">More than a stop.</div>
+            </div>
+            <div className="overflow-hidden mt-1 sm:mt-2">
+              <div className="hero-line-mask line-mask text-[#B8F230]">A destination.</div>
+            </div>
           </h1>
 
-          {/* Tagline & Subheading */}
-          <p className="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-xl font-light tracking-wide border-l-2 border-emerald-400/80 pl-4">
-            24/7 gourmet dining, restful luxury suites, and highway hospitality on the Dhaka–Khulna corridor,Kashiani (KM 103).
+          {/* Tagline */}
+          <p className="hero-fade-up text-sm sm:text-base lg:text-lg text-neutral-300 max-w-2xl leading-relaxed font-light">
+            A refreshing break in every journey. Discover 24/7 dining, inviting rest suites and thoughtful highway hospitality at Kashiani on the Dhaka–Khulna corridor.
           </p>
 
-          {/* Square Quick Action CTAs */}
-          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:items-center gap-3.5 sm:gap-4">
-            <a
-              href="#location"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-none border border-white/25 bg-white/5 hover:border-white hover:bg-white hover:text-black px-7 py-3.5 sm:px-8 sm:py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 backdrop-blur-sm text-center"
+          {/* Clear Actions */}
+          <div className="hero-fade-up pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 flex-wrap">
+            <button
+              onClick={() => scrollTo("dining")}
+              className="inline-flex items-center justify-center gap-2 bg-[#B8F230] hover:bg-[#a6dc28] text-neutral-950 font-bold px-7 py-4 text-xs font-mono uppercase tracking-[0.18em] transition-all duration-300 shadow-lg cursor-pointer text-center"
             >
-              <FaRoute className="text-emerald-400" />
-              <span>View Route Map</span>
-            </a>
+              <span>Explore Dining</span>
+              <FiArrowUpRight className="text-base" />
+            </button>
+
+            <button
+              onClick={() => scrollTo("location")}
+              className="inline-flex items-center justify-center gap-2 border border-white/30 bg-black/40 hover:bg-white hover:text-neutral-950 text-white font-bold px-7 py-4 text-xs font-mono uppercase tracking-[0.18em] transition-all duration-300 backdrop-blur-sm cursor-pointer text-center"
+            >
+              <FaRoute className="text-[#B8F230]" />
+              <span>Plan Your Visit</span>
+              <FiArrowUpRight className="text-base" />
+            </button>
 
             <a
               href="https://www.facebook.com/sampanhighwayinn/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-none bg-emerald-600 hover:bg-emerald-500 px-7 py-3.5 sm:px-8 sm:py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white shadow-lg shadow-emerald-900/30 transition-all duration-300 text-center"
+              className="group inline-flex items-center justify-center gap-2 border border-[#1877F2]/40 bg-[#1877F2]/10 hover:bg-[#1877F2] hover:border-[#1877F2] hover:text-white text-white font-bold px-6 py-4 text-xs font-mono uppercase tracking-[0.18em] transition-all duration-300 backdrop-blur-sm text-center"
             >
-              <FaFacebook className="text-base" />
-              <span>Facebook Page</span>
-              <FiArrowRight className="text-sm transition-transform group-hover:translate-x-1" />
+              <FaFacebookF className="text-sm text-[#1877F2] group-hover:text-white transition-colors" />
+              <span>Facebook</span>
+              <FiArrowUpRight className="text-base text-neutral-400 group-hover:text-white transition-colors" />
             </a>
-            {/* 
-            <a
-              href="tel:+8801929918408"
-              className="inline-flex items-center justify-center gap-2 rounded-none border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/20 px-6 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-amber-300 transition-all duration-300 backdrop-blur-sm"
-            >
-              <FaPhoneAlt className="text-xs text-amber-400" />
-              <span>+880 1929-918408</span>
-            </a> */}
           </div>
+        </div>
+      </div>
 
-          {/* Square Quick Value Badges */}
-          <div className="mt-10 pt-8 border-t border-white/15 grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <div className="border-l-2 border-emerald-500 pl-4">
-              <p className="text-xs font-bold text-white uppercase tracking-wider">24/7 Service</p>
-              <p className="text-[11px] text-white/50 mt-0.5">Always Open</p>
-            </div>
-
-            <div className="border-l-2 border-emerald-500 pl-4">
-              <p className="text-xs font-bold text-white uppercase tracking-wider">Rest Suites</p>
-              <p className="text-[11px] text-white/50 mt-0.5">VVIP Comfort</p>
-            </div>
-
-            <div className="border-l-2 border-emerald-500 pl-4">
-              <p className="text-xs font-bold text-white uppercase tracking-wider">Dhaka–Khulna Highway</p>
-              <p className="text-[11px] text-white/50 mt-0.5">KM 103 Transit Hub</p>
-            </div>
-
-            <div className="border-l-2 border-emerald-500 pl-4">
-              <p className="text-xs font-bold text-white uppercase tracking-wider">Secure Parking</p>
-              <p className="text-[11px] text-white/50 mt-0.5">200+ Vehicles</p>
-            </div>
+      {/* Bottom Quick Metrics Bar */}
+      <div className="relative z-20 border-t border-white/10 bg-black/60 backdrop-blur-md">
+        <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16 py-6 sm:py-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+            {quickMetrics.map((metric, i) => (
+              <div key={i} className="fade-up space-y-1">
+                <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                  {metric.value}
+                </div>
+                <div className="text-xs sm:text-sm text-neutral-400 font-light">
+                  {metric.label}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

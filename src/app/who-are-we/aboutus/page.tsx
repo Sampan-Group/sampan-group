@@ -51,7 +51,7 @@ const leaders = [
   {
     name: "MD. EMAMUL HASAN",
     role: "Managing Director & CEO",
-    image: "/images/leadership/Md._EMAMUL_HASAN.png",
+    image: "/images/leadership/Emamul_Hasan.png",
   },
   {
     name: "Major Md. Zahidul Islam (Retd)",
@@ -219,7 +219,7 @@ export default function AboutUsPage() {
 
   return (
     <main ref={containerRef} className="bg-[#F5F5F2] text-neutral-950 overflow-x-hidden font-sans antialiased selection:bg-emerald-500 selection:text-white">
-      
+
       {/* 01. CINEMATIC HERO */}
       <section className="hero-section relative min-h-[100svh] w-full flex items-end bg-[#050505] text-white overflow-hidden">
         <div className="hero-bg absolute inset-0 opacity-0 will-change-transform">

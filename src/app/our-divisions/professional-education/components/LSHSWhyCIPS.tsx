@@ -61,19 +61,21 @@ export default function LSHSWhyCIPS() {
   return (
     <section id="why-cips" className="py-20 px-4 sm:px-8 lg:px-16 bg-[#f8fafc] text-slate-900">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
+        {/* Section Header with Line-Mask Reveal */}
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-sky-100 text-[#0b73b9]">
+          <div className="fade-up inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-sky-100 text-[#0b73b9]">
             <span>Why Choose CIPS</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-slate-900 mt-4 leading-tight">
-            Why You Should Study CIPS
+            <div className="overflow-hidden">
+              <div className="line-mask">Why You Should Study CIPS</div>
+            </div>
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 mt-4 leading-relaxed">
+          <p className="fade-up text-base sm:text-lg text-slate-600 mt-4 leading-relaxed">
             CIPS, the <strong className="text-slate-800 font-semibold">Chartered Institute of Procurement & Supply</strong>, is the recognised professional standard for procurement and supply chain practice, held by professionals across the public and private sectors internationally. Earning a CIPS qualification demonstrates applied, industry-relevant capability in sourcing, negotiation, contract management, and supply chain strategy.
           </p>
 
-          <div className="mt-6 flex flex-wrap gap-4 items-center">
+          <div className="fade-up mt-6 flex flex-wrap gap-4 items-center">
             <a
               href="https://cips.lshs.co.uk/"
               target="_blank"
@@ -89,7 +91,7 @@ export default function LSHSWhyCIPS() {
         {/* Interactive Slides / Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Navigation Pill List on Left */}
-          <div className="lg:col-span-5 space-y-2.5">
+          <div className="fade-up lg:col-span-5 space-y-2.5">
             {pillars.map((pillar, idx) => (
               <button
                 key={pillar.id}
@@ -129,7 +131,7 @@ export default function LSHSWhyCIPS() {
           </div>
 
           {/* Detailed Spotlight View on Right */}
-          <div className="lg:col-span-7">
+          <div className="fade-up lg:col-span-7">
             <div className="bg-gradient-to-br from-[#0c4a6e] via-[#072d42] to-[#041a29] text-white rounded-3xl p-8 sm:p-10 border border-sky-600/30 shadow-2xl relative overflow-hidden min-h-[380px] flex flex-col justify-between">
               {/* Background ambient watermarks */}
               <div className="absolute -top-12 -right-12 w-64 h-64 bg-[#0b73b9]/20 rounded-full blur-2xl pointer-events-none" />

@@ -40,13 +40,14 @@ export interface SampanCafeMetroFeatureProps {
   subtitle?: string;
 }
 
-export default function SampanCafeMetroFeature({
-  id,
+export default function SampanCafeMetroFeature(props: any) {
+  const {
+    id,
   badge,
   eyebrow = "Our New-Generation Automotive Destination",
   title = "Sampan City End",
   subtitle = "A modern automotive lifestyle destination featuring a contemporary car showroom, café, swimming pool, gym, and professional car-wash experience, all under one roof.",
-}: SampanCafeMetroFeatureProps = {}) {
+  } = (props || {}) as SampanCafeMetroFeatureProps;
   const layout = getCafeMetroLayout();
 
   return (

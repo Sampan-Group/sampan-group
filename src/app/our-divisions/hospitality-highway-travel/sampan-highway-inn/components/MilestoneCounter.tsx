@@ -116,15 +116,17 @@ export default function MilestoneCounter() {
     <section ref={containerRef} className="relative bg-[#F5F5F2] py-20 lg:py-28 overflow-hidden text-neutral-950 border-y border-neutral-200">
       <div className="relative z-10 mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
         
-        {/* Section Heading */}
+        {/* Section Heading with Line-Mask Reveal */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 border border-emerald-700/30 bg-emerald-50 px-4 py-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-emerald-800 mb-4">
+          <div className="fade-up inline-flex items-center gap-2 border border-emerald-700/30 bg-emerald-50 px-4 py-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-emerald-800 mb-4">
             <span>Our Track Record</span>
           </div>
           <h2 className="text-[clamp(2.2rem,4.5vw,4rem)] font-semibold leading-[0.95] tracking-[-0.03em] text-neutral-950">
-            Excellence by the numbers.
+            <div className="overflow-hidden">
+              <div className="line-mask">Excellence by the numbers.</div>
+            </div>
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-neutral-600">
+          <p className="fade-up mt-4 text-sm sm:text-base text-neutral-600">
             Engineered to deliver unmatched consistency, hygiene, and peace of mind on every single trip.
           </p>
         </div>
@@ -136,7 +138,7 @@ export default function MilestoneCounter() {
             return (
               <div
                 key={index}
-                className="group relative rounded-none border border-neutral-200 bg-white p-8 shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.08)] hover:border-emerald-700 transition-all duration-500 hover:-translate-y-1"
+                className="fade-up group relative rounded-none border border-neutral-200 bg-white p-8 shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.08)] hover:border-emerald-700 transition-all duration-500 hover:-translate-y-1"
               >
                 {/* Top Emerald Line */}
                 <div className="absolute top-0 left-0 h-[3px] w-0 bg-emerald-700 transition-all duration-500 group-hover:w-full" />

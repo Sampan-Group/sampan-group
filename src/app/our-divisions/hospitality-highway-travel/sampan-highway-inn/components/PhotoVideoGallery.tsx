@@ -147,23 +147,27 @@ export default function PhotoVideoGallery() {
     <section id="gallery" className="bg-[#faf9f6] py-24 sm:py-32 text-[#1a1a1a]">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
 
-        {/* Section Header */}
+        {/* Section Header with Line-Mask Reveal */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="fade-up flex items-center gap-3 mb-4">
               <span className="h-px w-10 bg-emerald-600" />
               <p className="text-xs font-bold uppercase tracking-[0.28em] text-emerald-800">
                 Photo &amp; Video Gallery
               </p>
             </div>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#111111] leading-tight">
-              A visual journey <br />
-              <span className="text-emerald-700">into highway luxury.</span>
+              <div className="overflow-hidden">
+                <div className="line-mask">A visual journey</div>
+              </div>
+              <div className="overflow-hidden mt-1">
+                <div className="line-mask text-emerald-700">into highway luxury.</div>
+              </div>
             </h2>
           </div>
 
           {/* Video Flyover Trigger Button */}
-          <div>
+          <div className="fade-up">
             <button
               onClick={() => setIsVideoModalOpen(true)}
               className="inline-flex items-center gap-3 rounded-none bg-[#070b09] hover:bg-emerald-950 text-white px-6 py-3.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-md cursor-pointer"
@@ -177,7 +181,7 @@ export default function PhotoVideoGallery() {
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap gap-2 pb-4 mb-10 border-b border-neutral-200">
+        <div className="fade-up flex flex-wrap gap-2 pb-4 mb-10 border-b border-neutral-200">
           {galleryCategories.map((cat) => (
             <button
               key={cat.id}
@@ -198,20 +202,22 @@ export default function PhotoVideoGallery() {
             <div
               key={item.id}
               onClick={() => setLightboxIndex(index)}
-              className={`group relative overflow-hidden rounded-none bg-neutral-200 shadow-sm border border-neutral-200 cursor-pointer aspect-square ${index === 0 ? "sm:col-span-2 sm:row-span-2" : ""
+              className={`fade-up group relative overflow-hidden rounded-none bg-neutral-200 shadow-sm border border-neutral-200 cursor-pointer aspect-square ${index === 0 ? "sm:col-span-2 sm:row-span-2" : ""
                 }`}
             >
-              <img
-                src={item.src}
-                alt={item.title}
-                width={800}
-                height={800}
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+              <div className="parallax-img absolute inset-0 w-full h-[116%] -top-[8%]">
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  width={800}
+                  height={800}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
 
               {/* Hover Dark Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white z-10">
                 <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-400">
                   Click to Expand
                 </span>
@@ -220,7 +226,7 @@ export default function PhotoVideoGallery() {
               </div>
 
               {/* Expand Icon Badge */}
-              <div className="absolute top-4 right-4 w-9 h-9 rounded-none bg-black/50 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="absolute top-4 right-4 w-9 h-9 rounded-none bg-black/50 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10">
                 <FaExpand className="text-xs" />
               </div>
             </div>

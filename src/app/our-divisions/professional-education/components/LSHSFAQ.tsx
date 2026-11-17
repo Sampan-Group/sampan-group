@@ -70,15 +70,17 @@ export default function LSHSFAQ() {
   return (
     <section id="faq" className="py-20 px-4 sm:px-8 lg:px-16 bg-[#f8fafc] text-slate-900">
       <div className="max-w-4xl mx-auto">
-        {/* Section Header */}
+        {/* Section Header with Line-Mask Reveal */}
         <div className="text-center mb-14">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#0b73b9] bg-sky-100 px-3.5 py-1 rounded-full">
+          <div className="fade-up inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0b73b9] bg-sky-100 px-3.5 py-1 rounded-full mb-4">
             Frequently Asked Questions
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-slate-900 mt-4">
-            Everything You Need to Know
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-slate-900 leading-tight">
+            <div className="overflow-hidden">
+              <div className="line-mask">Everything You Need to Know</div>
+            </div>
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 mt-3 leading-relaxed">
+          <p className="fade-up text-base sm:text-lg text-slate-600 mt-3 leading-relaxed">
             Clear answers to common questions about studying CIPS qualifications with LSHS.
           </p>
         </div>
@@ -90,32 +92,53 @@ export default function LSHSFAQ() {
             return (
               <div
                 key={idx}
-                className="border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-200 shadow-sm hover:shadow"
+                className={`fade-up border rounded-2xl bg-white overflow-hidden transition-all duration-300 ${
+                  isOpen
+                    ? "border-sky-400/80 shadow-md ring-1 ring-sky-400/20"
+                    : "border-slate-200/90 shadow-sm hover:shadow hover:border-slate-300"
+                }`}
               >
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
+                  className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 cursor-pointer focus:outline-none group"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-base sm:text-lg font-bold font-serif text-slate-900">
+                  <span
+                    className={`text-base sm:text-lg font-bold font-serif transition-colors duration-200 ${
+                      isOpen ? "text-[#0b73b9]" : "text-slate-900 group-hover:text-[#0b73b9]"
+                    }`}
+                  >
                     {faq.question}
                   </span>
                   <span
-                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-sm font-bold transition-transform duration-200 ${
+                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-xs font-bold transition-all duration-300 ${
                       isOpen
-                        ? "bg-[#0c4a6e] text-[#f4d210] rotate-180"
-                        : "bg-slate-100 text-slate-600"
+                        ? "bg-[#0c4a6e] text-[#f4d210] rotate-180 shadow-xs"
+                        : "bg-slate-100 text-slate-600 group-hover:bg-sky-100 group-hover:text-[#0b73b9]"
                     }`}
                   >
                     ▼
                   </span>
                 </button>
 
-                {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
-                    {faq.answer}
+                {/* Animated Drawer using CSS Grid */}
+                <div
+                  className={`grid transition-[grid-template-rows,opacity] duration-350 ease-out ${
+                    isOpen
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0 pointer-events-none"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div
+                      className={`px-5 sm:px-6 pb-6 pt-2 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 transition-all duration-300 ${
+                        isOpen ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"
+                      }`}
+                    >
+                      {faq.answer}
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}

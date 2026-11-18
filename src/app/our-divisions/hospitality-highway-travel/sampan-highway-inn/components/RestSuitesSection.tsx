@@ -60,7 +60,7 @@ export default function RestSuitesSection() {
             <div className="relative aspect-[16/10] overflow-hidden bg-neutral-200 border border-neutral-300/80 shadow-md group">
               <div className="parallax-img absolute inset-0 w-full h-[126%] -top-[13%]">
                 <img
-                  src="/images/facilities/highway_inn/all_day_comfort.png"
+                  src="/images/facilities/highway_inn/warm-modern-bedroom-living-suite.webp"
                   alt="Sampan Highway Inn Rest Suite"
                   sizes="(max-width: 1024px) 100vw, 60vw"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"

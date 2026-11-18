@@ -27,7 +27,7 @@ const galleryPhotos: GalleryPhoto[] = [
     title: "Main Family Dining Hall",
     category: "dining",
     categoryLabel: "Dining",
-    image: "/images/our-divisions/sampan-highway-inn/latest/sampan-dining-hall-interior.webp",
+    image: "/images/our-divisions/sampan-highway-inn/latest/sampan-family-dining-hall.webp",
     caption: "Spacious air-conditioned dining area with ambient chandeliers, concentric tile flooring, and comfortable family tables.",
   },
   {
@@ -94,7 +94,7 @@ export default function MomentsGallery() {
   return (
     <section id="gallery" className="bg-[#FAF9F6] py-24 sm:py-32 border-b border-neutral-200 text-neutral-900">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
-        
+
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
           <div className="max-w-2xl">
@@ -124,11 +124,10 @@ export default function MomentsGallery() {
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-5 py-2.5 font-mono text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
-                activeCategory === cat.id
+              className={`px-5 py-2.5 font-mono text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${activeCategory === cat.id
                   ? "bg-neutral-950 text-white shadow-sm"
                   : "bg-white text-neutral-600 hover:bg-neutral-100 border border-neutral-200"
-              }`}
+                }`}
             >
               {cat.label}
             </button>

@@ -16,7 +16,7 @@ const pillars: ExperiencePillar[] = [
     tag: "01 / DINE",
     title: "Dining, anytime",
     body: "Pause for a proper meal, a quick bite or a warm conversation in an inviting, air-conditioned setting.",
-    image: "/images/our-divisions/sampan-highway-inn/latest/sampan-dining-hall-interior.webp",
+    image: "/images/our-divisions/sampan-highway-inn/latest/sampan-elegant-teal-dining-hall.webp",
     actionText: "DISCOVER DINING",
     targetId: "dining",
   },
@@ -24,7 +24,7 @@ const pillars: ExperiencePillar[] = [
     tag: "02 / REST",
     title: "Rooms to recharge",
     body: "Take a welcome break from the road with the quiet, acoustically insulated comfort of a restful suite.",
-    image: "/images/facilities/highway_inn/all_day_comfort.png",
+    image: "/images/facilities/highway_inn/warm-modern-bedroom-living-suite.webp",
     actionText: "EXPLORE SUITES",
     targetId: "suites",
   },
@@ -49,7 +49,7 @@ export default function TheExperienceSection() {
   return (
     <section id="experiences" className="bg-[#FAF9F6] py-24 sm:py-32 border-b border-neutral-200 text-neutral-900">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
-        
+
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
           <div className="max-w-2xl">

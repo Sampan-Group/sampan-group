@@ -1,5 +1,7 @@
 "use client";
 
+import EnquiryForm from "@/components/EnquiryForm";
+
 import { useState } from "react";
 import Link from "next/link";
 import {
@@ -1302,13 +1304,13 @@ export default function SampanAgroGolfClubLoungeClient() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleInquirySubmit} className="space-y-5">
+                <EnquiryForm enquiryType="golf-club" onSuccess={() => setInquirySubmitted(true)}  className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block font-mono text-xs font-bold uppercase tracking-wider text-neutral-700 mb-2">
                         Full Name *
                       </label>
-                      <input
+                      <input name="name"
                         type="text"
                         required
                         placeholder="e.g. Mahfuzar Rahman"
@@ -1319,7 +1321,7 @@ export default function SampanAgroGolfClubLoungeClient() {
                       <label className="block font-mono text-xs font-bold uppercase tracking-wider text-neutral-700 mb-2">
                         Contact Phone *
                       </label>
-                      <input
+                      <input name="phone"
                         type="tel"
                         required
                         placeholder="+880 1..."
@@ -1333,7 +1335,7 @@ export default function SampanAgroGolfClubLoungeClient() {
                       <label className="block font-mono text-xs font-bold uppercase tracking-wider text-neutral-700 mb-2">
                         Email Address *
                       </label>
-                      <input
+                      <input name="email"
                         type="email"
                         required
                         placeholder="name@domain.com"
@@ -1344,7 +1346,7 @@ export default function SampanAgroGolfClubLoungeClient() {
                       <label className="block font-mono text-xs font-bold uppercase tracking-wider text-neutral-700 mb-2">
                         Membership Category
                       </label>
-                      <select className="w-full border border-neutral-300 px-4 py-3 text-sm focus:outline-none focus:border-emerald-700 bg-white">
+                      <select name="membershipInterest" className="w-full border border-neutral-300 px-4 py-3 text-sm focus:outline-none focus:border-emerald-700 bg-white">
                         <option>Executive Club &amp; Lounge Membership</option>
                         <option>Individual Golf Playing Membership</option>
                         <option>Corporate Group &amp; Boardroom Package</option>
@@ -1357,7 +1359,7 @@ export default function SampanAgroGolfClubLoungeClient() {
                     <label className="block font-mono text-xs font-bold uppercase tracking-wider text-neutral-700 mb-2">
                       Message / Preferred Tour Schedule
                     </label>
-                    <textarea
+                    <textarea name="message"
                       rows={4}
                       placeholder="Specify your inquiry or requested date for a private clubhouse tour..."
                       className="w-full border border-neutral-300 px-4 py-3 text-sm focus:outline-none focus:border-emerald-700"
@@ -1370,7 +1372,7 @@ export default function SampanAgroGolfClubLoungeClient() {
                   >
                     Submit Membership Inquiry
                   </button>
-                </form>
+                </EnquiryForm>
               )}
             </div>
 

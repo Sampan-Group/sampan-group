@@ -1,5 +1,7 @@
 "use client";
 
+import EnquiryForm from "@/components/EnquiryForm";
+
 import { useState } from "react";
 
 export default function LSHSEnquiryForm() {
@@ -13,10 +15,7 @@ export default function LSHSEnquiryForm() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+
 
   return (
     <section id="enquiry" className="py-20 px-4 sm:px-8 lg:px-16 bg-white text-slate-900">
@@ -69,13 +68,13 @@ export default function LSHSEnquiryForm() {
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6 max-w-3xl mx-auto">
+            <EnquiryForm enquiryType="education" onSuccess={() => setSubmitted(true)}  className="space-y-6 max-w-3xl mx-auto">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                     Full Name *
                   </label>
-                  <input
+                  <input name="name"
                     type="text"
                     required
                     placeholder="e.g. John Doe"
@@ -89,7 +88,7 @@ export default function LSHSEnquiryForm() {
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                     Email Address *
                   </label>
-                  <input
+                  <input name="email"
                     type="email"
                     required
                     placeholder="e.g. john@example.com"
@@ -103,7 +102,7 @@ export default function LSHSEnquiryForm() {
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                     Phone / WhatsApp *
                   </label>
-                  <input
+                  <input name="phone"
                     type="tel"
                     required
                     placeholder="+880 1..."
@@ -119,7 +118,7 @@ export default function LSHSEnquiryForm() {
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                     CIPS Level of Interest
                   </label>
-                  <select
+                  <select name="levelOfInterest"
                     value={formData.levelOfInterest}
                     onChange={(e) => setFormData({ ...formData, levelOfInterest: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-[#0b73b9] focus:ring-2 focus:ring-sky-100 outline-none text-sm transition-all bg-white"
@@ -137,7 +136,7 @@ export default function LSHSEnquiryForm() {
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                     Preferred Study Mode
                   </label>
-                  <select
+                  <select name="studyMode"
                     value={formData.studyMode}
                     onChange={(e) => setFormData({ ...formData, studyMode: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-[#0b73b9] focus:ring-2 focus:ring-sky-100 outline-none text-sm transition-all bg-white"
@@ -153,7 +152,7 @@ export default function LSHSEnquiryForm() {
                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                   Questions or Current Role (Optional)
                 </label>
-                <textarea
+                <textarea name="message"
                   rows={3}
                   placeholder="Tell us about your background or questions regarding exams, waivers, or payment plans..."
                   value={formData.message}
@@ -181,7 +180,7 @@ export default function LSHSEnquiryForm() {
                   Apply Directly (Official Google Form) ↗
                 </a>
               </div>
-            </form>
+            </EnquiryForm>
           )}
 
           {/* Bottom Trust Grid from Doc */}

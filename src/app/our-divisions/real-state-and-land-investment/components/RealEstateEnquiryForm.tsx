@@ -1,5 +1,7 @@
 "use client";
 
+import EnquiryForm from "@/components/EnquiryForm";
+
 import { useState } from "react";
 import { FaUserTie, FaCheckCircle, FaPaperPlane, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
@@ -33,10 +35,7 @@ export default function RealEstateEnquiryForm({
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+
 
   const containerClasses = {
     "divisions-green": "bg-[#f3f6f2] text-[#183b2b] border-b border-[#183b2b]/15",
@@ -113,7 +112,7 @@ export default function RealEstateEnquiryForm({
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4 text-xs font-mono">
+                <EnquiryForm enquiryType="property" onSuccess={() => setSubmitted(true)} details={{ projectName }}  className="space-y-4 text-xs font-mono">
                   <div className="border-b border-current/15 pb-3">
                     <span className="text-[#ca8a04] uppercase font-bold tracking-wider">Property Consultation</span>
                     <h3 className="text-lg font-bold text-neutral-950 mt-0.5">{projectName}</h3>
@@ -121,7 +120,7 @@ export default function RealEstateEnquiryForm({
 
                   <div className="space-y-1">
                     <label className="block uppercase opacity-70">Full Name</label>
-                    <input
+                    <input name="name"
                       type="text"
                       required
                       value={formData.fullName}
@@ -134,7 +133,7 @@ export default function RealEstateEnquiryForm({
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-1">
                       <label className="block uppercase opacity-70">{phoneLabel}</label>
-                      <input
+                      <input name="phone"
                         type="tel"
                         required
                         value={formData.phoneNumber}
@@ -147,7 +146,7 @@ export default function RealEstateEnquiryForm({
                     {unitPreferences && unitPreferences.length > 0 ? (
                       <div className="space-y-1">
                         <label className="block uppercase opacity-70">Unit Preference</label>
-                        <select
+                        <select name="unitPreference"
                           value={formData.unitPreference}
                           onChange={(e) => setFormData({ ...formData, unitPreference: e.target.value })}
                           className="w-full bg-white border border-neutral-300 p-3.5 text-xs text-neutral-950 focus:border-[#ca8a04] focus:outline-none cursor-pointer"
@@ -162,7 +161,7 @@ export default function RealEstateEnquiryForm({
                     ) : (
                       <div className="space-y-1">
                         <label className="block uppercase opacity-70">Email</label>
-                        <input
+                        <input name="email"
                           type="email"
                           required
                           value={formData.email}
@@ -176,7 +175,7 @@ export default function RealEstateEnquiryForm({
 
                   <div className="space-y-1">
                     <label className="block uppercase opacity-70">Message</label>
-                    <textarea
+                    <textarea name="message"
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -192,7 +191,7 @@ export default function RealEstateEnquiryForm({
                     <FaPaperPlane className="text-xs" />
                     <span>{submitButtonText}</span>
                   </button>
-                </form>
+                </EnquiryForm>
               )}
             </div>
           </div>

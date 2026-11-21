@@ -1,5 +1,7 @@
 "use client";
 
+import EnquiryForm from "@/components/EnquiryForm";
+
 import React, { useState, useRef } from "react";
 import Link from "next/link";
 import gsap from "gsap";
@@ -726,23 +728,23 @@ export default function CareersPage() {
             and we&apos;ll keep your profile in our talent network.
           </p>
 
-          <form className="reveal-up grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-2xl mx-auto">
-            <input
+          <EnquiryForm enquiryType="careers" className="reveal-up grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-2xl mx-auto">
+            <input name="name"
               type="text"
               placeholder="Full Name"
-              className="bg-transparent border-b border-white/40 py-3 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors"
+              className="bg-transparent border-b border-white/40 py-3 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors" required
             />
-            <input
+            <input name="email"
               type="email"
               placeholder="Email Address"
-              className="bg-transparent border-b border-white/40 py-3 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors"
+              className="bg-transparent border-b border-white/40 py-3 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors" required
             />
-            <input
+            <input name="phone"
               type="tel"
               placeholder="Phone Number"
               className="bg-transparent border-b border-white/40 py-3 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors"
             />
-            <select className="bg-transparent border-b border-white/40 py-3 text-white focus:outline-none focus:border-white transition-colors appearance-none">
+            <select name="areaOfInterest" className="bg-transparent border-b border-white/40 py-3 text-white focus:outline-none focus:border-white transition-colors appearance-none">
               <option value="" className="text-[#071018]">
                 Area of Interest
               </option>
@@ -756,15 +758,23 @@ export default function CareersPage() {
                 Agriculture
               </option>
             </select>
-            <div className="col-span-1 md:col-span-2 mt-4 border border-dashed border-white/40 p-8 flex flex-col items-center justify-center cursor-pointer hover:bg-white/10 transition-colors">
+            <label className="col-span-1 md:col-span-2 mt-4 border border-dashed border-white/40 p-8 flex flex-col items-center justify-center cursor-pointer hover:bg-white/10 transition-colors">
               <FiUpload className="text-2xl mb-2" />
               <span className="font-bold uppercase tracking-widest text-sm">
-                Drop Your CV Here
+                Upload Your CV
               </span>
               <span className="text-xs text-white/60 mt-1">
                 PDF, DOC or DOCX · Max 10MB
               </span>
-            </div>
+              <input
+                name="cv"
+                type="file"
+                accept=".pdf,.doc,.docx"
+                required
+                aria-label="Upload your CV, PDF, DOC or DOCX, maximum 10 MB"
+                className="mt-4 w-full max-w-sm text-sm file:mr-4 file:border-0 file:bg-white file:px-4 file:py-2 file:text-neutral-950"
+              />
+            </label>
             <div className="col-span-1 md:col-span-2 flex justify-center mt-4">
               <button
                 type="submit"
@@ -774,7 +784,7 @@ export default function CareersPage() {
                 <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
-          </form>
+          </EnquiryForm>
         </div>
       </section>
 

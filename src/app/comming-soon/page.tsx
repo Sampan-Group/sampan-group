@@ -1,5 +1,7 @@
 "use client";
 
+import EnquiryForm from "@/components/EnquiryForm";
+
 import { useState, useEffect, useRef, useCallback } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -149,13 +151,7 @@ export default function ComingSoon() {
     );
   }, [timeLeft.seconds]);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-      // Add your API call here
-    }
-  };
+
 
   const timeBlocks = [
     { label: "Days", value: timeLeft.days },
@@ -269,17 +265,17 @@ export default function ComingSoon() {
                 Thank you. We will notify you when we launch.
               </div>
             ) : (
-              <form
-                onSubmit={handleSubmit}
-                className="relative flex w-full items-center border border-white/15 bg-white/[0.02] p-2 backdrop-blur-sm transition-colors focus-within:border-[#007dc5]/60"
+              <EnquiryForm enquiryType="launch" onSuccess={() => setSubmitted(true)}
+
+                className="relative flex w-full flex-wrap items-center border border-white/15 bg-white/[0.02] p-2 backdrop-blur-sm transition-colors focus-within:border-[#007dc5]/60"
               >
-                <input
+                <input name="email"
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter email for launch updates"
-                  className="h-10 w-full bg-transparent px-4 text-sm text-white placeholder:text-white/40 outline-none"
+                  className="h-10 min-w-0 flex-1 bg-transparent px-4 text-sm text-white placeholder:text-white/40 outline-none"
                 />
                 <button
                   ref={magneticBtnRef}
@@ -291,7 +287,7 @@ export default function ComingSoon() {
                 >
                   <FiArrowRight className="h-4 w-4" />
                 </button>
-              </form>
+              </EnquiryForm>
             )}
           </div>
 

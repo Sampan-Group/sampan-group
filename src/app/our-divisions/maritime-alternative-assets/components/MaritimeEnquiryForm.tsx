@@ -1,5 +1,7 @@
 "use client";
 
+import EnquiryForm from "@/components/EnquiryForm";
+
 import { useState } from "react";
 
 export default function MaritimeEnquiryForm() {
@@ -13,10 +15,7 @@ export default function MaritimeEnquiryForm() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+
 
   return (
     <section id="enquiry-form" className="py-20 px-6 sm:px-12 lg:px-20 bg-white text-[#183b2b]">
@@ -52,13 +51,13 @@ export default function MaritimeEnquiryForm() {
             </button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <EnquiryForm enquiryType="maritime" onSuccess={() => setSubmitted(true)}  className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                   Full Name *
                 </label>
-                <input
+                <input name="name"
                   type="text"
                   required
                   placeholder="e.g. Architect Nazmul Huda"
@@ -72,7 +71,7 @@ export default function MaritimeEnquiryForm() {
                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                   Phone Number (WhatsApp) *
                 </label>
-                <input
+                <input name="phone"
                   type="tel"
                   required
                   placeholder="+880 1700-000000"
@@ -88,7 +87,7 @@ export default function MaritimeEnquiryForm() {
                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                   Email Address *
                 </label>
-                <input
+                <input name="email"
                   type="email"
                   required
                   placeholder="investor@example.com"
@@ -102,7 +101,7 @@ export default function MaritimeEnquiryForm() {
                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                   Investor Classification
                 </label>
-                <select
+                <select name="investorType"
                   value={formData.investorType}
                   onChange={(e) => setFormData({ ...formData, investorType: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#0077b6] bg-white text-slate-900 text-sm"
@@ -119,7 +118,7 @@ export default function MaritimeEnquiryForm() {
               <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                 Target Share Unit Allocation *
               </label>
-              <select
+              <select name="shareUnits"
                 value={formData.shareUnits}
                 onChange={(e) => setFormData({ ...formData, shareUnits: e.target.value })}
                 className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#0077b6] bg-white text-slate-900 text-sm font-medium"
@@ -135,7 +134,7 @@ export default function MaritimeEnquiryForm() {
               <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                 Investment Notes / Portfolio Queries
               </label>
-              <textarea
+              <textarea name="message"
                 rows={3}
                 placeholder="Specify preferred dividend payout account, secondary resale conditions, or corporate entity title..."
                 value={formData.message}
@@ -150,7 +149,7 @@ export default function MaritimeEnquiryForm() {
             >
               Submit Share Reservation to CRM Desk
             </button>
-          </form>
+          </EnquiryForm>
         )}
       </div>
     </section>

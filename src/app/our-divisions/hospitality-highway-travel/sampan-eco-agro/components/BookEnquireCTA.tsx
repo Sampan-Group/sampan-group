@@ -1,5 +1,7 @@
 "use client";
 
+import EnquiryForm from "@/components/EnquiryForm";
+
 import { useState } from "react";
 import { 
   FaPhoneAlt, 
@@ -19,14 +21,7 @@ export default function BookEnquireCTA({ onOpenBookingWidget }: { onOpenBookingW
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setIsModalOpen(false);
-    }, 2500);
-  };
+
 
   return (
     <section id="book-enquire-cta" className="py-20 bg-[#173326] text-white relative overflow-hidden border-b border-white/10">
@@ -152,7 +147,7 @@ export default function BookEnquireCTA({ onOpenBookingWidget }: { onOpenBookingW
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <EnquiryForm enquiryType="eco-agro" onSuccess={() => setSubmitted(true)}  className="space-y-4">
                 <div className="border-b border-white/10 pb-3">
                   <span className="font-mono text-xs text-[#b9e583] uppercase tracking-wider">Direct Inquiry</span>
                   <h3 className="text-xl font-bold text-white">Sampan Eco &amp; Agro Resort</h3>
@@ -162,7 +157,7 @@ export default function BookEnquireCTA({ onOpenBookingWidget }: { onOpenBookingW
                   <label className="block text-xs font-mono uppercase text-white/70">Full Name</label>
                   <div className="relative">
                     <FaUser className="absolute left-3 top-3.5 text-white/40 text-xs" />
-                    <input
+                    <input name="name"
                       type="text"
                       required
                       placeholder="Your Full Name"
@@ -176,7 +171,7 @@ export default function BookEnquireCTA({ onOpenBookingWidget }: { onOpenBookingW
                     <label className="block text-xs font-mono uppercase text-white/70">Phone Number</label>
                     <div className="relative">
                       <FaPhoneAlt className="absolute left-3 top-3.5 text-white/40 text-xs" />
-                      <input
+                      <input name="phone"
                         type="tel"
                         required
                         placeholder="+880 1..."
@@ -189,7 +184,7 @@ export default function BookEnquireCTA({ onOpenBookingWidget }: { onOpenBookingW
                     <label className="block text-xs font-mono uppercase text-white/70">Guest Count</label>
                     <div className="relative">
                       <FaUsers className="absolute left-3 top-3.5 text-white/40 text-xs" />
-                      <input
+                      <input name="guests"
                         type="number"
                         min="1"
                         defaultValue="2"
@@ -201,7 +196,7 @@ export default function BookEnquireCTA({ onOpenBookingWidget }: { onOpenBookingW
 
                 <div className="space-y-1">
                   <label className="block text-xs font-mono uppercase text-white/70">Inquiry Type</label>
-                  <select className="w-full bg-[#10251b] border border-white/20 px-3 py-2.5 text-xs text-white focus:border-[#b9e583] focus:outline-none">
+                  <select name="serviceType" className="w-full bg-[#10251b] border border-white/20 px-3 py-2.5 text-xs text-white focus:border-[#b9e583] focus:outline-none">
                     <option>Overnight Cottage Stay</option>
                     <option>Day Visit &amp; Lakeside Dining</option>
                     <option>Family Weekend Getaway</option>
@@ -214,7 +209,7 @@ export default function BookEnquireCTA({ onOpenBookingWidget }: { onOpenBookingW
                   <label className="block text-xs font-mono uppercase text-white/70">Preferred Date</label>
                   <div className="relative">
                     <FaCalendarAlt className="absolute left-3 top-3.5 text-white/40 text-xs" />
-                    <input
+                    <input name="visitDate"
                       type="date"
                       className="w-full bg-black/40 border border-white/20 pl-9 pr-4 py-2.5 text-xs text-white focus:border-[#b9e583] focus:outline-none"
                     />
@@ -227,7 +222,7 @@ export default function BookEnquireCTA({ onOpenBookingWidget }: { onOpenBookingW
                 >
                   Send Inquiry
                 </button>
-              </form>
+              </EnquiryForm>
             )}
           </div>
         </div>

@@ -143,7 +143,7 @@ export default function LeadershipMessage() {
                 <p className="text-xl font-bold tracking-tight text-neutral-900">
                   Emamul Hasan
                   <span className="ml-2 font-normal text-neutral-500">
-                    Managing Director
+                    Managing Director &amp; CEO
                   </span>
                 </p>
               </div>

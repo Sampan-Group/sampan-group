@@ -62,7 +62,7 @@ export default function AnimationProvider({
     // --------------------------------------------------
 
     const sections = gsap.utils.toArray<HTMLElement>(
-      "main section:not([data-no-reveal])",
+      "main:not([data-no-reveal]) section:not([data-no-reveal])",
     );
 
     const revealAnimations: gsap.core.Tween[] = [];

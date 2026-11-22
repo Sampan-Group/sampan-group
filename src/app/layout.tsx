@@ -105,11 +105,7 @@ export default function RootLayout({
   };
 
   return (
-    <html
-      lang="en"
-      className="antialiased"
-      suppressHydrationWarning
-    >
+    <html lang="en" className="antialiased" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -125,6 +121,14 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
           rel="stylesheet"
         ></link>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+          rel="stylesheet"
+        ></link>
+        <link
+          href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+          rel="stylesheet"
+        ></link>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -138,11 +142,14 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen flex flex-col overflow-x-hidden w-full max-w-[100vw]" suppressHydrationWarning>
+      <body
+        className="min-h-screen flex flex-col overflow-x-hidden w-full max-w-[100vw]"
+        suppressHydrationWarning
+      >
         <AnimationProvider>
           <Navbar2 />
           {children}
-          <FloatingContact/>
+          <FloatingContact />
           <Footer />
         </AnimationProvider>
       </body>

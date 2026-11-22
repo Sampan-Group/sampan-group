@@ -87,7 +87,7 @@ export default function CafeMetroSpecial() {
           <div>
             <div className="inline-flex items-center gap-2 border border-[#ca8a04]/40 bg-[#ca8a04]/10 px-3.5 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#ca8a04] mb-4">
               <FaCoffee className="text-xs" />
-              <span>Sampan Cafe Metro • Auto &amp; Hospitality Integration</span>
+              <span>Sampan City End • Auto &amp; Hospitality Integration</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-light tracking-tight text-[#183b2b]">
               Car Wash, Cafe Menu &amp; <span className="font-semibold text-[#ca8a04]">Auto Inventory</span>

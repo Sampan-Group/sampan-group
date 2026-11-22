@@ -27,64 +27,69 @@ export default function SampanHighwayInnClient() {
       const mm = gsap.matchMedia();
 
       mm.add("(prefers-reduced-motion: no-preference)", () => {
-        // Hero entrance timeline
-        const heroTl = gsap.timeline({ delay: 0.15 });
+        // Keep content opaque; only heading lines use the masked text reveal.
+        gsap.set([".line-mask", ".fade-up", ".hero-fade-up"], {
+          y: 0,
+          yPercent: 0,
+          autoAlpha: 1,
+        });
+
+        const heroTl = gsap.timeline();
         heroTl
           .fromTo(
             ".hero-line-mask",
             { yPercent: 110 },
             {
               yPercent: 0,
-              duration: 1.25,
+              duration: 0.95,
               ease: "power4.out",
-              stagger: 0.12,
+              stagger: 0.08,
             }
           )
-          .fromTo(
+          .from(
             ".hero-fade-up",
-            { y: 24, autoAlpha: 0 },
             {
-              y: 0,
-              autoAlpha: 1,
-              duration: 0.8,
-              ease: "power3.out",
-              stagger: 0.1,
+              y: 10,
+              duration: 0.35,
+              ease: "power2.out",
+              stagger: 0.04,
             },
-            "-=0.75"
+            0
           );
 
-        // Section headings line-mask slow reveal on scroll
-        gsap.utils.toArray<HTMLElement>(".line-mask:not(.hero-line-mask)").forEach((line) => {
+        // Preserve the original line reveal, with a shorter duration and earlier start.
+        gsap.utils.toArray<HTMLElement>("h2").forEach((heading) => {
+          const lines = heading.querySelectorAll<HTMLElement>(".line-mask");
+          if (!lines.length) return;
           gsap.fromTo(
-            line,
+            lines,
             { yPercent: 100 },
             {
               yPercent: 0,
-              duration: 1.3,
+              duration: 0.9,
               ease: "power4.out",
+              stagger: 0.06,
               scrollTrigger: {
-                trigger: line.parentElement!,
-                start: "top 88%",
-                toggleActions: "play none none none",
+                trigger: heading,
+                start: "top 98%",
+                once: true,
               },
             }
           );
         });
 
-        // Content cards, badges, descriptions fade-up on scroll
+        // Start just below the viewport; movement never reduces opacity.
         gsap.utils.toArray<HTMLElement>(".fade-up:not(.hero-fade-up)").forEach((el) => {
-          gsap.fromTo(
+          gsap.from(
             el,
-            { y: 24, autoAlpha: 0 },
             {
-              y: 0,
-              autoAlpha: 1,
-              duration: 0.75,
-              ease: "power3.out",
+              y: 10,
+              duration: 0.35,
+              ease: "power2.out",
               scrollTrigger: {
                 trigger: el,
-                start: "top 92%",
-                toggleActions: "play none none none",
+                start: "top bottom+=120",
+                once: true,
               },
             }
           );
@@ -127,13 +132,6 @@ export default function SampanHighwayInnClient() {
             }
           );
         });
-
-        // Refresh triggers once images and fonts are positioned
-        const refreshTimer = setTimeout(() => {
-          ScrollTrigger.refresh();
-        }, 300);
-
-        return () => clearTimeout(refreshTimer);
       });
 
       mm.add("(prefers-reduced-motion: reduce)", () => {
@@ -148,6 +146,26 @@ export default function SampanHighwayInnClient() {
           x: 0,
         });
       });
+
+      // Refresh against actual asset layout rather than a fixed loading delay.
+      let disposed = false;
+      let refreshFrame = 0;
+      const refreshLayout = () => {
+        if (disposed) return;
+        cancelAnimationFrame(refreshFrame);
+        refreshFrame = requestAnimationFrame(() => ScrollTrigger.refresh());
+      };
+      const container = containerRef.current;
+      container?.addEventListener("load", refreshLayout, true);
+      void document.fonts.ready.then(refreshLayout);
+      refreshLayout();
+
+      return () => {
+        disposed = true;
+        cancelAnimationFrame(refreshFrame);
+        container?.removeEventListener("load", refreshLayout, true);
+        mm.revert();
+      };
     },
     { scope: containerRef }
   );
@@ -155,6 +173,7 @@ export default function SampanHighwayInnClient() {
   return (
     <main
       ref={containerRef}
+      data-no-reveal
       className="bg-[#FAF9F6] text-neutral-900 antialiased selection:bg-[#B8F230] selection:text-neutral-950 font-sans"
     >
       {/* 1. HERO OVERVIEW (Properly exposed night photograph, crisp typography & metrics) */}

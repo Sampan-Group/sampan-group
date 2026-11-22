@@ -1,0 +1,55 @@
+.heading {
+  font-size: clamp(2rem, 4.6vw, 4.2rem);
+}
+
+.title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+.photo {
+  transition: transform 800ms cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.details {
+  display: grid;
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transition: grid-template-rows 450ms ease, opacity 350ms ease;
+}
+
+.detailsInner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .details {
+    grid-template-rows: 0fr;
+    opacity: 0;
+  }
+
+  .card:hover .details,
+  .card:focus-visible .details {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+
+  .card:hover .photo,
+  .card:focus-visible .photo {
+    transform: scale(1.045);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo,
+  .details {
+    transition: none;
+  }
+
+  .card:hover .photo,
+  .card:focus-visible .photo {
+    transform: none;
+  }
+}

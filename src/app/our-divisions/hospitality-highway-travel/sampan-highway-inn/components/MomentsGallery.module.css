@@ -1,0 +1,23 @@
+.photoGrid {
+  grid-auto-rows: 340px;
+}
+
+@media (min-width: 640px) {
+  .photoGrid {
+    grid-auto-rows: 280px;
+  }
+
+  .filteredGrid {
+    grid-auto-rows: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .photoGrid {
+    grid-auto-rows: 300px;
+  }
+
+  .filteredGrid {
+    grid-auto-rows: 500px;
+  }
+}

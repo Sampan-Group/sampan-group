@@ -126,8 +126,8 @@ export default function DiningSection() {
 
           {/* Right Column: Hero Restaurant Photography */}
           <div className="fade-up lg:col-span-6">
-            <div className="relative aspect-[4/3] overflow-hidden bg-neutral-900 border border-white/10 group">
-              <div className="parallax-img absolute inset-0 w-full h-[116%] -top-[8%]">
+            <div className="relative aspect-square overflow-hidden bg-neutral-900 border border-white/10 group">
+              <div className="parallax-img absolute -top-[14%] left-0 w-full h-[128%]">
                 <img
                   src="/images/our-divisions/sampan-highway-inn/latest/sampan-dining-hall-interior.webp"
                   alt="Sampan Highway Inn Main Dining Hall"
@@ -171,8 +171,8 @@ export default function DiningSection() {
                 key={idx}
                 className="group flex flex-col bg-white/[0.04] border border-white/10 hover:border-[#B8F230]/50 hover:bg-white/[0.07] transition-all duration-300 overflow-hidden"
               >
-                <div className="relative aspect-[16/10] overflow-hidden bg-neutral-900">
-                  <div className="parallax-img absolute inset-0 w-full h-[124%] -top-[12%]">
+                <div className="relative aspect-[4/3] sm:aspect-square overflow-hidden bg-neutral-900">
+                  <div className="parallax-img absolute -top-[14%] left-0 w-full h-[128%]">
                     <img
                       src={item.image}
                       alt={item.name}

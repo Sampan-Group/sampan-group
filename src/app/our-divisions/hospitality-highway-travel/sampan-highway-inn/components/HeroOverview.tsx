@@ -23,19 +23,21 @@ export default function HeroOverview() {
 
   return (
     <section id="hero" className="relative min-h-screen flex flex-col justify-between overflow-hidden bg-neutral-950 text-white pt-24 sm:pt-28 border-b border-white/10">
-      {/* Background Image: Properly Exposed, High Resolution Property Photo with Parallax */}
+      {/* Keep the illuminated facade visible, with a closer crop on small screens. */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="parallax-hero absolute inset-0 w-full h-[135%] -top-[15%]">
           <img
             src={heroImage}
             alt="Sampan Highway Inn Kashiani"
             sizes="100vw"
-            className="w-full h-full object-cover object-center filter brightness-[0.92] contrast-[1.05]"
+            fetchPriority="high"
+            loading="eager"
+            className="w-full h-full object-cover object-[42%_58%] sm:object-[center_58%] brightness-[1.04] contrast-[1.02]"
           />
         </div>
-        {/* Soft directional gradient: preserves building vibrancy on right while ensuring crisp readability on left */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-black/60 z-10" />
+        {/* Concentrate shading behind the copy and let the right-hand facade shine. */}
+        <div className="absolute inset-0 z-10 bg-[linear-gradient(90deg,rgba(3,12,8,0.72),rgba(3,12,8,0.4))] sm:bg-[linear-gradient(90deg,rgba(3,12,8,0.78)_0%,rgba(3,12,8,0.55)_38%,rgba(3,12,8,0.16)_72%,rgba(3,12,8,0.04)_100%)]" />
+        <div className="absolute inset-0 z-10 bg-[linear-gradient(0deg,rgba(3,12,8,0.8)_0%,transparent_38%,transparent_75%,rgba(0,0,0,0.28)_100%)]" />
       </div>
 
       {/* In-Page Navigation Header Bar (Commented out to prevent visual conflict with main site navbar)
@@ -109,7 +111,7 @@ export default function HeroOverview() {
           </h1>
 
           {/* Tagline */}
-          <p className="hero-fade-up text-sm sm:text-base lg:text-lg text-neutral-300 max-w-2xl leading-relaxed font-light">
+          <p className="hero-fade-up text-sm sm:text-base lg:text-lg text-white/90 max-w-2xl leading-relaxed font-light">
             A refreshing break in every journey. Discover 24/7 dining, inviting rest suites and thoughtful highway hospitality at Kashiani on the Dhaka–Khulna corridor.
           </p>
 
@@ -147,7 +149,7 @@ export default function HeroOverview() {
       </div>
 
       {/* Bottom Quick Metrics Bar */}
-      <div className="relative z-20 border-t border-white/10 bg-black/60 backdrop-blur-md">
+      <div className="relative z-20 border-t border-white/15 bg-black/45 backdrop-blur-md">
         <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16 py-6 sm:py-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {quickMetrics.map((metric, i) => (

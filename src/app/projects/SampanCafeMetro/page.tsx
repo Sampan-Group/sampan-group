@@ -1,35 +1,14 @@
 import Link from "next/link";
+import styles from "./CityEndFeature.module.css";
 
-import { getCafeMetroLayout } from "./cafe-metro-layout";
-
-const cafeHighlights = [
-  {
-    number: "01",
-    title: "Modern Showroom",
-    copy: "Premium Automotive Experience.",
-  },
-  {
-    number: "02",
-    title: "Lifestyle & Wellness",
-    copy: "Café, Juice Bar, Pool & Gym.",
-  },
-  {
-    number: "03",
-    title: "Complete Car Care",
-    copy: "Professional Car Wash.",
-  },
+const highlights = [
+  { number: "01", title: "Modern showroom", copy: "A contemporary space for your next automotive experience." },
+  { number: "02", title: "Lifestyle & wellness", copy: "Café, juice bar, swimming pool and gym, brought together." },
+  { number: "03", title: "Complete car care", copy: "Professional car washing for a fresh start to your journey." },
 ];
 
 function Arrow() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      className="h-4 w-4 fill-none stroke-current stroke-[1.8]"
-    >
-      <path d="M5 12h13M13 6l6 6-6 6" />
-    </svg>
-  );
+  return <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M5 12h13M13 6l6 6-6 6" /></svg>;
 }
 
 export interface SampanCafeMetroFeatureProps {
@@ -43,110 +22,47 @@ export interface SampanCafeMetroFeatureProps {
 export default function SampanCafeMetroFeature(props: any) {
   const {
     id,
-  badge,
-  eyebrow = "Our New-Generation Automotive Destination",
-  title = "Sampan City End",
-  subtitle = "A modern automotive lifestyle destination featuring a contemporary car showroom, café, swimming pool, gym, and professional car-wash experience, all under one roof.",
+    badge,
+    eyebrow = "Automotive. Lifestyle. Hospitality.",
+    title = "Sampan City End",
+    subtitle = "A modern automotive lifestyle destination featuring a contemporary car showroom, café, swimming pool, gym, and professional car-wash experience, all under one roof.",
   } = (props || {}) as SampanCafeMetroFeatureProps;
-  const layout = getCafeMetroLayout();
 
   return (
-    <section
-      id={id}
-      className={`relative left-1/2 isolate w-[100dvw] max-w-none -translate-x-1/2 overflow-hidden bg-[#071b13] text-white ${layout.mobileHeightClass} ${layout.desktopHeightClass}`}
-    >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_24%,rgba(168,223,115,0.18),transparent_30%),linear-gradient(135deg,#071b13,#123c2b)]" />
-
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover"
-      >
+    <section id={id} className={styles.feature}>
+      {/* Archived Cafe Metro film: disabled following the Sampan City End rebrand.
+      <video autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
         <source src="/videos/cafe-metro.mp4" type="video/mp4" />
       </video>
-
-      <div className="absolute inset-0 bg-black/15" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#071b13]/65 via-[#071b13]/10 to-black/10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#071b13]/95 via-[#071b13]/15 to-black/20" />
-
-      <div
-        aria-hidden="true"
-        className="absolute -right-40 top-1/3 h-96 w-96 rounded-full bg-[#a8df73]/10 blur-[120px]"
-      />
-
-      <div
-        className={`relative z-10 flex w-full flex-col py-12 sm:py-14 lg:py-16 ${layout.mobileHeightClass} ${layout.desktopHeightClass} ${layout.outerPaddingClass}`}
-      >
-        <div
-          className={layout.shellClass}
-          style={{ maxWidth: `${layout.contentMaxWidth}px` }}
-        >
-          <div
-            className={`${layout.contentFlowClass} max-w-[52rem] py-14 lg:py-10`}
-          >
-            {badge && (
-              <div className="mb-4 inline-flex items-center gap-2 rounded-none bg-[#a8df73]/15 border border-[#a8df73]/40 px-3.5 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#a8df73] shadow-sm backdrop-blur-sm">
-                <span className="w-2 h-2 rounded-full bg-[#a8df73] animate-pulse" />
-                <span>{badge}</span>
-              </div>
-            )}
-
-            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.32em] text-[#a8df73]">
-              {eyebrow}
-            </p>
-
-            <h2 className="max-w-[12ch] text-[clamp(3rem,5vw,5.75rem)] font-medium leading-[0.79] tracking-[-0.072em]">
-              {title}
-            </h2>
-
-            <p className="mt-7 max-w-xl text-base leading-7 text-white/70 sm:text-lg sm:leading-8">
-              {subtitle}
-            </p>
-
-            <Link
-              href="/our-divisions/real-state-and-land-investment/sampan-cafe-metro"
-              className="group mt-8 inline-flex min-h-14 items-center justify-between gap-10 bg-[#a8df73] px-6 text-xs font-bold uppercase tracking-[0.15em] text-[#07131f] transition duration-300 hover:bg-white"
-            >
-              Explore Sampan City End
-              <span className="transition-transform duration-300 group-hover:translate-x-1">
-                <Arrow />
-              </span>
+      */}
+      <div className={styles.shell}>
+        <div className={styles.main}>
+          <div className={styles.copy}>
+            <p className={styles.eyebrow}><span aria-hidden="true" />{eyebrow}</p>
+            {badge && <p className={styles.badge}>{badge}</p>}
+            <h2 className={styles.title}>{title}</h2>
+            <p className={styles.subtitle}>{subtitle}</p>
+            <Link href="/our-divisions/real-state-and-land-investment/sampan-cafe-metro" className={styles.action}>
+              Explore Sampan City End <Arrow />
             </Link>
           </div>
-
-          <div className="grid overflow-hidden border-y border-white/15 bg-[#071b13]/30 backdrop-blur-xl sm:grid-cols-3">
-            {cafeHighlights.map((highlight) => (
-              <article
-                key={highlight.number}
-                className="group relative border-b border-white/15 px-5 py-5 last:border-b-0 sm:min-h-[9.5rem] sm:border-b-0 sm:border-r sm:px-6 sm:py-6 sm:last:border-r-0"
-              >
-                <span
-                  aria-hidden="true"
-                  className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-[#a8df73] transition-transform duration-500 group-hover:scale-x-100"
-                />
-
-                <div className="flex items-center gap-3">
-                  <span
-                    className="font-mono text-[0.58rem] font-bold tracking-[0.16em] text-[#ef636b]"
-                    aria-hidden="true"
-                  />
-                  <span className="h-px w-7 bg-white/25" />
-                </div>
-
-                <h3 className="mt-4 text-xl font-medium leading-tight tracking-[-0.035em] text-white sm:text-2xl">
-                  {highlight.title}
-                </h3>
-
-                <p className="mt-2 max-w-sm text-xs leading-5 text-white/55 sm:text-sm sm:leading-6">
-                  {highlight.copy}
-                </p>
-              </article>
-            ))}
+          <div className={styles.brandPanel}>
+            <div aria-hidden="true" className={styles.orbit} />
+            <div className={styles.panelTop}><span>The next destination</span><span aria-hidden="true">↗</span></div>
+            <img src="/images/brand/Sampan_City_End.png" alt="Sampan City End" width="2000" height="800" className={styles.logo} />
+            <div className={styles.panelBottom}>
+              <p>Arrive for more.</p>
+              <span>Drive. Unwind. Connect.</span>
+            </div>
           </div>
+        </div>
+        <div className={styles.highlights}>
+          {highlights.map(item => (
+            <article key={item.number} className={styles.highlight}>
+              <span className={styles.number}>{item.number}</span>
+              <div><h3>{item.title}</h3><p>{item.copy}</p></div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

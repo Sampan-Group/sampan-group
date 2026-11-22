@@ -57,7 +57,7 @@ export default function RestSuitesSection() {
           
           {/* Left Column: Visual Showcase */}
           <div className="fade-up lg:col-span-7 space-y-6">
-            <div className="relative aspect-[16/10] overflow-hidden bg-neutral-200 border border-neutral-300/80 shadow-md group">
+            <div className="relative aspect-[4/3] overflow-hidden bg-neutral-200 border border-neutral-300/80 shadow-md group">
               <div className="parallax-img absolute inset-0 w-full h-[126%] -top-[13%]">
                 <img
                   src="/images/facilities/highway_inn/warm-modern-bedroom-living-suite.webp"
@@ -76,8 +76,8 @@ export default function RestSuitesSection() {
 
             {/* Secondary Showcase Thumbnails */}
             <div className="grid grid-cols-2 gap-6">
-              <div className="relative aspect-[16/10] overflow-hidden bg-neutral-200 border border-neutral-300/80 group">
-                <div className="parallax-img absolute inset-0 w-full h-[124%] -top-[12%]">
+              <div className="relative aspect-[4/3] overflow-hidden bg-neutral-200 border border-neutral-300/80 group">
+                <div className="parallax-img absolute -top-[14%] left-0 w-full h-[128%]">
                   <img
                     src="/images/our-divisions/sampan-highway-inn/vvip-lounge.jpeg"
                     alt="Executive VIP Lounge"
@@ -88,8 +88,8 @@ export default function RestSuitesSection() {
                   Executive VIP Lounge
                 </div>
               </div>
-              <div className="relative aspect-[16/10] overflow-hidden bg-neutral-200 border border-neutral-300/80 group">
-                <div className="parallax-img absolute inset-0 w-full h-[124%] -top-[12%]">
+              <div className="relative aspect-[4/3] overflow-hidden bg-neutral-200 border border-neutral-300/80 group">
+                <div className="parallax-img absolute -top-[14%] left-0 w-full h-[128%]">
                   <img
                     src="/images/our-divisions/sampan-highway-inn/lounge.jpg"
                     alt="Lounge Seating"

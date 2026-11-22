@@ -248,12 +248,12 @@ export default function AutoInventoryBrowser({
           </div>
         )}
 
-        {/* "Nearby" Link to Sampan Cafe Metro */}
+        {/* "Nearby" Link to Sampan City End */}
         <div className="mt-16 border border-neutral-300 bg-white p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
           <div className="space-y-1">
             <span className="font-mono text-xs font-bold uppercase tracking-wider text-neutral-500">Adjacent Station Amenity</span>
             <h3 className="text-2xl font-bold text-neutral-950">Visiting Sampan Auto Showroom?</h3>
-            <p className="text-xs text-neutral-600">Enjoy artisanal coffee, hydro car wash, and garden grill dining right next door at Sampan Cafe Metro.</p>
+            <p className="text-xs text-neutral-600">Enjoy artisanal coffee, hydro car wash, and garden grill dining right next door at Sampan City End.</p>
           </div>
 
           <Link
@@ -261,7 +261,7 @@ export default function AutoInventoryBrowser({
             className="inline-flex items-center gap-2 text-white px-7 py-3.5 font-mono text-xs font-bold uppercase tracking-[0.2em] shadow-md transition-all cursor-pointer hover:opacity-90 shrink-0"
             style={{ backgroundColor: accentColor }}
           >
-            <span>Visit Sampan Cafe Metro</span>
+            <span>Visit Sampan City End</span>
             <FaExternalLinkAlt className="text-xs" />
           </Link>
         </div>

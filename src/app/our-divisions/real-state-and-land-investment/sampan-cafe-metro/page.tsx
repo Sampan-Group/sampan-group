@@ -6,7 +6,7 @@ import SiteVisitBookingForm from "../components/SiteVisitBookingForm";
 import RealEstateLocationMap from "../components/RealEstateLocationMap";
 
 export const metadata: Metadata = {
-  title: "Sampan Cafe Metro | Auto, Hydro Car Wash & Cafe Lounge",
+  title: "Sampan City End | Auto, Hydro Car Wash & Cafe Lounge",
   description:
     "Integrated expressway transit hub featuring premium hydro car wash, artisanal cafe dining, and Sampan Auto luxury vehicle inventory browser.",
 };
@@ -30,7 +30,7 @@ export default function SampanCafeMetroPage() {
 
       {/* 1. Hero Overview - Custom Purple (#4c2a85) Accent & Red (#b21f24) Badge from Logo */}
       <RealEstateHero
-        title="Sampan Cafe Metro"
+        title="Sampan City End"
         subtitle="Auto Service, Hydro Car Wash & Garden Cafe"
         divisionName="Real Estate & Hospitality Concern"
         statusBadge="Ongoing Operation"
@@ -49,7 +49,7 @@ export default function SampanCafeMetroPage() {
       {/* <RealEstateLocationMap
         title="Expressway Location & Access"
         subtitle="Positioned along the main arterial corridor for fast stopovers."
-        projectName="Sampan Cafe Metro"
+        projectName="Sampan City End"
         address="Expressway Transit Corridor Exit, Dhaka, Bangladesh."
         gpsCoordinates="23.7512° N, 90.3845° E"
         embedMapUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14605.6!2d90.3845!3d23.7512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDQ1JzA0LjMiTiA5MMKwMjMnMDQuMiJF!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd"
@@ -60,8 +60,8 @@ export default function SampanCafeMetroPage() {
       {/* 4. Site Visit / Slot Enquiry */}
       <SiteVisitBookingForm
         title="Inquire Auto Service, Cafe and Luxury Lounge"
-        subtitle="Schedule a vehicle inspection or reserve a private dining table at Cafe Metro."
-        projectName="Sampan Cafe Metro"
+        subtitle="Schedule a vehicle inspection or reserve a private dining table at Sampan City End."
+        projectName="Sampan City End"
         bgTheme="divisions-green"
       />
 

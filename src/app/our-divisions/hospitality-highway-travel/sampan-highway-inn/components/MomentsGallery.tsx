@@ -1,22 +1,76 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { FaExpand, FaTimes, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { FiArrowUpRight } from "react-icons/fi";
+import styles from "./MomentsGallery.module.css";
 
 interface GalleryPhoto {
   id: number;
   title: string;
+  label: string;
   category: "all" | "dining" | "exterior" | "convenience";
   categoryLabel: string;
   image: string;
   caption: string;
 }
 
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
+}
+
+function LightboxPhoto({ photo }: { photo: GalleryPhoto }) {
+  const [displayedPhoto, setDisplayedPhoto] = useState(photo);
+  const [failedPhoto, setFailedPhoto] = useState<number | null>(null);
+  const reduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    let cancelled = false;
+    const image = new window.Image();
+    image.src = photo.image;
+    // Retain the previous photograph until the next one is ready to crossfade.
+    void image.decode().then(() => {
+      if (!cancelled) {
+        setDisplayedPhoto(photo);
+        setFailedPhoto(null);
+      }
+    }).catch(() => {
+      if (!cancelled) setFailedPhoto(photo.id);
+    });
+    return () => { cancelled = true; };
+  }, [photo]);
+
+  return (
+    <>
+      <AnimatePresence initial={false}>
+        <motion.img
+          key={displayedPhoto.id}
+          src={displayedPhoto.image}
+          alt={displayedPhoto.title}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: reduceMotion ? 0 : 0.28, ease: "easeInOut" }}
+          className="absolute inset-0 h-full w-full object-contain"
+        />
+      </AnimatePresence>
+      {(displayedPhoto.id !== photo.id || failedPhoto === photo.id) && (
+        <span role="status" className="absolute top-3 z-10 bg-black/70 px-3 py-2 text-sm text-white">
+          {failedPhoto === photo.id ? "Unable to load this photo." : "Loading photo…"}
+        </span>
+      )}
+    </>
+  );
+}
+
 const galleryPhotos: GalleryPhoto[] = [
   {
     id: 1,
     title: "Illuminated Night Facade & Parking Plaza",
+    label: "A warm welcome, day or night",
     category: "exterior",
     categoryLabel: "Exterior Plaza",
     image: "/images/our-divisions/sampan-highway-inn/latest/sampan-highway-inn-night-facade.webp",
@@ -25,6 +79,7 @@ const galleryPhotos: GalleryPhoto[] = [
   {
     id: 2,
     title: "Main Family Dining Hall",
+    label: "Room for the whole family",
     category: "dining",
     categoryLabel: "Dining",
     image: "/images/our-divisions/sampan-highway-inn/latest/sampan-family-dining-hall.webp",
@@ -33,6 +88,7 @@ const galleryPhotos: GalleryPhoto[] = [
   {
     id: 3,
     title: "Executive Restaurant & Ambient Lounges",
+    label: "Settle in. Savour the moment.",
     category: "dining",
     categoryLabel: "Dining",
     image: "/images/our-divisions/sampan-highway-inn/Sampan Highway Inn/IMG_20250916_070207.jpg",
@@ -41,6 +97,7 @@ const galleryPhotos: GalleryPhoto[] = [
   {
     id: 4,
     title: "Sampan Mart 24/7 Courtyard Super Shop",
+    label: "Essentials, around the clock",
     category: "convenience",
     categoryLabel: "Convenience",
     image: "/images/our-divisions/sampan-highway-inn/latest/sampan-mart-24-7-courtyard.webp",
@@ -49,6 +106,7 @@ const galleryPhotos: GalleryPhoto[] = [
   {
     id: 5,
     title: "Sampan Juice Bar & Soft Serve Parlor",
+    label: "Fresh flavours & little treats",
     category: "dining",
     categoryLabel: "Dining",
     image: "/images/our-divisions/sampan-highway-inn/Sampan Highway Inn/IMG_20250916_065448 (1).jpg",
@@ -57,6 +115,7 @@ const galleryPhotos: GalleryPhoto[] = [
   {
     id: 6,
     title: "Luxury Washrooms & LED Vanity Mirrors",
+    label: "Refresh before the road",
     category: "convenience",
     categoryLabel: "Convenience",
     image: "/images/our-divisions/sampan-highway-inn/latest/sampan-luxury-washroom-vanity.webp",
@@ -72,12 +131,75 @@ const categories = [
 ];
 
 export default function MomentsGallery() {
+  const galleryRef = useRef<HTMLElement>(null);
   const [activeCategory, setActiveCategory] = useState("all");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const lightboxOpen = lightboxIndex !== null;
 
   const filtered = activeCategory === "all"
     ? galleryPhotos
     : galleryPhotos.filter(p => p.category === activeCategory);
+
+  useGSAP(() => {
+    const media = gsap.matchMedia();
+    media.add("(prefers-reduced-motion: no-preference)", () => {
+      gsap.utils.toArray<HTMLElement>("[data-gallery-parallax]").forEach((image) => {
+        gsap.fromTo(image, { yPercent: -8, scale: 1.04 }, {
+          yPercent: 8,
+          scale: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: image.parentElement,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1.2,
+            invalidateOnRefresh: true,
+          },
+        });
+      });
+    });
+    media.add("(prefers-reduced-motion: reduce)", () => {
+      gsap.set("[data-gallery-parallax]", { y: 0, yPercent: 0, scale: 1 });
+    });
+    return () => media.revert();
+  }, { scope: galleryRef, dependencies: [activeCategory], revertOnUpdate: true });
+
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    const previousFocus = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    dialogRef.current?.querySelector<HTMLButtonElement>("button")?.focus();
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setLightboxIndex(null);
+      if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+        event.preventDefault();
+        const step = event.key === "ArrowRight" ? 1 : -1;
+        setLightboxIndex(current => current === null ? null : (current + step + filtered.length) % filtered.length);
+      }
+      if (event.key === "Tab") {
+        const buttons = dialogRef.current?.querySelectorAll<HTMLButtonElement>("button");
+        if (!buttons?.length) return;
+        const first = buttons[0];
+        const last = buttons[buttons.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = previousOverflow;
+      previousFocus?.focus({ preventScroll: true });
+    };
+  }, [lightboxOpen, filtered.length]);
 
   const handlePrev = () => {
     if (lightboxIndex !== null) {
@@ -92,7 +214,7 @@ export default function MomentsGallery() {
   };
 
   return (
-    <section id="gallery" className="bg-[#FAF9F6] py-24 sm:py-32 border-b border-neutral-200 text-neutral-900">
+    <section ref={galleryRef} id="gallery" className="bg-[#FAF9F6] py-24 sm:py-32 border-b border-neutral-200 text-neutral-900">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
 
         {/* Section Header */}
@@ -118,60 +240,66 @@ export default function MomentsGallery() {
           </p>
         </div>
 
-        {/* Filter Pills */}
-        <div className="fade-up flex flex-wrap gap-2 pb-4 mb-10 border-b border-neutral-200">
+        <div className="fade-up mb-8 flex flex-col justify-between gap-4 border-b border-neutral-200 sm:mb-10 lg:flex-row lg:items-end">
+          <div role="group" aria-label="Filter gallery photos" className="flex flex-wrap gap-x-5 gap-y-2 sm:gap-x-8">
           {categories.map((cat) => (
             <button
               key={cat.id}
-              onClick={() => setActiveCategory(cat.id)}
-              className={`px-5 py-2.5 font-mono text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${activeCategory === cat.id
-                  ? "bg-neutral-950 text-white shadow-sm"
-                  : "bg-white text-neutral-600 hover:bg-neutral-100 border border-neutral-200"
+              type="button"
+              aria-pressed={activeCategory === cat.id}
+              onClick={() => { setActiveCategory(cat.id); setLightboxIndex(null); }}
+              className={`-mb-px border-b-2 px-1 pb-4 pt-2 text-sm font-semibold transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700 ${activeCategory === cat.id
+                  ? "border-emerald-800 text-emerald-900"
+                  : "border-transparent text-neutral-500 hover:text-neutral-900"
                 }`}
             >
               {cat.label}
             </button>
           ))}
+          </div>
+          <p aria-live="polite" className="pb-4 text-sm text-neutral-500">
+            {filtered.length} {filtered.length === 1 ? "photograph" : "photographs"}
+          </p>
         </div>
 
-        {/* 3-Column Uniform Photo Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* A generous feature photograph, stacked details, then a supporting row. */}
+        <div className={`${styles.photoGrid} ${filtered.length < 3 ? styles.filteredGrid : ""} grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-12 lg:gap-5`}>
           {filtered.map((item, index) => (
-            <article
+            <button
               key={item.id}
+              type="button"
+              aria-label={`View ${item.title}`}
+              aria-haspopup="dialog"
               onClick={() => setLightboxIndex(index)}
-              className="fade-up group relative flex flex-col bg-white border border-neutral-200/90 hover:border-emerald-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer"
+              className={`group relative isolate overflow-hidden bg-neutral-900 text-left text-white cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700 ${filtered.length === 1
+                ? "sm:col-span-2 lg:col-span-12"
+                : filtered.length === 2
+                  ? "lg:col-span-6"
+                  : index === 0
+                    ? "sm:col-span-2 sm:row-span-2 lg:col-span-7"
+                    : index < 3
+                      ? "lg:col-span-5"
+                      : index === 5 ? "sm:col-span-2 lg:col-span-4" : "lg:col-span-4"}`}
             >
-              <div className="relative aspect-[4/3] overflow-hidden bg-neutral-200">
-                <div className="parallax-img absolute inset-0 w-full h-[116%] -top-[8%]">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                  <span className="inline-flex items-center gap-1.5 font-mono text-[10px] text-white bg-emerald-800 px-3 py-1">
-                    <FaExpand className="text-[9px]" /> Click to Expand
-                  </span>
-                </div>
-                <div className="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur-sm px-2.5 py-1 font-mono text-[9px] font-bold uppercase tracking-wider text-emerald-900 border border-neutral-200">
-                  {item.categoryLabel}
-                </div>
-              </div>
-
-              <div className="p-5 flex flex-col flex-1 justify-between">
-                <div>
-                  <h3 className="text-base font-bold text-neutral-950 group-hover:text-emerald-800 transition-colors leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="mt-1.5 text-xs text-neutral-500 line-clamp-2 leading-relaxed">
-                    {item.caption}
-                  </p>
-                </div>
-              </div>
-            </article>
+              <span data-gallery-parallax className="absolute -top-[10%] left-0 h-[120%] w-full">
+              <img
+                src={item.image}
+                alt={item.title}
+                loading="lazy"
+                sizes={filtered.length === 1 ? "(max-width: 1440px) 100vw, 1312px" : index === 0 && filtered.length > 2 ? "(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 58vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 42vw"}
+                className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 motion-safe:group-hover:scale-[1.03] motion-safe:group-focus-visible:scale-[1.03] ${item.category === "exterior" ? "object-[center_60%]" : "object-center"}`}
+              />
+              </span>
+              <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
+              <span aria-hidden="true" className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-black/20 backdrop-blur-sm transition-colors group-hover:bg-white group-hover:text-emerald-950">
+                <FaExpand className="text-sm" />
+              </span>
+              <span className={`absolute inset-x-0 bottom-0 z-20 p-6 ${index === 0 && filtered.length !== 2 ? "sm:p-8" : ""}`}>
+                <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-white/80">{item.categoryLabel}</span>
+                <span className={`block font-semibold leading-tight tracking-tight ${index === 0 && filtered.length !== 2 ? "text-2xl sm:text-3xl lg:text-4xl" : "text-xl sm:text-2xl"}`}>{item.label}</span>
+                {index === 0 && filtered.length !== 2 && <span className="mt-3 hidden max-w-md text-sm leading-relaxed text-white/80 sm:block">Explore the spaces that make a Sampan stop special.</span>}
+              </span>
+            </button>
           ))}
         </div>
 
@@ -181,13 +309,20 @@ export default function MomentsGallery() {
       {lightboxIndex !== null && (
         <div
           onClick={() => setLightboxIndex(null)}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
+          data-lenis-prevent
+          className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto p-4 bg-black/90 backdrop-blur-md"
         >
           <div
+            ref={dialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="highway-gallery-photo-title"
             onClick={(e) => e.stopPropagation()}
-            className="relative max-w-5xl w-full bg-neutral-950 border border-white/20 p-4 sm:p-6 text-white shadow-2xl"
+            className="relative max-h-[calc(100dvh-2rem)] max-w-5xl w-full overflow-y-auto bg-neutral-950 border border-white/20 p-4 sm:p-6 text-white shadow-2xl"
           >
             <button
+              type="button"
+              aria-label="Close photo viewer"
               onClick={() => setLightboxIndex(null)}
               className="absolute top-4 right-4 z-20 text-white/70 hover:text-white p-2 text-lg"
             >
@@ -195,22 +330,22 @@ export default function MomentsGallery() {
             </button>
 
             <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden bg-black flex items-center justify-center mb-4">
-              <img
-                src={filtered[lightboxIndex].image}
-                alt={filtered[lightboxIndex].title}
-                className="max-h-full max-w-full object-contain"
-              />
+              <LightboxPhoto photo={filtered[lightboxIndex]} />
 
               <button
+                type="button"
+                aria-label="Previous photo"
                 onClick={handlePrev}
-                className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/90 p-3 text-white border border-white/20"
+                className="absolute left-3 top-1/2 z-20 -translate-y-1/2 bg-black/60 hover:bg-black/90 p-3 text-white border border-white/20"
               >
                 <FaChevronLeft className="text-sm" />
               </button>
 
               <button
+                type="button"
+                aria-label="Next photo"
                 onClick={handleNext}
-                className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/90 p-3 text-white border border-white/20"
+                className="absolute right-3 top-1/2 z-20 -translate-y-1/2 bg-black/60 hover:bg-black/90 p-3 text-white border border-white/20"
               >
                 <FaChevronRight className="text-sm" />
               </button>
@@ -221,7 +356,7 @@ export default function MomentsGallery() {
                 <span className="text-[#B8F230] uppercase font-bold tracking-wider block mb-1">
                   {filtered[lightboxIndex].categoryLabel} • {lightboxIndex + 1} of {filtered.length}
                 </span>
-                <h4 className="text-sm sm:text-base font-bold text-white">
+                <h4 id="highway-gallery-photo-title" className="text-sm sm:text-base font-bold text-white">
                   {filtered[lightboxIndex].title}
                 </h4>
                 <p className="text-xs text-neutral-400 mt-1">

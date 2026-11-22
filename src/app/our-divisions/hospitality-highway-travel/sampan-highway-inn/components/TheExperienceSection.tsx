@@ -82,8 +82,8 @@ export default function TheExperienceSection() {
               className="fade-up group flex flex-col bg-white border border-neutral-200/90 hover:border-emerald-700 transition-all duration-500 shadow-sm hover:shadow-xl cursor-pointer"
             >
               {/* Image Container with Parallax Scrub */}
-              <div className="relative aspect-[16/11] overflow-hidden bg-neutral-100">
-                <div className="parallax-img absolute inset-0 w-full h-[116%] -top-[8%]">
+              <div className="relative aspect-[4/3] md:aspect-[5/6] overflow-hidden bg-neutral-100">
+                <div className="parallax-img absolute -top-[14%] left-0 w-full h-[128%]">
                   <img
                     src={pillar.image}
                     alt={pillar.title}

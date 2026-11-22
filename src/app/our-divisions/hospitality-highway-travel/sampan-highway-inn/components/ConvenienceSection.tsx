@@ -77,8 +77,8 @@ export default function ConvenienceSection() {
               className="fade-up group flex flex-col bg-white/[0.04] border border-white/10 hover:border-[#B8F230]/50 hover:bg-white/[0.07] transition-all duration-500 hover:-translate-y-1 shadow-md"
             >
               {/* Image Preview with Parallax */}
-              <div className="relative aspect-[4/3] overflow-hidden bg-neutral-900">
-                <div className="parallax-img absolute inset-0 w-full h-[116%] -top-[8%]">
+              <div className="relative aspect-[4/3] md:aspect-square lg:aspect-[4/5] overflow-hidden bg-neutral-900">
+                <div className="parallax-img absolute -top-[14%] left-0 w-full h-[128%]">
                   <img
                     src={card.image}
                     alt={card.title}

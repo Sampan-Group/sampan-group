@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { FaMapMarkerAlt, FaExternalLinkAlt, FaClock } from "react-icons/fa";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FaMapMarkerAlt, FaClock } from "react-icons/fa";
+import styles from "./NearbyLocationModule.module.css";
 
 interface NearbySpot {
   id: string;
@@ -91,103 +91,91 @@ const nearbySpots: NearbySpot[] = [
 
 export default function NearbyLocationModule() {
   return (
-    <section id="nearby" className="bg-[#07150E] py-24 sm:py-32 text-white border-b border-white/10 relative overflow-hidden">
+    <section id="nearby" className="relative overflow-hidden border-b border-emerald-950/10 bg-[#F0F4EF] py-24 text-emerald-950 sm:py-32">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
 
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="max-w-2xl">
             <div className="fade-up flex items-center gap-3 mb-3">
-              <span className="h-0.5 w-8 bg-[#B8F230]" />
-              <p className="text-xs font-mono font-bold uppercase tracking-[0.3em] text-[#B8F230]">
-                Regional Surroundings
+              <span className="h-0.5 w-8 bg-emerald-700" />
+              <p className="text-xs font-mono font-bold uppercase tracking-[0.3em] text-emerald-800">
+                Around Sampan
               </p>
             </div>
-            <h2 className="text-[clamp(2.4rem,5vw,4.2rem)] font-bold tracking-tight text-white leading-[1.05]">
+            <h2 className={`${styles.heading} font-bold tracking-tight text-neutral-950 leading-[1.05]`}>
               <div className="overflow-hidden">
                 <div className="line-mask">Nearby attractions &amp;</div>
               </div>
               <div className="overflow-hidden mt-1">
-                <div className="line-mask text-[#B8F230]">Sampan destinations.</div>
+                <div className="line-mask text-emerald-800">Sampan destinations.</div>
               </div>
             </h2>
           </div>
-          <p className="fade-up max-w-md text-sm sm:text-base text-neutral-300 leading-relaxed font-light">
-            Discover other high-value Sampan Group developments, retail hubs, and mobility amenities in the immediate corridor vicinity.
+          <p className="fade-up max-w-md text-base text-neutral-600 leading-relaxed font-light">
+            There&apos;s more to explore around the corner. Find everyday essentials, places to unwind and practical stops close to Sampan Highway Inn.
           </p>
         </div>
 
-        {/* Nearby Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {nearbySpots.map((spot) => (
-            <article
+        {/* Wide pairs frame a row of three, following the photo-led reference. */}
+        <div className="grid auto-rows-[360px] grid-cols-1 gap-4 sm:auto-rows-[380px] sm:grid-cols-2 lg:auto-rows-[400px] lg:grid-cols-12 lg:gap-5">
+          {nearbySpots.map((spot, index) => (
+            <Link
               key={spot.id}
-              className="fade-up group flex flex-col overflow-hidden bg-white/[0.04] border border-white/10 hover:border-[#B8F230]/50 hover:bg-white/[0.07] transition-all duration-500 hover:-translate-y-1 shadow-md"
+              href={spot.link}
+              target={spot.external ? "_blank" : undefined}
+              rel={spot.external ? "noopener noreferrer" : undefined}
+              aria-labelledby={`nearby-${spot.id}-title`}
+              aria-describedby={`nearby-${spot.id}-description`}
+              className={`${styles.card} group relative isolate block overflow-hidden bg-emerald-950 text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700 ${index === 6 ? "sm:col-span-2 lg:col-span-6" : index >= 2 && index <= 4 ? "lg:col-span-4" : "lg:col-span-6"}`}
             >
-              {/* Image Preview with Parallax Scrub */}
-              <div className="relative aspect-[4/3] overflow-hidden bg-neutral-900">
-                <div className="parallax-img absolute inset-0 w-full h-[124%] -top-[12%]">
+                <div className="parallax-img absolute -top-[14%] left-0 h-[128%] w-full">
                   <img
                     src={spot.image}
                     alt={spot.name}
-                    sizes="(max-width: 768px) 100vw, 25vw"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                    sizes={index >= 2 && index <= 4 ? "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" : "(max-width: 640px) 100vw, 50vw"}
+                    className={`${styles.photo} h-full w-full object-cover`}
                   />
                 </div>
+              <span aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(0deg,rgba(3,16,10,0.88)_0%,rgba(3,16,10,0.4)_30%,transparent_65%)]" />
+              <span aria-hidden="true" className="pointer-events-none absolute inset-0 border border-white/15 transition-colors duration-300 group-hover:border-[#B8F230]/80 group-focus-visible:border-[#B8F230]/80" />
 
-                {/* Distance Chip */}
-                <div className="absolute top-3.5 right-3.5 bg-black/80 backdrop-blur-md px-2.5 py-1 text-[10px] font-mono font-bold text-[#B8F230] border border-white/10 flex items-center gap-1.5 z-10">
-                  <FaMapMarkerAlt className="text-[9px]" />
-                  <span>{spot.distance}</span>
-                </div>
-
-                {/* Drive Time Chip */}
-                <div className="absolute bottom-3.5 left-3.5 bg-white/90 backdrop-blur-md px-2.5 py-0.5 text-[10px] font-mono font-semibold text-neutral-900 flex items-center gap-1 z-10">
-                  <FaClock className="text-[9px] text-emerald-800" />
-                  <span>{spot.driveTime}</span>
-                </div>
+              <div className="absolute inset-x-0 top-5 flex flex-wrap items-start justify-between gap-3 px-5 sm:top-6 sm:px-6">
+                <span className="inline-flex items-center gap-2 bg-white/95 px-3 py-1.5 text-sm font-semibold text-emerald-950 shadow-sm">
+                  <FaMapMarkerAlt aria-hidden="true" className="text-xs text-emerald-700" />
+                  {spot.distance}
+                </span>
+                <span className="max-w-[70%] bg-white/90 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-emerald-950 backdrop-blur-sm">
+                    {spot.type}
+                </span>
               </div>
 
-              {/* Body Content */}
-              <div className="flex flex-1 flex-col p-6 justify-between space-y-4">
-                <div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#B8F230] block mb-1">
-                    {spot.type}
-                  </span>
-
-                  <h3 className="text-lg font-bold text-white group-hover:text-[#B8F230] transition-colors leading-snug">
+              <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+                  <h3 id={`nearby-${spot.id}-title`} className={`${styles.title} text-[clamp(1.5rem,2.3vw,2rem)] leading-tight text-white transition-colors duration-300 group-hover:text-[#D9F7AE] group-focus-visible:text-[#D9F7AE]`}>
                     {spot.name}
                   </h3>
-
-                  <p className="mt-2 text-xs text-neutral-400 leading-relaxed font-light">
+                <div className={styles.details}>
+                  <div className={styles.detailsInner}>
+                  <p id={`nearby-${spot.id}-description`} className="mt-3 max-w-lg border-l-2 border-[#B8F230] pl-3 text-sm leading-relaxed text-white/90">
                     {spot.description}
                   </p>
+                  </div>
                 </div>
-
-                <div className="pt-4 border-t border-white/10">
-                  {spot.external ? (
-                    <a
-                      href={spot.link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-[#B8F230] hover:underline"
-                    >
-                      <span>Explore Directions</span>
-                      <FiArrowUpRight className="text-sm" />
-                    </a>
-                  ) : (
-                    <Link
-                      href={spot.link}
-                      className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-[#B8F230] hover:underline"
-                    >
-                      <span>Discover Property</span>
-                      <FiArrowUpRight className="text-sm" />
-                    </Link>
-                  )}
-                </div>
+                <p className="mt-3 flex items-center gap-2 text-sm text-white/85">
+                  <FaClock aria-hidden="true" className="text-xs text-[#D9F7AE]" />
+                  {spot.driveTime}
+                </p>
               </div>
-            </article>
+            </Link>
           ))}
+        </div>
+
+        <div className="mt-10 flex flex-col justify-between gap-4 border-t border-emerald-950/15 pt-6 text-sm sm:flex-row sm:items-center">
+          <p className="text-neutral-600">A little more to discover, all close by.</p>
+          <Link href="/our-divisions" className="w-fit border-b border-emerald-800 pb-1 font-semibold text-emerald-900 transition-colors hover:text-emerald-600 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700">
+            Explore all Sampan destinations
+          </Link>
         </div>
 
       </div>

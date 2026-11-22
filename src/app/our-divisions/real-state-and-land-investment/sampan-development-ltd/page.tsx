@@ -217,7 +217,7 @@ const upcomingProjects = [
   },
   {
     id: "sdl-flagship-8",
-    name: "Sampan Cafe Metro ",
+    name: "Sampan City End ",
     category: "Commercial Plaza",
     sizeSqFt: "400–1,800 sq ft",
     bedrooms: 0,

@@ -91,15 +91,15 @@ const nearbySpots: NearbySpot[] = [
 
 export default function NearbyLocationModule() {
   return (
-    <section id="nearby" className="relative overflow-hidden border-b border-emerald-950/10 bg-[#F0F4EF] py-24 text-emerald-950 sm:py-32">
+    <section id="nearby" className="relative overflow-hidden border-b border-[#061B2B]/10 bg-[#EEF5FA] py-24 text-[#061B2B] sm:py-32">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
 
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="max-w-2xl">
             <div className="fade-up flex items-center gap-3 mb-3">
-              <span className="h-0.5 w-8 bg-emerald-700" />
-              <p className="text-xs font-mono font-bold uppercase tracking-[0.3em] text-emerald-800">
+              <span className="h-0.5 w-8 bg-[#C3161C]" />
+              <p className="text-xs font-mono font-bold uppercase tracking-[0.3em] text-[#005A91]">
                 Around Sampan
               </p>
             </div>
@@ -108,7 +108,7 @@ export default function NearbyLocationModule() {
                 <div className="line-mask">Nearby attractions &amp;</div>
               </div>
               <div className="overflow-hidden mt-1">
-                <div className="line-mask text-emerald-800">Sampan destinations.</div>
+                <div className="line-mask text-[#005A91]">Sampan destinations.</div>
               </div>
             </h2>
           </div>
@@ -127,7 +127,7 @@ export default function NearbyLocationModule() {
               rel={spot.external ? "noopener noreferrer" : undefined}
               aria-labelledby={`nearby-${spot.id}-title`}
               aria-describedby={`nearby-${spot.id}-description`}
-              className={`${styles.card} group relative isolate block overflow-hidden bg-emerald-950 text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700 ${index === 6 ? "sm:col-span-2 lg:col-span-6" : index >= 2 && index <= 4 ? "lg:col-span-4" : "lg:col-span-6"}`}
+              className={`${styles.card} group relative isolate block overflow-hidden bg-[#061B2B] text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0069A8] ${index === 6 ? "sm:col-span-2 lg:col-span-6" : index >= 2 && index <= 4 ? "lg:col-span-4" : "lg:col-span-6"}`}
             >
                 <div className="parallax-img absolute -top-[14%] left-0 h-[128%] w-full">
                   <img
@@ -138,32 +138,32 @@ export default function NearbyLocationModule() {
                     className={`${styles.photo} h-full w-full object-cover`}
                   />
                 </div>
-              <span aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(0deg,rgba(3,16,10,0.88)_0%,rgba(3,16,10,0.4)_30%,transparent_65%)]" />
-              <span aria-hidden="true" className="pointer-events-none absolute inset-0 border border-white/15 transition-colors duration-300 group-hover:border-[#B8F230]/80 group-focus-visible:border-[#B8F230]/80" />
+              <span aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(0deg,rgba(3,18,30,0.88)_0%,rgba(3,18,30,0.4)_30%,transparent_65%)]" />
+              <span aria-hidden="true" className="pointer-events-none absolute inset-0 border border-white/15 transition-colors duration-300 group-hover:border-[#FCB813]/80 group-focus-visible:border-[#FCB813]/80" />
 
               <div className="absolute inset-x-0 top-5 flex flex-wrap items-start justify-between gap-3 px-5 sm:top-6 sm:px-6">
-                <span className="inline-flex items-center gap-2 bg-white/95 px-3 py-1.5 text-sm font-semibold text-emerald-950 shadow-sm">
-                  <FaMapMarkerAlt aria-hidden="true" className="text-xs text-emerald-700" />
+                <span className="inline-flex items-center gap-2 bg-white/95 px-3 py-1.5 text-sm font-semibold text-[#061B2B] shadow-sm">
+                  <FaMapMarkerAlt aria-hidden="true" className="text-xs text-[#0069A8]" />
                   {spot.distance}
                 </span>
-                <span className="max-w-[70%] bg-white/90 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-emerald-950 backdrop-blur-sm">
+                <span className="max-w-[70%] bg-white/90 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-[#061B2B] backdrop-blur-sm">
                     {spot.type}
                 </span>
               </div>
 
               <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
-                  <h3 id={`nearby-${spot.id}-title`} className={`${styles.title} text-[clamp(1.5rem,2.3vw,2rem)] leading-tight text-white transition-colors duration-300 group-hover:text-[#D9F7AE] group-focus-visible:text-[#D9F7AE]`}>
+                  <h3 id={`nearby-${spot.id}-title`} className={`${styles.title} text-[clamp(1.5rem,2.3vw,2rem)] leading-tight text-white transition-colors duration-300 group-hover:text-[#FFE5A5] group-focus-visible:text-[#FFE5A5]`}>
                     {spot.name}
                   </h3>
                 <div className={styles.details}>
                   <div className={styles.detailsInner}>
-                  <p id={`nearby-${spot.id}-description`} className="mt-3 max-w-lg border-l-2 border-[#B8F230] pl-3 text-sm leading-relaxed text-white/90">
+                  <p id={`nearby-${spot.id}-description`} className="mt-3 max-w-lg border-l-2 border-[#FCB813] pl-3 text-sm leading-relaxed text-white/90">
                     {spot.description}
                   </p>
                   </div>
                 </div>
                 <p className="mt-3 flex items-center gap-2 text-sm text-white/85">
-                  <FaClock aria-hidden="true" className="text-xs text-[#D9F7AE]" />
+                  <FaClock aria-hidden="true" className="text-xs text-[#FFE5A5]" />
                   {spot.driveTime}
                 </p>
               </div>
@@ -171,9 +171,9 @@ export default function NearbyLocationModule() {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-col justify-between gap-4 border-t border-emerald-950/15 pt-6 text-sm sm:flex-row sm:items-center">
+        <div className="mt-10 flex flex-col justify-between gap-4 border-t border-[#061B2B]/15 pt-6 text-sm sm:flex-row sm:items-center">
           <p className="text-neutral-600">A little more to discover, all close by.</p>
-          <Link href="/our-divisions" className="w-fit border-b border-emerald-800 pb-1 font-semibold text-emerald-900 transition-colors hover:text-emerald-600 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700">
+          <Link href="/our-divisions" className="w-fit border-b border-[#005A91] pb-1 font-semibold text-[#06466E] transition-colors hover:text-[#0069A8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0069A8]">
             Explore all Sampan destinations
           </Link>
         </div>

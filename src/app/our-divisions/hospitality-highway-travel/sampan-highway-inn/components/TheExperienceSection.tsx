@@ -47,15 +47,15 @@ export default function TheExperienceSection() {
   };
 
   return (
-    <section id="experiences" className="bg-[#FAF9F6] py-24 sm:py-32 border-b border-neutral-200 text-neutral-900">
+    <section id="experiences" className="bg-[#F8FAFC] py-24 sm:py-32 border-b border-neutral-200 text-neutral-900">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
 
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
           <div className="max-w-2xl">
             <div className="fade-up flex items-center gap-3 mb-3">
-              <span className="h-0.5 w-8 bg-emerald-700" />
-              <p className="text-xs font-mono font-bold uppercase tracking-[0.28em] text-emerald-800">
+              <span className="h-0.5 w-8 bg-[#C3161C]" />
+              <p className="text-xs font-mono font-bold uppercase tracking-[0.28em] text-[#005A91]">
                 The Sampan Experience
               </p>
             </div>
@@ -64,7 +64,7 @@ export default function TheExperienceSection() {
                 <div className="line-mask">Good journeys deserve</div>
               </div>
               <div className="overflow-hidden mt-1">
-                <div className="line-mask text-emerald-900">great pauses.</div>
+                <div className="line-mask text-[#06466E]">great pauses.</div>
               </div>
             </h2>
           </div>
@@ -79,7 +79,7 @@ export default function TheExperienceSection() {
             <article
               key={index}
               onClick={() => scrollTo(pillar.targetId)}
-              className="fade-up group flex flex-col bg-white border border-neutral-200/90 hover:border-emerald-700 transition-all duration-500 shadow-sm hover:shadow-xl cursor-pointer"
+              className="fade-up group flex flex-col bg-white border border-neutral-200/90 hover:border-[#0069A8] transition-all duration-500 shadow-sm hover:shadow-xl cursor-pointer"
             >
               {/* Image Container with Parallax Scrub */}
               <div className="relative aspect-[4/3] md:aspect-[5/6] overflow-hidden bg-neutral-100">
@@ -100,7 +100,7 @@ export default function TheExperienceSection() {
               {/* Card Body */}
               <div className="p-8 flex flex-col flex-1 justify-between space-y-6">
                 <div className="space-y-3">
-                  <h3 className="text-2xl font-bold text-neutral-950 tracking-tight group-hover:text-emerald-800 transition-colors">
+                  <h3 className="text-2xl font-bold text-neutral-950 tracking-tight group-hover:text-[#005A91] transition-colors">
                     {pillar.title}
                   </h3>
                   <p className="text-sm text-neutral-600 leading-relaxed font-light">
@@ -108,7 +108,7 @@ export default function TheExperienceSection() {
                   </p>
                 </div>
 
-                <div className="pt-2 border-t border-neutral-100 flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-emerald-700 group-hover:text-emerald-900 group-hover:gap-3 transition-all">
+                <div className="pt-2 border-t border-neutral-100 flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#0069A8] group-hover:text-[#06466E] group-hover:gap-3 transition-all">
                   <span>{pillar.actionText}</span>
                   <FiArrowRight className="text-sm" />
                 </div>

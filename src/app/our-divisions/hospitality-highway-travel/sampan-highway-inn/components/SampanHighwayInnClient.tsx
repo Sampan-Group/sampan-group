@@ -174,7 +174,7 @@ export default function SampanHighwayInnClient() {
     <main
       ref={containerRef}
       data-no-reveal
-      className="bg-[#FAF9F6] text-neutral-900 antialiased selection:bg-[#B8F230] selection:text-neutral-950 font-sans"
+      className="bg-[#F8FAFC] text-neutral-900 antialiased selection:bg-[#FCB813] selection:text-neutral-950 font-sans"
     >
       {/* 1. HERO OVERVIEW (Properly exposed night photograph, crisp typography & metrics) */}
       <HeroOverview />
@@ -182,7 +182,7 @@ export default function SampanHighwayInnClient() {
       {/* 2. THE SAMPAN EXPERIENCE (3-Pillar entry: Dining, Rest, Convenience) */}
       <TheExperienceSection />
 
-      {/* 3. 01 / DINING (Dark forest green, 24/7 hospitality, real restaurant photography & actions) */}
+      {/* 3. 01 / DINING (Logo-inspired navy and gold, 24/7 hospitality, real restaurant photography & actions) */}
       <DiningSection />
 
       {/* 4. 02 / REST SUITES (Light luxury aesthetic, acoustic quiet, suites showcase & booking action) */}
@@ -191,7 +191,7 @@ export default function SampanHighwayInnClient() {
       {/* 5. 03 / HIGHWAY CONVENIENCE (Modern washrooms, 24/7 Mart, Fuel bay, Mosque & Parking) */}
       <ConvenienceSection />
 
-      {/* 6. VIBRANT LIME RIBBON CTA (Clear directional drive action) */}
+      {/* 6. BRAND GOLD RIBBON CTA (Clear directional drive action) */}
       <GreenRibbonCTA />
 
       {/* 7. MOMENTS AT SAMPAN (Curated authentic photograph gallery with interactive lightbox) */}

@@ -6,7 +6,7 @@ const googleMapsDeepLink = "https://maps.app.goo.gl/KXSdwQf41PxZLmvf8";
 
 export default function GreenRibbonCTA() {
   return (
-    <section className="bg-[#B8F230] py-16 sm:py-20 text-neutral-950">
+    <section className="border-t-4 border-[#C3161C] bg-[#FCB813] py-16 sm:py-20 text-neutral-950">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16 flex flex-col md:flex-row md:items-center justify-between gap-8">
         
         {/* Headline */}
@@ -25,10 +25,10 @@ export default function GreenRibbonCTA() {
             href={googleMapsDeepLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 bg-neutral-950 hover:bg-neutral-800 text-white font-mono text-xs font-bold uppercase tracking-[0.2em] px-8 py-5 transition-all duration-300 shadow-xl shrink-0"
+            className="inline-flex items-center gap-2.5 bg-[#061B2B] hover:bg-[#0C2A40] text-white font-mono text-xs font-bold uppercase tracking-[0.2em] px-8 py-5 transition-all duration-300 shadow-xl shrink-0"
           >
             <span>Get Directions</span>
-            <FiArrowUpRight className="text-base text-[#B8F230]" />
+            <FiArrowUpRight className="text-base text-[#FCB813]" />
           </a>
         </div>
 

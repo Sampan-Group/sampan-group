@@ -214,15 +214,15 @@ export default function MomentsGallery() {
   };
 
   return (
-    <section ref={galleryRef} id="gallery" className="bg-[#FAF9F6] py-24 sm:py-32 border-b border-neutral-200 text-neutral-900">
+    <section ref={galleryRef} id="gallery" className="bg-[#F8FAFC] py-24 sm:py-32 border-b border-neutral-200 text-neutral-900">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
 
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
           <div className="max-w-2xl">
             <div className="fade-up flex items-center gap-3 mb-3">
-              <span className="h-0.5 w-8 bg-emerald-700" />
-              <p className="text-xs font-mono font-bold uppercase tracking-[0.28em] text-emerald-800">
+              <span className="h-0.5 w-8 bg-[#C3161C]" />
+              <p className="text-xs font-mono font-bold uppercase tracking-[0.28em] text-[#005A91]">
                 Moments at Sampan
               </p>
             </div>
@@ -231,7 +231,7 @@ export default function MomentsGallery() {
                 <div className="line-mask">A glimpse of the</div>
               </div>
               <div className="overflow-hidden mt-1">
-                <div className="line-mask text-emerald-800">experience.</div>
+                <div className="line-mask text-[#005A91]">experience.</div>
               </div>
             </h2>
           </div>
@@ -248,8 +248,8 @@ export default function MomentsGallery() {
               type="button"
               aria-pressed={activeCategory === cat.id}
               onClick={() => { setActiveCategory(cat.id); setLightboxIndex(null); }}
-              className={`-mb-px border-b-2 px-1 pb-4 pt-2 text-sm font-semibold transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700 ${activeCategory === cat.id
-                  ? "border-emerald-800 text-emerald-900"
+              className={`-mb-px border-b-2 px-1 pb-4 pt-2 text-sm font-semibold transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0069A8] ${activeCategory === cat.id
+                  ? "border-[#005A91] text-[#06466E]"
                   : "border-transparent text-neutral-500 hover:text-neutral-900"
                 }`}
             >
@@ -271,7 +271,7 @@ export default function MomentsGallery() {
               aria-label={`View ${item.title}`}
               aria-haspopup="dialog"
               onClick={() => setLightboxIndex(index)}
-              className={`group relative isolate overflow-hidden bg-neutral-900 text-left text-white cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700 ${filtered.length === 1
+              className={`group relative isolate overflow-hidden bg-neutral-900 text-left text-white cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0069A8] ${filtered.length === 1
                 ? "sm:col-span-2 lg:col-span-12"
                 : filtered.length === 2
                   ? "lg:col-span-6"
@@ -291,7 +291,7 @@ export default function MomentsGallery() {
               />
               </span>
               <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
-              <span aria-hidden="true" className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-black/20 backdrop-blur-sm transition-colors group-hover:bg-white group-hover:text-emerald-950">
+              <span aria-hidden="true" className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-black/20 backdrop-blur-sm transition-colors group-hover:bg-white group-hover:text-[#061B2B]">
                 <FaExpand className="text-sm" />
               </span>
               <span className={`absolute inset-x-0 bottom-0 z-20 p-6 ${index === 0 && filtered.length !== 2 ? "sm:p-8" : ""}`}>
@@ -353,7 +353,7 @@ export default function MomentsGallery() {
 
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2 border-t border-white/10 font-mono text-xs">
               <div>
-                <span className="text-[#B8F230] uppercase font-bold tracking-wider block mb-1">
+                <span className="text-[#FCB813] uppercase font-bold tracking-wider block mb-1">
                   {filtered[lightboxIndex].categoryLabel} • {lightboxIndex + 1} of {filtered.length}
                 </span>
                 <h4 id="highway-gallery-photo-title" className="text-sm sm:text-base font-bold text-white">

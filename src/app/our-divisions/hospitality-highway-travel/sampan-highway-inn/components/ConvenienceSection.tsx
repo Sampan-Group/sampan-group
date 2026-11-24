@@ -43,15 +43,15 @@ export default function ConvenienceSection() {
   };
 
   return (
-    <section id="convenience" className="bg-[#0B1510] text-white py-24 sm:py-32 border-b border-white/10 relative overflow-hidden">
+    <section id="convenience" className="bg-[#081F32] text-white py-24 sm:py-32 border-b border-white/10 relative overflow-hidden">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
         
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
           <div className="max-w-2xl">
             <div className="fade-up flex items-center gap-3 mb-3">
-              <span className="h-0.5 w-8 bg-[#B8F230]" />
-              <p className="text-xs font-mono font-bold uppercase tracking-[0.28em] text-[#B8F230]">
+              <span className="h-0.5 w-8 bg-[#FCB813]" />
+              <p className="text-xs font-mono font-bold uppercase tracking-[0.28em] text-[#FCB813]">
                 03 / Highway Convenience
               </p>
             </div>
@@ -60,7 +60,7 @@ export default function ConvenienceSection() {
                 <div className="line-mask">Designed for</div>
               </div>
               <div className="overflow-hidden mt-1">
-                <div className="line-mask text-[#B8F230]">seamless transit.</div>
+                <div className="line-mask text-[#FCB813]">seamless transit.</div>
               </div>
             </h2>
           </div>
@@ -74,7 +74,7 @@ export default function ConvenienceSection() {
           {convenienceCards.map((card, index) => (
             <article
               key={index}
-              className="fade-up group flex flex-col bg-white/[0.04] border border-white/10 hover:border-[#B8F230]/50 hover:bg-white/[0.07] transition-all duration-500 hover:-translate-y-1 shadow-md"
+              className="fade-up group flex flex-col bg-white/[0.04] border border-white/10 hover:border-[#FCB813]/50 hover:bg-white/[0.07] transition-all duration-500 hover:-translate-y-1 shadow-md"
             >
               {/* Image Preview with Parallax */}
               <div className="relative aspect-[4/3] md:aspect-square lg:aspect-[4/5] overflow-hidden bg-neutral-900">
@@ -86,7 +86,7 @@ export default function ConvenienceSection() {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <div className="absolute top-3 right-3 bg-black/80 backdrop-blur-sm px-2.5 py-1 text-[9px] font-mono font-bold uppercase tracking-widest text-[#B8F230] border border-white/10 z-10">
+                <div className="absolute top-3 right-3 bg-black/80 backdrop-blur-sm px-2.5 py-1 text-[9px] font-mono font-bold uppercase tracking-widest text-[#FCB813] border border-white/10 z-10">
                   {card.badge}
                 </div>
               </div>
@@ -97,7 +97,7 @@ export default function ConvenienceSection() {
                   <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-400 block">
                     {card.tag}
                   </span>
-                  <h3 className="text-lg font-bold text-white group-hover:text-[#B8F230] transition-colors">
+                  <h3 className="text-lg font-bold text-white group-hover:text-[#FCB813] transition-colors">
                     {card.title}
                   </h3>
                   <p className="text-xs text-neutral-400 leading-relaxed font-light">
@@ -105,7 +105,7 @@ export default function ConvenienceSection() {
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#B8F230]">
+                <div className="pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#FCB813]">
                   <span>On-Premises KM 103</span>
                   <FiCheck className="text-sm" />
                 </div>
@@ -126,7 +126,7 @@ export default function ConvenienceSection() {
           </div>
           <button
             onClick={() => scrollTo("location")}
-            className="inline-flex items-center gap-2 bg-[#B8F230] hover:bg-[#a5db27] text-neutral-950 px-6 py-3.5 text-xs font-mono font-bold uppercase tracking-wider shrink-0 transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 bg-[#FCB813] hover:bg-[#E6A20B] text-neutral-950 px-6 py-3.5 text-xs font-mono font-bold uppercase tracking-wider shrink-0 transition-colors cursor-pointer"
           >
             <span>View Road Map &amp; Access</span>
             <FiArrowUpRight className="text-base" />

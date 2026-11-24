@@ -26,15 +26,15 @@ export default function RestSuitesSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section id="suites" className="bg-[#FAF9F6] text-neutral-900 py-24 sm:py-32 border-b border-neutral-200">
+    <section id="suites" className="bg-[#F8FAFC] text-neutral-900 py-24 sm:py-32 border-b border-neutral-200">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
         
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
           <div className="max-w-2xl">
             <div className="fade-up flex items-center gap-3 mb-3">
-              <span className="h-0.5 w-8 bg-emerald-700" />
-              <p className="text-xs font-mono font-bold uppercase tracking-[0.28em] text-emerald-800">
+              <span className="h-0.5 w-8 bg-[#C3161C]" />
+              <p className="text-xs font-mono font-bold uppercase tracking-[0.28em] text-[#005A91]">
                 02 / REST SUITES
               </p>
             </div>
@@ -43,7 +43,7 @@ export default function RestSuitesSection() {
                 <div className="line-mask">Rest Well.</div>
               </div>
               <div className="overflow-hidden mt-1">
-                <div className="line-mask text-emerald-800">Travel Refreshed.</div>
+                <div className="line-mask text-[#005A91]">Travel Refreshed.</div>
               </div>
             </h2>
           </div>
@@ -66,7 +66,7 @@ export default function RestSuitesSection() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3.5 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider text-emerald-900 border border-neutral-200 z-10">
+              <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3.5 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider text-[#06466E] border border-neutral-200 z-10">
                 VVIP Rest Suite
               </div>
               <div className="absolute bottom-4 right-4 bg-black/80 backdrop-blur-sm text-white px-3.5 py-1.5 font-mono text-xs z-10">
@@ -106,7 +106,7 @@ export default function RestSuitesSection() {
           {/* Right Column: Exact Copy & Clear Actions */}
           <div className="fade-up lg:col-span-5 space-y-8">
             <div className="space-y-4">
-              <span className="font-mono text-xs uppercase tracking-widest text-emerald-800 font-bold block">
+              <span className="font-mono text-xs uppercase tracking-widest text-[#005A91] font-bold block">
                 YOUR REST STOP ALONG THE HIGHWAY
               </span>
               <h3 className="text-2xl sm:text-3xl font-bold text-neutral-950 tracking-tight leading-snug">
@@ -123,7 +123,7 @@ export default function RestSuitesSection() {
                 const Icon = feat.icon;
                 return (
                   <div key={index} className="flex items-start gap-4 p-4 bg-white border border-neutral-200/90 shadow-sm">
-                    <div className="w-10 h-10 rounded-none bg-emerald-50 border border-emerald-200 text-emerald-800 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-none bg-[#EFF7FC] border border-[#C6E2F3] text-[#005A91] flex items-center justify-center shrink-0">
                       <Icon className="text-base" />
                     </div>
                     <div>
@@ -139,17 +139,17 @@ export default function RestSuitesSection() {
             <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="inline-flex items-center justify-center gap-2 bg-neutral-950 hover:bg-emerald-950 text-white font-bold px-7 py-4 text-xs font-mono uppercase tracking-[0.18em] transition-all duration-300 shadow-md cursor-pointer text-center"
+                className="inline-flex items-center justify-center gap-2 bg-neutral-950 hover:bg-[#061B2B] text-white font-bold px-7 py-4 text-xs font-mono uppercase tracking-[0.18em] transition-all duration-300 shadow-md cursor-pointer text-center"
               >
                 <span>Enquire About a Rest Suite</span>
-                <FiArrowUpRight className="text-base text-[#B8F230]" />
+                <FiArrowUpRight className="text-base text-[#FCB813]" />
               </button>
 
               <a
                 href="tel:+8801929918408"
                 className="inline-flex items-center justify-center gap-2 border border-neutral-300 hover:border-neutral-900 bg-white px-6 py-4 text-xs font-mono font-bold text-neutral-800 uppercase tracking-wider transition-colors text-center"
               >
-                <FaPhoneAlt className="text-emerald-700 text-xs" />
+                <FaPhoneAlt className="text-[#0069A8] text-xs" />
                 <span>Call for Availability</span>
               </a>
             </div>
@@ -172,7 +172,7 @@ export default function RestSuitesSection() {
             </button>
 
             <div className="space-y-4 mb-6">
-              <span className="font-mono text-xs font-bold uppercase tracking-widest text-emerald-700">
+              <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#0069A8]">
                 Instant Suite Reservation
               </span>
               <h3 className="text-2xl font-bold text-neutral-950">
@@ -186,10 +186,10 @@ export default function RestSuitesSection() {
             <div className="space-y-4 pt-4 border-t border-neutral-200">
               <a
                 href="tel:+8801929918408"
-                className="flex items-center justify-between p-4 bg-neutral-950 text-white font-mono text-xs font-bold uppercase tracking-wider hover:bg-emerald-950 transition-colors"
+                className="flex items-center justify-between p-4 bg-neutral-950 text-white font-mono text-xs font-bold uppercase tracking-wider hover:bg-[#061B2B] transition-colors"
               >
                 <span>Call Desk (+880 1929-918408)</span>
-                <FiArrowUpRight className="text-base text-[#B8F230]" />
+                <FiArrowUpRight className="text-base text-[#FCB813]" />
               </a>
 
               <a

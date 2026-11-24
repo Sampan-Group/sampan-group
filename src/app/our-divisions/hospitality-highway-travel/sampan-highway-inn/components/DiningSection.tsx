@@ -58,9 +58,9 @@ export default function DiningSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section id="dining" className="bg-[#07150E] text-white py-24 sm:py-32 border-b border-white/10 relative overflow-hidden">
+    <section id="dining" className="bg-[#061B2B] text-white py-24 sm:py-32 border-b border-white/10 relative overflow-hidden">
       {/* Ambient background glow */}
-      <div className="pointer-events-none absolute -top-40 -right-40 w-96 h-96 bg-emerald-500/10 rounded-full blur-[140px]" />
+      <div className="pointer-events-none absolute -top-40 -right-40 w-96 h-96 bg-[#007DC6]/10 rounded-full blur-[140px]" />
       
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
         
@@ -70,8 +70,8 @@ export default function DiningSection() {
           {/* Left Column: Story & Features */}
           <div className="lg:col-span-6 space-y-8">
             <div className="fade-up flex items-center gap-3">
-              <span className="h-0.5 w-8 bg-[#B8F230]" />
-              <p className="text-xs font-mono font-bold uppercase tracking-[0.3em] text-[#B8F230]">
+              <span className="h-0.5 w-8 bg-[#FCB813]" />
+              <p className="text-xs font-mono font-bold uppercase tracking-[0.3em] text-[#FCB813]">
                 01 / Dining
               </p>
             </div>
@@ -81,7 +81,7 @@ export default function DiningSection() {
                 <div className="line-mask">A delicious reason</div>
               </div>
               <div className="overflow-hidden mt-1">
-                <div className="line-mask text-[#B8F230]">to slow down.</div>
+                <div className="line-mask text-[#FCB813]">to slow down.</div>
               </div>
             </h2>
 
@@ -94,7 +94,7 @@ export default function DiningSection() {
               {diningFeatures.map((feat, index) => (
                 <div key={index} className="space-y-2">
                   <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-white">
-                    <FiArrowUpRight className="text-[#B8F230] text-sm" />
+                    <FiArrowUpRight className="text-[#FCB813] text-sm" />
                     <span>{feat.title}</span>
                   </div>
                   <p className="text-xs text-neutral-400 leading-relaxed">
@@ -108,7 +108,7 @@ export default function DiningSection() {
             <div className="fade-up pt-4 flex flex-wrap items-center gap-4">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="inline-flex items-center gap-2 bg-[#B8F230] hover:bg-[#a5db27] text-neutral-950 font-bold px-7 py-4 text-xs font-mono uppercase tracking-[0.18em] transition-all duration-300 shadow-md cursor-pointer"
+                className="inline-flex items-center gap-2 bg-[#FCB813] hover:bg-[#E6A20B] text-neutral-950 font-bold px-7 py-4 text-xs font-mono uppercase tracking-[0.18em] transition-all duration-300 shadow-md cursor-pointer"
               >
                 <span>Enquire About Dining</span>
                 <FiArrowUpRight className="text-base" />
@@ -118,7 +118,7 @@ export default function DiningSection() {
                 href="tel:+8801929918408"
                 className="inline-flex items-center gap-2 border border-white/20 hover:border-white px-6 py-4 text-xs font-mono font-bold text-white uppercase tracking-wider transition-colors"
               >
-                <FaPhoneAlt className="text-[#B8F230] text-xs" />
+                <FaPhoneAlt className="text-[#FCB813] text-xs" />
                 <span>+880 1929-918408</span>
               </a>
             </div>
@@ -138,7 +138,7 @@ export default function DiningSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
               <div className="absolute bottom-6 left-6 right-6 z-10 flex items-end justify-between text-xs font-mono">
                 <div>
-                  <span className="text-[#B8F230] font-bold uppercase tracking-wider block mb-1">
+                  <span className="text-[#FCB813] font-bold uppercase tracking-wider block mb-1">
                     Main Dining Hall • KM 103
                   </span>
                   <p className="text-white text-sm font-semibold">
@@ -169,7 +169,7 @@ export default function DiningSection() {
             {subOfferings.map((item, idx) => (
               <div
                 key={idx}
-                className="group flex flex-col bg-white/[0.04] border border-white/10 hover:border-[#B8F230]/50 hover:bg-white/[0.07] transition-all duration-300 overflow-hidden"
+                className="group flex flex-col bg-white/[0.04] border border-white/10 hover:border-[#FCB813]/50 hover:bg-white/[0.07] transition-all duration-300 overflow-hidden"
               >
                 <div className="relative aspect-[4/3] sm:aspect-square overflow-hidden bg-neutral-900">
                   <div className="parallax-img absolute -top-[14%] left-0 w-full h-[128%]">
@@ -179,7 +179,7 @@ export default function DiningSection() {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="absolute top-3 left-3 bg-black/80 px-2.5 py-1 text-[9px] font-mono font-bold uppercase tracking-widest text-[#B8F230] border border-white/10 z-10">
+                  <div className="absolute top-3 left-3 bg-black/80 px-2.5 py-1 text-[9px] font-mono font-bold uppercase tracking-widest text-[#FCB813] border border-white/10 z-10">
                     {item.tag}
                   </div>
                 </div>
@@ -189,12 +189,12 @@ export default function DiningSection() {
                     <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-400 block mb-1">
                       {item.category}
                     </span>
-                    <h4 className="text-base font-bold text-white group-hover:text-[#B8F230] transition-colors">
+                    <h4 className="text-base font-bold text-white group-hover:text-[#FCB813] transition-colors">
                       {item.name}
                     </h4>
                   </div>
                   <div className="flex items-center gap-1.5 text-xs text-neutral-400 pt-2 border-t border-white/5 font-mono">
-                    <FaClock className="text-[#B8F230] text-[10px]" />
+                    <FaClock className="text-[#FCB813] text-[10px]" />
                     <span>{item.timing}</span>
                   </div>
                 </div>
@@ -208,7 +208,7 @@ export default function DiningSection() {
       {/* Dining Enquiry Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="relative w-full max-w-lg bg-[#0E1E16] border border-emerald-500/40 p-8 text-white shadow-2xl">
+          <div className="relative w-full max-w-lg bg-[#0C2A40] border border-[#007DC6]/40 p-8 text-white shadow-2xl">
             <button
               onClick={() => setIsModalOpen(false)}
               className="absolute top-5 right-5 text-neutral-400 hover:text-white transition-colors"
@@ -217,7 +217,7 @@ export default function DiningSection() {
             </button>
 
             <div className="space-y-4 mb-6">
-              <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#B8F230]">
+              <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#FCB813]">
                 Direct Reservation &amp; Dining Hotline
               </span>
               <h3 className="text-2xl font-bold text-white">
@@ -231,7 +231,7 @@ export default function DiningSection() {
             <div className="space-y-4 pt-4 border-t border-white/10">
               <a
                 href="tel:+8801929918408"
-                className="flex items-center justify-between p-4 bg-[#B8F230] text-neutral-950 font-mono text-xs font-bold uppercase tracking-wider hover:bg-[#a6dc28] transition-colors"
+                className="flex items-center justify-between p-4 bg-[#FCB813] text-neutral-950 font-mono text-xs font-bold uppercase tracking-wider hover:bg-[#E6A20B] transition-colors"
               >
                 <span>Call Hotline (+880 1929-918408)</span>
                 <FiArrowUpRight className="text-base" />

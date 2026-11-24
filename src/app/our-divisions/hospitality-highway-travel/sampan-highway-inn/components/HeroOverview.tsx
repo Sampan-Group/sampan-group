@@ -1,15 +1,15 @@
 "use client";
 
-import { FaRoute, FaWhatsapp } from "react-icons/fa";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FaRoute, FaFacebookF } from "react-icons/fa";
+import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 
 const heroImage = "/images/our-divisions/sampan-highway-inn/latest/sampan-highway-inn-night-facade.webp";
 
 const quickMetrics = [
-  { value: "24 / 7", label: "Highway hospitality" },
-  { value: "Rest & Recharge", label: "Comfortable suites" },
-  { value: "KM 103", label: "Dhaka–Khulna Highway" },
-  { value: "Convenient Parking", label: "Easy highway access" },
+  "24/7 Dining",
+  "Rest Suites",
+  "Kashiani",
+  "Parking",
 ];
 
 export default function HeroOverview() {
@@ -24,7 +24,7 @@ export default function HeroOverview() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex flex-col justify-between overflow-hidden bg-neutral-950 text-white pt-24 sm:pt-28 border-b border-white/10">
+    <section id="hero" className="relative min-h-[580px] lg:h-screen lg:max-h-[860px] flex flex-col justify-center gap-7 sm:gap-9 lg:gap-11 overflow-hidden bg-neutral-950 text-white pt-16 sm:pt-20 pb-6 sm:pb-10 border-b border-white/10">
       {/* Keep the illuminated facade visible, with a closer crop on small screens. */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="parallax-hero absolute inset-0 w-full h-[135%] -top-[15%]">
@@ -48,8 +48,7 @@ export default function HeroOverview() {
         className="relative z-20 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 py-3 border-b border-white/10 flex items-center justify-between text-xs font-mono backdrop-blur-sm"
       >
         <div className="flex items-center gap-2">
-          <span className="font-bold tracking-wider uppercase text-[#FCB813]">KM 103</span>
-          <span className="text-white/40">•</span>
+          <span className="font-bold tracking-wider uppercase text-[#FCB813]">Open 24/7</span>
           <span className="text-neutral-300 hidden sm:inline">Kashiani, Dhaka–Khulna Corridor</span>
         </div>
 
@@ -88,83 +87,119 @@ export default function HeroOverview() {
       */}
 
       {/* Main Hero Content */}
-      <div className="relative z-20 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 py-12 sm:py-20 flex-1 flex flex-col justify-center">
-        <div className="max-w-3xl space-y-6">
+      <div className="relative z-20 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16">
+        <div className="max-w-2xl space-y-4">
           {/* Eyebrow Badge */}
-          <div className="hero-fade-up flex items-center gap-3 flex-wrap">
-            <span className="h-0.5 w-8 bg-[#FCB813]" />
-            <p className="text-xs font-mono font-bold uppercase tracking-[0.3em] text-[#FCB813]">
+          <div className="hero-fade-up flex items-center gap-2.5 flex-wrap">
+            <span className="h-0.5 w-6 bg-[#FCB813]" />
+            <p className="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-[0.25em] text-[#FCB813]">
               Stay. Dine. Recharge.
             </p>
-            <span className="text-white/30 hidden sm:inline">•</span>
-            <span className="text-xs font-mono uppercase tracking-wider text-neutral-300 hidden sm:inline">
-              KM 103 Kashiani
+            <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-white font-medium hidden sm:inline">
+              Kashiani
             </span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-[clamp(2.6rem,5.6vw,5rem)] font-bold tracking-tight text-white leading-[1.02]">
-            <div className="overflow-hidden">
-              <div className="hero-line-mask line-mask">Sampan</div>
+          <h1 className="text-3xl sm:text-4xl lg:text-[3.5rem] font-bold tracking-tight leading-[1.15] drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
+            <div className="overflow-hidden pb-1 -mb-1">
+              <div className="hero-line-mask line-mask text-white">Sampan</div>
             </div>
-            <div className="overflow-hidden mt-1 sm:mt-2">
+            <div className="overflow-hidden mt-0.5 pb-1.5 -mb-1.5">
               <div className="hero-line-mask line-mask text-[#FCB813]">Highway Inn</div>
             </div>
           </h1>
 
           {/* Tagline */}
-          <p className="hero-fade-up text-sm sm:text-base lg:text-lg text-white/90 max-w-2xl leading-relaxed font-light">
-            A refreshing break in every journey. Discover 24/7 dining, inviting rest suites and thoughtful highway hospitality at Kashiani on the Dhaka–Khulna corridor.
+          <p className="hero-fade-up text-xs sm:text-sm md:text-base text-white max-w-xl leading-relaxed font-normal drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]">
+            {/* A refreshing break in every journey. Discover 24/7 dining, inviting rest suites and highway hospitality.   */}
+            Dine, unwind, and recharge along the Dhaka–Khulna Highway.
           </p>
 
           {/* Clear Actions */}
-          <div className="hero-fade-up pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 flex-wrap">
-            <button
-              onClick={() => scrollTo("dining")}
-              className="inline-flex items-center justify-center gap-2 bg-[#0069A8] hover:bg-[#005A91] text-white font-bold px-7 py-4 text-xs font-mono uppercase tracking-[0.18em] transition-all duration-300 shadow-lg cursor-pointer text-center"
-            >
-              <span>Explore Dining</span>
-              <FiArrowUpRight className="text-base" />
-            </button>
+          <div className="hero-fade-up pt-1 flex flex-col gap-2.5 w-full max-w-sm sm:max-w-xl">
+            {/* Buttons: stacked on mobile, side by side on desktop */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3.5 w-full">
+              <button
+                onClick={() => scrollTo("dining")}
+                className="flex-1 flex items-center justify-between gap-4 px-5 py-3 sm:py-3.5 rounded-lg bg-[#FCB813] hover:bg-[#FFC433] text-neutral-950 font-bold text-xs sm:text-[13px] tracking-wider uppercase transition-all duration-200 shadow-md cursor-pointer group"
+              >
+                <span>EXPLORE 24/7 DINING</span>
+                <FiArrowRight className="text-base transition-transform duration-200 group-hover:translate-x-1 shrink-0" />
+              </button>
 
-            <button
-              onClick={() => scrollTo("location")}
-              className="inline-flex items-center justify-center gap-2 border border-white/30 bg-black/40 hover:bg-white hover:text-neutral-950 text-white font-bold px-7 py-4 text-xs font-mono uppercase tracking-[0.18em] transition-all duration-300 backdrop-blur-sm cursor-pointer text-center"
-            >
-              <FaRoute className="text-[#FCB813]" />
-              <span>Plan Your Visit</span>
-              <FiArrowUpRight className="text-base" />
-            </button>
+              <button
+                onClick={() => scrollTo("location")}
+                className="flex-1 flex items-center justify-between gap-4 px-5 py-3 sm:py-3.5 rounded-lg border border-white/25 bg-neutral-950/70 hover:bg-neutral-900/90 hover:border-white/40 text-white font-bold text-xs sm:text-[13px] tracking-wider uppercase transition-all duration-200 backdrop-blur-sm cursor-pointer group"
+              >
+                <span>PLAN YOUR VISIT</span>
+                <FiArrowUpRight className="text-base transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0" />
+              </button>
+            </div>
 
             <a
-              href="https://wa.me/8801929918408?text=Hello%20Sampan%20Highway%20Inn%2C%20I%20would%20like%20to%20enquire%20about%20a%20rest%20suite."
+              href="https://www.facebook.com/sampanhighwayinn/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2 border border-[#C3161C] bg-[#C3161C] hover:bg-[#A61218] hover:border-[#A61218] text-white font-bold px-6 py-4 text-xs font-mono uppercase tracking-[0.18em] transition-all duration-300 backdrop-blur-sm text-center"
+              className="inline-flex items-center gap-2 pt-0.5 text-xs text-neutral-300 hover:text-white transition-colors w-fit group"
             >
-              <FaWhatsapp className="text-base text-white" />
-              <span>Enquire About a Suite</span>
-              <FiArrowUpRight className="text-base text-white/85 group-hover:text-white transition-colors" />
+              <FaFacebookF className="text-[#FCB813] text-xs sm:text-sm shrink-0" />
+              <span className="font-medium">Visit our Facebook page</span>
+              <FiArrowUpRight className="text-xs text-neutral-400 group-hover:text-white transition-colors" />
             </a>
           </div>
         </div>
       </div>
 
-      {/* Bottom Quick Metrics Bar */}
-      <div className="relative z-20 border-t border-white/15 bg-black/45 backdrop-blur-md">
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16 py-6 sm:py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-            {quickMetrics.map((metric, i) => (
-              <div key={i} className="fade-up space-y-1">
-                <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                  {metric.value}
-                </div>
-                <div className="text-xs sm:text-sm text-neutral-400 font-light">
-                  {metric.label}
+      {/* Bottom Floating Metrics (Styled like StayVerse reference) */}
+      <div className="relative z-20 mx-auto w-full max-w-[1440px] px-4 sm:px-10 lg:px-16 pt-1">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 pb-1">
+          {/* Metrics group: 2x2 grid on mobile with clean center divider, single row on sm+ */}
+          <div className="w-full sm:w-auto grid grid-cols-2 sm:flex sm:items-center sm:divide-x sm:divide-white/25">
+            {quickMetrics.map((item, i) => (
+              <div
+                key={i}
+                className={`fade-up ${i % 2 === 1 ? "border-l border-white/20 pl-3.5 sm:border-l-0 sm:pl-0" : "pr-3 sm:pr-0"
+                  } ${i >= 2 ? "pt-2.5 sm:pt-0 border-t border-white/10 sm:border-t-0" : "pb-2.5 sm:pb-0"
+                  } ${i === 0
+                    ? "sm:pr-5 lg:pr-6"
+                    : i === quickMetrics.length - 1
+                      ? "sm:pl-5 lg:pl-6"
+                      : "sm:px-5 lg:px-6"
+                  }`}
+              >
+                <div className="text-sm sm:text-base lg:text-lg font-bold tracking-tight text-white leading-none drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)] flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FCB813] shrink-0" />
+                  <span>{item}</span>
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Thin horizontal line connecting towards waypoint action */}
+          <div className="hidden xl:flex items-center flex-1 mx-6 relative self-center">
+            <div className="w-full h-px bg-white/25" />
+            <div className="absolute left-1/3 -top-1 w-2 h-2 rounded-full bg-[#FCB813] shadow-[0_0_8px_#FCB813]" />
+          </div>
+
+          {/* Right prompt / waypoint action */}
+          <button
+            onClick={() => scrollTo("location")}
+            className="fade-up hidden sm:flex items-center gap-2.5 text-white hover:text-white transition-colors cursor-pointer text-left group shrink-0"
+          >
+            <div className="w-8 h-8 rounded-full bg-white/15 border border-white/30 flex items-center justify-center text-[#FCB813] group-hover:bg-[#FCB813] group-hover:text-[#061B2B] transition-all">
+              <FaRoute className="text-xs" />
+            </div>
+            <div>
+              <div className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-[#FCB813] font-bold flex items-center gap-1.5">
+                <span>Kashiani</span>
+                <FiArrowUpRight className="text-xs opacity-80 group-hover:opacity-100 transition-opacity" />
+              </div>
+              <div className="text-[10px] sm:text-[11px] text-white font-medium drop-shadow-[0_1px_2px_rgba(0,0,0,0.85)]">
+                Where are you heading today?
+              </div>
+            </div>
+          </button>
         </div>
       </div>
     </section>

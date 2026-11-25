@@ -1,8 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { FiArrowUpRight } from "react-icons/fi";
-import { FaClock, FaMapMarkerAlt, FaBed, FaPhoneAlt, FaTimes } from "react-icons/fa";
+import { FaClock, FaMapMarkerAlt, FaBed } from "react-icons/fa";
 
 const suiteKeyFeatures = [
   {
@@ -12,23 +10,21 @@ const suiteKeyFeatures = [
   },
   {
     icon: FaMapMarkerAlt,
-    title: "Convenient Highway Location",
-    desc: "A comfortable stop along the Dhaka–Khulna Highway.",
+    title: "Convenient Location",
+    desc: "Located along the Dhaka–Khulna Highway.",
   },
   {
     icon: FaBed,
-    title: "Rest & Recharge",
-    desc: "Take a refreshing break before continuing your journey.",
+    title: "Comfortable Rest Suites",
+    desc: "A welcoming space to relax during your journey.",
   },
 ];
 
 export default function RestSuitesSection() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
-    <section id="suites" className="bg-[#F8FAFC] text-neutral-900 py-24 sm:py-32 border-b border-neutral-200">
+    <section id="suites" className="bg-[#F8FAFC] text-neutral-900 py-16 sm:py-24 lg:py-28 border-b border-neutral-200">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
-        
+
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
           <div className="max-w-2xl">
@@ -38,7 +34,7 @@ export default function RestSuitesSection() {
                 02 / REST SUITES
               </p>
             </div>
-            <h2 className="text-[clamp(2.4rem,5vw,4.2rem)] font-bold tracking-tight text-neutral-950 leading-[1.05]">
+            <h2 className="text-[clamp(2.25rem,3.8vw,3.5rem)] font-bold tracking-tight text-neutral-950 leading-[1.05]">
               <div className="overflow-hidden">
                 <div className="line-mask">Rest Well.</div>
               </div>
@@ -47,14 +43,14 @@ export default function RestSuitesSection() {
               </div>
             </h2>
           </div>
-          <p className="fade-up max-w-md text-sm sm:text-base text-neutral-600 leading-relaxed font-light">
+          <p className="fade-up max-w-md text-[15px] sm:text-base text-neutral-600 leading-relaxed font-light">
             Comfortable rest suites for travelers looking to relax and recharge before continuing their journey.
           </p>
         </div>
 
         {/* 2-Column Split: Visual Gallery & Key Offerings */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
+
           {/* Left Column: Visual Showcase */}
           <div className="fade-up lg:col-span-7 space-y-6">
             <div className="relative aspect-[4/3] overflow-hidden bg-neutral-200 border border-neutral-300/80 shadow-md group">
@@ -103,16 +99,16 @@ export default function RestSuitesSection() {
             </div>
           </div>
 
-          {/* Right Column: Exact Copy & Clear Actions */}
+          {/* Right Column: Exact Copy */}
           <div className="fade-up lg:col-span-5 space-y-8">
             <div className="space-y-4">
               <span className="font-mono text-xs uppercase tracking-widest text-[#005A91] font-bold block">
                 YOUR REST STOP ALONG THE HIGHWAY
               </span>
-              <h3 className="text-2xl sm:text-3xl font-bold text-neutral-950 tracking-tight leading-snug">
-                A Comfortable Pause, Whenever You Need It.
+              <h3 className="text-[26px] sm:text-[28px] lg:text-[30px] font-bold text-neutral-950 tracking-tight leading-snug">
+                Your Comfortable Stop Along the Highway.
               </h3>
-              <p className="text-sm sm:text-base text-neutral-600 leading-relaxed font-light">
+              <p className="text-[15px] sm:text-base text-neutral-600 leading-relaxed font-light">
                 Whether you&apos;re traveling during the day or arriving late at night, Sampan Highway Inn welcomes you with convenient accommodation and 24/7 check-in.
               </p>
             </div>
@@ -122,36 +118,17 @@ export default function RestSuitesSection() {
               {suiteKeyFeatures.map((feat, index) => {
                 const Icon = feat.icon;
                 return (
-                  <div key={index} className="flex items-start gap-4 p-4 bg-white border border-neutral-200/90 shadow-sm">
+                  <div key={index} className="flex items-start gap-4 p-4 sm:p-5 bg-white border border-neutral-200/90 shadow-sm">
                     <div className="w-10 h-10 rounded-none bg-[#EFF7FC] border border-[#C6E2F3] text-[#005A91] flex items-center justify-center shrink-0">
                       <Icon className="text-base" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-neutral-950">{feat.title}</h4>
-                      <p className="text-xs text-neutral-600 leading-relaxed mt-0.5">{feat.desc}</p>
+                      <h4 className="text-[15px] sm:text-base font-bold text-neutral-950">{feat.title}</h4>
+                      <p className="text-[15px] text-neutral-600 leading-relaxed mt-0.5">{feat.desc}</p>
                     </div>
                   </div>
                 );
               })}
-            </div>
-
-            {/* Clear Action CTAs */}
-            <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="inline-flex items-center justify-center gap-2 bg-neutral-950 hover:bg-[#061B2B] text-white font-bold px-7 py-4 text-xs font-mono uppercase tracking-[0.18em] transition-all duration-300 shadow-md cursor-pointer text-center"
-              >
-                <span>Enquire About a Rest Suite</span>
-                <FiArrowUpRight className="text-base text-[#FCB813]" />
-              </button>
-
-              <a
-                href="tel:+8801929918408"
-                className="inline-flex items-center justify-center gap-2 border border-neutral-300 hover:border-neutral-900 bg-white px-6 py-4 text-xs font-mono font-bold text-neutral-800 uppercase tracking-wider transition-colors text-center"
-              >
-                <FaPhoneAlt className="text-[#0069A8] text-xs" />
-                <span>Call for Availability</span>
-              </a>
             </div>
 
           </div>
@@ -159,52 +136,6 @@ export default function RestSuitesSection() {
         </div>
 
       </div>
-
-      {/* Suite Reservation Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="relative w-full max-w-lg bg-white border border-neutral-300 p-8 text-neutral-900 shadow-2xl">
-            <button
-              onClick={() => setIsModalOpen(false)}
-              className="absolute top-5 right-5 text-neutral-400 hover:text-black transition-colors"
-            >
-              <FaTimes className="text-lg" />
-            </button>
-
-            <div className="space-y-4 mb-6">
-              <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#0069A8]">
-                Instant Suite Reservation
-              </span>
-              <h3 className="text-2xl font-bold text-neutral-950">
-                Book a Suite at Sampan Highway Inn
-              </h3>
-              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-light">
-                Call our 24/7 reception desk for immediate room allocation, day-rest slots, or overnight reservations.
-              </p>
-            </div>
-
-            <div className="space-y-4 pt-4 border-t border-neutral-200">
-              <a
-                href="tel:+8801929918408"
-                className="flex items-center justify-between p-4 bg-neutral-950 text-white font-mono text-xs font-bold uppercase tracking-wider hover:bg-[#061B2B] transition-colors"
-              >
-                <span>Call Desk (+880 1929-918408)</span>
-                <FiArrowUpRight className="text-base text-[#FCB813]" />
-              </a>
-
-              <a
-                href="https://wa.me/8801929918408?text=Hello%20Sampan%20Highway%20Inn,%20I%20would%20like%20to%20enquire%20about%20a%20rest%20suite"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between p-4 border border-neutral-300 text-neutral-900 font-mono text-xs font-bold uppercase tracking-wider hover:bg-neutral-100 transition-colors"
-              >
-                <span>WhatsApp Instant Inquiry</span>
-                <FiArrowUpRight className="text-base" />
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }

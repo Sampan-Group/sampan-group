@@ -382,7 +382,7 @@ export default function ExpressHighwayInnPage() {
               </div>
               <div className="border-l-2 border-[#58b9eb] pl-4 min-w-0">
                 <p className="text-xl sm:text-2xl font-bold text-white">200+ Bays</p>
-                <p className="text-white/50 mt-0.5 font-mono text-[10px] uppercase tracking-wider">EV &amp; Parking.</p>
+                <p className="text-white/50 mt-0.5 font-mono text-[10px] uppercase tracking-wider">EV &amp; Parking</p>
               </div>
             </div>
 

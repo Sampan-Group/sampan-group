@@ -373,7 +373,7 @@ export default function ExpressHighwayInnPage() {
             {/* Quick Metrics (Square Cards) */}
             <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-white/15 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
               <div className="border-l-2 border-[#58b9eb] pl-4 min-w-0">
-                <p className="text-xl sm:text-2xl font-bold text-white">20 Katha</p>
+                <p className="text-xl sm:text-2xl font-bold text-white">60 Katha</p>
                 <p className="text-white/50 mt-0.5 font-mono text-[10px] uppercase tracking-wider">Total Land Area</p>
               </div>
               <div className="border-l-2 border-[#58b9eb] pl-4 min-w-0">

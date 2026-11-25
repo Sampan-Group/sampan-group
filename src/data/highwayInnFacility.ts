@@ -23,6 +23,6 @@ export const highwayInnFacilities: HighwayInnFacility[] = [
     description:
       "From relaxing stays to all-day comfort, we offer cozy rooms, quality amenities, inviting lounges, and friendly service for a peaceful and refreshing experience.",
     alt: "All-Day Comfort",
-    image: "/images/facilities/highway_inn/all_day_comfort.png",
+    image: "/images/facilities/highway_inn/warm-modern-bedroom-living-suite.webp",
   },
 ];

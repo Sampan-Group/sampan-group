@@ -1,5 +1,7 @@
 "use client";
 
+import EnquiryForm from "@/components/EnquiryForm";
+
 import React, { useState, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -943,13 +945,13 @@ export default function ClubMembershipPage() {
             membership opportunity before making your decision.
           </p>
 
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10 max-w-xl">
+          <EnquiryForm enquiryType="membership" className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10 max-w-xl">
             <div className="relative">
-              <input
+              <input name="name"
                 id="name"
                 type="text"
                 placeholder=" "
-                className="peer w-full bg-transparent border-b border-white/20 py-3 focus:outline-none focus:border-emerald-500 placeholder:text-transparent text-white text-lg font-light"
+                className="peer w-full bg-transparent border-b border-white/20 py-3 focus:outline-none focus:border-emerald-500 placeholder:text-transparent text-white text-lg font-light" required
               />
               <label
                 htmlFor="name"
@@ -959,7 +961,7 @@ export default function ClubMembershipPage() {
               </label>
             </div>
             <div className="relative">
-              <input
+              <input name="phone"
                 id="phone"
                 type="tel"
                 placeholder=" "
@@ -973,11 +975,11 @@ export default function ClubMembershipPage() {
               </label>
             </div>
             <div className="relative md:col-span-2">
-              <input
+              <input name="email"
                 id="email"
                 type="email"
                 placeholder=" "
-                className="peer w-full bg-transparent border-b border-white/20 py-3 focus:outline-none focus:border-emerald-500 placeholder:text-transparent text-white text-lg font-light"
+                className="peer w-full bg-transparent border-b border-white/20 py-3 focus:outline-none focus:border-emerald-500 placeholder:text-transparent text-white text-lg font-light" required
               />
               <label
                 htmlFor="email"
@@ -986,25 +988,24 @@ export default function ClubMembershipPage() {
                 Email
               </label>
             </div>
-            <select className="bg-transparent border-b border-white/20 py-3 focus:outline-none focus:border-emerald-500 text-white text-lg font-light">
+            <select name="membershipTier" className="bg-transparent border-b border-white/20 py-3 focus:outline-none focus:border-emerald-500 text-white text-lg font-light">
               <option className="text-neutral-950">Essential Tier</option>
               <option className="text-neutral-950">Premium Tier</option>
               <option className="text-neutral-950">Privilege Tier</option>
             </select>
-            <input
+            <input name="visitDate"
               type="date"
               className="bg-transparent border-b border-white/20 py-3 focus:outline-none focus:border-emerald-500 text-white text-lg font-light"
             />
-            <textarea
+            <textarea name="message"
               placeholder="Message"
               rows={3}
               className="md:col-span-2 bg-transparent border-b border-white/20 py-3 focus:outline-none focus:border-emerald-500 placeholder:text-neutral-500 text-white text-lg font-light resize-none"
             ></textarea>
-          </form>
-
-          <button className="mt-16 flex items-center font-mono text-[11px] tracking-[0.25em] uppercase text-white border-b border-emerald-500 pb-2 hover:text-emerald-500 transition-colors duration-300 w-fit fade-up">
+          <button type="submit" className="md:col-span-2 mt-6 flex items-center font-mono text-[11px] tracking-[0.25em] uppercase text-white border-b border-emerald-500 pb-2 hover:text-emerald-500 transition-colors duration-300 w-fit fade-up">
             Book a Site Visit <FiArrowRight className="ml-3" />
           </button>
+          </EnquiryForm>
         </div>
       </section>
 

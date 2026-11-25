@@ -31,7 +31,7 @@ export default function MobilityLocationAndNearby({
   embedMapUrl,
   nearbyFacilities = [
     { name: "Express Highway Inn & Resort", category: "Hospitality & Rooms", distance: "Next Door (100m)", link: "/our-divisions/hospitality-highway-travel/express-highway-inn" },
-    { name: "Sampan Cafe Metro", category: "Dining & Hydro Wash", distance: "Adjacent (50m)", link: "/our-divisions/real-state-and-land-investment/sampan-cafe-metro" },
+    { name: "Sampan City End", category: "Dining & Hydro Wash", distance: "Adjacent (50m)", link: "/our-divisions/real-state-and-land-investment/sampan-cafe-metro" },
     { name: "Sampan LPG & Fuel Station", category: "Multi-Fuel Hub", distance: "Same Complex", link: "/our-divisions/automotive-fuel-mobility/sampan-lpg-filling-station" },
   ],
   bgTheme = "divisions-green",

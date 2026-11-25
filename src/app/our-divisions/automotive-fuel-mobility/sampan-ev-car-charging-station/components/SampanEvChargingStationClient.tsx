@@ -1,13 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import {
   FaBolt,
   FaMapMarkerAlt,
   FaPhoneAlt,
   FaClock,
-  FaExpand,
   FaTimes,
   FaShieldAlt,
   FaCar,
@@ -15,7 +17,11 @@ import {
   FaExternalLinkAlt,
   FaFacebookF,
 } from "react-icons/fa";
-import { FiArrowRight } from "react-icons/fi";
+import { FiArrowRight, FiMaximize2 } from "react-icons/fi";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
+}
 
 const highwayInnFacebookUrl = "https://www.facebook.com/sampanhighwayinn/";
 const highwayInnDirectionsUrl =
@@ -95,17 +101,6 @@ const nearbySpots: NearbySpot[] = [
     link: "/our-divisions/automotive-fuel-mobility/sampan-lpg-filling-station",
   },
   {
-    id: "sampan-mart",
-    name: "Sampan Mart",
-    type: "24/7 Super Shop",
-    badge: "In Complex",
-    driveTime: "In Complex",
-    image: "/images/our-divisions/sampan-mart/Sampan-Mart.jpg",
-    description:
-      "24/7 retail super shop stocked with travel essentials, groceries, beverages, and chilled snacks.",
-    link: "/our-divisions/retail-super-shops/sampan-mart",
-  },
-  {
     id: "sweet-box",
     name: "Sampan Sweet Box",
     type: "Artisanal Bengali Sweets",
@@ -130,55 +125,127 @@ const nearbySpots: NearbySpot[] = [
 ];
 
 export default function SampanEvChargingStationClient() {
+  const containerRef = useRef<HTMLElement>(null);
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      const navOffset = 80;
-      const elementPosition = el.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navOffset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-      window.history.replaceState(null, "", `#${id}`);
+      el.scrollIntoView({ behavior: "smooth" });
     }
   };
 
-  return (
-    <main className="bg-[#fcfbf9] text-[#1a1714] selection:bg-emerald-700 selection:text-white">
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
 
-      {/* ================= 1. HERO SECTION (NO EYEBROW / COMPACT) ================= */}
-      <section className="relative min-h-[65vh] lg:min-h-[75vh] flex items-center justify-center overflow-hidden bg-[#0c120f] text-white pt-24 pb-16 lg:pt-28 lg:pb-20 border-b border-white/10">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={evImage}
-            alt="Sampan EV Car Charging Facility"
-            sizes="100vw"
-            className="w-full h-full object-cover object-center opacity-70"
-          />
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        // 1. Line mask slow reveal for headings
+        gsap.utils.toArray<HTMLElement>(".line-mask").forEach((line) => {
+          gsap.fromTo(
+            line,
+            { yPercent: 100 },
+            {
+              yPercent: 0,
+              duration: 1.4,
+              ease: "power4.out",
+              scrollTrigger: { trigger: line.parentElement!, start: "top 88%" },
+            }
+          );
+        });
+
+        // 2. Reveal fade-up for content, cards, badges
+        gsap.utils.toArray<HTMLElement>(".fade-up").forEach((el) => {
+          gsap.fromTo(
+            el,
+            { y: 28, autoAlpha: 0 },
+            {
+              y: 0,
+              autoAlpha: 1,
+              duration: 0.8,
+              ease: "power3.out",
+              scrollTrigger: { trigger: el, start: "top 92%" },
+            }
+          );
+        });
+
+        // 3. Parallax image reveal with scrub
+        gsap.utils.toArray<HTMLElement>(".parallax-img").forEach((el) => {
+          gsap.fromTo(
+            el,
+            { yPercent: -6 },
+            {
+              yPercent: 6,
+              ease: "none",
+              scrollTrigger: {
+                trigger: el.parentElement || el,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1.2,
+              },
+            }
+          );
+        });
+      });
+
+      mm.add("(prefers-reduced-motion: reduce)", () => {
+        gsap.set([".line-mask", ".fade-up"], {
+          y: 0,
+          yPercent: 0,
+          autoAlpha: 1,
+        });
+        gsap.set(".parallax-img", {
+          y: 0,
+          yPercent: 0,
+          x: 0,
+        });
+      });
+
+      return () => mm.revert();
+    },
+    { scope: containerRef }
+  );
+
+  return (
+    <main
+      ref={containerRef}
+      className="bg-[#fcfbf9] text-[#1a1714] selection:bg-emerald-700 selection:text-white"
+    >
+      {/* ================= 1. HERO SECTION (FULL HEIGHT) ================= */}
+      <section className="relative min-h-screen min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#0c120f] text-white pt-24 pb-16 lg:pt-28 lg:pb-20 border-b border-white/10">
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <div className="parallax-img absolute inset-0 w-full h-[120%] -top-[10%]">
+            <img
+              src={evImage}
+              alt="Sampan EV Car Charging Facility"
+              sizes="100vw"
+              className="w-full h-full object-cover object-center opacity-70 scale-105"
+            />
+          </div>
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/35" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 pt-2 pb-8 lg:pb-12">
           <div className="max-w-4xl space-y-5 sm:space-y-6">
-
-            {/* Headline */}
+            {/* Headline with line-mask reveal */}
             <h1 className="text-[clamp(2.4rem,4.8vw,4.2rem)] font-bold tracking-tight text-white leading-[0.98]">
-              Sampan <br />
-              <span className="text-emerald-400 block mt-1">
-                EV Charging Station
-              </span>
+              <div className="overflow-hidden">
+                <div className="line-mask">Sampan</div>
+              </div>
+              <div className="overflow-hidden">
+                <div className="line-mask text-emerald-400 block mt-1">
+                  EV Charging Station
+                </div>
+              </div>
             </h1>
 
-            {/* Shortened Subheadline */}
-            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-xl font-light tracking-wide border-l-2 border-emerald-500/80 pl-4">
-              Upcoming electric vehicle charging hub next to Sampan Highway Inn at KM 74, Dhaka–Khulna Highway,Kashiani.
+            {/* Subheadline */}
+            <p className="fade-up text-xs sm:text-sm text-gray-300 leading-relaxed max-w-xl font-light tracking-wide border-l-2 border-emerald-500/80 pl-4">
+              Upcoming electric vehicle charging hub next to Sampan Highway Inn at KM 74, Dhaka–Khulna Highway, Kashiani.
             </p>
 
             {/* Action Buttons */}
-            <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-3 sm:gap-4 font-mono text-xs">
+            <div className="fade-up mt-6 sm:mt-8 flex flex-wrap items-center gap-3 sm:gap-4 font-mono text-xs">
               <button
                 onClick={() => scrollTo("overview")}
                 className="group inline-flex items-center justify-center gap-2 rounded-none bg-emerald-700 hover:bg-emerald-600 px-6 py-3 sm:px-7 sm:py-3.5 font-mono text-xs font-bold uppercase tracking-[0.18em] text-white transition-all duration-300 shadow-lg shadow-emerald-950/40 cursor-pointer text-center"
@@ -206,25 +273,32 @@ export default function SampanEvChargingStationClient() {
             </div>
 
             {/* Quick Metrics */}
-            <div className="mt-10 pt-8 border-t border-white/15 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+            <div className="fade-up mt-10 pt-8 border-t border-white/15 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
               <div className="border-l-2 border-emerald-400 pl-4">
-                <p className="text-sm sm:text-base font-bold text-amber-400 uppercase tracking-wider">Construction Ongoing</p>
+                <p className="text-sm sm:text-base font-bold text-amber-400 uppercase tracking-wider">
+                  Construction Ongoing
+                </p>
                 <p className="text-[11px] text-white/60 mt-0.5 font-mono">Development Status</p>
               </div>
               <div className="border-l-2 border-emerald-400 pl-4">
-                <p className="text-sm sm:text-base font-bold text-emerald-400 uppercase tracking-wider">Fast EV Hub</p>
+                <p className="text-sm sm:text-base font-bold text-emerald-400 uppercase tracking-wider">
+                  Fast EV Hub
+                </p>
                 <p className="text-[11px] text-white/60 mt-0.5 font-mono">Clean Mobility</p>
               </div>
               <div className="border-l-2 border-emerald-400 pl-4">
-                <p className="text-sm sm:text-base font-bold text-white uppercase tracking-wider">Dhaka–Khulna Highway</p>
+                <p className="text-sm sm:text-base font-bold text-white uppercase tracking-wider">
+                  Dhaka–Khulna Highway
+                </p>
                 <p className="text-[11px] text-white/60 mt-0.5 font-mono">KM 74 Highway</p>
               </div>
               <div className="border-l-2 border-emerald-400 pl-4">
-                <p className="text-sm sm:text-base font-bold text-white uppercase tracking-wider">Highway Inn</p>
+                <p className="text-sm sm:text-base font-bold text-white uppercase tracking-wider">
+                  Highway Inn
+                </p>
                 <p className="text-[11px] text-white/60 mt-0.5 font-mono">Next Door Facility</p>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -232,46 +306,54 @@ export default function SampanEvChargingStationClient() {
       {/* ================= 2. OVERVIEW & PLANNED INFRASTRUCTURE ================= */}
       <section id="overview" className="py-20 sm:py-24 px-6 sm:px-10 lg:px-16 bg-[#fcfbf9] border-b border-neutral-200">
         <div className="mx-auto max-w-[1440px]">
-
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-            <div>
-              <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-950 leading-tight">
-                Modern electric mobility. <br />
-                <span className="text-emerald-700">Planned highway charging hub.</span>
-              </h2>
-            </div>
-            <p className="max-w-md text-xs sm:text-sm text-neutral-600 leading-relaxed">
+          {/* Eyebrow & Subhead placed directly under heading */}
+          <div className="max-w-2xl mb-12">
+            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-950 leading-tight">
+              <div className="overflow-hidden">
+                <div className="line-mask">Modern electric mobility.</div>
+              </div>
+              <div className="overflow-hidden">
+                <div className="line-mask text-emerald-700">Planned highway charging hub.</div>
+              </div>
+            </h2>
+            <p className="fade-up mt-3 text-xs sm:text-sm text-neutral-600 leading-relaxed max-w-xl">
               Designed to bring convenient, high-capacity vehicle charging to the Dhaka–Khulna Highway right next to Sampan Highway Inn in Kashiani.
             </p>
           </div>
 
           <div className="grid gap-8 lg:grid-cols-12 items-stretch">
-            {/* Visual Preview Card */}
+            {/* Visual Preview Card with Parallax */}
             <div className="lg:col-span-5 flex flex-col">
               <div
                 onClick={() => setLightboxOpen(true)}
-                className="group relative flex-1 min-h-[300px] border border-neutral-200 bg-black rounded-none overflow-hidden cursor-pointer"
+                className="fade-up group relative flex-1 min-h-[320px] rounded-2xl overflow-hidden bg-neutral-950 border border-neutral-200/90 hover:border-emerald-600 transition-[border-color,box-shadow] duration-300 shadow-sm hover:shadow-lg cursor-pointer"
               >
-                <img
-                  src={evImage}
-                  alt="Planned EV Charging Facility"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 opacity-90"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
-                  <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-emerald-400">
-                    Facility Preview
-                  </span>
-                  <p className="text-white text-base font-bold mt-1">
+                <div className="parallax-img absolute inset-0 w-full h-[112%] -top-[6%]">
+                  <img
+                    src={evImage}
+                    alt="Planned EV Charging Facility"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 opacity-90"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
+
+                {/* Top-Right Maximize Icon */}
+                <div className="absolute top-4 right-4 z-10 w-9 h-9 rounded-lg bg-black/60 backdrop-blur-sm text-white flex items-center justify-center group-hover:bg-emerald-600 transition-colors">
+                  <FiMaximize2 className="text-xs" />
+                </div>
+
+                <div className="absolute inset-x-0 bottom-0 p-6 z-10">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/80 backdrop-blur-md border border-emerald-500/30 text-emerald-300 font-mono text-[10px] font-bold uppercase tracking-wider mb-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>Facility Preview</span>
+                  </div>
+                  <h3 className="text-white text-lg sm:text-xl font-bold leading-snug">
                     EV Charging Infrastructure Layout
-                  </p>
-                  <p className="text-neutral-300 text-xs mt-1">
+                  </h3>
+                  <p className="text-neutral-300 text-xs sm:text-sm mt-1.5 line-clamp-2 font-light">
                     Planned charging bays located next to Sampan Highway Inn.
                   </p>
-                  <div className="mt-4 flex items-center gap-2 text-xs font-mono text-emerald-300 font-bold">
-                    <FaExpand className="text-xs" />
-                    <span>Click to Enlarge</span>
-                  </div>
                 </div>
               </div>
             </div>
@@ -283,20 +365,25 @@ export default function SampanEvChargingStationClient() {
                 return (
                   <div
                     key={idx}
-                    className="border border-neutral-200 bg-white p-6 sm:p-7 rounded-none hover:border-emerald-600 transition-colors duration-300"
+                    className="fade-up group relative border border-neutral-200/90 bg-white p-6 sm:p-7 rounded-none hover:border-emerald-600 hover:shadow-md transition-[border-color,box-shadow] duration-300 overflow-hidden"
                   >
+                    <div className="absolute top-0 left-0 h-[3px] w-0 bg-emerald-600 transition-all duration-500 group-hover:w-full z-10" />
+
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 shrink-0 bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700 rounded-none">
-                        <Icon className="text-base" />
+                      <div className="w-12 h-12 shrink-0 bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-700 group-hover:bg-emerald-600 group-hover:border-emerald-600 group-hover:text-white transition-all duration-300 shadow-xs">
+                        <Icon className="text-lg" />
                       </div>
                       <div className="flex-1">
-                        <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-emerald-700 block mb-1">
-                          {feat.type}
-                        </span>
-                        <h3 className="text-lg font-bold text-neutral-950">
+                        <div className="flex items-center gap-1.5 mb-1">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+                          <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-emerald-700">
+                            {feat.type}
+                          </span>
+                        </div>
+                        <h3 className="text-lg font-bold text-neutral-950 group-hover:text-emerald-700 transition-colors">
                           {feat.title}
                         </h3>
-                        <p className="mt-2 text-xs text-neutral-600 leading-relaxed">
+                        <p className="mt-2 text-xs sm:text-sm text-neutral-600 leading-relaxed font-light">
                           {feat.description}
                         </p>
                       </div>
@@ -306,21 +393,20 @@ export default function SampanEvChargingStationClient() {
               })}
             </div>
           </div>
-
         </div>
       </section>
 
-      {/* ================= 3. NEARBY SISTER CONCERNS (NO METERS/KM) ================= */}
+      {/* ================= 3. NEARBY SISTER CONCERNS (SAMPAN MART DROPPED) ================= */}
       <section id="nearby" className="py-24 sm:py-28 px-6 sm:px-10 lg:px-16 bg-[#0c120f] text-white border-b border-white/10 relative overflow-hidden">
         <div className="mx-auto max-w-[1440px]">
-
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-            <div>
-              <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
-                Nearby at This Location
-              </h2>
-            </div>
-            <p className="max-w-md text-xs sm:text-sm text-neutral-400 leading-relaxed">
+          {/* Eyebrow & Subhead placed directly under heading */}
+          <div className="max-w-2xl mb-12">
+            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
+              <div className="overflow-hidden">
+                <div className="line-mask">Nearby at This Location</div>
+              </div>
+            </h2>
+            <p className="fade-up mt-3 text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-xl">
               Positioned next to Sampan Highway Inn with comprehensive dining, refueling, shopping, and relaxation facilities along the Dhaka–Khulna Highway.
             </p>
           </div>
@@ -329,39 +415,43 @@ export default function SampanEvChargingStationClient() {
             {nearbySpots.map((spot) => (
               <article
                 key={spot.id}
-                className="group relative flex flex-col h-full rounded-none overflow-hidden bg-[#121915] border border-white/10 hover:border-emerald-500/60 transition-all duration-300"
+                className="fade-up group relative flex flex-col justify-between h-full bg-[#121915] border border-white/10 hover:border-emerald-500/60 transition-[border-color,box-shadow] duration-300 rounded-none overflow-hidden"
               >
+                {/* Top emerald line indicator on hover */}
+                <div className="absolute top-0 left-0 h-[3px] w-0 bg-emerald-500 transition-all duration-500 group-hover:w-full z-20" />
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/[0.04] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+                {/* Photo frame with smooth scroll parallax */}
                 <div className="relative h-52 w-full overflow-hidden bg-neutral-900 shrink-0">
-                  <img
-                    src={spot.image}
-                    alt={spot.name}
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#121915] via-transparent to-black/30" />
+                  <div className="parallax-img absolute inset-0 w-full h-[112%] -top-[6%]">
+                    <img
+                      src={spot.image}
+                      alt={spot.name}
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#121915] via-transparent to-black/30 pointer-events-none" />
 
                   <div className="absolute top-4 left-4 z-10">
-                    <span className="inline-flex items-center rounded-none bg-black/80 backdrop-blur-md px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-emerald-400 border border-emerald-500/30">
+                    <span className="inline-flex items-center rounded-none bg-black/80 backdrop-blur-md px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-emerald-400 border border-emerald-500/30 shadow-xs">
                       {spot.badge}
                     </span>
                   </div>
-
-                  {/* <div className="absolute bottom-3 right-4 z-10">
-                    <span className="inline-flex items-center rounded-none bg-white/10 backdrop-blur-md px-2.5 py-0.5 font-mono text-[10px] text-neutral-300">
-                      {spot.driveTime}
-                    </span>
-                  </div> */}
                 </div>
 
                 <div className="p-6 flex flex-col flex-1 justify-between">
                   <div>
-                    <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-emerald-400 block mb-1">
-                      {spot.type}
-                    </span>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                      <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-emerald-400">
+                        {spot.type}
+                      </span>
+                    </div>
                     <h3 className="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">
                       {spot.name}
                     </h3>
-                    <p className="mt-2 text-xs text-neutral-400 leading-relaxed">
+                    <p className="mt-2 text-xs text-neutral-400 leading-relaxed font-light">
                       {spot.description}
                     </p>
                   </div>
@@ -371,7 +461,7 @@ export default function SampanEvChargingStationClient() {
                       href={spot.link}
                       className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-emerald-400 hover:text-emerald-300 transition-colors"
                     >
-                      <span>Explore Division</span>
+                      <span>VIEW DETAILS</span>
                       <FiArrowRight className="text-xs transition-transform group-hover:translate-x-1" />
                     </Link>
                   </div>
@@ -379,23 +469,27 @@ export default function SampanEvChargingStationClient() {
               </article>
             ))}
           </div>
-
         </div>
       </section>
 
       {/* ================= 4. LOCATION & INQUIRIES ================= */}
       <section id="location" className="scroll-mt-20 py-24 sm:py-28 px-6 sm:px-10 lg:px-16 bg-[#f7f9f7] text-[#1a1714] border-b border-neutral-200">
         <div className="mx-auto max-w-[1440px]">
-
-          <div className="max-w-3xl mb-14">
-            <div className="inline-flex items-center gap-2 border border-emerald-600/40 bg-emerald-600/10 px-3.5 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-800 mb-4 rounded-none">
+          {/* Eyebrow placed underneath heading */}
+          <div className="max-w-3xl mb-12">
+            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-950 leading-tight">
+              <div className="overflow-hidden">
+                <div className="line-mask">Visit Sampan EV Charging</div>
+              </div>
+              <div className="overflow-hidden">
+                <div className="line-mask text-emerald-700">&amp; Highway Inn</div>
+              </div>
+            </h2>
+            <div className="fade-up inline-flex items-center gap-2 border border-emerald-600/40 bg-emerald-600/10 px-3.5 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-800 mt-4 rounded-none">
               <FaMapMarkerAlt className="text-xs text-emerald-700" />
               <span>Location &amp; Route Access</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-950 leading-tight">
-              Visit Sampan EV Charging &amp; Highway Inn
-            </h2>
-            <p className="mt-4 text-sm sm:text-base text-neutral-600 leading-relaxed">
+            <p className="fade-up mt-3 text-xs sm:text-sm text-neutral-600 leading-relaxed max-w-xl">
               Located right next to Sampan Highway Inn at KM 74 on the Dhaka–Khulna Highway. Open 24/7 access planned for electric vehicles, passenger cars, and transit fleets.
             </p>
           </div>
@@ -404,7 +498,7 @@ export default function SampanEvChargingStationClient() {
             {/* Left Column: Station Details, Schedule & Contact */}
             <div className="flex flex-col gap-6 justify-between">
               {/* Card 1: Station Location & Address */}
-              <div className="bg-white border border-neutral-300 p-6 sm:p-7 rounded-none shadow-sm space-y-3">
+              <div className="fade-up bg-white border border-neutral-300 p-6 sm:p-7 rounded-none shadow-sm space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700 rounded-none shrink-0">
                     <FaMapMarkerAlt className="text-base" />
@@ -431,7 +525,7 @@ export default function SampanEvChargingStationClient() {
               {/* Sub-grid: Direct Contact & Social */}
               <div className="grid sm:grid-cols-2 gap-6 flex-1">
                 {/* Card 2: Contact Numbers */}
-                <div className="bg-white border border-neutral-300 p-6 rounded-none shadow-sm flex flex-col justify-between space-y-4">
+                <div className="fade-up bg-white border border-neutral-300 p-6 rounded-none shadow-sm flex flex-col justify-between space-y-4">
                   <div className="space-y-3">
                     <div className="w-10 h-10 bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700 rounded-none">
                       <FaPhoneAlt className="text-sm" />
@@ -443,7 +537,10 @@ export default function SampanEvChargingStationClient() {
                       Complex Desk
                     </h4>
                     <div className="text-xs text-neutral-700 space-y-1">
-                      <a href="tel:+8801929918408" className="font-mono font-bold text-emerald-700 hover:underline block text-sm">
+                      <a
+                        href="tel:+8801929918408"
+                        className="font-mono font-bold text-emerald-700 hover:underline block text-sm"
+                      >
                         +880 1929-918408
                       </a>
                     </div>
@@ -458,7 +555,7 @@ export default function SampanEvChargingStationClient() {
                 </div>
 
                 {/* Card 3: Development Status */}
-                <div className="bg-white border border-neutral-300 p-6 rounded-none shadow-sm flex flex-col justify-between space-y-4">
+                <div className="fade-up bg-white border border-neutral-300 p-6 rounded-none shadow-sm flex flex-col justify-between space-y-4">
                   <div className="space-y-3">
                     <div className="w-10 h-10 bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-700 rounded-none">
                       <FaClock className="text-sm" />
@@ -481,12 +578,14 @@ export default function SampanEvChargingStationClient() {
               </div>
             </div>
 
-            {/* Right Column: 50% Interactive Google Map routing to Sampan Highway Inn */}
-            <div className="border border-neutral-300 bg-white p-2 sm:p-3 shadow-sm flex flex-col h-full min-h-[420px] lg:min-h-0">
+            {/* Right Column: Interactive Google Map */}
+            <div className="fade-up border border-neutral-300 bg-white p-2 sm:p-3 shadow-sm flex flex-col h-full min-h-[420px] lg:min-h-0">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-3 py-2.5 mb-2 border-b border-neutral-200">
                 <div className="flex items-center gap-2 text-xs font-mono text-neutral-700 min-w-0">
                   <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse shrink-0" />
-                  <span className="font-bold text-neutral-900 uppercase tracking-wider shrink-0">Route to:</span>
+                  <span className="font-bold text-neutral-900 uppercase tracking-wider shrink-0">
+                    Route to:
+                  </span>
                   <span className="truncate">Sampan Highway Inn Restaurant &amp; Party Centre</span>
                 </div>
                 <a
@@ -515,11 +614,10 @@ export default function SampanEvChargingStationClient() {
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
-      {/* Lightbox Modal (Square Style) */}
+      {/* Lightbox Modal */}
       {lightboxOpen && (
         <div
           onClick={() => setLightboxOpen(false)}
@@ -527,14 +625,14 @@ export default function SampanEvChargingStationClient() {
         >
           <button
             onClick={() => setLightboxOpen(false)}
-            className="absolute top-6 right-6 text-white p-3 rounded-none bg-white/10 hover:bg-white/20 transition-colors cursor-pointer"
+            className="absolute top-6 right-6 text-white p-3 rounded-none bg-white/10 hover:bg-emerald-600 transition-colors cursor-pointer z-20"
             aria-label="Close Lightbox"
           >
             <FaTimes className="text-lg" />
           </button>
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative max-w-5xl w-full max-h-[85vh] aspect-[16/10] rounded-none overflow-hidden border border-white/20 shadow-2xl bg-black"
+            className="relative max-w-5xl w-full max-h-[85vh] aspect-[16/10] rounded-none overflow-hidden border border-white/20 shadow-2xl bg-neutral-950 flex flex-col justify-between"
           >
             <img
               src={evImage}
@@ -545,9 +643,6 @@ export default function SampanEvChargingStationClient() {
           </div>
         </div>
       )}
-
-      {/* Duplicate local footer removed: Global site layout renders footer */}
-
     </main>
   );
 }

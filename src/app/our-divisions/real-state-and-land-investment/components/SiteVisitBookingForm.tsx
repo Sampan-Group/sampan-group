@@ -1,5 +1,7 @@
 "use client";
 
+import EnquiryForm from "@/components/EnquiryForm";
+
 import { useState } from "react";
 import { FaCalendarAlt, FaUser, FaPhoneAlt, FaEnvelope, FaCar, FaCheckCircle, FaTimes } from "react-icons/fa";
 
@@ -16,14 +18,11 @@ export default function SiteVisitBookingForm({
   subtitle = "Schedule a guided site tour with our property team. Complimentary vehicle transport available upon request.",
   projectName,
   bgTheme = "about-ivory",
-  submitButtonText = "Confirm VIP Site Visit Slot",
+  submitButtonText = "Request a Site Visit",
 }: SiteVisitBookingFormProps) {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+
 
   const containerClasses = {
     "divisions-green": "bg-[#f3f6f2] text-[#183b2b] border-b border-[#183b2b]/15",
@@ -81,13 +80,13 @@ export default function SiteVisitBookingForm({
               {submitted ? (
                 <div className="py-12 text-center space-y-4">
                   <FaCheckCircle className="text-5xl text-emerald-700 mx-auto animate-bounce" />
-                  <h3 className="text-2xl font-bold text-neutral-950">Site Visit Confirmed!</h3>
+                  <h3 className="text-2xl font-bold text-neutral-950">Site Visit Request Sent!</h3>
                   <p className="text-xs text-neutral-600">
-                    Our team will contact you within 30 minutes to confirm vehicle pickup details for <span className="font-bold text-[#ca8a04]">{projectName}</span>.
+                    Our team will contact you to confirm availability and visit details for <span className="font-bold text-[#ca8a04]">{projectName}</span>.
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4 text-xs font-mono">
+                <EnquiryForm enquiryType="site-visit" onSuccess={() => setSubmitted(true)} details={{ projectName }}  className="space-y-4 text-xs font-mono">
                   <div className="border-b border-current/15 pb-3">
                     <span className="text-[#ca8a04] uppercase font-bold">Schedule Inspection</span>
                     <h3 className="text-lg font-bold text-neutral-950 mt-0.5">{projectName}</h3>
@@ -95,7 +94,7 @@ export default function SiteVisitBookingForm({
 
                   <div className="space-y-1">
                     <label className="block uppercase opacity-70">Full Name</label>
-                    <input
+                    <input name="name"
                       type="text"
                       required
                       placeholder="Your Full Name"
@@ -106,7 +105,7 @@ export default function SiteVisitBookingForm({
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-1">
                       <label className="block uppercase opacity-70">Phone Number</label>
-                      <input
+                      <input name="phone"
                         type="tel"
                         required
                         placeholder="+880 1711..."
@@ -116,7 +115,7 @@ export default function SiteVisitBookingForm({
 
                     <div className="space-y-1">
                       <label className="block uppercase opacity-70">Preferred Visit Date</label>
-                      <input
+                      <input name="visitDate"
                         type="date"
                         required
                         className="w-full bg-white border border-neutral-300 p-3 text-xs text-neutral-950 focus:border-[#ca8a04] focus:outline-none"
@@ -126,7 +125,7 @@ export default function SiteVisitBookingForm({
 
                   <div className="space-y-1">
                     <label className="block uppercase opacity-70">Transport Pickup Needed?</label>
-                    <select className="w-full bg-white border border-neutral-300 p-3 text-xs text-neutral-950 focus:border-[#ca8a04] focus:outline-none">
+                    <select name="transportPickup" className="w-full bg-white border border-neutral-300 p-3 text-xs text-neutral-950 focus:border-[#ca8a04] focus:outline-none">
                       <option>Yes - Request AC Car Pickup</option>
                       <option>No - Self Driving to Site</option>
                     </select>
@@ -138,7 +137,7 @@ export default function SiteVisitBookingForm({
                   >
                     {submitButtonText}
                   </button>
-                </form>
+                </EnquiryForm>
               )}
             </div>
 

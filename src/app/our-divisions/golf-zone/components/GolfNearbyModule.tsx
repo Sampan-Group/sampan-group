@@ -36,7 +36,7 @@ export default function GolfNearbyModule({
       logo: "/images/brand/golfrage.png",
     },
     {
-      name: "Sampan Cafe Metro",
+      name: "Sampan City End",
       category: "Real Estate & Dining",
       distance: "4 km",
       tagline: "Hydro car wash, auto showroom, and artisanal garden cafe.",

@@ -1,5 +1,7 @@
 "use client";
 
+import EnquiryForm from "@/components/EnquiryForm";
+
 import React, { useState } from "react";
 import Link from "next/link";
 
@@ -17,11 +19,7 @@ export default function ContactCTA() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Add your form submission logic here (e.g., API call)
-    console.log("Form submitted:", formData);
-  };
+
 
   return (
     <section
@@ -94,7 +92,7 @@ export default function ContactCTA() {
             we&apos;ll point you the right way.
           </p>
 
-          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+          <EnquiryForm enquiryType="homepage" className="flex flex-col gap-6">
             {/* Name Input */}
             <div className="flex flex-col gap-2">
               <label
@@ -180,7 +178,7 @@ export default function ContactCTA() {
                 </span>
               </button>
             </div>
-          </form>
+          </EnquiryForm>
         </div>
       </div>
     </section>

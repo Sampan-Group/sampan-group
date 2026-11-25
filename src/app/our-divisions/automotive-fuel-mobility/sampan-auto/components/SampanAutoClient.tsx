@@ -681,7 +681,7 @@ export default function SampanAutoClient() {
               </div>
               <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-950 leading-tight">
                 Upcoming Near Sampan Auto. <br />
-                <span className="text-amber-700">Sampan Cafe Metro.</span>
+                <span className="text-amber-700">Sampan City End.</span>
               </h2>
             </div>
             <div className="max-w-md space-y-3">
@@ -701,7 +701,7 @@ export default function SampanAutoClient() {
         id="cafe-metro"
         badge=""
         eyebrow="Upcoming Destination • Adjacent to Sampan Auto"
-        title="Sampan Cafe Metro"
+        title="Sampan City End"
         subtitle="Coming soon right near Sampan Auto — an all-in-one automotive lifestyle destination featuring a contemporary car showroom, café, swimming pool, gym, and professional car-wash experience, all under one roof."
       />
 

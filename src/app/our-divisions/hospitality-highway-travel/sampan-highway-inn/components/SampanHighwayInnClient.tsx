@@ -1,111 +1,207 @@
 "use client";
 
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
 import HeroOverview from "./HeroOverview";
-import OnlineBookingWidget from "./OnlineBookingWidget";
-import MilestoneCounter from "./MilestoneCounter";
-import FacilitiesList from "./FacilitiesList";
-import HighwayRouteVisualizer from "./HighwayRouteVisualizer";
-import LocationAndMap from "./LocationAndMap";
-import PricingOverview from "./PricingOverview";
-import VirtualTourViewer from "./VirtualTourViewer";
-import PhotoVideoGallery from "./PhotoVideoGallery";
+import TheExperienceSection from "./TheExperienceSection";
+import DiningSection from "./DiningSection";
+import RestSuitesSection from "./RestSuitesSection";
+import ConvenienceSection from "./ConvenienceSection";
+import GreenRibbonCTA from "./GreenRibbonCTA";
+import MomentsGallery from "./MomentsGallery";
 import NearbyLocationModule from "./NearbyLocationModule";
-import PressMediaCarousel from "./PressMediaCarousel";
-import GuestReviews from "./GuestReviews";
-import UGCFeed from "./UGCFeed";
-import BookEnquireCTA from "./BookEnquireCTA";
-import { FaRoute, FaCalendarCheck, FaPhoneAlt, FaBed, FaCompass } from "react-icons/fa";
+import LocationAndWaypoint from "./LocationAndWaypoint";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
+}
 
 export default function SampanHighwayInnClient() {
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const containerRef = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        // Keep content opaque; only heading lines use the masked text reveal.
+        gsap.set([".line-mask", ".fade-up", ".hero-fade-up"], {
+          y: 0,
+          yPercent: 0,
+          autoAlpha: 1,
+        });
+
+        const heroTl = gsap.timeline();
+        heroTl
+          .fromTo(
+            ".hero-line-mask",
+            { yPercent: 110 },
+            {
+              yPercent: 0,
+              duration: 0.95,
+              ease: "power4.out",
+              stagger: 0.08,
+            }
+          )
+          .from(
+            ".hero-fade-up",
+            {
+              y: 10,
+              duration: 0.35,
+              ease: "power2.out",
+              stagger: 0.04,
+            },
+            0
+          );
+
+        // Preserve the original line reveal, with a shorter duration and earlier start.
+        gsap.utils.toArray<HTMLElement>("h2").forEach((heading) => {
+          const lines = heading.querySelectorAll<HTMLElement>(".line-mask");
+          if (!lines.length) return;
+          gsap.fromTo(
+            lines,
+            { yPercent: 100 },
+            {
+              yPercent: 0,
+              duration: 0.9,
+              ease: "power4.out",
+              stagger: 0.06,
+              scrollTrigger: {
+                trigger: heading,
+                start: "top 98%",
+                once: true,
+              },
+            }
+          );
+        });
+
+        // Start just below the viewport; movement never reduces opacity.
+        gsap.utils.toArray<HTMLElement>(".fade-up:not(.hero-fade-up)").forEach((el) => {
+          gsap.from(
+            el,
+            {
+              y: 10,
+              duration: 0.35,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: el,
+                start: "top bottom+=120",
+                once: true,
+              },
+            }
+          );
+        });
+
+        // 1. Dedicated Hero Background Parallax: translates with scroll depth
+        const heroEl = document.getElementById("hero");
+        if (heroEl) {
+          gsap.fromTo(
+            ".parallax-hero",
+            { yPercent: 0 },
+            {
+              yPercent: 22,
+              ease: "none",
+              scrollTrigger: {
+                trigger: heroEl,
+                start: "top top",
+                end: "bottom top",
+                scrub: 1,
+              },
+            }
+          );
+        }
+
+        // 2. Parallax image scrub animation for all content cards
+        gsap.utils.toArray<HTMLElement>(".parallax-img").forEach((el) => {
+          const triggerEl = el.closest("article, .group, section") || el.parentElement || el;
+          gsap.fromTo(
+            el,
+            { yPercent: -10 },
+            {
+              yPercent: 10,
+              ease: "none",
+              scrollTrigger: {
+                trigger: triggerEl,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1.2,
+              },
+            }
+          );
+        });
+      });
+
+      mm.add("(prefers-reduced-motion: reduce)", () => {
+        gsap.set([".line-mask", ".fade-up", ".hero-line-mask", ".hero-fade-up"], {
+          y: 0,
+          yPercent: 0,
+          autoAlpha: 1,
+        });
+        gsap.set([".parallax-img", ".parallax-hero"], {
+          y: 0,
+          yPercent: 0,
+          x: 0,
+        });
+      });
+
+      // Refresh against actual asset layout rather than a fixed loading delay.
+      let disposed = false;
+      let refreshFrame = 0;
+      const refreshLayout = () => {
+        if (disposed) return;
+        cancelAnimationFrame(refreshFrame);
+        refreshFrame = requestAnimationFrame(() => ScrollTrigger.refresh());
+      };
+      const container = containerRef.current;
+      container?.addEventListener("load", refreshLayout, true);
+      void document.fonts.ready.then(refreshLayout);
+      refreshLayout();
+
+      return () => {
+        disposed = true;
+        cancelAnimationFrame(refreshFrame);
+        container?.removeEventListener("load", refreshLayout, true);
+        mm.revert();
+      };
+    },
+    { scope: containerRef }
+  );
 
   return (
-    <main className="bg-[#F5F5F2] text-neutral-900 antialiased selection:bg-emerald-600 selection:text-white">
+    <main
+      ref={containerRef}
+      data-no-reveal
+      className="bg-[#F8FAFC] text-neutral-900 antialiased selection:bg-[#FCB813] selection:text-neutral-950 font-sans"
+    >
+      {/* 1. HERO OVERVIEW (Properly exposed night photograph, crisp typography & metrics) */}
+      <HeroOverview />
 
-      {/* OVERVIEW (Hero & Brand Introduction) */}
-      <HeroOverview onOpenBooking={() => scrollToSection("booking-widget")} />
+      {/* 2. THE SAMPAN EXPERIENCE (3-Pillar entry: Dining, Rest, Convenience) */}
+      <TheExperienceSection />
 
-      {/* ONLINE BOOKING WIDGET (Interactive Calculator & Instant Reservation) */}
-      {/* <OnlineBookingWidget /> */}
+      {/* 3. 01 / DINING (Logo-inspired navy and gold, 24/7 hospitality, real restaurant photography & actions) */}
+      <DiningSection />
 
-      {/* MILESTONE COUNTER (Track Record & Scale) */}
-      <MilestoneCounter />
+      {/* 4. 02 / REST SUITES (Light luxury aesthetic, acoustic quiet, suites showcase & booking action) */}
+      <RestSuitesSection />
 
-      {/* FACILITIES / OFFERINGS LIST (Category Filtered Cards) */}
-      <FacilitiesList />
+      {/* 5. 03 / HIGHWAY CONVENIENCE (Modern washrooms, 24/7 Mart, Fuel bay, Mosque & Parking) */}
+      <ConvenienceSection />
 
-      {/* DEDICATED HIGHWAY-ROUTE MAP (Corridor Map & Mile Markers) */}
-      {/* <HighwayRouteVisualizer /> */}
+      {/* 6. BRAND GOLD RIBBON CTA (Clear directional drive action) */}
+      <GreenRibbonCTA />
 
-      {/* LOCATION + LIVE MAP (GPS Coordinates, Hub Distances & Embedded Map) */}
-      <LocationAndMap />
+      {/* 7. MOMENTS AT SAMPAN (Curated authentic photograph gallery with interactive lightbox) */}
+      <MomentsGallery />
 
-      {/* ROOM / PACKAGE PRICING OVERVIEW (Transparent Tiers & Inclusions) */}
-      {/* <PricingOverview /> */}
-
-      {/* VIRTUAL TOUR (360° Walkthrough Simulator & Interactive Hotspots) */}
-      {/* <VirtualTourViewer /> */}
-
-      {/* PHOTO / VIDEO GALLERY (Masonry Showcase & Drone Video) */}
-      <PhotoVideoGallery />
-
-      {/* "NEARBY AT THIS LOCATION" MODULE (Adjacent Assets & Attractions) */}
+      {/* 8. NEARBY ATTRACTIONS & SAMPAN DESTINATIONS */}
       <NearbyLocationModule />
 
-      {/* PRESS / MEDIA MENTIONS CAROUSEL (National Press & Critics) */}
-      {/* <PressMediaCarousel /> */}
-
-      {/* GUEST REVIEWS (Verified Traveler Feedback & Rating Scorecard) */}
-      {/* <GuestReviews /> */}
-
-      {/* USER-GENERATED CONTENT FEED (#SampanHighwayInn Social Community) */}
-      {/* <UGCFeed /> */}
-
-      {/* BOOK / ENQUIRE CTA (Direct Hotline, WhatsApp & Instant Form) */}
-      {/* <BookEnquireCTA onOpenBookingWidget={() => scrollToSection("booking-widget")} /> */}
-
-      {/* Floating Highway Quick Navigation Bar (Only Icons and Text) */}
-      {/* <aside aria-label="Highway Quick Navigation" className="fixed bottom-6 inset-x-0 z-40 flex justify-center pointer-events-none px-4">
-        <div className="pointer-events-auto flex items-center gap-4 sm:gap-6 text-xs font-mono font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-          <button
-            onClick={() => scrollToSection("route-map")}
-            className="flex items-center gap-1.5 text-neutral-200 hover:text-white transition-colors cursor-pointer"
-          >
-            <FaRoute className="text-emerald-400 text-sm" />
-            <span>Route</span>
-          </button>
-
-          <button
-            onClick={() => scrollToSection("facilities")}
-            className="flex items-center gap-1.5 text-neutral-200 hover:text-white transition-colors cursor-pointer"
-          >
-            <FaBed className="text-emerald-400 text-sm" />
-            <span>Facilities</span>
-          </button>
-
-          <button
-            onClick={() => scrollToSection("booking-widget")}
-            className="flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-mono font-bold uppercase tracking-wider transition-colors cursor-pointer"
-          >
-            <FaCalendarCheck className="text-sm" />
-            <span>Book Now</span>
-          </button>
-
-          <a
-            href="tel:+8801929918408"
-            className="flex items-center gap-1.5 text-neutral-200 hover:text-amber-400 transition-colors cursor-pointer"
-          >
-            <FaPhoneAlt className="text-amber-400 text-xs" />
-            <span>+01929-918408</span>
-          </a>
-        </div>
-      </aside> */}
-
+      {/* 9. FIND US & WAYPOINT (Corridor times, waypoint KM 103 card, and embedded interactive map) */}
+      <LocationAndWaypoint />
     </main>
   );
 }

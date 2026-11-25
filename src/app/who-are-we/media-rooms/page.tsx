@@ -1,5 +1,7 @@
 "use client";
 
+import EnquiryForm from "@/components/EnquiryForm";
+
 import React, { useState, useMemo, useRef } from "react";
 import Link from "next/link";
 import gsap from "gsap";
@@ -902,17 +904,17 @@ export default function NewsroomPage() {
             delivered to your inbox.
           </p>
 
-          <form className="reveal-up flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
+          <EnquiryForm enquiryType="newsletter" className="reveal-up flex flex-col sm:flex-row sm:flex-wrap gap-4 max-w-md mx-auto">
+            <input name="email"
               type="email"
               placeholder="Your email address"
-              className="w-full bg-transparent border-b border-white/30 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-[#007DC5] transition-colors"
+              className="w-full bg-transparent border-b border-white/30 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-[#007DC5] transition-colors" required
             />
             <button className="group bg-[#007DC5] px-8 py-3 text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-[#071018] transition-colors flex items-center justify-center gap-3">
               Subscribe{" "}
               <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
             </button>
-          </form>
+          </EnquiryForm>
           <p className="reveal-up mt-6 text-xs text-white/40">
             By subscribing, you agree to receive updates from Sampan Group.
           </p>

@@ -1,5 +1,7 @@
 "use client";
 
+import EnquiryForm from "@/components/EnquiryForm";
+
 import { useState } from "react";
 
 export default function LSHSEnquiryForm() {
@@ -13,24 +15,26 @@ export default function LSHSEnquiryForm() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+
 
   return (
     <section id="enquiry" className="py-20 px-4 sm:px-8 lg:px-16 bg-white text-slate-900">
       <div className="max-w-5xl mx-auto">
-        <div className="bg-gradient-to-b from-sky-50/70 via-white to-sky-50/40 border-2 border-sky-600/20 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xl relative overflow-hidden">
-          {/* Section Header */}
+        <div className="fade-up bg-gradient-to-b from-sky-50/70 via-white to-sky-50/40 border-2 border-sky-600/20 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xl relative overflow-hidden">
+          {/* Section Header with Line-Mask Reveal */}
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#0b73b9] bg-sky-100 px-3.5 py-1 rounded-full">
+            <div className="fade-up inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0b73b9] bg-sky-100 px-3.5 py-1 rounded-full mb-4">
               Admissions & Consultation
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold font-serif text-slate-900 mt-4 leading-tight">
-              Ready to Take Your Seat at the Executive Table?
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold font-serif text-slate-900 leading-tight">
+              <div className="overflow-hidden">
+                <div className="line-mask">Ready to Take Your Seat at the</div>
+              </div>
+              <div className="overflow-hidden mt-1">
+                <div className="line-mask text-[#0b73b9]">Executive Table?</div>
+              </div>
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
+            <p className="fade-up text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
               Have a question about which CIPS level is right for you, course timetables, or how our distance learning platform works? Our London and Dhaka admissions team is here to help.
             </p>
           </div>
@@ -64,13 +68,13 @@ export default function LSHSEnquiryForm() {
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6 max-w-3xl mx-auto">
+            <EnquiryForm enquiryType="education" onSuccess={() => setSubmitted(true)}  className="space-y-6 max-w-3xl mx-auto">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                     Full Name *
                   </label>
-                  <input
+                  <input name="name"
                     type="text"
                     required
                     placeholder="e.g. John Doe"
@@ -84,7 +88,7 @@ export default function LSHSEnquiryForm() {
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                     Email Address *
                   </label>
-                  <input
+                  <input name="email"
                     type="email"
                     required
                     placeholder="e.g. john@example.com"
@@ -98,7 +102,7 @@ export default function LSHSEnquiryForm() {
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                     Phone / WhatsApp *
                   </label>
-                  <input
+                  <input name="phone"
                     type="tel"
                     required
                     placeholder="+880 1..."
@@ -114,7 +118,7 @@ export default function LSHSEnquiryForm() {
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                     CIPS Level of Interest
                   </label>
-                  <select
+                  <select name="levelOfInterest"
                     value={formData.levelOfInterest}
                     onChange={(e) => setFormData({ ...formData, levelOfInterest: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-[#0b73b9] focus:ring-2 focus:ring-sky-100 outline-none text-sm transition-all bg-white"
@@ -132,7 +136,7 @@ export default function LSHSEnquiryForm() {
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                     Preferred Study Mode
                   </label>
-                  <select
+                  <select name="studyMode"
                     value={formData.studyMode}
                     onChange={(e) => setFormData({ ...formData, studyMode: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-[#0b73b9] focus:ring-2 focus:ring-sky-100 outline-none text-sm transition-all bg-white"
@@ -148,7 +152,7 @@ export default function LSHSEnquiryForm() {
                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                   Questions or Current Role (Optional)
                 </label>
-                <textarea
+                <textarea name="message"
                   rows={3}
                   placeholder="Tell us about your background or questions regarding exams, waivers, or payment plans..."
                   value={formData.message}
@@ -176,7 +180,7 @@ export default function LSHSEnquiryForm() {
                   Apply Directly (Official Google Form) ↗
                 </a>
               </div>
-            </form>
+            </EnquiryForm>
           )}
 
           {/* Bottom Trust Grid from Doc */}

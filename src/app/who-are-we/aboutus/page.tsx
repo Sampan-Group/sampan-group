@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import {
   FiArrowRight,
-  FiPlay,
+  // FiPlay,
   FiDownload,
   FiPlus,
   FiMapPin,
@@ -51,7 +51,7 @@ const leaders = [
   {
     name: "MD. EMAMUL HASAN",
     role: "Managing Director & CEO",
-    image: "/images/leadership/Md._EMAMUL_HASAN.png",
+    image: "/images/leadership/Emamul_Hasan.png",
   },
   {
     name: "Major Md. Zahidul Islam (Retd)",
@@ -96,7 +96,7 @@ export default function AboutUsPage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const timelineProgressRef = useRef<HTMLDivElement>(null);
   const [activeValue, setActiveValue] = useState<number>(0);
-  const [isPlaying, setIsPlaying] = useState(false);
+  // const [isPlaying, setIsPlaying] = useState(false);
 
   useGSAP(
     () => {
@@ -219,7 +219,7 @@ export default function AboutUsPage() {
 
   return (
     <main ref={containerRef} className="bg-[#F5F5F2] text-neutral-950 overflow-x-hidden font-sans antialiased selection:bg-emerald-500 selection:text-white">
-      
+
       {/* 01. CINEMATIC HERO */}
       <section className="hero-section relative min-h-[100svh] w-full flex items-end bg-[#050505] text-white overflow-hidden">
         <div className="hero-bg absolute inset-0 opacity-0 will-change-transform">
@@ -365,6 +365,7 @@ export default function AboutUsPage() {
         </span>
 
         <div className="mx-auto max-w-[1600px] px-[5vw] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+          {/* Video temporarily disabled; preserve the player for future use.
           <div className="lg:col-span-7">
             <div className="md-video-wrapper relative aspect-video w-full overflow-hidden border border-neutral-300 bg-black cursor-pointer group opacity-0 shadow-xl">
               {!isPlaying ? (
@@ -413,7 +414,9 @@ export default function AboutUsPage() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 lg:pl-8">
+          */}
+
+          <div className="lg:col-span-12">
             <p className="reveal-up font-mono text-[11px] font-semibold uppercase tracking-[0.4em] text-emerald-700 mb-6 flex items-center gap-3">
               <span className="block w-8 h-px bg-emerald-700"></span>
               Leadership

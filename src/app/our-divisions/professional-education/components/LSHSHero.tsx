@@ -20,28 +20,47 @@ export default function LSHSHero({ onOpenVideo }: LSHSHeroProps = {}) {
   return (
     <>
       <section className="relative overflow-hidden bg-gradient-to-b from-[#062438] via-[#0c4a6e] to-[#072d42] text-white pt-28 pb-16 sm:pt-36 sm:pb-20 lg:pt-40 lg:pb-24 px-4 sm:px-8 lg:px-16">
-        {/* Ambient atmospheric glows */}
-        <div className="absolute top-0 right-0 -translate-y-12 translate-x-12 w-[32rem] h-[32rem] rounded-full bg-[#0b73b9]/25 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 translate-y-16 -translate-x-12 w-[28rem] h-[28rem] rounded-full bg-[#f4d210]/15 blur-3xl pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
+        {/* Atmospheric Background Layer with Parallax Scrub */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <div className="parallax-img absolute inset-0 w-full h-[124%] -top-[12%]">
+            <img
+              src="/images/projects/lshs.jpg"
+              alt="London School of Higher Studies Campus"
+              className="w-full h-full object-cover object-center opacity-25 mix-blend-luminosity scale-105"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#062438]/95 via-[#0c4a6e]/90 to-[#072d42]/95 z-10" />
+        </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto">
+        {/* Ambient atmospheric glows */}
+        <div className="absolute top-0 right-0 -translate-y-12 translate-x-12 w-[32rem] h-[32rem] rounded-full bg-[#0b73b9]/25 blur-3xl pointer-events-none z-10" />
+        <div className="absolute bottom-0 left-0 translate-y-16 -translate-x-12 w-[28rem] h-[28rem] rounded-full bg-[#f4d210]/15 blur-3xl pointer-events-none z-10" />
+        <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none z-10" />
+
+        <div className="relative z-20 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-6">
 
-              {/* Headline */}
+              {/* Headline with Masked Slow Reveal */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white font-serif leading-[1.08]">
-                Build Your Career on a <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f4d210] via-amber-200 to-[#f4d210]">Global Standard</span>
+                <div className="overflow-hidden">
+                  <div className="hero-line-mask line-mask">Build Your Career on a</div>
+                </div>
+                <div className="overflow-hidden mt-1">
+                  <div className="hero-line-mask line-mask text-transparent bg-clip-text bg-gradient-to-r from-[#f4d210] via-amber-200 to-[#f4d210]">
+                    Global Standard
+                  </div>
+                </div>
               </h1>
 
               {/* Body */}
-              <p className="text-base sm:text-lg text-sky-100/90 leading-relaxed font-light">
+              <p className="hero-fade-up fade-up text-base sm:text-lg text-sky-100/90 leading-relaxed font-light">
                 Welcome to the <strong className="text-white font-semibold">London School of Higher Studies (LSHS)</strong>. We help ambitious professionals gain the world&apos;s leading procurement and supply chain qualification — studied flexibly, assessed rigorously, and recognised by employers worldwide.
               </p>
 
               {/* Key Trust Signals */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+              <div className="hero-fade-up fade-up grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-3 text-center">
                   <div className="text-xs text-sky-200/80">Centre No</div>
                   <div className="text-sm font-bold font-mono text-[#f4d210]">10005967</div>
@@ -65,7 +84,7 @@ export default function LSHSHero({ onOpenVideo }: LSHSHeroProps = {}) {
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-2 flex flex-wrap gap-3.5 sm:gap-4 items-center">
+              <div className="hero-fade-up fade-up pt-2 flex flex-wrap gap-3.5 sm:gap-4 items-center">
                 <a
                   href="#pathway"
                   className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-bold text-sm bg-[#f4d210] hover:bg-amber-300 text-slate-950 shadow-lg shadow-amber-500/20 transition-all hover:scale-[1.02]"
@@ -85,7 +104,7 @@ export default function LSHSHero({ onOpenVideo }: LSHSHeroProps = {}) {
               </div>
 
               {/* Direct Admission Link Highlight */}
-              <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-sky-200/90">
+              <div className="hero-fade-up fade-up pt-2 flex flex-wrap items-center gap-4 text-xs text-sky-200/90">
                 <a
                   href="https://forms.gle/kHkicZ6TaHQRoMck6"
                   target="_blank"
@@ -104,24 +123,26 @@ export default function LSHSHero({ onOpenVideo }: LSHSHeroProps = {}) {
             </div>
 
             {/* Right Media Preview Column with Blue Light Shade */}
-            <div className="lg:col-span-5">
+            <div className="hero-fade-up fade-up lg:col-span-5">
               <div className="relative group rounded-3xl overflow-hidden border-2 border-sky-400/30 bg-gradient-to-b from-sky-900/80 via-slate-900 to-[#0c4a6e] p-2 shadow-2xl shadow-sky-950/80">
                 {/* Glow behind card */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-sky-500/20 via-[#f4d210]/20 to-sky-600/20 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition duration-500 pointer-events-none" />
 
                 <div className="relative rounded-2xl overflow-hidden bg-slate-950 aspect-video flex flex-col justify-end p-5 sm:p-6">
-                  {/* YouTube thumbnail backdrop */}
-                  <img
-                    src="https://img.youtube.com/vi/cmEz18xDW_U/maxresdefault.jpg"
-                    alt="LSHS CIPS Demo Class Trailer"
-                    className="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-700"
-                  />
+                  {/* YouTube thumbnail backdrop with Parallax */}
+                  <div className="parallax-img absolute inset-0 w-full h-[116%] -top-[8%]">
+                    <img
+                      src="https://img.youtube.com/vi/cmEz18xDW_U/maxresdefault.jpg"
+                      alt="LSHS CIPS Demo Class Trailer"
+                      className="w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
                   {/* Blue light shade overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-sky-950/60 to-transparent" />
-                  <div className="absolute inset-0 bg-[#0b73b9]/25 mix-blend-color" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-sky-950/60 to-transparent z-10" />
+                  <div className="absolute inset-0 bg-[#0b73b9]/25 mix-blend-color z-10" />
 
                   {/* Play Button Trigger */}
-                  <div className="relative z-10 flex flex-col items-center justify-center my-auto py-6">
+                  <div className="relative z-20 flex flex-col items-center justify-center my-auto py-6">
                     <button
                       onClick={handleVideoClick}
                       className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#f4d210] hover:bg-amber-300 text-slate-950 flex items-center justify-center shadow-xl shadow-amber-500/30 transform group-hover:scale-110 transition-all duration-300 cursor-pointer"

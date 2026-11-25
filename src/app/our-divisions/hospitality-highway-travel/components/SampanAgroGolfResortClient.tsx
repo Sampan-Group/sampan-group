@@ -1,5 +1,7 @@
 "use client";
 
+import EnquiryForm from "@/components/EnquiryForm";
+
 import { useState } from "react";
 import Link from "next/link";
 import {
@@ -1239,13 +1241,13 @@ export default function SampanAgroGolfResortClient() {
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleInquirySubmit} className="space-y-6">
+              <EnquiryForm enquiryType="golf-resort" onSuccess={() => setInquirySubmitted(true)}  className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-xs font-mono font-bold uppercase tracking-wider text-neutral-800 mb-2">
                       Full Name *
                     </label>
-                    <input
+                    <input name="name"
                       type="text"
                       required
                       placeholder="e.g. Mahfuzar Rahman"
@@ -1257,7 +1259,7 @@ export default function SampanAgroGolfResortClient() {
                     <label className="block text-xs font-mono font-bold uppercase tracking-wider text-neutral-800 mb-2">
                       Contact Phone *
                     </label>
-                    <input
+                    <input name="phone"
                       type="tel"
                       required
                       placeholder="e.g. +880 1711-000000"
@@ -1271,7 +1273,7 @@ export default function SampanAgroGolfResortClient() {
                     <label className="block text-xs font-mono font-bold uppercase tracking-wider text-neutral-800 mb-2">
                       Email Address *
                     </label>
-                    <input
+                    <input name="email"
                       type="email"
                       required
                       placeholder="e.g. investor@example.com"
@@ -1283,7 +1285,7 @@ export default function SampanAgroGolfResortClient() {
                     <label className="block text-xs font-mono font-bold uppercase tracking-wider text-neutral-800 mb-2">
                       Interest Category
                     </label>
-                    <select
+                    <select name="investmentInterest"
                       className="w-full border border-neutral-300 bg-white px-4 py-3 text-sm focus:border-emerald-600 focus:outline-none"
                     >
                       <option>100% Freehold Land Allotment</option>
@@ -1299,7 +1301,7 @@ export default function SampanAgroGolfResortClient() {
                   <label className="block text-xs font-mono font-bold uppercase tracking-wider text-neutral-800 mb-2">
                     Your Message / Specific Requirements
                   </label>
-                  <textarea
+                  <textarea name="message"
                     rows={4}
                     placeholder="Tell us about your preferred parcel size, villa preferences, or questions..."
                     className="w-full border border-neutral-300 bg-white px-4 py-3 text-sm focus:border-emerald-600 focus:outline-none"
@@ -1319,7 +1321,7 @@ export default function SampanAgroGolfResortClient() {
                     <FiArrowRight />
                   </button>
                 </div>
-              </form>
+              </EnquiryForm>
             )}
 
           </div>

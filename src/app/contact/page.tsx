@@ -1,6 +1,7 @@
 "use client";
 
-import { FormEvent } from "react";
+import EnquiryForm from "@/components/EnquiryForm";
+
 import { FiMail, FiPhone, FiMapPin, FiClock, FiArrowRight, FiMessageSquare } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -54,9 +55,7 @@ const locationContacts = [
 ];
 
 export default function ContactPage() {
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-  };
+
 
   return (
     <main className="bg-[#F5F5F2] text-neutral-950 overflow-x-hidden font-sans antialiased selection:bg-emerald-500 selection:text-white">
@@ -141,29 +140,29 @@ export default function ContactPage() {
               <span className="text-neutral-400">we can help.</span>
             </h2>
 
-            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 max-w-2xl">
+            <EnquiryForm enquiryType="contact" className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 max-w-2xl">
               <div className="relative">
-                <input id="name" type="text" placeholder=" " className="peer w-full bg-transparent border-b border-neutral-300 py-3 focus:outline-none focus:border-emerald-500 placeholder:text-transparent text-neutral-950 text-lg" required />
+                <input name="name" id="name" type="text" placeholder=" " className="peer w-full bg-transparent border-b border-neutral-300 py-3 focus:outline-none focus:border-emerald-500 placeholder:text-transparent text-neutral-950 text-lg" required />
                 <label htmlFor="name" className="absolute left-0 top-3 text-neutral-500 text-lg transition-all duration-300 peer-focus:-top-4 peer-focus:text-[10px] peer-focus:tracking-[0.3em] peer-focus:uppercase peer-focus:text-emerald-600 peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:tracking-[0.3em] peer-[:not(:placeholder-shown)]:uppercase">Name</label>
               </div>
               <div className="relative">
-                <input id="phone" type="tel" placeholder=" " className="peer w-full bg-transparent border-b border-neutral-300 py-3 focus:outline-none focus:border-emerald-500 placeholder:text-transparent text-neutral-950 text-lg" />
+                <input name="phone" id="phone" type="tel" placeholder=" " className="peer w-full bg-transparent border-b border-neutral-300 py-3 focus:outline-none focus:border-emerald-500 placeholder:text-transparent text-neutral-950 text-lg" />
                 <label htmlFor="phone" className="absolute left-0 top-3 text-neutral-500 text-lg transition-all duration-300 peer-focus:-top-4 peer-focus:text-[10px] peer-focus:tracking-[0.3em] peer-focus:uppercase peer-focus:text-emerald-600 peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:tracking-[0.3em] peer-[:not(:placeholder-shown)]:uppercase">Phone Number</label>
               </div>
               <div className="relative">
-                <input id="email" type="email" placeholder=" " className="peer w-full bg-transparent border-b border-neutral-300 py-3 focus:outline-none focus:border-emerald-500 placeholder:text-transparent text-neutral-950 text-lg" required />
+                <input name="email" id="email" type="email" placeholder=" " className="peer w-full bg-transparent border-b border-neutral-300 py-3 focus:outline-none focus:border-emerald-500 placeholder:text-transparent text-neutral-950 text-lg" required />
                 <label htmlFor="email" className="absolute left-0 top-3 text-neutral-500 text-lg transition-all duration-300 peer-focus:-top-4 peer-focus:text-[10px] peer-focus:tracking-[0.3em] peer-focus:uppercase peer-focus:text-emerald-600 peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:tracking-[0.3em] peer-[:not(:placeholder-shown)]:uppercase">Email</label>
               </div>
               <div className="relative">
-                <input id="company" type="text" placeholder=" " className="peer w-full bg-transparent border-b border-neutral-300 py-3 focus:outline-none focus:border-emerald-500 placeholder:text-transparent text-neutral-950 text-lg" />
+                <input name="company" id="company" type="text" placeholder=" " className="peer w-full bg-transparent border-b border-neutral-300 py-3 focus:outline-none focus:border-emerald-500 placeholder:text-transparent text-neutral-950 text-lg" />
                 <label htmlFor="company" className="absolute left-0 top-3 text-neutral-500 text-lg transition-all duration-300 peer-focus:-top-4 peer-focus:text-[10px] peer-focus:tracking-[0.3em] peer-focus:uppercase peer-focus:text-emerald-600 peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:tracking-[0.3em] peer-[:not(:placeholder-shown)]:uppercase">Company</label>
               </div>
               <div className="relative md:col-span-2">
-                <input id="subject" type="text" placeholder=" " className="peer w-full bg-transparent border-b border-neutral-300 py-3 focus:outline-none focus:border-emerald-500 placeholder:text-transparent text-neutral-950 text-lg" required />
+                <input name="subject" id="subject" type="text" placeholder=" " className="peer w-full bg-transparent border-b border-neutral-300 py-3 focus:outline-none focus:border-emerald-500 placeholder:text-transparent text-neutral-950 text-lg" required />
                 <label htmlFor="subject" className="absolute left-0 top-3 text-neutral-500 text-lg transition-all duration-300 peer-focus:-top-4 peer-focus:text-[10px] peer-focus:tracking-[0.3em] peer-focus:uppercase peer-focus:text-emerald-600 peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:tracking-[0.3em] peer-[:not(:placeholder-shown)]:uppercase">Subject</label>
               </div>
               <div className="relative md:col-span-2">
-                <textarea id="message" placeholder=" " rows={4} className="peer w-full bg-transparent border-b border-neutral-300 py-3 focus:outline-none focus:border-emerald-500 placeholder:text-transparent text-neutral-950 text-lg resize-none" required></textarea>
+                <textarea name="message" id="message" placeholder=" " rows={4} className="peer w-full bg-transparent border-b border-neutral-300 py-3 focus:outline-none focus:border-emerald-500 placeholder:text-transparent text-neutral-950 text-lg resize-none" required></textarea>
                 <label htmlFor="message" className="absolute left-0 top-3 text-neutral-500 text-lg transition-all duration-300 peer-focus:-top-4 peer-focus:text-[10px] peer-focus:tracking-[0.3em] peer-focus:uppercase peer-focus:text-emerald-600 peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:tracking-[0.3em] peer-[:not(:placeholder-shown)]:uppercase">Message</label>
               </div>
               
@@ -173,7 +172,7 @@ export default function ContactPage() {
                   <FiArrowRight className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-2" />
                 </button>
               </div>
-            </form>
+            </EnquiryForm>
           </div>
 
           {/* Right: Map & Info */}

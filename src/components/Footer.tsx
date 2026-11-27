@@ -36,11 +36,11 @@ const sitemap = [
     links: [
       { label: "SDL", href: "/our-divisions/real-state-and-land-investment/sampan-development-ltd" },
       { label: "Metro Square", href: "/our-divisions/real-state-and-land-investment/sampan-metro-square" },
-      { label: " Skyline", href: "/our-divisions/real-state-and-land-investment/sampan-skyline" },
-      { label: "Nexus", href: "/our-divisions/real-state-and-land-investment/sampan-nexus" },
+      // { label: " Skyline", href: "/our-divisions/real-state-and-land-investment/sampan-skyline" },
+      // { label: "Nexus", href: "/our-divisions/real-state-and-land-investment/sampan-nexus" },
       // { label: "Residency Tower 1 & 2", href: "/real-estate/residency" },
       { label: "Taj", href: "/our-divisions/real-state-and-land-investment/sampan-taj" },
-      { label: "Niketon", href: "/our-divisions/real-state-and-land-investment/sampan-niketon" },
+      // { label: "Niketon", href: "/our-divisions/real-state-and-land-investment/sampan-niketon" },
       { label: "21st Century", href: "/our-divisions/real-state-and-land-investment/sampan-21st-century" },
       { label: "Trade Emporium", href: "/our-divisions/real-state-and-land-investment/sampan-trade-emporium" },
       { label: "City End", href: "/our-divisions/real-state-and-land-investment/sampan-cafe-metro" },
@@ -67,7 +67,7 @@ const sitemap = [
   },
   {
     title: "Education",
-    links: [{ label: "LSHS", href: "https://london-schools-seven.vercel.app/" }],
+    links: [{ label: "LSHS", href: "https://cips.lshs.co.uk/" }],
     secondary: {
       title: "Agro & Retail",
       links: [
@@ -98,7 +98,7 @@ const sitemap = [
     links: [
       { label: "Fire Arms Co.", href: "/our-divisions/defense-security/sampan-fire-arms-co" },
       { label: "Nagar Arms", href: "/our-divisions/defense-security/nagar-arms-ammunition" },
-      { label: "Floating Pearl", href: "/our-divisions/maritime-alternative-assets/sampan-floating-pearl" },
+      // { label: "Floating Pearl", href: "/our-divisions/maritime-alternative-assets/sampan-floating-pearl" },
     ],
   },
 ];
